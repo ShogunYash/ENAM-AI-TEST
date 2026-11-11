@@ -56,14 +56,18 @@ Bump `version` on any change; the version is part of the cache key.
 from app.llm.router import run_task
 
 items = run_task(
-    task="guidance_map",          # matches prompt file + models.yaml entry
-    inputs={"transcript_pages": pages_text},
+    "guidance_map",               # prompt file in app/prompts (its front-matter picks tier + schema)
+    {"transcript_pages": pages_text},
     cache_key_extra=doc_sha256,   # documents are processed once, forever
     feature="pull.guidance",      # ledger tag shown in Cost panel
-)
+    unit="INFY",                  # what it was for; drives "calls per new ticker"
+)  # returns a validated pydantic object; raises LLMUnavailable if every model failed
 ```
+The new output schema goes in `app/llm/schemas.py` (`SCHEMAS`). The router talks plain httpx to the providers' OpenAI-compatible
+`/chat/completions` endpoints (no provider SDKs), skips models whose `max_input_chars` is exceeded, and cools a model down for 60 s after a 429.
+Models are listed per tier in `backend/config/models.yaml`; check them with `uv run python -m scripts.ping_llm --list`.
 The router is responsible for these, so feature code must not reimplement them:
-- the cache lookup on `sha256(task, prompt_version, model, inputs, cache_key_extra)`
+- the cache lookup on `sha256(task, prompt_version, tier, rendered prompt, cache_key_extra)`. The model is deliberately **not** in the key: an answer is valid whichever model in the chain produced it, so a fallback result still gets reused. The model that answered is stored next to the cached output.
 - the ordered model fallback on 429/5xx/parse failure
 - writing the ledger row (feature, model, tokens in/out, cached?, latency)
 

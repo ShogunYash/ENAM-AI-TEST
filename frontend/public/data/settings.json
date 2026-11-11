@@ -1,0 +1,17 @@
+{
+  "volume_multiple": 2.0,
+  "volume_lookback_days": 20,
+  "price_move_pct": 5.0,
+  "categories_of_interest": [
+    "results",
+    "m_and_a",
+    "management_change",
+    "fund_raise",
+    "litigation",
+    "pledging"
+  ],
+  "muted_categories": [
+    "unclassified"
+  ],
+  "default_window": "24h"
+}

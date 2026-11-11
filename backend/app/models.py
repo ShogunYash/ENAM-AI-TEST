@@ -12,7 +12,7 @@ from __future__ import annotations
 
 from datetime import datetime
 from enum import StrEnum
-from typing import Annotated, Literal, Union
+from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -134,7 +134,7 @@ class OneLiner(Model):
     text: str = Field(max_length=160)
 
 
-Enrichment = Annotated[Union[ResultsCard, BioCard, OneLiner], Field(discriminator="type")]
+Enrichment = Annotated[ResultsCard | BioCard | OneLiner, Field(discriminator="type")]
 
 
 class PriceReaction(Model):

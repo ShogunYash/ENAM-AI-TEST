@@ -343,6 +343,7 @@
     "/stats/llm": {
       "get": {
         "summary": "Stats",
+        "description": "Real ledger numbers once any LLM call has been made; illustrative mock until then.",
         "operationId": "stats_stats_llm_get",
         "responses": {
           "200": {

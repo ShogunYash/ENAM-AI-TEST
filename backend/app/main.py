@@ -16,6 +16,8 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
 from app import models as m
+from app.llm import store as llm_store
+from app.settings import get_settings
 
 EXAMPLES = Path(__file__).resolve().parents[2] / "docs" / "examples"
 
@@ -83,7 +85,9 @@ def research(symbol: str) -> Any:
 
 @app.get("/stats/llm", response_model=m.LlmStats)
 def stats() -> Any:
-    return example("stats")
+    """Real ledger numbers once any LLM call has been made; illustrative mock until then."""
+    db = get_settings().llm_db_path
+    return llm_store.stats(db) if llm_store.has_rows(db) else example("stats")
 
 
 @app.get("/debug/sources", response_model=m.SourcesReport)

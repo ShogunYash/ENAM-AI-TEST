@@ -107,8 +107,8 @@ def screener() -> None:
         sections = {s: bool(tree.css_first(f"section#{s}")) for s in
                     ["quarters", "profit-loss", "balance-sheet", "cash-flow", "ratios", "shareholding", "documents"]}
         links = [(a.text(strip=True), a.attributes.get("href", "")) for a in tree.css("section#documents a")]
-        concalls = [l for l in links if re.search(r"transcript", l[0], re.I)]
-        ars = [l for l in links if re.search(r"annual report|^\d{4}$|financial year", l[0], re.I)]
+        concalls = [l for l in links if re.search(r"transcript", l[0], re.IGNORECASE)]
+        ars = [l for l in links if re.search(r"annual report|^\d{4}$|financial year", l[0], re.IGNORECASE)]
         pdf_links = [l for l in links if l[1].lower().endswith(".pdf") or "bseindia" in l[1] or "nseindia" in l[1]]
         status = "PASS" if all(sections.values()) and concalls else "WARN"
         record("screener", status,
