@@ -103,5 +103,19 @@
     "name": "Fine Organic Industries",
     "sector": "Specialty chemicals",
     "in_portfolio": true
+  },
+  {
+    "symbol": "HDFCBANK",
+    "bse_code": "500180",
+    "name": "HDFC Bank",
+    "sector": "Private-sector banking",
+    "in_portfolio": true
+  },
+  {
+    "symbol": "HINDZINC",
+    "bse_code": "500188",
+    "name": "Hindustan Zinc",
+    "sector": "Non-ferrous metals and mining",
+    "in_portfolio": true
   }
 ]

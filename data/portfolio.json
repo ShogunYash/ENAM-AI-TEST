@@ -105,23 +105,48 @@
       "name": "Fine Organic Industries",
       "sector": "Specialty chemicals",
       "source": "https://www.screener.in/company/FINEORG/consolidated/"
+    },
+    {
+      "nse_symbol": "HDFCBANK",
+      "bse_scrip_code": "500180",
+      "name": "HDFC Bank",
+      "sector": "Private-sector banking",
+      "source": "https://www.screener.in/company/HDFCBANK/consolidated/"
+    },
+    {
+      "nse_symbol": "HINDZINC",
+      "bse_scrip_code": "500188",
+      "name": "Hindustan Zinc",
+      "sector": "Non-ferrous metals and mining",
+      "source": "https://www.screener.in/company/HINDZINC/consolidated/"
     }
   ],
   "research": [
     {
       "nse_symbol": "INFY",
+      "bse_scrip_code": "500209",
       "focus": "Revenue growth guidance",
       "transcript_index": "https://www.screener.in/company/INFY/consolidated/#documents"
     },
     {
-      "nse_symbol": "TCS",
-      "focus": "Demand and margin commentary",
-      "transcript_index": "https://www.screener.in/company/TCS/consolidated/#documents"
-    },
-    {
       "nse_symbol": "BAJFINANCE",
+      "bse_scrip_code": "500034",
       "focus": "Loan growth and credit costs",
       "transcript_index": "https://www.screener.in/company/BAJFINANCE/consolidated/#documents"
+    },
+    {
+      "nse_symbol": "POLYCAB",
+      "bse_scrip_code": "542652",
+      "in_portfolio": false,
+      "focus": "Wires and cables EBITDA margin and annual capex guidance (ChatGPT suggestion, unverified until C3)",
+      "transcript_index": "https://www.screener.in/company/POLYCAB/consolidated/#documents"
+    },
+    {
+      "nse_symbol": "KPIL",
+      "bse_scrip_code": "522287",
+      "in_portfolio": false,
+      "focus": "Revenue growth and PBT margin vs management guidance (ChatGPT suggestion, unverified until C3)",
+      "transcript_index": "https://www.screener.in/company/KPIL/consolidated/#documents"
     }
   ],
   "demo_filings": [

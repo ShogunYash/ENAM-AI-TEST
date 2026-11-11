@@ -165,6 +165,33 @@ def test_prompt_loader():
         p.render({})
 
 
-@pytest.mark.parametrize("text", ['{"a":1}', '```json\n{"a":1}\n```', 'Sure! {"a":1} hope that helps'])
+def test_research_prompts_load_and_roundtrip(tmp_path):
+    g = load_prompt("guidance_map")
+    assert (g.tier, g.schema) == ("T2", "GuidanceItems")
+    assert "{transcript_pages}" in g.user and '"items"' in g.system
+    v = load_prompt("pvd_reduce")
+    assert (v.tier, v.schema) == ("T3", "PvDVerdicts")
+    assert "quietly_dropped" in v.system
+
+    s = make_settings(tmp_path, gemini_api_key="g")
+    reply = json.dumps({"items": [{"metric": "Revenue growth (cc)", "target": "3-3.5%", "horizon": "FY26",
+                                   "quote": "we guide 3 to 3.5 percent", "page": 4}]})
+    client, seen = client_for(lambda r: ok_response(reply))
+    out = run_task("guidance_map", {"transcript_pages": "[page 4] we guide 3 to 3.5 percent"},
+                   feature="pull.guidance", unit="INFY", cache_key_extra="doc1", settings=s, client=client)
+    assert out.items[0].page == 4 and out.items[0].horizon == "FY26"
+    sys_msg = json.loads(seen[0].content)["messages"][0]["content"]
+    assert '{"metric":"string"' in sys_msg
+
+    verdicts = {"verdicts": [{"guidance_id": "g1", "verdict": "met", "reason": "3.1% vs 3-3.5%",
+                              "sources": [{"doc_id": "q4", "page": 4, "quote": "3.1 percent"},
+                                          {"doc_id": "screener", "actual_ref": "quarters.sales"}]}],
+                "unresolved": [{"guidance_id": "g2", "missing": "Q2 transcript"}]}
+    client2, _ = client_for(lambda r: ok_response(json.dumps(verdicts)))
+    out2 = run_task("pvd_reduce", {"research_evidence": "{}"}, settings=s, client=client2)
+    assert out2.verdicts[0].verdict == "met" and out2.unresolved[0].missing == "Q2 transcript"
+
+
+@pytest.mark.parametrize("text",['{"a":1}', '```json\n{"a":1}\n```', 'Sure! {"a":1} hope that helps'])
 def test_extract_json(text):
     assert router.extract_json(text) == {"a": 1}

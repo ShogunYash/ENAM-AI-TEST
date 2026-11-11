@@ -59,8 +59,21 @@ def main() -> int:
                 bad += not ok
                 print(f"[{'ok' if ok else 'FAIL'}]   {sym:<11} {code}: BSE says {bse_name!r} vs {name!r} (sim {score:.2f})")
             time.sleep(1)
-    research = {r["nse_symbol"] for r in data.get("research", [])}
     known = {s["nse_symbol"] for s in data["portfolio"]}
+    with httpx.Client(headers=HEADERS, timeout=30, follow_redirects=True) as c:
+        for r_ in data.get("research", []):  # research names outside the portfolio carry their own BSE code
+            if r_["nse_symbol"] in known or "bse_scrip_code" not in r_:
+                continue
+            try:
+                rows = c.get(URL, params={**params, "strScrip": r_["bse_scrip_code"]}).json().get("Table", [])
+                bse_name = rows[0]["SLONGNAME"] if rows else None
+            except Exception as e:  # noqa: BLE001
+                bse_name = None
+                print(f"[FAIL] research {r_['nse_symbol']}: {e!r}")
+            bad += bse_name is None
+            print(f"[{'ok' if bse_name else 'FAIL'}]   research {r_['nse_symbol']:<9} {r_['bse_scrip_code']}: BSE says {bse_name!r}")
+            time.sleep(1)
+    research = {r["nse_symbol"] for r in data.get("research", [])}
     print(f"\nportfolio={len(data['portfolio'])} research={sorted(research)} "
           f"research-not-in-portfolio={sorted(research - known)}")
     return 1 if bad else 0
