@@ -7,6 +7,7 @@
   pushing to a new remote/branch, deploying, sending anything external, or deleting data. Commits and pushes to
   `main` for planned tasks are pre-approved.
 - Write commit messages that reference task IDs from `docs/PLAN.md` (e.g. "B3: results extractor").
+- **Before every push run `git branch --show-current`.** Antigravity shares this working tree and may leave it on `frontend/scaffold`; use `git push origin HEAD:main` only when HEAD is a fast-forward of main, and verify with `git rev-parse --short origin/main` afterwards. (A4/G1 commits once sat unpushed on that branch.)
 - Report honestly. If a live source or test fails, say so with the output; never fake a pass.
 
 ## Which skill when
