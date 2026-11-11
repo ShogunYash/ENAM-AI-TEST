@@ -7,3 +7,4 @@ node_modules/
 backend/data/raw/
 backend/data/cache/
 .claude/settings.local.json
+backend/data/finn.sqlite

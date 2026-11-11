@@ -22,6 +22,7 @@ Rules for every agent: `AGENTS.md`. API contract: `docs/CONTRACT.md`.
 | A2 contract | ✅ | `docs/CONTRACT.md`, `backend/app/models.py`, `docs/examples/` (16 mocks), `docs/openapi.json`, mock API (`app/main.py`), 32 contract tests green |
 | A3 rules | ✅ | `AGENTS.md` (tool-neutral) + `CLAUDE.md` |
 | A4 backend + LLM router | ✅ (live ping pending keys) | `backend/app/llm/{router,store,config,prompts,schemas}.py`, `config/models.yaml`, `prompts/ping.md`, `Dockerfile`; 48 tests green (mock transport: fallback, 429 cooldown, cache hit = 0 HTTP, corrective retry, input-size skip, ledger). `/stats/llm` serves the real ledger once any call exists. **Needs the user's free API keys in `.env`, then `uv run python -m scripts.ping_llm --list`** to fix the unverified model IDs |
+| B1 ingest | ✅ | `app/ingest/{bse,prices}.py`, `app/db.py`, `app/signals/eod.py`, `scripts/ingest.py`: 17/17 stocks, ~470 filings, 42 BSE subcategories (`docs/bse-subcategories.md`), 1,071 price bars; incremental + idempotent (re-run = 0 new); 63 tests green. PDF folder rule verified (Live for fresh, His for old). Next: B2 rule mapping built from the real subcategories |
 | A4b portfolio check | ✅ | `scripts/verify_portfolio.py`: all 15 BSE scrip codes match their company names |
 | A5 | ⏳ unblocked | Antigravity can start the frontend against `docs/examples/` and the mock API now |
 

@@ -39,7 +39,8 @@ Headers: User-Agent: <recent Chrome UA>
 ```
 - **Response:** `Table` is a list of filings and `Table1[0].ROWCNT` is the total count, so page until you have collected that many.
   - Useful fields: `NEWSID`, `SCRIP_CD`, `HEADLINE`, `NEWSSUB`, `CATEGORYNAME`, `SUBCATNAME`, `ATTACHMENTNAME`, `DissemDT` / `NEWS_DT`.
-- **PDF URL:** try `https://www.bseindia.com/xml-data/corpfiling/AttachLive/<ATTACHMENTNAME>` first, then fall back to `.../AttachHis/<ATTACHMENTNAME>`.
+- **PDF URL (verified in B1):** brand-new filings (under ~2 days) exist ONLY under `.../corpfiling/AttachLive/<ATTACHMENTNAME>`; filings older than ~50 days exist ONLY under `.../AttachHis/<ATTACHMENTNAME>`; in between both work. So try Live first, then His. `app.ingest.bse.resolve_pdf_url()` does this with a 1 KB range request.
+- **Ingest (B1):** `uv run python -m scripts.ingest` fills `backend/data/finn.sqlite` (filings + daily bars) incrementally and regenerates `docs/bse-subcategories.md`, the real list of the 42 (CATEGORYNAME, SUBCATNAME) pairs seen. Most subcategories are specific (e.g. "Resignation of Director", "Qualified Institutional Placement"), so rules can classify most filings. `finn.sqlite` is git-ignored until D1 force-adds the demo snapshot.
 - **Scrip codes:** hard-code them in `data/portfolio.json`. For unknown symbols, look up `https://api.bseindia.com/BseIndiaAPI/api/PeerSmartSearch/w?Type=SS&text=<SYMBOL>` (returns HTML; regex out the code) and cache the result.
 - **Category mapping:** see [taxonomy.md](taxonomy.md).
 
