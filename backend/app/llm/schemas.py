@@ -6,7 +6,9 @@ from __future__ import annotations
 
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
+
+from app.models import Category
 
 
 class Ping(BaseModel):
@@ -60,8 +62,81 @@ class PvDVerdicts(BaseModel):
     unresolved: list[PvDUnresolved] = []
 
 
+class ClassifiedFiling(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str
+    category: Category               # one of the 17 labels; anything else fails validation -> retry
+    confidence: float = Field(ge=0, le=1)
+
+
+class ClassificationBatch(BaseModel):
+    """prompt classify_batch (T1). Input `filings` is a JSON list of {id, headline, subcategory}."""
+    model_config = ConfigDict(extra="ignore")
+    items: list[ClassifiedFiling]
+
+
+class SoWhat(BaseModel):
+    """prompt so_what (T1). Over-long output fails validation (-> retry/fallback) instead of being cut,
+    so a number or its unit is never truncated. An empty string means 'no useful event' -> null in the API."""
+    model_config = ConfigDict(extra="ignore")
+    so_what: str = Field(max_length=70)
+
+
+class ResultSource(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    label: str                  # printed row label
+    printed: str                # exact signed cell text, e.g. "(1,234.5)"
+    unit: str                   # printed currency + scale, e.g. "₹ crore", "Rs. in lakhs"
+    page: int                   # physical 1-based PDF page
+
+
+class ResultCell(BaseModel):
+    """One metric x one period. `value_inr_cr` is set only when the figure was printed in INR crore;
+    other scales keep `source` and are converted deterministically by code (B3). For status "derived"
+    (EBITDA absent) the model supplies `components` only; the CALLER evaluates
+    PBT + finance cost + D&A - other income. The model never does arithmetic."""
+    model_config = ConfigDict(extra="ignore")
+    value_inr_cr: float | None = None
+    status: Literal["reported", "derived", "missing"] = "missing"
+    source: ResultSource | None = None
+    components: dict[str, ResultSource] | None = None
+
+
+class PeriodCells(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    current: ResultCell
+    previous: ResultCell
+    year_ago: ResultCell
+
+
+class ResultPeriods(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    current: str | None = None      # quarter-end date YYYY-MM-DD
+    previous: str | None = None
+    year_ago: str | None = None
+
+
+class ResultMetrics(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    revenue: PeriodCells
+    ebitda: PeriodCells
+    pbt: PeriodCells
+    pat: PeriodCells
+
+
+class ResultsExtraction(BaseModel):
+    """prompt results_extract (T2). Raw extraction only; QoQ/YoY, unit conversion and EBITDA derivation are code."""
+    model_config = ConfigDict(extra="ignore")
+    basis: Literal["consolidated", "standalone"] | None
+    periods: ResultPeriods
+    metrics: ResultMetrics
+
+
 SCHEMAS: dict[str, type[BaseModel]] = {
     "Ping": Ping,
     "GuidanceItems": GuidanceItems,
     "PvDVerdicts": PvDVerdicts,
+    "ClassificationBatch": ClassificationBatch,
+    "SoWhat": SoWhat,
+    "ResultsExtraction": ResultsExtraction,
 }

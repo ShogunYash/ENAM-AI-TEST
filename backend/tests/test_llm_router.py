@@ -195,3 +195,66 @@ def test_research_prompts_load_and_roundtrip(tmp_path):
 @pytest.mark.parametrize("text",['{"a":1}', '```json\n{"a":1}\n```', 'Sure! {"a":1} hope that helps'])
 def test_extract_json(text):
     assert router.extract_json(text) == {"a": 1}
+
+
+# ───────── Push prompts from ChatGPT (G3): classify_batch, so_what, results_extract ─────────
+def test_classify_prompt_labels_match_category_enum():
+    """Drift guard: the labels listed in the prompt must be exactly the contract's Category enum."""
+    import re
+
+    from app.models import Category
+    sys_text = load_prompt("classify_batch").system
+    labels = set(re.findall(r"^- ([a-z_&]+):", sys_text, re.MULTILINE))
+    assert labels == {c.value for c in Category}
+
+
+def test_classify_batch_roundtrip_and_bad_label_retries(tmp_path):
+    s = make_settings(tmp_path, gemini_api_key="g")
+    good = {"items": [{"id": "a1", "category": "results", "confidence": 0.95},
+                      {"id": "b2", "category": "credit_rating", "confidence": 0.75}]}
+    bad = {"items": [{"id": "a1", "category": "earnings", "confidence": 0.9}]}   # not a real label
+    replies = iter([json.dumps(bad), json.dumps(good)])
+    client, seen = client_for(lambda r: ok_response(next(replies)))
+    out = run_task("classify_batch", {"filings": json.dumps([{"id": "a1"}, {"id": "b2"}])},
+                   feature="push.classify", settings=s, client=client)
+    assert [i.category for i in out.items] == ["results", "credit_rating"] and len(seen) == 2
+
+
+def test_classify_confidence_must_be_0_to_1(tmp_path):
+    s = make_settings(tmp_path, gemini_api_key="g")
+    client, _ = client_for(lambda r: ok_response('{"items":[{"id":"a","category":"results","confidence":95}]}'))
+    with pytest.raises(LLMUnavailable):
+        run_task("classify_batch", {"filings": "[]"}, settings=s, client=client)
+
+
+def test_so_what_over_70_chars_is_rejected_not_truncated(tmp_path):
+    s = make_settings(tmp_path, gemini_api_key="g")
+    ok_line = "Executives to attend CLSA India Forum in Mumbai on 16 Nov"
+    assert len(ok_line) <= 70
+    replies = iter([json.dumps({"so_what": "x" * 71}), json.dumps({"so_what": ok_line})])
+    client, seen = client_for(lambda r: ok_response(next(replies)))
+    assert run_task("so_what", {"filing": "headline"}, settings=s, client=client).so_what == ok_line
+    assert len(seen) == 2          # the 71-char reply triggered a corrective retry
+
+
+def test_results_extract_parses_reported_derived_and_missing(tmp_path):
+    src = {"label": "Revenue from operations", "printed": "73,188", "unit": "₹ crore", "page": 8}
+    cell = {"value_inr_cr": 73188.0, "status": "reported", "source": src, "components": None}
+    miss = {"value_inr_cr": None, "status": "missing", "source": None, "components": None}
+    derived = {"value_inr_cr": None, "status": "derived", "source": None, "components": {
+        k: {"label": k, "printed": "1", "unit": "₹ crore", "page": 8}
+        for k in ("pbt", "finance_cost", "depreciation_amortisation", "other_income")}}
+    reply = {"basis": "consolidated",
+             "periods": {"current": "2026-09-30", "previous": "2026-06-30", "year_ago": "2025-09-30"},
+             "metrics": {"revenue": {"current": cell, "previous": cell, "year_ago": cell},
+                         "ebitda": {"current": derived, "previous": miss, "year_ago": miss},
+                         "pbt": {"current": miss, "previous": miss, "year_ago": miss},
+                         "pat": {"current": miss, "previous": miss, "year_ago": miss}}}
+    s = make_settings(tmp_path, gemini_api_key="g")
+    client, _ = client_for(lambda r: ok_response(json.dumps(reply)))
+    out = run_task("results_extract", {"results_pdf": "[page 8] ..."}, feature="push.results", settings=s,
+                   client=client)
+    assert out.basis == "consolidated" and out.metrics.revenue.current.source.page == 8
+    assert out.metrics.ebitda.current.status == "derived" and out.metrics.ebitda.current.value_inr_cr is None
+    assert set(out.metrics.ebitda.current.components) == {"pbt", "finance_cost", "depreciation_amortisation",
+                                                           "other_income"}
