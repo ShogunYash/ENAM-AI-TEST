@@ -11,7 +11,26 @@ investment agent for an Indian public-markets investor:
 
 Deadline **15 Nov 2026** (today 11 Nov). Graded on product sense, judgment, architecture, **cost efficiency**
 (routing, caching, chunking) — not completeness. "A demo that doesn't run is the worst outcome."
-Repo is greenfield (PDFs, README, `docs/CHALLENGE_SUMMARY.md`).
+Rules for every agent: `AGENTS.md`. API contract: `docs/CONTRACT.md`.
+
+## Status (updated 11 Nov 2026)
+| Task | Status | Notes |
+|---|---|---|
+| A0 feasibility | ✅ laptop / ⏭ cloud | BSE, screener.in and yfinance all pass from the laptop (`uv run backend/scripts/smoke_sources.py`). GitHub Actions is unavailable to the user, and a local run can't test cloud IPs, so **the cloud test moves to D2** via `GET /debug/sources` on Render |
+| A1 portfolio | ✅ (tweak pending, G1) | 15 stocks + 3 research names in `data/portfolio.json`. Review: no bank, IT-heavy, research set all in-portfolio, and TCS gives little numeric guidance → ChatGPT task G1 adds a bank and a pledging/corporate-action name, and swaps TCS for 1–2 non-IT names **outside** the portfolio |
+| A2 contract | ✅ | `docs/CONTRACT.md`, `backend/app/models.py`, `docs/examples/` (16 mocks), `docs/openapi.json`, mock API (`app/main.py`), 32 contract tests green |
+| A3 rules | ✅ | `AGENTS.md` (tool-neutral) + `CLAUDE.md` |
+| A4 next | ⏳ | backend scaffold → LLM router (Sonnet 5.5) + **A4b** `scripts/verify_portfolio.py` (assert BSE `SLONGNAME` matches each scrip code) |
+| A5 | ⏳ unblocked | Antigravity can start the frontend against `docs/examples/` and the mock API now |
+
+### Decisions added after the first plan
+- **Push ingest runs on the laptop** (proven), and the snapshot is committed. A cloud cron is optional. The real cloud-IP check is `/debug/sources` at deploy. If Render is blocked, unseen-ticker Pull degrades to "building from laptop", and pre-seeded tickers still work.
+- **Settings live client-side** (localStorage) and are sent as query params. There's no auth and no server state.
+- **Offline alerts:** the frontend recomputes volume/price alerts from `prices.json` (two comparisons). This is the one deliberate backend/frontend duplication, and it keeps thresholds live while the backend sleeps.
+- **Snapshot layout:** `frontend/public/data/{meta, companies, prices, digest-24h|3d|7d, stats}.json`, plus `filings/{id}.json` and `research/{SYM}.json`. The frontend loads the snapshot first, then the API.
+- **Research builds are asynchronous with polling.** `GET /research/{sym}` returns `status: building` with `progress[]` and the client polls every 3 s. **New idea:** the build progress ("Found 5 transcripts → extracting guidance 2/5 → verified 11/12 quotes") is shown as part of the UX, which also makes the grounding visible.
+- **Backend layout:** `backend/app/{models.py, main.py, api/, ingest/, pipeline/, signals/, research/, llm/, prompts/}`, `backend/config/models.yaml`, `backend/scripts/`, `backend/tests/`. The module names in §2 live under `backend/app/`.
+- **BSE reality (from A0):** most filings come in as `Company Update / General`, so the headline-regex and T1 batch steps carry more of the classification than first estimated.
 
 **Locked decisions:** Python (FastAPI) backend · TypeScript/React PWA frontend (UI only) · no hand-written Rust/C++ ·
 all in-app AI on **free** models · dev tools = Claude Code, ChatGPT (paid), Antigravity Pro.
@@ -39,7 +58,7 @@ cloud IPs; BSE has the same filings), voice, auth, real push notifications.
 ## 2. Architecture
 
 ```
- GitHub Actions cron (or laptop fallback)          Free LLMs (config-driven model IDs)
+ Laptop ingest (primary) / cron (optional)         Free LLMs (config-driven model IDs)
  ┌──────────────────────────────────────┐          Gemini free: Flash-Lite / Flash (+PDF input, +Search grounding)
  │ ingest: yfinance EOD · BSE announce- │          Groq free: short tasks only (8K TPM)
  │ ments · screener tables+doc links    │          OpenRouter :free: emergency fallback (50 req/day)
@@ -47,7 +66,7 @@ cloud IPs; BSE has the same filings), voice, auth, real push notifications.
  │ writes SNAPSHOT JSON ────────────────┼──► frontend/public/data/*.json  (Push works even if backend sleeps)
  └──────────────────────────────────────┘                       │
                                                                  │
- backend/ (FastAPI on Render free, Docker; keep-warm ping)       │
+ backend/app/ (FastAPI on Render free, Docker; keep-warm ping)   │
  ├─ ingest/    bse.py · prices.py · screener.py · docs.py (PDF download+cache)
  ├─ pipeline/  classify.py (T0 rules→T1 batch) · score.py · results_extract.py · mgmt_bio.py · oneliner.py
  ├─ signals/   eod.py (vol ratio vs 20d, % move) · alerts.py (user thresholds)
@@ -128,7 +147,7 @@ Every task follows `docs/CONTRACT.md` (schemas + endpoints + example JSON) and r
 | ID | Task | Owner / Model | Done when |
 |---|---|---|---|
 | D1 | Pre-seed portfolio + research names into committed SQLite snapshot; demo-mode serves cache if live source fails | Claude Code / Sonnet | app works with internet sources blocked |
-| D2 | Deploy: Render (Docker) + Cloudflare Pages/Vercel + GH Actions cron + 10-min keep-warm ping; secrets in env | Claude Code / Sonnet | public URLs work on phone |
+| D2 | Deploy: Render (Docker) + Cloudflare Pages/Vercel + keep-warm ping; secrets in env. **Run `GET /debug/sources` on Render (the cloud-IP test)** | Claude Code / Sonnet | public URLs work on phone; sources report known |
 | D3 | Cost panel (`/stats/llm`: calls, tokens, cache-hit %, calls per new ticker) | Claude Code (API) + Antigravity (UI) | numbers visible in app |
 | D4 | Polish: empty/loading/error states, density, dark mode; screenshot critique | Antigravity / Gemini Pro + ChatGPT critique | — |
 | D5 | AI-output QA: spot-check 10 results cards + 2 P-v-D reports | ChatGPT / top Thinking model as judge | issues fixed |
@@ -155,7 +174,7 @@ Every task follows `docs/CONTRACT.md` (schemas + endpoints + example JSON) and r
 ## 5. Risks → mitigations
 | Risk | Mitigation |
 |---|---|
-| Cloud IPs blocked (NSE certain, yfinance/BSE possible) | A0 test day 1; ingest can run on laptop and commit snapshot; NSE off critical path |
+| Cloud IPs blocked (NSE certain, yfinance/BSE possible) | Laptop works (A0 ✅). Push ingest runs on the laptop and commits the snapshot. The Render cloud-IP check happens at D2 via `/debug/sources`. NSE is off the critical path |
 | Render free sleeps / ephemeral disk | Push served from static snapshot JSON; keep-warm ping; SQLite snapshot committed |
 | Free quota exhausted when graders try unseen tickers | per-document-hash cache; ~6 LLM calls per new ticker; show "cached" state; fallback chain |
 | Grounding violations | quote verification drops unverified claims |

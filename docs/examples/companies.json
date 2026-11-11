@@ -1,0 +1,107 @@
+[
+  {
+    "symbol": "TCS",
+    "bse_code": "532540",
+    "name": "Tata Consultancy Services",
+    "sector": "IT services",
+    "in_portfolio": true
+  },
+  {
+    "symbol": "INFY",
+    "bse_code": "500209",
+    "name": "Infosys",
+    "sector": "IT services",
+    "in_portfolio": true
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "bse_code": "500034",
+    "name": "Bajaj Finance",
+    "sector": "Consumer lending",
+    "in_portfolio": true
+  },
+  {
+    "symbol": "RELIANCE",
+    "bse_code": "500325",
+    "name": "Reliance Industries",
+    "sector": "Energy and diversified businesses",
+    "in_portfolio": true
+  },
+  {
+    "symbol": "LT",
+    "bse_code": "500510",
+    "name": "Larsen & Toubro",
+    "sector": "Engineering and construction",
+    "in_portfolio": true
+  },
+  {
+    "symbol": "SUNPHARMA",
+    "bse_code": "524715",
+    "name": "Sun Pharmaceutical Industries",
+    "sector": "Pharmaceuticals",
+    "in_portfolio": true
+  },
+  {
+    "symbol": "TITAN",
+    "bse_code": "500114",
+    "name": "Titan Company",
+    "sector": "Jewellery and retail",
+    "in_portfolio": true
+  },
+  {
+    "symbol": "ULTRACEMCO",
+    "bse_code": "532538",
+    "name": "UltraTech Cement",
+    "sector": "Cement",
+    "in_portfolio": true
+  },
+  {
+    "symbol": "TATASTEEL",
+    "bse_code": "500470",
+    "name": "Tata Steel",
+    "sector": "Steel",
+    "in_portfolio": true
+  },
+  {
+    "symbol": "PERSISTENT",
+    "bse_code": "533179",
+    "name": "Persistent Systems",
+    "sector": "IT services",
+    "in_portfolio": true
+  },
+  {
+    "symbol": "ASTRAL",
+    "bse_code": "532830",
+    "name": "Astral",
+    "sector": "Building products",
+    "in_portfolio": true
+  },
+  {
+    "symbol": "KEI",
+    "bse_code": "517569",
+    "name": "KEI Industries",
+    "sector": "Wires and cables",
+    "in_portfolio": true
+  },
+  {
+    "symbol": "CERA",
+    "bse_code": "532443",
+    "name": "Cera Sanitaryware",
+    "sector": "Sanitaryware",
+    "in_portfolio": true
+  },
+  {
+    "symbol": "GARFIBRES",
+    "bse_code": "509557",
+    "name": "Garware Technical Fibres",
+    "sector": "Technical textiles",
+    "in_portfolio": true
+  },
+  {
+    "symbol": "FINEORG",
+    "bse_code": "541557",
+    "name": "Fine Organic Industries",
+    "sector": "Specialty chemicals",
+    "in_portfolio": true
+  }
+]

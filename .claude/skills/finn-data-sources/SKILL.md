@@ -7,7 +7,8 @@ description: Reference for FINN's external data sources — BSE corporate announ
 
 Plumbing, not the product: make it reliable, cached and polite, then move on.
 
-**A0 results (11 Nov 2026, from a laptop; cloud-IP run still pending):** BSE announcements, screener.in
+**A0 results (11 Nov 2026, from a laptop):** GitHub Actions isn't available, so the cloud-IP check happens at deploy
+via `GET /debug/sources` on Render. Push ingest runs on the laptop and commits the snapshot. BSE announcements, screener.in
 and yfinance all worked. Confirmed facts:
 - BSE: the endpoint and headers below work. Response keys include `NEWSID, SCRIP_CD, HEADLINE, NEWSSUB, CATEGORYNAME, SUBCATNAME, ATTACHMENTNAME, DissemDT, NEWS_DT, PDFFLAG, QUARTER_ID, NSURL, AUDIO_VIDEO_FILE, Investor_Presentation, ROWCNT in Table1`. `AttachLive/<name>` served real PDFs.
 - BSE categories seen: `Company Update` (subcats General, Analyst / Investor Meet, Earnings Call Transcript, Credit Rating, Newspaper Publication, Acquisition, Investor Presentation, Press Release / Media Release), `Result / Financial Results`, `Board Meeting` (Outcome of Board Meeting, Board Meeting). See taxonomy.md.

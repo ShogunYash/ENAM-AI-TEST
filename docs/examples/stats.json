@@ -1,0 +1,73 @@
+{
+  "as_of": "2026-11-11T18:30:00+05:30",
+  "totals": {
+    "calls": 63,
+    "tokens_in": 812000,
+    "tokens_out": 41500,
+    "cache_hits": 118,
+    "cache_hit_pct": 65.2,
+    "spend_inr": 0.0
+  },
+  "by_feature": [
+    {
+      "key": "push.classify",
+      "calls": 6,
+      "tokens_in": 21000,
+      "tokens_out": 3200,
+      "cache_hits": 40
+    },
+    {
+      "key": "push.results",
+      "calls": 9,
+      "tokens_in": 310000,
+      "tokens_out": 6100,
+      "cache_hits": 12
+    },
+    {
+      "key": "push.mgmt_bio",
+      "calls": 3,
+      "tokens_in": 4500,
+      "tokens_out": 900,
+      "cache_hits": 2
+    },
+    {
+      "key": "pull.guidance",
+      "calls": 30,
+      "tokens_in": 420000,
+      "tokens_out": 24000,
+      "cache_hits": 55
+    },
+    {
+      "key": "pull.pvd",
+      "calls": 15,
+      "tokens_in": 56500,
+      "tokens_out": 7300,
+      "cache_hits": 9
+    }
+  ],
+  "by_model": [
+    {
+      "key": "gemini-flash-lite",
+      "calls": 8,
+      "tokens_in": 24000,
+      "tokens_out": 3800,
+      "cache_hits": 41
+    },
+    {
+      "key": "gemini-flash",
+      "calls": 52,
+      "tokens_in": 780000,
+      "tokens_out": 36400,
+      "cache_hits": 75
+    },
+    {
+      "key": "groq/gpt-oss-120b",
+      "calls": 3,
+      "tokens_in": 8000,
+      "tokens_out": 1300,
+      "cache_hits": 2
+    }
+  ],
+  "avg_calls_new_ticker": 6.4,
+  "grounding_dropped": 3
+}

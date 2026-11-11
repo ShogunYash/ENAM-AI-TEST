@@ -1,0 +1,333 @@
+{
+  "symbol": "INFY",
+  "name": "Infosys Ltd",
+  "status": "ready",
+  "progress": [
+    "Loaded financial tables",
+    "Found 5 concall transcripts",
+    "Extracted guidance 5/5",
+    "Matched 4 promises to outcomes",
+    "Verified 11/12 quotes (1 dropped)"
+  ],
+  "generated_at": "2026-11-11T18:30:00+05:30",
+  "sources": [
+    {
+      "doc_id": "concall_Q2FY26",
+      "kind": "concall",
+      "period": "Q2 FY26",
+      "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=example.pdf",
+      "pages": 22
+    },
+    {
+      "doc_id": "concall_Q3FY26",
+      "kind": "concall",
+      "period": "Q3 FY26",
+      "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=example.pdf",
+      "pages": 22
+    },
+    {
+      "doc_id": "concall_Q4FY26",
+      "kind": "concall",
+      "period": "Q4 FY26",
+      "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=example.pdf",
+      "pages": 22
+    },
+    {
+      "doc_id": "concall_Q1FY27",
+      "kind": "concall",
+      "period": "Q1 FY27",
+      "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=example.pdf",
+      "pages": 22
+    },
+    {
+      "doc_id": "concall_Q2FY27",
+      "kind": "concall",
+      "period": "Q2 FY27",
+      "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=example.pdf",
+      "pages": 22
+    },
+    {
+      "doc_id": "ar_FY26",
+      "kind": "annual_report",
+      "period": "FY26",
+      "url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/example.pdf",
+      "pages": 312
+    }
+  ],
+  "snapshot": {
+    "latest_period": "Q2 FY27",
+    "headline": [
+      {
+        "name": "Revenue (TTM)",
+        "value": 171200.0,
+        "unit": "INR_CR",
+        "yoy_pct": 6.1
+      },
+      {
+        "name": "EBITDA margin",
+        "value": 24.6,
+        "unit": "pct",
+        "yoy_pct": null
+      },
+      {
+        "name": "PAT (TTM)",
+        "value": 27900.0,
+        "unit": "INR_CR",
+        "yoy_pct": 5.3
+      }
+    ],
+    "series": {
+      "years": [
+        "FY22",
+        "FY23",
+        "FY24",
+        "FY25",
+        "FY26"
+      ],
+      "revenue": [
+        121641.0,
+        146767.0,
+        153670.0,
+        162990.0,
+        168400.0
+      ],
+      "ebitda_margin": [
+        27.0,
+        24.4,
+        24.1,
+        24.3,
+        24.5
+      ],
+      "pat": [
+        22110.0,
+        24108.0,
+        26248.0,
+        26750.0,
+        27400.0
+      ],
+      "cfo": [
+        23224.0,
+        22467.0,
+        25210.0,
+        26900.0,
+        28100.0
+      ],
+      "borrowings": [
+        5325.0,
+        8299.0,
+        8359.0,
+        8100.0,
+        7900.0
+      ]
+    },
+    "ratios": {
+      "roce": 37.5,
+      "roe": 29.1,
+      "debt_equity": 0.09,
+      "cash_conversion": 1.03,
+      "working_capital_days": 61.0
+    }
+  },
+  "pvd": [
+    {
+      "metric": "FY26 revenue growth (cc)",
+      "said_in": "Q2 FY26",
+      "horizon": "FY26",
+      "promised": {
+        "text": "Guided 2–3% constant-currency revenue growth for FY26",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "concall_Q2FY26",
+            "page": 4,
+            "quote": "we are revising our revenue growth guidance to 2 to 3 percent in constant currency"
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "FY26 closed at 2.6% cc growth",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "concall_Q4FY26",
+            "page": 3,
+            "quote": "for the full year we grew 2.6 percent in constant currency"
+          }
+        ],
+        "verified": true
+      },
+      "actual": {
+        "value": 2.6,
+        "unit": "pct",
+        "source": "concall_Q4FY26"
+      },
+      "verdict": "met",
+      "reason": "Guided 2–3% cc, delivered 2.6% — within band (Q4 FY26 call, p.3)"
+    },
+    {
+      "metric": "Operating margin band",
+      "said_in": "Q3 FY26",
+      "horizon": "FY26",
+      "promised": {
+        "text": "Operating margin guided at 20–22%",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "concall_Q3FY26",
+            "page": 5,
+            "quote": "operating margin guidance remains at 20 to 22 percent"
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "FY26 operating margin 21.1%",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "concall_Q4FY26",
+            "page": 4,
+            "quote": "operating margin for the year was 21.1 percent"
+          }
+        ],
+        "verified": true
+      },
+      "actual": {
+        "value": 21.1,
+        "unit": "pct",
+        "source": "concall_Q4FY26"
+      },
+      "verdict": "met",
+      "reason": "21.1% vs 20–22% band"
+    },
+    {
+      "metric": "Large-deal TCV",
+      "said_in": "Q4 FY26",
+      "horizon": "FY27",
+      "promised": {
+        "text": "Expected large-deal wins to sustain above $2.5bn per quarter",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "concall_Q4FY26",
+            "page": 8,
+            "quote": "we expect large deal wins to remain above 2.5 billion dollars"
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "Q1 FY27 large deals at $1.9bn",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "concall_Q1FY27",
+            "page": 6,
+            "quote": "large deal TCV for the quarter was 1.9 billion dollars"
+          }
+        ],
+        "verified": true
+      },
+      "actual": {
+        "value": 1.9,
+        "unit": "USD_bn",
+        "source": "concall_Q1FY27"
+      },
+      "verdict": "missed",
+      "reason": "Promised >$2.5bn/qtr; Q1 FY27 printed $1.9bn"
+    },
+    {
+      "metric": "Fresher hiring",
+      "said_in": "Q1 FY26",
+      "horizon": "FY26",
+      "promised": {
+        "text": "Planned to onboard 20,000 freshers in FY26",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "concall_Q2FY26",
+            "page": 11,
+            "quote": "we plan to onboard about 20000 freshers this year"
+          }
+        ],
+        "verified": true
+      },
+      "outcome": null,
+      "actual": null,
+      "verdict": "quietly_dropped",
+      "reason": "Not mentioned in Q3, Q4 FY26 or Q1–Q2 FY27 calls"
+    },
+    {
+      "metric": "FY27 revenue growth (cc)",
+      "said_in": "Q1 FY27",
+      "horizon": "FY27",
+      "promised": {
+        "text": "FY27 guidance of 3–5% cc revenue growth",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "concall_Q1FY27",
+            "page": 3,
+            "quote": "we are guiding for 3 to 5 percent growth in constant currency for the year"
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "Guidance narrowed to 3.5–5%",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "concall_Q2FY27",
+            "page": 3,
+            "quote": "we are narrowing our guidance to 3.5 to 5 percent"
+          }
+        ],
+        "verified": true
+      },
+      "actual": null,
+      "verdict": "raised",
+      "reason": "Lower end raised 3%→3.5% in Q2 FY27 call"
+    }
+  ],
+  "extra": {
+    "bull_bear": {
+      "bull": [
+        {
+          "text": "Cash conversion >100% for five years",
+          "kind": "judgment",
+          "sources": [
+            {
+              "doc_id": "ar_FY26",
+              "page": 188,
+              "quote": "free cash flow conversion was over 100 percent of net profit"
+            }
+          ],
+          "verified": true
+        }
+      ],
+      "bear": [
+        {
+          "text": "Large-deal momentum slowed in Q1 FY27",
+          "kind": "judgment",
+          "sources": [
+            {
+              "doc_id": "concall_Q1FY27",
+              "page": 6,
+              "quote": "large deal TCV for the quarter was 1.9 billion dollars"
+            }
+          ],
+          "verified": true
+        }
+      ]
+    }
+  },
+  "gaps": [
+    "Annual report FY27 not yet published"
+  ],
+  "cost": {
+    "llm_calls": 7,
+    "cached": true
+  }
+}
