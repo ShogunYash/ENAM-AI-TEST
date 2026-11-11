@@ -28,5 +28,11 @@
 
 ## Environment notes
 - Windows 11. Use the `uv` runner (Python 3.14 is installed, the project targets 3.12+). No Docker, `act`, `gh` CLI or WSL distro is available.
+- **`ssh station`** (user's Linux box, key-based, 32 cores / 125 GB RAM / ~875 GB free) is available as a Linux test environment.
+  - It has Python 3.10, git, node and docker, but **the user isn't in the docker group** (permission denied; don't use sudo), and port 8765 is used by something else.
+  - It can't clone the (private) repo. Ship files with `git archive HEAD backend data docs | ssh station 'tar -x -C /tmp/finn-a4'`.
+  - Python 3.12 comes from `uv` installed in a throwaway venv, with `UV_CACHE_DIR` and `UV_PYTHON_INSTALL_DIR` under `/tmp/finn-a4`. A previous run left `/tmp/finn-a4/.tool` for that. Delete `/tmp/finn-a4` to clean up.
+  - A4 results there: 48/48 tests pass, `smoke_sources.py` passes (BSE, screener.in, yfinance), and the API idles at about 60 MB RSS.
+  - It is **not** a cloud datacenter IP, so it doesn't replace the Render `/debug/sources` check.
 - GitHub Actions can't be triggered from here. **Push ingest runs on the laptop** and commits the snapshot.
   The cloud-IP check happens at deploy via `GET /debug/sources`.
