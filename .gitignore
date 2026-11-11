@@ -1,0 +1,6 @@
+.env
+.venv/
+__pycache__/
+node_modules/
+backend/data/raw/
+.claude/settings.local.json

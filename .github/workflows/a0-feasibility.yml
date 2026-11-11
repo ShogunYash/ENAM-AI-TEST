@@ -1,0 +1,20 @@
+name: A0 feasibility (cloud IP check)
+
+# Manual only. Answers: do BSE / screener.in / yfinance work from GitHub's cloud IPs?
+on:
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv run backend/scripts/smoke_sources.py
+        continue-on-error: true
+        id: smoke
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a0-raw
+          path: backend/data/raw/a0/

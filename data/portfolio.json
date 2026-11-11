@@ -1,0 +1,139 @@
+{
+  "as_of": "2026-11-11",
+  "portfolio": [
+    {
+      "nse_symbol": "TCS",
+      "bse_scrip_code": "532540",
+      "name": "Tata Consultancy Services",
+      "sector": "IT services",
+      "source": "https://www.screener.in/company/TCS/consolidated/"
+    },
+    {
+      "nse_symbol": "INFY",
+      "bse_scrip_code": "500209",
+      "name": "Infosys",
+      "sector": "IT services",
+      "source": "https://www.screener.in/company/INFY/consolidated/"
+    },
+    {
+      "nse_symbol": "BAJFINANCE",
+      "bse_scrip_code": "500034",
+      "name": "Bajaj Finance",
+      "sector": "Consumer lending",
+      "source": "https://www.screener.in/company/BAJFINANCE/consolidated/"
+    },
+    {
+      "nse_symbol": "RELIANCE",
+      "bse_scrip_code": "500325",
+      "name": "Reliance Industries",
+      "sector": "Energy and diversified businesses",
+      "source": "https://www.screener.in/company/RELIANCE/consolidated/"
+    },
+    {
+      "nse_symbol": "LT",
+      "bse_scrip_code": "500510",
+      "name": "Larsen & Toubro",
+      "sector": "Engineering and construction",
+      "source": "https://www.screener.in/company/LT/consolidated/"
+    },
+    {
+      "nse_symbol": "SUNPHARMA",
+      "bse_scrip_code": "524715",
+      "name": "Sun Pharmaceutical Industries",
+      "sector": "Pharmaceuticals",
+      "source": "https://www.screener.in/company/SUNPHARMA/consolidated/"
+    },
+    {
+      "nse_symbol": "TITAN",
+      "bse_scrip_code": "500114",
+      "name": "Titan Company",
+      "sector": "Jewellery and retail",
+      "source": "https://www.screener.in/company/TITAN/consolidated/"
+    },
+    {
+      "nse_symbol": "ULTRACEMCO",
+      "bse_scrip_code": "532538",
+      "name": "UltraTech Cement",
+      "sector": "Cement",
+      "source": "https://www.screener.in/company/ULTRACEMCO/consolidated/"
+    },
+    {
+      "nse_symbol": "TATASTEEL",
+      "bse_scrip_code": "500470",
+      "name": "Tata Steel",
+      "sector": "Steel",
+      "source": "https://www.screener.in/company/TATASTEEL/consolidated/"
+    },
+    {
+      "nse_symbol": "PERSISTENT",
+      "bse_scrip_code": "533179",
+      "name": "Persistent Systems",
+      "sector": "IT services",
+      "source": "https://www.screener.in/company/PERSISTENT/consolidated/"
+    },
+    {
+      "nse_symbol": "ASTRAL",
+      "bse_scrip_code": "532830",
+      "name": "Astral",
+      "sector": "Building products",
+      "source": "https://www.screener.in/company/ASTRAL/consolidated/"
+    },
+    {
+      "nse_symbol": "KEI",
+      "bse_scrip_code": "517569",
+      "name": "KEI Industries",
+      "sector": "Wires and cables",
+      "source": "https://www.screener.in/company/KEI/consolidated/"
+    },
+    {
+      "nse_symbol": "CERA",
+      "bse_scrip_code": "532443",
+      "name": "Cera Sanitaryware",
+      "sector": "Sanitaryware",
+      "source": "https://www.screener.in/company/CERA/consolidated/"
+    },
+    {
+      "nse_symbol": "GARFIBRES",
+      "bse_scrip_code": "509557",
+      "name": "Garware Technical Fibres",
+      "sector": "Technical textiles",
+      "source": "https://www.screener.in/company/GARFIBRES/consolidated/"
+    },
+    {
+      "nse_symbol": "FINEORG",
+      "bse_scrip_code": "541557",
+      "name": "Fine Organic Industries",
+      "sector": "Specialty chemicals",
+      "source": "https://www.screener.in/company/FINEORG/consolidated/"
+    }
+  ],
+  "research": [
+    {
+      "nse_symbol": "INFY",
+      "focus": "Revenue growth guidance",
+      "transcript_index": "https://www.screener.in/company/INFY/consolidated/#documents"
+    },
+    {
+      "nse_symbol": "TCS",
+      "focus": "Demand and margin commentary",
+      "transcript_index": "https://www.screener.in/company/TCS/consolidated/#documents"
+    },
+    {
+      "nse_symbol": "BAJFINANCE",
+      "focus": "Loan growth and credit costs",
+      "transcript_index": "https://www.screener.in/company/BAJFINANCE/consolidated/#documents"
+    }
+  ],
+  "demo_filings": [
+    {
+      "nse_symbol": "CERA",
+      "date": "2026-11-04",
+      "event": "Quarterly results and investor communication"
+    },
+    {
+      "nse_symbol": "BAJFINANCE",
+      "date": "2026-11-10",
+      "event": "Warrant allotment"
+    }
+  ]
+}
