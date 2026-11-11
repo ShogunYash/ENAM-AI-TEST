@@ -1,122 +1,84 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import React, { useState } from 'react'
+import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
+import { MobileShell, NavTab } from '@/components/layout/MobileShell'
+import { TodayScreen } from '@/components/screens/TodayScreen'
+import { ThresholdsScreen } from '@/components/screens/ThresholdsScreen'
+import { ResearchScreen } from '@/components/screens/ResearchScreen'
+import { StatsScreen } from '@/components/screens/StatsScreen'
+import { AskFinnSheet } from '@/components/common/AskFinnSheet'
+import { getDigestData } from '@/api/client'
+import { useSettings } from '@/lib/settings'
+import { Filing } from '@/api/types'
+import { WindowOption } from '@/components/today/WindowPicker'
 
-function App() {
-  const [count, setCount] = useState(0)
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 30, // 30s
+      refetchOnWindowFocus: false,
+    },
+  },
+})
+
+function FinnApp() {
+  const { settings } = useSettings()
+  const [activeTab, setActiveTab] = useState<NavTab>('today')
+  const [windowOption, setWindowOption] = useState<WindowOption>(
+    (settings.default_window as WindowOption) || '24h'
+  )
+  const [selectedFilingForAsk, setSelectedFilingForAsk] = useState<Filing | null>(null)
+
+  const {
+    data: digestResult,
+    isLoading,
+    isFetching,
+    refetch,
+  } = useQuery({
+    queryKey: ['digest', windowOption, settings.volume_multiple, settings.price_move_pct],
+    queryFn: () => getDigestData(windowOption, settings),
+  })
+
+  const needsYouCount = digestResult?.digest?.needs_you?.length || 0
+  const alertCount = digestResult?.digest?.alerts?.length || 0
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <MobileShell
+      activeTab={activeTab}
+      onTabChange={setActiveTab}
+      needsYouCount={needsYouCount}
+      alertCount={alertCount}
+    >
+      {activeTab === 'today' && (
+        <TodayScreen
+          digestResult={digestResult || null}
+          isLoading={isLoading}
+          isRefreshing={isFetching}
+          windowOption={windowOption}
+          onWindowChange={setWindowOption}
+          onRefresh={() => refetch()}
+          onAskFinn={(filing) => setSelectedFilingForAsk(filing)}
+        />
+      )}
 
-      <div className="ticks"></div>
+      {activeTab === 'research' && <ResearchScreen />}
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      {activeTab === 'thresholds' && <ThresholdsScreen />}
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      {activeTab === 'stats' && <StatsScreen />}
+
+      {/* Ask FINN Copilot Bottom Sheet */}
+      <AskFinnSheet
+        filing={selectedFilingForAsk}
+        onClose={() => setSelectedFilingForAsk(null)}
+      />
+    </MobileShell>
   )
 }
 
-export default App
+export default function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <FinnApp />
+    </QueryClientProvider>
+  )
+}
