@@ -6,6 +6,7 @@ import {
   SnapshotMeta,
   Settings,
   Alert,
+  Research,
 } from './types'
 
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8000'
@@ -15,6 +16,11 @@ export interface DigestResult {
   source: 'live' | 'snapshot'
   asOf: string
   isReachable: boolean
+}
+
+export interface ResearchResult {
+  data: Research
+  source: 'live' | 'snapshot'
 }
 
 // Timeout fetch helper to ensure fast fallback if backend is offline
@@ -81,6 +87,67 @@ export async function fetchFilingDetail(id: string): Promise<Filing | null> {
   } catch {}
 
   return null
+}
+
+export async function fetchResearchData(symbol: string): Promise<ResearchResult> {
+  const sym = symbol.toUpperCase().trim()
+
+  // 1. Try live API
+  try {
+    const liveRes = await fetchWithTimeout(`${API_BASE}/research/${sym}`, {}, 2000)
+    if (liveRes.ok) {
+      const data = await liveRes.json()
+      return { data, source: 'live' }
+    }
+  } catch (err) {
+    // Live API unreachable, fall back to snapshot
+  }
+
+  // 2. Try snapshot file
+  try {
+    const snapRes = await fetch(`/data/research/${sym}.json`)
+    if (snapRes.ok) {
+      const data = await snapRes.json()
+      return { data, source: 'snapshot' }
+    }
+  } catch {}
+
+  // 3. Fallback building state
+  try {
+    const buildRes = await fetch('/data/research/building.json')
+    if (buildRes.ok) {
+      const buildData = await buildRes.json()
+      return {
+        data: {
+          ...buildData,
+          symbol: sym,
+        },
+        source: 'snapshot',
+      }
+    }
+  } catch {}
+
+  return {
+    data: {
+      symbol: sym,
+      name: null,
+      status: 'building',
+      progress: [
+        'Resolving symbol',
+        'Loaded financial tables',
+        'Found 4 concall transcripts',
+        'Extracting guidance 2/4…',
+      ],
+      generated_at: null,
+      sources: [],
+      snapshot: null,
+      pvd: [],
+      extra: null,
+      gaps: ['Annual report not yet published'],
+      cost: { llm_calls: 2, cached: false },
+    },
+    source: 'snapshot',
+  }
 }
 
 /**

@@ -16,6 +16,14 @@ export type PriceReaction = components['schemas']['PriceReaction']
 export type PriceSnapshot = components['schemas']['PriceSnapshot']
 export type Company = components['schemas']['Company']
 
+export type Research = components['schemas']['Research']
+export type PvDItem = components['schemas']['PvDItem']
+export type Claim = components['schemas']['Claim']
+export type Source = components['schemas']['Source']
+export type SourceDoc = components['schemas']['SourceDoc']
+export type Verdict = components['schemas']['Verdict']
+export type FinancialSnapshot = components['schemas']['FinancialSnapshot']
+
 export interface SnapshotMeta {
   as_of: string
   portfolio_size: number
