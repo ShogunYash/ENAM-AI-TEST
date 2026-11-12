@@ -1,19 +1,21 @@
-# Covering email outline
-
-To: assessment@enam.com  
+To: assessment@enam.com
 Subject: IIT Delhi – AI Engineer - 2027
 
 Hi ENAM team,
 
-**Try FINN on your phone:** <demo URL> · **GitHub:** <reviewer-accessible repo URL> · **AI build history:** <scrubbed history URL>
+Demo (open on a phone): <demo URL> · GitHub: <repo URL> · AI build history: <history URL>
 
-1. **What I built.** “FINN helps an investor see which filings across a 17-stock portfolio deserve attention today. Pick a time window, open a material event, and follow it to the exchange filing.” Add one sentence on the strongest research example that works in the submitted build, with its ticker and the exact path to the evidence.
-2. **A decision and its cost.** “In one ingestion run, FINN classified 468 filings. Rules handled 84.6%; the remainder took three batched model calls.” Explain why that matters to the reader: repeated paperwork can be handled cheaply while a model is available for ambiguous headlines. Describe one case where a human can still inspect the source.
-3. **One trade-off from testing.** “In an Infosys results fact sheet, the prior-year quarter appeared before the previous quarter. The profit row also excluded non-controlling interests. That test shaped how I check the period and accounting basis before showing a number.” Mention the production extraction approach only after verifying it in the submitted build.
-4. **What I left out.** Name one deliberate scope cut, such as voice or real-time notifications, and the investor workflow that received that time.
-5. **Where I’d take it next.** Evaluate research judgments against analyst-labelled examples. Give one concrete test: can FINN distinguish an improvement in adjusted segment margin from a decline in reported group margin?
+I built FINN for an investor following 17 Indian companies. Open Today, choose a filing window, and tap a results card to compare the quarter with the previous quarter and a year earlier. For company research, open KPIL and follow the guidance back to management’s words.
 
-Thanks,  
+In one run, FINN classified 468 BSE filings. Rules handled 396 (84.6%). Three batched model calls handled the other 72. On a separate set of 90 filings, the model agreed with the rules 87.8% of the time. Reviewing disagreements exposed an acquisition of a majority stake announced in a press release, and I updated the rules.
+
+FINN extracted 17 quarterly results filings from PDFs. Fifteen passed all nine comparisons with Screener within 2%: revenue, PBT and PAT for three quarters. Two were flagged. A separate ten-card review found one incorrect prior-year EBITDA and three cards with recoverable EBITDA missing.
+
+I pre-built four research reports. KPIL raised its FY26 growth target from 20–25% to 25% or more. Consolidated revenue subsequently grew 21.6%. When management said it had “fully delivered,” it was referring back to the original band. Keeping both versions lets the investor judge each promise in context.
+
+FINN checks each quoted passage against a source page, requires every number in the quotation to appear there, and drops unsupported quotations. Table-derived figures have separate references. Testing found that a quote can pass this check while referring to the wrong business or speaker; those evidence checks are my next priority.
+
+The ledger records ₹0 in model API spend. The build uses free Gemini, Groq and OpenRouter routes and a local gpt-oss-20b on a GPU. Daily per-model Gemini quotas limit live research on unseen tickers. Screener access is for personal, non-commercial use. I left voice and push notifications out to focus on filing triage and research evidence.
+
+Thanks,
 <name>
-
-Author note: replace the links and research example after the phone demo check. The classification figures above describe the recorded B2 run. Add spend or cache-hit figures only from the submission ledger.

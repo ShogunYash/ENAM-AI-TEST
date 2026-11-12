@@ -645,6 +645,29 @@
             "type": "array",
             "title": "Links",
             "description": "Web sources used for the bio (push-side enrichment)"
+          },
+          "effective": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effective",
+            "description": "YYYY-MM-DD the change takes effect, as stated in the filing"
+          },
+          "background_source": {
+            "type": "string",
+            "enum": [
+              "filing",
+              "web",
+              "none"
+            ],
+            "title": "Background Source",
+            "description": "Where `background` came from. The UI says 'From the filing' / 'From the web' / nothing.",
+            "default": "none"
           }
         },
         "additionalProperties": false,

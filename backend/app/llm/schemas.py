@@ -132,6 +132,19 @@ class ResultsExtraction(BaseModel):
     metrics: ResultMetrics
 
 
+class MgmtBio(BaseModel):
+    """prompt mgmt_bio (T2). Identity/role/date come ONLY from the filing; background from the filing, else supplied web
+    context, else empty. Over-long lines fail validation (-> retry) instead of being cut."""
+    model_config = ConfigDict(extra="ignore")
+    person: str = Field(min_length=2)
+    role: str = Field(min_length=2)
+    change: Literal["appointed", "resigned", "retired"]
+    effective: str | None = Field(default=None, pattern=r"^\d{4}-\d{2}-\d{2}$")
+    background: list[str] = Field(default_factory=list, max_length=3)
+    background_source: Literal["filing", "web", "none"] = "none"
+    links: list[str] = Field(default_factory=list)
+
+
 SCHEMAS: dict[str, type[BaseModel]] = {
     "Ping": Ping,
     "GuidanceItems": GuidanceItems,
@@ -139,4 +152,5 @@ SCHEMAS: dict[str, type[BaseModel]] = {
     "ClassificationBatch": ClassificationBatch,
     "SoWhat": SoWhat,
     "ResultsExtraction": ResultsExtraction,
+    "MgmtBio": MgmtBio,
 }

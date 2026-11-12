@@ -10,6 +10,7 @@ from app import models as m
 from app.ingest import bse
 from app.models import Category as C
 from app.models import Priority as P
+from app.pipeline import mgmt_bio
 from app.pipeline import results as R
 from app.pipeline import score as S
 from app.signals import alerts as A
@@ -64,6 +65,8 @@ def attach_enrichments(filings: list[m.Filing]) -> None:
         f.enrichment = card
         if isinstance(card, m.ResultsCard) and not f.so_what:
             f.so_what = R.so_what(card)
+        elif isinstance(card, m.BioCard) and not f.so_what:
+            f.so_what = mgmt_bio.so_what(card)
 
 
 def resolve_window(label: str, now: datetime, start: datetime | None, end: datetime | None) -> m.DigestWindow:

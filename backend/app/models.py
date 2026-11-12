@@ -127,6 +127,9 @@ class BioCard(Model):
     change: Literal["appointed", "resigned", "retired"]
     background: list[str] = Field(max_length=3, description="≤3 short lines on prior roles/education")
     links: list[str] = Field(description="Web sources used for the bio (push-side enrichment)")
+    effective: str | None = Field(default=None, description="YYYY-MM-DD the change takes effect, as stated in the filing")
+    background_source: Literal["filing", "web", "none"] = Field(
+        default="none", description="Where `background` came from. The UI says 'From the filing' / 'From the web' / nothing.")
 
 
 class OneLiner(Model):
