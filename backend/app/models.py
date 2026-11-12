@@ -342,6 +342,8 @@ class LlmStats(Model):
 class Health(Model):
     ok: bool
     version: str
+    mode: Literal["live", "mock"] = Field(default="live", description="'mock' = the API is serving illustrative fixtures "
+                                          "(no ingested database). The UI must NOT label mock data LIVE.")
     snapshot_as_of: datetime | None
 
 

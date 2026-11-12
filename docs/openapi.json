@@ -1188,6 +1188,16 @@
             "type": "string",
             "title": "Version"
           },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "live",
+              "mock"
+            ],
+            "title": "Mode",
+            "description": "'mock' = the API is serving illustrative fixtures (no ingested database). The UI must NOT label mock data LIVE.",
+            "default": "live"
+          },
           "snapshot_as_of": {
             "anyOf": [
               {

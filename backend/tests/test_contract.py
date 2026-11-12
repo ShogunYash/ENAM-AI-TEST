@@ -68,3 +68,10 @@ def test_custom_window_requires_bounds():
 def test_openapi_is_current():
     committed = json.loads((ROOT / "docs" / "openapi.json").read_text("utf-8"))
     assert committed == json.loads(json.dumps(app.openapi())), "run: uv run python -m scripts.export_openapi"
+
+
+def test_health_reports_mock_mode_when_database_is_empty():
+    """Hermetic env has an empty DB -> the API must admit it is serving fixtures (UI must not say LIVE)."""
+    body = client.get("/health").json()
+    assert body["mode"] == "mock"
+    assert m.Health.model_validate(body).mode == "mock"

@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "24h",
-    "start": "2026-11-11T15:02:15.452950+05:30",
-    "end": "2026-11-12T15:02:15.452950+05:30"
+    "start": "2026-11-11T15:05:34.334045+05:30",
+    "end": "2026-11-12T15:05:34.334045+05:30"
   },
-  "generated_at": "2026-11-12T15:02:15.452950+05:30",
+  "generated_at": "2026-11-12T15:05:34.334045+05:30",
   "needs_you": [
     {
       "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
@@ -16,7 +16,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 8.502,
+      "score": 8.498,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -52,7 +52,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-11T17:06:59.713000+05:30",
-      "value": 8.502,
+      "value": 8.498,
       "threshold": 7.0,
       "message": "Outcome of QIP 2026 - Special Committee Meeting",
       "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7"

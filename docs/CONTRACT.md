@@ -82,6 +82,7 @@ stats.json           LlmStats
 Until B6 exists, seed the folder by copying `docs/examples/`.
 
 ## Changelog
+- 2026-11-12: `Health.mode: "live"|"mock"` (default live), additive. `mock` = the API is serving illustrative fixtures because it has no ingested database. Frontend: show LIVE only when `mode=="live"`; otherwise show DEMO DATA. (Found when a worktree backend without a database answered and the UI labelled mock data LIVE.)
 - 2026-11-12: `WindowLabel` gains `30d` (additive) and the snapshot gains `digest-30d.json`: results season ends ~10 days before the demo, so the 7-day view shows few results cards. Frontend: add a 30d chip to the window picker.
 - 2026-11-12: `Research.is_sample: bool` (default false), additive. True for illustrative fixtures (all of `docs/examples/research-*`); the UI must show a SAMPLE badge whenever it is true, and must NOT infer sample-ness from anything else. Real builds (C1-C3) set it false. Frontend: read `research.is_sample ?? true` so old snapshot files stay badged.
 - 2026-11-11: v0.1.0, initial contract (A2). Mock API serving examples. `DigestWindow` uses `start`/`end` (not `from`/`to`, to avoid reserved words in TS/Python). Added `GET /alerts` and `GET /debug/sources`.

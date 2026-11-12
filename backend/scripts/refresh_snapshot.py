@@ -70,7 +70,7 @@ def main() -> int:
     as_of = max((s.as_of for s in snaps), default=now)
     dump(out / "meta.json", m.SnapshotMeta(as_of=now, portfolio_size=len(symbols),
                                            research_symbols=[r["nse_symbol"] for r in pf.get("research", [])]))
-    dump(out / "health.json", m.Health(ok=True, version="0.1.0", snapshot_as_of=as_of))
+    dump(out / "health.json", m.Health(ok=True, version="0.1.0", mode="live", snapshot_as_of=as_of))
     print(f"snapshot -> {out}: {len(symbols)} companies, {len(snaps)} prices, "
           + ", ".join(f"{k}: {d.counts.total} filings/{len(d.needs_you)} needs-you" for k, d in digests.items())
           + f", {len(enriched)} enriched filings, {len(d30.alerts)} alerts(30d)")

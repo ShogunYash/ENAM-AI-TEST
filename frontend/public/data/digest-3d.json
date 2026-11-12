@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "3d",
-    "start": "2026-11-09T15:02:15.452950+05:30",
-    "end": "2026-11-12T15:02:15.452950+05:30"
+    "start": "2026-11-09T15:05:34.334045+05:30",
+    "end": "2026-11-12T15:05:34.334045+05:30"
   },
-  "generated_at": "2026-11-12T15:02:15.452950+05:30",
+  "generated_at": "2026-11-12T15:05:34.334045+05:30",
   "needs_you": [
     {
       "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
@@ -16,7 +16,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 8.502,
+      "score": 8.498,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -33,7 +33,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 7.293,
+      "score": 7.289,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/84c0dbf5-4b55-41b9-ab7b-e20d9fe359a9.pdf",
       "price_reaction": {
         "pct_1d": 1.31,
@@ -51,7 +51,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 7.28,
+      "score": 7.276,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/41e7bb57-172f-4858-a5ac-8c15fe653e81.pdf",
       "price_reaction": {
         "pct_1d": 1.31,
@@ -61,11 +61,10 @@
     }
   ],
   "routine": {
-    "count": 5,
+    "count": 4,
     "by_category": {
       "earnings_call": 2,
-      "investor_meetings": 2,
-      "unclassified": 1
+      "investor_meetings": 2
     },
     "items": [
       {
@@ -78,7 +77,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.876,
+        "score": 1.875,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/daa6c172-771a-4af5-b4b3-9813fdf7536a.pdf",
         "price_reaction": {
           "pct_1d": -0.7,
@@ -96,7 +95,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.638,
+        "score": 1.637,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a9cb0ab8-930f-4400-b70b-fbd01640f54d.pdf",
         "price_reaction": {
           "pct_1d": 0.25,
@@ -136,21 +135,6 @@
           "vol_ratio": 0.7
         },
         "enrichment": null
-      },
-      {
-        "id": "769b3262-c815-4606-bf17-4546257a6965",
-        "symbol": "TITAN",
-        "company_name": "Titan Company Ltd",
-        "filed_at": "2026-11-09T15:03:37.027000+05:30",
-        "headline": "Redemption of Commercial Paper",
-        "so_what": null,
-        "category": "unclassified",
-        "category_source": "rule",
-        "priority": "hidden",
-        "score": 0.0,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f1adda02-5720-474e-8cd2-5632e9218b7d.pdf",
-        "price_reaction": null,
-        "enrichment": null
       }
     ]
   },
@@ -160,7 +144,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-11T17:06:59.713000+05:30",
-      "value": 8.502,
+      "value": 8.498,
       "threshold": 7.0,
       "message": "Outcome of QIP 2026 - Special Committee Meeting",
       "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7"
@@ -170,7 +154,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-10T12:23:10.163000+05:30",
-      "value": 7.293,
+      "value": 7.289,
       "threshold": 7.0,
       "message": "Outcome of PI 2026 - Allotment Committee meeting held on 10 November 2026",
       "filing_id": "dff7d1e2-500b-498c-9b9a-52b2cb4641a8"
@@ -180,15 +164,15 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-10T12:12:31.463000+05:30",
-      "value": 7.28,
+      "value": 7.276,
       "threshold": 7.0,
       "message": "PI 2026 - Special Committee of the Board of Directors of the Company (''Committee'') at it",
       "filing_id": "f9a4f2e2-4e74-49fd-a6bd-9df8d6045e71"
     }
   ],
   "counts": {
-    "total": 8,
-    "rule_classified": 8,
+    "total": 7,
+    "rule_classified": 7,
     "llm_classified": 0
   }
 }

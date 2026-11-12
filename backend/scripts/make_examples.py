@@ -267,7 +267,7 @@ EXAMPLES: dict[str, object] = {
     "research-INFY": research,
     "research-building": research_building,
     "stats": stats,
-    "health": m.Health(ok=True, version="0.1.0", snapshot_as_of=NOW),
+    "health": m.Health(ok=True, version="0.1.0", mode="mock", snapshot_as_of=NOW),
     "debug-sources": m.SourcesReport(checked_at=NOW, checks=[
         m.SourceCheck(name="bse", ok=True, detail="20 filings, PDF reachable"),
         m.SourceCheck(name="screener", ok=True, detail="7/7 sections, 41 transcripts"),

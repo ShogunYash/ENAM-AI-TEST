@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "7d",
-    "start": "2026-11-05T15:02:15.452950+05:30",
-    "end": "2026-11-12T15:02:15.452950+05:30"
+    "start": "2026-11-05T15:05:34.334045+05:30",
+    "end": "2026-11-12T15:05:34.334045+05:30"
   },
-  "generated_at": "2026-11-12T15:02:15.452950+05:30",
+  "generated_at": "2026-11-12T15:05:34.334045+05:30",
   "needs_you": [
     {
       "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
@@ -16,7 +16,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 8.502,
+      "score": 8.498,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -31,7 +31,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 4.183,
+      "score": 4.18,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2e7c8bf8-d794-4a55-b670-97951b28e0e8.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -94,7 +94,7 @@
       "category": "m_and_a",
       "category_source": "rule",
       "priority": "high",
-      "score": 3.806,
+      "score": 3.804,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2630fae6-20d8-4b7f-86fe-81c5b1a22a94.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -109,7 +109,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "high",
-      "score": 3.728,
+      "score": 3.726,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/22765a70-fd05-4bea-85bb-001eca66c2c1.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -124,7 +124,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 2.731,
+      "score": 2.729,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/86009cba-ca03-4d35-bad8-b1988cfcff13.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -189,7 +189,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 7.293,
+      "score": 7.289,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/84c0dbf5-4b55-41b9-ab7b-e20d9fe359a9.pdf",
       "price_reaction": {
         "pct_1d": 1.31,
@@ -207,7 +207,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 7.28,
+      "score": 7.276,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/41e7bb57-172f-4858-a5ac-8c15fe653e81.pdf",
       "price_reaction": {
         "pct_1d": 1.31,
@@ -225,7 +225,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 2.714,
+      "score": 2.712,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a39f8b72-303f-42a4-8750-f413346bd742.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -288,7 +288,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "high",
-      "score": 2.469,
+      "score": 2.468,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f2144a96-1845-46b3-b1d6-2df374df6da1.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -303,7 +303,7 @@
       "category": "litigation",
       "category_source": "llm",
       "priority": "medium",
-      "score": 2.273,
+      "score": 2.272,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/53496491-fd25-4172-9f9f-79bf088ea9c5.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -318,7 +318,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 2.139,
+      "score": 2.138,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/191d3534-ded0-412c-9b3e-a8fbe7c38d5a.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -333,7 +333,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 1.515,
+      "score": 1.514,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4017e932-6841-4b4b-8669-50a79f27feb2.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -348,7 +348,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "medium",
-      "score": 1.29,
+      "score": 1.289,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/73a8c540-4229-4137-8e2b-5aae04fa0a35.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -376,7 +376,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.876,
+        "score": 1.875,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/daa6c172-771a-4af5-b4b3-9813fdf7536a.pdf",
         "price_reaction": {
           "pct_1d": -0.7,
@@ -394,7 +394,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.638,
+        "score": 1.637,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a9cb0ab8-930f-4400-b70b-fbd01640f54d.pdf",
         "price_reaction": {
           "pct_1d": 0.25,
@@ -412,7 +412,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.437,
+        "score": 1.436,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8269aea9-54c0-4a24-a615-6dda0ab8f054.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -427,7 +427,7 @@
         "category": "results",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.956,
+        "score": 0.955,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/88c1f74a-5faf-4951-bd1c-87ac9c742fd0.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -442,7 +442,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.931,
+        "score": 0.93,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5a739d21-7ea5-4c1a-b220-45f77e240c2e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -517,7 +517,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.725,
+        "score": 0.724,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c09898ed-8b2d-47cc-9b13-a049755597f5.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -700,7 +700,7 @@
         "category": "postal_ballot",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.269,
+        "score": 0.268,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0926e958-96d9-4537-ae2b-188dfe3eb1d1.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -893,7 +893,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-11T17:06:59.713000+05:30",
-      "value": 8.502,
+      "value": 8.498,
       "threshold": 7.0,
       "message": "Outcome of QIP 2026 - Special Committee Meeting",
       "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7"
@@ -903,7 +903,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-10T12:23:10.163000+05:30",
-      "value": 7.293,
+      "value": 7.289,
       "threshold": 7.0,
       "message": "Outcome of PI 2026 - Allotment Committee meeting held on 10 November 2026",
       "filing_id": "dff7d1e2-500b-498c-9b9a-52b2cb4641a8"
@@ -913,7 +913,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-10T12:12:31.463000+05:30",
-      "value": 7.28,
+      "value": 7.276,
       "threshold": 7.0,
       "message": "PI 2026 - Special Committee of the Board of Directors of the Company (''Committee'') at it",
       "filing_id": "f9a4f2e2-4e74-49fd-a6bd-9df8d6045e71"
@@ -923,7 +923,7 @@
       "symbol": "TATASTEEL",
       "kind": "material_filing",
       "triggered_at": "2026-11-07T15:44:55.163000+05:30",
-      "value": 3.806,
+      "value": 3.804,
       "threshold": 7.0,
       "message": "Acquisition of 38,222 equity shares of face value ?10/- each in Creative Port Development ",
       "filing_id": "c49c17d4-2697-46d5-96f2-6e9b77f10b8e"
@@ -933,7 +933,7 @@
       "symbol": "TATASTEEL",
       "kind": "material_filing",
       "triggered_at": "2026-11-07T13:35:49.073000+05:30",
-      "value": 3.728,
+      "value": 3.726,
       "threshold": 7.0,
       "message": "Retirement of Mr. Noel Naval Tata as Non-Executive, Non-Independent Director and as Vice-C",
       "filing_id": "4de0b0df-dd85-401a-9d6b-dd85fc660c4f"
@@ -943,7 +943,7 @@
       "symbol": "TATASTEEL",
       "kind": "material_filing",
       "triggered_at": "2026-11-07T13:19:15.060000+05:30",
-      "value": 4.183,
+      "value": 4.18,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT +16%, Rev +12% YoY · EBITDA margin 16.8%",
       "filing_id": "4f4ea23c-0c48-4420-a9bc-7e963dd8cefe"
@@ -953,7 +953,7 @@
       "symbol": "TITAN",
       "kind": "material_filing",
       "triggered_at": "2026-11-05T18:49:12.020000+05:30",
-      "value": 2.469,
+      "value": 2.468,
       "threshold": 7.0,
       "message": "Retirement of Mr. Noel. N. Tata as Director and Vice-Chairman",
       "filing_id": "9fe24176-bed0-4206-9717-23b4afe63ad4"
@@ -963,7 +963,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-05T17:46:29.097000+05:30",
-      "value": 2.139,
+      "value": 2.138,
       "threshold": 7.0,
       "message": "Bajaj Finance Ltdhas informed BSE that the meeting of the Board of Directors of the Compan",
       "filing_id": "6cae5e85-e0dc-4fa9-8f43-11b4bedd4333"
@@ -973,7 +973,7 @@
       "symbol": "TITAN",
       "kind": "material_filing",
       "triggered_at": "2026-11-05T17:02:10.910000+05:30",
-      "value": 2.731,
+      "value": 2.729,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT +114%, Rev +24% YoY · EBITDA margin 18.0%",
       "filing_id": "ee6123a8-c373-465b-9347-34adbc250091"
@@ -983,7 +983,7 @@
       "symbol": "ASTRAL",
       "kind": "material_filing",
       "triggered_at": "2026-11-05T16:22:52.253000+05:30",
-      "value": 2.714,
+      "value": 2.712,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT −6%, Rev +26% YoY",
       "filing_id": "36ba38f5-dc7d-4c34-8fc5-a032e67b24a0"

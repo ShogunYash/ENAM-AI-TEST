@@ -77,7 +77,9 @@ def _settings(volume_multiple: float, price_move_pct: float, interests: str | No
 def health() -> Any:
     snaps = prices_mod.snapshots(_symbols()) if _has_real_data() else []
     as_of = max((s.as_of for s in snaps), default=None)
-    return {**example("health"), "snapshot_as_of": as_of.isoformat() if as_of else example("health")["snapshot_as_of"]}
+    live = _has_real_data()
+    return {**example("health"), "mode": "live" if live else "mock",
+            "snapshot_as_of": as_of.isoformat() if as_of else example("health")["snapshot_as_of"]}
 
 
 @app.get("/companies", response_model=list[m.Company])
