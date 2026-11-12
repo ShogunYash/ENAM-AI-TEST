@@ -1,0 +1,21 @@
+# Render blueprint for the FINN API (free plan). Create via Render dashboard: New > Blueprint > pick this repo.
+# The container restores backend/seed/*.sqlite (demo database + LLM cache) into its empty disk on every boot, so Push
+# and the pre-built research work instantly and without any LLM quota.
+services:
+  - type: web
+    name: finn-api
+    runtime: docker
+    dockerfilePath: backend/Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /health
+    autoDeploy: false
+    envVars:
+      - key: FINN_USE_LOCAL_LLM        # the station GPU is not reachable from Render
+        value: "0"
+      - key: GEMINI_API_KEY            # only used for live research on tickers that are not pre-built
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false

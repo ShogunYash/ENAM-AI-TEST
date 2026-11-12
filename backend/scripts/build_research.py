@@ -16,7 +16,7 @@ def main(symbols: list[str]) -> int:
     bad = 0
     for sym in symbols:
         t0 = time.time()
-        r = build.build_research(sym.upper(), progress=lambda s, sym=sym: print(f"  {sym} [{time.time() - t0:4.0f}s] {s}", flush=True))
+        r = build.build_research(sym.upper(), progress=lambda s, sym=sym, t0=t0: print(f"  {sym} [{time.time() - t0:4.0f}s] {s}", flush=True))
         if r.status == "failed":
             bad += 1
             print(f"[FAIL] {sym}: {r.gaps}", flush=True)

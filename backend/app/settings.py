@@ -21,6 +21,7 @@ class AppSettings(BaseSettings):
     openrouter_api_key: str | None = None
 
     finn_use_local_llm: bool = True      # key-less `local` (Ollama over an SSH tunnel) provider; set 0 on Render and in tests
+    finn_seed: bool = True               # restore backend/seed/* into an empty data dir at boot; tests set 0
     finn_data_dir: Path = Field(default=BACKEND_DIR / "data")
     finn_llm_config: Path = Field(default=BACKEND_DIR / "config" / "models.yaml")
 

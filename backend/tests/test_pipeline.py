@@ -257,3 +257,26 @@ def test_majority_stake_in_a_generic_press_release_is_m_and_a():
 
 def test_research_sample_flag_in_contract():
     assert m.Research.model_fields["is_sample"].default is False
+
+
+def test_seed_restores_only_missing_databases(tmp_path, monkeypatch):
+    from app import seed
+    from app.settings import AppSettings
+
+    seed_dir = tmp_path / "seed"
+    seed_dir.mkdir()
+    (seed_dir / "finn.sqlite").write_bytes(b"SEED-DB")
+    (seed_dir / "llm.sqlite").write_bytes(b"SEED-LLM")
+    data = tmp_path / "data"
+    monkeypatch.setattr(seed, "SEED", seed_dir)
+    monkeypatch.setattr(seed, "get_settings", lambda: AppSettings(_env_file=None, finn_data_dir=data, finn_seed=True))
+    assert seed.ensure_seed() == ["finn.sqlite", "llm.sqlite"]
+    assert (data / "finn.sqlite").read_bytes() == b"SEED-DB" and (data / "cache" / "llm.sqlite").read_bytes() == b"SEED-LLM"
+    (data / "finn.sqlite").write_bytes(b"LIVE")                       # existing data is never overwritten
+    assert seed.ensure_seed() == [] and (data / "finn.sqlite").read_bytes() == b"LIVE"
+
+
+def test_seed_is_off_in_the_test_environment():
+    from app.seed import ensure_seed
+    from app.settings import get_settings
+    assert get_settings().finn_seed is False and ensure_seed() == []

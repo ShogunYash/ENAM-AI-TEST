@@ -16,18 +16,20 @@ from typing import Any
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
-from app import db
+from app import db, ops
 from app import models as m
 from app.ingest import prices as prices_mod
 from app.llm import store as llm_store
 from app.pipeline import digest as digest_mod
 from app.research import build as research_build
+from app.seed import ensure_seed
 from app.settings import REPO_ROOT, get_settings
 
 EXAMPLES = Path(__file__).resolve().parents[2] / "docs" / "examples"
 
 app = FastAPI(title="FINN API", version="0.1.0",
               description="Mobile-first financial investment agent. Contract: docs/CONTRACT.md")
+ensure_seed()   # fresh container (ephemeral disk) -> restore the committed demo database + LLM cache
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["GET", "POST"], allow_headers=["*"])
 
 
@@ -160,7 +162,8 @@ def stats() -> Any:
 
 @app.get("/debug/sources", response_model=m.SourcesReport)
 def debug_sources() -> Any:
-    return example("debug-sources")
+    """Live cloud-IP check: can THIS server reach BSE, screener.in and Yahoo? (3 cheap requests, no LLM.)"""
+    return ops.check_sources()
 
 
 @app.post("/ask", response_model=m.AskResponse)

@@ -75,3 +75,16 @@ def test_health_reports_mock_mode_when_database_is_empty():
     body = client.get("/health").json()
     assert body["mode"] == "mock"
     assert m.Health.model_validate(body).mode == "mock"
+
+
+def test_debug_sources_runs_the_live_checks_through_ops(monkeypatch):
+    """/debug/sources is the cloud-IP test; in tests the three network checks are stubbed (no real requests)."""
+    from app import ops
+    monkeypatch.setattr(ops, "_bse", lambda: "3 TCS filings")
+    monkeypatch.setattr(ops, "_screener", lambda: "HTTP 200")
+    monkeypatch.setattr(ops, "_yfinance", lambda: (_ for _ in ()).throw(RuntimeError("throttled")))
+    body = client.get("/debug/sources").json()
+    by = {c["name"]: c for c in body["checks"]}
+    assert by["bse"]["ok"] and by["screener"]["ok"]
+    assert by["yfinance"]["ok"] is False and "throttled" in by["yfinance"]["detail"]
+    m.SourcesReport.model_validate(body)

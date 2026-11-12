@@ -364,6 +364,7 @@
     "/debug/sources": {
       "get": {
         "summary": "Debug Sources",
+        "description": "Live cloud-IP check: can THIS server reach BSE, screener.in and Yahoo? (3 cheap requests, no LLM.)",
         "operationId": "debug_sources_debug_sources_get",
         "responses": {
           "200": {

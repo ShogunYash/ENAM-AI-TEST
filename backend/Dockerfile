@@ -14,6 +14,6 @@ COPY backend/ ./
 COPY docs/examples /app/docs/examples
 COPY data /app/data
 
-ENV PATH="/app/backend/.venv/bin:$PATH" PORT=8000
+ENV PATH="/app/backend/.venv/bin:$PATH" PORT=8000 FINN_USE_LOCAL_LLM=0
 EXPOSE 8000
 CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT}"]
