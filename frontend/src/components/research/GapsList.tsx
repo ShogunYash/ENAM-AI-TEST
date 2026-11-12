@@ -27,3 +27,4 @@ export const GapsList: React.FC<GapsListProps> = ({ gaps = [] }) => {
     </div>
   )
 }
+

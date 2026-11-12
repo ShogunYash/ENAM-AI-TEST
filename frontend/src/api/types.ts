@@ -23,6 +23,15 @@ export type Source = components['schemas']['Source']
 export type SourceDoc = components['schemas']['SourceDoc']
 export type Verdict = components['schemas']['Verdict']
 export type FinancialSnapshot = components['schemas']['FinancialSnapshot']
+export type LlmStats = components['schemas']['LlmStats']
+
+export interface PortfolioStock {
+  nse_symbol: string
+  bse_scrip_code?: string
+  name: string
+  sector?: string
+  source?: string
+}
 
 export interface SnapshotMeta {
   as_of: string

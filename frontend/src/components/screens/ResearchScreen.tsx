@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { fetchResearchData } from '@/api/client'
+import { fetchResearchData, fetchPortfolio } from '@/api/client'
 import { Claim, SourceDoc } from '@/api/types'
-import { formatInrCr, formatPercentDelta, formatExactIst } from '@/lib/formatters'
+import { formatInrCr, formatPercentDelta } from '@/lib/formatters'
 import { PvDTimeline } from '@/components/research/PvDTimeline'
 import { BuildProgress } from '@/components/research/BuildProgress'
 import { CitationDrawer } from '@/components/research/CitationDrawer'
@@ -14,8 +14,8 @@ import {
   TrendingUp,
   TrendingDown,
   Layers,
-  Sparkles,
   RefreshCw,
+  AlertTriangle,
 } from 'lucide-react'
 
 export const ResearchScreen: React.FC = () => {
@@ -26,6 +26,13 @@ export const ResearchScreen: React.FC = () => {
     metricTitle: string
   } | null>(null)
   const [pollCount, setPollCount] = useState(0)
+
+  // Fetch portfolio for ticker suggestions
+  const { data: portfolio = [] } = useQuery({
+    queryKey: ['portfolio'],
+    queryFn: fetchPortfolio,
+    staleTime: Infinity,
+  })
 
   // Query research data with 3s polling when building
   const {
@@ -72,6 +79,9 @@ export const ResearchScreen: React.FC = () => {
   const isBuilding = research?.status === 'building'
   const isReady = research?.status === 'ready' || research?.status === 'partial'
 
+  // Any research not from a live build carries a prominent SAMPLE DATA badge
+  const isSampleData = researchResult?.source === 'snapshot' || !(research as any)?.is_real_build
+
   return (
     <div className="space-y-4 pb-24 pt-1">
       {/* Ticker Search Box: "Research any ticker" */}
@@ -81,7 +91,7 @@ export const ResearchScreen: React.FC = () => {
             type="text"
             value={tickerInput}
             onChange={(e) => setTickerInput(e.target.value.toUpperCase())}
-            placeholder="Research any ticker (e.g. INFY, DIXON, TITAN)"
+            placeholder="Research any ticker (e.g. INFY, TCS, TITAN)"
             className="w-full bg-zinc-900 border border-zinc-800 rounded-xl pl-9 pr-16 py-2.5 text-xs text-zinc-100 placeholder:text-zinc-500 font-mono font-semibold focus:outline-none focus:border-zinc-600 transition-colors"
           />
           <Search className="w-4 h-4 text-zinc-500 absolute left-3" />
@@ -93,31 +103,29 @@ export const ResearchScreen: React.FC = () => {
           </button>
         </form>
 
-        {/* Quick Suggestion Pills */}
-        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar text-xs">
-          <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold mr-0.5">
-            Suggested:
+        {/* Portfolio Suggestion Chips from data/portfolio.json */}
+        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar text-xs py-0.5">
+          <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold mr-0.5 flex-shrink-0">
+            Portfolio:
           </span>
-          {[
-            { sym: 'INFY', note: 'Ready' },
-            { sym: 'DIXON', note: 'Building demo' },
-            { sym: 'CERA', note: 'Results' },
-            { sym: 'TITAN', note: 'Mgmt' },
-          ].map((item) => (
-            <button
-              key={item.sym}
-              type="button"
-              onClick={() => handleQuickTicker(item.sym)}
-              className={`px-2 py-0.5 rounded-md border text-[11px] font-mono transition-all ${
-                activeSymbol === item.sym
-                  ? 'bg-zinc-800 border-zinc-600 text-zinc-100 font-bold'
-                  : 'bg-zinc-950/60 border-zinc-800/80 text-zinc-400 hover:text-zinc-200'
-              }`}
-            >
-              <span>{item.sym}</span>
-              <span className="text-[9px] text-zinc-500 ml-1">({item.note})</span>
-            </button>
-          ))}
+          {portfolio.map((stock) => {
+            const isSelected = activeSymbol === stock.nse_symbol
+            return (
+              <button
+                key={stock.nse_symbol}
+                type="button"
+                onClick={() => handleQuickTicker(stock.nse_symbol)}
+                className={`px-2.5 py-1 rounded-md border text-[11px] font-mono flex-shrink-0 transition-all ${
+                  isSelected
+                    ? 'bg-zinc-800 border-zinc-600 text-zinc-100 font-bold shadow-sm'
+                    : 'bg-zinc-950/60 border-zinc-800/80 text-zinc-400 hover:text-zinc-200'
+                }`}
+                title={`${stock.name}${stock.sector ? ` · ${stock.sector}` : ''}`}
+              >
+                <span>{stock.nse_symbol}</span>
+              </button>
+            )
+          })}
         </div>
       </section>
 
@@ -146,13 +154,19 @@ export const ResearchScreen: React.FC = () => {
           <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-3.5 space-y-3">
             <div className="flex items-start justify-between">
               <div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-wrap">
                   <h1 className="text-base font-bold text-zinc-100 font-mono tracking-tight">
                     {research.symbol}
                   </h1>
                   {research.name && (
                     <span className="text-xs text-zinc-400 font-medium">
                       {research.name}
+                    </span>
+                  )}
+                  {/* Visible SAMPLE DATA Badge */}
+                  {isSampleData && (
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px] font-mono font-bold tracking-wider uppercase">
+                      SAMPLE DATA
                     </span>
                   )}
                 </div>
@@ -245,7 +259,7 @@ export const ResearchScreen: React.FC = () => {
           {/* Flagship: Promised vs Delivered Timeline */}
           <section className="space-y-2.5">
             <div className="flex items-center justify-between px-1">
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1.5 flex-wrap">
                 <Layers className="w-3.5 h-3.5 text-zinc-400" />
                 <h2 className="text-xs font-semibold uppercase tracking-wider text-zinc-300">
                   Promised vs Delivered
@@ -253,6 +267,11 @@ export const ResearchScreen: React.FC = () => {
                 <span className="text-[11px] font-mono text-zinc-400 bg-zinc-900 border border-zinc-800 px-1.5 py-0.2 rounded-full">
                   {research.pvd.length}
                 </span>
+                {isSampleData && (
+                  <span className="text-[9px] font-mono font-bold uppercase tracking-wider px-1.5 py-0.2 rounded bg-amber-950/40 text-amber-400 border border-amber-800/60">
+                    SAMPLE DATA
+                  </span>
+                )}
               </div>
               <span className="text-[11px] text-zinc-500">Tap claim for verified quote</span>
             </div>

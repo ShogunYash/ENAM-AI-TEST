@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Filing } from '@/api/types'
-import { X, Send, Bot, CheckCircle2, ExternalLink } from 'lucide-react'
+import { X, Send, Bot } from 'lucide-react'
 
 interface AskFinnSheetProps {
   filing: Filing | null
@@ -10,12 +10,11 @@ interface AskFinnSheetProps {
 export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({ filing, onClose }) => {
   const [question, setQuestion] = useState('')
   const [history, setHistory] = useState<
-    Array<{ q: string; a: string; verified?: boolean; quote?: string }>
+    Array<{ q: string; a: string }>
   >([
     {
       q: 'What is the primary driver of this update?',
       a: filing?.so_what || 'Key update from official exchange filing.',
-      verified: true,
     },
   ])
   const [isAsking, setIsAsking] = useState(false)
@@ -29,7 +28,7 @@ export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({ filing, onClose }) =
     setQuestion('')
     setIsAsking(true)
 
-    // Simulate or call /ask endpoint
+    // Simulate preview response
     setTimeout(() => {
       let mockAnswer = 'Operating leverage and product mix expansion drove margins; management reaffirmed FY27 guidance.'
       if (filing.enrichment?.type === 'results') {
@@ -43,8 +42,6 @@ export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({ filing, onClose }) =
         {
           q: qText,
           a: mockAnswer,
-          verified: true,
-          quote: filing.headline,
         },
       ])
       setIsAsking(false)
@@ -54,8 +51,8 @@ export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({ filing, onClose }) =
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 backdrop-blur-sm">
       <div className="w-full max-w-[430px] bg-zinc-900 border-t border-zinc-800 rounded-t-2xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden animate-in slide-in-from-bottom duration-200">
-        {/* Header */}
-        <div className="p-3.5 border-b border-zinc-800 flex items-center justify-between">
+        {/* Header with Preview Badge */}
+        <div className="p-3.5 border-b border-zinc-800 flex items-center justify-between bg-zinc-950/60">
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center">
               <Bot className="w-3.5 h-3.5 text-zinc-300" />
@@ -63,6 +60,9 @@ export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({ filing, onClose }) =
             <div>
               <div className="text-xs font-bold text-zinc-100 flex items-center gap-1.5">
                 <span>Ask FINN</span>
+                <span className="text-[10px] font-mono font-semibold uppercase tracking-wider px-1.5 py-0.2 rounded bg-amber-950/40 text-amber-400 border border-amber-800/60">
+                  Preview
+                </span>
                 <span className="font-mono text-zinc-400">· {filing.symbol}</span>
               </div>
               <p className="text-[10px] text-zinc-400 truncate max-w-[260px]">
@@ -73,6 +73,7 @@ export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({ filing, onClose }) =
           <button
             onClick={onClose}
             className="p-1 rounded-full text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800 transition-colors"
+            aria-label="Close Ask FINN"
           >
             <X className="w-4 h-4" />
           </button>
@@ -87,12 +88,6 @@ export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({ filing, onClose }) =
               </div>
               <div className="bg-zinc-950/60 border border-zinc-800/80 p-3 rounded-lg text-zinc-300 space-y-1.5">
                 <p className="leading-relaxed">{h.a}</p>
-                {h.verified && (
-                  <div className="flex items-center gap-1 text-[10px] text-emerald-400 font-mono pt-1 border-t border-zinc-800/50">
-                    <CheckCircle2 className="w-2.5 h-2.5" />
-                    <span>Verified quote match</span>
-                  </div>
-                )}
               </div>
             </div>
           ))}
