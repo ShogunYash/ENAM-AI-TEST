@@ -341,3 +341,13 @@ def test_stats_merge_provider_prefixed_and_bare_model_names(tmp_path):
     by = {r.key: r for r in store.stats(db).by_model}
     assert set(by) == {"gemini-3.5-flash", "nvidia/nemotron-3-ultra-550b-a55b:free"}      # one row per model
     assert (by["gemini-3.5-flash"].calls, by["gemini-3.5-flash"].cache_hits) == (1, 1)
+
+
+def test_bypass_cache_reasks_and_overwrites_the_cached_answer(tmp_path):
+    s = make_settings(tmp_path, gemini_api_key="g")
+    replies = iter(['{"ok": true, "echo": "weak"}', '{"ok": true, "echo": "strong"}'])
+    client, seen = client_for(lambda r: ok_response(next(replies)))
+    assert run_task("ping", {"word": "b"}, settings=s, client=client).echo == "weak"
+    assert run_task("ping", {"word": "b"}, settings=s, client=client).echo == "weak" and len(seen) == 1     # cached
+    assert run_task("ping", {"word": "b"}, bypass_cache=True, settings=s, client=client).echo == "strong"
+    assert run_task("ping", {"word": "b"}, settings=s, client=client).echo == "strong" and len(seen) == 2   # new answer cached

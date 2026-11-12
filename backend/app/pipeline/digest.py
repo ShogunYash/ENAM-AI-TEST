@@ -67,6 +67,8 @@ def attach_enrichments(filings: list[m.Filing]) -> None:
             f.so_what = R.so_what(card)
         elif isinstance(card, m.BioCard) and not f.so_what:
             f.so_what = mgmt_bio.so_what(card)
+        elif isinstance(card, m.OneLiner) and not f.so_what:
+            f.so_what = card.text[:70]                      # verified line from pipeline/oneliner.py (<= 70 chars already)
 
 
 def resolve_window(label: str, now: datetime, start: datetime | None, end: datetime | None) -> m.DigestWindow:

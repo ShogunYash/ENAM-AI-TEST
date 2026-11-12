@@ -127,7 +127,8 @@ def _call_gemini_pdf(client: httpx.Client, cfg: LLMConfig, ref: ModelRef, api_ke
 
 def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str | None = None,
              unit: str | None = None, pdf: bytes | None = None, pdf_key: str | None = None, cache_only: bool = False,
-             settings: AppSettings | None = None, client: httpx.Client | None = None) -> BaseModel:
+             bypass_cache: bool = False, settings: AppSettings | None = None,
+             client: httpx.Client | None = None) -> BaseModel:
     """Run one LLM task and return its validated pydantic output.
 
     task            prompt file name in app/prompts (also the ledger `task`)
@@ -154,7 +155,7 @@ def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str
         cache_key_extra = f"{cache_key_extra}|pdf:{pdf_key or hashlib.sha256(pdf).hexdigest()}"
     key = _cache_key(prompt, system, user, cache_key_extra)
 
-    hit = store.cache_get(db, key)
+    hit = None if bypass_cache else store.cache_get(db, key)       # bypass_cache: re-ask, and overwrite the cached answer
     if hit:
         store.record(db, feature=feature, task=task, unit=unit, provider=None, model=hit[1], cached=True)
         return schema.model_validate_json(hit[0])

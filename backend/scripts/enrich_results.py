@@ -26,10 +26,10 @@ PACE_S = 8            # gap between filings: the free Gemini tier rate-limits bu
 RETRIES = 3           # on LLMUnavailable wait out the router's 60 s cooldown, then try again
 
 
-def enrich_with_retry(r: dict, sector: str | None, force: bool):
+def enrich_with_retry(r: dict, sector: str | None, force: bool, refresh: bool = False):
     for attempt in range(RETRIES + 1):
         try:
-            return results.enrich_results(r["id"], r["symbol"], r["pdf_name"], sector, force=force)
+            return results.enrich_results(r["id"], r["symbol"], r["pdf_name"], sector, force=force, refresh=refresh)
         except LLMUnavailable:
             if attempt == RETRIES:
                 raise
@@ -41,6 +41,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", help="comma-separated NSE symbols")
     ap.add_argument("--force", action="store_true", help="rebuild even if a card exists")
+    ap.add_argument("--refresh", action="store_true", help="also bypass the cached model answer (re-ask; costs a call)")
     ap.add_argument("--days", type=int, default=60)
     a = ap.parse_args()
     sectors = {s["nse_symbol"]: s["sector"] for s in json.loads(PORTFOLIO.read_text("utf-8"))["portfolio"]}
@@ -57,7 +58,7 @@ def main() -> int:
     for r in rows:
         t0 = time.time()
         try:
-            card = enrich_with_retry(r, sectors.get(r["symbol"]), a.force)
+            card = enrich_with_retry(r, sectors.get(r["symbol"]), a.force, a.refresh)
         except (LLMUnavailable, DocError, ValidationError) as e:
             bad += 1
             print(f"[FAIL] {r['symbol']:<11} {type(e).__name__}: {str(e)[:150]}")

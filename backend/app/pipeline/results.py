@@ -204,7 +204,7 @@ def _worse(new: m.ResultsCard, old: m.ResultsCard) -> bool:
 
 def enrich_results(filing_id: str, symbol: str, pdf_name: str, sector: str | None = None,
                    client: httpx.Client | None = None, force: bool = False, cache_only: bool = False,
-                   pdf: bytes | None = None) -> m.ResultsCard | None:
+                   pdf: bytes | None = None, refresh: bool = False) -> m.ResultsCard | None:
     """Download the results PDF, extract with Gemini (native PDF), build + store the card. Returns the card or None.
     The LLM answer is cached by the filing's attachment name (immutable), not by the sliced bytes."""
     have = load_enrichments([filing_id]).get(filing_id)
@@ -217,7 +217,7 @@ def enrich_results(filing_id: str, symbol: str, pdf_name: str, sector: str | Non
                    {"results_pdf": "The attached PDF is the results filing. Page numbers are the physical, 1-based "
                                    "pages of the PDF."},
                    feature="push.results", unit=symbol, pdf=pdf, pdf_key=pdf_name, cache_key_extra=filing_id,
-                   cache_only=cache_only)
+                   cache_only=cache_only, bypass_cache=refresh)
     with db.connect() as con:
         row = con.execute("SELECT filed_at FROM filings WHERE id=?", (filing_id,)).fetchone()
     age = datetime.now(IST) - datetime.fromisoformat(row["filed_at"]) if row else timedelta(days=30)
