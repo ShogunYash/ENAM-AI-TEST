@@ -1,0 +1,18 @@
+{
+  "id": "3d7c6ff9-d53f-4bf1-8ecf-5587d287b1ed",
+  "symbol": "SUNPHARMA",
+  "company_name": "Sun Pharmaceutical Industries Ltd",
+  "filed_at": "2026-10-26T12:30:09.957000+05:30",
+  "headline": "Allotment of Non-convertible securities (NCDs) on Private Placement basis",
+  "so_what": "Completed allotment of NCDs for INR 7,816 crore on 26 October 2026.",
+  "category": "fund_raise",
+  "category_source": "rule",
+  "priority": "medium",
+  "score": 0.103,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2f44a1be-85a8-4545-a86e-71a27b7b7f15.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "oneliner",
+    "text": "Completed allotment of NCDs for INR 7,816 crore on 26 October 2026."
+  }
+}

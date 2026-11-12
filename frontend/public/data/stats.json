@@ -1,19 +1,26 @@
 {
-  "as_of": "2026-11-13T00:06:10.553393+05:30",
+  "as_of": "2026-11-13T02:41:25.092963+05:30",
   "totals": {
-    "calls": 72,
-    "tokens_in": 907995,
-    "tokens_out": 81343,
-    "cache_hits": 130,
-    "cache_hit_pct": 64.4,
+    "calls": 125,
+    "tokens_in": 1034856,
+    "tokens_out": 88157,
+    "cache_hits": 172,
+    "cache_hit_pct": 57.9,
     "spend_inr": 0.0
   },
   "by_feature": [
     {
+      "key": "push.oneliner",
+      "calls": 36,
+      "tokens_in": 56064,
+      "tokens_out": 1056,
+      "cache_hits": 0
+    },
+    {
       "key": "push.results",
-      "calls": 30,
-      "tokens_in": 382255,
-      "tokens_out": 48069,
+      "calls": 33,
+      "tokens_in": 427026,
+      "tokens_out": 52831,
       "cache_hits": 19
     },
     {
@@ -22,6 +29,13 @@
       "tokens_in": 345730,
       "tokens_out": 5808,
       "cache_hits": 87
+    },
+    {
+      "key": "push.mgmt_bio",
+      "calls": 14,
+      "tokens_in": 26026,
+      "tokens_out": 996,
+      "cache_hits": 42
     },
     {
       "key": "pull.pvd",
@@ -48,23 +62,23 @@
   "by_model": [
     {
       "key": "finn-gpt-oss",
-      "calls": 30,
-      "tokens_in": 471261,
-      "tokens_out": 14035,
-      "cache_hits": 104
+      "calls": 47,
+      "tokens_in": 503293,
+      "tokens_out": 15103,
+      "cache_hits": 146
     },
     {
       "key": "gemini-3.5-flash-lite",
-      "calls": 18,
-      "tokens_in": 192012,
-      "tokens_out": 26195,
+      "calls": 37,
+      "tokens_in": 260639,
+      "tokens_out": 31406,
       "cache_hits": 16
     },
     {
       "key": "gemini-3.1-flash-lite",
-      "calls": 9,
-      "tokens_in": 57560,
-      "tokens_out": 15846,
+      "calls": 26,
+      "tokens_in": 83762,
+      "tokens_out": 16381,
       "cache_hits": 0
     },
     {

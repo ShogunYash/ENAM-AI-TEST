@@ -1,0 +1,21 @@
+{
+  "id": "f9a4f2e2-4e74-49fd-a6bd-9df8d6045e71",
+  "symbol": "BAJFINANCE",
+  "company_name": "Bajaj Finance Ltd",
+  "filed_at": "2026-11-10T12:12:31.463000+05:30",
+  "headline": "PI 2026 - Special Committee of the Board of Directors of the Company (''Committee'') at its meeting held today i.e., 10 November 2026, has approved the issue of 5,74,25,740 Warrants to ....",
+  "so_what": "Approved issuing 5,74,25,740 warrants for ₹57,99,99,97,400.",
+  "category": "fund_raise",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 6.508,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/41e7bb57-172f-4858-a5ac-8c15fe653e81.pdf",
+  "price_reaction": {
+    "pct_1d": 1.31,
+    "vol_ratio": 0.96
+  },
+  "enrichment": {
+    "type": "oneliner",
+    "text": "Approved issuing 5,74,25,740 warrants for ₹57,99,99,97,400."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "a80e46bd-37c4-4876-8618-b21d82ce7b00",
+  "symbol": "KEI",
+  "company_name": "KEI Industries Ltd",
+  "filed_at": "2026-10-14T18:16:25.340000+05:30",
+  "headline": "This is to inform you that as per the information received by the Company on October 14, 2026, ESG Risk Assessments & Insights Limited, has reviewed the Environment, Social and Governance ....",
+  "so_what": "Assigned an ESG rating of 71 in the Excellent category by ERAIL.",
+  "category": "credit_rating",
+  "category_source": "llm",
+  "priority": "medium",
+  "score": 0.006,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b71311c4-0e0a-404d-bbf3-ff961de0c6e6.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "oneliner",
+    "text": "Assigned an ESG rating of 71 in the Excellent category by ERAIL."
+  }
+}

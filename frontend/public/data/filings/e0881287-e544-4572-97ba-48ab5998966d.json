@@ -1,0 +1,27 @@
+{
+  "id": "e0881287-e544-4572-97ba-48ab5998966d",
+  "symbol": "ASTRAL",
+  "company_name": "Astral Ltd",
+  "filed_at": "2026-11-05T16:52:09.117000+05:30",
+  "headline": "Regulation 30 - Senior Management Personnel",
+  "so_what": null,
+  "category": "management_change",
+  "category_source": "rule",
+  "priority": "medium",
+  "score": 1.354,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4017e932-6841-4b4b-8669-50a79f27feb2.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "management",
+    "person": "Mr. Ritesh Patel",
+    "role": "Associate Vice President – Technical Operations",
+    "change": "appointed",
+    "background": [
+      "BE in Chemical Engineering with 24 years of experience in plastic piping systems",
+      "Active member of BIS standardization committees"
+    ],
+    "links": [],
+    "effective": "2026-11-05",
+    "background_source": "filing"
+  }
+}

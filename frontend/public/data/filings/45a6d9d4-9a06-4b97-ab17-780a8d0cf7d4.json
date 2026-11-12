@@ -1,0 +1,18 @@
+{
+  "id": "45a6d9d4-9a06-4b97-ab17-780a8d0cf7d4",
+  "symbol": "BAJFINANCE",
+  "company_name": "Bajaj Finance Ltd",
+  "filed_at": "2026-10-21T12:22:21.057000+05:30",
+  "headline": "Allotment of Secured Redeemable Non-Convertible Debentures on Private Placement Basis.",
+  "so_what": "Allotted Rs 2,120 crore in secured NCDs on 21 October 2026.",
+  "category": "fund_raise",
+  "category_source": "rule",
+  "priority": "medium",
+  "score": 0.032,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5bb76cad-5a8c-42c8-8aa3-6d81edf31bf6.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "oneliner",
+    "text": "Allotted Rs 2,120 crore in secured NCDs on 21 October 2026."
+  }
+}

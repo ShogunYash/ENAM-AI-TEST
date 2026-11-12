@@ -1,0 +1,18 @@
+{
+  "id": "9def2f80-68a4-4981-875d-5bab9b24ccef",
+  "symbol": "PERSISTENT",
+  "company_name": "Persistent Systems Ltd",
+  "filed_at": "2026-11-04T15:00:41.100000+05:30",
+  "headline": "The Outcome of the Special Committee Meeting held on November 4, 2026, for allotment of NCDs is as enclosed.",
+  "so_what": "Approved allotment of 700,000 NCDs aggregating to INR 70 billion.",
+  "category": "fund_raise",
+  "category_source": "rule",
+  "priority": "medium",
+  "score": 0.844,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e05f8c9-956c-4fbc-9e8e-3f6aa4694621.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "oneliner",
+    "text": "Approved allotment of 700,000 NCDs aggregating to INR 70 billion."
+  }
+}

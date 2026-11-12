@@ -1,0 +1,18 @@
+{
+  "id": "913014a6-a273-4cfc-8a62-a2fccb69a061",
+  "symbol": "BAJFINANCE",
+  "company_name": "Bajaj Finance Ltd",
+  "filed_at": "2026-10-19T18:03:33.520000+05:30",
+  "headline": "The Board of Directors of the Company, at their meeting held today, i.e., 19 October 2026, approved, inter alia, issue of 49,00,737 equity shares of face value of Re. 1 at the respective ....",
+  "so_what": "Board approved issue of 49,00,737 equity shares of face value Re.1",
+  "category": "fund_raise",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 0.038,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fda5e9e1-3aa9-4ccc-837a-d45817ef7360.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "oneliner",
+    "text": "Board approved issue of 49,00,737 equity shares of face value Re.1"
+  }
+}

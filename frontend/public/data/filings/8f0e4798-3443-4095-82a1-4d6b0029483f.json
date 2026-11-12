@@ -1,0 +1,18 @@
+{
+  "id": "8f0e4798-3443-4095-82a1-4d6b0029483f",
+  "symbol": "RELIANCE",
+  "company_name": "Reliance Industries Ltd",
+  "filed_at": "2026-10-14T20:12:37.070000+05:30",
+  "headline": "Proposed Initial Public Offer of Jio Platforms Limited",
+  "so_what": "Jio Platforms approved IPO price band ₹1,065 to ₹1,119 per share.",
+  "category": "fund_raise",
+  "category_source": "llm",
+  "priority": "high",
+  "score": 0.012,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc57bd43-7392-405d-b507-f1a83de93453.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "oneliner",
+    "text": "Jio Platforms approved IPO price band ₹1,065 to ₹1,119 per share."
+  }
+}

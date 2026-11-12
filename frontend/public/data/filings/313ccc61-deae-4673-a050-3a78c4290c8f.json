@@ -1,0 +1,18 @@
+{
+  "id": "313ccc61-deae-4673-a050-3a78c4290c8f",
+  "symbol": "RELIANCE",
+  "company_name": "Reliance Industries Ltd",
+  "filed_at": "2026-10-29T08:55:13.837000+05:30",
+  "headline": "Voluntary strike off of Hamleys (Franchising) Limited.",
+  "so_what": "Hamleys (Franchising) Ltd. to be dissolved by late December 2026.",
+  "category": "m_and_a",
+  "category_source": "llm",
+  "priority": "high",
+  "score": 0.398,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bc9fc5d1-9c04-4a88-b807-79d27dd63697.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "oneliner",
+    "text": "Hamleys (Franchising) Ltd. to be dissolved by late December 2026."
+  }
+}

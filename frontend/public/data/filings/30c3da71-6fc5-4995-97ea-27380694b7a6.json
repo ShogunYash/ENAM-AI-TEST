@@ -1,0 +1,18 @@
+{
+  "id": "30c3da71-6fc5-4995-97ea-27380694b7a6",
+  "symbol": "FINEORG",
+  "company_name": "Fine Organic Industries Ltd",
+  "filed_at": "2026-11-02T17:02:47.990000+05:30",
+  "headline": "As enclosed",
+  "so_what": "Approved investment limit increase by Rs. 120 crores to Rs. 420 crores",
+  "category": "m_and_a",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 1.085,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e6ecfc7d-e5f9-46eb-8fb6-c16c59773d0f.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "oneliner",
+    "text": "Approved investment limit increase by Rs. 120 crores to Rs. 420 crores"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "90d3e283-73e5-4158-9705-30fc5e42d072",
+  "symbol": "CERA",
+  "company_name": "Cera Sanitaryware Ltd",
+  "filed_at": "2026-11-04T12:35:12.630000+05:30",
+  "headline": "Change in Directors as per attachment.",
+  "so_what": "Vikram Somany appointed as Chairman and Managing Director from 01 Jul",
+  "category": "management_change",
+  "category_source": "rule",
+  "priority": "medium",
+  "score": 1.031,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4c5a17a7-fef6-480d-bafd-acf0b72fd969.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "management",
+    "person": "Vikram Somany",
+    "role": "Chairman and Managing Director",
+    "change": "appointed",
+    "background": [
+      "Chairman & Managing Director since 2002",
+      "Promoter of the Company",
+      "Bachelor degree of Science (B.Sc.)"
+    ],
+    "links": [],
+    "effective": "2027-07-01",
+    "background_source": "filing"
+  }
+}

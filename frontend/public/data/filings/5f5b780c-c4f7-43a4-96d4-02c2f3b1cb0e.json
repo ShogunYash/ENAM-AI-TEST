@@ -1,0 +1,18 @@
+{
+  "id": "5f5b780c-c4f7-43a4-96d4-02c2f3b1cb0e",
+  "symbol": "PERSISTENT",
+  "company_name": "Persistent Systems Ltd",
+  "filed_at": "2026-11-04T15:07:07.400000+05:30",
+  "headline": "The intimation of the allotment of Non-convertible Debentures dated November 4, 2026, is as enclosed.",
+  "so_what": "Approved allotment of 700,000 NCDs aggregating to INR 70 billion.",
+  "category": "fund_raise",
+  "category_source": "rule",
+  "priority": "medium",
+  "score": 0.845,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/258dfe1d-7ec3-4563-863f-330be44338eb.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "oneliner",
+    "text": "Approved allotment of 700,000 NCDs aggregating to INR 70 billion."
+  }
+}

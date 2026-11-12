@@ -1,0 +1,18 @@
+{
+  "id": "16ea0782-d143-468b-901a-3f244a3373ce",
+  "symbol": "RELIANCE",
+  "company_name": "Reliance Industries Ltd",
+  "filed_at": "2026-10-24T21:47:58.737000+05:30",
+  "headline": "JPL has today finalised the Issue Price at Rs. 1,119 per Equity Share and has also filed Prospectus dated October 24, 2026 with the Registrar of Companies, Gujarat at Ahmedabad.",
+  "so_what": "JPL finalized IPO issue price at ₹1,119 per equity share.",
+  "category": "fund_raise",
+  "category_source": "llm",
+  "priority": "high",
+  "score": 0.124,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0056a3dc-6357-48ff-a037-f1b206624331.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "oneliner",
+    "text": "JPL finalized IPO issue price at ₹1,119 per equity share."
+  }
+}

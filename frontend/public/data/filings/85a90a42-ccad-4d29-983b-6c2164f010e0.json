@@ -1,0 +1,18 @@
+{
+  "id": "85a90a42-ccad-4d29-983b-6c2164f010e0",
+  "symbol": "TCS",
+  "company_name": "Tata Consultancy Services Ltd",
+  "filed_at": "2026-10-15T13:28:35.827000+05:30",
+  "headline": "Tata Consultancy Services Limited has informed the Exchange about completion of acquisition of BBY Services India LLP.",
+  "so_what": "TCS completed acquisition of 100% stake in BBY Services India LLP.",
+  "category": "m_and_a",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 0.016,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ad952e13-3c76-410e-81f8-4fe3d108a196.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "oneliner",
+    "text": "TCS completed acquisition of 100% stake in BBY Services India LLP."
+  }
+}

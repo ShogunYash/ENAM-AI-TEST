@@ -1,0 +1,18 @@
+{
+  "id": "6cae5e85-e0dc-4fa9-8f43-11b4bedd4333",
+  "symbol": "BAJFINANCE",
+  "company_name": "Bajaj Finance Ltd",
+  "filed_at": "2026-11-05T17:46:29.097000+05:30",
+  "headline": "Bajaj Finance Ltdhas informed BSE that the meeting of the Board of Directors of the Company is scheduled on 10/11/2026 ,inter alia, to consider and approve the price of warrants to be issued ....",
+  "so_what": "Board meeting set for 10 Nov 2026 to price warrant issue",
+  "category": "fund_raise",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 1.912,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/191d3534-ded0-412c-9b3e-a8fbe7c38d5a.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "oneliner",
+    "text": "Board meeting set for 10 Nov 2026 to price warrant issue"
+  }
+}

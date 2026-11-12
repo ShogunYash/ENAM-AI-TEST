@@ -1,0 +1,24 @@
+{
+  "id": "eee0209e-2a9c-4d1c-91a1-8b1dbc6868a2",
+  "symbol": "HDFCBANK",
+  "company_name": "HDFC Bank Ltd",
+  "filed_at": "2026-10-27T08:06:22.633000+05:30",
+  "headline": "Disclosure under Regulation 30 and other applicable regulations of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 - Change in Managing Director and Chief Executive ....",
+  "so_what": "Anup Bagchi appointed as MD and CEO from 27 Oct",
+  "category": "management_change",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 0.249,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e5b2d06f-fea8-4dea-aa03-84674215a0fd.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "management",
+    "person": "Anup Bagchi",
+    "role": "Managing Director and Chief Executive Officer",
+    "change": "appointed",
+    "background": [],
+    "links": [],
+    "effective": "2026-10-27",
+    "background_source": "none"
+  }
+}

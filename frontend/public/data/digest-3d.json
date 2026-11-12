@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "3d",
-    "start": "2026-11-10T00:06:10.419633+05:30",
-    "end": "2026-11-13T00:06:10.419633+05:30"
+    "start": "2026-11-10T02:41:24.857683+05:30",
+    "end": "2026-11-13T02:41:24.857683+05:30"
   },
-  "generated_at": "2026-11-13T00:06:10.419633+05:30",
+  "generated_at": "2026-11-13T02:41:24.857683+05:30",
   "needs_you": [
     {
       "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
@@ -12,14 +12,17 @@
       "company_name": "Bajaj Finance Ltd",
       "filed_at": "2026-11-11T17:06:59.713000+05:30",
       "headline": "Outcome of QIP 2026 - Special Committee Meeting",
-      "so_what": null,
+      "so_what": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price.",
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 7.792,
+      "score": 7.6,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
       "price_reaction": null,
-      "enrichment": null
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price."
+      }
     }
   ],
   "also_material": [
@@ -29,17 +32,20 @@
       "company_name": "Bajaj Finance Ltd",
       "filed_at": "2026-11-10T12:23:10.163000+05:30",
       "headline": "Outcome of PI 2026 - Allotment Committee meeting held on 10 November 2026",
-      "so_what": null,
+      "so_what": "Approved allotment of 5,74,25,740 warrants at Rs. 1,010 each.",
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 6.683,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/84c0dbf5-4b55-41b9-ab7b-e20d9fe359a9.pdf",
+      "score": 6.519,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/84c0dbf5-4b55-41b9-ab7b-e20d9fe359a9.pdf",
       "price_reaction": {
         "pct_1d": 1.31,
         "vol_ratio": 0.96
       },
-      "enrichment": null
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Approved allotment of 5,74,25,740 warrants at Rs. 1,010 each."
+      }
     },
     {
       "id": "f9a4f2e2-4e74-49fd-a6bd-9df8d6045e71",
@@ -47,17 +53,20 @@
       "company_name": "Bajaj Finance Ltd",
       "filed_at": "2026-11-10T12:12:31.463000+05:30",
       "headline": "PI 2026 - Special Committee of the Board of Directors of the Company (''Committee'') at its meeting held today i.e., 10 November 2026, has approved the issue of 5,74,25,740 Warrants to ....",
-      "so_what": null,
+      "so_what": "Approved issuing 5,74,25,740 warrants for ₹57,99,99,97,400.",
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 6.672,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/41e7bb57-172f-4858-a5ac-8c15fe653e81.pdf",
+      "score": 6.508,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/41e7bb57-172f-4858-a5ac-8c15fe653e81.pdf",
       "price_reaction": {
         "pct_1d": 1.31,
         "vol_ratio": 0.96
       },
-      "enrichment": null
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Approved issuing 5,74,25,740 warrants for ₹57,99,99,97,400."
+      }
     }
   ],
   "routine": {
@@ -77,7 +86,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.719,
+        "score": 1.677,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/daa6c172-771a-4af5-b4b3-9813fdf7536a.pdf",
         "price_reaction": {
           "pct_1d": -0.7,
@@ -95,7 +104,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.501,
+        "score": 1.464,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a9cb0ab8-930f-4400-b70b-fbd01640f54d.pdf",
         "price_reaction": {
           "pct_1d": 0.25,
@@ -113,7 +122,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.742,
+        "score": 0.723,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2b934e4e-121f-42d7-a2d0-d3eb4364b9a7.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -126,9 +135,9 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-11T17:06:59.713000+05:30",
-      "value": 7.792,
+      "value": 7.6,
       "threshold": 7.0,
-      "message": "Outcome of QIP 2026 - Special Committee Meeting",
+      "message": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price.",
       "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7"
     },
     {
@@ -136,9 +145,9 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-10T12:23:10.163000+05:30",
-      "value": 6.683,
+      "value": 6.519,
       "threshold": 7.0,
-      "message": "Outcome of PI 2026 - Allotment Committee meeting held on 10 November 2026",
+      "message": "Approved allotment of 5,74,25,740 warrants at Rs. 1,010 each.",
       "filing_id": "dff7d1e2-500b-498c-9b9a-52b2cb4641a8"
     },
     {
@@ -146,9 +155,9 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-10T12:12:31.463000+05:30",
-      "value": 6.672,
+      "value": 6.508,
       "threshold": 7.0,
-      "message": "PI 2026 - Special Committee of the Board of Directors of the Company (''Committee'') at it",
+      "message": "Approved issuing 5,74,25,740 warrants for ₹57,99,99,97,400.",
       "filing_id": "f9a4f2e2-4e74-49fd-a6bd-9df8d6045e71"
     }
   ],

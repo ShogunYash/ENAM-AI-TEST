@@ -1,0 +1,18 @@
+{
+  "id": "98d6a02a-dd08-44ac-9686-48d4b9a70b6d",
+  "symbol": "FINEORG",
+  "company_name": "Fine Organic Industries Ltd",
+  "filed_at": "2026-11-06T16:05:07.413000+05:30",
+  "headline": "Conclusion of Search proceedings initiated by Maharashtra Goods and Services Tax Department",
+  "so_what": "Company paid Rs 5,00,47,594 tax and interest after search concluded.",
+  "category": "litigation",
+  "category_source": "llm",
+  "priority": "medium",
+  "score": 2.032,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/53496491-fd25-4172-9f9f-79bf088ea9c5.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "oneliner",
+    "text": "Company paid Rs 5,00,47,594 tax and interest after search concluded."
+  }
+}

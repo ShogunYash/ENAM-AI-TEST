@@ -1,0 +1,18 @@
+{
+  "id": "e4c168b5-0735-49cc-a030-f058d7ebc477",
+  "symbol": "PERSISTENT",
+  "company_name": "Persistent Systems Ltd",
+  "filed_at": "2026-10-26T23:29:31.787000+05:30",
+  "headline": "The disclosure of allotment of shares dated October 26, 2026, is as enclosed.",
+  "so_what": "Approved allotment of 7,683,981 shares for INR 42,646.09 million.",
+  "category": "fund_raise",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 0.2,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b633b6e5-f968-461c-b8f1-2ac155afc384.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "oneliner",
+    "text": "Approved allotment of 7,683,981 shares for INR 42,646.09 million."
+  }
+}

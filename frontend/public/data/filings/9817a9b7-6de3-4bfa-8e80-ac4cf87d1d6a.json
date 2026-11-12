@@ -1,0 +1,26 @@
+{
+  "id": "9817a9b7-6de3-4bfa-8e80-ac4cf87d1d6a",
+  "symbol": "BAJFINANCE",
+  "company_name": "Bajaj Finance Ltd",
+  "filed_at": "2026-10-19T18:18:41.203000+05:30",
+  "headline": "The Board of Directors at their meeting held today, i.e., 19 October 2026, approved the re-appointment of Prashant Verma as Chief Information Security Officer (CISO) as per RBI Guidelines, ....",
+  "so_what": "Prashant Verma appointed as Chief Information Security Officer",
+  "category": "management_change",
+  "category_source": "rule",
+  "priority": "medium",
+  "score": 0.027,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/eb4bfa8c-5285-4b6f-86c3-852bf82c8015.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "management",
+    "person": "Prashant Verma",
+    "role": "Chief Information Security Officer",
+    "change": "appointed",
+    "background": [
+      "He has around 21 years of full-time experience on Security Domain."
+    ],
+    "links": [],
+    "effective": "2027-02-01",
+    "background_source": "filing"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "f9af6120-5da7-497d-82da-4444b74ef32a",
+  "symbol": "ULTRACEMCO",
+  "company_name": "UltraTech Cement Ltd",
+  "filed_at": "2026-10-19T13:50:19.440000+05:30",
+  "headline": "Changes in Board Composition",
+  "so_what": "K. K. Maheshwari resigns as Non-Executive Vice Chairman from 01 Jan",
+  "category": "management_change",
+  "category_source": "rule",
+  "priority": "medium",
+  "score": 0.026,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9e27e1c6-ecc1-4d9b-9c89-a91c58b61c03.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "management",
+    "person": "K. K. Maheshwari",
+    "role": "Non-Executive Vice Chairman",
+    "change": "resigned",
+    "background": [],
+    "links": [],
+    "effective": "2027-01-01",
+    "background_source": "none"
+  }
+}

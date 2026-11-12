@@ -1,0 +1,24 @@
+{
+  "id": "9fe24176-bed0-4206-9717-23b4afe63ad4",
+  "symbol": "TITAN",
+  "company_name": "Titan Company Ltd",
+  "filed_at": "2026-11-05T18:49:12.020000+05:30",
+  "headline": "Retirement of Mr. Noel. N. Tata as Director and Vice-Chairman",
+  "so_what": null,
+  "category": "management_change",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 2.207,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f2144a96-1845-46b3-b1d6-2df374df6da1.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "management",
+    "person": "Noel N. Tata",
+    "role": "Non-Executive, Non-Independent Director and Vice-Chairman",
+    "change": "retired",
+    "background": [],
+    "links": [],
+    "effective": "2026-11-12",
+    "background_source": "none"
+  }
+}

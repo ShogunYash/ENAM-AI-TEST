@@ -1,0 +1,21 @@
+{
+  "id": "dff7d1e2-500b-498c-9b9a-52b2cb4641a8",
+  "symbol": "BAJFINANCE",
+  "company_name": "Bajaj Finance Ltd",
+  "filed_at": "2026-11-10T12:23:10.163000+05:30",
+  "headline": "Outcome of PI 2026 - Allotment Committee meeting held on 10 November 2026",
+  "so_what": "Approved allotment of 5,74,25,740 warrants at Rs. 1,010 each.",
+  "category": "fund_raise",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 6.519,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/84c0dbf5-4b55-41b9-ab7b-e20d9fe359a9.pdf",
+  "price_reaction": {
+    "pct_1d": 1.31,
+    "vol_ratio": 0.96
+  },
+  "enrichment": {
+    "type": "oneliner",
+    "text": "Approved allotment of 5,74,25,740 warrants at Rs. 1,010 each."
+  }
+}

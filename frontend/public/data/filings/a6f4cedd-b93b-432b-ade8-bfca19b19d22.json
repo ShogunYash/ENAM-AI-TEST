@@ -1,0 +1,18 @@
+{
+  "id": "a6f4cedd-b93b-432b-ade8-bfca19b19d22",
+  "symbol": "TATASTEEL",
+  "company_name": "Tata Steel Ltd",
+  "filed_at": "2026-10-15T19:10:15.873000+05:30",
+  "headline": "Receipt of certified true copy of the Order of Hon''ble National Company Law Tribunal, Mumbai Bench in the matter of the Scheme of Amalgamation of Rujuvalika Investments Limited into and ....",
+  "so_what": "Tata Steel received NCLT order approving Rujuvalika merger on Oct 15.",
+  "category": "m_and_a",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 0.017,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ed58c27c-5a50-4923-b54c-652a6e715f3c.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "oneliner",
+    "text": "Tata Steel received NCLT order approving Rujuvalika merger on Oct 15."
+  }
+}

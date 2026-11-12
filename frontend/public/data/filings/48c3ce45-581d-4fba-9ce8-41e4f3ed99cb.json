@@ -1,0 +1,18 @@
+{
+  "id": "48c3ce45-581d-4fba-9ce8-41e4f3ed99cb",
+  "symbol": "KEI",
+  "company_name": "KEI Industries Ltd",
+  "filed_at": "2026-10-22T15:43:24.550000+05:30",
+  "headline": "Pursuant to Regulation 30 read with Schedule III of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 we wish to inform you that CRISIL ESG Ratings & Analytics ....",
+  "so_what": "CRISIL assigned KEI Industries a 'Strong' ESG rating of 65.",
+  "category": "credit_rating",
+  "category_source": "rule",
+  "priority": "medium",
+  "score": 0.035,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/75be6169-a776-45a9-aaaf-968aa7a80a3a.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "oneliner",
+    "text": "CRISIL assigned KEI Industries a 'Strong' ESG rating of 65."
+  }
+}

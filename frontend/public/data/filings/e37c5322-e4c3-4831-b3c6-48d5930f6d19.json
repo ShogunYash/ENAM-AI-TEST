@@ -1,0 +1,18 @@
+{
+  "id": "e37c5322-e4c3-4831-b3c6-48d5930f6d19",
+  "symbol": "LT",
+  "company_name": "Larsen & Toubro Ltd",
+  "filed_at": "2026-10-31T12:49:28.357000+05:30",
+  "headline": "Update on Business Transfer Agreement with Vyoma.AI Limited (Vyoma), Wholly owned Subsidiary of the Company and Share Purchase Agreement towards sale of entire stake held in L&T Network ....",
+  "so_what": "L&T extended the sale of L&T Network Services to March 31, 2027.",
+  "category": "m_and_a",
+  "category_source": "llm",
+  "priority": "high",
+  "score": 0.656,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/13e50739-50e7-4b5a-8dba-ac92ece6d35f.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "oneliner",
+    "text": "L&T extended the sale of L&T Network Services to March 31, 2027."
+  }
+}
