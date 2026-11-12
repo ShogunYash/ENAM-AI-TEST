@@ -30,9 +30,9 @@ export const WindowPicker: React.FC<WindowPickerProps> = ({
             type="button"
             disabled={disabled}
             onClick={() => onChange(opt.id)}
-            className={`px-3 py-1 text-xs font-medium rounded-md transition-all ${
+            className={`px-3 py-1.5 min-h-[36px] text-xs font-medium rounded-md touch-manipulation transition-all ${
               isActive
-                ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60'
+                ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
                 : 'text-zinc-400 hover:text-zinc-200'
             }`}
           >

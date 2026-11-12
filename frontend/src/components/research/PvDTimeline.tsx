@@ -1,9 +1,11 @@
 import React from 'react'
-import { PvDItem, Claim, Verdict } from '@/api/types'
-import { FileText, ArrowRight, CheckCircle2, XCircle, Clock, AlertTriangle, TrendingUp, TrendingDown } from 'lucide-react'
+import { PvDItem, Claim, Verdict, SourceDoc } from '@/api/types'
+import { formatDocSourceLabel, formatActual } from '@/lib/formatters'
+import { FileText, CheckCircle2, XCircle, Clock, AlertTriangle, TrendingUp, TrendingDown } from 'lucide-react'
 
 interface PvDTimelineProps {
   items: PvDItem[]
+  sourceDocs?: SourceDoc[]
   onSelectClaim: (claim: Claim, metricTitle: string) => void
 }
 
@@ -60,7 +62,11 @@ export function getVerdictChip(verdict: Verdict) {
   }
 }
 
-export const PvDTimeline: React.FC<PvDTimelineProps> = ({ items, onSelectClaim }) => {
+export const PvDTimeline: React.FC<PvDTimelineProps> = ({
+  items,
+  sourceDocs = [],
+  onSelectClaim,
+}) => {
   if (!items || items.length === 0) return null
 
   return (
@@ -69,6 +75,7 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({ items, onSelectClaim }
         const chip = getVerdictChip(item.verdict)
         const primaryPromisedSource = item.promised.sources[0]
         const primaryOutcomeSource = item.outcome?.sources[0]
+        const actualBadge = formatActual(item.actual, item.horizon)
 
         return (
           <div
@@ -101,21 +108,30 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({ items, onSelectClaim }
               </span>
             </div>
 
-            {/* One-line reason */}
-            <div className="p-2 rounded-lg bg-zinc-950/60 border border-zinc-800/60 text-xs text-zinc-300 font-medium leading-relaxed">
-              <span className="text-zinc-500 font-semibold mr-1.5 uppercase text-[10px] tracking-wider">
-                Reason:
-              </span>
-              {item.reason}
+            {/* One-line reason (<=120 chars) and table actual if available */}
+            <div className="p-2.5 rounded-lg bg-zinc-950/60 border border-zinc-800/60 text-xs text-zinc-300 font-medium leading-relaxed space-y-1.5">
+              <div className="flex items-start justify-between gap-2 flex-wrap">
+                <div>
+                  <span className="text-zinc-500 font-semibold mr-1.5 uppercase text-[10px] tracking-wider">
+                    Reason:
+                  </span>
+                  <span>{item.reason}</span>
+                </div>
+              </div>
+              {actualBadge && (
+                <div className="font-mono text-[11px] text-emerald-300 bg-emerald-950/50 border border-emerald-800/60 px-2 py-0.5 rounded inline-flex items-center gap-1">
+                  <span>{actualBadge}</span>
+                </div>
+              )}
             </div>
 
-            {/* Claims: Promised vs Delivered */}
+            {/* Claims: Promised vs Delivered (paraphrased headlines without quotes, tap for quote) */}
             <div className="space-y-2 pt-0.5 text-xs">
               {/* Promised Claim */}
               <div
                 onClick={() => onSelectClaim(item.promised, item.metric)}
                 className="group p-2.5 rounded-lg border border-zinc-800/80 bg-zinc-950/40 hover:bg-zinc-800/30 hover:border-zinc-700 cursor-pointer transition-all space-y-1.5"
-                title="Tap to open verified source citation"
+                title="Tap to view verified verbatim quote"
               >
                 <div className="flex items-center justify-between text-[11px]">
                   <span className="text-sky-400 font-semibold uppercase tracking-wider text-[10px]">
@@ -124,12 +140,19 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({ items, onSelectClaim }
                   {primaryPromisedSource && (
                     <span className="text-[10px] font-mono text-zinc-400 group-hover:text-zinc-200 underline decoration-zinc-700 flex items-center gap-1">
                       <FileText className="w-2.5 h-2.5 text-sky-400" />
-                      <span>{primaryPromisedSource.doc_id} · p.{primaryPromisedSource.page}</span>
+                      <span>
+                        {formatDocSourceLabel(
+                          primaryPromisedSource.doc_id,
+                          primaryPromisedSource.page,
+                          sourceDocs
+                        )}
+                      </span>
                     </span>
                   )}
                 </div>
-                <div className="text-zinc-200 text-[12px] leading-snug">
-                  "{item.promised.text}"
+                {/* Paraphrase headline shown without quotes */}
+                <div className="text-zinc-200 text-[12px] leading-snug font-medium">
+                  {item.promised.text}
                 </div>
               </div>
 
@@ -138,7 +161,7 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({ items, onSelectClaim }
                 <div
                   onClick={() => onSelectClaim(item.outcome!, item.metric)}
                   className="group p-2.5 rounded-lg border border-zinc-800/80 bg-zinc-950/40 hover:bg-zinc-800/30 hover:border-zinc-700 cursor-pointer transition-all space-y-1.5"
-                  title="Tap to open verified source citation"
+                  title="Tap to view verified verbatim quote"
                 >
                   <div className="flex items-center justify-between text-[11px]">
                     <span className="text-emerald-400 font-semibold uppercase tracking-wider text-[10px]">
@@ -147,12 +170,19 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({ items, onSelectClaim }
                     {primaryOutcomeSource && (
                       <span className="text-[10px] font-mono text-zinc-400 group-hover:text-zinc-200 underline decoration-zinc-700 flex items-center gap-1">
                         <FileText className="w-2.5 h-2.5 text-emerald-400" />
-                        <span>{primaryOutcomeSource.doc_id} · p.{primaryOutcomeSource.page}</span>
+                        <span>
+                          {formatDocSourceLabel(
+                            primaryOutcomeSource.doc_id,
+                            primaryOutcomeSource.page,
+                            sourceDocs
+                          )}
+                        </span>
                       </span>
                     )}
                   </div>
-                  <div className="text-zinc-200 text-[12px] leading-snug">
-                    "{item.outcome.text}"
+                  {/* Paraphrase headline shown without quotes */}
+                  <div className="text-zinc-200 text-[12px] leading-snug font-medium">
+                    {item.outcome.text}
                   </div>
                 </div>
               ) : (
@@ -167,4 +197,3 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({ items, onSelectClaim }
     </div>
   )
 }
-

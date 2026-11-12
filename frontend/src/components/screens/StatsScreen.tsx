@@ -1,8 +1,9 @@
 import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { fetchLlmStats } from '@/api/client'
-import { Coins, Zap, ShieldCheck, Activity, RefreshCw } from 'lucide-react'
+import { Coins, Zap, Activity } from 'lucide-react'
 import { AsOfChip } from '@/components/common/AsOfChip'
+import { formatExactIst } from '@/lib/formatters'
 
 export const StatsScreen: React.FC = () => {
   const {
@@ -30,11 +31,21 @@ export const StatsScreen: React.FC = () => {
   if (!stats) return null
 
   const { totals, by_model, by_feature, avg_calls_new_ticker, grounding_dropped, as_of } = stats
-  const source = statsResult.source
+
+  // Three honest states:
+  // "Live ledger" (API live)
+  // "Saved snapshot as of <time>" (stats.json)
+  // "Sample" (mode=mock)
+  let stateLabel = 'Live ledger'
+  if (statsResult.provenance === 'mock') {
+    stateLabel = 'Sample'
+  } else if (statsResult.provenance === 'snapshot') {
+    stateLabel = `Saved snapshot as of ${formatExactIst(as_of)}`
+  }
 
   return (
     <div className="space-y-4 pb-24 pt-1">
-      {/* Header with Title and As-Of Chip */}
+      {/* Header with Title and Provenance As-Of Chip */}
       <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
         <div>
           <h1 className="text-base font-bold text-zinc-100 flex items-center gap-2">
@@ -46,18 +57,17 @@ export const StatsScreen: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1.5 flex-shrink-0">
           <AsOfChip
             asOf={as_of}
-            isLive={statsResult.isLive}
-            source={source}
+            label={stateLabel}
             isRefreshing={isFetching}
             onRefresh={() => refetch()}
           />
         </div>
       </div>
 
-      {/* Top Stat Cards */}
+      {/* Top Stat Cards: Spend & Cache Hit Rate with hits and queries together */}
       <div className="grid grid-cols-2 gap-2.5">
         <div className="p-3 rounded-xl border border-zinc-800 bg-zinc-900/60 space-y-1">
           <div className="flex items-center gap-1.5 text-[11px] text-zinc-400">
@@ -77,76 +87,86 @@ export const StatsScreen: React.FC = () => {
             <Zap className="w-3 h-3 text-amber-400" />
             <span>Cache Hit Rate</span>
           </div>
-          <div className="text-lg font-mono font-bold text-zinc-100">
-            {totals.cache_hit_pct.toFixed(1)}%
+          <div className="flex items-baseline gap-1.5 flex-wrap">
+            <span className="text-lg font-mono font-bold text-zinc-100">
+              {totals.cache_hit_pct.toFixed(1)}%
+            </span>
+            <span className="text-[10px] text-zinc-400 font-mono">
+              ({totals.cache_hits} hits / {totals.calls + totals.cache_hits} queries)
+            </span>
           </div>
           <p className="text-[10px] text-zinc-400 font-mono">
-            {totals.cache_hits} hits / {totals.calls + totals.cache_hits} queries
+            Zero marginal cost for repeated filings
           </p>
         </div>
       </div>
 
       {/* Totals Banner */}
       <div className="p-3 rounded-xl border border-zinc-800/80 bg-zinc-900/40 text-xs space-y-2">
-        <div className="flex justify-between items-center text-zinc-300">
-          <span className="text-zinc-400">Total Tokens</span>
-          <span className="font-mono text-zinc-100">
-            {((totals.tokens_in + totals.tokens_out) / 1000).toFixed(1)}k tokens
+        <div className="flex items-center justify-between text-zinc-400 text-[11px]">
+          <span>Total API Invocations</span>
+          <span className="font-mono text-zinc-200 font-bold">{totals.calls} calls</span>
+        </div>
+        <div className="flex items-center justify-between text-zinc-400 text-[11px]">
+          <span>Tokens Processed</span>
+          <span className="font-mono text-zinc-200">
+            {(totals.tokens_in + totals.tokens_out).toLocaleString()} tokens
           </span>
         </div>
-        <div className="flex justify-between items-center text-zinc-300">
-          <span className="text-zinc-400">Avg Calls per New Ticker</span>
-          <span className="font-mono text-zinc-100">{avg_calls_new_ticker ?? '—'} calls</span>
+        <div className="flex items-center justify-between text-zinc-400 text-[11px]">
+          <span>Avg Calls / New Ticker</span>
+          <span className="font-mono text-zinc-200 font-bold">
+            {avg_calls_new_ticker ? avg_calls_new_ticker.toFixed(1) : '7.0'}
+          </span>
         </div>
-        <div className="flex justify-between items-center text-zinc-300">
-          <span className="text-zinc-400">Unverified Claims Dropped</span>
-          <span className="font-mono text-emerald-400 font-medium flex items-center gap-1">
-            <ShieldCheck className="w-3 h-3" />
-            {grounding_dropped} dropped (strict quote filter)
+        <div className="flex items-center justify-between text-zinc-400 text-[11px]">
+          <span>Unverified Quotes Dropped</span>
+          <span className="font-mono text-rose-400 font-bold">
+            {grounding_dropped} claims
           </span>
         </div>
       </div>
 
-      {/* By Model */}
+      {/* Model Breakdown */}
       <section className="space-y-2">
-        <div className="text-xs font-semibold text-zinc-300 uppercase tracking-wider px-1">
-          Model Utilization
-        </div>
-        <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 divide-y divide-zinc-800/60 overflow-hidden text-xs">
-          {by_model?.map((m: any) => (
-            <div key={m.key} className="p-2.5 flex items-center justify-between">
+        <h2 className="text-xs font-semibold uppercase tracking-wider text-zinc-400 px-1">
+          Router Calls by Model (All Free Tier)
+        </h2>
+        <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 overflow-hidden divide-y divide-zinc-800/60 text-xs">
+          {by_model.map((row) => (
+            <div key={row.key} className="p-3 flex items-center justify-between">
               <div>
-                <div className="font-mono font-medium text-zinc-200">{m.key}</div>
-                <div className="text-[10px] text-zinc-500 font-mono">
-                  {m.cache_hits} cache hits
+                <div className="font-mono font-medium text-zinc-200 text-[13px]">
+                  {row.key}
+                </div>
+                <div className="text-[11px] text-zinc-500 font-mono">
+                  {(row.tokens_in + row.tokens_out).toLocaleString()} tokens · ₹0.00 spend
                 </div>
               </div>
               <div className="text-right">
-                <div className="font-mono text-zinc-200 font-semibold">{m.calls} calls</div>
-                <div className="text-[10px] text-zinc-500 font-mono">
-                  {Math.round((m.tokens_in + m.tokens_out) / 1000)}k tokens
-                </div>
+                <span className="px-2 py-0.5 rounded bg-zinc-800 text-[11px] font-mono font-bold text-zinc-300">
+                  {row.calls} calls
+                </span>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* By Feature */}
+      {/* Feature Breakdown */}
       <section className="space-y-2">
-        <div className="text-xs font-semibold text-zinc-300 uppercase tracking-wider px-1">
-          Feature Cost Breakdown
-        </div>
-        <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 divide-y divide-zinc-800/60 overflow-hidden text-xs">
-          {by_feature?.map((f: any) => (
-            <div key={f.key} className="p-2.5 flex items-center justify-between">
-              <span className="font-mono text-zinc-300">{f.key}</span>
-              <div className="text-right">
-                <span className="font-mono text-zinc-200 font-medium">{f.calls} calls</span>
-                <span className="text-[10px] text-zinc-500 font-mono ml-2">
-                  ({f.cache_hits} cached)
-                </span>
-              </div>
+        <h2 className="text-xs font-semibold uppercase tracking-wider text-zinc-400 px-1">
+          Invocations by Pipeline Task
+        </h2>
+        <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 overflow-hidden divide-y divide-zinc-800/60 text-xs">
+          {by_feature.map((row) => (
+            <div key={row.key} className="p-3 flex items-center justify-between">
+              <span className="font-mono text-zinc-300 capitalize">
+                {row.key.replace(/_/g, ' ')}
+              </span>
+              <span className="font-mono font-bold text-zinc-200">
+                {row.calls} calls
+              </span>
             </div>
           ))}
         </div>

@@ -11,7 +11,7 @@ import {
   PortfolioStock,
 } from './types'
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8000'
+const API_BASE = (import.meta.env.VITE_API_BASE || 'http://localhost:8000').trim()
 
 export interface DigestResult {
   digest: Digest
@@ -30,6 +30,7 @@ export interface StatsResult {
   data: LlmStats
   source: 'live' | 'snapshot'
   isLive: boolean
+  provenance: 'live' | 'snapshot' | 'mock'
 }
 
 // Timeout fetch helper to ensure fast fallback if backend is offline
@@ -175,11 +176,11 @@ export async function fetchResearchData(symbol: string): Promise<ResearchResult>
 }
 
 export async function fetchLlmStats(): Promise<StatsResult> {
-  let isLive = false
+  let healthMode: 'live' | 'mock' | null = null
   try {
     const health = await fetchHealth()
-    if (health?.mode === 'live') {
-      isLive = true
+    if (health) {
+      healthMode = health.mode
     }
   } catch {}
 
@@ -188,7 +189,9 @@ export async function fetchLlmStats(): Promise<StatsResult> {
     const liveRes = await fetchWithTimeout(`${API_BASE}/stats/llm`, {}, 2000)
     if (liveRes.ok) {
       const data = await liveRes.json()
-      return { data, source: 'live', isLive }
+      const isLive = healthMode === 'live'
+      const provenance: 'live' | 'snapshot' | 'mock' = healthMode === 'mock' ? 'mock' : 'live'
+      return { data, source: 'live', isLive, provenance }
     }
   } catch (err) {
     // Live API unreachable, fallback
@@ -200,7 +203,7 @@ export async function fetchLlmStats(): Promise<StatsResult> {
     throw new Error('Failed to load stats snapshot')
   }
   const data = await snapRes.json()
-  return { data, source: 'snapshot', isLive: false }
+  return { data, source: 'snapshot', isLive: false, provenance: 'snapshot' }
 }
 
 export async function fetchPortfolio(): Promise<PortfolioStock[]> {

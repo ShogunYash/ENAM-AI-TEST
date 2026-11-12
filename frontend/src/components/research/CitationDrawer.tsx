@@ -1,5 +1,6 @@
 import React from 'react'
 import { Claim, SourceDoc } from '@/api/types'
+import { formatDocSourceLabel } from '@/lib/formatters'
 import { X, ExternalLink, ShieldCheck, FileText, Quote } from 'lucide-react'
 
 interface CitationDrawerProps {
@@ -104,16 +105,12 @@ export const CitationDrawer: React.FC<CitationDrawerProps> = ({
                   key={i}
                   className="p-3 rounded-xl border border-zinc-800 bg-zinc-950/60 space-y-2"
                 >
-                  {/* Doc Metadata */}
+                  {/* Doc Metadata (mapped from doc_id to period, doc title, and physical page) */}
                   <div className="flex items-center justify-between text-[11px]">
                     <div className="flex items-center gap-1.5 font-mono">
-                      <span className="font-bold text-zinc-200">{src.doc_id}</span>
-                      {src.page !== null && (
-                        <>
-                          <span className="text-zinc-600">·</span>
-                          <span className="text-zinc-400">Page {src.page}</span>
-                        </>
-                      )}
+                      <span className="font-bold text-zinc-200">
+                        {formatDocSourceLabel(src.doc_id, src.page, sourceDocs)}
+                      </span>
                     </div>
 
                     {docUrl && (

@@ -45,7 +45,7 @@ export const ThresholdsScreen: React.FC = () => {
               Volume Spike Multiple
             </div>
             <div className="text-[11px] text-zinc-400">
-              Trigger when today's volume is ≥ {settings.volume_multiple.toFixed(1)}× the {settings.volume_lookback_days}-day avg
+              Alert when volume is {settings.volume_multiple.toFixed(1)}x its {settings.volume_lookback_days}-day average
             </div>
           </div>
           <div className="text-base font-mono font-bold text-amber-400">
@@ -93,7 +93,7 @@ export const ThresholdsScreen: React.FC = () => {
               Price Move Threshold
             </div>
             <div className="text-[11px] text-zinc-400">
-              Alert when daily close rises or falls by {settings.price_move_pct.toFixed(1)}% or more
+              Alert when daily close moves {settings.price_move_pct.toFixed(1)}% or more
             </div>
           </div>
           <div className="text-base font-mono font-bold text-emerald-400">

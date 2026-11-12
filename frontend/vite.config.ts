@@ -10,6 +10,10 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'data/**/*'],
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,json,webmanifest}'],
+        navigateFallback: '/index.html',
+      },
       manifest: {
         name: 'FINN - Financial Investment Agent',
         short_name: 'FINN',

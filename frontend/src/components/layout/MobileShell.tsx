@@ -82,7 +82,7 @@ export const MobileShell: React.FC<MobileShellProps> = ({
                 <button
                   key={tab.id}
                   onClick={() => onTabChange(tab.id)}
-                  className={`flex flex-col items-center justify-center flex-1 py-1 px-1 rounded-xl transition-colors relative ${
+                  className={`flex flex-col items-center justify-center flex-1 py-1 px-1 rounded-xl min-h-[48px] touch-manipulation transition-colors relative ${
                     isActive
                       ? 'text-zinc-100 font-semibold'
                       : 'text-zinc-500 hover:text-zinc-300'
