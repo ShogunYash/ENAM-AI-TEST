@@ -28,6 +28,11 @@ CREATE TABLE IF NOT EXISTS classifications (
 CREATE TABLE IF NOT EXISTS enrichments (
   filing_id TEXT PRIMARY KEY, type TEXT NOT NULL,   -- 'results' | 'management' | 'oneliner'
   payload TEXT NOT NULL, created_at TEXT);
+CREATE TABLE IF NOT EXISTS documents (
+  doc_id TEXT PRIMARY KEY,           -- 'INFY:concall_Q2FY27' / 'INFY:ar_FY26'
+  symbol TEXT NOT NULL, kind TEXT NOT NULL, period TEXT, url TEXT, pages INTEGER, fetched_at TEXT);
+CREATE TABLE IF NOT EXISTS doc_pages (
+  doc_id TEXT NOT NULL, page INTEGER NOT NULL, text TEXT NOT NULL, PRIMARY KEY (doc_id, page));
 CREATE TABLE IF NOT EXISTS bars (
   symbol TEXT NOT NULL, day TEXT NOT NULL, close REAL NOT NULL, volume INTEGER NOT NULL,
   PRIMARY KEY (symbol, day));

@@ -21,6 +21,7 @@ from app import models as m
 from app.ingest import prices as prices_mod
 from app.llm import store as llm_store
 from app.pipeline import digest as digest_mod
+from app.research import build as research_build
 from app.settings import REPO_ROOT, get_settings
 
 EXAMPLES = Path(__file__).resolve().parents[2] / "docs" / "examples"
@@ -142,8 +143,12 @@ def alerts(volume_multiple: float = 2.0, price_move_pct: float = 5.0) -> Any:
 
 @app.get("/research/{symbol}", response_model=m.Research)
 def research(symbol: str) -> Any:
-    return example("research-INFY") if symbol.upper() == "INFY" else {**example("research-building"),
-                                                                    "symbol": symbol.upper()}
+    """Cached report if built; otherwise starts a background build and returns status=building with progress
+    (the client polls every 3 s). Mock fixtures only when there is no ingested database at all (fresh checkout)."""
+    sym = symbol.strip().upper()
+    if not _has_real_data() and research_build.get_cached(sym) is None:
+        return example("research-INFY") if sym == "INFY" else {**example("research-building"), "symbol": sym}
+    return research_build.status(sym)
 
 
 @app.get("/stats/llm", response_model=m.LlmStats)

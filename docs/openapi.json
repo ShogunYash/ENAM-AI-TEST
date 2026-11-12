@@ -305,6 +305,7 @@
     "/research/{symbol}": {
       "get": {
         "summary": "Research",
+        "description": "Cached report if built; otherwise starts a background build and returns status=building with progress\n(the client polls every 3 s). Mock fixtures only when there is no ingested database at all (fresh checkout).",
         "operationId": "research_research__symbol__get",
         "parameters": [
           {

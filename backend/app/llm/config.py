@@ -11,7 +11,7 @@ import yaml
 class Provider:
     name: str
     base_url: str
-    key: str  # settings field prefix, e.g. "gemini" -> GEMINI_API_KEY
+    key: str | None  # settings field prefix, e.g. "gemini" -> GEMINI_API_KEY; None = no auth (local Ollama)
 
 
 @dataclass(frozen=True)
@@ -19,6 +19,9 @@ class ModelRef:
     provider: str
     model: str
     max_input_chars: int | None = None
+    timeout_s: float | None = None   # per-model override (a local 20B model reading a transcript is slow)
+    max_output_tokens: int | None = None   # per-model override (reasoning models spend output tokens on thinking)
+    reasoning_effort: str | None = None    # 'low'|'medium'|'high' for reasoning models (Ollama gpt-oss); None = server default
 
 
 @dataclass(frozen=True)
@@ -33,9 +36,10 @@ class LLMConfig:
 
 def load_config(path: Path) -> LLMConfig:
     raw = yaml.safe_load(path.read_text("utf-8"))
-    providers = {n: Provider(n, p["base_url"].rstrip("/"), p["key"]) for n, p in raw["providers"].items()}
+    providers = {n: Provider(n, p["base_url"].rstrip("/"), p.get("key")) for n, p in raw["providers"].items()}
     tiers = {
-        tier: [ModelRef(e["provider"], e["model"], e.get("max_input_chars")) for e in chain]
+        tier: [ModelRef(e["provider"], e["model"], e.get("max_input_chars"), e.get("timeout_s"), e.get("max_output_tokens"),
+                     e.get("reasoning_effort")) for e in chain]
         for tier, chain in raw["tiers"].items()
     }
     for tier, chain in tiers.items():

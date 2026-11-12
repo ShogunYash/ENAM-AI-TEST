@@ -20,6 +20,7 @@ class AppSettings(BaseSettings):
     groq_api_key: str | None = None
     openrouter_api_key: str | None = None
 
+    finn_use_local_llm: bool = True      # key-less `local` (Ollama over an SSH tunnel) provider; set 0 on Render and in tests
     finn_data_dir: Path = Field(default=BACKEND_DIR / "data")
     finn_llm_config: Path = Field(default=BACKEND_DIR / "config" / "models.yaml")
 

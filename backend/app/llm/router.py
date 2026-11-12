@@ -87,11 +87,13 @@ def _call(client: httpx.Client, cfg: LLMConfig, ref: ModelRef, api_key: str, sys
             {"role": "user", "content": user + extra_user},
         ],
         "temperature": cfg.temperature,
-        "max_tokens": cfg.max_output_tokens,
+        "max_tokens": ref.max_output_tokens or cfg.max_output_tokens,
         "response_format": {"type": "json_object"},
     }
+    if ref.reasoning_effort:                  # measured on gpt-oss-20b: 'low' = 9 s and valid JSON, 'medium' = 136 s and
+        body["reasoning_effort"] = ref.reasoning_effort    # the whole 12k-token budget spent thinking, no JSON
     r = client.post(f"{provider.base_url}/chat/completions", json=body,
-                    headers={"Authorization": f"Bearer {api_key}"}, timeout=cfg.timeout_s)
+                    headers={"Authorization": f"Bearer {api_key}"}, timeout=ref.timeout_s or cfg.timeout_s)
     r.raise_for_status()
     data = r.json()
     content = data["choices"][0]["message"]["content"] or ""
@@ -168,7 +170,11 @@ def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str
     try:
         for ref in chain:
             label = f"{ref.provider}/{ref.model}"
-            api_key = settings.api_key(cfg.providers[ref.provider].key)
+            pkey = cfg.providers[ref.provider].key
+            if pkey is None and not settings.finn_use_local_llm:
+                errors.append(f"{label}: local LLM disabled (FINN_USE_LOCAL_LLM=0)")
+                continue
+            api_key = "local" if pkey is None else settings.api_key(pkey)     # key-less provider = local Ollama
             if not api_key:
                 errors.append(f"{label}: no API key")
                 continue

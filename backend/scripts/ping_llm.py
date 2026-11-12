@@ -20,7 +20,7 @@ def list_models() -> None:
     cfg = load_config(s.finn_llm_config)
     configured = {(r.provider, r.model) for chain in cfg.tiers.values() for r in chain}
     for name, p in cfg.providers.items():
-        key = s.api_key(p.key)
+        key = "local" if p.key is None else s.api_key(p.key)
         if not key:
             print(f"[skip] {name}: no API key")
             continue
@@ -47,7 +47,8 @@ def ping_tiers() -> int:
     with httpx.Client() as client:
         for tier, chain in cfg.tiers.items():
             for ref in chain:
-                key = s.api_key(cfg.providers[ref.provider].key)
+                pk = cfg.providers[ref.provider].key
+                key = "local" if pk is None else s.api_key(pk)
                 label = f"{tier} {ref.provider}/{ref.model}"
                 if not key:
                     print(f"[skip] {label}: no API key")

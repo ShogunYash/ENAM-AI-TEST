@@ -21,15 +21,20 @@ providers:
   openrouter:
     base_url: https://openrouter.ai/api/v1
     key: openrouter
+  local:     # Ollama on the user's station (RTX 5000 Ada, 32 GB) reached through `ssh -N -L 11435:localhost:11434 station`.
+    base_url: http://localhost:11435/v1    # BUILD-TIME ONLY: free, no daily quota. Unreachable from the deployed API ->
+    key: null                              # connection refused -> the router falls through instantly.
 
 tiers:
   T1:   # cheap/fast: batch classification, one-liners
     - {provider: gemini,     model: gemini-3.5-flash-lite}
     - {provider: gemini,     model: gemini-3.1-flash-lite}
+    - {provider: local,      model: finn-gpt-oss, max_input_chars: 140000, timeout_s: 240, max_output_tokens: 12000, reasoning_effort: low}
     - {provider: groq,       model: openai/gpt-oss-20b, max_input_chars: 18000}
   T2:   # structured extraction from documents
     - {provider: gemini,     model: gemini-3.5-flash}
     - {provider: gemini,     model: gemini-3.6-flash}
+    - {provider: local,      model: finn-gpt-oss, max_input_chars: 140000, timeout_s: 300, max_output_tokens: 12000, reasoning_effort: low}   # text tasks only; no quota
     - {provider: gemini,     model: gemini-3.5-flash-lite}   # also reads PDFs; weaker, but the screener.in cross-check flags errors
     - {provider: gemini,     model: gemini-3.1-flash-lite}
     - {provider: groq,       model: openai/gpt-oss-120b, max_input_chars: 18000}
@@ -37,6 +42,7 @@ tiers:
   T3:   # cross-document reasoning
     - {provider: gemini,     model: gemini-3.6-flash}
     - {provider: gemini,     model: gemini-3.5-flash}
+    - {provider: local,      model: finn-gpt-oss, max_input_chars: 140000, timeout_s: 420, max_output_tokens: 16000, reasoning_effort: medium}   # reasoning over transcripts; no quota
     - {provider: gemini,     model: gemini-3.8-flash}   # best reasoning but flaky: 503 + a 90 s timeout seen on 12 Nov
     - {provider: openrouter, model: "nvidia/nemotron-3-ultra-550b-a55b:free", max_input_chars: 200000}
     - {provider: openrouter, model: "google/gemma-4-31b-it:free", max_input_chars: 100000}

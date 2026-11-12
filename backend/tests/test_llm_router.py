@@ -299,3 +299,35 @@ def test_pdf_tasks_can_fall_back_to_flash_lite(tmp_path):
     from app.llm.config import load_config
     chain = load_config(BACKEND_DIR / "config" / "models.yaml").tiers["T2"]
     assert [r.model for r in chain if r.provider == "gemini"][-2:] == ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite"]
+
+
+def test_local_provider_is_skipped_when_disabled_and_used_when_enabled(tmp_path):
+    calls = []
+
+    def handler(req):
+        calls.append(str(req.url))
+        return ok_response()
+
+    client, _ = client_for(handler)
+    off = make_settings(tmp_path)                                    # tests run with FINN_USE_LOCAL_LLM=0 and no keys
+    with pytest.raises(LLMUnavailable, match="local LLM disabled"):
+        run_task("ping", {"word": "a"}, settings=off, client=client)
+    assert calls == []
+    on = AppSettings(_env_file=None, finn_data_dir=tmp_path / "on", finn_use_local_llm=True,
+                     finn_llm_config=BACKEND_DIR / "config" / "models.yaml")
+    assert run_task("ping", {"word": "a"}, settings=on, client=client).ok
+    assert calls and "11435" in calls[0]                             # no API key needed for the local provider
+
+
+def test_local_reasoning_effort_is_sent_from_config(tmp_path):
+    seen = []
+
+    def handler(req):
+        seen.append(json.loads(req.content))
+        return ok_response()
+
+    client, _ = client_for(handler)
+    on = AppSettings(_env_file=None, finn_data_dir=tmp_path, finn_use_local_llm=True,
+                     finn_llm_config=BACKEND_DIR / "config" / "models.yaml")
+    run_task("ping", {"word": "e"}, settings=on, client=client)
+    assert seen[-1]["reasoning_effort"] == "low" and seen[-1]["model"] == "finn-gpt-oss"
