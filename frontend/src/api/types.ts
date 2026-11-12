@@ -15,6 +15,7 @@ export type ResultsMetric = components['schemas']['ResultsMetric']
 export type PriceReaction = components['schemas']['PriceReaction']
 export type PriceSnapshot = components['schemas']['PriceSnapshot']
 export type Company = components['schemas']['Company']
+export type Health = components['schemas']['Health']
 
 export type Research = components['schemas']['Research']
 export type PvDItem = components['schemas']['PvDItem']
@@ -45,7 +46,7 @@ export interface Settings {
   price_move_pct: number
   categories_of_interest: Category[]
   muted_categories: Category[]
-  default_window: '24h' | '3d' | '7d' | 'custom'
+  default_window: '24h' | '3d' | '7d' | '30d' | 'custom'
 }
 
 export const ALL_CATEGORIES: { id: Category; label: string }[] = [

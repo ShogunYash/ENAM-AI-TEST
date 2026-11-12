@@ -49,6 +49,7 @@ export const StatsScreen: React.FC = () => {
         <div className="flex items-center gap-1.5">
           <AsOfChip
             asOf={as_of}
+            isLive={statsResult.isLive}
             source={source}
             isRefreshing={isFetching}
             onRefresh={() => refetch()}

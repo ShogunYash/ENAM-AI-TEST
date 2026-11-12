@@ -63,6 +63,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
         {digestResult && (
           <AsOfChip
             asOf={digestResult.asOf}
+            isLive={digestResult.isLive}
             source={digestResult.source}
             isRefreshing={isRefreshing}
             onRefresh={onRefresh}

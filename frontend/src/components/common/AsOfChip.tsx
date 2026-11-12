@@ -4,14 +4,15 @@ import { RefreshCw } from 'lucide-react'
 
 interface AsOfChipProps {
   asOf: string
-  source: 'live' | 'snapshot'
+  isLive?: boolean
+  source?: 'live' | 'snapshot'
   isRefreshing?: boolean
   onRefresh?: () => void
 }
 
 export const AsOfChip: React.FC<AsOfChipProps> = ({
   asOf,
-  source,
+  isLive = false,
   isRefreshing = false,
   onRefresh,
 }) => {
@@ -19,17 +20,21 @@ export const AsOfChip: React.FC<AsOfChipProps> = ({
     <div className="flex items-center gap-1.5 text-xs text-zinc-400 bg-zinc-900/90 border border-zinc-800/80 rounded-full px-2.5 py-1 backdrop-blur-sm">
       <span
         className={`w-1.5 h-1.5 rounded-full ${
-          source === 'live'
+          isLive
             ? 'bg-emerald-500 shadow-[0_0_6px_rgba(16,185,129,0.8)]'
             : 'bg-amber-400'
         }`}
-        title={source === 'live' ? 'Connected to live backend' : 'Snapshot data (offline)'}
+        title={isLive ? 'Connected to live backend (mode: live)' : 'Demo / snapshot data'}
       />
       <span className="font-mono text-[11px] text-zinc-300">
         as of {formatExactIst(asOf)}
       </span>
-      <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">
-        {source}
+      <span
+        className={`text-[10px] tracking-wider font-semibold font-mono ${
+          isLive ? 'text-emerald-400' : 'text-amber-400'
+        }`}
+      >
+        {isLive ? 'LIVE' : 'DEMO DATA'}
       </span>
       {onRefresh && (
         <button

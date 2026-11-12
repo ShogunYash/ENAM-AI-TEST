@@ -1,6 +1,6 @@
 import React from 'react'
 
-export type WindowOption = '24h' | '3d' | '7d'
+export type WindowOption = '24h' | '3d' | '7d' | '30d'
 
 interface WindowPickerProps {
   selected: WindowOption
@@ -17,6 +17,7 @@ export const WindowPicker: React.FC<WindowPickerProps> = ({
     { id: '24h', label: '24h' },
     { id: '3d', label: '3d' },
     { id: '7d', label: '7d' },
+    { id: '30d', label: '30d' },
   ]
 
   return (

@@ -39,9 +39,16 @@ export const ResultsCardPayload: React.FC<ResultsCardPayloadProps> = ({ enrichme
               Screener mismatch
             </span>
           ) : cross_check && cross_check.status === 'match' ? (
-            <span className="inline-flex items-center gap-1 text-[10px] text-emerald-400">
+            <span
+              className="inline-flex items-center gap-1 text-[10px] text-emerald-400 font-mono"
+              title={
+                enrichment.source?.page
+                  ? `Verified against BSE doc (page ${enrichment.source.page}) and Screener.in`
+                  : 'Verified against Screener.in'
+              }
+            >
               <CheckCircle2 className="w-2.5 h-2.5" />
-              Verified
+              Verified{enrichment.source?.page ? ` (p. ${enrichment.source.page})` : ''}
             </span>
           ) : null}
         </div>
