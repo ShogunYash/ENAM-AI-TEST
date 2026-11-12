@@ -5,7 +5,7 @@ pydantic schema → cache + ledger. All providers are OpenAI-compatible `/chat/c
 (Gemini, Groq, OpenRouter), called over plain httpx so the router is trivial to test with a mock
 transport. Native-PDF input and Search grounding (Gemini-only) get a separate path in B3/B4.
 
-Per attempt: 429 → cool that (provider, model) down and fall through; 5xx / timeout → fall through;
+Per attempt: 429/503 → cool that (provider, model) down and fall through; 5xx / timeout → fall through;
 unparseable or schema-invalid output → one corrective retry on the same model, then fall through.
 """
 from __future__ import annotations
@@ -135,7 +135,7 @@ def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str
                     content, tin, tout = _call(client, cfg, ref, api_key, system, user, schema_hint, extra_user)
                 except httpx.HTTPStatusError as e:
                     code = e.response.status_code
-                    if code == 429:
+                    if code in (429, 503):  # rate-limited or "high demand": skip this model for a while
                         _cooldown[(ref.provider, ref.model)] = time.monotonic() + cfg.cooldown_s
                     store.record(db, feature=feature, task=task, unit=unit, provider=ref.provider,
                                  model=ref.model, ok=False, error=f"HTTP {code}",

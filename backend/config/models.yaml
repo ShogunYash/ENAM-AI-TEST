@@ -1,8 +1,9 @@
 # Model routing for in-app AI. FREE tiers only. Never hard-code model IDs in code — edit here.
 #
-# !! Model IDs below come from Nov-2026 research and are UNVERIFIED. Run
-#    `uv run python -m scripts.ping_llm --list` to see which IDs your keys can actually use,
-#    then fix this file. Gemini 2.5 IDs are deprecated/rerouted on 1 Dec 2026.
+# Model IDs verified live on 12 Nov 2026 with `uv run python -m scripts.ping_llm` (and `--list`).
+# Re-run both before the demo: free-tier availability changes (e.g. openai/gpt-oss-120b:free on
+# OpenRouter went paid-only; gemini-3.6/3.8-flash return transient 503 "high demand").
+# Gemini 2.5 IDs are deprecated/rerouted on 1 Dec 2026 — don't use them.
 #
 # Each tier is an ordered fallback chain. The router tries entries top to bottom and moves on at
 # 429 / 5xx / unparseable output. `max_input_chars` skips a model for inputs that would exceed its
@@ -28,14 +29,17 @@ tiers:
     - {provider: gemini,     model: gemini-3.5-flash}
     - {provider: gemini,     model: gemini-3.6-flash}
     - {provider: groq,       model: openai/gpt-oss-120b, max_input_chars: 18000}
+    - {provider: openrouter, model: "google/gemma-4-31b-it:free", max_input_chars: 100000}
   T3:   # cross-document reasoning
-    - {provider: gemini,     model: gemini-3.8-flash}
     - {provider: gemini,     model: gemini-3.6-flash}
-    - {provider: openrouter, model: "openai/gpt-oss-120b:free", max_input_chars: 60000}
+    - {provider: gemini,     model: gemini-3.5-flash}
+    - {provider: gemini,     model: gemini-3.8-flash}   # best reasoning but flaky: 503 + a 90 s timeout seen on 12 Nov
+    - {provider: openrouter, model: "nvidia/nemotron-3-ultra-550b-a55b:free", max_input_chars: 200000}
+    - {provider: openrouter, model: "google/gemma-4-31b-it:free", max_input_chars: 100000}
 
 # Per-request settings
 request:
   timeout_s: 90
   max_output_tokens: 4096
   temperature: 0.1
-  cooldown_s: 60        # after a 429 a (provider, model) is skipped for this long
+  cooldown_s: 60        # after a 429 or 503 a (provider, model) is skipped for this long

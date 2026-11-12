@@ -21,6 +21,10 @@ CREATE TABLE IF NOT EXISTS filings (
   pdf_name TEXT, quarter_id TEXT, raw TEXT, ingested_at TEXT);
 CREATE INDEX IF NOT EXISTS idx_filings_symbol_time ON filings(symbol, filed_at);
 CREATE INDEX IF NOT EXISTS idx_filings_time ON filings(filed_at);
+CREATE TABLE IF NOT EXISTS classifications (
+  id TEXT PRIMARY KEY,              -- filings.id
+  category TEXT NOT NULL, source TEXT NOT NULL,   -- source: 'rule' | 'llm'
+  confidence REAL, classified_at TEXT);
 CREATE TABLE IF NOT EXISTS bars (
   symbol TEXT NOT NULL, day TEXT NOT NULL, close REAL NOT NULL, volume INTEGER NOT NULL,
   PRIMARY KEY (symbol, day));

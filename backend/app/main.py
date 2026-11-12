@@ -1,8 +1,9 @@
-"""FINN API. Currently MOCK MODE: every route serves docs/examples/*.json.
+"""FINN API.
 
-Real implementations replace the bodies route by route (plan tasks A4–C6); signatures and
-response models are the contract and must not change shape (see docs/CONTRACT.md).
-Run from backend/:  uv run uvicorn app.main:app --reload
+Push routes (/companies /prices /digest /alerts /filings/{id}) serve REAL ingested data once finn.sqlite has
+classified filings; until then (fresh checkout, or the demo DB missing) they fall back to the illustrative mocks in
+docs/examples/. Pull (/research) and /ask are still mocks (plan tasks C1-C6). Shapes are the contract and must not
+change (docs/CONTRACT.md). Run from backend/:  uv run uvicorn app.main:app --reload
 """
 from __future__ import annotations
 
@@ -15,9 +16,12 @@ from typing import Any
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
+from app import db
 from app import models as m
+from app.ingest import prices as prices_mod
 from app.llm import store as llm_store
-from app.settings import get_settings
+from app.pipeline import digest as digest_mod
+from app.settings import REPO_ROOT, get_settings
 
 EXAMPLES = Path(__file__).resolve().parents[2] / "docs" / "examples"
 
@@ -34,19 +38,58 @@ def example(name: str) -> Any:
     return json.loads(path.read_text("utf-8"))
 
 
+def _portfolio() -> dict:
+    return json.loads((REPO_ROOT / "data" / "portfolio.json").read_text("utf-8"))
+
+
+def _symbols() -> list[str]:
+    return [s["nse_symbol"] for s in _portfolio()["portfolio"]]
+
+
+def _has_real_data() -> bool:
+    try:
+        with db.connect() as con:
+            return con.execute("SELECT 1 FROM classifications LIMIT 1").fetchone() is not None
+    except Exception:  # noqa: BLE001 — a missing/corrupt DB must never take the API down
+        return False
+
+
+def _csv_categories(raw: str | None) -> list[m.Category]:
+    out = []
+    for part in (raw or "").split(","):
+        try:
+            out.append(m.Category(part.strip()))
+        except ValueError:
+            continue
+    return out
+
+
+def _settings(volume_multiple: float, price_move_pct: float, interests: str | None, muted: str | None) -> m.Settings:
+    base = m.Settings(volume_multiple=volume_multiple, price_move_pct=price_move_pct)
+    if interests is not None:
+        base.categories_of_interest = _csv_categories(interests)
+    if muted is not None:
+        base.muted_categories = _csv_categories(muted)
+    return base
+
+
 @app.get("/health", response_model=m.Health)
 def health() -> Any:
-    return example("health")
+    snaps = prices_mod.snapshots(_symbols()) if _has_real_data() else []
+    as_of = max((s.as_of for s in snaps), default=None)
+    return {**example("health"), "snapshot_as_of": as_of.isoformat() if as_of else example("health")["snapshot_as_of"]}
 
 
 @app.get("/companies", response_model=list[m.Company])
 def companies() -> Any:
-    return example("companies")
+    return [m.Company(symbol=s["nse_symbol"], bse_code=s["bse_scrip_code"], name=s["name"], sector=s["sector"],
+                      in_portfolio=True) for s in _portfolio()["portfolio"]]
 
 
 @app.get("/prices", response_model=list[m.PriceSnapshot])
 def prices() -> Any:
-    return example("prices")
+    snaps = prices_mod.snapshots(_symbols()) if _has_real_data() else []
+    return snaps or example("prices")
 
 
 @app.get("/digest", response_model=m.Digest)
@@ -61,11 +104,23 @@ def digest(
 ) -> Any:
     if window == "custom" and (start is None or end is None):
         raise HTTPException(422, "start and end are required for window=custom")
-    return example("digest-3d" if window in ("3d", "7d", "custom") else "digest-24h")
+    if not _has_real_data():
+        return example("digest-3d" if window in ("3d", "7d", "custom") else "digest-24h")
+    return digest_mod.build_digest(window, start, end, _settings(volume_multiple, price_move_pct, interests, muted),
+                                   snaps=prices_mod.snapshots(_symbols()))
 
 
 @app.get("/filings/{filing_id}", response_model=m.Filing)
 def filing(filing_id: str) -> Any:
+    if _has_real_data():
+        now = datetime.now(digest_mod.IST)
+        with db.connect() as con:
+            row = con.execute("SELECT f.id, f.symbol, f.company_name, f.filed_at, f.subcategory, f.headline, f.pdf_name, "
+                              "c.category, c.source, c.confidence FROM filings f JOIN classifications c ON c.id=f.id "
+                              "WHERE f.id=?", (filing_id,)).fetchone()
+        if row:
+            snaps = {s.symbol: s for s in prices_mod.snapshots([row["symbol"]])}
+            return digest_mod.to_filing(dict(row), m.Settings(), snaps, now)
     for name in ("filing-results", "filing-management", "filing-oneliner"):
         if example(name)["id"] == filing_id:
             return example(name)
@@ -74,7 +129,11 @@ def filing(filing_id: str) -> Any:
 
 @app.get("/alerts", response_model=list[m.Alert])
 def alerts(volume_multiple: float = 2.0, price_move_pct: float = 5.0) -> Any:
-    return example("alerts")
+    if not _has_real_data():
+        return example("alerts")
+    d = digest_mod.build_digest("24h", settings=_settings(volume_multiple, price_move_pct, None, None),
+                                snaps=prices_mod.snapshots(_symbols()))
+    return d.alerts
 
 
 @app.get("/research/{symbol}", response_model=m.Research)

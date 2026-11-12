@@ -24,4 +24,4 @@ pythonpath = ["."]
 line-length = 110
 
 [tool.ruff.lint]
-ignore = ["B008"]  # FastAPI Query()/Depends() defaults
+ignore = ["B008", "ISC004", "SIM102"]  # B008: FastAPI Query() defaults; ISC004/SIM102: style nits in regex tables
