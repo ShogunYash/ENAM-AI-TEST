@@ -113,7 +113,11 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Research */
+        /**
+         * Research
+         * @description Cached report if built; otherwise starts a background build and returns status=building with progress
+         *     (the client polls every 3 s). Mock fixtures only when there is no ingested database at all (fresh checkout).
+         */
         get: operations["research_research__symbol__get"];
         put?: never;
         post?: never;
@@ -150,7 +154,10 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Debug Sources */
+        /**
+         * Debug Sources
+         * @description Live cloud-IP check: can THIS server reach BSE, screener.in and Yahoo? (3 cheap requests, no LLM.)
+         */
         get: operations["debug_sources_debug_sources_get"];
         put?: never;
         post?: never;
@@ -169,7 +176,11 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        /** Ask */
+        /**
+         * Ask
+         * @description Grounded Q&A about the filing or research report on screen: answers only from that evidence, every quote verified,
+         *     every figure already present in it. Says so plainly when it can't answer. Fixtures only when there is no database.
+         */
         post: operations["ask_ask_post"];
         delete?: never;
         options?: never;
@@ -249,6 +260,12 @@ export interface components {
             answer: string;
             /** Claims */
             claims: components["schemas"]["Claim"][];
+            /**
+             * Answerable
+             * @description False when the evidence on screen does not contain the answer, or no model could be reached; `answer` then says so plainly.
+             * @default true
+             */
+            answerable: boolean;
         };
         /** BioCard */
         BioCard: {
@@ -276,6 +293,18 @@ export interface components {
              * @description Web sources used for the bio (push-side enrichment)
              */
             links: string[];
+            /**
+             * Effective
+             * @description YYYY-MM-DD the change takes effect, as stated in the filing
+             */
+            effective?: string | null;
+            /**
+             * Background Source
+             * @description Where `background` came from. The UI says 'From the filing' / 'From the web' / nothing.
+             * @default none
+             * @enum {string}
+             */
+            background_source: "filing" | "web" | "none";
         };
         /** BullBear */
         BullBear: {

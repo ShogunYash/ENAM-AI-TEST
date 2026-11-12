@@ -152,8 +152,10 @@ export function formatDocSourceLabel(
       const match = cleaned.match(/FY\d{2}/i)
       const yr = match ? match[0].toUpperCase() : 'FY26'
       title = `${yr} annual report`
+    } else if (cleaned.toLowerCase().includes('filing')) {
+      title = 'Filing'
     } else {
-      title = 'Primary filing'
+      title = 'Filing'
     }
   }
 

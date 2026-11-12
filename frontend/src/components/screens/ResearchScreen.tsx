@@ -16,9 +16,15 @@ import {
   Layers,
   RefreshCw,
   AlertTriangle,
+  Bot,
+  MessageSquare,
 } from 'lucide-react'
 
-export const ResearchScreen: React.FC = () => {
+interface ResearchScreenProps {
+  onAskFinn?: (symbol: string, sourceDocs: SourceDoc[]) => void
+}
+
+export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => {
   const [tickerInput, setTickerInput] = useState('INFY')
   const [activeSymbol, setActiveSymbol] = useState('INFY')
   const [selectedClaim, setSelectedClaim] = useState<{
@@ -214,6 +220,15 @@ export const ResearchScreen: React.FC = () => {
               </div>
 
               <div className="flex items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => onAskFinn && onAskFinn(research.symbol, sourceDocs)}
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-zinc-800 hover:bg-zinc-700/80 text-zinc-200 border border-zinc-700/70 text-[11px] font-mono font-medium transition-colors touch-manipulation"
+                  title={`Ask FINN about ${research.symbol}`}
+                >
+                  <Bot className="w-3.5 h-3.5 text-zinc-300" />
+                  <span>Ask FINN</span>
+                </button>
                 <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-950/40 border border-emerald-800/60 px-2 py-0.5 rounded">
                   {research.status}
                 </span>

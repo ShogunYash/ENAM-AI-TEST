@@ -9,6 +9,8 @@ import {
   Research,
   LlmStats,
   PortfolioStock,
+  AskRequest,
+  AskResponse,
 } from './types'
 
 const API_BASE = (import.meta.env.VITE_API_BASE || 'http://localhost:8000').trim()
@@ -377,3 +379,32 @@ export async function getDigestData(
     isLive: false,
   }
 }
+
+/**
+ * Sends a grounded Q&A question to POST /ask
+ */
+export async function sendAskQuestion(req: AskRequest): Promise<AskResponse> {
+  const response = await fetchWithTimeout(
+    `${API_BASE}/ask`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(req),
+    },
+    15000
+  )
+
+  if (!response.ok) {
+    let errDetail = 'Request failed'
+    try {
+      const errJson = await response.json()
+      errDetail = errJson.detail || errJson.message || response.statusText
+    } catch {}
+    throw new Error(`Ask failed (${response.status}): ${errDetail}`)
+  }
+
+  return response.json()
+}
+

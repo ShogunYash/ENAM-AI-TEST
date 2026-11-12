@@ -25,6 +25,9 @@ export type SourceDoc = components['schemas']['SourceDoc']
 export type Verdict = components['schemas']['Verdict']
 export type FinancialSnapshot = components['schemas']['FinancialSnapshot']
 export type LlmStats = components['schemas']['LlmStats']
+export type AskRequest = components['schemas']['AskRequest']
+export type AskContext = components['schemas']['AskContext']
+export type AskResponse = components['schemas']['AskResponse']
 
 export interface PortfolioStock {
   nse_symbol: string

@@ -5,10 +5,10 @@ import { TodayScreen } from '@/components/screens/TodayScreen'
 import { ThresholdsScreen } from '@/components/screens/ThresholdsScreen'
 import { ResearchScreen } from '@/components/screens/ResearchScreen'
 import { StatsScreen } from '@/components/screens/StatsScreen'
-import { AskFinnSheet } from '@/components/common/AskFinnSheet'
+import { AskFinnSheet, AskFinnTarget } from '@/components/common/AskFinnSheet'
 import { getDigestData } from '@/api/client'
 import { useSettings } from '@/lib/settings'
-import { Filing } from '@/api/types'
+import { Filing, SourceDoc } from '@/api/types'
 import { WindowOption } from '@/components/today/WindowPicker'
 
 const queryClient = new QueryClient({
@@ -26,7 +26,7 @@ function FinnApp() {
   const [windowOption, setWindowOption] = useState<WindowOption>(
     (settings.default_window as WindowOption) || '24h'
   )
-  const [selectedFilingForAsk, setSelectedFilingForAsk] = useState<Filing | null>(null)
+  const [askTarget, setAskTarget] = useState<AskFinnTarget | null>(null)
 
   const {
     data: digestResult,
@@ -56,20 +56,27 @@ function FinnApp() {
           windowOption={windowOption}
           onWindowChange={setWindowOption}
           onRefresh={() => refetch()}
-          onAskFinn={(filing) => setSelectedFilingForAsk(filing)}
+          onAskFinn={(filing) => setAskTarget({ screen: 'filing', filing })}
         />
       )}
 
-      {activeTab === 'research' && <ResearchScreen />}
+      {activeTab === 'research' && (
+        <ResearchScreen
+          onAskFinn={(symbol, sourceDocs) =>
+            setAskTarget({ screen: 'research', symbol, sourceDocs })
+          }
+        />
+      )}
 
       {activeTab === 'thresholds' && <ThresholdsScreen />}
 
       {activeTab === 'stats' && <StatsScreen />}
 
-      {/* Ask FINN Copilot Bottom Sheet */}
+      {/* Ask FINN Grounded Copilot Bottom Sheet */}
       <AskFinnSheet
-        filing={selectedFilingForAsk}
-        onClose={() => setSelectedFilingForAsk(null)}
+        target={askTarget}
+        onClose={() => setAskTarget(null)}
+        isLiveService={digestResult?.isLive ?? false}
       />
     </MobileShell>
   )
