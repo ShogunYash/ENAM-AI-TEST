@@ -19,6 +19,7 @@ from app import models as m
 from app.ingest import screener
 from app.llm import run_task, store
 from app.research import loader
+from app.research import numbers as N
 from app.research.guidance import Guidance
 from app.research.verify import verify_quote
 from app.settings import get_settings
@@ -188,6 +189,12 @@ COMPARISON_RULES = [
 _CC = re.compile(r"constant currency|\bcc\b|\bc\.c\.", re.IGNORECASE)
 
 
+_MISS_LANGUAGE = re.compile(
+    r"\bmiss|short of|shortfall|fell short|below (our |the )?(guid|target|expect|range|band)|lower than (guid|expect|plan|target)|"
+    r"did not (achieve|meet|deliver)|didn't (achieve|meet|deliver)|unable to|not able to|behind (plan|schedule)|\bslipp|"
+    r"\bdelay|pushed out|postpone", re.IGNORECASE)
+
+
 def actual_is_comparable(g: Guidance, fact: dict) -> bool:
     """Hard guard on top of the prompt: a screener table cell may only settle a promise it actually measures."""
     text = f"{g.metric} {g.target} {g.quote}"
@@ -321,12 +328,24 @@ def reduce_batch(
         if v.verdict not in ("pending", "quietly_dropped") and not outcome_srcs and actual is None:
             dropped += 1
             continue
+        # 'missed' is the harshest word we print: it needs a table actual or explicit failure language in a cited quote.
+        # (Found on Infosys: "acquisition margin impact 50 bps vs 70 bps guided" was called missed; a smaller headwind
+        # than guided is not a miss, and the cited quote contained no failure at all.)
+        if v.verdict == "missed" and actual is None and not any(_MISS_LANGUAGE.search(q) for _, _, q in outcome_srcs):
+            dropped += 1
+            continue
+        verdict, reason = v.verdict, v.reason
+        # 'met' on mid-year commentary is premature: "on track" / "confident of delivering" in a call BEFORE the promised year
+        # closed is a reaffirmation, not delivery (found on Bajaj Finance and KPIL). It stays visible as 'pending: on track'.
+        if verdict == "met" and actual is None and N.is_premature(g.horizon, [d for d, _, _ in outcome_srcs]):
+            latest = max((N.call_year_quarter(d) or (0, 0)) for d, _, _ in outcome_srcs)
+            verdict, reason = "pending", f"On track per Q{latest[1]} FY{latest[0] % 100:02d} call; {g.horizon} not yet closed"
         promised = _claim(
             f"{g.metric}: {g.target}" + (f" ({g.horizon})" if g.horizon else ""),
             "guidance",
             [(g.doc_id, g.page, g.quote)],
         )
-        outcome = _claim(v.reason[:160], "fact", outcome_srcs[:2]) if outcome_srcs else None
+        outcome = _claim(reason[:160], "fact", outcome_srcs[:2]) if outcome_srcs else None
         items.append(
             m.PvDItem(
                 metric=g.metric,
@@ -335,13 +354,36 @@ def reduce_batch(
                 promised=promised,
                 outcome=outcome,
                 actual=actual,
-                verdict=v.verdict,
-                reason=v.reason[:120],
+                verdict=verdict,
+                reason=reason[:120],
             )
         )
     if dropped:
         store.incr(get_settings().llm_db_path, "grounding_dropped", dropped)
     return items, dropped
+
+
+def deterministic_item(g: Guidance, actual_index: dict[str, dict]) -> m.PvDItem | None:
+    """Settle a plain whole-company revenue / net-profit GROWTH promise for a closed fiscal year from screener.in's annual
+    table (consolidated, reported INR). None when the promise isn't of that kind, the year isn't reported yet, or the
+    target can't be parsed: those go to the model."""
+    kind = N.growth_kind(g.metric, g.target)
+    fy = N.fy_of(g.horizon)
+    target = N.parse_target(g.target, g.quote) if kind and fy else None
+    if not target:
+        return None
+    ref = f"screener.profit-loss.{'revenue' if kind == 'revenue' else 'net_profit'}.Mar{fy}"
+    fact = actual_index.get(ref)
+    if not fact or fact.get("yoy_growth_pct") is None:
+        return None
+    growth = fact["yoy_growth_pct"]
+    verdict, how = N.verdict_for(target, growth)
+    reason = f"Guided {target.text}; filed FY{fy % 100:02d} {'revenue' if kind == 'revenue' else 'net profit'} grew {growth:.1f}% ({how})"
+    return m.PvDItem(
+        metric=g.metric, said_in=g.period, horizon=g.horizon,
+        promised=_claim(f"{g.metric}: {g.target}" + (f" ({g.horizon})" if g.horizon else ""), "guidance",
+                        [(g.doc_id, g.page, g.quote)]),
+        outcome=None, actual=m.Actual(value=growth, unit="pct", source=ref), verdict=verdict, reason=reason[:120])
 
 
 def build_pvd(
@@ -365,9 +407,17 @@ def build_pvd(
     )  # needs >=1 later call to judge against
     actuals = actuals_from_screener(html)
     actual_index = {a["actual_ref"]: a for a in actuals}
+    # Plain growth promises for a CLOSED year are settled by arithmetic against the filed numbers, not by a model.
+    items: list[m.PvDItem] = []
+    settled = set()
+    for g in chosen:
+        it = deterministic_item(g, actual_index)
+        if it:
+            items.append(it)
+            settled.add(g.gid)
+    chosen = [g for g in chosen if g.gid not in settled]
     by_gid = {g.gid: g for g in chosen}
     as_of = f"{docs[-1]['period']} earnings call" if docs else "latest available"
-    items: list[m.PvDItem] = []
     for i in range(0, len(chosen), BATCH):
         batch = chosen[i : i + BATCH]
         if progress:

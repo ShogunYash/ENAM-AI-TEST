@@ -1,0 +1,155 @@
+{
+  "prompt": "G5-narrative_vs_numbers.md v1",
+  "method": "Manual ChatGPT evaluation of cited statements from two real calls, with a bounded evidence pack. Each case supplies only its listed statements and observations.",
+  "docs": {
+    "q3call": "https://www.infosys.com/investors/reports-filings/quarterly-results/2025-2026/q3/documents/transcripts/earningscall.pdf",
+    "q3release": "https://www.infosys.com/investors/reports-filings/quarterly-results/2025-2026/q3/documents/ifrs-usd-press-release.pdf",
+    "q4call": "https://www.infosys.com/investors/reports-filings/quarterly-results/2025-2026/q4/documents/transcripts/earningscall.pdf",
+    "q4release": "https://www.infosys.com/investors/reports-filings/quarterly-results/2025-2026/q4/documents/ifrs-usd-press-release.pdf"
+  },
+  "observations": {
+    "q3margin": {
+      "value": "21.2%",
+      "metric": "operating margin",
+      "period": "Q3 FY26",
+      "basis": "adjusted",
+      "scope": "group",
+      "doc_id": "q3release",
+      "page": 1
+    },
+    "q3delta": {
+      "value": "+0.2 percentage points QoQ",
+      "metric": "operating margin change",
+      "period": "Q3 FY26",
+      "basis": "adjusted",
+      "scope": "group",
+      "doc_id": "q3release",
+      "page": 1
+    },
+    "q3reported": {
+      "value": "18.4%",
+      "metric": "operating margin",
+      "period": "Q3 FY26",
+      "basis": "reported IFRS",
+      "scope": "group",
+      "doc_id": "q3release",
+      "page": 1
+    },
+    "fy26margin": {
+      "value": "21.0%",
+      "metric": "operating margin",
+      "period": "FY26",
+      "basis": "adjusted",
+      "scope": "group",
+      "doc_id": "q4release",
+      "page": 1
+    },
+    "fy26growth": {
+      "value": "3.1% YoY",
+      "metric": "revenue growth",
+      "period": "FY26",
+      "basis": "constant currency",
+      "scope": "group",
+      "doc_id": "q4release",
+      "page": 1
+    }
+  },
+  "cases": [
+    {
+      "name": "matched Q3 change and level; Q4 full-year growth; annual stability lacks prior-year margin",
+      "input": {
+        "statements": [
+          {
+            "doc_id": "q3call",
+            "page": 5,
+            "quote": "Adjusted operating margins increased by 20 basis points sequentially to 21.2%."
+          },
+          {
+            "doc_id": "q4call",
+            "page": 4,
+            "quote": "Adjusted operating margin was stable at 21%."
+          },
+          {
+            "doc_id": "q4call",
+            "page": 2,
+            "quote": "We had a growth of 3.1% for the full year in constant currency terms."
+          }
+        ],
+        "actual_refs": [
+          "q3margin",
+          "q3delta",
+          "q3reported",
+          "fy26margin",
+          "fy26growth"
+        ]
+      },
+      "output": {
+        "comparisons": [
+          {
+            "assessment": "supported",
+            "finding": "Q3 FY26 adjusted operating margin rose 20 bps sequentially to 21.2%.",
+            "statement": {
+              "doc_id": "q3call",
+              "page": 5,
+              "quote": "Adjusted operating margins increased by 20 basis points sequentially to 21.2%."
+            },
+            "actual_refs": [
+              "q3margin",
+              "q3delta"
+            ]
+          },
+          {
+            "assessment": "supported",
+            "finding": "FY26 group revenue grew 3.1% year on year in constant currency.",
+            "statement": {
+              "doc_id": "q4call",
+              "page": 2,
+              "quote": "We had a growth of 3.1% for the full year in constant currency terms."
+            },
+            "actual_refs": [
+              "fy26growth"
+            ]
+          }
+        ],
+        "unresolved": [
+          {
+            "statement": {
+              "doc_id": "q4call",
+              "page": 4,
+              "quote": "Adjusted operating margin was stable at 21%."
+            },
+            "missing": "The FY26 adjusted margin is supplied, but checking stability requires FY25 adjusted operating margin or a sourced annual change."
+          }
+        ]
+      }
+    },
+    {
+      "name": "withhold adjusted observations",
+      "input": {
+        "statements": [
+          {
+            "doc_id": "q3call",
+            "page": 5,
+            "quote": "Adjusted operating margins increased by 20 basis points sequentially to 21.2%."
+          }
+        ],
+        "actual_refs": [
+          "q3reported"
+        ]
+      },
+      "output": {
+        "comparisons": [],
+        "unresolved": [
+          {
+            "statement": {
+              "doc_id": "q3call",
+              "page": 5,
+              "quote": "Adjusted operating margins increased by 20 basis points sequentially to 21.2%."
+            },
+            "missing": "Only reported IFRS margin is supplied; the claim requires Q3 adjusted margin and its sequential change."
+          }
+        ]
+      }
+    }
+  ]
+}

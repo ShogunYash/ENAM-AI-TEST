@@ -1,0 +1,510 @@
+{
+  "symbol": "POLYCAB",
+  "name": "Polycab India Ltd",
+  "status": "ready",
+  "is_sample": false,
+  "progress": [
+    "Resolving POLYCAB on screener.in",
+    "Loaded financial tables",
+    "Found 5 earnings-call transcripts",
+    "Extracting guidance 1/5 (Q2 FY26 call)",
+    "Extracting guidance 2/5 (Q3 FY26 call)",
+    "Extracting guidance 3/5 (Q4 FY26 call)",
+    "Extracting guidance 4/5 (Q1 FY27 call)",
+    "Extracting guidance 5/5 (Q2 FY27 call)",
+    "Extracted 11 guidance statements with verified quotes",
+    "Judging promises vs outcomes 6/11",
+    "Judging promises vs outcomes 11/11",
+    "Judged 11 promises against later calls and reported numbers"
+  ],
+  "generated_at": "2026-11-12T23:57:22.754935+05:30",
+  "sources": [
+    {
+      "doc_id": "POLYCAB:concall_Q2FY27",
+      "kind": "concall",
+      "period": "Q2 FY27",
+      "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=77b6d277-0ffc-440d-ba8a-2bd9bc3dc43e.pdf",
+      "pages": 20
+    },
+    {
+      "doc_id": "POLYCAB:concall_Q1FY27",
+      "kind": "concall",
+      "period": "Q1 FY27",
+      "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=e47a217c-cefa-4ff6-8e34-6bbd07d42b13.pdf",
+      "pages": 19
+    },
+    {
+      "doc_id": "POLYCAB:concall_Q4FY26",
+      "kind": "concall",
+      "period": "Q4 FY26",
+      "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=f66f17ac-c40f-4309-afca-3e66af0956a0.pdf",
+      "pages": 19
+    },
+    {
+      "doc_id": "POLYCAB:concall_Q3FY26",
+      "kind": "concall",
+      "period": "Q3 FY26",
+      "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=c54bf2c3-22fa-45e1-bf1a-2194e7b46183.pdf",
+      "pages": 20
+    },
+    {
+      "doc_id": "POLYCAB:concall_Q2FY26",
+      "kind": "concall",
+      "period": "Q2 FY26",
+      "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7a5825e0-67d1-41af-96e0-d78387aaba8d.pdf",
+      "pages": 19
+    }
+  ],
+  "snapshot": {
+    "latest_period": "FY26",
+    "headline": [
+      {
+        "name": "Revenue (FY26)",
+        "value": 28884.0,
+        "unit": "INR_CR",
+        "yoy_pct": 28.9
+      },
+      {
+        "name": "Operating margin (FY26)",
+        "value": 14.0,
+        "unit": "pct",
+        "yoy_pct": null
+      },
+      {
+        "name": "PAT (FY26)",
+        "value": 2708.0,
+        "unit": "INR_CR",
+        "yoy_pct": 32.4
+      },
+      {
+        "name": "Revenue (TTM)",
+        "value": 34609.0,
+        "unit": "INR_CR",
+        "yoy_pct": null
+      },
+      {
+        "name": "PAT (TTM)",
+        "value": 3202.0,
+        "unit": "INR_CR",
+        "yoy_pct": null
+      }
+    ],
+    "series": {
+      "years": [
+        "FY22",
+        "FY23",
+        "FY24",
+        "FY25",
+        "FY26"
+      ],
+      "revenue": [
+        12204.0,
+        14108.0,
+        18039.0,
+        22408.0,
+        28884.0
+      ],
+      "ebitda_margin": [
+        10.0,
+        13.0,
+        14.0,
+        13.0,
+        14.0
+      ],
+      "pat": [
+        917.0,
+        1282.0,
+        1803.0,
+        2046.0,
+        2708.0
+      ],
+      "cfo": [
+        512.0,
+        1428.0,
+        1296.0,
+        1809.0,
+        3811.0
+      ],
+      "borrowings": [
+        118.0,
+        191.0,
+        161.0,
+        202.0,
+        236.0
+      ]
+    },
+    "ratios": {
+      "roce": 33.2,
+      "roe": 23.6,
+      "debt_equity": 0.02,
+      "cash_conversion": 1.01,
+      "working_capital_days": 30.0
+    }
+  },
+  "pvd": [
+    {
+      "metric": "EBIT margins for Wires & Cables business",
+      "said_in": "Q1 FY27",
+      "horizon": "FY30",
+      "promised": {
+        "text": "EBIT margins for Wires & Cables business: 11% to 13% (FY30)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q1FY27",
+            "page": 5,
+            "quote": "Consistent with our Project Spring roadmap, we continue to maintain our medium- to long-term margin guidance of 11% to 13% for this business."
+          }
+        ],
+        "verified": true
+      },
+      "outcome": null,
+      "actual": null,
+      "verdict": "pending",
+      "reason": "Horizon FY30 open, still confident of staying within 11-13%."
+    },
+    {
+      "metric": "EBIT margins for FMEG business",
+      "said_in": "Q1 FY27",
+      "horizon": "FY30",
+      "promised": {
+        "text": "EBIT margins for FMEG business: 8% to 10% (FY30)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q1FY27",
+            "page": 6,
+            "quote": "EBIT margins for the quarter were 8%, very much in line with the milestones laid out under Project Spring, where we target EBITDA margins of 8% to 10% by FY 2030."
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "Horizon FY30 open, still confident of staying within 8-10%.",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q2FY27",
+            "page": 9,
+            "quote": "over the longer term, I believe we would end up in that kind of a range of 8% to 10% of the EBITDA margin. Today, we are already at an EBIT margin of 10.1%."
+          }
+        ],
+        "verified": true
+      },
+      "actual": null,
+      "verdict": "pending",
+      "reason": "Horizon FY30 open, still confident of staying within 8-10%."
+    },
+    {
+      "metric": "EBIT margins for EPC business",
+      "said_in": "Q1 FY27",
+      "horizon": null,
+      "promised": {
+        "text": "EBIT margins for EPC business: high single digits",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q1FY27",
+            "page": 6,
+            "quote": "Over the medium to long term, we continue to expect sustainable operating margins for the EPC business to remain in the high single-digit range."
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "Actual 7.2% within high single digits, still confident.",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q2FY27",
+            "page": 9,
+            "quote": "I think we would like to be in that guidance range, I think, till FY30."
+          }
+        ],
+        "verified": true
+      },
+      "actual": null,
+      "verdict": "pending",
+      "reason": "Actual 7.2% within high single digits, still confident."
+    },
+    {
+      "metric": "Export top line growth guidance",
+      "said_in": "Q1 FY27",
+      "horizon": "FY30",
+      "promised": {
+        "text": "Export top line growth guidance: north of 10% of overall top line by 2030 (FY30)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q1FY27",
+            "page": 19,
+            "quote": "We have given our guidance of going north of 10% of our overall top line by 2030."
+          }
+        ],
+        "verified": true
+      },
+      "outcome": null,
+      "actual": null,
+      "verdict": "pending",
+      "reason": "No evidence of export top line growth, horizon open."
+    },
+    {
+      "metric": "Cables and Wires EBITDA margin long‑term guidance",
+      "said_in": "Q3 FY26",
+      "horizon": "FY30",
+      "promised": {
+        "text": "Cables and Wires EBITDA margin long‑term guidance: 11% to 13% (FY30)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q3FY26",
+            "page": 15,
+            "quote": "we have given a long‑term guidance of 11% to 13%"
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "Horizon FY30 open, still confident of staying within 11-13%.",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q4FY26",
+            "page": 13,
+            "quote": "we should expect 11% to 13% EBITDA margin."
+          },
+          {
+            "doc_id": "POLYCAB:concall_Q1FY27",
+            "page": 5,
+            "quote": "Consistent with our Project Spring roadmap, we continue to maintain our medium- to long-term margin guidance of 11% to 13% for this business."
+          }
+        ],
+        "verified": true
+      },
+      "actual": null,
+      "verdict": "pending",
+      "reason": "Horizon FY30 open, still confident of staying within 11-13%."
+    },
+    {
+      "metric": "FMEG EBITDA margin guidance",
+      "said_in": "Q3 FY26",
+      "horizon": "FY30",
+      "promised": {
+        "text": "FMEG EBITDA margin guidance: 8% to 10% (FY30)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q3FY26",
+            "page": 19,
+            "quote": "we will continue to improve its profitability towards the guided range of 8% to 10% by FY30"
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "Horizon FY30 open, still confident of staying within 8-10%.",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q4FY26",
+            "page": 9,
+            "quote": "progressing towards our EBITDA margin goal of 8% to 10% by FY2030."
+          },
+          {
+            "doc_id": "POLYCAB:concall_Q1FY27",
+            "page": 19,
+            "quote": "we should be able to reach 8% to 10% of EBITDA margins on FMEG."
+          }
+        ],
+        "verified": true
+      },
+      "actual": null,
+      "verdict": "pending",
+      "reason": "Horizon FY30 open, still confident of staying within 8-10%."
+    },
+    {
+      "metric": "Project Spring EBITDA target",
+      "said_in": "Q2 FY26",
+      "horizon": "FY2030",
+      "promised": {
+        "text": "Project Spring EBITDA target: 8%-10% (FY2030)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q2FY26",
+            "page": 8,
+            "quote": "...progressing towards the 8%-10% EBITDA target by FY 2030."
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "Guidance still pending; FY2030 horizon not reached",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q1FY27",
+            "page": 6,
+            "quote": "EBIT margins for the quarter were 8%, very much in line with the milestones laid out under Project Spring, where we target EBITDA margins of 8% to 10% by FY 2030."
+          },
+          {
+            "doc_id": "POLYCAB:concall_Q2FY27",
+            "page": 9,
+            "quote": "So over the longer term, I believe we would end up in that kind of a range of 8% to 10% of the EBITDA margin. Today, we are already at an EBIT margin of 10.1%"
+          }
+        ],
+        "verified": true
+      },
+      "actual": null,
+      "verdict": "pending",
+      "reason": "Guidance still pending; FY2030 horizon not reached"
+    },
+    {
+      "metric": "Project Spring dividend payout target",
+      "said_in": "Q2 FY26",
+      "horizon": "FY2030",
+      "promised": {
+        "text": "Project Spring dividend payout target: 30% (FY2030)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q2FY26",
+            "page": 8,
+            "quote": "...in line with our goal of crossing 30% dividend payout by FY 2030."
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "Guidance still pending; FY2030 horizon not reached",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q4FY26",
+            "page": 9,
+            "quote": "We also increased our dividend payout to approximately 27.2%, up from 26.3% last year as we move steadily towards our stated objective of exceeding 30% by FY 2030."
+          }
+        ],
+        "verified": true
+      },
+      "actual": null,
+      "verdict": "pending",
+      "reason": "Guidance still pending; FY2030 horizon not reached"
+    },
+    {
+      "metric": "Planned capital expenditure program",
+      "said_in": "Q4 FY26",
+      "horizon": "next 5 years",
+      "promised": {
+        "text": "Planned capital expenditure program: INR 60 billion to INR 80 billion (next 5 years)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q4FY26",
+            "page": 6,
+            "quote": "We remain on track to execute our planned capex program of INR 60 billion to INR 80 billion over the next 5 years"
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "Guidance still pending; FY2030 horizon not reached",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q3FY26",
+            "page": 5,
+            "quote": "Capital expenditure for the quarter was ₹ 3.4 billion, taking the 9M FY26 total to ₹ 10.9 billion, in-line with our Project Spring guidance of investing ₹ 12 billion to ₹ 16 billion annually through FY30."
+          },
+          {
+            "doc_id": "POLYCAB:concall_Q4FY26",
+            "page": 9,
+            "quote": "During FY26, we incurred capex of INR 14.8 billion, in line with our annual guidance of INR 12 billion to INR 16 billion per annum."
+          }
+        ],
+        "verified": true
+      },
+      "actual": null,
+      "verdict": "pending",
+      "reason": "Guidance still pending; FY2030 horizon not reached"
+    },
+    {
+      "metric": "Project Spring annual capital expenditure",
+      "said_in": "Q2 FY26",
+      "horizon": "FY2030",
+      "promised": {
+        "text": "Project Spring annual capital expenditure: ₹12-16 billion (FY2030)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q2FY26",
+            "page": 8,
+            "quote": "We incurred ₹7.5 billion in capex during H1, consistent with our annual guidance of spending ₹12 billion to ₹16 billion annually."
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "Guidance still pending; FY2030 horizon not reached",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q3FY26",
+            "page": 5,
+            "quote": "Capital expenditure for the quarter was ₹ 3.4 billion, taking the 9M FY26 total to ₹ 10.9 billion, in-line with our Project Spring guidance of investing ₹ 12 billion to ₹ 16 billion annually through FY30."
+          },
+          {
+            "doc_id": "POLYCAB:concall_Q4FY26",
+            "page": 9,
+            "quote": "During FY26, we incurred capex of INR 14.8 billion, in line with our annual guidance of INR 12 billion to INR 16 billion per annum."
+          }
+        ],
+        "verified": true
+      },
+      "actual": null,
+      "verdict": "pending",
+      "reason": "Guidance still pending; FY2030 horizon not reached"
+    },
+    {
+      "metric": "Project Spring export contribution target",
+      "said_in": "Q2 FY26",
+      "horizon": "FY2030",
+      "promised": {
+        "text": "Project Spring export contribution target: >10% (FY2030)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q2FY26",
+            "page": 8,
+            "quote": "We remain on track toward our greater than 10% export contribution goal."
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "Guidance still pending; FY2030 horizon not reached",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "POLYCAB:concall_Q4FY26",
+            "page": 8,
+            "quote": "We remain firm on track to achieve our target of greater than 10% contribution from exports by financial year 2030."
+          }
+        ],
+        "verified": true
+      },
+      "actual": null,
+      "verdict": "pending",
+      "reason": "Guidance still pending; FY2030 horizon not reached"
+    }
+  ],
+  "extra": null,
+  "gaps": [
+    "Q2 FY26 call: 1 unverifiable quote(s) dropped",
+    "Q1 FY27 call: 1 unverifiable quote(s) dropped"
+  ],
+  "cost": {
+    "llm_calls": 0,
+    "cached": false
+  }
+}

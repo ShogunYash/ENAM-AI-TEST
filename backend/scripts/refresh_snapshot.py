@@ -19,6 +19,7 @@ from app.ingest import prices as prices_mod
 from app.llm import store as llm_store
 from app.pipeline import digest as digest_mod
 from app.pipeline.classify import classify_pending
+from app.research import build as research_build
 from app.settings import get_settings
 from app.signals.eod import IST
 
@@ -64,6 +65,14 @@ def main() -> int:
     for f in enriched:
         dump(fdir / f"{f.id}.json", f)
 
+    # pre-built research reports (real, is_sample=false); mock files for the build-progress demo (DIXON, building) are kept
+    built = []
+    for r in pf.get("research", []):
+        rep = research_build.get_cached(r["nse_symbol"])
+        if rep is not None:
+            dump(out / "research" / f"{rep.symbol}.json", rep)
+            built.append(rep.symbol)
+
     db = get_settings().llm_db_path
     if llm_store.has_rows(db):
         dump(out / "stats.json", llm_store.stats(db))
@@ -73,7 +82,7 @@ def main() -> int:
     dump(out / "health.json", m.Health(ok=True, version="0.1.0", mode="live", snapshot_as_of=as_of))
     print(f"snapshot -> {out}: {len(symbols)} companies, {len(snaps)} prices, "
           + ", ".join(f"{k}: {d.counts.total} filings/{len(d.needs_you)} needs-you" for k, d in digests.items())
-          + f", {len(enriched)} enriched filings, {len(d30.alerts)} alerts(30d)")
+          + f", {len(enriched)} enriched filings, {len(d30.alerts)} alerts(30d), research: {built}")
     return 0
 
 

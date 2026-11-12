@@ -1,11 +1,11 @@
 {
-  "as_of": "2026-11-12T15:05:34.384154+05:30",
+  "as_of": "2026-11-13T00:06:10.553393+05:30",
   "totals": {
-    "calls": 40,
-    "tokens_in": 411291,
-    "tokens_out": 65297,
-    "cache_hits": 22,
-    "cache_hit_pct": 35.5,
+    "calls": 72,
+    "tokens_in": 907995,
+    "tokens_out": 81343,
+    "cache_hits": 130,
+    "cache_hit_pct": 64.4,
     "spend_inr": 0.0
   },
   "by_feature": [
@@ -15,6 +15,20 @@
       "tokens_in": 382255,
       "tokens_out": 48069,
       "cache_hits": 19
+    },
+    {
+      "key": "pull.guidance",
+      "calls": 20,
+      "tokens_in": 345730,
+      "tokens_out": 5808,
+      "cache_hits": 87
+    },
+    {
+      "key": "pull.pvd",
+      "calls": 12,
+      "tokens_in": 150974,
+      "tokens_out": 10238,
+      "cache_hits": 21
     },
     {
       "key": "push.classify",
@@ -33,11 +47,18 @@
   ],
   "by_model": [
     {
+      "key": "finn-gpt-oss",
+      "calls": 30,
+      "tokens_in": 471261,
+      "tokens_out": 14035,
+      "cache_hits": 104
+    },
+    {
       "key": "gemini-3.5-flash-lite",
-      "calls": 16,
-      "tokens_in": 166569,
-      "tokens_out": 24184,
-      "cache_hits": 0
+      "calls": 18,
+      "tokens_in": 192012,
+      "tokens_out": 26195,
+      "cache_hits": 16
     },
     {
       "key": "gemini-3.1-flash-lite",
@@ -51,37 +72,37 @@
       "calls": 8,
       "tokens_in": 101531,
       "tokens_out": 12968,
-      "cache_hits": 0
+      "cache_hits": 5
     },
     {
       "key": "gemini-3.6-flash",
       "calls": 7,
       "tokens_in": 85631,
       "tokens_out": 12299,
+      "cache_hits": 5
+    },
+    {
+      "key": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "calls": 0,
+      "tokens_in": 0,
+      "tokens_out": 0,
       "cache_hits": 0
     },
     {
-      "key": "gemini/gemini-3.6-flash",
+      "key": "google/gemma-4-31b-it:free",
       "calls": 0,
       "tokens_in": 0,
       "tokens_out": 0,
-      "cache_hits": 5
+      "cache_hits": 0
     },
     {
-      "key": "gemini/gemini-3.5-flash-lite",
+      "key": "gemini-3.8-flash",
       "calls": 0,
       "tokens_in": 0,
       "tokens_out": 0,
-      "cache_hits": 12
-    },
-    {
-      "key": "gemini/gemini-3.5-flash",
-      "calls": 0,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cache_hits": 5
+      "cache_hits": 0
     }
   ],
-  "avg_calls_new_ticker": null,
-  "grounding_dropped": 0
+  "avg_calls_new_ticker": 8.0,
+  "grounding_dropped": 184
 }

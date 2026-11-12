@@ -1,66 +1,21 @@
 {
   "window": {
     "label": "24h",
-    "start": "2026-11-11T15:05:34.334045+05:30",
-    "end": "2026-11-12T15:05:34.334045+05:30"
+    "start": "2026-11-12T00:06:10.419633+05:30",
+    "end": "2026-11-13T00:06:10.419633+05:30"
   },
-  "generated_at": "2026-11-12T15:05:34.334045+05:30",
-  "needs_you": [
-    {
-      "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
-      "symbol": "BAJFINANCE",
-      "company_name": "Bajaj Finance Ltd",
-      "filed_at": "2026-11-11T17:06:59.713000+05:30",
-      "headline": "Outcome of QIP 2026 - Special Committee Meeting",
-      "so_what": null,
-      "category": "fund_raise",
-      "category_source": "rule",
-      "priority": "high",
-      "score": 8.498,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
-      "price_reaction": null,
-      "enrichment": null
-    }
-  ],
+  "generated_at": "2026-11-13T00:06:10.419633+05:30",
+  "needs_you": [],
   "also_material": [],
   "routine": {
-    "count": 1,
-    "by_category": {
-      "investor_meetings": 1
-    },
-    "items": [
-      {
-        "id": "1c0c85f6-07aa-4efe-a10a-44a9e9b36de2",
-        "symbol": "ULTRACEMCO",
-        "company_name": "UltraTech Cement Ltd",
-        "filed_at": "2026-11-11T17:02:23.470000+05:30",
-        "headline": "Intimation regarding Investor meet of UltraTech Cement Limited",
-        "so_what": null,
-        "category": "investor_meetings",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.809,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2b934e4e-121f-42d7-a2d0-d3eb4364b9a7.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      }
-    ]
+    "count": 0,
+    "by_category": {},
+    "items": []
   },
-  "alerts": [
-    {
-      "id": "fl-9865b7f5-5041-41a3-980c-5aa5206c9fb7",
-      "symbol": "BAJFINANCE",
-      "kind": "material_filing",
-      "triggered_at": "2026-11-11T17:06:59.713000+05:30",
-      "value": 8.498,
-      "threshold": 7.0,
-      "message": "Outcome of QIP 2026 - Special Committee Meeting",
-      "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7"
-    }
-  ],
+  "alerts": [],
   "counts": {
-    "total": 2,
-    "rule_classified": 2,
+    "total": 0,
+    "rule_classified": 0,
     "llm_classified": 0
   }
 }

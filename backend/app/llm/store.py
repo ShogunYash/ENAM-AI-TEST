@@ -101,7 +101,7 @@ def stats(path: Path) -> m.LlmStats:
             return [m.LedgerRow(key=r["k"], calls=r["calls"], tokens_in=r["ti"], tokens_out=r["tout"],
                                 cache_hits=r["hits"]) for r in con.execute(q)]
 
-        by_feature, by_model = rows("feature"), rows("model")
+        by_feature, by_model = rows("feature"), _merge_models(rows("model"))
         calls = sum(r.calls for r in by_feature)
         hits = sum(r.cache_hits for r in by_feature)
         totals = m.LlmTotals(
@@ -115,3 +115,18 @@ def stats(path: Path) -> m.LlmStats:
         dropped = con.execute("SELECT value FROM counters WHERE name='grounding_dropped'").fetchone()
     return m.LlmStats(as_of=datetime.now(IST), totals=totals, by_feature=by_feature, by_model=by_model,
                       avg_calls_new_ticker=avg, grounding_dropped=dropped["value"] if dropped else 0)
+
+
+_PROVIDER_PREFIXES = ("gemini/", "groq/", "local/", "openrouter/")
+
+
+def _merge_models(rows: list[m.LedgerRow]) -> list[m.LedgerRow]:
+    """Live calls log the bare model id, cache hits log 'provider/model'. Merge both spellings into one row per model."""
+    merged: dict[str, m.LedgerRow] = {}
+    for r in rows:
+        key = next((r.key[len(p):] for p in _PROVIDER_PREFIXES if r.key.startswith(p)), r.key)
+        cur = merged.get(key)
+        merged[key] = r.model_copy(update={"key": key}) if cur is None else cur.model_copy(update={
+            "calls": cur.calls + r.calls, "tokens_in": cur.tokens_in + r.tokens_in,
+            "tokens_out": cur.tokens_out + r.tokens_out, "cache_hits": cur.cache_hits + r.cache_hits})
+    return sorted(merged.values(), key=lambda x: -x.calls)

@@ -276,3 +276,100 @@ def test_reported_facts_are_not_guidance_and_quotes_are_cleaned(monkeypatch):
     got, _st = guidance.extract_for_doc(ref.doc_id, "Q1 FY27", "X")
     assert [g.metric for g in got] == ["Effective tax rate"] and not got[0].quote.startswith('"')
     assert guidance.clean_quote('“Hello there.” ') == "Hello there."
+
+
+def test_missed_needs_a_table_actual_or_explicit_failure_language(monkeypatch):
+    """Infosys: 'acquisition margin impact 50 bps vs 70 bps' was called MISSED with a quote that showed no failure."""
+    benign = PvDSource(doc_id="X:concall_Q1FY27", page=1,
+                       quote="we are changing our revenue growth guidance to 1.5% to 3% in constant currency")
+    items, dropped = run_reduce(monkeypatch, [entry("missed", "actual 50 bps vs 70 bps", [benign])], metric="Margin impact")
+    assert items == [] and dropped >= 1
+    failure = PvDSource(doc_id="X:concall_Q1FY27", page=1,
+                        quote="Overall, with our Q1 results we are changing our revenue growth guidance")
+    # explicit failure wording in the cited passage is allowed through
+    page_with_miss = ["We fell short of the guidance we gave last quarter. Overall, with our Q1 results we are changing "
+                      "our revenue growth guidance to 1.5% to 3% in constant currency."]
+    ok_src = PvDSource(doc_id="X:concall_Q1FY27", page=1, quote="We fell short of the guidance we gave last quarter.")
+    items, _ = run_reduce(monkeypatch, [entry("missed", "fell short", [ok_src])], pages=page_with_miss, metric="Margin impact")
+    assert [i.verdict for i in items] == ["missed"]
+    assert failure.page == 1                                                 # (kept for readability of the case above)
+
+
+# ───────── deterministic checks (found by reading the Bajaj / KPIL reports) ─────────
+from app.research import numbers as N
+
+
+@pytest.mark.parametrize("target,quote,kind,low,high", [
+    ("25% plus", "", "floor", 25.0, None), ("minimum 15%", "", "floor", 15.0, None), ("at least 12%", "", "floor", 12.0, None),
+    ("10% to 12%", "", "band", 10.0, 12.0), ("1.5% to 3.5%", "", "band", 1.5, 3.5), ("12-10%", "", "band", 10.0, 12.0),
+    ("approx 25%", "", "point", 25.0, 25.0), ("", "revenue growth to be approx 25% this year", "point", 25.0, 25.0),
+])
+def test_parse_target(target, quote, kind, low, high):
+    t = N.parse_target(target, quote)
+    assert (t.kind, t.low, t.high) == (kind, low, high)
+
+
+@pytest.mark.parametrize("target", ["20s", "minimum 50 basis points", "", "strong"])
+def test_unparseable_targets_go_to_the_model(target):
+    assert N.parse_target(target, "") is None
+
+
+@pytest.mark.parametrize("target,actual,verdict", [
+    ("25% plus", 21.6, "missed"),            # KPIL FY26: guided 25%+, screener shows 21.6%
+    ("25% plus", 24.0, "met"),               # within 10% of the floor
+    ("25% plus", 31.0, "met"),               # above the floor
+    ("10% to 12%", 11.0, "met"), ("10% to 12%", 9.2, "met"), ("10% to 12%", 8.0, "missed"), ("10% to 12%", 15.0, "met"),
+    ("approx 25%", 24.0, "met"), ("approx 25%", 21.6, "missed"),
+])
+def test_verdict_uses_the_10_percent_definition(target, actual, verdict):
+    assert N.verdict_for(N.parse_target(target), actual)[0] == verdict
+
+
+@pytest.mark.parametrize("metric,target,want", [
+    ("Consolidated revenue growth", "25%", "revenue"), ("PAT growth", "15%", "profit"), ("Net profit growth", "12%", "profit"),
+    ("Revenue growth (constant currency)", "3%", None), ("Vehicle finance AUM growth", "20s", None),
+    ("PBT margin improvement", "50 bps", None), ("Standalone revenue growth", "20%", None), ("Order book growth", "20%", None),
+])
+def test_growth_kind_only_accepts_plain_whole_company_growth(metric, target, want):
+    assert N.growth_kind(metric, target) == want
+
+
+def screener_facts(fy, revenue, prev):
+    return {f"screener.profit-loss.revenue.Mar{fy}": {
+        "actual_ref": f"screener.profit-loss.revenue.Mar{fy}", "metric": "revenue", "value": revenue, "unit": "INR_CR",
+        "yoy_growth_pct": round((revenue - prev) / prev * 100, 1)}}
+
+
+def test_kpil_style_divergence_is_computed_not_repeated(monkeypatch):
+    """KPIL guided 25%+ FY26 revenue growth and management said 'fully delivered'; screener's table shows 21.6%."""
+    g = G(metric="Consolidated revenue growth", target="25% plus", horizon="FY26", doc="K:concall_Q3FY26", period="Q3 FY26")
+    it = pvd.deterministic_item(g, screener_facts(2026, 27143.0, 22316.0))
+    assert it.verdict == "missed" and it.actual.value == 21.6 and it.actual.unit == "pct"
+    assert "Guided 25%+" in it.reason and "21.6%" in it.reason and len(it.reason) <= 120
+    assert it.promised.verified and it.outcome is None
+    assert pvd.deterministic_item(g, {}) is None                               # year not reported -> model/pending
+    cc = G(metric="Revenue growth (constant currency)", target="3% to 3.5%", horizon="FY26")
+    assert pvd.deterministic_item(cc, screener_facts(2026, 178650.0, 162990.0)) is None   # cc is never settled by INR
+
+
+@pytest.mark.parametrize("horizon,docs,premature", [
+    ("FY26", ["X:concall_Q3FY26"], True),                                      # KPIL: 'ahead of guidance' in Q3 is progress
+    ("FY26", ["X:concall_Q4FY26"], False),                                     # the Q4 call reports the full year
+    ("FY27", ["X:concall_Q4FY26", "X:concall_Q1FY27"], True),                 # Bajaj: 'confident of delivering' in Q1 FY27
+    ("FY27", ["X:concall_Q2FY27"], True), (None, ["X:concall_Q1FY27"], False), ("FY26", [], False),
+])
+def test_is_premature(horizon, docs, premature):
+    assert N.is_premature(horizon, docs) is premature
+
+
+def test_premature_met_becomes_pending_on_track(monkeypatch):
+    g = G(metric="Opex to NTI improvement", target="25 to 40 bps", horizon="FY27", doc="X:concall_Q4FY26", page=4)
+    page = ["we are confident of delivering 25 to 40 basis points improvement for FY 27 in opex to NTI"]
+    monkeypatch.setattr(pvd, "run_task", lambda *a, **k: PvDVerdicts(verdicts=[PvDVerdictEntry(
+        guidance_id=g.gid, verdict="met", reason="target met",
+        sources=[PvDSource(doc_id="X:concall_Q1FY27", page=1,
+                           quote="we are confident of delivering 25 to 40 basis points improvement for FY 27 in opex to NTI")])],
+        unresolved=[]))
+    items, _ = pvd.reduce_batch("X", [g], "{}", {"X:concall_Q4FY26": ["promise " * 9], "X:concall_Q1FY27": page}, {g.gid: g}, {})
+    assert [i.verdict for i in items] == ["pending"] and "On track per Q1 FY27" in items[0].reason and "FY27 not yet closed" in items[0].reason
+    assert items[0].outcome is not None                                      # the reaffirmation stays visible as the latest status

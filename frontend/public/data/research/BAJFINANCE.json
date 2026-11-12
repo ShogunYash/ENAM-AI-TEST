@@ -1,0 +1,383 @@
+{
+  "symbol": "BAJFINANCE",
+  "name": "Bajaj Finance Ltd",
+  "status": "ready",
+  "is_sample": false,
+  "progress": [
+    "Resolving BAJFINANCE on screener.in",
+    "Loaded financial tables",
+    "Found 5 earnings-call transcripts",
+    "Extracting guidance 1/5 (Q2 FY26 call)",
+    "Extracting guidance 2/5 (Q3 FY26 call)",
+    "Extracting guidance 3/5 (Q4 FY26 call)",
+    "Extracting guidance 4/5 (Q1 FY27 call)",
+    "Extracting guidance 5/5 (Q2 FY27 call)",
+    "Extracted 18 guidance statements with verified quotes",
+    "Judging promises vs outcomes 6/12",
+    "Judging promises vs outcomes 12/12",
+    "Judged 8 promises against later calls and reported numbers"
+  ],
+  "generated_at": "2026-11-12T23:57:25.082848+05:30",
+  "sources": [
+    {
+      "doc_id": "BAJFINANCE:concall_Q2FY27",
+      "kind": "concall",
+      "period": "Q2 FY27",
+      "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=7873abcb-7f97-487d-a474-028b0a26feea.pdf",
+      "pages": 20
+    },
+    {
+      "doc_id": "BAJFINANCE:concall_Q1FY27",
+      "kind": "concall",
+      "period": "Q1 FY27",
+      "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=b101e24e-b807-4c74-9025-90009f4b47a5.pdf",
+      "pages": 23
+    },
+    {
+      "doc_id": "BAJFINANCE:concall_Q4FY26",
+      "kind": "concall",
+      "period": "Q4 FY26",
+      "url": "https://cms-assets.bajajfinserv.in/is/content/bajajfinance/bajaj-finance-q4-fy26-earnings-conference-call-transcript?scl=1&fmt=pdf",
+      "pages": 18
+    },
+    {
+      "doc_id": "BAJFINANCE:concall_Q3FY26",
+      "kind": "concall",
+      "period": "Q3 FY26",
+      "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=6eb34dc2-bde9-4df5-8b93-aad3d461140e.pdf",
+      "pages": 13
+    },
+    {
+      "doc_id": "BAJFINANCE:concall_Q2FY26",
+      "kind": "concall",
+      "period": "Q2 FY26",
+      "url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=39ea369b-a7b8-42e8-b787-2d1df4efa020.pdf",
+      "pages": 19
+    }
+  ],
+  "snapshot": {
+    "latest_period": "FY26",
+    "headline": [
+      {
+        "name": "Revenue (FY26)",
+        "value": 81985.0,
+        "unit": "INR_CR",
+        "yoy_pct": 19.1
+      },
+      {
+        "name": "Operating margin (FY26)",
+        "value": 33.0,
+        "unit": "pct",
+        "yoy_pct": null
+      },
+      {
+        "name": "PAT (FY26)",
+        "value": 19332.0,
+        "unit": "INR_CR",
+        "yoy_pct": 15.2
+      },
+      {
+        "name": "Revenue (TTM)",
+        "value": 90331.0,
+        "unit": "INR_CR",
+        "yoy_pct": null
+      },
+      {
+        "name": "PAT (TTM)",
+        "value": 22066.0,
+        "unit": "INR_CR",
+        "yoy_pct": null
+      }
+    ],
+    "series": {
+      "years": [
+        "FY22",
+        "FY23",
+        "FY24",
+        "FY25",
+        "FY26"
+      ],
+      "revenue": [
+        31633.0,
+        41411.0,
+        54972.0,
+        68832.0,
+        81985.0
+      ],
+      "ebitda_margin": [
+        31.0,
+        39.0,
+        36.0,
+        33.0,
+        33.0
+      ],
+      "pat": [
+        7028.0,
+        11508.0,
+        14451.0,
+        16779.0,
+        19332.0
+      ],
+      "cfo": [
+        -37029.0,
+        -42112.0,
+        -72760.0,
+        -67792.0,
+        -65790.0
+      ],
+      "borrowings": [
+        165232.0,
+        216690.0,
+        293346.0,
+        361249.0,
+        435112.0
+      ]
+    },
+    "ratios": {
+      "roce": 10.9,
+      "roe": 18.2,
+      "debt_equity": 3.82,
+      "cash_conversion": null,
+      "working_capital_days": null
+    }
+  },
+  "pvd": [
+    {
+      "metric": "Credit cost (FY27)",
+      "said_in": "Q4 FY26",
+      "horizon": "FY27",
+      "promised": {
+        "text": "Credit cost (FY27): 145 to 160 basis points (FY27)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "BAJFINANCE:concall_Q4FY26",
+            "page": 8,
+            "quote": "We are guiding for 145 to 160 bps next year, full year."
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "Credit cost FY27 target not confirmed by Q2FY27",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "BAJFINANCE:concall_Q2FY27",
+            "page": 5,
+            "quote": "We are reasonably comfortable with the credit cost outlook for FY27."
+          }
+        ],
+        "verified": true
+      },
+      "actual": null,
+      "verdict": "pending",
+      "reason": "Credit cost FY27 target not confirmed by Q2FY27"
+    },
+    {
+      "metric": "Opex to NTI improvement (FY27)",
+      "said_in": "Q4 FY26",
+      "horizon": "FY27",
+      "promised": {
+        "text": "Opex to NTI improvement (FY27): 25 to 40 basis points (FY27)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "BAJFINANCE:concall_Q4FY26",
+            "page": 6,
+            "quote": "On opex to NTI, we expect to see continued improvement of 25 to 40 basis points from current levels."
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "On track per Q2 FY27 call; FY27 not yet closed",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "BAJFINANCE:concall_Q1FY27",
+            "page": 4,
+            "quote": "Overall, we are confident of delivering 25 to 40 basis points improvement for FY '27 in opex to NTI."
+          },
+          {
+            "doc_id": "BAJFINANCE:concall_Q2FY27",
+            "page": 4,
+            "quote": "We remain pretty comfortable place to deliver a 25 to 40 basis point improvement in FY27 on opex-to-NTI."
+          }
+        ],
+        "verified": true
+      },
+      "actual": null,
+      "verdict": "pending",
+      "reason": "On track per Q2 FY27 call; FY27 not yet closed"
+    },
+    {
+      "metric": "Gold loan portfolio share of AUM (FY27)",
+      "said_in": "Q4 FY26",
+      "horizon": "FY27",
+      "promised": {
+        "text": "Gold loan portfolio share of AUM (FY27): 5% (FY27)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "BAJFINANCE:concall_Q4FY26",
+            "page": 3,
+            "quote": "We expect gold loan portfolio to probably cross 5-odd percent of total AUM by FY'27."
+          }
+        ],
+        "verified": true
+      },
+      "outcome": null,
+      "actual": null,
+      "verdict": "pending",
+      "reason": "Gold loan share target not reached by Q2FY27"
+    },
+    {
+      "metric": "Vehicle finance AUM growth",
+      "said_in": "Q3 FY26",
+      "horizon": "FY27",
+      "promised": {
+        "text": "Vehicle finance AUM growth: 20% (FY27)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "BAJFINANCE:concall_Q3FY26",
+            "page": 10,
+            "quote": "we will grow them organically in the 20s"
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "On track per Q4 FY26 call; FY27 not yet closed",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "BAJFINANCE:concall_Q4FY26",
+            "page": 7,
+            "quote": "AUM growth remained strong at 23%"
+          }
+        ],
+        "verified": true
+      },
+      "actual": null,
+      "verdict": "pending",
+      "reason": "On track per Q4 FY26 call; FY27 not yet closed"
+    },
+    {
+      "metric": "Credit cost (full year)",
+      "said_in": "Q2 FY26",
+      "horizon": "FY26",
+      "promised": {
+        "text": "Credit cost (full year): 1.85% to 1.95% (FY26)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "BAJFINANCE:concall_Q2FY26",
+            "page": 4,
+            "quote": "As a result, we expect full year credit cost to come within 1.85% to 1.95% for FY'26"
+          }
+        ],
+        "verified": true
+      },
+      "outcome": null,
+      "actual": null,
+      "verdict": "quietly_dropped",
+      "reason": "Guidance not mentioned again, no outcome"
+    },
+    {
+      "metric": "Other operating income growth (full year)",
+      "said_in": "Q2 FY26",
+      "horizon": "FY26",
+      "promised": {
+        "text": "Other operating income growth (full year): 13% to 15% (FY26)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "BAJFINANCE:concall_Q2FY26",
+            "page": 17,
+            "quote": "We are guided for the full year that between the NII and NTI, the entire fee revenue pool that we generate, combination of the fees and charges, plus sale on assignments and so on and so forth. All put together, we will see 13% to 15% growth in the current year"
+          }
+        ],
+        "verified": true
+      },
+      "outcome": null,
+      "actual": null,
+      "verdict": "quietly_dropped",
+      "reason": "Guidance not mentioned again, no outcome"
+    },
+    {
+      "metric": "ROA (FY27)",
+      "said_in": "Q4 FY26",
+      "horizon": "FY27",
+      "promised": {
+        "text": "ROA (FY27): 4.4% to 4.6% (FY27)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "BAJFINANCE:concall_Q4FY26",
+            "page": 7,
+            "quote": "We continue to guide for 4.4% to 4.6% [ROA]"
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "FY27 horizon open, guidance still 4.4-4.6%",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "BAJFINANCE:concall_Q1FY27",
+            "page": 4,
+            "quote": "ROA came in at 4.7%"
+          }
+        ],
+        "verified": true
+      },
+      "actual": null,
+      "verdict": "pending",
+      "reason": "FY27 horizon open, guidance still 4.4-4.6%"
+    },
+    {
+      "metric": "ROE (FY27)",
+      "said_in": "Q4 FY26",
+      "horizon": "FY27",
+      "promised": {
+        "text": "ROE (FY27): 19% to 20% (FY27)",
+        "kind": "guidance",
+        "sources": [
+          {
+            "doc_id": "BAJFINANCE:concall_Q4FY26",
+            "page": 7,
+            "quote": "Return on equity came in at 20% in the current quarter, we continue to guide for 19% to 20%"
+          }
+        ],
+        "verified": true
+      },
+      "outcome": {
+        "text": "FY27 horizon open, guidance still 19-20%",
+        "kind": "fact",
+        "sources": [
+          {
+            "doc_id": "BAJFINANCE:concall_Q1FY27",
+            "page": 4,
+            "quote": "ROE crossed 20%"
+          }
+        ],
+        "verified": true
+      },
+      "actual": null,
+      "verdict": "pending",
+      "reason": "FY27 horizon open, guidance still 19-20%"
+    }
+  ],
+  "extra": null,
+  "gaps": [
+    "Q3 FY26 call: 2 unverifiable quote(s) dropped",
+    "Q2 FY27 call: 1 unverifiable quote(s) dropped"
+  ],
+  "cost": {
+    "llm_calls": 0,
+    "cached": false
+  }
+}

@@ -331,3 +331,13 @@ def test_local_reasoning_effort_is_sent_from_config(tmp_path):
                      finn_llm_config=BACKEND_DIR / "config" / "models.yaml")
     run_task("ping", {"word": "e"}, settings=on, client=client)
     assert seen[-1]["reasoning_effort"] == "low" and seen[-1]["model"] == "finn-gpt-oss"
+
+
+def test_stats_merge_provider_prefixed_and_bare_model_names(tmp_path):
+    db = tmp_path / "l.sqlite"
+    store.record(db, feature="f", task="t", unit=None, provider="gemini", model="gemini-3.5-flash", tokens_in=10, tokens_out=2)
+    store.record(db, feature="f", task="t", unit=None, provider=None, model="gemini/gemini-3.5-flash", cached=True)
+    store.record(db, feature="f", task="t", unit=None, provider="openrouter", model="nvidia/nemotron-3-ultra-550b-a55b:free", tokens_in=5)
+    by = {r.key: r for r in store.stats(db).by_model}
+    assert set(by) == {"gemini-3.5-flash", "nvidia/nemotron-3-ultra-550b-a55b:free"}      # one row per model
+    assert (by["gemini-3.5-flash"].calls, by["gemini-3.5-flash"].cache_hits) == (1, 1)
