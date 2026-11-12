@@ -6,7 +6,7 @@
 - [ ] **Deployed mobile link**: not deployed yet (needs the user's Render + Cloudflare Pages accounts; steps in [DEPLOY.md](DEPLOY.md)). Then open it on a phone, airplane-mode test the snapshot.
 - [ ] **GitHub repo reachable by the reviewers**: the repo is **private**; make it public or add the ENAM reviewers. Check `git log -p | grep -E "AIza|gsk_|sk-or"` shows nothing (last checked: clean).
 - [ ] **AI build history**: `docs/ai-history/README.md` has the index; replace the `<...>` links (ChatGPT and Antigravity share links; scrubbed Claude Code transcripts).
-- [x] **Demo check (13 Nov):** 264 backend tests, lint clean, BSE / screener.in / Yahoo reachable, frontend builds, no mock data in the snapshot.
+- [x] **Demo check (13 Nov):** 281 backend tests, lint clean, BSE / screener.in / Yahoo reachable, frontend builds, no mock data in the snapshot.
 - [ ] **Re-run before sending:** Titan results card (waits for Gemini Flash quota reset, `scripts.enrich_results --only TITAN --force --refresh`), refresh snapshot + seed, `GET /debug/sources` on Render.
 - [ ] **Email** (below): fill the URLs and your name.
 
@@ -29,7 +29,7 @@ settles it. KPIL guided "25%+" FY26 revenue growth and said it "fully delivered"
 - *Checked, not trusted.* Reading my own output found real holes: a quote with changed figures still scored 97 to 98.5 on fuzzy matching (now every number must appear on the page);
   the first Infosys draft called two promises "met" using figures that weren't comparable (constant-currency vs reported INR; EBIT vs EBITDA margin).
 - *Free-tier reality.* Gemini's free tier has daily per-model quotas, so the router reads the retry time and skips exhausted models, and a local open model on a GPU does
-  the heavy build-time work. Total spend ₹0.00 over 125 measured calls (57.9 % cache hits). The demo serves a committed seed and snapshot, so it never depends on a live model.
+  the heavy build-time work. Total spend ₹0.00 over 134 measured calls (56.2 % cache hits). The demo serves a committed seed and snapshot, so it never depends on a live model.
 
 **What I deliberately left out.** Voice, auth and real push notifications; web enrichment for bios (they come from the filing text only); bull/bear and the other research modules. (A grounded `/ask` exists in the API; see the README for whether the UI sheet is wired to it.) That time went into verification, because a wrong number is worse than a missing one.
 
