@@ -18,6 +18,7 @@ export interface DigestResult {
   source: 'live' | 'snapshot'
   asOf: string
   isReachable: boolean
+  isLive: boolean
 }
 
 export interface ResearchResult {
@@ -28,6 +29,7 @@ export interface ResearchResult {
 export interface StatsResult {
   data: LlmStats
   source: 'live' | 'snapshot'
+  isLive: boolean
 }
 
 // Timeout fetch helper to ensure fast fallback if backend is offline
@@ -45,6 +47,20 @@ async function fetchWithTimeout(url: string, options: RequestInit = {}, timeoutM
     clearTimeout(id)
     throw error
   }
+}
+
+export async function fetchHealth(): Promise<{ mode: 'live' | 'mock'; as_of: string | null } | null> {
+  try {
+    const res = await fetchWithTimeout(`${API_BASE}/health`, {}, 2000)
+    if (res.ok) {
+      const data = await res.json()
+      return {
+        mode: data.mode === 'live' ? 'live' : 'mock',
+        as_of: data.snapshot_as_of ?? null,
+      }
+    }
+  } catch {}
+  return null
 }
 
 export async function fetchSnapshotMeta(): Promise<SnapshotMeta> {
@@ -65,7 +81,7 @@ export async function fetchSnapshotPrices(): Promise<PriceSnapshot[]> {
 
 export async function fetchSnapshotDigest(windowLabel: string): Promise<Digest> {
   // If label is custom or file doesn't exist, fallback to 24h
-  const fileKey = windowLabel === '3d' ? '3d' : windowLabel === '7d' ? '7d' : '24h'
+  const fileKey = windowLabel === '30d' ? '30d' : windowLabel === '3d' ? '3d' : windowLabel === '7d' ? '7d' : '24h'
   const res = await fetch(`/data/digest-${fileKey}.json`)
   if (!res.ok) {
     // try 24h fallback
@@ -139,6 +155,7 @@ export async function fetchResearchData(symbol: string): Promise<ResearchResult>
       symbol: sym,
       name: null,
       status: 'building',
+      is_sample: true,
       progress: [
         'Resolving symbol',
         'Loaded financial tables',
@@ -158,12 +175,20 @@ export async function fetchResearchData(symbol: string): Promise<ResearchResult>
 }
 
 export async function fetchLlmStats(): Promise<StatsResult> {
+  let isLive = false
+  try {
+    const health = await fetchHealth()
+    if (health?.mode === 'live') {
+      isLive = true
+    }
+  } catch {}
+
   // 1. Try live API
   try {
     const liveRes = await fetchWithTimeout(`${API_BASE}/stats/llm`, {}, 2000)
     if (liveRes.ok) {
       const data = await liveRes.json()
-      return { data, source: 'live' }
+      return { data, source: 'live', isLive }
     }
   } catch (err) {
     // Live API unreachable, fallback
@@ -175,7 +200,7 @@ export async function fetchLlmStats(): Promise<StatsResult> {
     throw new Error('Failed to load stats snapshot')
   }
   const data = await snapRes.json()
-  return { data, source: 'snapshot' }
+  return { data, source: 'snapshot', isLive: false }
 }
 
 export async function fetchPortfolio(): Promise<PortfolioStock[]> {
@@ -267,7 +292,7 @@ export function recomputeOfflineAlerts(
  * 3. Applies offline alert recomputation if running off snapshot
  */
 export async function getDigestData(
-  windowLabel: '24h' | '3d' | '7d' | 'custom',
+  windowLabel: '24h' | '3d' | '7d' | '30d' | 'custom',
   settings: Settings
 ): Promise<DigestResult> {
   // Always load snapshot first for instantaneous display
@@ -286,11 +311,17 @@ export async function getDigestData(
     console.warn('Could not load snapshot prices', err)
   }
 
-  // Check if live API is reachable
+  // Check if live API is reachable and in live mode
   let liveDigest: Digest | null = null
   let isReachable = false
+  let isLive = false
 
   try {
+    const health = await fetchHealth()
+    if (health?.mode === 'live') {
+      isLive = true
+    }
+
     const params = new URLSearchParams({
       window: windowLabel,
       volume_multiple: settings.volume_multiple.toString(),
@@ -303,7 +334,7 @@ export async function getDigestData(
       params.append('muted', settings.muted_categories.join(','))
     }
 
-    const response = await fetchWithTimeout(`${API_BASE}/digest?${params.toString()}`, {}, 2000)
+    const response = await fetchWithTimeout(`${API_BASE}/digest?${params.toString()}`, {}, 3000)
     if (response.ok) {
       liveDigest = await response.json()
       isReachable = true
@@ -311,6 +342,7 @@ export async function getDigestData(
   } catch (err) {
     // Backend offline / unreachable, fallback cleanly to snapshot
     isReachable = false
+    isLive = false
   }
 
   if (liveDigest && isReachable) {
@@ -319,6 +351,7 @@ export async function getDigestData(
       source: 'live',
       asOf: liveDigest.generated_at,
       isReachable: true,
+      isLive,
     }
   }
 
@@ -338,5 +371,6 @@ export async function getDigestData(
     source: 'snapshot',
     asOf: snapshotDigest.generated_at,
     isReachable: false,
+    isLive: false,
   }
 }

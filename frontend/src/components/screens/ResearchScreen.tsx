@@ -80,7 +80,7 @@ export const ResearchScreen: React.FC = () => {
   const isReady = research?.status === 'ready' || research?.status === 'partial'
 
   // Any research not from a live build carries a prominent SAMPLE DATA badge
-  const isSampleData = researchResult?.source === 'snapshot' || !(research as any)?.is_real_build
+  const isSampleData = research?.is_sample ?? true
 
   return (
     <div className="space-y-4 pb-24 pt-1">
@@ -360,6 +360,7 @@ export const ResearchScreen: React.FC = () => {
         claim={selectedClaim?.claim || null}
         metricTitle={selectedClaim?.metricTitle}
         sourceDocs={sourceDocs}
+        isSample={isSampleData}
         onClose={() => setSelectedClaim(null)}
       />
     </div>

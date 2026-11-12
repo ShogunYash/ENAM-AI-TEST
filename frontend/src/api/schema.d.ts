@@ -130,7 +130,10 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Stats */
+        /**
+         * Stats
+         * @description Real ledger numbers once any LLM call has been made; illustrative mock until then.
+         */
         get: operations["stats_stats_llm_get"];
         put?: never;
         post?: never;
@@ -361,7 +364,7 @@ export interface components {
              * Label
              * @enum {string}
              */
-            label: "24h" | "3d" | "7d" | "custom";
+            label: "24h" | "3d" | "7d" | "30d" | "custom";
             /**
              * Start
              * Format: date-time
@@ -452,6 +455,13 @@ export interface components {
             ok: boolean;
             /** Version */
             version: string;
+            /**
+             * Mode
+             * @description 'mock' = the API is serving illustrative fixtures (no ingested database). The UI must NOT label mock data LIVE.
+             * @default live
+             * @enum {string}
+             */
+            mode: "live" | "mock";
             /** Snapshot As Of */
             snapshot_as_of: string | null;
         };
@@ -613,6 +623,12 @@ export interface components {
              * @enum {string}
              */
             status: "ready" | "building" | "partial" | "failed";
+            /**
+             * Is Sample
+             * @description True for illustrative fixture data; the UI must badge it SAMPLE. False only for research built from real documents.
+             * @default false
+             */
+            is_sample: boolean;
             /**
              * Progress
              * @description Human-readable build steps, shown while building
@@ -870,7 +886,7 @@ export interface operations {
     digest_digest_get: {
         parameters: {
             query?: {
-                window?: "24h" | "3d" | "7d" | "custom";
+                window?: "24h" | "3d" | "7d" | "30d" | "custom";
                 /** @description Required when window=custom */
                 start?: string | null;
                 /** @description Required when window=custom */

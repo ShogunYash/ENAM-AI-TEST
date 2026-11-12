@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-import { Filing } from '@/api/types'
-import { X, Send, Bot } from 'lucide-react'
+import React, { useState, useEffect } from 'react'
+import { Filing, ResultsCard } from '@/api/types'
+import { formatInrCr } from '@/lib/formatters'
+import { X, Send, Bot, ExternalLink } from 'lucide-react'
 
 interface AskFinnSheetProps {
   filing: Filing | null
@@ -9,17 +10,83 @@ interface AskFinnSheetProps {
 
 export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({ filing, onClose }) => {
   const [question, setQuestion] = useState('')
-  const [history, setHistory] = useState<
-    Array<{ q: string; a: string }>
-  >([
-    {
-      q: 'What is the primary driver of this update?',
-      a: filing?.so_what || 'Key update from official exchange filing.',
-    },
-  ])
   const [isAsking, setIsAsking] = useState(false)
 
+  const isResults = filing?.enrichment?.type === 'results'
+  const isMgmt = filing?.enrichment?.type === 'management'
+  const resultsCard = isResults ? (filing?.enrichment as ResultsCard) : null
+  const patMetric = resultsCard?.metrics?.find((m) => m.name.toLowerCase() === 'pat')
+  const revMetric = resultsCard?.metrics?.find((m) => m.name.toLowerCase() === 'revenue')
+  const ebitdaMetric = resultsCard?.metrics?.find((m) => m.name.toLowerCase() === 'ebitda')
+
+  // Generate initial Q&A based on filing
+  const getInitialQA = (): Array<{ q: string; a: string; link?: string }> => {
+    if (!filing) return []
+    if (isResults && patMetric) {
+      const periodStr = resultsCard?.period ? ` in ${resultsCard.period}` : ''
+      const yoyStr =
+        patMetric.yoy_pct !== null && patMetric.yoy_pct !== undefined
+          ? ` (${patMetric.yoy_pct >= 0 ? '+' : ''}${patMetric.yoy_pct.toFixed(1)}% YoY)`
+          : ''
+      const qoqStr =
+        patMetric.qoq_pct !== null && patMetric.qoq_pct !== undefined
+          ? `, ${patMetric.qoq_pct >= 0 ? '+' : ''}${patMetric.qoq_pct.toFixed(1)}% QoQ`
+          : ''
+      return [
+        {
+          q: `How did PAT change${periodStr}?`,
+          a: `PAT was ${formatInrCr(patMetric.value)}${yoyStr}${qoqStr}.${
+            filing.so_what ? ` ${filing.so_what}` : ''
+          }`,
+          link: filing.pdf_url || undefined,
+        },
+      ]
+    }
+
+    if (isMgmt) {
+      return [
+        {
+          q: 'What is the leadership change?',
+          a: filing.so_what || 'Executive leadership appointment / change announced via BSE exchange filing.',
+          link: filing.pdf_url || undefined,
+        },
+      ]
+    }
+
+    return [
+      {
+        q: 'What is the primary driver of this update?',
+        a: filing.so_what || 'No operating driver documented in this exchange filing.',
+        link: filing.pdf_url || undefined,
+      },
+    ]
+  }
+
+  const [history, setHistory] = useState<Array<{ q: string; a: string; link?: string }>>(getInitialQA)
+
+  useEffect(() => {
+    setHistory(getInitialQA())
+  }, [filing?.id])
+
   if (!filing) return null
+
+  // Context-aware suggested prompts
+  const suggestedPrompts = isResults
+    ? [
+        'How did PAT change?',
+        'What was revenue and EBITDA margin?',
+        'Compare QoQ vs YoY',
+      ]
+    : isMgmt
+    ? [
+        'What is the management background?',
+        'What is the effective date?',
+        'Who is the predecessor?',
+      ]
+    : [
+        'What is the primary driver?',
+        'Are there capital implications?',
+      ]
 
   const handleAsk = async (textToSend: string) => {
     const qText = textToSend.trim()
@@ -30,11 +97,54 @@ export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({ filing, onClose }) =
 
     // Simulate preview response
     setTimeout(() => {
-      let mockAnswer = 'Operating leverage and product mix expansion drove margins; management reaffirmed FY27 guidance.'
-      if (filing.enrichment?.type === 'results') {
-        mockAnswer = `Operating leverage drove EBITDA (+23.0% YoY) faster than revenue (+9.0% YoY), leading to 16.9% EBITDA margin.`
-      } else if (filing.enrichment?.type === 'management') {
-        mockAnswer = `New CFO brings ~20 years experience from listed FMCG firms, taking over effective 1 Dec.`
+      let mockAnswer = ''
+      const lower = qText.toLowerCase()
+
+      if (isResults) {
+        if (lower.includes('pat') || lower.includes('profit')) {
+          if (patMetric) {
+            const yoyStr =
+              patMetric.yoy_pct !== null && patMetric.yoy_pct !== undefined
+                ? ` (${patMetric.yoy_pct >= 0 ? '+' : ''}${patMetric.yoy_pct.toFixed(1)}% YoY)`
+                : ''
+            const qoqStr =
+              patMetric.qoq_pct !== null && patMetric.qoq_pct !== undefined
+                ? `, ${patMetric.qoq_pct >= 0 ? '+' : ''}${patMetric.qoq_pct.toFixed(1)}% QoQ`
+                : ''
+            mockAnswer = `Reported PAT is ${formatInrCr(patMetric.value)}${yoyStr}${qoqStr} for ${
+              resultsCard?.period || 'the quarter'
+            }.`
+          } else {
+            mockAnswer = 'PAT figure is not isolated in this summary filing.'
+          }
+        } else if (lower.includes('margin') || lower.includes('ebitda') || lower.includes('revenue')) {
+          const mgn =
+            resultsCard?.margin_ebitda_pct !== undefined && resultsCard?.margin_ebitda_pct !== null
+              ? `EBITDA margin stood at ${resultsCard.margin_ebitda_pct.toFixed(1)}%. `
+              : ''
+          const revVal = revMetric ? `Revenue was ${formatInrCr(revMetric.value)}. ` : ''
+          const ebitdaVal = ebitdaMetric ? `EBITDA was ${formatInrCr(ebitdaMetric.value)}. ` : ''
+          mockAnswer = `${revVal}${ebitdaVal}${mgn}${filing.so_what || ''}`.trim()
+        } else if (lower.includes('qoq') || lower.includes('yoy')) {
+          const metricsStr = (resultsCard?.metrics || [])
+            .map((m) => `${m.name.toUpperCase()}: ${m.yoy_pct !== null ? `${m.yoy_pct > 0 ? '+' : ''}${m.yoy_pct}% YoY` : ''}`)
+            .join(' · ')
+          mockAnswer = metricsStr || filing.so_what || 'QoQ and YoY metrics from official financial tables.'
+        } else {
+          mockAnswer = filing.so_what || 'No specific operating driver is documented in the text of this filing.'
+        }
+      } else if (isMgmt) {
+        if (lower.includes('background') || lower.includes('role')) {
+          mockAnswer = filing.so_what || 'Leadership appointment announced with requisite experience in the sector.'
+        } else {
+          mockAnswer = filing.so_what || 'Refer to the attached appointment disclosure for complete terms.'
+        }
+      } else {
+        if (lower.includes('driver')) {
+          mockAnswer = filing.so_what || 'No driver or operating explanation is documented in the text of this filing.'
+        } else {
+          mockAnswer = filing.so_what || filing.headline || 'Official BSE exchange filing announcement.'
+        }
       }
 
       setHistory((prev) => [
@@ -42,6 +152,7 @@ export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({ filing, onClose }) =
         {
           q: qText,
           a: mockAnswer,
+          link: filing.pdf_url || undefined,
         },
       ])
       setIsAsking(false)
@@ -88,6 +199,17 @@ export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({ filing, onClose }) =
               </div>
               <div className="bg-zinc-950/60 border border-zinc-800/80 p-3 rounded-lg text-zinc-300 space-y-1.5">
                 <p className="leading-relaxed">{h.a}</p>
+                {h.link && (
+                  <a
+                    href={h.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[11px] text-zinc-400 hover:text-zinc-200 pt-1 font-mono transition-colors"
+                  >
+                    <span>View filing PDF</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                )}
               </div>
             </div>
           ))}
@@ -101,11 +223,7 @@ export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({ filing, onClose }) =
 
         {/* Suggested Prompts */}
         <div className="px-3 py-1.5 flex gap-1.5 overflow-x-auto no-scrollbar border-t border-zinc-800/50">
-          {[
-            'What was the key margin driver?',
-            'What is the management background?',
-            'Compare QoQ vs YoY',
-          ].map((prompt, idx) => (
+          {suggestedPrompts.map((prompt, idx) => (
             <button
               key={idx}
               onClick={() => handleAsk(prompt)}

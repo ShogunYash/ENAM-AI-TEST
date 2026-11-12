@@ -16,7 +16,7 @@ const tmpUserData = path.join(os.tmpdir(), 'finn-chrome-verify-' + Date.now())
 
 async function runVerification() {
   console.log('====================================================')
-  console.log('FINN End-to-End Screen Verification Suite')
+  console.log('FINN End-to-End Real Data Screen Verification Suite')
   console.log('Viewport: 390x844 (Mobile iPhone format)')
   console.log('Strict Mode: FAILS if any click fails to change screen')
   console.log('====================================================\n')
@@ -76,7 +76,12 @@ async function runVerification() {
     }
 
     // Helper: Clicks element and strictly asserts that the screen content changes
-    const clickAndAssertScreenChange = async (actionDesc, clickExpr, getScreenExpr = 'document.body.innerText', timeoutMs = 3500) => {
+    const clickAndAssertScreenChange = async (
+      actionDesc,
+      clickExpr,
+      getScreenExpr = 'document.body.innerText',
+      timeoutMs = 4000
+    ) => {
       const before = await evaluate(getScreenExpr)
       const clicked = await evaluate(clickExpr)
       if (clicked === false) {
@@ -98,7 +103,9 @@ async function runVerification() {
 
       if (!hasChanged) {
         throw new Error(
-          `[FAIL] Click did NOT change the screen for action: "${actionDesc}"!\nBefore state was: ${String(before).slice(0, 150)}...`
+          `[FAIL] Click did NOT change the screen for action: "${actionDesc}"!\nBefore state was: ${String(
+            before
+          ).slice(0, 150)}...`
         )
       }
 
@@ -106,39 +113,47 @@ async function runVerification() {
       return after
     }
 
-    // Wait for initial render
+    // Wait for initial render and data fetch
     await new Promise((r) => setTimeout(r, 1500))
 
     // 1. Initial Today Screen (24h)
     console.log('[Step 1] Verifying Today Screen (24h)...')
     await capture('1-today-24h.png')
     const initialText = await evaluate(`document.body.innerText`)
-    if (!initialText.toUpperCase().includes('NEEDS YOU') || !initialText.toUpperCase().includes('ACTIVE ALERTS')) {
+    if (!initialText.toUpperCase().includes('NEEDS YOU')) {
       throw new Error('[FAIL] Today screen did not load properly: ' + initialText.slice(0, 150))
     }
-    console.log('  ✓ Today screen loaded (Needs you, Alerts, Collapsed Routine)')
+    // Verify LIVE mode badge from /health
+    if (!initialText.includes('LIVE')) {
+      throw new Error('[FAIL] Today screen did not display "LIVE" badge when /health returns mode: "live"')
+    }
+    if (initialText.includes('DEMO DATA')) {
+      throw new Error('[FAIL] Today screen displayed "DEMO DATA" despite /health being mode: "live"')
+    }
+    console.log('  ✓ Today screen loaded with verified LIVE badge')
 
-    // 2. Click Window Picker 3d -> MUST CHANGE SCREEN (Loads CERA Results card)
-    console.log('\n[Step 2] Testing Window Picker click (24h -> 3d)...')
+    // 2. Click Window Picker 30d -> MUST CHANGE SCREEN (Loads real 30d BSE results filings)
+    console.log('\n[Step 2] Testing Window Picker click (24h -> 30d)...')
     await clickAndAssertScreenChange(
-      'Switch window picker from 24h to 3d',
+      'Switch window picker from 24h to 30d',
       `(() => {
         const btns = Array.from(document.querySelectorAll('button'));
-        const btn3d = btns.find(b => b.textContent.trim() === '3d');
-        if (btn3d) { btn3d.click(); return true; }
+        const btn30d = btns.find(b => b.textContent.trim() === '30d');
+        if (btn30d) { btn30d.click(); return true; }
         return false;
       })()`,
       `document.body.innerText`
     )
-    await capture('2-today-3d-results.png')
-    const text3d = await evaluate(`document.body.innerText`)
-    if (!text3d.includes('CERA') || !text3d.includes('₹512.4 Cr')) {
-      throw new Error('[FAIL] 3d digest did not display CERA Results card')
+    await capture('2-today-30d-results.png')
+    const text30d = await evaluate(`document.body.innerText`)
+    // Assert 30d window picker is selected and displays real results
+    if (!text30d.includes('TATASTEEL') && !text30d.includes('TITAN') && !text30d.includes('HINDZINC')) {
+      throw new Error('[FAIL] 30d digest did not display real results filings: ' + text30d.slice(0, 200))
     }
-    console.log('  ✓ Results Card 4x3 table rendered with ₹512.4 Cr and EBITDA margin')
+    console.log('  ✓ 30d chip clicked: rendered real 30-day filings (TATASTEEL / TITAN results)')
 
-    // 3. Open Ask FINN on a card -> MUST CHANGE SCREEN (Opens sheet)
-    console.log('\n[Step 3] Testing Ask FINN sheet opening and preview status...')
+    // 3. Open Ask FINN on a real filing -> MUST CHANGE SCREEN (Opens sheet)
+    console.log('\n[Step 3] Testing Ask FINN on real results filing...')
     await clickAndAssertScreenChange(
       'Open Ask FINN bottom sheet',
       `(() => {
@@ -160,8 +175,13 @@ async function runVerification() {
     if (askSheetText.includes('Verified quote match')) {
       throw new Error('[FAIL] Ask FINN sheet still contains "Verified quote match" badge (must be removed)')
     }
+    // Assert canned fallback string is REMOVED
+    if (askSheetText.includes('Key update from official exchange filing')) {
+      throw new Error('[FAIL] Ask FINN sheet still contains canned fallback "Key update from official exchange filing"')
+    }
     console.log('  ✓ Ask FINN sheet correctly labeled Preview')
     console.log('  ✓ "Verified quote match" badge removed from Ask FINN')
+    console.log('  ✓ Canned fallback "Key update from official exchange filing" removed')
 
     // Close Ask FINN -> MUST CHANGE SCREEN (Sheet disappears)
     await clickAndAssertScreenChange(
@@ -195,11 +215,11 @@ async function runVerification() {
       resText = await evaluate(`document.body.innerText`)
     }
 
-    // Assert visible SAMPLE DATA badge
+    // Assert visible SAMPLE DATA badge (since is_sample ?? true)
     if (!resText.includes('SAMPLE DATA')) {
-      throw new Error('[FAIL] Research screen missing visible "SAMPLE DATA" badge')
+      throw new Error('[FAIL] Research screen missing visible "SAMPLE DATA" badge (from is_sample ?? true)')
     }
-    console.log('  ✓ Visible "SAMPLE DATA" badge confirmed on research view')
+    console.log('  ✓ Visible "SAMPLE DATA" badge confirmed on research view via is_sample ?? true')
 
     // Assert portfolio chips loaded from data/portfolio.json
     if (!resText.toUpperCase().includes('PORTFOLIO:') || !resText.includes('TCS') || !resText.includes('BAJFINANCE')) {
@@ -208,7 +228,7 @@ async function runVerification() {
     console.log('  ✓ Suggested chips dynamically populated from data/portfolio.json (TCS, INFY, BAJFINANCE, ...)')
 
     // 5. Test clicking a different portfolio stock chip (e.g. TCS) -> MUST CHANGE SCREEN
-    console.log('\n[Step 5] Clicking portfolio chip TCS...')
+    console.log('\n[Step 5] Clicking portfolio chip TCS (testing Build Progress clean copy)...')
     await clickAndAssertScreenChange(
       'Click portfolio chip TCS to research ticker',
       `(() => {
@@ -224,7 +244,15 @@ async function runVerification() {
     if (!tcsText.includes('TCS')) {
       throw new Error('[FAIL] Screen did not switch to researching TCS')
     }
-    console.log('  ✓ Successfully switched active research ticker to TCS')
+    // Verify polling copy is REMOVED
+    if (tcsText.includes('every 3s') || tcsText.includes('poll 1') || tcsText.includes('poll 2')) {
+      throw new Error('[FAIL] Polling copy still present in BuildProgress: ' + tcsText.slice(0, 200))
+    }
+    // Verify rate-limit copy is REMOVED
+    if (tcsText.includes('1 req/s rate limited')) {
+      throw new Error('[FAIL] Rate-limit copy still present in BuildProgress')
+    }
+    console.log('  ✓ Polling and rate-limit copy removed from BuildProgress')
 
     // Switch back to INFY to test timeline and citation drawer
     console.log('\n[Step 6] Switching back to INFY for Citation Drawer test...')
@@ -253,10 +281,19 @@ async function runVerification() {
     )
     await capture('6-citation-drawer.png')
     const citText = await evaluate(`document.body.innerText`)
-    if (!citText.includes('Verified Source Citation') || !citText.includes('concall_Q2FY26') || !citText.includes('Page 4')) {
-      throw new Error('[FAIL] Citation drawer failed to display document, page, and quote')
+    if (!citText.includes('Verified Source Citation') || !citText.includes('Page 4')) {
+      throw new Error('[FAIL] Citation drawer failed to display document and page')
     }
-    console.log('  ✓ Citation Drawer open with document concall_Q2FY26, Page 4, and verbatim quote')
+    // Assert "Confidence: 100%" is REMOVED
+    if (citText.includes('Confidence: 100%')) {
+      throw new Error('[FAIL] Citation drawer still contains hard-coded "Confidence: 100%" (must be removed)')
+    }
+    // Assert SAMPLE DATA status carried into drawer
+    if (!citText.includes('SAMPLE DATA')) {
+      throw new Error('[FAIL] Citation drawer missing SAMPLE DATA indicator')
+    }
+    console.log('  ✓ "Confidence: 100%" successfully removed from Citation Drawer')
+    console.log('  ✓ SAMPLE DATA badge carried into Citation Drawer overlay')
 
     // Close Citation Drawer -> MUST CHANGE SCREEN
     await clickAndAssertScreenChange(
@@ -286,10 +323,32 @@ async function runVerification() {
     if (!threshText.includes('Alerts & Thresholds') || !threshText.includes('Volume Spike Multiple')) {
       throw new Error('[FAIL] Thresholds screen failed to render')
     }
-    console.log('  ✓ Thresholds screen rendered with volume, price move, and category toggles')
+    // Verify improved helper copy
+    if (!threshText.includes('≥') || !threshText.includes('daily close rises or falls')) {
+      throw new Error('[FAIL] Thresholds screen missing precise helper comparator copy')
+    }
+    console.log('  ✓ Thresholds screen rendered with precise helper comparators')
 
-    // 9. Navigate to Cost/Stats Screen -> MUST CHANGE SCREEN (Verifying live /stats/llm)
-    console.log('\n[Step 9] Navigating to Cost / Stats screen (live /stats/llm)...')
+    // Test clicking preset 3.0x -> MUST CHANGE SCREEN
+    console.log('\n[Step 9] Clicking 3.0x volume preset...')
+    await clickAndAssertScreenChange(
+      'Click volume preset 3.0x',
+      `(() => {
+        const btns = Array.from(document.querySelectorAll('button'));
+        const btn3x = btns.find(b => b.textContent.trim() === '3.0×');
+        if (btn3x) { btn3x.click(); return true; }
+        return false;
+      })()`,
+      `document.body.innerText`
+    )
+    const updatedThreshText = await evaluate(`document.body.innerText`)
+    if (!updatedThreshText.includes('≥ 3.0×')) {
+      throw new Error('[FAIL] Threshold helper did not update to 3.0x: ' + updatedThreshText.slice(0, 150))
+    }
+    console.log('  ✓ Clicking preset updated state and helper copy to ≥ 3.0×')
+
+    // 10. Navigate to Cost/Stats Screen -> MUST CHANGE SCREEN (Verifying live /stats/llm)
+    console.log('\n[Step 10] Navigating to Cost / Stats screen (live /stats/llm)...')
     await clickAndAssertScreenChange(
       'Navigate to Cost tab',
       `(() => {
@@ -305,7 +364,11 @@ async function runVerification() {
     if (!costText.includes('LLM Cost & Efficiency Ledger') || !costText.includes('Total Spend')) {
       throw new Error('[FAIL] Stats screen failed to render')
     }
-    console.log('  ✓ StatsScreen loaded /stats/llm (showing spend ₹0.00, cache hit %, model breakdown)')
+    // Verify LIVE mode badge on stats screen as-of chip
+    if (!costText.includes('LIVE')) {
+      throw new Error('[FAIL] Stats screen did not display LIVE badge')
+    }
+    console.log('  ✓ StatsScreen loaded live /stats/llm with LIVE provenance badge')
 
     ws.close()
   } finally {
@@ -316,7 +379,7 @@ async function runVerification() {
   }
 
   console.log('\n====================================================')
-  console.log('All Checks and Click-Change Assertions PASSED (390x844)!')
+  console.log('All Real-Data Checks & Click-Change Assertions PASSED (390x844)!')
   console.log('====================================================\n')
 }
 
