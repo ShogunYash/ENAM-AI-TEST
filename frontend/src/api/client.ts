@@ -7,6 +7,8 @@ import {
   Settings,
   Alert,
   Research,
+  LlmStats,
+  PortfolioStock,
 } from './types'
 
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8000'
@@ -20,6 +22,11 @@ export interface DigestResult {
 
 export interface ResearchResult {
   data: Research
+  source: 'live' | 'snapshot'
+}
+
+export interface StatsResult {
+  data: LlmStats
   source: 'live' | 'snapshot'
 }
 
@@ -148,6 +155,60 @@ export async function fetchResearchData(symbol: string): Promise<ResearchResult>
     },
     source: 'snapshot',
   }
+}
+
+export async function fetchLlmStats(): Promise<StatsResult> {
+  // 1. Try live API
+  try {
+    const liveRes = await fetchWithTimeout(`${API_BASE}/stats/llm`, {}, 2000)
+    if (liveRes.ok) {
+      const data = await liveRes.json()
+      return { data, source: 'live' }
+    }
+  } catch (err) {
+    // Live API unreachable, fallback
+  }
+
+  // 2. Fallback to snapshot file
+  const snapRes = await fetch('/data/stats.json')
+  if (!snapRes.ok) {
+    throw new Error('Failed to load stats snapshot')
+  }
+  const data = await snapRes.json()
+  return { data, source: 'snapshot' }
+}
+
+export async function fetchPortfolio(): Promise<PortfolioStock[]> {
+  try {
+    const res = await fetch('/data/portfolio.json')
+    if (res.ok) {
+      const json = await res.json()
+      if (Array.isArray(json.portfolio)) {
+        return json.portfolio
+      }
+    }
+  } catch {}
+
+  // Fallback to companies.json
+  try {
+    const res = await fetch('/data/companies.json')
+    if (res.ok) {
+      const companies = await res.json()
+      return companies.map((c: any) => ({
+        nse_symbol: c.symbol,
+        bse_scrip_code: c.bse_code,
+        name: c.name,
+        sector: c.sector,
+      }))
+    }
+  } catch {}
+
+  return [
+    { nse_symbol: 'INFY', name: 'Infosys' },
+    { nse_symbol: 'TCS', name: 'Tata Consultancy Services' },
+    { nse_symbol: 'BAJFINANCE', name: 'Bajaj Finance' },
+    { nse_symbol: 'TITAN', name: 'Titan Company' },
+  ]
 }
 
 /**

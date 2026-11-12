@@ -1,24 +1,22 @@
-import React, { useState, useEffect } from 'react'
-import { Coins, Zap, ShieldCheck, Activity } from 'lucide-react'
+import React from 'react'
+import { useQuery } from '@tanstack/react-query'
+import { fetchLlmStats } from '@/api/client'
+import { Coins, Zap, ShieldCheck, Activity, RefreshCw } from 'lucide-react'
+import { AsOfChip } from '@/components/common/AsOfChip'
 
 export const StatsScreen: React.FC = () => {
-  const [stats, setStats] = useState<any>(null)
-  const [loading, setLoading] = useState(true)
+  const {
+    data: statsResult,
+    isLoading,
+    isFetching,
+    refetch,
+  } = useQuery({
+    queryKey: ['stats'],
+    queryFn: fetchLlmStats,
+    staleTime: 1000 * 15,
+  })
 
-  useEffect(() => {
-    fetch('/data/stats.json')
-      .then((res) => res.json())
-      .then((data) => {
-        setStats(data)
-        setLoading(false)
-      })
-      .catch((err) => {
-        console.error('Failed to load stats', err)
-        setLoading(false)
-      })
-  }, [])
-
-  if (loading || !stats) {
+  if (isLoading && !statsResult) {
     return (
       <div className="p-4 space-y-3 animate-pulse">
         <div className="h-8 bg-zinc-900 rounded-lg w-32"></div>
@@ -28,18 +26,34 @@ export const StatsScreen: React.FC = () => {
     )
   }
 
-  const { totals, by_model, by_feature, avg_calls_new_ticker, grounding_dropped } = stats
+  const stats = statsResult?.data
+  if (!stats) return null
+
+  const { totals, by_model, by_feature, avg_calls_new_ticker, grounding_dropped, as_of } = stats
+  const source = statsResult.source
 
   return (
     <div className="space-y-4 pb-24 pt-1">
-      <div className="pb-2 border-b border-zinc-800">
-        <h1 className="text-base font-bold text-zinc-100 flex items-center gap-2">
-          <Activity className="w-4 h-4 text-zinc-300" />
-          LLM Cost & Efficiency Ledger
-        </h1>
-        <p className="text-xs text-zinc-400 mt-0.5">
-          Zero marginal cost architecture · Strict cache-first router
-        </p>
+      {/* Header with Title and As-Of Chip */}
+      <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
+        <div>
+          <h1 className="text-base font-bold text-zinc-100 flex items-center gap-2">
+            <Activity className="w-4 h-4 text-zinc-300" />
+            LLM Cost & Efficiency Ledger
+          </h1>
+          <p className="text-xs text-zinc-400 mt-0.5">
+            Zero marginal cost architecture · Strict cache-first router
+          </p>
+        </div>
+
+        <div className="flex items-center gap-1.5">
+          <AsOfChip
+            asOf={as_of}
+            source={source}
+            isRefreshing={isFetching}
+            onRefresh={() => refetch()}
+          />
+        </div>
       </div>
 
       {/* Top Stat Cards */}
@@ -81,7 +95,7 @@ export const StatsScreen: React.FC = () => {
         </div>
         <div className="flex justify-between items-center text-zinc-300">
           <span className="text-zinc-400">Avg Calls per New Ticker</span>
-          <span className="font-mono text-zinc-100">{avg_calls_new_ticker} calls</span>
+          <span className="font-mono text-zinc-100">{avg_calls_new_ticker ?? '—'} calls</span>
         </div>
         <div className="flex justify-between items-center text-zinc-300">
           <span className="text-zinc-400">Unverified Claims Dropped</span>
