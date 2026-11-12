@@ -10,6 +10,7 @@ unparseable or schema-invalid output → one corrective retry on the same model,
 """
 from __future__ import annotations
 
+import base64
 import hashlib
 import json
 import re
@@ -82,8 +83,32 @@ def _call(client: httpx.Client, cfg: LLMConfig, ref: ModelRef, api_key: str, sys
     return content, int(usage.get("prompt_tokens", 0)), int(usage.get("completion_tokens", 0))
 
 
+def _call_gemini_pdf(client: httpx.Client, cfg: LLMConfig, ref: ModelRef, api_key: str, system: str, user: str,
+                     json_schema_hint: str, pdf: bytes, extra_user: str = "") -> tuple[str, int, int]:
+    """Gemini-only native PDF input (generateContent with inline_data): the model reads the pages as images, which
+    is the only reliable way to read results tables (PDF text extraction flattens them). Same return as _call()."""
+    base = cfg.providers[ref.provider].base_url.removesuffix("/openai")
+    instruction = f"{system}\n\nReturn ONLY JSON matching this schema:\n{json_schema_hint}"
+    body = {
+        "systemInstruction": {"parts": [{"text": instruction}]},
+        "contents": [{"role": "user", "parts": [
+            {"inline_data": {"mime_type": "application/pdf", "data": base64.b64encode(pdf).decode()}},
+            {"text": user + extra_user}]}],
+        "generationConfig": {"temperature": cfg.temperature, "maxOutputTokens": cfg.max_output_tokens * 4,
+                             "responseMimeType": "application/json"},
+    }
+    r = client.post(f"{base}/models/{ref.model}:generateContent", json=body,
+                    headers={"x-goog-api-key": api_key}, timeout=cfg.timeout_s * 2)
+    r.raise_for_status()
+    data = r.json()
+    parts = data["candidates"][0]["content"]["parts"]
+    content = "".join(p.get("text", "") for p in parts if not p.get("thought"))
+    usage = data.get("usageMetadata") or {}
+    return content, int(usage.get("promptTokenCount", 0)), int(usage.get("candidatesTokenCount", 0))
+
+
 def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str | None = None,
-             unit: str | None = None, settings: AppSettings | None = None,
+             unit: str | None = None, pdf: bytes | None = None, settings: AppSettings | None = None,
              client: httpx.Client | None = None) -> BaseModel:
     """Run one LLM task and return its validated pydantic output.
 
@@ -92,6 +117,8 @@ def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str
     cache_key_extra stable id of the underlying document/entity (e.g. sha256 of a PDF)
     feature         ledger tag shown in the Cost panel, e.g. "pull.guidance" (default: task)
     unit            what this call was for (e.g. a ticker) — used for "calls per new ticker"
+    pdf             PDF bytes sent natively to Gemini (only gemini/* models in the tier are tried; its sha256 joins
+                    the cache key). Use for documents whose layout matters, e.g. results tables.
     client          injectable httpx.Client (tests use a MockTransport)
     """
     settings = settings or get_settings()
@@ -101,6 +128,8 @@ def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str
     feature = feature or task
     system, user = prompt.render(inputs)
     db = settings.llm_db_path
+    if pdf is not None:
+        cache_key_extra = f"{cache_key_extra}|pdf:{hashlib.sha256(pdf).hexdigest()}"
     key = _cache_key(prompt, system, user, cache_key_extra)
 
     hit = store.cache_get(db, key)
@@ -121,6 +150,9 @@ def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str
             if not api_key:
                 errors.append(f"{label}: no API key")
                 continue
+            if pdf is not None and ref.provider != "gemini":
+                errors.append(f"{label}: no native PDF input")
+                continue
             if ref.max_input_chars and input_chars > ref.max_input_chars:
                 errors.append(f"{label}: input {input_chars} chars > limit {ref.max_input_chars}")
                 continue
@@ -132,7 +164,11 @@ def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str
             for attempt in (1, 2):  # attempt 2 = corrective retry after unparseable output
                 t0 = time.monotonic()
                 try:
-                    content, tin, tout = _call(client, cfg, ref, api_key, system, user, schema_hint, extra_user)
+                    if pdf is not None:
+                        content, tin, tout = _call_gemini_pdf(client, cfg, ref, api_key, system, user, schema_hint,
+                                                              pdf, extra_user)
+                    else:
+                        content, tin, tout = _call(client, cfg, ref, api_key, system, user, schema_hint, extra_user)
                 except httpx.HTTPStatusError as e:
                     code = e.response.status_code
                     if code in (429, 503):  # rate-limited or "high demand": skip this model for a while

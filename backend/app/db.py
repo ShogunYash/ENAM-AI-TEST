@@ -25,6 +25,9 @@ CREATE TABLE IF NOT EXISTS classifications (
   id TEXT PRIMARY KEY,              -- filings.id
   category TEXT NOT NULL, source TEXT NOT NULL,   -- source: 'rule' | 'llm'
   confidence REAL, classified_at TEXT);
+CREATE TABLE IF NOT EXISTS enrichments (
+  filing_id TEXT PRIMARY KEY, type TEXT NOT NULL,   -- 'results' | 'management' | 'oneliner'
+  payload TEXT NOT NULL, created_at TEXT);
 CREATE TABLE IF NOT EXISTS bars (
   symbol TEXT NOT NULL, day TEXT NOT NULL, close REAL NOT NULL, volume INTEGER NOT NULL,
   PRIMARY KEY (symbol, day));

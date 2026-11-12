@@ -1,6 +1,7 @@
 ---
 task: results_extract
-version: 1
+version: 2
+note: "v2 (Claude, B3): adds the revenue-sub-lines rule found on Titan Q2 FY27, where 'Revenue from operations' has no printed total"
 tier: T2
 schema: ResultsExtraction
 ---
@@ -15,7 +16,7 @@ A source is {"label":"printed row label","printed":"exact signed cell text","uni
 
 For reported numbers set status to "reported" and supply source. Copy the numeric amount into value_inr_cr only if printed in INR crore (accounting parentheses denote a negative). For another explicit INR scale keep the source and leave value_inr_cr null for deterministic unit conversion. Never pass a lakh amount through as crore. If the currency, units or column association are unclear, use the missing cell.
 
-Revenue means revenue from operations; exclude other income. PBT means profit before tax; PAT means total profit after tax for the period across the chosen reporting group, before allocation to owners and non-controlling interests. Exclude comprehensive income. Prefer unadjusted EBITDA when explicitly reported. Never relabel adjusted EBITDA or a generic operating profit as reported EBITDA.
+Revenue means revenue from operations; exclude other income and never use total income. If revenue from operations is presented only as sub-lines under that heading with no printed total, set status "derived", leave source and value_inr_cr null, and put every sub-line of that heading in components with keys line_1, line_2 and so on in printed order, each a full source object. Do not add them yourself; the caller sums them. PBT means profit before tax; PAT means total profit after tax for the period across the chosen reporting group, before allocation to owners and non-controlling interests. Exclude comprehensive income. Prefer unadjusted EBITDA when explicitly reported. Never relabel adjusted EBITDA or a generic operating profit as reported EBITDA.
 
 If EBITDA is absent, flag status "derived" ONLY when the filing explicitly supplies all four comparable inputs for the same period, basis and INR scale: profit before tax + finance cost + depreciation and amortisation − other income. Use the combined depreciation and amortisation charge where printed. Never assume amortisation is zero. Put the four source objects under components with keys pbt, finance_cost, depreciation_amortisation and other_income. Set source and value_inr_cr to null: there is no printed EBITDA figure or page for this cell. The caller normalizes units and expense signs, evaluates the formula and retains all four page references plus the derived flag. Never evaluate the expression yourself. If an input is absent or ambiguous, leave EBITDA missing. Do not compute growth rates, margins, implied figures or other totals.
 </system>

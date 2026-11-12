@@ -63,6 +63,13 @@ items = run_task(
     unit="INFY",                  # what it was for; drives "calls per new ticker"
 )  # returns a validated pydantic object; raises LLMUnavailable if every model failed
 ```
+**Documents whose layout matters (results tables): pass `pdf=` (B3).** `run_task("results_extract", {...}, pdf=pdf_bytes,
+cache_key_extra=filing_id)` sends the PDF natively to Gemini (`generateContent` + `inline_data`), so the model reads the
+page as an image. Only `gemini/*` models in the tier are tried (the rest report "no native PDF input"), and the PDF's sha256
+joins the cache key. Reason: PyMuPDF text and `find_tables()` both garble Indian results tables (TCS Q2 FY27), while native
+PDF reading is exact. Keep PDFs under ~18 MB and send only the first ~25 pages (`app.ingest.docs.first_pages`) so page
+numbers stay valid. All arithmetic (units, EBITDA derivation, QoQ/YoY) stays in code (`app/pipeline/results.py`).
+
 The new output schema goes in `app/llm/schemas.py` (`SCHEMAS`). The router talks plain httpx to the providers' OpenAI-compatible
 `/chat/completions` endpoints (no provider SDKs), skips models whose `max_input_chars` is exceeded, and cools a model down for 60 s after a 429.
 Models are listed per tier in `backend/config/models.yaml`; check them with `uv run python -m scripts.ping_llm --list`.

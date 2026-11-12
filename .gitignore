@@ -8,3 +8,4 @@ backend/data/raw/
 backend/data/cache/
 .claude/settings.local.json
 backend/data/finn.sqlite
+.claude/settings.json

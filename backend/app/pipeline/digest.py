@@ -10,6 +10,7 @@ from app import models as m
 from app.ingest import bse
 from app.models import Category as C
 from app.models import Priority as P
+from app.pipeline import results as R
 from app.pipeline import score as S
 from app.signals import alerts as A
 from app.signals.eod import IST
@@ -20,10 +21,7 @@ NEEDS_YOU_MAX = 5
 
 
 def _pdf(name: str, age: timedelta) -> str | None:
-    """Fresh filings live under AttachLive only; from ~2 days on AttachHis always works (verified in B1)."""
-    if not name:
-        return None
-    return bse.pdf_url(name, "AttachLive" if age < timedelta(days=2.5) else "AttachHis")
+    return bse.pdf_link(name, age)
 
 
 def _reaction(snap: m.PriceSnapshot | None, filed_at: datetime) -> m.PriceReaction | None:
@@ -56,6 +54,18 @@ def to_filing(row: dict, settings: m.Settings, snaps: dict[str, m.PriceSnapshot]
         enrichment=None)
 
 
+def attach_enrichments(filings: list[m.Filing]) -> None:
+    """Attach stored enrichment cards (results/bio/one-liner) and the code-derived one-liner for results."""
+    found = R.load_enrichments([f.id for f in filings])
+    for f in filings:
+        card = found.get(f.id)
+        if card is None:
+            continue
+        f.enrichment = card
+        if isinstance(card, m.ResultsCard) and not f.so_what:
+            f.so_what = R.so_what(card)
+
+
 def resolve_window(label: str, now: datetime, start: datetime | None, end: datetime | None) -> m.DigestWindow:
     if label == "custom":
         if not (start and end):
@@ -76,6 +86,7 @@ def build_digest(label: str = "24h", start: datetime | None = None, end: datetim
 
     rows = filings_between(window.start, window.end)
     filings = [to_filing(r, settings, by_sym, now) for r in rows]
+    attach_enrichments(filings)
 
     def significant(f: m.Filing) -> bool:
         rc = f.price_reaction

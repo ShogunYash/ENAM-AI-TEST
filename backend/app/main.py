@@ -120,7 +120,9 @@ def filing(filing_id: str) -> Any:
                               "WHERE f.id=?", (filing_id,)).fetchone()
         if row:
             snaps = {s.symbol: s for s in prices_mod.snapshots([row["symbol"]])}
-            return digest_mod.to_filing(dict(row), m.Settings(), snaps, now)
+            f = digest_mod.to_filing(dict(row), m.Settings(), snaps, now)
+            digest_mod.attach_enrichments([f])
+            return f
     for name in ("filing-results", "filing-management", "filing-oneliner"):
         if example(name)["id"] == filing_id:
             return example(name)

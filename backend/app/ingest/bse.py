@@ -53,6 +53,14 @@ def pdf_url(name: str, folder: str = "AttachLive") -> str:
     return f"https://www.bseindia.com/xml-data/corpfiling/{folder}/{name}"
 
 
+def pdf_link(name: str, age: timedelta) -> str | None:
+    """Link without any HTTP call. Fresh filings exist only under AttachLive; from ~2 days on AttachHis always
+    works (verified in B1), so use it for anything older."""
+    if not name:
+        return None
+    return pdf_url(name, "AttachLive" if age < timedelta(days=2.5) else "AttachHis")
+
+
 def resolve_pdf_url(name: str, client: httpx.Client) -> str | None:
     """Return the first of AttachLive/AttachHis that really serves a PDF (1 KB range request each)."""
     if not name:
