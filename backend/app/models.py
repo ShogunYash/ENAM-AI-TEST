@@ -381,3 +381,5 @@ class AskRequest(Model):
 class AskResponse(Model):
     answer: str
     claims: list[Claim]
+    answerable: bool = Field(default=True, description="False when the evidence on screen does not contain the answer, "
+                                                       "or no model could be reached; `answer` then says so plainly.")

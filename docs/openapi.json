@@ -383,6 +383,7 @@
     "/ask": {
       "post": {
         "summary": "Ask",
+        "description": "Grounded Q&A about the filing or research report on screen: answers only from that evidence, every quote verified,\nevery figure already present in it. Says so plainly when it can't answer. Fixtures only when there is no database.",
         "operationId": "ask_ask_post",
         "requestBody": {
           "content": {
@@ -594,6 +595,12 @@
             },
             "type": "array",
             "title": "Claims"
+          },
+          "answerable": {
+            "type": "boolean",
+            "title": "Answerable",
+            "description": "False when the evidence on screen does not contain the answer, or no model could be reached; `answer` then says so plainly.",
+            "default": true
           }
         },
         "additionalProperties": false,

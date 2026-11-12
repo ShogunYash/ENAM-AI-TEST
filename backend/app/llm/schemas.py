@@ -145,6 +145,20 @@ class MgmtBio(BaseModel):
     links: list[str] = Field(default_factory=list)
 
 
+class AskCitation(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    source: int = Field(ge=1)           # evidence block number
+    quote: str
+
+
+class AskAnswer(BaseModel):
+    """prompt ask (T1). Over-long answers fail validation (-> retry) instead of being cut."""
+    model_config = ConfigDict(extra="ignore")
+    answerable: bool
+    answer: str = Field(default="", max_length=300)
+    citations: list[AskCitation] = Field(default_factory=list, max_length=4)
+
+
 SCHEMAS: dict[str, type[BaseModel]] = {
     "Ping": Ping,
     "GuidanceItems": GuidanceItems,
@@ -153,4 +167,5 @@ SCHEMAS: dict[str, type[BaseModel]] = {
     "SoWhat": SoWhat,
     "ResultsExtraction": ResultsExtraction,
     "MgmtBio": MgmtBio,
+    "AskAnswer": AskAnswer,
 }

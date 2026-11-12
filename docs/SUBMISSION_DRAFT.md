@@ -31,8 +31,7 @@ settles it. KPIL guided "25%+" FY26 revenue growth and said it "fully delivered"
 - *Free-tier reality.* Gemini's free tier has daily per-model quotas, so the router reads the retry time and skips exhausted models, and a local open model on a GPU does
   the heavy build-time work. Total spend ₹0.00 over 125 measured calls (57.9 % cache hits). The demo serves a committed seed and snapshot, so it never depends on a live model.
 
-**What I deliberately left out.** Voice, auth and real push notifications; web enrichment for bios (they come from the filing text only); a real `/ask` copilot
-(the sheet is a labelled preview); bull/bear and the other research modules. That time went into verification, because a wrong number is worse than a missing one.
+**What I deliberately left out.** Voice, auth and real push notifications; web enrichment for bios (they come from the filing text only); bull/bear and the other research modules. (A grounded `/ask` exists in the API; see the README for whether the UI sheet is wired to it.) That time went into verification, because a wrong number is worse than a missing one.
 
 **Where I'd take it next.** Evaluate verdicts against analyst-labelled examples; narrative-vs-numbers (drafted); intraday filings over a websocket;
 portfolio-level drift in management tone.

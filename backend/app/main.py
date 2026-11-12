@@ -20,6 +20,7 @@ from app import db, ops
 from app import models as m
 from app.ingest import prices as prices_mod
 from app.llm import store as llm_store
+from app.pipeline import ask as ask_pipeline
 from app.pipeline import digest as digest_mod
 from app.research import build as research_build
 from app.seed import ensure_seed
@@ -168,4 +169,8 @@ def debug_sources() -> Any:
 
 @app.post("/ask", response_model=m.AskResponse)
 def ask(req: m.AskRequest) -> Any:
-    return example("ask")
+    """Grounded Q&A about the filing or research report on screen: answers only from that evidence, every quote verified,
+    every figure already present in it. Says so plainly when it can't answer. Fixtures only when there is no database."""
+    if not _has_real_data():
+        return example("ask")
+    return ask_pipeline.answer(req)

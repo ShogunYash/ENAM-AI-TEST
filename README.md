@@ -86,8 +86,8 @@ earnings-call transcripts, annual reports and filed numbers. No news, no broker 
   quota-bound and may return a partial report with an explicit gap (e.g. "Judgment batch 2 failed").
 - **Titan's results card** is flagged `Screener mismatch` (revenue sub-lines): a weaker fallback model produced it; it is shown honestly, not hidden.
 - Render's free tier sleeps (a keep-warm ping is documented) and has an ephemeral disk (the API restores a committed seed at boot).
-- **Not built:** voice, auth, real push notifications, web enrichment for bios (filing text only), a real `/ask` copilot (the UI sheet is a labelled preview),
-  bull/bear and the other research modules, intraday data.
+- **Not built:** voice, auth, real push notifications, web enrichment for bios (filing text only), bull/bear and the other research modules, intraday data.
+  `POST /ask` (grounded Q&A on the filing or report on screen) is built and tested; check whether the Ask sheet in the deployed UI is wired to it.
 - Docker image was written and reviewed but not built in the dev environment.
 
 ## Next

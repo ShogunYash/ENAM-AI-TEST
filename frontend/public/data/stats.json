@@ -1,11 +1,11 @@
 {
-  "as_of": "2026-11-13T02:41:25.092963+05:30",
+  "as_of": "2026-11-13T02:53:53.827855+05:30",
   "totals": {
-    "calls": 125,
-    "tokens_in": 1034856,
-    "tokens_out": 88157,
+    "calls": 134,
+    "tokens_in": 1061744,
+    "tokens_out": 88639,
     "cache_hits": 172,
-    "cache_hit_pct": 57.9,
+    "cache_hit_pct": 56.2,
     "spend_inr": 0.0
   },
   "by_feature": [
@@ -45,6 +45,13 @@
       "cache_hits": 21
     },
     {
+      "key": "ask",
+      "calls": 9,
+      "tokens_in": 26888,
+      "tokens_out": 482,
+      "cache_hits": 0
+    },
+    {
       "key": "push.classify",
       "calls": 6,
       "tokens_in": 15920,
@@ -69,9 +76,9 @@
     },
     {
       "key": "gemini-3.5-flash-lite",
-      "calls": 37,
-      "tokens_in": 260639,
-      "tokens_out": 31406,
+      "calls": 46,
+      "tokens_in": 287527,
+      "tokens_out": 31888,
       "cache_hits": 16
     },
     {

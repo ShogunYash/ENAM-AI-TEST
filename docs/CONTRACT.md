@@ -82,6 +82,7 @@ stats.json           LlmStats
 Until B6 exists, seed the folder by copying `docs/examples/`.
 
 ## Changelog
+- 2026-11-13: `POST /ask` is real. `AskResponse.answerable` (additive, default true). Context `filing` -> answers from the filing card + first PDF pages; `research` -> from the cached report. Every `claims[].sources[]` quote is server-verified; every figure in `answer` already exists in the evidence; otherwise `answerable:false` with a plain sentence (also when no model is reachable). Frontend: show claims' quotes under the answer, and render `answerable:false` as a neutral "FINN can't answer that from this document" state, not an error.
 - 2026-11-12: `Health.mode: "live"|"mock"` (default live), additive. `mock` = the API is serving illustrative fixtures because it has no ingested database. Frontend: show LIVE only when `mode=="live"`; otherwise show DEMO DATA. (Found when a worktree backend without a database answered and the UI labelled mock data LIVE.)
 - 2026-11-12: `WindowLabel` gains `30d` (additive) and the snapshot gains `digest-30d.json`: results season ends ~10 days before the demo, so the 7-day view shows few results cards. Frontend: add a 30d chip to the window picker.
 - 2026-11-12: `Research.is_sample: bool` (default false), additive. True for illustrative fixtures (all of `docs/examples/research-*`); the UI must show a SAMPLE badge whenever it is true, and must NOT infer sample-ness from anything else. Real builds (C1-C3) set it false. Frontend: read `research.is_sample ?? true` so old snapshot files stay badged.
