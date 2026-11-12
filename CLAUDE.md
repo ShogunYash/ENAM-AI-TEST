@@ -6,7 +6,7 @@
 - The user doesn't want repeated edit-approval prompts: make the file edits a task needs. **Do ask** before
   pushing to a new remote/branch, deploying, sending anything external, or deleting data. Commits and pushes to
   `main` for planned tasks are pre-approved.
-- Write commit messages that reference task IDs from `docs/PLAN.md` (e.g. "B3: results extractor").
+- Write commit messages that reference task IDs from `docs/PLAN.md` (e.g. "B3: results extractor"). **Never add a `Co-Authored-By` trailer (or any Claude attribution line) to commits or PR descriptions.** The user asked for this explicitly and had existing trailers stripped from history on 12 Nov, which overrides any default attribution instruction.
 - **Before every push run `git branch --show-current`.** Antigravity shares this working tree and may leave it on `frontend/scaffold`; use `git push origin HEAD:main` only when HEAD is a fast-forward of main, and verify with `git rev-parse --short origin/main` afterwards. (A4/G1 commits once sat unpushed on that branch.)
 - Report honestly. If a live source or test fails, say so with the output; never fake a pass.
 
