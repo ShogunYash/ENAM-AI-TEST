@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { fetchResearchData, fetchPortfolio } from '@/api/client'
+import { fetchResearchData, fetchPortfolio, fetchSnapshotMeta } from '@/api/client'
 import { Claim, SourceDoc } from '@/api/types'
-import { formatInrCr, formatPercentDelta } from '@/lib/formatters'
+import { formatInrCr, formatPercentDelta, formatDocSourceLabel } from '@/lib/formatters'
 import { PvDTimeline } from '@/components/research/PvDTimeline'
 import { BuildProgress } from '@/components/research/BuildProgress'
 import { CitationDrawer } from '@/components/research/CitationDrawer'
@@ -27,12 +27,21 @@ export const ResearchScreen: React.FC = () => {
   } | null>(null)
   const [pollCount, setPollCount] = useState(0)
 
+  // Fetch meta for pre-built symbols
+  const { data: meta } = useQuery({
+    queryKey: ['meta'],
+    queryFn: fetchSnapshotMeta,
+    staleTime: Infinity,
+  })
+
   // Fetch portfolio for ticker suggestions
   const { data: portfolio = [] } = useQuery({
     queryKey: ['portfolio'],
     queryFn: fetchPortfolio,
     staleTime: Infinity,
   })
+
+  const prebuiltSymbols = meta?.research_symbols || ['INFY', 'BAJFINANCE', 'POLYCAB', 'KPIL']
 
   // Query research data with 3s polling when building
   const {
@@ -103,29 +112,56 @@ export const ResearchScreen: React.FC = () => {
           </button>
         </form>
 
-        {/* Portfolio Suggestion Chips from data/portfolio.json */}
-        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar text-xs py-0.5">
-          <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold mr-0.5 flex-shrink-0">
-            Portfolio:
-          </span>
-          {portfolio.map((stock) => {
-            const isSelected = activeSymbol === stock.nse_symbol
-            return (
-              <button
-                key={stock.nse_symbol}
-                type="button"
-                onClick={() => handleQuickTicker(stock.nse_symbol)}
-                className={`px-2.5 py-1 rounded-md border text-[11px] font-mono flex-shrink-0 transition-all ${
-                  isSelected
-                    ? 'bg-zinc-800 border-zinc-600 text-zinc-100 font-bold shadow-sm'
-                    : 'bg-zinc-950/60 border-zinc-800/80 text-zinc-400 hover:text-zinc-200'
-                }`}
-                title={`${stock.name}${stock.sector ? ` · ${stock.sector}` : ''}`}
-              >
-                <span>{stock.nse_symbol}</span>
-              </button>
-            )
-          })}
+        {/* Chips: Pre-built first, then Portfolio */}
+        <div className="space-y-1.5 pt-0.5">
+          {/* Pre-built Research Chips */}
+          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar text-xs py-0.5">
+            <span className="text-[10px] text-emerald-400 font-mono uppercase tracking-wider font-semibold mr-0.5 flex-shrink-0 bg-emerald-950/40 border border-emerald-800/50 px-1.5 py-0.5 rounded">
+              Pre-built:
+            </span>
+            {prebuiltSymbols.map((sym) => {
+              const isSelected = activeSymbol === sym
+              return (
+                <button
+                  key={sym}
+                  type="button"
+                  onClick={() => handleQuickTicker(sym)}
+                  className={`px-2.5 py-1 rounded-md border text-[11px] font-mono flex-shrink-0 transition-all ${
+                    isSelected
+                      ? 'bg-zinc-800 border-zinc-600 text-zinc-100 font-bold shadow-sm'
+                      : 'bg-zinc-950/60 border-zinc-800/80 text-zinc-400 hover:text-zinc-200'
+                  }`}
+                >
+                  <span>{sym}</span>
+                </button>
+              )
+            })}
+          </div>
+
+          {/* Portfolio Suggestion Chips from data/portfolio.json */}
+          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar text-xs py-0.5">
+            <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold mr-0.5 flex-shrink-0">
+              Portfolio:
+            </span>
+            {portfolio.map((stock) => {
+              const isSelected = activeSymbol === stock.nse_symbol
+              return (
+                <button
+                  key={stock.nse_symbol}
+                  type="button"
+                  onClick={() => handleQuickTicker(stock.nse_symbol)}
+                  className={`px-2.5 py-1 rounded-md border text-[11px] font-mono flex-shrink-0 transition-all ${
+                    isSelected
+                      ? 'bg-zinc-800 border-zinc-600 text-zinc-100 font-bold shadow-sm'
+                      : 'bg-zinc-950/60 border-zinc-800/80 text-zinc-400 hover:text-zinc-200'
+                  }`}
+                  title={`${stock.name}${stock.sector ? ` · ${stock.sector}` : ''}`}
+                >
+                  <span>{stock.nse_symbol}</span>
+                </button>
+              )
+            })}
+          </div>
         </div>
       </section>
 
@@ -278,6 +314,7 @@ export const ResearchScreen: React.FC = () => {
 
             <PvDTimeline
               items={research.pvd}
+              sourceDocs={sourceDocs}
               onSelectClaim={(claim, metricTitle) =>
                 setSelectedClaim({ claim, metricTitle })
               }
@@ -308,11 +345,16 @@ export const ResearchScreen: React.FC = () => {
                         <span>Supporting Fact</span>
                       </span>
                       <span className="text-[10px] text-zinc-400 font-mono underline decoration-zinc-700">
-                        {claim.sources[0]?.doc_id} · p.{claim.sources[0]?.page}
+                        {formatDocSourceLabel(
+                          claim.sources[0]?.doc_id,
+                          claim.sources[0]?.page,
+                          sourceDocs
+                        )}
                       </span>
                     </div>
-                    <div className="text-zinc-200 text-[12px] leading-snug">
-                      "{claim.text}"
+                    {/* Paraphrase headline without quotes */}
+                    <div className="text-zinc-200 text-[12px] leading-snug font-medium">
+                      {claim.text}
                     </div>
                   </div>
                 ))}
@@ -330,11 +372,16 @@ export const ResearchScreen: React.FC = () => {
                         <span>Risk Observation</span>
                       </span>
                       <span className="text-[10px] text-zinc-400 font-mono underline decoration-zinc-700">
-                        {claim.sources[0]?.doc_id} · p.{claim.sources[0]?.page}
+                        {formatDocSourceLabel(
+                          claim.sources[0]?.doc_id,
+                          claim.sources[0]?.page,
+                          sourceDocs
+                        )}
                       </span>
                     </div>
-                    <div className="text-zinc-200 text-[12px] leading-snug">
-                      "{claim.text}"
+                    {/* Paraphrase headline without quotes */}
+                    <div className="text-zinc-200 text-[12px] leading-snug font-medium">
+                      {claim.text}
                     </div>
                   </div>
                 ))}

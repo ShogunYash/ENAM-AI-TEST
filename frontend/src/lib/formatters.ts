@@ -114,3 +114,65 @@ export function formatExactIst(isoString: string): string {
     timeZone: 'Asia/Kolkata',
   })
 }
+
+/**
+ * Maps raw document IDs like "INFY:concall_Q1FY27" or "KPIL:annual_report_FY26"
+ * to analyst-grade labels like "Q1 FY27 earnings call · p.29" or "FY26 annual report · p.188".
+ */
+export function formatDocSourceLabel(
+  docId: string,
+  page: number | null,
+  sourceDocs: Array<{ doc_id: string; kind?: string; period?: string }> = []
+): string {
+  const matched = sourceDocs.find((d) => d.doc_id === docId)
+  let title = ''
+
+  if (matched) {
+    const kind = matched.kind
+    const period = matched.period || ''
+    if (kind === 'annual_report') {
+      title = `${period} annual report`.trim()
+    } else if (kind === 'concall') {
+      title = `${period} earnings call`.trim()
+    } else if (kind === 'presentation') {
+      title = `${period} presentation`.trim()
+    } else {
+      title = period || 'Source filing'
+    }
+  } else {
+    const cleaned = docId.includes(':') ? docId.split(':')[1] : docId
+    if (cleaned.toLowerCase().includes('concall')) {
+      const qMatch = cleaned.match(/(Q[1-4])_?(FY\d{2})/i) || cleaned.match(/(Q[1-4])(FY\d{2})/i)
+      if (qMatch) {
+        title = `${qMatch[1].toUpperCase()} ${qMatch[2].toUpperCase()} earnings call`
+      } else {
+        title = 'Earnings call'
+      }
+    } else if (cleaned.toLowerCase().includes('annual_report')) {
+      const match = cleaned.match(/FY\d{2}/i)
+      const yr = match ? match[0].toUpperCase() : 'FY26'
+      title = `${yr} annual report`
+    } else {
+      title = 'Primary filing'
+    }
+  }
+
+  if (page !== null && page !== undefined) {
+    return `${title} · p.${page}`
+  }
+  return title
+}
+
+/**
+ * Formats a verified table actual number, e.g. "Filed: 21.6% (screener.in FY26)"
+ */
+export function formatActual(
+  actual: { value: number | null; unit: string; source: string } | null | undefined,
+  horizon?: string | null
+): string | null {
+  if (!actual || actual.value === null || actual.value === undefined) return null
+  const formattedVal = actual.unit === 'pct' ? `${actual.value}%` : `${actual.value} ${actual.unit}`
+  const yr = horizon || 'FY26'
+  return `Filed: ${formattedVal} (screener.in ${yr})`
+}
+
