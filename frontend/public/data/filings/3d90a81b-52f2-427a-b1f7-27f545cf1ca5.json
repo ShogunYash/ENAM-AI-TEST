@@ -1,0 +1,63 @@
+{
+  "id": "3d90a81b-52f2-427a-b1f7-27f545cf1ca5",
+  "symbol": "RELIANCE",
+  "company_name": "Reliance Industries Ltd",
+  "filed_at": "2026-10-30T19:42:49.917000+05:30",
+  "headline": "Please find attached Unaudited Financial Results (Consolidated and Standalone) for the quarter and half year ended September 30, 2026",
+  "so_what": "Q2 FY27: PAT +34%, Rev +29% YoY · EBITDA margin 17.0%",
+  "category": "results",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 0.701,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/880087f6-7ecc-40a9-8cac-de48d4616b25.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "results",
+    "period": "Q2 FY27",
+    "basis": "consolidated",
+    "unit": "INR_CR",
+    "metrics": [
+      {
+        "name": "revenue",
+        "value": 332861.0,
+        "prev_q": 311850.0,
+        "prev_y": 258898.0,
+        "qoq_pct": 6.7,
+        "yoy_pct": 28.6
+      },
+      {
+        "name": "ebitda",
+        "value": 56616.0,
+        "prev_q": 47517.0,
+        "prev_y": 45885.0,
+        "qoq_pct": 19.1,
+        "yoy_pct": 23.4
+      },
+      {
+        "name": "pbt",
+        "value": 38613.0,
+        "prev_q": 30630.0,
+        "prev_y": 29124.0,
+        "qoq_pct": 26.1,
+        "yoy_pct": 32.6
+      },
+      {
+        "name": "pat",
+        "value": 29550.0,
+        "prev_q": 23196.0,
+        "prev_y": 22092.0,
+        "qoq_pct": 27.4,
+        "yoy_pct": 33.8
+      }
+    ],
+    "margin_ebitda_pct": 17.0,
+    "cross_check": {
+      "status": "match",
+      "note": null
+    },
+    "source": {
+      "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/880087f6-7ecc-40a9-8cac-de48d4616b25.pdf",
+      "page": 10
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "ec29d900-b6b1-4b6f-8f25-91b061275d31",
+  "symbol": "ULTRACEMCO",
+  "company_name": "UltraTech Cement Ltd",
+  "filed_at": "2026-10-19T13:47:54.767000+05:30",
+  "headline": "Unaudited Financial Results for the quarter and half year ended 30th September, 2026",
+  "so_what": "Q2 FY27: PAT +21%, Rev +19% YoY",
+  "category": "results",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 0.052,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59654d86-af0c-4fe5-bfb9-1a148f65fd6c.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "results",
+    "period": "Q2 FY27",
+    "basis": "consolidated",
+    "unit": "INR_CR",
+    "metrics": [
+      {
+        "name": "revenue",
+        "value": 23295.07,
+        "prev_q": 24648.2,
+        "prev_y": 19606.93,
+        "qoq_pct": -5.5,
+        "yoy_pct": 18.8
+      },
+      {
+        "name": "ebitda",
+        "value": null,
+        "prev_q": null,
+        "prev_y": null,
+        "qoq_pct": null,
+        "yoy_pct": null
+      },
+      {
+        "name": "pbt",
+        "value": 2058.58,
+        "prev_q": 3480.43,
+        "prev_y": 1655.83,
+        "qoq_pct": -40.9,
+        "yoy_pct": 24.3
+      },
+      {
+        "name": "pat",
+        "value": 1501.38,
+        "prev_q": 2603.72,
+        "prev_y": 1237.98,
+        "qoq_pct": -42.3,
+        "yoy_pct": 21.3
+      }
+    ],
+    "margin_ebitda_pct": null,
+    "cross_check": {
+      "status": "match",
+      "note": null
+    },
+    "source": {
+      "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59654d86-af0c-4fe5-bfb9-1a148f65fd6c.pdf",
+      "page": 7
+    }
+  }
+}

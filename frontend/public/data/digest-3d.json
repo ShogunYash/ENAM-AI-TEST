@@ -1,186 +1,154 @@
 {
   "window": {
     "label": "3d",
-    "start": "2026-11-08T18:30:00+05:30",
-    "end": "2026-11-11T18:30:00+05:30"
+    "start": "2026-11-09T15:02:15.452950+05:30",
+    "end": "2026-11-12T15:02:15.452950+05:30"
   },
-  "generated_at": "2026-11-11T18:30:00+05:30",
+  "generated_at": "2026-11-12T15:02:15.452950+05:30",
   "needs_you": [
     {
-      "id": "ex-0001",
-      "symbol": "CERA",
-      "company_name": "Cera Sanitaryware Ltd",
-      "filed_at": "2026-11-10T16:30:00+05:30",
-      "headline": "Unaudited Financial Results for the quarter and half year ended September 30, 2026",
-      "so_what": "PAT +21% YoY on margin expansion; revenue +9% YoY",
-      "category": "results",
-      "category_source": "rule",
-      "priority": "high",
-      "score": 9.4,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/example-cera-results.pdf",
-      "price_reaction": {
-        "pct_1d": 7.8,
-        "vol_ratio": 4.42
-      },
-      "enrichment": {
-        "type": "results",
-        "period": "Q2 FY27",
-        "basis": "consolidated",
-        "unit": "INR_CR",
-        "metrics": [
-          {
-            "name": "revenue",
-            "value": 512.4,
-            "prev_q": 468.0,
-            "prev_y": 470.1,
-            "qoq_pct": 9.5,
-            "yoy_pct": 9.0
-          },
-          {
-            "name": "ebitda",
-            "value": 86.6,
-            "prev_q": 71.2,
-            "prev_y": 70.4,
-            "qoq_pct": 21.6,
-            "yoy_pct": 23.0
-          },
-          {
-            "name": "pbt",
-            "value": 82.1,
-            "prev_q": 68.9,
-            "prev_y": 67.5,
-            "qoq_pct": 19.2,
-            "yoy_pct": 21.6
-          },
-          {
-            "name": "pat",
-            "value": 61.3,
-            "prev_q": 51.4,
-            "prev_y": 50.6,
-            "qoq_pct": 19.3,
-            "yoy_pct": 21.1
-          }
-        ],
-        "margin_ebitda_pct": 16.9,
-        "cross_check": {
-          "status": "match",
-          "note": null
-        },
-        "source": {
-          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/example-cera-results.pdf",
-          "page": 3
-        }
-      }
-    },
-    {
-      "id": "ex-0002",
+      "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
       "symbol": "BAJFINANCE",
       "company_name": "Bajaj Finance Ltd",
-      "filed_at": "2026-11-11T10:30:00+05:30",
-      "headline": "Allotment of equity shares upon conversion of warrants",
-      "so_what": "Warrant conversion adds equity; dilution <0.5%",
+      "filed_at": "2026-11-11T17:06:59.713000+05:30",
+      "headline": "Outcome of QIP 2026 - Special Committee Meeting",
+      "so_what": null,
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 7.1,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/example-bajfin-allot.pdf",
-      "price_reaction": {
-        "pct_1d": -2.1,
-        "vol_ratio": 1.24
-      },
-      "enrichment": {
-        "type": "oneliner",
-        "text": "Promoter-group warrants converted; equity capital up marginally, no new money beyond the 25% paid at issue."
-      }
-    },
-    {
-      "id": "ex-0003",
-      "symbol": "TITAN",
-      "company_name": "Titan Company Ltd",
-      "filed_at": "2026-11-11T04:30:00+05:30",
-      "headline": "Appointment of Chief Financial Officer",
-      "so_what": "New CFO from FMCG background takes over 1 Dec",
-      "category": "management_change",
-      "category_source": "rule",
-      "priority": "high",
-      "score": 6.8,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/example-titan-cfo.pdf",
-      "price_reaction": {
-        "pct_1d": 0.6,
-        "vol_ratio": 0.89
-      },
-      "enrichment": {
-        "type": "management",
-        "person": "Example Person (mock)",
-        "role": "Chief Financial Officer",
-        "change": "appointed",
-        "background": [
-          "~20 yrs in finance; previously CFO at a listed FMCG company",
-          "Earlier treasury & investor-relations roles at a large conglomerate",
-          "Chartered Accountant"
-        ],
-        "links": [
-          "https://www.linkedin.com/in/example"
-        ]
-      }
-    },
-    {
-      "id": "ex-0004",
-      "symbol": "FINEORG",
-      "company_name": "Fine Organic Industries Ltd",
-      "filed_at": "2026-11-10T22:30:00+05:30",
-      "headline": "Credit Rating - outlook revised to Negative",
-      "so_what": "CRISIL outlook cut to Negative; rating kept AA",
-      "category": "credit_rating",
-      "category_source": "llm",
-      "priority": "medium",
-      "score": 5.2,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/example-fineorg-rating.pdf",
-      "price_reaction": {
-        "pct_1d": -5.6,
-        "vol_ratio": 2.53
-      },
-      "enrichment": {
-        "type": "oneliner",
-        "text": "Outlook cut on weaker export demand; rating AA reaffirmed."
-      }
+      "score": 8.502,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
+      "price_reaction": null,
+      "enrichment": null
     }
   ],
-  "also_material": [],
+  "also_material": [
+    {
+      "id": "dff7d1e2-500b-498c-9b9a-52b2cb4641a8",
+      "symbol": "BAJFINANCE",
+      "company_name": "Bajaj Finance Ltd",
+      "filed_at": "2026-11-10T12:23:10.163000+05:30",
+      "headline": "Outcome of PI 2026 - Allotment Committee meeting held on 10 November 2026",
+      "so_what": null,
+      "category": "fund_raise",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 7.293,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/84c0dbf5-4b55-41b9-ab7b-e20d9fe359a9.pdf",
+      "price_reaction": {
+        "pct_1d": 1.31,
+        "vol_ratio": 0.96
+      },
+      "enrichment": null
+    },
+    {
+      "id": "f9a4f2e2-4e74-49fd-a6bd-9df8d6045e71",
+      "symbol": "BAJFINANCE",
+      "company_name": "Bajaj Finance Ltd",
+      "filed_at": "2026-11-10T12:12:31.463000+05:30",
+      "headline": "PI 2026 - Special Committee of the Board of Directors of the Company (''Committee'') at its meeting held today i.e., 10 November 2026, has approved the issue of 5,74,25,740 Warrants to ....",
+      "so_what": null,
+      "category": "fund_raise",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 7.28,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/41e7bb57-172f-4858-a5ac-8c15fe653e81.pdf",
+      "price_reaction": {
+        "pct_1d": 1.31,
+        "vol_ratio": 0.96
+      },
+      "enrichment": null
+    }
+  ],
   "routine": {
-    "count": 2,
+    "count": 5,
     "by_category": {
-      "investor_meetings": 1,
+      "earnings_call": 2,
+      "investor_meetings": 2,
       "unclassified": 1
     },
     "items": [
       {
-        "id": "ex-0005",
-        "symbol": "RELIANCE",
-        "company_name": "Reliance Industries Ltd",
-        "filed_at": "2026-11-11T08:30:00+05:30",
-        "headline": "Participation in CLSA India Forum on November 16, 2026",
+        "id": "44ddb649-ee18-4e5e-9b01-ae7a40117b21",
+        "symbol": "TITAN",
+        "company_name": "Titan Company Ltd",
+        "filed_at": "2026-11-11T14:37:34.420000+05:30",
+        "headline": "Earnings call Transcripts",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 1.876,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/daa6c172-771a-4af5-b4b3-9813fdf7536a.pdf",
+        "price_reaction": {
+          "pct_1d": -0.7,
+          "vol_ratio": 1.93
+        },
+        "enrichment": null
+      },
+      {
+        "id": "9324f8da-f7e9-4a27-8d52-fcb111b14078",
+        "symbol": "ASTRAL",
+        "company_name": "Astral Ltd",
+        "filed_at": "2026-11-11T14:34:23.423000+05:30",
+        "headline": "Transcript of Earnings Call held on November 05, 2026",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 1.638,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a9cb0ab8-930f-4400-b70b-fbd01640f54d.pdf",
+        "price_reaction": {
+          "pct_1d": 0.25,
+          "vol_ratio": 1.09
+        },
+        "enrichment": null
+      },
+      {
+        "id": "1c0c85f6-07aa-4efe-a10a-44a9e9b36de2",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-11-11T17:02:23.470000+05:30",
+        "headline": "Intimation regarding Investor meet of UltraTech Cement Limited",
         "so_what": null,
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.1,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/example-ril-meet.pdf",
+        "score": 0.809,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2b934e4e-121f-42d7-a2d0-d3eb4364b9a7.pdf",
         "price_reaction": null,
         "enrichment": null
       },
       {
-        "id": "ex-0006",
-        "symbol": "RELIANCE",
-        "company_name": "Reliance Industries Ltd",
-        "filed_at": "2026-11-10T20:30:00+05:30",
-        "headline": "Newspaper publication of financial results",
+        "id": "c8b0646b-9893-4091-a16e-02bb68666b91",
+        "symbol": "TCS",
+        "company_name": "Tata Consultancy Services Ltd",
+        "filed_at": "2026-11-09T16:59:25.653000+05:30",
+        "headline": "Schedule of Analyst/Institutional Investor Meeting",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.516,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c0a1bde0-4d57-46c0-ac73-940d5ff093d7.pdf",
+        "price_reaction": {
+          "pct_1d": -0.13,
+          "vol_ratio": 0.7
+        },
+        "enrichment": null
+      },
+      {
+        "id": "769b3262-c815-4606-bf17-4546257a6965",
+        "symbol": "TITAN",
+        "company_name": "Titan Company Ltd",
+        "filed_at": "2026-11-09T15:03:37.027000+05:30",
+        "headline": "Redemption of Commercial Paper",
         "so_what": null,
         "category": "unclassified",
         "category_source": "rule",
         "priority": "hidden",
-        "score": 0.1,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/example-ril-ad.pdf",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f1adda02-5720-474e-8cd2-5632e9218b7d.pdf",
         "price_reaction": null,
         "enrichment": null
       }
@@ -188,49 +156,39 @@
   },
   "alerts": [
     {
-      "id": "al-3",
-      "symbol": "FINEORG",
-      "kind": "price_move",
-      "triggered_at": "2026-11-11T18:30:00+05:30",
-      "value": -5.6,
-      "threshold": 5.0,
-      "message": "−5.6% today; volume 2.5× avg",
-      "filing_id": "ex-0004"
-    },
-    {
-      "id": "al-4",
-      "symbol": "TITAN",
+      "id": "fl-9865b7f5-5041-41a3-980c-5aa5206c9fb7",
+      "symbol": "BAJFINANCE",
       "kind": "material_filing",
-      "triggered_at": "2026-11-11T04:30:00+05:30",
-      "value": 6.8,
-      "threshold": 5.0,
-      "message": "Management change: new CFO",
-      "filing_id": "ex-0003"
+      "triggered_at": "2026-11-11T17:06:59.713000+05:30",
+      "value": 8.502,
+      "threshold": 7.0,
+      "message": "Outcome of QIP 2026 - Special Committee Meeting",
+      "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7"
     },
     {
-      "id": "al-1",
-      "symbol": "CERA",
-      "kind": "volume_spike",
-      "triggered_at": "2026-11-11T18:30:00+05:30",
-      "value": 4.42,
-      "threshold": 2.0,
-      "message": "Volume 4.4× 20-day avg after Q2 results",
-      "filing_id": "ex-0001"
+      "id": "fl-dff7d1e2-500b-498c-9b9a-52b2cb4641a8",
+      "symbol": "BAJFINANCE",
+      "kind": "material_filing",
+      "triggered_at": "2026-11-10T12:23:10.163000+05:30",
+      "value": 7.293,
+      "threshold": 7.0,
+      "message": "Outcome of PI 2026 - Allotment Committee meeting held on 10 November 2026",
+      "filing_id": "dff7d1e2-500b-498c-9b9a-52b2cb4641a8"
     },
     {
-      "id": "al-2",
-      "symbol": "CERA",
-      "kind": "price_move",
-      "triggered_at": "2026-11-11T18:30:00+05:30",
-      "value": 7.8,
-      "threshold": 5.0,
-      "message": "+7.8% today",
-      "filing_id": "ex-0001"
+      "id": "fl-f9a4f2e2-4e74-49fd-a6bd-9df8d6045e71",
+      "symbol": "BAJFINANCE",
+      "kind": "material_filing",
+      "triggered_at": "2026-11-10T12:12:31.463000+05:30",
+      "value": 7.28,
+      "threshold": 7.0,
+      "message": "PI 2026 - Special Committee of the Board of Directors of the Company (''Committee'') at it",
+      "filing_id": "f9a4f2e2-4e74-49fd-a6bd-9df8d6045e71"
     }
   ],
   "counts": {
-    "total": 6,
-    "rule_classified": 5,
-    "llm_classified": 1
+    "total": 8,
+    "rule_classified": 8,
+    "llm_classified": 0
   }
 }

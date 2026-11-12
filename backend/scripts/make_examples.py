@@ -152,7 +152,7 @@ def claim(text: str, kind: str, doc: str, page: int, quote: str) -> m.Claim:
 
 
 research = m.Research(
-    symbol="INFY", name="Infosys Ltd", status="ready",
+    symbol="INFY", name="Infosys Ltd", status="ready", is_sample=True,
     progress=["Loaded financial tables", "Found 5 concall transcripts", "Extracted guidance 5/5",
               "Matched 4 promises to outcomes", "Verified 11/12 quotes (1 dropped)"],
     generated_at=NOW,
@@ -229,7 +229,7 @@ research = m.Research(
     cost=m.ResearchCost(llm_calls=7, cached=True),
 )
 research_building = m.Research(
-    symbol="DIXON", name=None, status="building",
+    symbol="DIXON", name=None, status="building", is_sample=True,
     progress=["Resolving symbol", "Loaded financial tables", "Found 4 concall transcripts",
               "Extracting guidance 2/4…"],
     generated_at=None, sources=[], snapshot=None, pvd=[], extra=None, gaps=[],

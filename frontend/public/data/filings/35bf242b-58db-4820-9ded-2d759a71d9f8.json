@@ -1,0 +1,63 @@
+{
+  "id": "35bf242b-58db-4820-9ded-2d759a71d9f8",
+  "symbol": "BAJFINANCE",
+  "company_name": "Bajaj Finance Ltd",
+  "filed_at": "2026-10-19T17:39:55+05:30",
+  "headline": "Unaudited standalone and consolidated financial results for the quarter and half year ended 30 September 2026",
+  "so_what": "Q2 FY27: PAT +29%, Rev +23% YoY",
+  "category": "results",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 0.054,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/229c460f-9cda-4732-972f-847519b40426.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "results",
+    "period": "Q2 FY27",
+    "basis": "consolidated",
+    "unit": "INR_CR",
+    "metrics": [
+      {
+        "name": "revenue",
+        "value": 24546.37,
+        "prev_q": 23165.45,
+        "prev_y": 19990.42,
+        "qoq_pct": 6.0,
+        "yoy_pct": 22.8
+      },
+      {
+        "name": "ebitda",
+        "value": null,
+        "prev_q": null,
+        "prev_y": null,
+        "qoq_pct": null,
+        "yoy_pct": null
+      },
+      {
+        "name": "pbt",
+        "value": 8537.2,
+        "prev_q": 8149.0,
+        "prev_y": 6608.13,
+        "qoq_pct": 4.8,
+        "yoy_pct": 29.2
+      },
+      {
+        "name": "pat",
+        "value": 6366.57,
+        "prev_q": 6080.6,
+        "prev_y": 4947.76,
+        "qoq_pct": 4.7,
+        "yoy_pct": 28.7
+      }
+    ],
+    "margin_ebitda_pct": null,
+    "cross_check": {
+      "status": "match",
+      "note": null
+    },
+    "source": {
+      "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/229c460f-9cda-4732-972f-847519b40426.pdf",
+      "page": 14
+    }
+  }
+}

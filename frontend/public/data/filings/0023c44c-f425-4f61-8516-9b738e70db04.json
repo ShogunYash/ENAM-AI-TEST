@@ -1,0 +1,63 @@
+{
+  "id": "0023c44c-f425-4f61-8516-9b738e70db04",
+  "symbol": "HINDZINC",
+  "company_name": "Hindustan Zinc Ltd",
+  "filed_at": "2026-10-19T15:47:44.593000+05:30",
+  "headline": "Please refer the enclosed file",
+  "so_what": "Q2 FY27: PAT +142%, Rev +76% YoY · EBITDA margin 61.3%",
+  "category": "results",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 0.053,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b8e22e9-8b97-4151-a045-51669fdac2ae.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "results",
+    "period": "Q2 FY27",
+    "basis": "consolidated",
+    "unit": "INR_CR",
+    "metrics": [
+      {
+        "name": "revenue",
+        "value": 15093.0,
+        "prev_q": 13747.0,
+        "prev_y": 8549.0,
+        "qoq_pct": 9.8,
+        "yoy_pct": 76.5
+      },
+      {
+        "name": "ebitda",
+        "value": 9248.0,
+        "prev_q": 8050.0,
+        "prev_y": 4415.0,
+        "qoq_pct": 14.9,
+        "yoy_pct": 109.5
+      },
+      {
+        "name": "pbt",
+        "value": 8572.0,
+        "prev_q": 7314.0,
+        "prev_y": 3542.0,
+        "qoq_pct": 17.2,
+        "yoy_pct": 142.0
+      },
+      {
+        "name": "pat",
+        "value": 6412.0,
+        "prev_q": 5469.0,
+        "prev_y": 2649.0,
+        "qoq_pct": 17.2,
+        "yoy_pct": 142.1
+      }
+    ],
+    "margin_ebitda_pct": 61.3,
+    "cross_check": {
+      "status": "match",
+      "note": null
+    },
+    "source": {
+      "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b8e22e9-8b97-4151-a045-51669fdac2ae.pdf",
+      "page": 5
+    }
+  }
+}

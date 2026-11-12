@@ -29,7 +29,7 @@ uv run python -m scripts.make_examples && uv run python -m scripts.export_openap
 | `Priority` | `high, medium, low, hidden` |
 | `Verdict` | `met, missed, slipped, quietly_dropped, pending, raised, cut`. Definitions are in `.claude/skills/finn-grounding/SKILL.md` |
 | `AlertKind` | `volume_spike, price_move, material_filing` |
-| `WindowLabel` | `24h, 3d, 7d, custom` |
+| `WindowLabel` | `24h, 3d, 7d, 30d, custom` |
 
 ## Endpoints
 Base URL: `VITE_API_BASE` (the Render URL in production, `http://localhost:8000` locally). The backend currently runs in **mock mode**, serving `docs/examples/` with the same shapes as the real implementation.
@@ -74,7 +74,7 @@ Base URL: `VITE_API_BASE` (the Render URL in production, `http://localhost:8000`
 meta.json            SnapshotMeta {as_of, portfolio_size, research_symbols}
 companies.json       Company[]
 prices.json          PriceSnapshot[]
-digest-24h.json      Digest      (also digest-3d.json, digest-7d.json)
+digest-24h.json      Digest      (also digest-3d.json, digest-7d.json, digest-30d.json)
 filings/{id}.json    Filing      (enriched filings only)
 research/{SYM}.json  Research    (pre-seeded research names)
 stats.json           LlmStats
@@ -82,4 +82,6 @@ stats.json           LlmStats
 Until B6 exists, seed the folder by copying `docs/examples/`.
 
 ## Changelog
+- 2026-11-12: `WindowLabel` gains `30d` (additive) and the snapshot gains `digest-30d.json`: results season ends ~10 days before the demo, so the 7-day view shows few results cards. Frontend: add a 30d chip to the window picker.
+- 2026-11-12: `Research.is_sample: bool` (default false), additive. True for illustrative fixtures (all of `docs/examples/research-*`); the UI must show a SAMPLE badge whenever it is true, and must NOT infer sample-ness from anything else. Real builds (C1-C3) set it false. Frontend: read `research.is_sample ?? true` so old snapshot files stay badged.
 - 2026-11-11: v0.1.0, initial contract (A2). Mock API serving examples. `DigestWindow` uses `start`/`end` (not `from`/`to`, to avoid reserved words in TS/Python). Added `GET /alerts` and `GET /debug/sources`.

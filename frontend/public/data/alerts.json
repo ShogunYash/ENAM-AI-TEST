@@ -1,42 +1,12 @@
 [
   {
-    "id": "al-1",
-    "symbol": "CERA",
-    "kind": "volume_spike",
-    "triggered_at": "2026-11-11T18:30:00+05:30",
-    "value": 4.42,
-    "threshold": 2.0,
-    "message": "Volume 4.4× 20-day avg after Q2 results",
-    "filing_id": "ex-0001"
-  },
-  {
-    "id": "al-2",
-    "symbol": "CERA",
-    "kind": "price_move",
-    "triggered_at": "2026-11-11T18:30:00+05:30",
-    "value": 7.8,
-    "threshold": 5.0,
-    "message": "+7.8% today",
-    "filing_id": "ex-0001"
-  },
-  {
-    "id": "al-3",
-    "symbol": "FINEORG",
-    "kind": "price_move",
-    "triggered_at": "2026-11-11T18:30:00+05:30",
-    "value": -5.6,
-    "threshold": 5.0,
-    "message": "−5.6% today; volume 2.5× avg",
-    "filing_id": "ex-0004"
-  },
-  {
-    "id": "al-4",
-    "symbol": "TITAN",
+    "id": "fl-9865b7f5-5041-41a3-980c-5aa5206c9fb7",
+    "symbol": "BAJFINANCE",
     "kind": "material_filing",
-    "triggered_at": "2026-11-11T04:30:00+05:30",
-    "value": 6.8,
-    "threshold": 5.0,
-    "message": "Management change: new CFO",
-    "filing_id": "ex-0003"
+    "triggered_at": "2026-11-11T17:06:59.713000+05:30",
+    "value": 8.502,
+    "threshold": 7.0,
+    "message": "Outcome of QIP 2026 - Special Committee Meeting",
+    "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7"
   }
 ]

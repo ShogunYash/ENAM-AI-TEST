@@ -3,6 +3,8 @@
 # Model IDs verified live on 12 Nov 2026 with `uv run python -m scripts.ping_llm` (and `--list`).
 # Re-run both before the demo: free-tier availability changes (e.g. openai/gpt-oss-120b:free on
 # OpenRouter went paid-only; gemini-3.6/3.8-flash return transient 503 "high demand").
+# FREE-TIER REALITY (12 Nov): Gemini enforces DAILY per-model request quotas (gemini-3.5-flash and 3.6-flash were
+# exhausted after ~40 calls; the lite models were not). The router reads the 429 retryDelay and skips the model until reset.
 # Gemini 2.5 IDs are deprecated/rerouted on 1 Dec 2026 — don't use them.
 #
 # Each tier is an ordered fallback chain. The router tries entries top to bottom and moves on at
@@ -28,6 +30,8 @@ tiers:
   T2:   # structured extraction from documents
     - {provider: gemini,     model: gemini-3.5-flash}
     - {provider: gemini,     model: gemini-3.6-flash}
+    - {provider: gemini,     model: gemini-3.5-flash-lite}   # also reads PDFs; weaker, but the screener.in cross-check flags errors
+    - {provider: gemini,     model: gemini-3.1-flash-lite}
     - {provider: groq,       model: openai/gpt-oss-120b, max_input_chars: 18000}
     - {provider: openrouter, model: "google/gemma-4-31b-it:free", max_input_chars: 100000}
   T3:   # cross-document reasoning
@@ -36,6 +40,7 @@ tiers:
     - {provider: gemini,     model: gemini-3.8-flash}   # best reasoning but flaky: 503 + a 90 s timeout seen on 12 Nov
     - {provider: openrouter, model: "nvidia/nemotron-3-ultra-550b-a55b:free", max_input_chars: 200000}
     - {provider: openrouter, model: "google/gemma-4-31b-it:free", max_input_chars: 100000}
+    - {provider: gemini,     model: gemini-3.5-flash-lite}   # last resort: weaker reasoning, but a daily quota of its own
 
 # Per-request settings
 request:

@@ -61,6 +61,22 @@ def extract_json(text: str) -> Any:
         raise
 
 
+def quota_cooldown(resp: httpx.Response, default_s: float) -> tuple[float, str]:
+    """Seconds to skip a model after HTTP 429/503, and why. Gemini's free tier has DAILY per-model request quotas
+    (`GenerateRequestsPerDayPerProjectPerModel-FreeTier`, retryDelay ~ 80 000 s): waiting 60 s and retrying is useless."""
+    delay, reason = default_s, f"HTTP {resp.status_code}"
+    try:
+        for d in resp.json().get("error", {}).get("details", []) or []:
+            if m := re.fullmatch(r"([\d.]+)s", str(d.get("retryDelay", ""))):
+                delay = max(delay, float(m.group(1)))
+            for v in d.get("violations", []) or []:
+                if "PerDay" in str(v.get("quotaId", "")):
+                    reason = "daily free-tier quota used up"
+    except (ValueError, AttributeError):
+        pass
+    return min(delay, 26 * 3600), reason
+
+
 def _call(client: httpx.Client, cfg: LLMConfig, ref: ModelRef, api_key: str, system: str, user: str,
           json_schema_hint: str, extra_user: str = "") -> tuple[str, int, int]:
     provider = cfg.providers[ref.provider]
@@ -108,8 +124,8 @@ def _call_gemini_pdf(client: httpx.Client, cfg: LLMConfig, ref: ModelRef, api_ke
 
 
 def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str | None = None,
-             unit: str | None = None, pdf: bytes | None = None, settings: AppSettings | None = None,
-             client: httpx.Client | None = None) -> BaseModel:
+             unit: str | None = None, pdf: bytes | None = None, pdf_key: str | None = None, cache_only: bool = False,
+             settings: AppSettings | None = None, client: httpx.Client | None = None) -> BaseModel:
     """Run one LLM task and return its validated pydantic output.
 
     task            prompt file name in app/prompts (also the ledger `task`)
@@ -117,8 +133,12 @@ def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str
     cache_key_extra stable id of the underlying document/entity (e.g. sha256 of a PDF)
     feature         ledger tag shown in the Cost panel, e.g. "pull.guidance" (default: task)
     unit            what this call was for (e.g. a ticker) — used for "calls per new ticker"
-    pdf             PDF bytes sent natively to Gemini (only gemini/* models in the tier are tried; its sha256 joins
-                    the cache key). Use for documents whose layout matters, e.g. results tables.
+    pdf             PDF bytes sent natively to Gemini (only gemini/* models in the tier are tried). Use for documents
+                    whose layout matters, e.g. results tables.
+    pdf_key         stable id of the document (e.g. the BSE attachment name). Joins the cache key INSTEAD of the sliced
+                    bytes' hash, so changing how pages are sliced/compressed never invalidates cached answers.
+                    Without it the bytes' sha256 is used.
+    cache_only      never call a model: return the cached answer or raise LLMUnavailable (demo mode, restores)
     client          injectable httpx.Client (tests use a MockTransport)
     """
     settings = settings or get_settings()
@@ -129,7 +149,7 @@ def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str
     system, user = prompt.render(inputs)
     db = settings.llm_db_path
     if pdf is not None:
-        cache_key_extra = f"{cache_key_extra}|pdf:{hashlib.sha256(pdf).hexdigest()}"
+        cache_key_extra = f"{cache_key_extra}|pdf:{pdf_key or hashlib.sha256(pdf).hexdigest()}"
     key = _cache_key(prompt, system, user, cache_key_extra)
 
     hit = store.cache_get(db, key)
@@ -137,6 +157,8 @@ def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str
         store.record(db, feature=feature, task=task, unit=unit, provider=None, model=hit[1], cached=True)
         return schema.model_validate_json(hit[0])
 
+    if cache_only:
+        raise LLMUnavailable(f"{task}: not in the cache (cache_only)")
     chain = cfg.tiers[prompt.tier]
     schema_hint = json.dumps(schema.model_json_schema())
     input_chars = len(system) + len(user)
@@ -159,6 +181,9 @@ def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str
             if _cooldown.get((ref.provider, ref.model), 0) > time.monotonic():
                 errors.append(f"{label}: cooling down after 429")
                 continue
+            if long_cd := store.cooldown_until(db, ref.provider, ref.model):
+                errors.append(f"{label}: skipped, {long_cd[1]} (for ~{(long_cd[0] - time.time()) / 3600:.1f} h)")
+                continue
 
             extra_user = ""
             for attempt in (1, 2):  # attempt 2 = corrective retry after unparseable output
@@ -171,8 +196,12 @@ def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str
                         content, tin, tout = _call(client, cfg, ref, api_key, system, user, schema_hint, extra_user)
                 except httpx.HTTPStatusError as e:
                     code = e.response.status_code
-                    if code in (429, 503):  # rate-limited or "high demand": skip this model for a while
-                        _cooldown[(ref.provider, ref.model)] = time.monotonic() + cfg.cooldown_s
+                    if code in (429, 503):  # rate-limited / quota / "high demand": skip this model for a while
+                        secs, why = quota_cooldown(e.response, cfg.cooldown_s)
+                        if secs > 300:           # long (daily quota): persist so other processes skip it too
+                            store.cooldown_set(db, ref.provider, ref.model, secs, why)
+                        else:
+                            _cooldown[(ref.provider, ref.model)] = time.monotonic() + secs
                     store.record(db, feature=feature, task=task, unit=unit, provider=ref.provider,
                                  model=ref.model, ok=False, error=f"HTTP {code}",
                                  latency_ms=int((time.monotonic() - t0) * 1000))

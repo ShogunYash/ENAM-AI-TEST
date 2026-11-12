@@ -1,0 +1,63 @@
+{
+  "id": "a445bb91-cef9-4586-b4c7-3b11993371a2",
+  "symbol": "CERA",
+  "company_name": "Cera Sanitaryware Ltd",
+  "filed_at": "2026-11-04T12:28:41.470000+05:30",
+  "headline": "Unaudited Financial Results for the Quarter and Half year ended 30th September, 2026",
+  "so_what": "Q2 FY27: PAT −1%, Rev +27% YoY · EBITDA margin 12.2%",
+  "category": "results",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 2.074,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/96d3143f-2c3f-4cdb-a811-869e422ac1ab.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "results",
+    "period": "Q2 FY27",
+    "basis": "standalone",
+    "unit": "INR_CR",
+    "metrics": [
+      {
+        "name": "revenue",
+        "value": 602.96,
+        "prev_q": 485.98,
+        "prev_y": 473.41,
+        "qoq_pct": 24.1,
+        "yoy_pct": 27.4
+      },
+      {
+        "name": "ebitda",
+        "value": 73.27,
+        "prev_q": 49.22,
+        "prev_y": 67.14,
+        "qoq_pct": 48.9,
+        "yoy_pct": 9.1
+      },
+      {
+        "name": "pbt",
+        "value": 73.02,
+        "prev_q": 59.81,
+        "prev_y": 72.23,
+        "qoq_pct": 22.1,
+        "yoy_pct": 1.1
+      },
+      {
+        "name": "pat",
+        "value": 56.14,
+        "prev_q": 45.31,
+        "prev_y": 56.65,
+        "qoq_pct": 23.9,
+        "yoy_pct": -0.9
+      }
+    ],
+    "margin_ebitda_pct": 12.2,
+    "cross_check": {
+      "status": "match",
+      "note": null
+    },
+    "source": {
+      "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/96d3143f-2c3f-4cdb-a811-869e422ac1ab.pdf",
+      "page": 2
+    }
+  }
+}

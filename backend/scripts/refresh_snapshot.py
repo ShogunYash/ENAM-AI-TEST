@@ -2,8 +2,8 @@
 
   uv run python -m scripts.refresh_snapshot [--out ../frontend/public/data]
 
-Writes (see docs/CONTRACT.md "Snapshot layout"): meta, health, companies, prices, alerts, stats, digest-24h|3d|7d, and
-filings/{id}.json for every ENRICHED filing in the 7-day digest. research/* and settings.json are left untouched
+Writes (see docs/CONTRACT.md "Snapshot layout"): meta, health, companies, prices, alerts, stats, digest-24h|3d|7d|30d, and
+filings/{id}.json for every ENRICHED filing in the 30-day digest. research/* and settings.json are left untouched
 (research is built separately; settings live on the client). Run after scripts.ingest + classify + enrich_results.
 """
 from __future__ import annotations
@@ -50,7 +50,7 @@ def main() -> int:
                                              sector=s["sector"], in_portfolio=True) for s in pf["portfolio"]])
     dump(out / "prices.json", snaps)
 
-    digests = {label: digest_mod.build_digest(label, snaps=snaps, now=now) for label in ("24h", "3d", "7d")}
+    digests = {label: digest_mod.build_digest(label, snaps=snaps, now=now) for label in ("24h", "3d", "7d", "30d")}
     for label, d in digests.items():
         dump(out / f"digest-{label}.json", d)
     dump(out / "alerts.json", digests["24h"].alerts)
@@ -59,8 +59,8 @@ def main() -> int:
     fdir = out / "filings"
     if fdir.exists():
         shutil.rmtree(fdir)                 # drop stale mock/old files so nothing fake lingers
-    d7 = digests["7d"]
-    enriched = [f for f in d7.needs_you + d7.also_material + d7.routine.items if f.enrichment]
+    d30 = digests["30d"]
+    enriched = [f for f in d30.needs_you + d30.also_material + d30.routine.items if f.enrichment]
     for f in enriched:
         dump(fdir / f"{f.id}.json", f)
 
@@ -73,7 +73,7 @@ def main() -> int:
     dump(out / "health.json", m.Health(ok=True, version="0.1.0", snapshot_as_of=as_of))
     print(f"snapshot -> {out}: {len(symbols)} companies, {len(snaps)} prices, "
           + ", ".join(f"{k}: {d.counts.total} filings/{len(d.needs_you)} needs-you" for k, d in digests.items())
-          + f", {len(enriched)} enriched filings, {len(d7.alerts)} alerts(7d)")
+          + f", {len(enriched)} enriched filings, {len(d30.alerts)} alerts(30d)")
     return 0
 
 

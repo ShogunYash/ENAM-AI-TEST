@@ -65,7 +65,7 @@ class AlertKind(StrEnum):
     material_filing = "material_filing"
 
 
-WindowLabel = Literal["24h", "3d", "7d", "custom"]
+WindowLabel = Literal["24h", "3d", "7d", "30d", "custom"]
 MetricName = Literal["revenue", "ebitda", "pbt", "pat"]
 
 
@@ -300,6 +300,8 @@ class Research(Model):
     symbol: str
     name: str | None
     status: Literal["ready", "building", "partial", "failed"]
+    is_sample: bool = Field(default=False, description="True for illustrative fixture data; the UI must badge it SAMPLE. "
+                                                       "False only for research built from real documents.")
     progress: list[str] = Field(description="Human-readable build steps, shown while building")
     generated_at: datetime | None
     sources: list[SourceDoc]

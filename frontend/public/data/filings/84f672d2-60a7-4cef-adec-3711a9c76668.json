@@ -1,0 +1,63 @@
+{
+  "id": "84f672d2-60a7-4cef-adec-3711a9c76668",
+  "symbol": "LT",
+  "company_name": "Larsen & Toubro Ltd",
+  "filed_at": "2026-10-27T17:23:45.827000+05:30",
+  "headline": "Outcome of Board Meeting of Larsen & Toubro Limited held on October 27,2026",
+  "so_what": "Q2 FY27: PAT +32%, Rev +16% YoY · EBITDA margin 8.7%",
+  "category": "results",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 0.343,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/be28659d-c65e-4500-917e-02ef891caee6.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "results",
+    "period": "Q2 FY27",
+    "basis": "consolidated",
+    "unit": "INR_CR",
+    "metrics": [
+      {
+        "name": "revenue",
+        "value": 78749.94,
+        "prev_q": 67941.74,
+        "prev_y": 67983.53,
+        "qoq_pct": 15.9,
+        "yoy_pct": 15.8
+      },
+      {
+        "name": "ebitda",
+        "value": 6845.0,
+        "prev_q": 6806.0,
+        "prev_y": 6806.0,
+        "qoq_pct": 0.6,
+        "yoy_pct": 0.6
+      },
+      {
+        "name": "pbt",
+        "value": 7641.06,
+        "prev_q": 6922.26,
+        "prev_y": 6336.11,
+        "qoq_pct": 10.4,
+        "yoy_pct": 20.6
+      },
+      {
+        "name": "pat",
+        "value": 5202.1,
+        "prev_q": 4122.85,
+        "prev_y": 3926.09,
+        "qoq_pct": 26.2,
+        "yoy_pct": 32.5
+      }
+    ],
+    "margin_ebitda_pct": 8.7,
+    "cross_check": {
+      "status": "mismatch",
+      "note": "PAT Q2 FY27 5,202 vs screener 5,949 (-12.6%); PAT Q1 FY27 4,123 vs screener 4,988 (-17.3%); PAT Q2 FY26 3,926 vs screener 4,678 (-16.1%)"
+    },
+    "source": {
+      "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/be28659d-c65e-4500-917e-02ef891caee6.pdf",
+      "page": 11
+    }
+  }
+}

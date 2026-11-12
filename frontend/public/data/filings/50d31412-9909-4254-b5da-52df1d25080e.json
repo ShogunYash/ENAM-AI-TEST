@@ -1,0 +1,63 @@
+{
+  "id": "50d31412-9909-4254-b5da-52df1d25080e",
+  "symbol": "INFY",
+  "company_name": "Infosys Ltd",
+  "filed_at": "2026-10-23T16:16:06.710000+05:30",
+  "headline": "Results for the quarter and half year ended September 30, 2026 and declaration of interim dividend",
+  "so_what": "Q2 FY27: PAT +6%, Rev +11% YoY · EBITDA margin 23.7%",
+  "category": "results",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 0.134,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26c12463-d44e-4050-bd47-b53cc294b4e0.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "results",
+    "period": "Q2 FY27",
+    "basis": "consolidated",
+    "unit": "INR_CR",
+    "metrics": [
+      {
+        "name": "revenue",
+        "value": 49244.0,
+        "prev_q": 48211.0,
+        "prev_y": 44490.0,
+        "qoq_pct": 2.1,
+        "yoy_pct": 10.7
+      },
+      {
+        "name": "ebitda",
+        "value": 11689.0,
+        "prev_q": 11409.0,
+        "prev_y": 10535.0,
+        "qoq_pct": 2.5,
+        "yoy_pct": 11.0
+      },
+      {
+        "name": "pbt",
+        "value": 11063.0,
+        "prev_q": 11028.0,
+        "prev_y": 10229.0,
+        "qoq_pct": 0.3,
+        "yoy_pct": 8.2
+      },
+      {
+        "name": "pat",
+        "value": 7838.0,
+        "prev_q": 7775.0,
+        "prev_y": 7375.0,
+        "qoq_pct": 0.8,
+        "yoy_pct": 6.3
+      }
+    ],
+    "margin_ebitda_pct": 23.7,
+    "cross_check": {
+      "status": "match",
+      "note": null
+    },
+    "source": {
+      "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26c12463-d44e-4050-bd47-b53cc294b4e0.pdf",
+      "page": 18
+    }
+  }
+}

@@ -2,6 +2,7 @@
   "symbol": "DIXON",
   "name": null,
   "status": "building",
+  "is_sample": true,
   "progress": [
     "Resolving symbol",
     "Loaded financial tables",

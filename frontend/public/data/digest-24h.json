@@ -1,120 +1,46 @@
 {
   "window": {
     "label": "24h",
-    "start": "2026-11-10T18:30:00+05:30",
-    "end": "2026-11-11T18:30:00+05:30"
+    "start": "2026-11-11T15:02:15.452950+05:30",
+    "end": "2026-11-12T15:02:15.452950+05:30"
   },
-  "generated_at": "2026-11-11T18:30:00+05:30",
+  "generated_at": "2026-11-12T15:02:15.452950+05:30",
   "needs_you": [
     {
-      "id": "ex-0002",
+      "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
       "symbol": "BAJFINANCE",
       "company_name": "Bajaj Finance Ltd",
-      "filed_at": "2026-11-11T10:30:00+05:30",
-      "headline": "Allotment of equity shares upon conversion of warrants",
-      "so_what": "Warrant conversion adds equity; dilution <0.5%",
+      "filed_at": "2026-11-11T17:06:59.713000+05:30",
+      "headline": "Outcome of QIP 2026 - Special Committee Meeting",
+      "so_what": null,
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 7.1,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/example-bajfin-allot.pdf",
-      "price_reaction": {
-        "pct_1d": -2.1,
-        "vol_ratio": 1.24
-      },
-      "enrichment": {
-        "type": "oneliner",
-        "text": "Promoter-group warrants converted; equity capital up marginally, no new money beyond the 25% paid at issue."
-      }
-    },
-    {
-      "id": "ex-0003",
-      "symbol": "TITAN",
-      "company_name": "Titan Company Ltd",
-      "filed_at": "2026-11-11T04:30:00+05:30",
-      "headline": "Appointment of Chief Financial Officer",
-      "so_what": "New CFO from FMCG background takes over 1 Dec",
-      "category": "management_change",
-      "category_source": "rule",
-      "priority": "high",
-      "score": 6.8,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/example-titan-cfo.pdf",
-      "price_reaction": {
-        "pct_1d": 0.6,
-        "vol_ratio": 0.89
-      },
-      "enrichment": {
-        "type": "management",
-        "person": "Example Person (mock)",
-        "role": "Chief Financial Officer",
-        "change": "appointed",
-        "background": [
-          "~20 yrs in finance; previously CFO at a listed FMCG company",
-          "Earlier treasury & investor-relations roles at a large conglomerate",
-          "Chartered Accountant"
-        ],
-        "links": [
-          "https://www.linkedin.com/in/example"
-        ]
-      }
-    },
-    {
-      "id": "ex-0004",
-      "symbol": "FINEORG",
-      "company_name": "Fine Organic Industries Ltd",
-      "filed_at": "2026-11-10T22:30:00+05:30",
-      "headline": "Credit Rating - outlook revised to Negative",
-      "so_what": "CRISIL outlook cut to Negative; rating kept AA",
-      "category": "credit_rating",
-      "category_source": "llm",
-      "priority": "medium",
-      "score": 5.2,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/example-fineorg-rating.pdf",
-      "price_reaction": {
-        "pct_1d": -5.6,
-        "vol_ratio": 2.53
-      },
-      "enrichment": {
-        "type": "oneliner",
-        "text": "Outlook cut on weaker export demand; rating AA reaffirmed."
-      }
+      "score": 8.502,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
+      "price_reaction": null,
+      "enrichment": null
     }
   ],
   "also_material": [],
   "routine": {
-    "count": 2,
+    "count": 1,
     "by_category": {
-      "investor_meetings": 1,
-      "unclassified": 1
+      "investor_meetings": 1
     },
     "items": [
       {
-        "id": "ex-0005",
-        "symbol": "RELIANCE",
-        "company_name": "Reliance Industries Ltd",
-        "filed_at": "2026-11-11T08:30:00+05:30",
-        "headline": "Participation in CLSA India Forum on November 16, 2026",
+        "id": "1c0c85f6-07aa-4efe-a10a-44a9e9b36de2",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-11-11T17:02:23.470000+05:30",
+        "headline": "Intimation regarding Investor meet of UltraTech Cement Limited",
         "so_what": null,
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.1,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/example-ril-meet.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "ex-0006",
-        "symbol": "RELIANCE",
-        "company_name": "Reliance Industries Ltd",
-        "filed_at": "2026-11-10T20:30:00+05:30",
-        "headline": "Newspaper publication of financial results",
-        "so_what": null,
-        "category": "unclassified",
-        "category_source": "rule",
-        "priority": "hidden",
-        "score": 0.1,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/example-ril-ad.pdf",
+        "score": 0.809,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2b934e4e-121f-42d7-a2d0-d3eb4364b9a7.pdf",
         "price_reaction": null,
         "enrichment": null
       }
@@ -122,49 +48,19 @@
   },
   "alerts": [
     {
-      "id": "al-3",
-      "symbol": "FINEORG",
-      "kind": "price_move",
-      "triggered_at": "2026-11-11T18:30:00+05:30",
-      "value": -5.6,
-      "threshold": 5.0,
-      "message": "−5.6% today; volume 2.5× avg",
-      "filing_id": "ex-0004"
-    },
-    {
-      "id": "al-4",
-      "symbol": "TITAN",
+      "id": "fl-9865b7f5-5041-41a3-980c-5aa5206c9fb7",
+      "symbol": "BAJFINANCE",
       "kind": "material_filing",
-      "triggered_at": "2026-11-11T04:30:00+05:30",
-      "value": 6.8,
-      "threshold": 5.0,
-      "message": "Management change: new CFO",
-      "filing_id": "ex-0003"
-    },
-    {
-      "id": "al-1",
-      "symbol": "CERA",
-      "kind": "volume_spike",
-      "triggered_at": "2026-11-11T18:30:00+05:30",
-      "value": 4.42,
-      "threshold": 2.0,
-      "message": "Volume 4.4× 20-day avg after Q2 results",
-      "filing_id": "ex-0001"
-    },
-    {
-      "id": "al-2",
-      "symbol": "CERA",
-      "kind": "price_move",
-      "triggered_at": "2026-11-11T18:30:00+05:30",
-      "value": 7.8,
-      "threshold": 5.0,
-      "message": "+7.8% today",
-      "filing_id": "ex-0001"
+      "triggered_at": "2026-11-11T17:06:59.713000+05:30",
+      "value": 8.502,
+      "threshold": 7.0,
+      "message": "Outcome of QIP 2026 - Special Committee Meeting",
+      "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7"
     }
   ],
   "counts": {
-    "total": 5,
-    "rule_classified": 4,
-    "llm_classified": 1
+    "total": 2,
+    "rule_classified": 2,
+    "llm_classified": 0
   }
 }

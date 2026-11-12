@@ -82,6 +82,7 @@
                 "24h",
                 "3d",
                 "7d",
+                "30d",
                 "custom"
               ],
               "type": "string",
@@ -907,6 +908,7 @@
               "24h",
               "3d",
               "7d",
+              "30d",
               "custom"
             ],
             "title": "Label"
@@ -1607,6 +1609,12 @@
               "failed"
             ],
             "title": "Status"
+          },
+          "is_sample": {
+            "type": "boolean",
+            "title": "Is Sample",
+            "description": "True for illustrative fixture data; the UI must badge it SAMPLE. False only for research built from real documents.",
+            "default": false
           },
           "progress": {
             "items": {

@@ -110,15 +110,28 @@ def test_parse_quarters():
 Q = screener.parse_quarters(HTML)
 
 
+PER = {"current": "2026-09-30", "previous": "2026-06-30", "year_ago": "2025-09-30"}
+CUR = {"revenue": 73188.0, "pbt": 18638.0, "pat": 13934.0}
+PREV = {"revenue": 72275.0, "pbt": 17944.0, "pat": 13420.0}
+
+
 def test_cross_check_match_mismatch_unavailable():
-    vals = {"revenue": 73188.0, "pbt": 18638.0, "pat": 13934.0}
-    assert R.cross_check(vals, "2026-09-30", "TCS", "consolidated", Q).status == "match"
-    off = R.cross_check({**vals, "pat": 13000.0}, "2026-09-30", "TCS", "consolidated", Q)
-    assert off.status == "mismatch" and "PAT" in off.note and "-6.7%" in off.note
-    assert R.cross_check({**vals, "pat": 13934 * 1.015}, "2026-09-30", "TCS", "consolidated", Q).status == "match"  # <2%
-    assert R.cross_check(vals, "2030-09-30", "TCS", "consolidated", Q).status == "unavailable"
-    assert R.cross_check(vals, None, "TCS", "consolidated", Q).status == "unavailable"
-    assert R.cross_check({}, "2026-09-30", "TCS", "consolidated", Q).status == "unavailable"
+    allp = {"current": CUR, "previous": PREV}                       # year-ago quarter is not in the HTML fixture
+    assert R.cross_check(allp, PER, "TCS", "consolidated", Q).status == "match"
+    off = R.cross_check({"current": {**CUR, "pat": 13000.0}}, PER, "TCS", "consolidated", Q)
+    assert off.status == "mismatch" and "PAT Q2 FY27" in off.note and "-6.7%" in off.note
+    assert R.cross_check({"current": {**CUR, "pat": 13934 * 1.015}}, PER, "TCS", "consolidated", Q).status == "match"  # <2%
+    assert R.cross_check(allp, {**PER, "current": "2030-09-30"}, "TCS", "consolidated", Q).status == "match"  # prev still checked
+    assert R.cross_check({"current": CUR}, {"current": "2030-09-30"}, "TCS", "consolidated", Q).status == "unavailable"
+    assert R.cross_check(allp, {}, "TCS", "consolidated", Q).status == "unavailable"
+    assert R.cross_check({}, PER, "TCS", "consolidated", Q).status == "unavailable"
+
+
+def test_cross_check_catches_swapped_previous_and_year_ago_columns():
+    """The failure ChatGPT saw on an Infosys fact sheet: prior-year quarter printed BEFORE the previous quarter."""
+    swapped = {"current": CUR, "previous": {"revenue": 65799.0, "pbt": 16068.0, "pat": 12131.0}}   # year-ago values
+    bad = R.cross_check(swapped, PER, "TCS", "consolidated", Q)
+    assert bad.status == "mismatch" and "Q1 FY27" in bad.note and "Revenue" in bad.note
 
 
 # ───────── card building ─────────
@@ -236,5 +249,6 @@ def test_fit_for_inline_slices_and_keeps_page_numbers(monkeypatch):
     assert total == 40 and pymupdf.open(stream=piece, filetype="pdf").page_count == 25
     assert "page 25" in pymupdf.open(stream=piece, filetype="pdf")[24].get_text()
     monkeypatch.setattr(docs, "MAX_BYTES", 10)                         # nothing fits -> a clear error, not a crash
-    with pytest.raises(docs.DocError, match="even the first 6 pages"):
+    monkeypatch.setattr(docs, "SOFT_BYTES", 5)
+    with pytest.raises(docs.DocError, match="even the first 6 pages exceed"):
         docs.fit_for_inline(pdf)

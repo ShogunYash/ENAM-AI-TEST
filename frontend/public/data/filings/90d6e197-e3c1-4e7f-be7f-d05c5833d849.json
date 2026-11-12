@@ -1,0 +1,63 @@
+{
+  "id": "90d6e197-e3c1-4e7f-be7f-d05c5833d849",
+  "symbol": "GARFIBRES",
+  "company_name": "Garware Technical Fibres Ltd",
+  "filed_at": "2026-10-29T16:17:53.100000+05:30",
+  "headline": "We refer to our letter dated October 22, 2026 and inform that the meeting of the Board of Directors of the Company was held today i.e., Thursday, October 29, 2026. The Board of Directors ....",
+  "so_what": "Q2 FY27: PAT +83%, Rev +33% YoY · EBITDA margin 17.3%",
+  "category": "results",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 0.538,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/12ace952-a89b-4098-8bd0-e247f6e2a776.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "results",
+    "period": "Q2 FY27",
+    "basis": "consolidated",
+    "unit": "INR_CR",
+    "metrics": [
+      {
+        "name": "revenue",
+        "value": 462.62,
+        "prev_q": 482.37,
+        "prev_y": 347.9,
+        "qoq_pct": -4.1,
+        "yoy_pct": 33.0
+      },
+      {
+        "name": "ebitda",
+        "value": 80.0,
+        "prev_q": 90.09,
+        "prev_y": 48.42,
+        "qoq_pct": -11.2,
+        "yoy_pct": 65.2
+      },
+      {
+        "name": "pbt",
+        "value": 76.15,
+        "prev_q": 86.36,
+        "prev_y": 45.65,
+        "qoq_pct": -11.8,
+        "yoy_pct": 66.8
+      },
+      {
+        "name": "pat",
+        "value": 58.56,
+        "prev_q": 64.6,
+        "prev_y": 31.93,
+        "qoq_pct": -9.3,
+        "yoy_pct": 83.4
+      }
+    ],
+    "margin_ebitda_pct": 17.3,
+    "cross_check": {
+      "status": "match",
+      "note": null
+    },
+    "source": {
+      "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/12ace952-a89b-4098-8bd0-e247f6e2a776.pdf",
+      "page": 9
+    }
+  }
+}

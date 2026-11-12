@@ -1,0 +1,63 @@
+{
+  "id": "ee6123a8-c373-465b-9347-34adbc250091",
+  "symbol": "TITAN",
+  "company_name": "Titan Company Ltd",
+  "filed_at": "2026-11-05T17:02:10.910000+05:30",
+  "headline": "Outcome of the Board Meeting",
+  "so_what": "Q2 FY27: PAT +114%, Rev +24% YoY · EBITDA margin 18.0%",
+  "category": "results",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 2.731,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/86009cba-ca03-4d35-bad8-b1988cfcff13.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "results",
+    "period": "Q2 FY27",
+    "basis": "consolidated",
+    "unit": "INR_CR",
+    "metrics": [
+      {
+        "name": "revenue",
+        "value": 20337.0,
+        "prev_q": 20787.0,
+        "prev_y": 16461.0,
+        "qoq_pct": -2.2,
+        "yoy_pct": 23.5
+      },
+      {
+        "name": "ebitda",
+        "value": 3654.0,
+        "prev_q": 2892.0,
+        "prev_y": 1876.0,
+        "qoq_pct": 26.3,
+        "yoy_pct": 94.8
+      },
+      {
+        "name": "pbt",
+        "value": 3000.0,
+        "prev_q": 2429.0,
+        "prev_y": 1522.0,
+        "qoq_pct": 23.5,
+        "yoy_pct": 97.1
+      },
+      {
+        "name": "pat",
+        "value": 2393.0,
+        "prev_q": 1777.0,
+        "prev_y": 1120.0,
+        "qoq_pct": 34.7,
+        "yoy_pct": 113.7
+      }
+    ],
+    "margin_ebitda_pct": 18.0,
+    "cross_check": {
+      "status": "mismatch",
+      "note": "Revenue Q1 FY27 20,787 vs screener 21,356 (-2.7%); Revenue Q2 FY26 16,461 vs screener 18,725 (-12.1%)"
+    },
+    "source": {
+      "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/86009cba-ca03-4d35-bad8-b1988cfcff13.pdf",
+      "page": 10
+    }
+  }
+}

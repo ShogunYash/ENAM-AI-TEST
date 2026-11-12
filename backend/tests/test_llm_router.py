@@ -258,3 +258,44 @@ def test_results_extract_parses_reported_derived_and_missing(tmp_path):
     assert out.metrics.ebitda.current.status == "derived" and out.metrics.ebitda.current.value_inr_cr is None
     assert set(out.metrics.ebitda.current.components) == {"pbt", "finance_cost", "depreciation_amortisation",
                                                            "other_income"}
+
+
+# ───────── free-tier DAILY quota (found live on 12 Nov: gemini-3.5-flash 429, retryDelay ~82 000 s) ─────────
+def quota_429(delay="82004s", per_day=True):
+    return httpx.Response(429, json={"error": {"code": 429, "status": "RESOURCE_EXHAUSTED", "details": [
+        {"violations": [{"quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier" if per_day else "PerMinute"}]},
+        {"retryDelay": delay}]}})
+
+
+def test_quota_cooldown_parses_retry_delay_and_daily_quota():
+    assert router.quota_cooldown(quota_429(), 60) == (82004.0, "daily free-tier quota used up")
+    assert router.quota_cooldown(quota_429("500000s"), 60)[0] == 26 * 3600                         # capped at 26 h
+    assert router.quota_cooldown(quota_429("32s", per_day=False), 60) == (60, "HTTP 429")           # short hint < default
+    assert router.quota_cooldown(quota_429("120s", per_day=False), 60) == (120, "HTTP 429")
+    assert router.quota_cooldown(httpx.Response(503, text="busy"), 60) == (60, "HTTP 503")
+
+
+def test_daily_quota_skips_the_model_for_every_later_call_and_process(tmp_path):
+    s = make_settings(tmp_path, gemini_api_key="g", groq_api_key="q")
+    models_called = []
+
+    def handler(req):
+        model = json.loads(req.content)["model"]
+        models_called.append(model)
+        return quota_429() if model.startswith("gemini") else ok_response()
+
+    client, _ = client_for(handler)
+    run_task("ping", {"word": "a"}, settings=s, client=client)
+    first = list(models_called)
+    assert first[0].startswith("gemini") and first[-1] == "openai/gpt-oss-20b"
+    router._cooldown.clear()                  # simulate a NEW process: only the persisted cooldown remains
+    models_called.clear()
+    run_task("ping", {"word": "b"}, settings=s, client=client)
+    assert models_called == ["openai/gpt-oss-20b"]          # gemini models skipped without any request at all
+    assert store.cooldown_until(s.llm_db_path, "gemini", "gemini-3.5-flash-lite")[1] == "daily free-tier quota used up"
+
+
+def test_pdf_tasks_can_fall_back_to_flash_lite(tmp_path):
+    from app.llm.config import load_config
+    chain = load_config(BACKEND_DIR / "config" / "models.yaml").tiers["T2"]
+    assert [r.model for r in chain if r.provider == "gemini"][-2:] == ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite"]

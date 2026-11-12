@@ -98,28 +98,33 @@ def fy_label(date_iso: str | None) -> str:
     return f"Q{q} FY{(d.year + (1 if d.month >= 4 else 0)) % 100:02d}"
 
 
-def cross_check(values: dict[str, float | None], period: str | None, symbol: str, basis: str,
+def cross_check(values: dict[str, dict[str, float | None]], periods: dict[str, str | None], symbol: str, basis: str,
                 quarters: dict | None = None) -> m.CrossCheck:
-    """Compare revenue / PBT / PAT with screener.in's standardised quarterly table."""
-    if not period:
+    """Compare revenue / PBT / PAT of ALL THREE periods (current, previous quarter, year-ago) with screener.in's
+    standardised quarterly table. Checking the earlier columns too catches swapped/misread columns, which would
+    otherwise corrupt QoQ / YoY silently. `values` = {"current": {"revenue": .., "pbt": .., "pat": ..}, ...}."""
+    if not periods.get("current"):
         return m.CrossCheck(status="unavailable", note="period not identified")
     try:
         q = quarters if quarters is not None else screener.fetch_quarters(symbol, basis == "consolidated")
     except screener.ScreenerError as e:
         return m.CrossCheck(status="unavailable", note=f"screener.in unavailable ({e})")
-    col = q.get(screener.quarter_key(period))
-    if not col:
-        return m.CrossCheck(status="unavailable", note="quarter not yet on screener.in")
     pairs = {"revenue": "sales", "pbt": "pbt", "pat": "net_profit"}
     diffs, checked = [], 0
-    for ours, theirs in pairs.items():
-        a, b = values.get(ours), col.get(theirs)
-        if a is None or b is None or b == 0:
+    for which in ("current", "previous", "year_ago"):
+        date = periods.get(which)
+        col = q.get(screener.quarter_key(date)) if date else None
+        if not col:
             continue
-        checked += 1
-        d = (a - b) / abs(b) * 100
-        if abs(d) > TOLERANCE_PCT:
-            diffs.append(f"{ours.upper() if ours != 'revenue' else 'Revenue'} {a:,.0f} vs screener {b:,.0f} ({d:+.1f}%)")
+        for ours, theirs in pairs.items():
+            a, b = values.get(which, {}).get(ours), col.get(theirs)
+            if a is None or b is None or b == 0:
+                continue
+            checked += 1
+            d = (a - b) / abs(b) * 100
+            if abs(d) > TOLERANCE_PCT:
+                label = "Revenue" if ours == "revenue" else ours.upper()
+                diffs.append(f"{label} {fy_label(date)} {a:,.0f} vs screener {b:,.0f} ({d:+.1f}%)")
     if not checked:
         return m.CrossCheck(status="unavailable", note="no comparable figures on screener.in")
     return m.CrossCheck(status="mismatch", note="; ".join(diffs)) if diffs else m.CrossCheck(status="match", note=None)
@@ -147,8 +152,8 @@ def build_card(ext: ResultsExtraction, doc_url: str, symbol: str, sector: str | 
     return m.ResultsCard(
         period=fy_label(ext.periods.current), basis=ext.basis, metrics=metrics,
         margin_ebitda_pct=round(eb / rev * 100, 1) if rev and eb is not None else None,
-        cross_check=cross_check({n: vals[n]["current"] for n in METRICS}, ext.periods.current, symbol, ext.basis,
-                                quarters),
+        cross_check=cross_check({p: {n: vals[n][p] for n in METRICS} for p in ("current", "previous", "year_ago")},
+                                ext.periods.model_dump(), symbol, ext.basis, quarters),
         source=m.DocRef(doc_url=doc_url, page=page))
 
 
@@ -188,21 +193,37 @@ def load_enrichments(ids: list[str]) -> dict[str, m.ResultsCard | m.BioCard | m.
     return {r["filing_id"]: _ENRICH.validate_python(json.loads(r["payload"])) for r in rows}
 
 
+_RANK = {"match": 2, "unavailable": 1, "mismatch": 0}
+
+
+def _worse(new: m.ResultsCard, old: m.ResultsCard) -> bool:
+    """A rebuilt card must not replace an existing one that cross-checks better (e.g. a weaker fallback model's output
+    flagged `mismatch` must not overwrite a card that matched screener.in)."""
+    return _RANK[new.cross_check.status] < _RANK[old.cross_check.status]
+
+
 def enrich_results(filing_id: str, symbol: str, pdf_name: str, sector: str | None = None,
-                   client: httpx.Client | None = None, force: bool = False) -> m.ResultsCard | None:
-    """Download the results PDF, extract with Gemini (native PDF), build + store the card. Returns the card or None."""
-    if not force and (have := load_enrichments([filing_id]).get(filing_id)):
-        return have if isinstance(have, m.ResultsCard) else None
-    pdf, _total = docs.fit_for_inline(docs.get_pdf(pdf_name, client))
+                   client: httpx.Client | None = None, force: bool = False, cache_only: bool = False,
+                   pdf: bytes | None = None) -> m.ResultsCard | None:
+    """Download the results PDF, extract with Gemini (native PDF), build + store the card. Returns the card or None.
+    The LLM answer is cached by the filing's attachment name (immutable), not by the sliced bytes."""
+    have = load_enrichments([filing_id]).get(filing_id)
+    have = have if isinstance(have, m.ResultsCard) else None
+    if have and not force:
+        return have
+    if pdf is None:
+        pdf, _total = docs.fit_for_inline(docs.get_pdf(pdf_name, client))
     ext = run_task("results_extract",
                    {"results_pdf": "The attached PDF is the results filing. Page numbers are the physical, 1-based "
                                    "pages of the PDF."},
-                   feature="push.results", unit=symbol, pdf=pdf, cache_key_extra=filing_id)
+                   feature="push.results", unit=symbol, pdf=pdf, pdf_key=pdf_name, cache_key_extra=filing_id,
+                   cache_only=cache_only)
     with db.connect() as con:
         row = con.execute("SELECT filed_at FROM filings WHERE id=?", (filing_id,)).fetchone()
     age = datetime.now(IST) - datetime.fromisoformat(row["filed_at"]) if row else timedelta(days=30)
     card = build_card(ext, bse.pdf_link(pdf_name, age) or "", symbol, sector)
+    if card and have and _worse(card, have):
+        return have                       # keep the better-checked card
     if card:
         save_enrichment(filing_id, card)
     return card
-

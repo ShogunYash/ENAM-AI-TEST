@@ -2,6 +2,7 @@
   "symbol": "INFY",
   "name": "Infosys Ltd",
   "status": "ready",
+  "is_sample": true,
   "progress": [
     "Loaded financial tables",
     "Found 5 concall transcripts",

@@ -1,0 +1,63 @@
+{
+  "id": "7bbcaf67-e404-4ffb-b7fd-07ff385fdb0a",
+  "symbol": "SUNPHARMA",
+  "company_name": "Sun Pharmaceutical Industries Ltd",
+  "filed_at": "2026-10-30T14:14:55.960000+05:30",
+  "headline": "Unaudited Financial Results for the quarter and half year ended 30 September 2026",
+  "so_what": "Q2 FY27: PAT −36%, Rev +12% YoY",
+  "category": "results",
+  "category_source": "rule",
+  "priority": "high",
+  "score": 0.665,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/658231ad-7203-4355-be99-2a162b722c0c.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "results",
+    "period": "Q2 FY27",
+    "basis": "consolidated",
+    "unit": "INR_CR",
+    "metrics": [
+      {
+        "name": "revenue",
+        "value": 16198.71,
+        "prev_q": 15299.88,
+        "prev_y": 14478.31,
+        "qoq_pct": 5.9,
+        "yoy_pct": 11.9
+      },
+      {
+        "name": "ebitda",
+        "value": null,
+        "prev_q": null,
+        "prev_y": null,
+        "qoq_pct": null,
+        "yoy_pct": null
+      },
+      {
+        "name": "pbt",
+        "value": 3159.37,
+        "prev_q": 4098.81,
+        "prev_y": 4167.61,
+        "qoq_pct": -22.9,
+        "yoy_pct": -24.2
+      },
+      {
+        "name": "pat",
+        "value": 1988.53,
+        "prev_q": 2894.79,
+        "prev_y": 3117.95,
+        "qoq_pct": -31.3,
+        "yoy_pct": -36.2
+      }
+    ],
+    "margin_ebitda_pct": null,
+    "cross_check": {
+      "status": "match",
+      "note": null
+    },
+    "source": {
+      "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/658231ad-7203-4355-be99-2a162b722c0c.pdf",
+      "page": 12
+    }
+  }
+}

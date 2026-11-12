@@ -31,7 +31,7 @@ SUBCAT: dict[str, C] = {
     "Issue of Securities": C.fund_raise,
     "Preferential Issue": C.fund_raise,
     "Qualified Institutional Placement": C.fund_raise,
-    "Intimation of Repayment of Commercial Paper (CP)": C.fund_raise,
+    "Intimation of Repayment of Commercial Paper (CP)": C.unclassified,   # repaying debt is not raising money (G3 review #3)
     "Change in Management": C.management_change,
     "Change in Directorate": C.management_change,
     "Resignation of Director": C.management_change,
@@ -65,7 +65,7 @@ HEADLINE_RULES: list[tuple[re.Pattern[str], C]] = [(re.compile(p, re.IGNORECASE)
      r"analyst presentation|outcome for the quarter|quarter and half.year ended", C.results),
     (r"resign|cessation|change in (the )?(senior )?management|\bCFO\b|\bCEO\b|managing director|"
      r"key managerial|appointment of (mr|ms|mrs|dr|shri|smt)\b|appointed as", C.management_change),
-    (r"acqui|amalgamat|merger|demerger|takeover|joint venture|\bJV\b|divest|stake (sale|purchase)", C.m_and_a),
+    (r"acqui|amalgamat|merger|demerger|takeover|joint venture|\bJV\b|divest|stake (sale|purchase)|(majority|controlling|strategic) stake", C.m_and_a),
     (r"\bQIP\b|rights issue|preferential|warrant|buy-?back|commercial paper|\bNCDs?\b|non-convertible|"
      r"debenture|fund ?rais|capital raise", C.fund_raise),
     (r"\bdividend\b", C.dividend),

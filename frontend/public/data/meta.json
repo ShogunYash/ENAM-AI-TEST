@@ -1,7 +1,10 @@
 {
-  "as_of": "2026-11-11T18:30:00+05:30",
-  "portfolio_size": 15,
+  "as_of": "2026-11-12T15:02:15.452950+05:30",
+  "portfolio_size": 17,
   "research_symbols": [
-    "INFY"
+    "INFY",
+    "BAJFINANCE",
+    "POLYCAB",
+    "KPIL"
   ]
 }

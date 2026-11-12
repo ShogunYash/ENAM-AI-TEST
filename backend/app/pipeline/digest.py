@@ -15,7 +15,7 @@ from app.pipeline import score as S
 from app.signals import alerts as A
 from app.signals.eod import IST
 
-WINDOWS = {"24h": timedelta(hours=24), "3d": timedelta(days=3), "7d": timedelta(days=7)}
+WINDOWS = {"24h": timedelta(hours=24), "3d": timedelta(days=3), "7d": timedelta(days=7), "30d": timedelta(days=30)}
 ROUTINE_ITEM_CAP = 80
 NEEDS_YOU_MAX = 5
 

@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS ledger (
   id INTEGER PRIMARY KEY AUTOINCREMENT, ts REAL, feature TEXT, task TEXT, unit TEXT,
   provider TEXT, model TEXT, tokens_in INTEGER, tokens_out INTEGER,
   cached INTEGER, ok INTEGER, latency_ms INTEGER, error TEXT);
+CREATE TABLE IF NOT EXISTS cooldowns (provider TEXT, model TEXT, until REAL, reason TEXT, PRIMARY KEY (provider, model));
 CREATE TABLE IF NOT EXISTS counters (name TEXT PRIMARY KEY, value INTEGER NOT NULL DEFAULT 0);
 """
 
@@ -62,6 +63,18 @@ def record(path: Path, *, feature: str, task: str, unit: str | None, provider: s
             (time.time(), feature, task, unit, provider, model, tokens_in, tokens_out, int(cached), int(ok),
              latency_ms, error),
         )
+
+
+def cooldown_set(path: Path, provider: str, model: str, seconds: float, reason: str) -> None:
+    """Persist a long cooldown (e.g. a daily free-tier quota) so every process (API server, scripts) skips the model."""
+    with _db(path) as con:
+        con.execute("INSERT OR REPLACE INTO cooldowns VALUES (?,?,?,?)", (provider, model, time.time() + seconds, reason))
+
+
+def cooldown_until(path: Path, provider: str, model: str) -> tuple[float, str] | None:
+    with _db(path) as con:
+        row = con.execute("SELECT until, reason FROM cooldowns WHERE provider=? AND model=?", (provider, model)).fetchone()
+    return (row["until"], row["reason"]) if row and row["until"] > time.time() else None
 
 
 def incr(path: Path, name: str, by: int = 1) -> None:

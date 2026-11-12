@@ -231,3 +231,29 @@ def test_digest_validates_against_contract():
     seed([F(1, "AAA", 2, "Financial Results", "results")])
     classify_all({"f1": C.results})
     m.Digest.model_validate(digest.build_digest("24h", now=NOW).model_dump(mode="json"))
+
+
+def test_commercial_paper_repayment_is_routine_and_never_a_funding_alert():
+    """ChatGPT review (G3/C5 #3): repaying CP is not raising money -> unclassified, hidden, no alert. Even if some path
+    still labelled it fund_raise, its weight is low enough to stay out of Needs-you and alerts."""
+    sub, head = "Intimation of Repayment of Commercial Paper (CP)", "Redemption of Commercial Paper"
+    assert classify.classify_rule(sub, head) == C.unclassified
+    for cat in (C.unclassified, C.fund_raise):
+        db_file = db.db_path()
+        if db_file.exists():
+            db_file.unlink()
+        seed([F(1, "AAA", 2, sub, head)])
+        classify_all({"f1": cat})
+        d = digest.build_digest("24h", now=NOW)
+        assert d.needs_you == [] and d.also_material == [] and [f.id for f in d.routine.items] == ["f1"]
+        assert not [a for a in d.alerts if a.kind == "material_filing"]
+
+
+def test_majority_stake_in_a_generic_press_release_is_m_and_a():
+    """Found by the LLM-vs-rules evaluation: 'Persistent Secures Strong Majority Stake' sat in Press Release."""
+    assert classify.classify_rule("Press Release / Media Release",
+                                  "The Press Release titled Persistent Secures Strong Majority Stake is as enclosed") == C.m_and_a
+
+
+def test_research_sample_flag_in_contract():
+    assert m.Research.model_fields["is_sample"].default is False
