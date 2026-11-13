@@ -8,7 +8,11 @@ import { RoutineGroup } from '@/components/today/RoutineGroup'
 import { CompanyList } from '@/components/today/CompanyList'
 import { CompanyDetail } from '@/components/today/CompanyDetail'
 import { AsOfChip } from '@/components/common/AsOfChip'
-import { Inbox, CheckCircle } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
+
+export const BY_COMPANY_WINDOWS: WindowOption[] = ['3d', '7d', '30d']
+export const TOGGLE_WINDOWS: WindowOption[] = ['3d', '7d']
+export type ViewMode = 'ranked' | 'by_company'
 
 interface TodayScreenProps {
   digestResult: DigestResult | null
@@ -31,28 +35,77 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
 }) => {
   const [highlightedFilingId, setHighlightedFilingId] = useState<string | null>(null)
 
-  // 30d is shown BY COMPANY (one row per stock -> that stock's own headlines); 24h / 3d / 7d keep the single ranked list.
-  const [selectedSymbol, setSelectedSymbol] = useState<string | null>(null)
-  const byCompany = windowOption === '30d'
+  // Track chosen view per window (persisted in localStorage key finn.viewMode.<window>)
+  const [viewModes, setViewModes] = useState<Record<string, ViewMode>>(() => {
+    const initial: Record<string, ViewMode> = {}
+    TOGGLE_WINDOWS.forEach((win) => {
+      try {
+        const saved = localStorage.getItem(`finn.viewMode.${win}`)
+        if (saved === 'by_company' || saved === 'ranked') {
+          initial[win] = saved
+        }
+      } catch {}
+    })
+    return initial
+  })
 
+  // Selected company drilldown in By company view
+  const [selectedSymbol, setSelectedSymbol] = useState<string | null>(null)
+
+  // Search text kept when drilling into a company and coming back
+  const [companySearch, setCompanySearch] = useState('')
+
+  // Scroll position preserved when drilling into a company and coming back
+  const [savedScrollY, setSavedScrollY] = useState(0)
+
+  // Resolve effective view mode
+  const isToggleWindow = TOGGLE_WINDOWS.includes(windowOption)
+  const effectiveView: ViewMode =
+    windowOption === '30d'
+      ? 'by_company'
+      : windowOption === '24h'
+      ? 'ranked'
+      : viewModes[windowOption] || 'ranked'
+
+  // Switching window always resets to the company list (not an open company)
   useEffect(() => {
-    setSelectedSymbol(null) // changing the window always returns to the list
+    setSelectedSymbol(null)
   }, [windowOption])
 
+  // Phone back gesture / browser back returns from a company to the list instead of leaving the app
   useEffect(() => {
-    // Phone back gesture / browser back returns from a company to the list instead of leaving the app.
     const onPop = () => setSelectedSymbol(null)
     window.addEventListener('popstate', onPop)
     return () => window.removeEventListener('popstate', onPop)
   }, [])
 
+  // Restore scroll position after returning from company detail
+  useEffect(() => {
+    if (!selectedSymbol && savedScrollY > 0) {
+      requestAnimationFrame(() => {
+        window.scrollTo(0, savedScrollY)
+      })
+    }
+  }, [selectedSymbol, savedScrollY])
+
   const openCompany = (symbol: string) => {
+    const currentScroll = window.scrollY || document.documentElement.scrollTop || 0
+    setSavedScrollY(currentScroll)
     window.history.pushState({ finnCompany: symbol }, '')
     setSelectedSymbol(symbol)
   }
+
   const closeCompany = () => {
     if (window.history.state?.finnCompany) window.history.back()
     else setSelectedSymbol(null)
+  }
+
+  const handleViewChange = (mode: ViewMode) => {
+    setSelectedSymbol(null) // switching view resets to the list
+    setViewModes((prev) => ({ ...prev, [windowOption]: mode }))
+    try {
+      localStorage.setItem(`finn.viewMode.${windowOption}`, mode)
+    } catch {}
   }
 
   const handleSelectAlertFiling = (filingId: string) => {
@@ -63,7 +116,42 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
     }
   }
 
-  if (byCompany) {
+  // View toggle element (only on 3d and 7d)
+  const viewToggle = isToggleWindow && (
+    <div className="flex items-center justify-start pt-0.5 pb-0.5">
+      <div
+        role="group"
+        aria-label="View mode"
+        className="inline-flex items-center p-0.5 rounded-lg bg-zinc-900 border border-zinc-800"
+      >
+        <button
+          type="button"
+          onClick={() => handleViewChange('ranked')}
+          className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
+            effectiveView === 'ranked'
+              ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
+              : 'text-zinc-400 hover:text-zinc-200'
+          }`}
+        >
+          Ranked
+        </button>
+        <button
+          type="button"
+          onClick={() => handleViewChange('by_company')}
+          className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
+            effectiveView === 'by_company'
+              ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
+              : 'text-zinc-400 hover:text-zinc-200'
+          }`}
+        >
+          By company
+        </button>
+      </div>
+    </div>
+  )
+
+  // 1. By Company View: (30d always, or 3d/7d when By company is selected)
+  if (effectiveView === 'by_company') {
     return (
       <div className="space-y-4 pb-20">
         <div className="flex items-center justify-between gap-2 pt-1 pb-1">
@@ -78,15 +166,29 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
             />
           )}
         </div>
+
+        {viewToggle}
+
         {selectedSymbol ? (
-          <CompanyDetail symbol={selectedSymbol} windowOption={windowOption} onBack={closeCompany} onAskFinn={onAskFinn} />
+          <CompanyDetail
+            symbol={selectedSymbol}
+            windowOption={windowOption}
+            onBack={closeCompany}
+            onAskFinn={onAskFinn}
+          />
         ) : (
-          <CompanyList windowOption={windowOption} onSelect={openCompany} />
+          <CompanyList
+            windowOption={windowOption}
+            onSelect={openCompany}
+            searchQuery={companySearch}
+            onSearchChange={setCompanySearch}
+          />
         )}
       </div>
     )
   }
 
+  // 2. Ranked View:
   if (isLoading && !digestResult) {
     return (
       <div className="space-y-4 animate-pulse p-4">
@@ -121,12 +223,14 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
         )}
       </div>
 
-      {/* Alerts Strip */}
+      {viewToggle}
+
+      {/* Alerts Strip (Ranked view only) */}
       {alerts.length > 0 && (
         <AlertsStrip alerts={alerts} onSelectFiling={handleSelectAlertFiling} />
       )}
 
-      {/* "Needs you" Stack (at most 5 filings) */}
+      {/* "Needs you" Stack (at most 5 filings, Ranked view only) */}
       <section className="space-y-2.5">
         <div className="flex items-center justify-between px-1">
           <div className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-300">

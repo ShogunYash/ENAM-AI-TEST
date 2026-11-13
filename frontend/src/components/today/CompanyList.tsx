@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { getCompanyList } from '@/api/client'
 import { CompanySummary } from '@/api/types'
 import { useSettings } from '@/lib/settings'
 import { formatPercentDelta, formatVolumeMultiple, formatRelativeIst, formatCategory } from '@/lib/formatters'
-import { ChevronRight } from 'lucide-react'
+import { ChevronRight, Search, X } from 'lucide-react'
+
+export type CompanySortOption = 'importance' | 'az'
 
 interface CompanyListProps {
   windowOption: string
   onSelect: (symbol: string) => void
+  searchQuery?: string
+  onSearchChange?: (val: string) => void
 }
 
 const label = formatCategory
@@ -79,22 +83,91 @@ const Row: React.FC<{ c: CompanySummary; onSelect: (symbol: string) => void }> =
   )
 }
 
-export const CompanyList: React.FC<CompanyListProps> = ({ windowOption, onSelect }) => {
+export const CompanyList: React.FC<CompanyListProps> = ({
+  windowOption,
+  onSelect,
+  searchQuery,
+  onSearchChange,
+}) => {
   const { settings } = useSettings()
+
+  // Sort state persisted in localStorage (key finn.companySort)
+  const [sortMode, setSortMode] = useState<CompanySortOption>(() => {
+    try {
+      const saved = localStorage.getItem('finn.companySort')
+      if (saved === 'az' || saved === 'importance') return saved
+    } catch {}
+    return 'importance'
+  })
+
+  // Search input state with ~150ms debounce
+  const [searchInput, setSearchInput] = useState(searchQuery || '')
+  const [debouncedSearch, setDebouncedSearch] = useState(searchQuery || '')
+
+  useEffect(() => {
+    if (searchQuery !== undefined && searchQuery !== searchInput) {
+      setSearchInput(searchQuery)
+      setDebouncedSearch(searchQuery)
+    }
+  }, [searchQuery])
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearch(searchInput)
+      if (onSearchChange) {
+        onSearchChange(searchInput)
+      }
+    }, 150)
+    return () => clearTimeout(timer)
+  }, [searchInput, onSearchChange])
+
+  const handleSortChange = (newSort: CompanySortOption) => {
+    setSortMode(newSort)
+    try {
+      localStorage.setItem('finn.companySort', newSort)
+    } catch {}
+  }
+
   const { data, isLoading, isError, refetch } = useQuery({
     queryKey: ['companies', windowOption, settings.volume_multiple, settings.price_move_pct, settings.categories_of_interest.join(','), settings.muted_categories.join(',')],
     queryFn: () => getCompanyList(windowOption, settings),
   })
 
+  const rows = data?.data?.companies || []
+
+  // 1. Live Filter (case-insensitive across symbol, name, and sector)
+  const filtered = useMemo(() => {
+    const q = debouncedSearch.trim().toLowerCase()
+    if (!q) return rows
+    return rows.filter((c) => {
+      const matchSym = c.symbol.toLowerCase().includes(q)
+      const matchName = c.name.toLowerCase().includes(q)
+      const matchSector = c.sector ? c.sector.toLowerCase().includes(q) : false
+      return matchSym || matchName || matchSector
+    })
+  }, [rows, debouncedSearch])
+
+  // 2. Client-side Sort (Most important = API order; A-Z = alphabetical by symbol)
+  // In A-Z, companies with no filings stay in place alphabetically
+  const filteredAndSorted = useMemo(() => {
+    if (sortMode === 'az') {
+      return [...filtered].sort((a, b) => a.symbol.localeCompare(b.symbol))
+    }
+    return filtered
+  }, [filtered, sortMode])
+
   if (isLoading) {
     return (
       <div className="space-y-2.5 animate-pulse" aria-busy="true">
+        <div className="h-11 bg-zinc-900 rounded-xl" />
+        <div className="h-11 bg-zinc-900 rounded-lg w-48" />
         {[0, 1, 2, 3, 4, 5].map((i) => (
           <div key={i} className="h-[88px] bg-zinc-900 rounded-xl" />
         ))}
       </div>
     )
   }
+
   if (isError || !data) {
     return (
       <div className="rounded-xl border border-dashed border-zinc-800 p-6 text-center space-y-2 bg-zinc-900/30">
@@ -106,19 +179,93 @@ export const CompanyList: React.FC<CompanyListProps> = ({ windowOption, onSelect
     )
   }
 
-  const rows = data.data.companies
-  const active = rows.filter((c) => c.total > 0).length
+  const activeTotal = rows.filter((c) => c.total > 0).length
+
   return (
-    <section className="space-y-2.5" aria-label="Companies">
-      <div className="flex items-center justify-between px-1">
-        <h2 className="text-xs font-semibold uppercase tracking-wider text-zinc-300">Your companies</h2>
-        <span className="text-[11px] text-zinc-400">
-          {active} of {rows.length} filed in {windowOption} · most important first
+    <section className="space-y-3" aria-label="Companies">
+      {/* Search Input Box */}
+      <div className="relative flex items-center">
+        <Search className="w-4 h-4 text-zinc-500 absolute left-3 pointer-events-none" />
+        <input
+          type="text"
+          inputMode="search"
+          autoFocus={false}
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+          placeholder="Search stock or sector"
+          className="w-full bg-zinc-900 border border-zinc-800 rounded-xl pl-9 pr-10 py-2.5 min-h-[44px] text-xs text-zinc-100 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-700 transition-colors"
+        />
+        {searchInput && (
+          <button
+            type="button"
+            onClick={() => setSearchInput('')}
+            aria-label="Clear search"
+            className="absolute right-1 p-2 text-zinc-400 hover:text-zinc-200 min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        )}
+      </div>
+
+      {/* Sort Options Segmented Control */}
+      <div className="flex items-center justify-between gap-2 pt-0.5">
+        <div
+          role="group"
+          aria-label="Sort companies"
+          className="inline-flex items-center p-0.5 rounded-lg bg-zinc-900 border border-zinc-800"
+        >
+          <button
+            type="button"
+            onClick={() => handleSortChange('importance')}
+            className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
+              sortMode === 'importance'
+                ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
+                : 'text-zinc-400 hover:text-zinc-200'
+            }`}
+          >
+            Most important
+          </button>
+          <button
+            type="button"
+            onClick={() => handleSortChange('az')}
+            className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
+              sortMode === 'az'
+                ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
+                : 'text-zinc-400 hover:text-zinc-200'
+            }`}
+          >
+            A-Z
+          </button>
+        </div>
+
+        {/* Row count line */}
+        <span className="text-[11px] text-zinc-400 font-mono">
+          {activeTotal} of {rows.length} filed in {windowOption}
         </span>
       </div>
-      {rows.map((c) => (
-        <Row key={c.symbol} c={c} onSelect={onSelect} />
-      ))}
+
+      {/* Empty Search State */}
+      {filteredAndSorted.length === 0 ? (
+        <div className="rounded-xl border border-dashed border-zinc-800 p-8 text-center space-y-3 bg-zinc-900/30">
+          <div className="text-sm font-medium text-zinc-300">
+            No stock matches "{debouncedSearch.trim()}"
+          </div>
+          <button
+            type="button"
+            onClick={() => setSearchInput('')}
+            className="px-4 py-2 min-h-[44px] rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-medium border border-zinc-700/60 touch-manipulation transition-colors inline-flex items-center justify-center"
+          >
+            Clear search
+          </button>
+        </div>
+      ) : (
+        /* Company Rows */
+        <div className="space-y-2.5">
+          {filteredAndSorted.map((c) => (
+            <Row key={c.symbol} c={c} onSelect={onSelect} />
+          ))}
+        </div>
+      )}
     </section>
   )
 }

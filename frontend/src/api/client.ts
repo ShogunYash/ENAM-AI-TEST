@@ -444,9 +444,18 @@ export async function getCompanyList(windowLabel: string, settings: Settings): P
   } catch {
     /* API asleep or unreachable: fall back to the snapshot below */
   }
-  const snap = await fetch('/data/digest-companies-30d.json')
-  if (!snap.ok) throw new Error('Company view is not available offline')
-  return { data: await snap.json(), source: 'snapshot' }
+  const snapFiles = [
+    `/data/digest-companies-${windowLabel}.json`,
+    '/data/digest-companies-7d.json',
+    '/data/digest-companies-30d.json',
+  ]
+  for (const file of snapFiles) {
+    try {
+      const snap = await fetch(file)
+      if (snap.ok) return { data: await snap.json(), source: 'snapshot' }
+    } catch {}
+  }
+  throw new Error('Company view is not available offline')
 }
 
 export async function getCompanyFilings(
@@ -465,7 +474,16 @@ export async function getCompanyFilings(
   } catch {
     /* fall back to the snapshot below */
   }
-  const snap = await fetch(`/data/company-filings/${sym}-30d.json`)
-  if (!snap.ok) throw new Error(`No saved filings for ${sym}`)
-  return { data: await snap.json(), source: 'snapshot' }
+  const snapFiles = [
+    `/data/company-filings/${sym}-${windowLabel}.json`,
+    `/data/company-filings/${sym}-7d.json`,
+    `/data/company-filings/${sym}-30d.json`,
+  ]
+  for (const file of snapFiles) {
+    try {
+      const snap = await fetch(file)
+      if (snap.ok) return { data: await snap.json(), source: 'snapshot' }
+    } catch {}
+  }
+  throw new Error(`No saved filings for ${sym}`)
 }
