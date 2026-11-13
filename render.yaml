@@ -10,7 +10,7 @@ services:
     plan: free
     healthCheckPath: /health
     autoDeploy: false
-    envVars:
+    autoDeployTrigger: commit      # redeploy on every push to main (the dashboard setting must match, or a Blueprint sync reverts it)
       - key: FINN_USE_LOCAL_LLM        # the station GPU is not reachable from Render
         value: "0"
       - key: GEMINI_API_KEY            # only used for live research on tickers that are not pre-built
