@@ -45,8 +45,8 @@ Every call goes through one router; numbers below come from the app's own ledger
 | T2 extract | results PDF (native PDF input), guidance from transcripts, management bio | Gemini Flash, local gpt-oss-20b, Flash-Lite | once per document, cached forever |
 | T3 reason | promised-vs-delivered verdicts | Gemini Flash, local gpt-oss-20b (medium effort), OpenRouter | once per ticker |
 
-**Measured:** 190 model calls, 1.55 M input tokens, 121 K output tokens, **54.4 % cache hits**, ₹0.00. By model: local gpt-oss-20b 54 calls,
-Flash-Lite 107 (two versions), Flash 27, OpenRouter free 2. A new ticker costs **6 to 8 calls** (measured on an unseen ticker with the local GPU off: 346 s, 6 calls).
+**Measured:** 193 model calls, 1.58 M input tokens, 126 K output tokens, **54.0 % cache hits**, ₹0.00. By model: local gpt-oss-20b 54 calls,
+Flash-Lite 110 (two versions), Flash 27, OpenRouter free 2. A new ticker costs **6 to 8 calls** (measured on an unseen ticker with the local GPU off: 346 s, 6 calls).
 The universe is **17 holdings + a curated 10-name watchlist** (`data/portfolio.json`); the digest and alerts cover holdings only, the by-company view covers both.
 On the same hardware-free path the answer is partial-but-honest when quotas bite (see *Limits*).
 
@@ -71,7 +71,7 @@ uv run python -m scripts.ingest            # BSE filings + prices (incremental)
 uv run python -m scripts.refresh_snapshot --classify
 uv run uvicorn app.main:app --port 8000    # API; mock fixtures only if there is no database
 cd ../frontend && npm install && npm run dev
-uv run pytest -q                           # backend tests (281)
+uv run pytest -q                           # backend tests (300)
 ```
 Optional build-time GPU: `ssh -N -L 11435:localhost:11434 <host>` to an Ollama box with `gpt-oss:20b` (see `backend/config/models.yaml`).
 Deploy: [docs/DEPLOY.md](docs/DEPLOY.md). Project skills and agent rules: [AGENTS.md](AGENTS.md), `.claude/skills/`.

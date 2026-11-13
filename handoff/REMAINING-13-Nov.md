@@ -113,3 +113,21 @@ Return the 5 highest-value fixes ranked, each as one concrete UI instruction Ant
 
 ## Cut line (if time runs short, drop in this order)
 GPT-5, AG-2 sort/search, AG-5 install prompt, GPT-3. Never drop: U1-U3, U6, C-3, AG-1, AG-3.
+
+## Update 13 Nov (evening): GPT-1..5 reports are in; what was done
+- GPT-1 (verdicts): 11 of 36 items judged "wrong" are now WITHHELD (`backend/config/research_review.json`, applied in `research/build.get_cached`, disclosed in `Research.gaps`). The 7 "debatable" ones stay. Not rewritten, only removed.
+- GPT-3 (management): corrections applied by `backend/config/bio_review.json` (ICICI role names ICICI Life, HDFC proposed date nulled, 3 tribute lines dropped, LT wording, Maheshwari role).
+- GPT-2 (results): 36/40 rows OK. ASTRAL and PERSISTENT EBITDA re-extracted (now shown). ULTRACEMCO EBITDA still not extracted (known gap, not shown). HINDZINC year-ago EBITDA differs 0.7% from a recompute (printed figure vs components; left as printed).
+- GPT-4 (writeup): merged into `docs/SUBMISSION_DRAFT.md` with two corrections noted there.
+- GPT-5 (phone review) becomes AG-6 below.
+
+### AG-6 (Antigravity, after AG-1..3): five UI fixes from the phone review
+```
+Edit only frontend/. One commit each. No redesigns.
+1. Management card (e.g. Bajaj): replace the repeated name+role with the card's so_what line ("Prashant Verma appointed as CISO from 1 Feb"), keep one career fact below. Do not repeat the person's name in two places.
+2. Research verdict row for a "cut" or "raised" item: show "old range -> new range" beside the chip (e.g. "1.5-3% -> 1-2%") using the promised/outcome claims; keep the source tappable. If no range can be parsed, show nothing extra.
+3. Results card badge: replace "Verified" with "Revenue, PBT, PAT checked" when cross_check.status = match; label derived EBITDA "derived" in a muted style; "mismatch" keeps its amber note.
+4. Ask: under each answer, show the source line ("Tata Steel filing, p.15") as a tappable link directly below the answer, and replace a repeated suggestion chip with a different one.
+5. Watchlist rows: move the one-line material event above the category chips, and label the period behind the price change ("30d").
+Also: Research pages now carry a gap line "N item(s) withheld after analyst review"; render it in the existing gaps list, muted, not as an error.
+```

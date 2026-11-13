@@ -3,10 +3,10 @@
   "name": "Tata Steel",
   "window": {
     "label": "30d",
-    "start": "2026-10-14T16:12:14.179682+05:30",
-    "end": "2026-11-13T16:12:14.179682+05:30"
+    "start": "2026-10-14T16:58:19.398003+05:30",
+    "end": "2026-11-13T16:58:19.398003+05:30"
   },
-  "generated_at": "2026-11-13T16:12:14.179682+05:30",
+  "generated_at": "2026-11-13T16:58:19.398003+05:30",
   "counts": {
     "total": 18,
     "rule_classified": 17,
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 3.283,
+      "score": 3.258,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2e7c8bf8-d794-4a55-b670-97951b28e0e8.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -86,7 +86,7 @@
       "category": "m_and_a",
       "category_source": "rule",
       "priority": "high",
-      "score": 2.987,
+      "score": 2.965,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2630fae6-20d8-4b7f-86fe-81c5b1a22a94.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -104,7 +104,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "high",
-      "score": 2.926,
+      "score": 2.904,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/22765a70-fd05-4bea-85bb-001eca66c2c1.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -130,7 +130,7 @@
       "category": "m_and_a",
       "category_source": "rule",
       "priority": "high",
-      "score": 1.156,
+      "score": 1.147,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/47583353-38c5-4bf3-8479-d38183666686.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -148,7 +148,7 @@
       "category": "m_and_a",
       "category_source": "rule",
       "priority": "high",
-      "score": 1.152,
+      "score": 1.143,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7dc05352-62f9-4f34-be74-65db96f65c1e.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -226,7 +226,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.252,
+        "score": 0.25,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/91ad2b2d-8248-4140-aefc-c17da68fc452.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -256,7 +256,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.731,
+        "score": 0.725,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5a739d21-7ea5-4c1a-b220-45f77e240c2e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -271,7 +271,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.73,
+        "score": 0.725,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/569d3f9e-82d7-45c9-bb22-81509bb8ec3c.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -286,7 +286,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.73,
+        "score": 0.725,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a10cb52b-e846-4a80-a709-c94b264e6532.pdf",
         "price_reaction": null,
         "enrichment": null

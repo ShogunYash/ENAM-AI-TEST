@@ -10,6 +10,7 @@ from __future__ import annotations
 import json
 import threading
 from datetime import datetime
+from pathlib import Path
 
 from app import db
 from app import models as m
@@ -30,11 +31,32 @@ def _ensure_table() -> None:
     _SCHEMA_DONE = True
 
 
+REVIEW_FILE = Path(__file__).resolve().parents[2] / "config" / "research_review.json"
+
+
+def apply_review(r: m.Research, review: dict | None = None) -> m.Research:
+    """Withhold the items a second-reader audit found unsupported (config/research_review.json) and say so in `gaps`.
+    Withholding never rewrites a verdict or quote: fewer, defensible claims beat more, doubtful ones."""
+    if review is None:
+        review = json.loads(REVIEW_FILE.read_text("utf-8")) if REVIEW_FILE.exists() else {}
+    rules = review.get(r.symbol, [])
+    if not rules:
+        return r
+    keep, dropped = [], []
+    for p in r.pvd:
+        hit = next((x for x in rules if x["said_in"] == p.said_in and x["metric"].lower() in p.metric.lower()), None)
+        (dropped if hit else keep).append(p)
+    if not dropped:
+        return r
+    gap = f"{len(dropped)} item(s) withheld after analyst review: quote did not support the stated metric or verdict"
+    return r.model_copy(update={"pvd": keep, "gaps": [*r.gaps, gap]})
+
+
 def get_cached(symbol: str) -> m.Research | None:
     _ensure_table()
     with db.connect() as con:
         row = con.execute("SELECT payload FROM research_cache WHERE symbol=?", (symbol.upper(),)).fetchone()
-    return m.Research.model_validate(json.loads(row["payload"])) if row else None
+    return apply_review(m.Research.model_validate(json.loads(row["payload"]))) if row else None
 
 
 def save(r: m.Research) -> None:

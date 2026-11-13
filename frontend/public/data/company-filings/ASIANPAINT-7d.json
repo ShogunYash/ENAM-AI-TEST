@@ -3,10 +3,10 @@
   "name": "Asian Paints",
   "window": {
     "label": "7d",
-    "start": "2026-11-06T16:12:14.179682+05:30",
-    "end": "2026-11-13T16:12:14.179682+05:30"
+    "start": "2026-11-06T16:58:19.398003+05:30",
+    "end": "2026-11-13T16:58:19.398003+05:30"
   },
-  "generated_at": "2026-11-13T16:12:14.179682+05:30",
+  "generated_at": "2026-11-13T16:58:19.398003+05:30",
   "counts": {
     "total": 4,
     "rule_classified": 4,
@@ -23,7 +23,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 1.573,
+      "score": 1.562,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c6c189db-e010-4c6e-a997-b50d6d33767a.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -55,7 +55,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.404,
+        "score": 0.401,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8a988798-8c55-42be-a6ce-6cb97abd6d5c.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -70,7 +70,7 @@
         "category": "postal_ballot",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.209,
+        "score": 0.208,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/dd885c0b-f490-4da2-9fcc-a0ef6cfb76a3.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -85,7 +85,7 @@
         "category": "postal_ballot",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.209,
+        "score": 0.208,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ddc90afe-51c7-4e86-984c-dbb5d641c44e.pdf",
         "price_reaction": null,
         "enrichment": null

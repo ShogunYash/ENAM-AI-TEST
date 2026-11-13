@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "30d",
-    "start": "2026-10-14T16:12:14.179682+05:30",
-    "end": "2026-11-13T16:12:14.179682+05:30"
+    "start": "2026-10-14T16:58:19.398003+05:30",
+    "end": "2026-11-13T16:58:19.398003+05:30"
   },
-  "generated_at": "2026-11-13T16:12:14.179682+05:30",
+  "generated_at": "2026-11-13T16:58:19.398003+05:30",
   "companies": [
     {
       "symbol": "BAJFINANCE",
@@ -28,7 +28,7 @@
         "category": "fund_raise",
         "category_source": "rule",
         "priority": "high",
-        "score": 6.673,
+        "score": 6.624,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -63,7 +63,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 3.283,
+        "score": 3.258,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2e7c8bf8-d794-4a55-b670-97951b28e0e8.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -144,7 +144,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 2.175,
+        "score": 2.159,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e4d02b37-bd6b-4b11-ac89-98eaa14a7290.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -224,7 +224,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 2.143,
+        "score": 2.127,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/86009cba-ca03-4d35-bad8-b1988cfcff13.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -303,7 +303,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 2.133,
+        "score": 2.117,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7e17b4ed-a5e2-4625-9e2b-2af590350caa.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -379,11 +379,11 @@
         "company_name": "Astral Ltd",
         "filed_at": "2026-11-05T16:22:52.253000+05:30",
         "headline": "Financial result for the Quarter and Half Year ended 30th September, 2026",
-        "so_what": "Q2 FY27: PAT −6%, Rev +26% YoY",
+        "so_what": "Q2 FY27: PAT −6%, Rev +26% YoY · EBITDA margin 12.6%",
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 2.13,
+        "score": 2.114,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a39f8b72-303f-42a4-8750-f413346bd742.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -402,11 +402,11 @@
             },
             {
               "name": "ebitda",
-              "value": null,
-              "prev_q": null,
-              "prev_y": null,
-              "qoq_pct": null,
-              "yoy_pct": null
+              "value": 251.0,
+              "prev_q": 231.2,
+              "prev_y": 256.8,
+              "qoq_pct": 8.6,
+              "yoy_pct": -2.3
             },
             {
               "name": "pbt",
@@ -425,7 +425,7 @@
               "yoy_pct": -5.6
             }
           ],
-          "margin_ebitda_pct": null,
+          "margin_ebitda_pct": 12.6,
           "cross_check": {
             "status": "match",
             "note": null
@@ -463,7 +463,7 @@
         "category": "litigation",
         "category_source": "llm",
         "priority": "medium",
-        "score": 1.784,
+        "score": 1.771,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/53496491-fd25-4172-9f9f-79bf088ea9c5.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -497,7 +497,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.628,
+        "score": 1.616,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/96d3143f-2c3f-4cdb-a811-869e422ac1ab.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -576,7 +576,7 @@
         "category": "management_change",
         "category_source": "rule",
         "priority": "medium",
-        "score": 1.573,
+        "score": 1.562,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c6c189db-e010-4c6e-a997-b50d6d33767a.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -615,7 +615,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.313,
+        "score": 1.303,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1eaa8912-06ca-45d4-8a04-03df01b47497.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -695,7 +695,7 @@
         "category": "fund_raise",
         "category_source": "rule",
         "priority": "medium",
-        "score": 1.012,
+        "score": 1.005,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/73a8c540-4229-4137-8e2b-5aae04fa0a35.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -730,7 +730,7 @@
         "category": "m_and_a",
         "category_source": "llm",
         "priority": "high",
-        "score": 0.576,
+        "score": 0.572,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/13e50739-50e7-4b5a-8dba-ac92ece6d35f.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -765,7 +765,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.55,
+        "score": 0.546,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/880087f6-7ecc-40a9-8cac-de48d4616b25.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -845,7 +845,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.532,
+        "score": 0.528,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d7b8fffb-7a5f-4efa-9241-482c5d765f1d.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -924,7 +924,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.522,
+        "score": 0.518,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/658231ad-7203-4355-be99-2a162b722c0c.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1002,7 +1002,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.422,
+        "score": 0.419,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/12ace952-a89b-4098-8bd0-e247f6e2a776.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1080,7 +1080,7 @@
         "category": "management_change",
         "category_source": "rule",
         "priority": "medium",
-        "score": 0.394,
+        "score": 0.391,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b36ff756-1cf7-44a3-9b2c-4583e7e0e792.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1090,7 +1090,6 @@
           "change": "retired",
           "background": [
             "Key architect of the Bank’s SME business",
-            "Contributed significantly across Credit and Business",
             "Nearly 27 years of service"
           ],
           "links": [],
@@ -1124,7 +1123,7 @@
         "category": "litigation",
         "category_source": "rule",
         "priority": "medium",
-        "score": 0.341,
+        "score": 0.339,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c3d1ba29-6132-47b7-9f3b-79a294e53189.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1157,7 +1156,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.315,
+        "score": 0.313,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f0d1483f-551a-46d8-ade7-7a390baacc1c.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1236,7 +1235,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.264,
+        "score": 0.262,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fca20bad-7bfe-438f-a526-d9f42ccf0346.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1314,7 +1313,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.106,
+        "score": 0.105,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26c12463-d44e-4050-bd47-b53cc294b4e0.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1393,7 +1392,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.068,
+        "score": 0.067,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4567cd4f-9037-41ac-9e8d-fd10ff9e2f51.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1486,84 +1485,6 @@
       }
     },
     {
-      "symbol": "HINDZINC",
-      "name": "Hindustan Zinc",
-      "sector": "Non-ferrous metals and mining",
-      "in_portfolio": true,
-      "total": 14,
-      "material": 1,
-      "categories": {
-        "results": 1
-      },
-      "top": {
-        "id": "0023c44c-f425-4f61-8516-9b738e70db04",
-        "symbol": "HINDZINC",
-        "company_name": "Hindustan Zinc Ltd",
-        "filed_at": "2026-10-19T15:47:44.593000+05:30",
-        "headline": "Please refer the enclosed file",
-        "so_what": "Q2 FY27: PAT +142%, Rev +76% YoY · EBITDA margin 61.3%",
-        "category": "results",
-        "category_source": "rule",
-        "priority": "high",
-        "score": 0.042,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b8e22e9-8b97-4151-a045-51669fdac2ae.pdf",
-        "price_reaction": null,
-        "enrichment": {
-          "type": "results",
-          "period": "Q2 FY27",
-          "basis": "consolidated",
-          "unit": "INR_CR",
-          "metrics": [
-            {
-              "name": "revenue",
-              "value": 15093.0,
-              "prev_q": 13747.0,
-              "prev_y": 8549.0,
-              "qoq_pct": 9.8,
-              "yoy_pct": 76.5
-            },
-            {
-              "name": "ebitda",
-              "value": 9248.0,
-              "prev_q": 8050.0,
-              "prev_y": 4415.0,
-              "qoq_pct": 14.9,
-              "yoy_pct": 109.5
-            },
-            {
-              "name": "pbt",
-              "value": 8572.0,
-              "prev_q": 7314.0,
-              "prev_y": 3542.0,
-              "qoq_pct": 17.2,
-              "yoy_pct": 142.0
-            },
-            {
-              "name": "pat",
-              "value": 6412.0,
-              "prev_q": 5469.0,
-              "prev_y": 2649.0,
-              "qoq_pct": 17.2,
-              "yoy_pct": 142.1
-            }
-          ],
-          "margin_ebitda_pct": 61.3,
-          "cross_check": {
-            "status": "match",
-            "note": null
-          },
-          "source": {
-            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b8e22e9-8b97-4151-a045-51669fdac2ae.pdf",
-            "page": 5
-          }
-        }
-      },
-      "price": {
-        "pct_1d": 0.53,
-        "vol_ratio": 0.71
-      }
-    },
-    {
       "symbol": "ULTRACEMCO",
       "name": "UltraTech Cement",
       "sector": "Cement",
@@ -1640,6 +1561,84 @@
       "price": {
         "pct_1d": 0.71,
         "vol_ratio": 0.93
+      }
+    },
+    {
+      "symbol": "HINDZINC",
+      "name": "Hindustan Zinc",
+      "sector": "Non-ferrous metals and mining",
+      "in_portfolio": true,
+      "total": 14,
+      "material": 1,
+      "categories": {
+        "results": 1
+      },
+      "top": {
+        "id": "0023c44c-f425-4f61-8516-9b738e70db04",
+        "symbol": "HINDZINC",
+        "company_name": "Hindustan Zinc Ltd",
+        "filed_at": "2026-10-19T15:47:44.593000+05:30",
+        "headline": "Please refer the enclosed file",
+        "so_what": "Q2 FY27: PAT +142%, Rev +76% YoY · EBITDA margin 61.3%",
+        "category": "results",
+        "category_source": "rule",
+        "priority": "high",
+        "score": 0.041,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b8e22e9-8b97-4151-a045-51669fdac2ae.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "results",
+          "period": "Q2 FY27",
+          "basis": "consolidated",
+          "unit": "INR_CR",
+          "metrics": [
+            {
+              "name": "revenue",
+              "value": 15093.0,
+              "prev_q": 13747.0,
+              "prev_y": 8549.0,
+              "qoq_pct": 9.8,
+              "yoy_pct": 76.5
+            },
+            {
+              "name": "ebitda",
+              "value": 9248.0,
+              "prev_q": 8050.0,
+              "prev_y": 4415.0,
+              "qoq_pct": 14.9,
+              "yoy_pct": 109.5
+            },
+            {
+              "name": "pbt",
+              "value": 8572.0,
+              "prev_q": 7314.0,
+              "prev_y": 3542.0,
+              "qoq_pct": 17.2,
+              "yoy_pct": 142.0
+            },
+            {
+              "name": "pat",
+              "value": 6412.0,
+              "prev_q": 5469.0,
+              "prev_y": 2649.0,
+              "qoq_pct": 17.2,
+              "yoy_pct": 142.1
+            }
+          ],
+          "margin_ebitda_pct": 61.3,
+          "cross_check": {
+            "status": "match",
+            "note": null
+          },
+          "source": {
+            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b8e22e9-8b97-4151-a045-51669fdac2ae.pdf",
+            "page": 5
+          }
+        }
+      },
+      "price": {
+        "pct_1d": 0.53,
+        "vol_ratio": 0.71
       }
     },
     {

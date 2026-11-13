@@ -8,7 +8,7 @@
   "category": "management_change",
   "category_source": "rule",
   "priority": "medium",
-  "score": 0.394,
+  "score": 0.391,
   "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b36ff756-1cf7-44a3-9b2c-4583e7e0e792.pdf",
   "price_reaction": null,
   "enrichment": {
@@ -18,7 +18,6 @@
     "change": "retired",
     "background": [
       "Key architect of the Bank’s SME business",
-      "Contributed significantly across Credit and Business",
       "Nearly 27 years of service"
     ],
     "links": [],

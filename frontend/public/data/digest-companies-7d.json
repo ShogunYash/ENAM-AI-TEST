@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "7d",
-    "start": "2026-11-06T16:12:14.179682+05:30",
-    "end": "2026-11-13T16:12:14.179682+05:30"
+    "start": "2026-11-06T16:58:19.398003+05:30",
+    "end": "2026-11-13T16:58:19.398003+05:30"
   },
-  "generated_at": "2026-11-13T16:12:14.179682+05:30",
+  "generated_at": "2026-11-13T16:58:19.398003+05:30",
   "companies": [
     {
       "symbol": "BAJFINANCE",
@@ -26,7 +26,7 @@
         "category": "fund_raise",
         "category_source": "rule",
         "priority": "high",
-        "score": 6.673,
+        "score": 6.624,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -61,7 +61,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 3.283,
+        "score": 3.258,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2e7c8bf8-d794-4a55-b670-97951b28e0e8.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -139,7 +139,7 @@
         "category": "management_change",
         "category_source": "rule",
         "priority": "medium",
-        "score": 1.573,
+        "score": 1.562,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c6c189db-e010-4c6e-a997-b50d6d33767a.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -156,20 +156,6 @@
       "price": {
         "pct_1d": 0.53,
         "vol_ratio": 0.56
-      }
-    },
-    {
-      "symbol": "KPIL",
-      "name": "Kalpataru Projects International",
-      "sector": "Engineering and construction",
-      "in_portfolio": false,
-      "total": 4,
-      "material": 0,
-      "categories": {},
-      "top": null,
-      "price": {
-        "pct_1d": -0.05,
-        "vol_ratio": 0.48
       }
     },
     {
@@ -226,6 +212,20 @@
       "price": {
         "pct_1d": -0.4,
         "vol_ratio": 0.64
+      }
+    },
+    {
+      "symbol": "KPIL",
+      "name": "Kalpataru Projects International",
+      "sector": "Engineering and construction",
+      "in_portfolio": false,
+      "total": 2,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.05,
+        "vol_ratio": 0.48
       }
     },
     {
