@@ -3,10 +3,10 @@
   "name": "Larsen & Toubro",
   "window": {
     "label": "30d",
-    "start": "2026-10-14T16:12:14.179682+05:30",
-    "end": "2026-11-13T16:12:14.179682+05:30"
+    "start": "2026-10-14T16:58:19.398003+05:30",
+    "end": "2026-11-13T16:58:19.398003+05:30"
   },
-  "generated_at": "2026-11-13T16:12:14.179682+05:30",
+  "generated_at": "2026-11-13T16:58:19.398003+05:30",
   "counts": {
     "total": 16,
     "rule_classified": 13,
@@ -23,7 +23,7 @@
       "category": "m_and_a",
       "category_source": "llm",
       "priority": "high",
-      "score": 0.576,
+      "score": 0.572,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/13e50739-50e7-4b5a-8dba-ac92ece6d35f.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -41,7 +41,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.269,
+      "score": 0.267,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/be28659d-c65e-4500-917e-02ef891caee6.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -104,7 +104,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.201,
+      "score": 0.2,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6e5c35b1-1012-4947-bf92-558cefc37ca6.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -133,7 +133,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.128,
+        "score": 1.12,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8269aea9-54c0-4a24-a615-6dda0ab8f054.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -148,7 +148,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.197,
+        "score": 0.196,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9e23e65f-ffbd-4e61-be8c-a57227966831.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -178,7 +178,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.16,
+        "score": 0.159,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d8a69245-c1f1-4bc3-a7c9-9dbc5795aae8.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -193,7 +193,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.223,
+        "score": 0.221,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/86cb66bf-7e97-4d77-a803-40ae7750d8f2.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -208,7 +208,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.077,
+        "score": 0.076,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/498df898-abfc-4569-b288-56622aa74bef.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -223,7 +223,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.042,
+        "score": 0.041,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0e4c11c6-4c96-42c0-ac94-b2cb928c4f4f.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -268,7 +268,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.056,
+        "score": 0.055,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/115618e0-f718-4b8b-81e1-642618cbe608.pdf",
         "price_reaction": null,
         "enrichment": null

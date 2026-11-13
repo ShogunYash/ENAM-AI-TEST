@@ -143,38 +143,6 @@
   },
   "pvd": [
     {
-      "metric": "Credit cost (FY27)",
-      "said_in": "Q4 FY26",
-      "horizon": "FY27",
-      "promised": {
-        "text": "Credit cost (FY27): 145 to 160 basis points (FY27)",
-        "kind": "guidance",
-        "sources": [
-          {
-            "doc_id": "BAJFINANCE:concall_Q4FY26",
-            "page": 8,
-            "quote": "We are guiding for 145 to 160 bps next year, full year."
-          }
-        ],
-        "verified": true
-      },
-      "outcome": {
-        "text": "Credit cost FY27 target not confirmed by Q2FY27",
-        "kind": "fact",
-        "sources": [
-          {
-            "doc_id": "BAJFINANCE:concall_Q2FY27",
-            "page": 5,
-            "quote": "We are reasonably comfortable with the credit cost outlook for FY27."
-          }
-        ],
-        "verified": true
-      },
-      "actual": null,
-      "verdict": "pending",
-      "reason": "Credit cost FY27 target not confirmed by Q2FY27"
-    },
-    {
       "metric": "Opex to NTI improvement (FY27)",
       "said_in": "Q4 FY26",
       "horizon": "FY27",
@@ -231,80 +199,6 @@
       "actual": null,
       "verdict": "pending",
       "reason": "Gold loan share target not reached by Q2FY27"
-    },
-    {
-      "metric": "Vehicle finance AUM growth",
-      "said_in": "Q3 FY26",
-      "horizon": "FY27",
-      "promised": {
-        "text": "Vehicle finance AUM growth: 20% (FY27)",
-        "kind": "guidance",
-        "sources": [
-          {
-            "doc_id": "BAJFINANCE:concall_Q3FY26",
-            "page": 10,
-            "quote": "we will grow them organically in the 20s"
-          }
-        ],
-        "verified": true
-      },
-      "outcome": {
-        "text": "On track per Q4 FY26 call; FY27 not yet closed",
-        "kind": "fact",
-        "sources": [
-          {
-            "doc_id": "BAJFINANCE:concall_Q4FY26",
-            "page": 7,
-            "quote": "AUM growth remained strong at 23%"
-          }
-        ],
-        "verified": true
-      },
-      "actual": null,
-      "verdict": "pending",
-      "reason": "On track per Q4 FY26 call; FY27 not yet closed"
-    },
-    {
-      "metric": "Credit cost (full year)",
-      "said_in": "Q2 FY26",
-      "horizon": "FY26",
-      "promised": {
-        "text": "Credit cost (full year): 1.85% to 1.95% (FY26)",
-        "kind": "guidance",
-        "sources": [
-          {
-            "doc_id": "BAJFINANCE:concall_Q2FY26",
-            "page": 4,
-            "quote": "As a result, we expect full year credit cost to come within 1.85% to 1.95% for FY'26"
-          }
-        ],
-        "verified": true
-      },
-      "outcome": null,
-      "actual": null,
-      "verdict": "quietly_dropped",
-      "reason": "Guidance not mentioned again, no outcome"
-    },
-    {
-      "metric": "Other operating income growth (full year)",
-      "said_in": "Q2 FY26",
-      "horizon": "FY26",
-      "promised": {
-        "text": "Other operating income growth (full year): 13% to 15% (FY26)",
-        "kind": "guidance",
-        "sources": [
-          {
-            "doc_id": "BAJFINANCE:concall_Q2FY26",
-            "page": 17,
-            "quote": "We are guided for the full year that between the NII and NTI, the entire fee revenue pool that we generate, combination of the fees and charges, plus sale on assignments and so on and so forth. All put together, we will see 13% to 15% growth in the current year"
-          }
-        ],
-        "verified": true
-      },
-      "outcome": null,
-      "actual": null,
-      "verdict": "quietly_dropped",
-      "reason": "Guidance not mentioned again, no outcome"
     },
     {
       "metric": "ROA (FY27)",
@@ -374,7 +268,8 @@
   "extra": null,
   "gaps": [
     "Q3 FY26 call: 2 unverifiable quote(s) dropped",
-    "Q2 FY27 call: 1 unverifiable quote(s) dropped"
+    "Q2 FY27 call: 1 unverifiable quote(s) dropped",
+    "4 item(s) withheld after analyst review: quote did not support the stated metric or verdict"
   ],
   "cost": {
     "llm_calls": 0,

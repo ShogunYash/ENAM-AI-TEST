@@ -193,31 +193,6 @@
       "reason": "Guided 25%+; filed FY26 revenue grew 21.6% (below the floor)"
     },
     {
-      "metric": "FY26 revenue growth (stand‑alone and consolidated)",
-      "said_in": "Q1 FY26",
-      "horizon": "FY26",
-      "promised": {
-        "text": "FY26 revenue growth (stand‑alone and consolidated): 20% to 25% (FY26)",
-        "kind": "guidance",
-        "sources": [
-          {
-            "doc_id": "KPIL:concall_Q1FY26",
-            "page": 4,
-            "quote": "We remain confident to deliver on our targeted growth and profitability for FY '26. We are on track to achieve revenue growth in the range of 20% to 25% at both stand‑alone and consol level…"
-          }
-        ],
-        "verified": true
-      },
-      "outcome": null,
-      "actual": {
-        "value": 21.6,
-        "unit": "pct",
-        "source": "screener.profit-loss.revenue.Mar2026"
-      },
-      "verdict": "met",
-      "reason": "Guided 20-25%; filed FY26 revenue grew 21.6% (inside the band)"
-    },
-    {
       "metric": "Full year order wins",
       "said_in": "Q4 FY26",
       "horizon": "FY27",
@@ -319,70 +294,6 @@
       "reason": "PBT margin guidance unchanged, horizon FY27 open"
     },
     {
-      "metric": "Order book growth for B&F",
-      "said_in": "Q4 FY26",
-      "horizon": "FY27",
-      "promised": {
-        "text": "Order book growth for B&F: INR 8,000-9,000 crores (FY27)",
-        "kind": "guidance",
-        "sources": [
-          {
-            "doc_id": "KPIL:concall_Q4FY26",
-            "page": 18,
-            "quote": "We expect this business to do more than INR8,000 crores, INR8,500 crores in '27 also, including some solar projects which we are bidding for."
-          }
-        ],
-        "verified": true
-      },
-      "outcome": {
-        "text": "No later mention of 8k-9k target",
-        "kind": "fact",
-        "sources": [
-          {
-            "doc_id": "KPIL:concall_Q1FY27",
-            "page": 16,
-            "quote": "Manish Mohnot: As I said earlier, in the Indian market today, we are not bidding for any project at least from the 6 to 9 month perspective, which is still our collections come back."
-          }
-        ],
-        "verified": true
-      },
-      "actual": null,
-      "verdict": "quietly_dropped",
-      "reason": "No later mention of 8k-9k target"
-    },
-    {
-      "metric": "Standalone earnings improvement (PBT margin)",
-      "said_in": "Q3 FY26",
-      "horizon": "FY26",
-      "promised": {
-        "text": "Standalone earnings improvement (PBT margin): minimum 50 basis points (FY26)",
-        "kind": "guidance",
-        "sources": [
-          {
-            "doc_id": "KPIL:concall_Q3FY26",
-            "page": 5,
-            "quote": "We expect revenue growth for the full year to be approx 25%, accompanied by improvement in earnings of minimum 50 basis points at standalone and 100 basis points in consol."
-          }
-        ],
-        "verified": true
-      },
-      "outcome": {
-        "text": "Standalone PBT margin >50bps achieved",
-        "kind": "fact",
-        "sources": [
-          {
-            "doc_id": "KPIL:concall_Q4FY26",
-            "page": 2,
-            "quote": "our consol PBT margin expanded by 120 basis points to 4.9%, exceeding our guidance range of 4.5% to 4.75%."
-          }
-        ],
-        "verified": true
-      },
-      "actual": null,
-      "verdict": "met",
-      "reason": "Standalone PBT margin >50bps achieved"
-    },
-    {
       "metric": "Consolidated earnings improvement (PBT margin)",
       "said_in": "Q3 FY26",
       "horizon": "FY26",
@@ -413,45 +324,14 @@
       "actual": null,
       "verdict": "met",
       "reason": "Consolidated PBT margin >100bps achieved"
-    },
-    {
-      "metric": "Consolidated order inflow",
-      "said_in": "Q2 FY26",
-      "horizon": "FY26",
-      "promised": {
-        "text": "Consolidated order inflow: ₹25,000 crores plus (FY26)",
-        "kind": "guidance",
-        "sources": [
-          {
-            "doc_id": "KPIL:concall_Q2FY26",
-            "page": 12,
-            "quote": "So I think we stick to our guidance of ₹25,000 crores plus on a consol basis for FY26"
-          }
-        ],
-        "verified": true
-      },
-      "outcome": {
-        "text": "On track per Q3 FY26 call; FY26 not yet closed",
-        "kind": "fact",
-        "sources": [
-          {
-            "doc_id": "KPIL:concall_Q3FY26",
-            "page": 3,
-            "quote": "we are well positioned to meet our annual inflow target of INR26,000-plus crores."
-          }
-        ],
-        "verified": true
-      },
-      "actual": null,
-      "verdict": "pending",
-      "reason": "On track per Q3 FY26 call; FY26 not yet closed"
     }
   ],
   "extra": null,
   "gaps": [
     "Q2 FY27 earnings-call transcript not yet published; latest call covered is Q1 FY27",
     "Q3 FY26 call: 1 unverifiable quote(s) dropped",
-    "Q4 FY26 call: 3 unverifiable quote(s) dropped"
+    "Q4 FY26 call: 3 unverifiable quote(s) dropped",
+    "4 item(s) withheld after analyst review: quote did not support the stated metric or verdict"
   ],
   "cost": {
     "llm_calls": 1,

@@ -12,6 +12,7 @@ from __future__ import annotations
 import json
 import re
 from datetime import datetime, timedelta
+from pathlib import Path
 
 import httpx
 from pydantic import TypeAdapter
@@ -186,13 +187,34 @@ def save_enrichment(filing_id: str, card: m.ResultsCard | m.BioCard | m.OneLiner
                     (filing_id, card.type, card.model_dump_json(), datetime.now(IST).isoformat()))
 
 
+BIO_REVIEW_FILE = Path(__file__).resolve().parents[2] / "config" / "bio_review.json"
+
+
+def apply_bio_review(card: m.BioCard, filing_id: str, review: dict | None = None) -> m.BioCard:
+    """Apply the audited wording corrections in config/bio_review.json (role, effective date, background lines)."""
+    if review is None:
+        review = json.loads(BIO_REVIEW_FILE.read_text("utf-8")) if BIO_REVIEW_FILE.exists() else {}
+    fix = review.get(filing_id[:8])
+    if not fix:
+        return card
+    drop, swap = set(fix.get("drop_background", [])), fix.get("replace_background", {})
+    background = [swap.get(b, b) for b in card.background if b not in drop]
+    upd: dict = {"background": background, "background_source": card.background_source if background else "none"}
+    if "role" in fix:
+        upd["role"] = fix["role"]
+    if "effective" in fix:
+        upd["effective"] = fix["effective"]
+    return card.model_copy(update=upd)
+
+
 def load_enrichments(ids: list[str]) -> dict[str, m.ResultsCard | m.BioCard | m.OneLiner]:
     if not ids:
         return {}
     with db.connect() as con:
         rows = con.execute(f"SELECT filing_id, payload FROM enrichments WHERE filing_id IN ({','.join('?' * len(ids))})",
                            ids).fetchall()
-    return {r["filing_id"]: _ENRICH.validate_python(json.loads(r["payload"])) for r in rows}
+    out = {r["filing_id"]: _ENRICH.validate_python(json.loads(r["payload"])) for r in rows}
+    return {k: apply_bio_review(v, k) if isinstance(v, m.BioCard) else v for k, v in out.items()}
 
 
 _RANK = {"match": 2, "unavailable": 1, "mismatch": 0}

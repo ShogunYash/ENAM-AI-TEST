@@ -1,0 +1,20 @@
+{
+  "_note": "Analyst review of the built promised-vs-delivered items (13 Nov 2026, second-reader audit of every quote). An item listed here is WITHHELD from the served report, never rewritten: either the quote does not support the stated metric/scope, or the verdict (e.g. quietly_dropped) is not established by the calls that were checked. Matching is by said_in + a substring of the metric. Withheld items are disclosed in Research.gaps.",
+  "BAJFINANCE": [
+    {"said_in": "Q4 FY26", "metric": "Credit cost (FY27)", "why": "quote is an analyst's question, not management's guidance"},
+    {"said_in": "Q3 FY26", "metric": "Vehicle finance AUM growth", "why": "quotes do not establish a vehicle-specific promise"},
+    {"said_in": "Q2 FY26", "metric": "Credit cost (full year)", "why": "'quietly dropped' not established by the checked calls"},
+    {"said_in": "Q2 FY26", "metric": "Other operating income growth", "why": "'quietly dropped' not established by the checked calls"}
+  ],
+  "POLYCAB": [
+    {"said_in": "Q1 FY27", "metric": "EBIT margins for FMEG", "why": "promise targets EBITDA; quarterly EBIT was compared"},
+    {"said_in": "Q1 FY27", "metric": "EBIT margins for EPC", "why": "cited passages give no EPC actual"},
+    {"said_in": "Q1 FY27", "metric": "Export top line growth", "why": "quote measures export share of revenue, not growth"}
+  ],
+  "KPIL": [
+    {"said_in": "Q1 FY26", "metric": "FY26 revenue growth (stand", "why": "band fits the consolidated actual only; superseded by a higher floor"},
+    {"said_in": "Q4 FY26", "metric": "Order book growth for B&F", "why": "'quietly dropped' not established: horizon still open"},
+    {"said_in": "Q3 FY26", "metric": "Standalone earnings improvement", "why": "only the consolidated margin is quoted"},
+    {"said_in": "Q2 FY26", "metric": "Consolidated order inflow", "why": "later call raised the target; no final actual to compare"}
+  ]
+}

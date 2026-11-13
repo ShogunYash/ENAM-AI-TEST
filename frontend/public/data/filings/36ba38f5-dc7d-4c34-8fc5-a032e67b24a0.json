@@ -4,11 +4,11 @@
   "company_name": "Astral Ltd",
   "filed_at": "2026-11-05T16:22:52.253000+05:30",
   "headline": "Financial result for the Quarter and Half Year ended 30th September, 2026",
-  "so_what": "Q2 FY27: PAT −6%, Rev +26% YoY",
+  "so_what": "Q2 FY27: PAT −6%, Rev +26% YoY · EBITDA margin 12.6%",
   "category": "results",
   "category_source": "rule",
   "priority": "high",
-  "score": 2.13,
+  "score": 2.114,
   "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a39f8b72-303f-42a4-8750-f413346bd742.pdf",
   "price_reaction": null,
   "enrichment": {
@@ -27,11 +27,11 @@
       },
       {
         "name": "ebitda",
-        "value": null,
-        "prev_q": null,
-        "prev_y": null,
-        "qoq_pct": null,
-        "yoy_pct": null
+        "value": 251.0,
+        "prev_q": 231.2,
+        "prev_y": 256.8,
+        "qoq_pct": 8.6,
+        "yoy_pct": -2.3
       },
       {
         "name": "pbt",
@@ -50,7 +50,7 @@
         "yoy_pct": -5.6
       }
     ],
-    "margin_ebitda_pct": null,
+    "margin_ebitda_pct": 12.6,
     "cross_check": {
       "status": "match",
       "note": null

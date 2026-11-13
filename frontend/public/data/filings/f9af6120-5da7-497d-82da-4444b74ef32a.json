@@ -4,7 +4,7 @@
   "company_name": "UltraTech Cement Ltd",
   "filed_at": "2026-10-19T13:50:19.440000+05:30",
   "headline": "Changes in Board Composition",
-  "so_what": "K. K. Maheshwari resigns as Non-Executive Vice Chairman from 01 Jan",
+  "so_what": "K. K. Maheshwari resigns as Non-Executive Director and Vice Chairman",
   "category": "management_change",
   "category_source": "rule",
   "priority": "medium",
@@ -14,7 +14,7 @@
   "enrichment": {
     "type": "management",
     "person": "K. K. Maheshwari",
-    "role": "Non-Executive Vice Chairman",
+    "role": "Non-Executive Director and Vice Chairman",
     "change": "resigned",
     "background": [],
     "links": [],

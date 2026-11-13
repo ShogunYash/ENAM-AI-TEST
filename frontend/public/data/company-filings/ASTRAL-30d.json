@@ -3,10 +3,10 @@
   "name": "Astral",
   "window": {
     "label": "30d",
-    "start": "2026-10-14T16:12:14.179682+05:30",
-    "end": "2026-11-13T16:12:14.179682+05:30"
+    "start": "2026-10-14T16:58:19.398003+05:30",
+    "end": "2026-11-13T16:58:19.398003+05:30"
   },
-  "generated_at": "2026-11-13T16:12:14.179682+05:30",
+  "generated_at": "2026-11-13T16:58:19.398003+05:30",
   "counts": {
     "total": 13,
     "rule_classified": 12,
@@ -19,11 +19,11 @@
       "company_name": "Astral Ltd",
       "filed_at": "2026-11-05T16:22:52.253000+05:30",
       "headline": "Financial result for the Quarter and Half Year ended 30th September, 2026",
-      "so_what": "Q2 FY27: PAT −6%, Rev +26% YoY",
+      "so_what": "Q2 FY27: PAT −6%, Rev +26% YoY · EBITDA margin 12.6%",
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 2.13,
+      "score": 2.114,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a39f8b72-303f-42a4-8750-f413346bd742.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -42,11 +42,11 @@
           },
           {
             "name": "ebitda",
-            "value": null,
-            "prev_q": null,
-            "prev_y": null,
-            "qoq_pct": null,
-            "yoy_pct": null
+            "value": 251.0,
+            "prev_q": 231.2,
+            "prev_y": 256.8,
+            "qoq_pct": 8.6,
+            "yoy_pct": -2.3
           },
           {
             "name": "pbt",
@@ -65,7 +65,7 @@
             "yoy_pct": -5.6
           }
         ],
-        "margin_ebitda_pct": null,
+        "margin_ebitda_pct": 12.6,
         "cross_check": {
           "status": "match",
           "note": null
@@ -86,7 +86,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 1.189,
+      "score": 1.18,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4017e932-6841-4b4b-8669-50a79f27feb2.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -113,7 +113,7 @@
       "category": "litigation",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.907,
+      "score": 0.9,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/84dc2a7d-1be3-4576-a370-a944f4b2d7bc.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -140,7 +140,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.285,
+        "score": 1.276,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a9cb0ab8-930f-4400-b70b-fbd01640f54d.pdf",
         "price_reaction": {
           "pct_1d": 0.25,
@@ -158,7 +158,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.569,
+        "score": 0.565,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c09898ed-8b2d-47cc-9b13-a049755597f5.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -173,7 +173,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.332,
+        "score": 0.33,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/795ae202-30f1-4db0-9791-17ef2f57a9ea.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -188,7 +188,7 @@
         "category": "dividend",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.495,
+        "score": 0.492,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c6836e5b-deb6-4c0c-9f93-24f735412d9c.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -203,7 +203,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.475,
+        "score": 0.471,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/95ba2ee6-f092-4f27-906f-bb30db524807.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -218,7 +218,7 @@
         "category": "dividend",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.474,
+        "score": 0.471,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7e5ca8e8-4fd9-49cc-ae26-fa1379c898a0.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -263,7 +263,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.099,
+        "score": 0.098,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2684ff83-e0e0-41ce-bcd0-935a714cf850.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -278,7 +278,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.096,
+        "score": 0.095,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1f1205bc-a6f9-4dc6-85af-eed6f74e9dc5.pdf",
         "price_reaction": null,
         "enrichment": null

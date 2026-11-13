@@ -126,3 +126,16 @@ def test_run_task_roundtrip_for_the_prompt(monkeypatch, tmp_path):
 def test_status_and_term_lines_are_not_background(line):
     c = B.check_bio(bio(background=[line]), TEXT + " " + line)
     assert c.background == [] and c.background_source == "none"
+
+
+def test_audited_bio_corrections_apply_by_filing_id():
+    from app import models as m
+    from app.pipeline.results import apply_bio_review
+    card = m.BioCard(person="A B", role="CEO", change="resigned", effective="2027-01-04", links=[],
+                     background=["tribute line", "22 years at X"], background_source="filing")
+    out = apply_bio_review(card, "abcdef12-0000", {"abcdef12": {"drop_background": ["tribute line"], "effective": None,
+                                                                "role": "CEO, Sub"}})
+    assert (out.background, out.effective, out.role) == (["22 years at X"], None, "CEO, Sub")
+    gone = apply_bio_review(card, "abcdef12-0000", {"abcdef12": {"drop_background": ["tribute line", "22 years at X"]}})
+    assert gone.background == [] and gone.background_source == "none"
+    assert apply_bio_review(card, "zzzzzzzz", {"abcdef12": {}}) is card

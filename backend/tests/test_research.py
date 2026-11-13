@@ -373,3 +373,21 @@ def test_premature_met_becomes_pending_on_track(monkeypatch):
     items, _ = pvd.reduce_batch("X", [g], "{}", {"X:concall_Q4FY26": ["promise " * 9], "X:concall_Q1FY27": page}, {g.gid: g}, {})
     assert [i.verdict for i in items] == ["pending"] and "On track per Q1 FY27" in items[0].reason and "FY27 not yet closed" in items[0].reason
     assert items[0].outcome is not None                                      # the reaffirmation stays visible as the latest status
+
+
+def test_analyst_review_withholds_listed_items_and_discloses_it():
+    from app import models as m
+    from app.research import build
+    claim = m.Claim(text="t", kind="guidance", sources=[], verified=True)
+
+    def item(metric, said_in):
+        return m.PvDItem(metric=metric, said_in=said_in, horizon="FY27", promised=claim, outcome=None, actual=None,
+                         verdict="pending", reason="r")
+    r = m.Research(symbol="X", name="X", status="ready", progress=[], generated_at=None, sources=[], snapshot=None,
+                   pvd=[item("Credit cost (FY27)", "Q4 FY26"), item("ROE (FY27)", "Q4 FY26")], extra=None, gaps=[],
+                   cost=m.ResearchCost(llm_calls=0, cached=True))
+    out = build.apply_review(r, {"X": [{"said_in": "Q4 FY26", "metric": "credit cost", "why": "w"}]})
+    assert [p.metric for p in out.pvd] == ["ROE (FY27)"]
+    assert "1 item(s) withheld" in out.gaps[-1]
+    assert build.apply_review(r, {}) is r                       # nothing listed -> untouched
+    assert [p.said_in for p in build.apply_review(r, {"X": [{"said_in": "Q1 FY27", "metric": "credit"}]}).pvd] == ["Q4 FY26"] * 2

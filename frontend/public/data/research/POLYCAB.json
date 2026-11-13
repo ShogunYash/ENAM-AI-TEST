@@ -164,91 +164,6 @@
       "reason": "Horizon FY30 open, still confident of staying within 11-13%."
     },
     {
-      "metric": "EBIT margins for FMEG business",
-      "said_in": "Q1 FY27",
-      "horizon": "FY30",
-      "promised": {
-        "text": "EBIT margins for FMEG business: 8% to 10% (FY30)",
-        "kind": "guidance",
-        "sources": [
-          {
-            "doc_id": "POLYCAB:concall_Q1FY27",
-            "page": 6,
-            "quote": "EBIT margins for the quarter were 8%, very much in line with the milestones laid out under Project Spring, where we target EBITDA margins of 8% to 10% by FY 2030."
-          }
-        ],
-        "verified": true
-      },
-      "outcome": {
-        "text": "Horizon FY30 open, still confident of staying within 8-10%.",
-        "kind": "fact",
-        "sources": [
-          {
-            "doc_id": "POLYCAB:concall_Q2FY27",
-            "page": 9,
-            "quote": "over the longer term, I believe we would end up in that kind of a range of 8% to 10% of the EBITDA margin. Today, we are already at an EBIT margin of 10.1%."
-          }
-        ],
-        "verified": true
-      },
-      "actual": null,
-      "verdict": "pending",
-      "reason": "Horizon FY30 open, still confident of staying within 8-10%."
-    },
-    {
-      "metric": "EBIT margins for EPC business",
-      "said_in": "Q1 FY27",
-      "horizon": null,
-      "promised": {
-        "text": "EBIT margins for EPC business: high single digits",
-        "kind": "guidance",
-        "sources": [
-          {
-            "doc_id": "POLYCAB:concall_Q1FY27",
-            "page": 6,
-            "quote": "Over the medium to long term, we continue to expect sustainable operating margins for the EPC business to remain in the high single-digit range."
-          }
-        ],
-        "verified": true
-      },
-      "outcome": {
-        "text": "Actual 7.2% within high single digits, still confident.",
-        "kind": "fact",
-        "sources": [
-          {
-            "doc_id": "POLYCAB:concall_Q2FY27",
-            "page": 9,
-            "quote": "I think we would like to be in that guidance range, I think, till FY30."
-          }
-        ],
-        "verified": true
-      },
-      "actual": null,
-      "verdict": "pending",
-      "reason": "Actual 7.2% within high single digits, still confident."
-    },
-    {
-      "metric": "Export top line growth guidance",
-      "said_in": "Q1 FY27",
-      "horizon": "FY30",
-      "promised": {
-        "text": "Export top line growth guidance: north of 10% of overall top line by 2030 (FY30)",
-        "kind": "guidance",
-        "sources": [
-          {
-            "doc_id": "POLYCAB:concall_Q1FY27",
-            "page": 19,
-            "quote": "We have given our guidance of going north of 10% of our overall top line by 2030."
-          }
-        ],
-        "verified": true
-      },
-      "outcome": null,
-      "actual": null,
-      "verdict": "pending",
-      "reason": "No evidence of export top line growth, horizon open."
-    },
-    {
       "metric": "Cables and Wires EBITDA margin long‑term guidance",
       "said_in": "Q3 FY26",
       "horizon": "FY30",
@@ -501,7 +416,8 @@
   "extra": null,
   "gaps": [
     "Q2 FY26 call: 1 unverifiable quote(s) dropped",
-    "Q1 FY27 call: 1 unverifiable quote(s) dropped"
+    "Q1 FY27 call: 1 unverifiable quote(s) dropped",
+    "3 item(s) withheld after analyst review: quote did not support the stated metric or verdict"
   ],
   "cost": {
     "llm_calls": 0,

@@ -1,0 +1,10 @@
+{
+  "_note": "Corrections from the 13 Nov 2026 second-reader audit of the management-change cards (filings checked against the BSE attachment). Keyed by the first 8 chars of the filing id. Applied when a card is loaded, so they survive a re-extraction. Only role/effective wording and removal of background lines; nothing is added from outside the filing.",
+  "452905ce": {"role": "Managing Director & CEO, ICICI Life", "drop_background": ["Contributed to growth and success of ICICI Life"]},
+  "51ff9a97": {"effective": null},
+  "6700ab32": {"drop_background": ["Instrumental in strengthening legal and compliance framework"]},
+  "be305212": {"drop_background": ["Contributed significantly across Credit and Business"]},
+  "738f2bee": {"replace_background": {"Distinguished HR leader with over 38 years of experience": "Over 38 years of HR experience"}},
+  "f993b851": {"role": "Non-Executive Director and Vice Chairman"},
+  "f9af6120": {"role": "Non-Executive Director and Vice Chairman"}
+}

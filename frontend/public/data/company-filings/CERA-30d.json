@@ -3,10 +3,10 @@
   "name": "Cera Sanitaryware",
   "window": {
     "label": "30d",
-    "start": "2026-10-14T16:12:14.179682+05:30",
-    "end": "2026-11-13T16:12:14.179682+05:30"
+    "start": "2026-10-14T16:58:19.398003+05:30",
+    "end": "2026-11-13T16:58:19.398003+05:30"
   },
-  "generated_at": "2026-11-13T16:12:14.179682+05:30",
+  "generated_at": "2026-11-13T16:58:19.398003+05:30",
   "counts": {
     "total": 11,
     "rule_classified": 9,
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 1.628,
+      "score": 1.616,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/96d3143f-2c3f-4cdb-a811-869e422ac1ab.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -86,7 +86,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.905,
+      "score": 0.899,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4c5a17a7-fef6-480d-bafd-acf0b72fd969.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -124,7 +124,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.315,
+        "score": 0.312,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e0fdde76-7cb8-43e7-a642-628ffb402027.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -139,7 +139,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.472,
+        "score": 0.468,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/39bd3884-e4c2-46dd-8c4f-71b1dbab4248.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -154,7 +154,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.376,
+        "score": 0.373,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/29421bbb-42b8-471f-95ca-7258e50b1a1e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -184,7 +184,7 @@
         "category": "investor_meetings",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.121,
+        "score": 0.12,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4dbdcf77-227e-4b84-b1de-74b69bdc5ee9.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -214,7 +214,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.013,
+        "score": 0.012,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fc5f7ea6-8ea4-44fc-9bf8-be2113e10ec0.pdf",
         "price_reaction": null,
         "enrichment": null
