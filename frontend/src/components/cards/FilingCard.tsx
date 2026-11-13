@@ -12,6 +12,27 @@ interface FilingCardProps {
   highlight?: boolean
 }
 
+function getManagementHeadline(filing: Filing): string | null {
+  if (filing.enrichment?.type !== 'management') return null
+  const bio = filing.enrichment
+  let text = filing.so_what || `${bio.person} ${bio.change} as ${bio.role}`
+  text = text.replace(/Chief Information Security Officer/i, 'CISO')
+  text = text.replace(/Managing Director/i, 'MD')
+  if (bio.effective && !text.toLowerCase().includes('from')) {
+    const parts = bio.effective.split('-')
+    if (parts.length === 3) {
+      const day = parseInt(parts[2], 10)
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      const month = months[parseInt(parts[1], 10) - 1]
+      const year = parts[0]
+      const currentYear = new Date().getFullYear()
+      const dateStr = parseInt(year, 10) > currentYear ? `${day} ${month} ${year}` : `${day} ${month}`
+      text = `${text} from ${dateStr}`
+    }
+  }
+  return text
+}
+
 export const FilingCard: React.FC<FilingCardProps> = ({
   filing,
   onAskFinn,
@@ -33,6 +54,9 @@ export const FilingCard: React.FC<FilingCardProps> = ({
     price_reaction,
     enrichment,
   } = filing
+
+  const managementHeadline = getManagementHeadline(filing)
+  const displayHeadline = managementHeadline || so_what || headline
 
   const priorityColor =
     priority === 'high'
@@ -75,7 +99,7 @@ export const FilingCard: React.FC<FilingCardProps> = ({
       {/* Headline rewritten as "So what" (≤ 70 chars) */}
       <div className="space-y-1">
         <h3 className="text-[14px] font-semibold text-zinc-100 leading-snug">
-          {so_what || headline}
+          {displayHeadline}
         </h3>
 
         {/* Collapsible raw exchange headline if different */}
