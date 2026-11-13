@@ -243,6 +243,32 @@ export async function fetchPortfolio(): Promise<PortfolioStock[]> {
   ]
 }
 
+export interface CatalogCompany {
+  symbol: string
+  bse_code?: string
+  name: string
+  sector?: string
+  in_portfolio: boolean
+}
+
+export async function fetchCompaniesCatalog(): Promise<CatalogCompany[]> {
+  try {
+    const res = await fetchWithTimeout(`${API_BASE}/companies`, {}, 2000)
+    if (res.ok) {
+      return await res.json()
+    }
+  } catch {}
+
+  try {
+    const res = await fetch('/data/companies.json')
+    if (res.ok) {
+      return await res.json()
+    }
+  } catch {}
+
+  return []
+}
+
 /**
  * Recomputes price and volume alerts from prices.json according to user's custom thresholds
  * (Contract rule: deliberate logic duplication between backend and frontend for offline mode)
