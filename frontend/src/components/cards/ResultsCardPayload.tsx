@@ -21,7 +21,7 @@ export const ResultsCardPayload: React.FC<ResultsCardPayloadProps> = ({ enrichme
   return (
     <div className="mt-2.5 space-y-2">
       {/* Subheader: Period, margin & cross-check status */}
-      <div className="flex items-center justify-between text-[11px] text-zinc-400">
+      <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 text-[11px] text-zinc-400">
         <span className="font-medium text-zinc-300">
           {period} {basis ? `· ${basis}` : ''}
         </span>
@@ -86,10 +86,10 @@ export const ResultsCardPayload: React.FC<ResultsCardPayloadProps> = ({ enrichme
         <table className="w-full text-xs text-left">
           <thead>
             <tr className="border-b border-zinc-800 bg-zinc-900/90 text-[11px] text-zinc-400">
-              <th className="py-1.5 px-2.5 font-medium">Metric</th>
-              <th className="py-1.5 px-2 font-medium text-right">Value</th>
-              <th className="py-1.5 px-2 font-medium text-right">QoQ</th>
-              <th className="py-1.5 px-2.5 font-medium text-right">YoY</th>
+              <th className="py-1.5 px-2 font-medium">Metric</th>
+              <th className="py-1.5 px-1.5 font-medium text-right whitespace-nowrap">₹ Cr</th>
+              <th className="py-1.5 px-1.5 font-medium text-right">QoQ</th>
+              <th className="py-1.5 px-2 font-medium text-right">YoY</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-zinc-800/60">
@@ -100,25 +100,23 @@ export const ResultsCardPayload: React.FC<ResultsCardPayloadProps> = ({ enrichme
 
               return (
                 <tr key={m.name} className="hover:bg-zinc-800/20">
-                  <td className="py-1.5 px-2.5 font-medium text-zinc-300">
+                  <td className="py-1.5 px-2 font-medium text-zinc-300 leading-tight">
                     <span>{label}</span>
                     {m.name.toLowerCase() === 'ebitda' && m.value !== null && (
-                      <span className="ml-1.5 text-[10px] text-zinc-500 font-normal lowercase">
-                        (derived)
-                      </span>
+                      <span className="block text-[10px] text-zinc-500 font-normal lowercase">derived</span>
                     )}
                   </td>
-                  <td className="py-1.5 px-2 font-mono text-zinc-100 text-right tabular-nums">
-                    {formatInrCr(m.value)}
+                  <td className="py-1.5 px-1.5 font-mono text-zinc-100 text-right tabular-nums whitespace-nowrap">
+                    {formatInrCr(m.value).replace(/^₹/, '').replace(/ Cr$/, '')}
                   </td>
                   <td
-                    className={`py-1.5 px-2 font-mono text-right tabular-nums font-medium ${qoq.colorClass}`}
+                    className={`py-1.5 px-1.5 font-mono text-right tabular-nums font-medium whitespace-nowrap ${qoq.colorClass}`}
                   >
                     <span className="mr-0.5 text-[10px]">{qoq.arrow}</span>
                     {qoq.text}
                   </td>
                   <td
-                    className={`py-1.5 px-2.5 font-mono text-right tabular-nums font-medium ${yoy.colorClass}`}
+                    className={`py-1.5 px-2 font-mono text-right tabular-nums font-medium whitespace-nowrap ${yoy.colorClass}`}
                   >
                     <span className="mr-0.5 text-[10px]">{yoy.arrow}</span>
                     {yoy.text}
