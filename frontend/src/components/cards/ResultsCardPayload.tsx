@@ -44,26 +44,26 @@ export const ResultsCardPayload: React.FC<ResultsCardPayloadProps> = ({ enrichme
               <span>Screener mismatch</span>
             </button>
           ) : cross_check && cross_check.status === 'match' ? (
-            /* Verified (p. N) links directly to source PDF */
+            /* Revenue, PBT, PAT checked (p. N) links directly to source PDF */
             source?.doc_url ? (
               <a
                 href={source.doc_url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-[10px] text-emerald-400 hover:text-emerald-300 font-mono underline decoration-emerald-800/80 transition-colors"
-                title={`Open source PDF, page ${source.page ?? 1} (verified against Screener.in)`}
+                title={`Open source PDF, page ${source.page ?? 1} (Revenue, PBT, PAT checked against Screener.in)`}
               >
                 <CheckCircle2 className="w-2.5 h-2.5" />
-                <span>Verified{source.page ? ` (p. ${source.page})` : ''}</span>
+                <span>Revenue, PBT, PAT checked{source.page ? ` (p. ${source.page})` : ''}</span>
                 <ExternalLink className="w-2.5 h-2.5 opacity-80" />
               </a>
             ) : (
               <span
                 className="inline-flex items-center gap-1 text-[10px] text-emerald-400 font-mono"
-                title="Verified against Screener.in"
+                title="Revenue, PBT, PAT checked against Screener.in"
               >
                 <CheckCircle2 className="w-2.5 h-2.5" />
-                <span>Verified{source?.page ? ` (p. ${source.page})` : ''}</span>
+                <span>Revenue, PBT, PAT checked{source?.page ? ` (p. ${source.page})` : ''}</span>
               </span>
             )
           ) : null}
@@ -101,7 +101,12 @@ export const ResultsCardPayload: React.FC<ResultsCardPayloadProps> = ({ enrichme
               return (
                 <tr key={m.name} className="hover:bg-zinc-800/20">
                   <td className="py-1.5 px-2.5 font-medium text-zinc-300">
-                    {label}
+                    <span>{label}</span>
+                    {m.name.toLowerCase() === 'ebitda' && m.value !== null && (
+                      <span className="ml-1.5 text-[10px] text-zinc-500 font-normal lowercase">
+                        (derived)
+                      </span>
+                    )}
                   </td>
                   <td className="py-1.5 px-2 font-mono text-zinc-100 text-right tabular-nums">
                     {formatInrCr(m.value)}
