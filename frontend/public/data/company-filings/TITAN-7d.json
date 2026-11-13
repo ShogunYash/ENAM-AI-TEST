@@ -3,25 +3,57 @@
   "name": "Titan Company",
   "window": {
     "label": "7d",
-    "start": "2026-11-06T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-11-07T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "counts": {
-    "total": 4,
-    "rule_classified": 4,
+    "total": 5,
+    "rule_classified": 5,
     "llm_classified": 0
   },
   "important": [],
   "routine": {
-    "count": 4,
+    "count": 5,
     "by_category": {
-      "earnings_call": 1,
-      "unclassified": 1,
-      "investor_meetings": 1,
-      "results": 1
+      "unclassified": 2,
+      "investor_meetings": 2,
+      "earnings_call": 1
     },
     "items": [
+      {
+        "id": "cf9c4d4e-68f7-4bac-a5f2-2a83f7055887",
+        "symbol": "TITAN",
+        "company_name": "Titan Company Ltd",
+        "filed_at": "2026-11-12T18:41:08.577000+05:30",
+        "headline": "Redemption of Commercial Paper",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/77999e05-06f6-4ed6-9998-f9a775dc5c4f.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "c893c34b-5cd3-48b5-9ab3-c16a2ec40606",
+        "symbol": "TITAN",
+        "company_name": "Titan Company Ltd",
+        "filed_at": "2026-11-12T15:24:10.950000+05:30",
+        "headline": "Schedule of Analyst / Institutional Investor Meeting",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.792,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/71268b4d-2f12-447d-bf1e-28310f485d17.pdf",
+        "price_reaction": {
+          "pct_1d": -0.97,
+          "vol_ratio": 0.78
+        },
+        "enrichment": null
+      },
       {
         "id": "44ddb649-ee18-4e5e-9b01-ae7a40117b21",
         "symbol": "TITAN",
@@ -32,11 +64,11 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.461,
+        "score": 1.247,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/daa6c172-771a-4af5-b4b3-9813fdf7536a.pdf",
         "price_reaction": {
-          "pct_1d": -0.7,
-          "vol_ratio": 1.93
+          "pct_1d": -0.97,
+          "vol_ratio": 0.78
         },
         "enrichment": null
       },
@@ -65,23 +97,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.389,
+        "score": 0.359,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ced01c36-48bf-4c4c-a74b-d17875a41c27.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "f1b76f73-5eea-417e-8914-8caef01ebf2f",
-        "symbol": "TITAN",
-        "company_name": "Titan Company Ltd",
-        "filed_at": "2026-11-06T16:58:57.613000+05:30",
-        "headline": "Newspaper Publication for Unaudited Financial results for the second quarter and half year ended 30th September 2026",
-        "so_what": null,
-        "category": "results",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.595,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a4fd562e-8ef5-4e10-8ba9-d2ae42ae09e1.pdf",
         "price_reaction": null,
         "enrichment": null
       }

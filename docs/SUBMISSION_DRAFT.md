@@ -3,12 +3,13 @@
 **To:** assessment@enam.com  **Subject:** IIT Delhi – AI Engineer - 2027  **Deadline:** 15 Nov 2026
 
 ## Deliverables checklist (status on 13 Nov)
-- [ ] **Deployed mobile link**: not deployed yet (needs the user's Render + Cloudflare Pages accounts; steps in [DEPLOY.md](DEPLOY.md)). Then open it on a phone, airplane-mode test the snapshot.
+- [x] **Deployed mobile link (14 Nov):** PWA https://0405d6eb.enam-ai-test.pages.dev/ , API https://finn-api-7n6q.onrender.com (`/health` ok, mode live). **Phone check still to be done by the owner** (Today 30d, a results card, INFY research, LIVE/SNAPSHOT chip). Render is `autoDeploy: false`: Manual Deploy after the last push.
 - [ ] **GitHub repo reachable by the reviewers**: the repo is **private**; make it public or add the ENAM reviewers. Check `git log -p | grep -E "AIza|gsk_|sk-or"` shows nothing (last checked: clean).
 - [ ] **AI build history**: `docs/ai-history/README.md` has the index; replace the `<...>` links (ChatGPT and Antigravity share links; scrubbed Claude Code transcripts).
 - [x] **Demo check (13 Nov):** 300 backend tests, lint clean, BSE / screener.in / Yahoo reachable, frontend builds, no mock data in the snapshot.
 - [x] Titan results card fixed (13 Nov): all 17 results cards match screener.in.
-- [ ] **Re-run before sending:** refresh snapshot + seed (`DEPLOY.md` step 0), `GET /debug/sources` on Render.
+- [x] `GET /debug/sources` on Render (14 Nov): **BSE 403 (blocked), screener.in OK, yfinance OK**. Consequence stated in the writeup: pre-built research and Push are unaffected; live research on an unseen ticker is partial (financial snapshot plus explicit gaps) because transcripts sit on BSE.
+- [ ] **Re-run before sending:** after the last push, Manual Deploy on Render and confirm `/health` and the Pages site.
 - [ ] **Email** (below): fill the URLs and your name.
 
 ## Email
@@ -38,7 +39,7 @@ settles it. KPIL guided at least 25% FY26 revenue growth; its filed consolidated
 **Where I'd take it next.** Evaluate verdicts against analyst-labelled examples; narrative-vs-numbers (drafted); intraday filings over a websocket;
 portfolio-level drift in management tone.
 
-Known limits are in the README (free-tier quotas can make a live build of an unseen ticker partial, with an explicit gap shown).
+Known limits are in the README: free-tier quotas, and BSE blocks cloud IPs (HTTP 403 from the Render host), so a live research build on an unseen ticker returns the screener.in financial snapshot with explicit gaps instead of the transcript-based promised-vs-delivered; the four pre-built reports and all of Push are unaffected because they ship in the committed snapshot and seed.
 
 Thanks,
 `<your name>`

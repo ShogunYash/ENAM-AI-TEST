@@ -3,10 +3,10 @@
   "name": "Astral",
   "window": {
     "label": "7d",
-    "start": "2026-11-06T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-11-07T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "counts": {
     "total": 1,
     "rule_classified": 1,
@@ -29,11 +29,11 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.276,
+        "score": 1.147,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a9cb0ab8-930f-4400-b70b-fbd01640f54d.pdf",
         "price_reaction": {
-          "pct_1d": 0.25,
-          "vol_ratio": 1.09
+          "pct_1d": -0.08,
+          "vol_ratio": 1.01
         },
         "enrichment": null
       }

@@ -3,46 +3,20 @@
   "name": "Asian Paints",
   "window": {
     "label": "7d",
-    "start": "2026-11-06T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-11-07T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "counts": {
-    "total": 4,
-    "rule_classified": 4,
+    "total": 1,
+    "rule_classified": 1,
     "llm_classified": 0
   },
-  "important": [
-    {
-      "id": "d1aaeb85-6ca1-4b7d-9c05-4eb4916c7455",
-      "symbol": "ASIANPAINT",
-      "company_name": "Asian Paints Ltd",
-      "filed_at": "2026-11-06T21:58:36.363000+05:30",
-      "headline": "This is to inform you that the shareholders of the Company have today, i.e. 6th November 2026 approved the appointment of Mr. Leo Puri as an Independent Director of the Company. Mr. Leo ....",
-      "so_what": "Leo Puri appointed as Independent Director from 07 Sep",
-      "category": "management_change",
-      "category_source": "rule",
-      "priority": "medium",
-      "score": 1.562,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c6c189db-e010-4c6e-a997-b50d6d33767a.pdf",
-      "price_reaction": null,
-      "enrichment": {
-        "type": "management",
-        "person": "Leo Puri",
-        "role": "Independent Director",
-        "change": "appointed",
-        "background": [],
-        "links": [],
-        "effective": "2026-09-07",
-        "background_source": "none"
-      }
-    }
-  ],
+  "important": [],
   "routine": {
-    "count": 3,
+    "count": 1,
     "by_category": {
-      "investor_meetings": 1,
-      "postal_ballot": 2
+      "investor_meetings": 1
     },
     "items": [
       {
@@ -55,38 +29,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.401,
+        "score": 0.37,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8a988798-8c55-42be-a6ce-6cb97abd6d5c.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "4309c275-8b2b-4c7e-ab79-d462ab07815f",
-        "symbol": "ASIANPAINT",
-        "company_name": "Asian Paints Ltd",
-        "filed_at": "2026-11-06T21:41:36.657000+05:30",
-        "headline": "Please find enclosed the voting results of Postal Ballot pursuant to Regulation 44 of SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015.",
-        "so_what": null,
-        "category": "postal_ballot",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.208,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/dd885c0b-f490-4da2-9fcc-a0ef6cfb76a3.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "4e64425b-a1b2-4110-9300-00521a8fab34",
-        "symbol": "ASIANPAINT",
-        "company_name": "Asian Paints Ltd",
-        "filed_at": "2026-11-06T21:37:13.330000+05:30",
-        "headline": "Please find enclosed the scrutinizer''s report on the remote e-Voting and the voting results of Postal Ballot pursuant to Regulation 30 and Regulation 44 of the SEBI (Listing Obligations ....",
-        "so_what": null,
-        "category": "postal_ballot",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.208,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ddc90afe-51c7-4e86-984c-dbb5d641c44e.pdf",
         "price_reaction": null,
         "enrichment": null
       }

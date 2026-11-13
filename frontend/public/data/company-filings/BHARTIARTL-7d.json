@@ -3,10 +3,10 @@
   "name": "Bharti Airtel",
   "window": {
     "label": "7d",
-    "start": "2026-11-06T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-11-07T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "counts": {
     "total": 2,
     "rule_classified": 2,
@@ -30,7 +30,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.674,
+        "score": 1.545,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1ff3e14f-7e97-4074-89c7-049408721c5e.pdf",
         "price_reaction": {
           "pct_1d": 0.48,
@@ -48,7 +48,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.67,
+        "score": 0.619,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ae574f7a-4573-459b-9090-59d84bf2d02a.pdf",
         "price_reaction": {
           "pct_1d": 0.48,

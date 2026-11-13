@@ -3,14 +3,14 @@
   "name": "Reliance Industries",
   "window": {
     "label": "30d",
-    "start": "2026-10-14T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-10-15T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "counts": {
     "total": 20,
-    "rule_classified": 13,
-    "llm_classified": 7
+    "rule_classified": 15,
+    "llm_classified": 5
   },
   "important": [
     {
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.546,
+      "score": 0.504,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/880087f6-7ecc-40a9-8cac-de48d4616b25.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -86,7 +86,7 @@
       "category": "m_and_a",
       "category_source": "llm",
       "priority": "high",
-      "score": 0.347,
+      "score": 0.32,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bc9fc5d1-9c04-4a88-b807-79d27dd63697.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -104,7 +104,7 @@
       "category": "fund_raise",
       "category_source": "llm",
       "priority": "high",
-      "score": 0.217,
+      "score": 0.201,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/70bfc361-3c9a-45d0-8240-e1b544debd01.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -122,55 +122,19 @@
       "category": "fund_raise",
       "category_source": "llm",
       "priority": "high",
-      "score": 0.108,
+      "score": 0.1,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0056a3dc-6357-48ff-a037-f1b206624331.pdf",
       "price_reaction": null,
       "enrichment": {
         "type": "oneliner",
         "text": "JPL finalized IPO issue price at ₹1,119 per equity share."
       }
-    },
-    {
-      "id": "8f0e4798-3443-4095-82a1-4d6b0029483f",
-      "symbol": "RELIANCE",
-      "company_name": "Reliance Industries Ltd",
-      "filed_at": "2026-10-14T20:12:37.070000+05:30",
-      "headline": "Proposed Initial Public Offer of Jio Platforms Limited",
-      "so_what": "Jio Platforms approved IPO price band ₹1,065 to ₹1,119 per share.",
-      "category": "fund_raise",
-      "category_source": "llm",
-      "priority": "high",
-      "score": 0.011,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc57bd43-7392-405d-b507-f1a83de93453.pdf",
-      "price_reaction": null,
-      "enrichment": {
-        "type": "oneliner",
-        "text": "Jio Platforms approved IPO price band ₹1,065 to ₹1,119 per share."
-      }
-    },
-    {
-      "id": "fa7c81b8-d6f0-424d-9f8e-f40b710d9f8a",
-      "symbol": "RELIANCE",
-      "company_name": "Reliance Industries Ltd",
-      "filed_at": "2026-10-14T18:35:09.313000+05:30",
-      "headline": "Proposed Initial Public Offer of Jio Platforms Limited - filing of the Red Herring Prospectus",
-      "so_what": "Jio Platforms filed RHP for IPO opening on October 21, 2026.",
-      "category": "fund_raise",
-      "category_source": "llm",
-      "priority": "high",
-      "score": 0.01,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9f9c9b25-75e8-45ba-83a4-e230e7657f54.pdf",
-      "price_reaction": null,
-      "enrichment": {
-        "type": "oneliner",
-        "text": "Jio Platforms filed RHP for IPO opening on October 21, 2026."
-      }
     }
   ],
   "routine": {
-    "count": 14,
+    "count": 16,
     "by_category": {
-      "investor_meetings": 1,
+      "investor_meetings": 3,
       "credit_rating": 2,
       "earnings_call": 2,
       "results": 4,
@@ -178,6 +142,36 @@
       "press_release": 1
     },
     "items": [
+      {
+        "id": "5fd0fe11-f12c-44ab-8be0-16d1748e154e",
+        "symbol": "RELIANCE",
+        "company_name": "Reliance Industries Ltd",
+        "filed_at": "2026-11-13T18:23:17.417000+05:30",
+        "headline": "Please note that the Company executives will be participating in the Institutional Investors'' Meeting - Morgan Stanley 25th Annual Asia-Pacific Summit, scheduled to be held on November ....",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.936,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3f614a9e-94b0-42ef-8145-ba0055ba7be5.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "874ba6d8-144c-4f43-8a43-cec2927ea144",
+        "symbol": "RELIANCE",
+        "company_name": "Reliance Industries Ltd",
+        "filed_at": "2026-11-12T20:22:14.477000+05:30",
+        "headline": "Please note that the Company executives will be participating in the Institutional Investors'' Meeting - JM Financial India Conference, scheduled to be held on November 17, 2026 at Mumbai. ....",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.757,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/55f9d4f5-8638-4669-abdb-7cc4127221fc.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
       {
         "id": "2fbab300-f5f6-4422-a266-3d6545f8918e",
         "symbol": "RELIANCE",
@@ -188,7 +182,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.203,
+        "score": 0.187,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bab324f6-6fab-42fc-8b79-a3881f4fb7c7.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -203,7 +197,7 @@
         "category": "credit_rating",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.389,
+        "score": 0.359,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9a4b00d7-4978-4c75-beb2-78403163cb8e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -218,7 +212,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.133,
+        "score": 0.122,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e997741-4d35-4188-933a-cf020fb9c816.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -233,7 +227,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.101,
+        "score": 0.093,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0f665e67-b13f-4624-9278-3f4183d817eb.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -248,7 +242,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.121,
+        "score": 0.112,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0dc8ebe7-5e2d-4946-85ee-1e536c461a71.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -263,7 +257,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.121,
+        "score": 0.112,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/aacc5fc7-25e5-4901-b682-d9911fe1d21b.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -278,7 +272,7 @@
         "category": "results",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.121,
+        "score": 0.112,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9d4cb3ed-a184-4662-91fc-f4112ce354b7.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -293,7 +287,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.06,
+        "score": 0.056,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/abf880ad-357c-4ff9-b6d7-83c1dcf59cba.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -323,7 +317,7 @@
         "category": "press_release",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.016,
+        "score": 0.014,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3667a6e5-6d63-45c2-b94e-d09043e401b4.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -338,7 +332,7 @@
         "category": "credit_rating",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.015,
+        "score": 0.014,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/77e3ec52-056d-4103-8388-14b48756f70d.pdf",
         "price_reaction": null,
         "enrichment": null

@@ -3,19 +3,53 @@
   "name": "Tata Steel",
   "window": {
     "label": "3d",
-    "start": "2026-11-10T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-11-11T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "counts": {
-    "total": 0,
-    "rule_classified": 0,
+    "total": 2,
+    "rule_classified": 2,
     "llm_classified": 0
   },
   "important": [],
   "routine": {
-    "count": 0,
-    "by_category": {},
-    "items": []
+    "count": 2,
+    "by_category": {
+      "earnings_call": 1,
+      "investor_meetings": 1
+    },
+    "items": [
+      {
+        "id": "fa3d44be-213e-498d-92f3-f32f4a7b1f5b",
+        "symbol": "TATASTEEL",
+        "company_name": "Tata Steel Ltd",
+        "filed_at": "2026-11-12T22:09:38.290000+05:30",
+        "headline": "Transcript of ''Tata Steel 2QFY27 Earnings Discussion''",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 1.54,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/eeedbcb3-2b63-4718-b5b7-b498eedf2b4e.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "782e8cb6-906c-4a17-a08e-2ac89389e272",
+        "symbol": "TATASTEEL",
+        "company_name": "Tata Steel Ltd",
+        "filed_at": "2026-11-12T16:48:53.923000+05:30",
+        "headline": "Intimation of Schedule of Analyst/ Institutional Investor Meeting under the SEBI Listing Regulations",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.731,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fcd5e6ba-794e-420b-ae7a-17a4c8df68e3.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
   }
 }

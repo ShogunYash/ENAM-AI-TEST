@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "30d",
-    "start": "2026-10-14T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-10-15T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "companies": [
     {
       "symbol": "BAJFINANCE",
@@ -28,17 +28,61 @@
         "category": "fund_raise",
         "category_source": "rule",
         "priority": "high",
-        "score": 6.624,
+        "score": 8.328,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
-        "price_reaction": null,
+        "price_reaction": {
+          "pct_1d": 3.36,
+          "vol_ratio": 1.21
+        },
         "enrichment": {
           "type": "oneliner",
           "text": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price."
         }
       },
       "price": {
-        "pct_1d": 1.31,
-        "vol_ratio": 0.96
+        "pct_1d": 3.36,
+        "vol_ratio": 1.21
+      }
+    },
+    {
+      "symbol": "HDFCBANK",
+      "name": "HDFC Bank",
+      "sector": "Private-sector banking",
+      "in_portfolio": true,
+      "total": 17,
+      "material": 4,
+      "categories": {
+        "management_change": 4
+      },
+      "top": {
+        "id": "44ba0161-d9e4-4bd1-aae7-eb3bc46319dd",
+        "symbol": "HDFCBANK",
+        "company_name": "HDFC Bank Ltd",
+        "filed_at": "2026-11-13T16:30:11.850000+05:30",
+        "headline": "Re-appointment of Mr. V. Srinivasa Rangan as the Whole-time Director(designated as Executive Director) of HDFC Bank Limited.",
+        "so_what": null,
+        "category": "management_change",
+        "category_source": "rule",
+        "priority": "medium",
+        "score": 6.891,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "management",
+          "person": "Mr. V. Srinivasa Rangan",
+          "role": "Whole-time Director (designated as Executive Director)",
+          "change": "appointed",
+          "background": [
+            "Not related to any other Director or Key Managerial Personnel"
+          ],
+          "links": [],
+          "effective": "2026-11-23",
+          "background_source": "filing"
+        }
+      },
+      "price": {
+        "pct_1d": 0.71,
+        "vol_ratio": 1.0
       }
     },
     {
@@ -46,7 +90,7 @@
       "name": "Tata Steel",
       "sector": "Steel",
       "in_portfolio": true,
-      "total": 18,
+      "total": 20,
       "material": 7,
       "categories": {
         "m_and_a": 5,
@@ -63,7 +107,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 3.258,
+        "score": 3.007,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2e7c8bf8-d794-4a55-b670-97951b28e0e8.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -117,8 +161,8 @@
         }
       },
       "price": {
-        "pct_1d": 2.4,
-        "vol_ratio": 1.4
+        "pct_1d": -0.68,
+        "vol_ratio": 0.86
       }
     },
     {
@@ -144,7 +188,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 2.159,
+        "score": 1.992,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e4d02b37-bd6b-4b11-ac89-98eaa14a7290.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -207,7 +251,7 @@
       "name": "Titan Company",
       "sector": "Jewellery and retail",
       "in_portfolio": true,
-      "total": 18,
+      "total": 20,
       "material": 3,
       "categories": {
         "management_change": 1,
@@ -224,7 +268,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 2.127,
+        "score": 1.964,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/86009cba-ca03-4d35-bad8-b1988cfcff13.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -278,8 +322,8 @@
         }
       },
       "price": {
-        "pct_1d": -0.7,
-        "vol_ratio": 1.93
+        "pct_1d": -0.97,
+        "vol_ratio": 0.78
       }
     },
     {
@@ -303,7 +347,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 2.117,
+        "score": 1.954,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7e17b4ed-a5e2-4625-9e2b-2af590350caa.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -383,7 +427,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 2.114,
+        "score": 1.951,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a39f8b72-303f-42a4-8750-f413346bd742.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -437,8 +481,8 @@
         }
       },
       "price": {
-        "pct_1d": 0.25,
-        "vol_ratio": 1.09
+        "pct_1d": -0.08,
+        "vol_ratio": 1.01
       }
     },
     {
@@ -463,7 +507,7 @@
         "category": "litigation",
         "category_source": "llm",
         "priority": "medium",
-        "score": 1.771,
+        "score": 1.634,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/53496491-fd25-4172-9f9f-79bf088ea9c5.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -472,8 +516,8 @@
         }
       },
       "price": {
-        "pct_1d": 0.39,
-        "vol_ratio": 0.53
+        "pct_1d": -0.04,
+        "vol_ratio": 0.37
       }
     },
     {
@@ -497,7 +541,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.616,
+        "score": 1.492,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/96d3143f-2c3f-4cdb-a811-869e422ac1ab.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -551,8 +595,8 @@
         }
       },
       "price": {
-        "pct_1d": 3.35,
-        "vol_ratio": 1.55
+        "pct_1d": 1.69,
+        "vol_ratio": 1.14
       }
     },
     {
@@ -576,7 +620,7 @@
         "category": "management_change",
         "category_source": "rule",
         "priority": "medium",
-        "score": 1.562,
+        "score": 1.441,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c6c189db-e010-4c6e-a997-b50d6d33767a.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -615,7 +659,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.303,
+        "score": 1.203,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1eaa8912-06ca-45d4-8a04-03df01b47497.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -678,7 +722,7 @@
       "name": "Persistent Systems",
       "sector": "IT services",
       "in_portfolio": true,
-      "total": 22,
+      "total": 21,
       "material": 10,
       "categories": {
         "fund_raise": 7,
@@ -695,7 +739,7 @@
         "category": "fund_raise",
         "category_source": "rule",
         "priority": "medium",
-        "score": 1.005,
+        "score": 0.928,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/73a8c540-4229-4137-8e2b-5aae04fa0a35.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -704,8 +748,8 @@
         }
       },
       "price": {
-        "pct_1d": -1.1,
-        "vol_ratio": 0.53
+        "pct_1d": 0.95,
+        "vol_ratio": 0.48
       }
     },
     {
@@ -730,7 +774,7 @@
         "category": "m_and_a",
         "category_source": "llm",
         "priority": "high",
-        "score": 0.572,
+        "score": 0.528,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/13e50739-50e7-4b5a-8dba-ac92ece6d35f.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -739,8 +783,8 @@
         }
       },
       "price": {
-        "pct_1d": 0.65,
-        "vol_ratio": 1.18
+        "pct_1d": -1.25,
+        "vol_ratio": 0.99
       }
     },
     {
@@ -749,11 +793,11 @@
       "sector": "Energy and diversified businesses",
       "in_portfolio": true,
       "total": 20,
-      "material": 6,
+      "material": 4,
       "categories": {
         "results": 1,
         "m_and_a": 1,
-        "fund_raise": 4
+        "fund_raise": 2
       },
       "top": {
         "id": "3d90a81b-52f2-427a-b1f7-27f545cf1ca5",
@@ -765,7 +809,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.546,
+        "score": 0.504,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/880087f6-7ecc-40a9-8cac-de48d4616b25.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -819,8 +863,8 @@
         }
       },
       "price": {
-        "pct_1d": 0.83,
-        "vol_ratio": 0.82
+        "pct_1d": 0.32,
+        "vol_ratio": 0.64
       }
     },
     {
@@ -828,12 +872,11 @@
       "name": "Dixon Technologies",
       "sector": "Electronics manufacturing",
       "in_portfolio": false,
-      "total": 13,
-      "material": 3,
+      "total": 12,
+      "material": 2,
       "categories": {
         "results": 1,
-        "management_change": 1,
-        "credit_rating": 1
+        "management_change": 1
       },
       "top": {
         "id": "096f1e5a-3667-42a5-b4e2-ba8272ee52fc",
@@ -845,7 +888,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.528,
+        "score": 0.488,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d7b8fffb-7a5f-4efa-9241-482c5d765f1d.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -908,7 +951,7 @@
       "name": "Sun Pharmaceutical Industries",
       "sector": "Pharmaceuticals",
       "in_portfolio": true,
-      "total": 16,
+      "total": 14,
       "material": 2,
       "categories": {
         "results": 1,
@@ -924,7 +967,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.518,
+        "score": 0.478,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/658231ad-7203-4355-be99-2a162b722c0c.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -978,8 +1021,8 @@
         }
       },
       "price": {
-        "pct_1d": -0.12,
-        "vol_ratio": 1.03
+        "pct_1d": -0.91,
+        "vol_ratio": 1.09
       }
     },
     {
@@ -1002,7 +1045,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.419,
+        "score": 0.387,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/12ace952-a89b-4098-8bd0-e247f6e2a776.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1056,50 +1099,8 @@
         }
       },
       "price": {
-        "pct_1d": 0.21,
-        "vol_ratio": 0.79
-      }
-    },
-    {
-      "symbol": "HDFCBANK",
-      "name": "HDFC Bank",
-      "sector": "Private-sector banking",
-      "in_portfolio": true,
-      "total": 14,
-      "material": 2,
-      "categories": {
-        "management_change": 2
-      },
-      "top": {
-        "id": "be305212-ae95-4757-93fe-23429494a3c8",
-        "symbol": "HDFCBANK",
-        "company_name": "HDFC Bank Ltd",
-        "filed_at": "2026-10-31T22:14:41.877000+05:30",
-        "headline": "Disclosure under Regulation 30 read with Clause 7 of Paragraph A of Part A of Schedule III of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-        "so_what": null,
-        "category": "management_change",
-        "category_source": "rule",
-        "priority": "medium",
-        "score": 0.391,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b36ff756-1cf7-44a3-9b2c-4583e7e0e792.pdf",
-        "price_reaction": null,
-        "enrichment": {
-          "type": "management",
-          "person": "Sanjay D’Souza",
-          "role": "Group Head – Business Banking, Emerging & Micro Enterprises Group",
-          "change": "retired",
-          "background": [
-            "Key architect of the Bank’s SME business",
-            "Nearly 27 years of service"
-          ],
-          "links": [],
-          "effective": "2026-10-31",
-          "background_source": "filing"
-        }
-      },
-      "price": {
-        "pct_1d": 1.06,
-        "vol_ratio": 1.54
+        "pct_1d": -1.77,
+        "vol_ratio": 0.43
       }
     },
     {
@@ -1123,7 +1124,7 @@
         "category": "litigation",
         "category_source": "rule",
         "priority": "medium",
-        "score": 0.339,
+        "score": 0.313,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c3d1ba29-6132-47b7-9f3b-79a294e53189.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1141,7 +1142,7 @@
       "name": "Hindustan Unilever",
       "sector": "FMCG",
       "in_portfolio": false,
-      "total": 16,
+      "total": 17,
       "material": 1,
       "categories": {
         "results": 1
@@ -1156,7 +1157,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.313,
+        "score": 0.289,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f0d1483f-551a-46d8-ade7-7a390baacc1c.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1235,7 +1236,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.262,
+        "score": 0.242,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fca20bad-7bfe-438f-a526-d9f42ccf0346.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1298,7 +1299,7 @@
       "name": "Infosys",
       "sector": "IT services",
       "in_portfolio": true,
-      "total": 15,
+      "total": 16,
       "material": 1,
       "categories": {
         "results": 1
@@ -1313,7 +1314,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.105,
+        "score": 0.097,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26c12463-d44e-4050-bd47-b53cc294b4e0.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1367,8 +1368,8 @@
         }
       },
       "price": {
-        "pct_1d": 0.08,
-        "vol_ratio": 0.55
+        "pct_1d": -0.33,
+        "vol_ratio": 0.45
       }
     },
     {
@@ -1376,10 +1377,10 @@
       "name": "KEI Industries",
       "sector": "Wires and cables",
       "in_portfolio": true,
-      "total": 15,
-      "material": 4,
+      "total": 13,
+      "material": 3,
       "categories": {
-        "credit_rating": 2,
+        "credit_rating": 1,
         "results": 2
       },
       "top": {
@@ -1392,7 +1393,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.067,
+        "score": 0.062,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4567cd4f-9037-41ac-9e8d-fd10ff9e2f51.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1446,8 +1447,8 @@
         }
       },
       "price": {
-        "pct_1d": 0.09,
-        "vol_ratio": 0.37
+        "pct_1d": 3.23,
+        "vol_ratio": 1.06
       }
     },
     {
@@ -1471,7 +1472,7 @@
         "category": "credit_rating",
         "category_source": "rule",
         "priority": "medium",
-        "score": 0.048,
+        "score": 0.044,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/94d9e62f-952d-4046-8379-bbdd1761f3ab.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1482,85 +1483,6 @@
       "price": {
         "pct_1d": -0.4,
         "vol_ratio": 0.64
-      }
-    },
-    {
-      "symbol": "ULTRACEMCO",
-      "name": "UltraTech Cement",
-      "sector": "Cement",
-      "in_portfolio": true,
-      "total": 16,
-      "material": 3,
-      "categories": {
-        "management_change": 2,
-        "results": 1
-      },
-      "top": {
-        "id": "ec29d900-b6b1-4b6f-8f25-91b061275d31",
-        "symbol": "ULTRACEMCO",
-        "company_name": "UltraTech Cement Ltd",
-        "filed_at": "2026-10-19T13:47:54.767000+05:30",
-        "headline": "Unaudited Financial Results for the quarter and half year ended 30th September, 2026",
-        "so_what": "Q2 FY27: PAT +21%, Rev +19% YoY",
-        "category": "results",
-        "category_source": "rule",
-        "priority": "high",
-        "score": 0.041,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59654d86-af0c-4fe5-bfb9-1a148f65fd6c.pdf",
-        "price_reaction": null,
-        "enrichment": {
-          "type": "results",
-          "period": "Q2 FY27",
-          "basis": "consolidated",
-          "unit": "INR_CR",
-          "metrics": [
-            {
-              "name": "revenue",
-              "value": 23295.07,
-              "prev_q": 24648.2,
-              "prev_y": 19606.93,
-              "qoq_pct": -5.5,
-              "yoy_pct": 18.8
-            },
-            {
-              "name": "ebitda",
-              "value": null,
-              "prev_q": null,
-              "prev_y": null,
-              "qoq_pct": null,
-              "yoy_pct": null
-            },
-            {
-              "name": "pbt",
-              "value": 2058.58,
-              "prev_q": 3480.43,
-              "prev_y": 1655.83,
-              "qoq_pct": -40.9,
-              "yoy_pct": 24.3
-            },
-            {
-              "name": "pat",
-              "value": 1501.38,
-              "prev_q": 2603.72,
-              "prev_y": 1237.98,
-              "qoq_pct": -42.3,
-              "yoy_pct": 21.3
-            }
-          ],
-          "margin_ebitda_pct": null,
-          "cross_check": {
-            "status": "match",
-            "note": null
-          },
-          "source": {
-            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59654d86-af0c-4fe5-bfb9-1a148f65fd6c.pdf",
-            "page": 7
-          }
-        }
-      },
-      "price": {
-        "pct_1d": 0.71,
-        "vol_ratio": 0.93
       }
     },
     {
@@ -1583,7 +1505,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.041,
+        "score": 0.038,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b8e22e9-8b97-4151-a045-51669fdac2ae.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1637,8 +1559,87 @@
         }
       },
       "price": {
-        "pct_1d": 0.53,
-        "vol_ratio": 0.71
+        "pct_1d": -2.01,
+        "vol_ratio": 0.56
+      }
+    },
+    {
+      "symbol": "ULTRACEMCO",
+      "name": "UltraTech Cement",
+      "sector": "Cement",
+      "in_portfolio": true,
+      "total": 17,
+      "material": 3,
+      "categories": {
+        "management_change": 2,
+        "results": 1
+      },
+      "top": {
+        "id": "ec29d900-b6b1-4b6f-8f25-91b061275d31",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-10-19T13:47:54.767000+05:30",
+        "headline": "Unaudited Financial Results for the quarter and half year ended 30th September, 2026",
+        "so_what": "Q2 FY27: PAT +21%, Rev +19% YoY",
+        "category": "results",
+        "category_source": "rule",
+        "priority": "high",
+        "score": 0.037,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59654d86-af0c-4fe5-bfb9-1a148f65fd6c.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "results",
+          "period": "Q2 FY27",
+          "basis": "consolidated",
+          "unit": "INR_CR",
+          "metrics": [
+            {
+              "name": "revenue",
+              "value": 23295.07,
+              "prev_q": 24648.2,
+              "prev_y": 19606.93,
+              "qoq_pct": -5.5,
+              "yoy_pct": 18.8
+            },
+            {
+              "name": "ebitda",
+              "value": null,
+              "prev_q": null,
+              "prev_y": null,
+              "qoq_pct": null,
+              "yoy_pct": null
+            },
+            {
+              "name": "pbt",
+              "value": 2058.58,
+              "prev_q": 3480.43,
+              "prev_y": 1655.83,
+              "qoq_pct": -40.9,
+              "yoy_pct": 24.3
+            },
+            {
+              "name": "pat",
+              "value": 1501.38,
+              "prev_q": 2603.72,
+              "prev_y": 1237.98,
+              "qoq_pct": -42.3,
+              "yoy_pct": 21.3
+            }
+          ],
+          "margin_ebitda_pct": null,
+          "cross_check": {
+            "status": "match",
+            "note": null
+          },
+          "source": {
+            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59654d86-af0c-4fe5-bfb9-1a148f65fd6c.pdf",
+            "page": 7
+          }
+        }
+      },
+      "price": {
+        "pct_1d": -0.2,
+        "vol_ratio": 0.52
       }
     },
     {
@@ -1646,7 +1647,7 @@
       "name": "Nestle India",
       "sector": "FMCG",
       "in_portfolio": false,
-      "total": 5,
+      "total": 4,
       "material": 2,
       "categories": {
         "management_change": 1,
@@ -1662,7 +1663,7 @@
         "category": "management_change",
         "category_source": "rule",
         "priority": "medium",
-        "score": 0.038,
+        "score": 0.035,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0d21e169-46c3-4d2d-aa05-0b3c9c1086bf.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1701,7 +1702,7 @@
         "category": "m_and_a",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.014,
+        "score": 0.013,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ad952e13-3c76-410e-81f8-4fe3d108a196.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1710,8 +1711,8 @@
         }
       },
       "price": {
-        "pct_1d": -0.13,
-        "vol_ratio": 0.7
+        "pct_1d": -1.2,
+        "vol_ratio": 0.37
       }
     }
   ]

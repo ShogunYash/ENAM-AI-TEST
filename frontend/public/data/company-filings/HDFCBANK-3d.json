@@ -3,19 +3,91 @@
   "name": "HDFC Bank",
   "window": {
     "label": "3d",
-    "start": "2026-11-10T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-11-11T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "counts": {
-    "total": 0,
-    "rule_classified": 0,
+    "total": 3,
+    "rule_classified": 3,
     "llm_classified": 0
   },
-  "important": [],
+  "important": [
+    {
+      "id": "44ba0161-d9e4-4bd1-aae7-eb3bc46319dd",
+      "symbol": "HDFCBANK",
+      "company_name": "HDFC Bank Ltd",
+      "filed_at": "2026-11-13T16:30:11.850000+05:30",
+      "headline": "Re-appointment of Mr. V. Srinivasa Rangan as the Whole-time Director(designated as Executive Director) of HDFC Bank Limited.",
+      "so_what": null,
+      "category": "management_change",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 6.891,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "management",
+        "person": "Mr. V. Srinivasa Rangan",
+        "role": "Whole-time Director (designated as Executive Director)",
+        "change": "appointed",
+        "background": [
+          "Not related to any other Director or Key Managerial Personnel"
+        ],
+        "links": [],
+        "effective": "2026-11-23",
+        "background_source": "filing"
+      }
+    },
+    {
+      "id": "16286674-572c-48bc-a47c-b8a9d5c07363",
+      "symbol": "HDFCBANK",
+      "company_name": "HDFC Bank Ltd",
+      "filed_at": "2026-11-12T17:27:27.333000+05:30",
+      "headline": "Approval from the Reserve Bank of India for re-appointment of Mr. V. Srinivasa Rangan as the Whole-time Director (designated as Executive Director) of HDFC Bank Limited",
+      "so_what": null,
+      "category": "management_change",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 5.52,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6df1f05c-9926-47ce-9896-94c41bdb71ab.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "management",
+        "person": "Mr. V. Srinivasa Rangan",
+        "role": "Whole-time Director (designated as Executive Director)",
+        "change": "appointed",
+        "background": [],
+        "links": [],
+        "effective": "2026-11-23",
+        "background_source": "none"
+      }
+    }
+  ],
   "routine": {
-    "count": 0,
-    "by_category": {},
-    "items": []
+    "count": 1,
+    "by_category": {
+      "investor_meetings": 1
+    },
+    "items": [
+      {
+        "id": "79f22cb2-fee0-4d03-a8c0-1fe31e06e341",
+        "symbol": "HDFCBANK",
+        "company_name": "HDFC Bank Ltd",
+        "filed_at": "2026-11-12T14:21:58.547000+05:30",
+        "headline": "Intimation of Schedule of Analyst/Institutional Investor Meetings under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.765,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d01ef203-cd61-4f19-b88b-7a373979e5b5.pdf",
+        "price_reaction": {
+          "pct_1d": 0.71,
+          "vol_ratio": 1.0
+        },
+        "enrichment": null
+      }
+    ]
   }
 }

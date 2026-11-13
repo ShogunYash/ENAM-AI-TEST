@@ -3,10 +3,10 @@
   "name": "Cera Sanitaryware",
   "window": {
     "label": "30d",
-    "start": "2026-10-14T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-10-15T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "counts": {
     "total": 11,
     "rule_classified": 9,
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 1.616,
+      "score": 1.492,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/96d3143f-2c3f-4cdb-a811-869e422ac1ab.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -86,7 +86,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.899,
+      "score": 0.83,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4c5a17a7-fef6-480d-bafd-acf0b72fd969.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -108,12 +108,27 @@
   "routine": {
     "count": 9,
     "by_category": {
-      "earnings_call": 2,
+      "earnings_call": 3,
       "results": 2,
-      "unclassified": 4,
+      "unclassified": 3,
       "investor_meetings": 1
     },
     "items": [
+      {
+        "id": "6272f3c7-d39e-444d-8b87-f70794b50e16",
+        "symbol": "CERA",
+        "company_name": "Cera Sanitaryware Ltd",
+        "filed_at": "2026-11-12T16:15:33.640000+05:30",
+        "headline": "Transcript of Q2 & H1 FY27 Earnings Conference Call",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 1.455,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/769be2ca-bd51-4ac3-8e63-ce44e430d026.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
       {
         "id": "5437ad91-75c7-46e6-b949-8287d1b3c752",
         "symbol": "CERA",
@@ -124,7 +139,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.312,
+        "score": 0.288,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e0fdde76-7cb8-43e7-a642-628ffb402027.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -139,7 +154,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.468,
+        "score": 0.432,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/39bd3884-e4c2-46dd-8c4f-71b1dbab4248.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -154,7 +169,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.373,
+        "score": 0.345,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/29421bbb-42b8-471f-95ca-7258e50b1a1e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -184,7 +199,7 @@
         "category": "investor_meetings",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.12,
+        "score": 0.111,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4dbdcf77-227e-4b84-b1de-74b69bdc5ee9.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -214,7 +229,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.012,
+        "score": 0.011,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fc5f7ea6-8ea4-44fc-9bf8-be2113e10ec0.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -231,21 +246,6 @@
         "priority": "hidden",
         "score": 0.0,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bcfc0e98-91d2-4e37-bb3e-9bdc902c162f.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "d8542944-a1d8-48ac-8152-fae3b3a4e324",
-        "symbol": "CERA",
-        "company_name": "Cera Sanitaryware Ltd",
-        "filed_at": "2026-10-14T20:44:09.120000+05:30",
-        "headline": "Certificate under Regulation 74(5) of SEBI (DP) Regulations, 2018",
-        "so_what": null,
-        "category": "unclassified",
-        "category_source": "rule",
-        "priority": "hidden",
-        "score": 0.0,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5eaa74b7-aaf6-4cc5-a03c-b117a879e0e4.pdf",
         "price_reaction": null,
         "enrichment": null
       }

@@ -3,22 +3,37 @@
   "name": "UltraTech Cement",
   "window": {
     "label": "3d",
-    "start": "2026-11-10T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-11-11T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "counts": {
-    "total": 1,
-    "rule_classified": 1,
+    "total": 2,
+    "rule_classified": 2,
     "llm_classified": 0
   },
   "important": [],
   "routine": {
-    "count": 1,
+    "count": 2,
     "by_category": {
-      "investor_meetings": 1
+      "investor_meetings": 2
     },
     "items": [
+      {
+        "id": "8213af8b-74ba-4762-a8d6-8447a2efb9c7",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-11-13T15:14:47.833000+05:30",
+        "headline": "Intimation regarding Investor meet of UltraTech Cement Limited",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.908,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d7982c18-e8b9-485f-8165-a8333b0d421e.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
       {
         "id": "1c0c85f6-07aa-4efe-a10a-44a9e9b36de2",
         "symbol": "ULTRACEMCO",
@@ -29,9 +44,12 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.63,
+        "score": 0.593,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2b934e4e-121f-42d7-a2d0-d3eb4364b9a7.pdf",
-        "price_reaction": null,
+        "price_reaction": {
+          "pct_1d": -0.2,
+          "vol_ratio": 0.52
+        },
         "enrichment": null
       }
     ]

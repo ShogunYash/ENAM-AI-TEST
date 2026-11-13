@@ -3,10 +3,10 @@
   "name": "Kalpataru Projects International",
   "window": {
     "label": "3d",
-    "start": "2026-11-10T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-11-11T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "counts": {
     "total": 2,
     "rule_classified": 2,
@@ -30,7 +30,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.53,
+        "score": 1.412,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/04c4e907-80d8-4918-ba5c-9049ad346c86.pdf",
         "price_reaction": {
           "pct_1d": -0.05,
@@ -48,8 +48,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.602,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a1fea61a-15d5-45a4-b77e-3a77e8402ed6.pdf",
+        "score": 0.556,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a1fea61a-15d5-45a4-b77e-3a77e8402ed6.pdf",
         "price_reaction": null,
         "enrichment": null
       }

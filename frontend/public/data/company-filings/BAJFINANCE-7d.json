@@ -3,10 +3,10 @@
   "name": "Bajaj Finance",
   "window": {
     "label": "7d",
-    "start": "2026-11-06T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-11-07T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "counts": {
     "total": 4,
     "rule_classified": 3,
@@ -23,9 +23,12 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 6.624,
+      "score": 8.328,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
-      "price_reaction": null,
+      "price_reaction": {
+        "pct_1d": 3.36,
+        "vol_ratio": 1.21
+      },
       "enrichment": {
         "type": "oneliner",
         "text": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price."
@@ -41,12 +44,9 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 5.681,
+      "score": 4.636,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/84c0dbf5-4b55-41b9-ab7b-e20d9fe359a9.pdf",
-      "price_reaction": {
-        "pct_1d": 1.31,
-        "vol_ratio": 0.96
-      },
+      "price_reaction": null,
       "enrichment": {
         "type": "oneliner",
         "text": "Approved allotment of 5,74,25,740 warrants at Rs. 1,010 each."
@@ -62,12 +62,9 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 5.672,
+      "score": 4.628,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/41e7bb57-172f-4858-a5ac-8c15fe653e81.pdf",
-      "price_reaction": {
-        "pct_1d": 1.31,
-        "vol_ratio": 0.96
-      },
+      "price_reaction": null,
       "enrichment": {
         "type": "oneliner",
         "text": "Approved issuing 5,74,25,740 warrants for ₹57,99,99,97,400."
@@ -90,7 +87,7 @@
         "category": "results",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.744,
+        "score": 0.687,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/88c1f74a-5faf-4951-bd1c-87ac9c742fd0.pdf",
         "price_reaction": null,
         "enrichment": null

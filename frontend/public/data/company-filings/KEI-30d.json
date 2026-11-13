@@ -3,14 +3,14 @@
   "name": "KEI Industries",
   "window": {
     "label": "30d",
-    "start": "2026-10-14T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-10-15T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "counts": {
-    "total": 15,
-    "rule_classified": 13,
-    "llm_classified": 2
+    "total": 13,
+    "rule_classified": 12,
+    "llm_classified": 1
   },
   "important": [
     {
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.067,
+      "score": 0.062,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2075e5d3-21fa-4857-bf45-55cd905c1f60.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -86,7 +86,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.067,
+      "score": 0.062,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4567cd4f-9037-41ac-9e8d-fd10ff9e2f51.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -149,38 +149,20 @@
       "category": "credit_rating",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.031,
+      "score": 0.028,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/75be6169-a776-45a9-aaaf-968aa7a80a3a.pdf",
       "price_reaction": null,
       "enrichment": {
         "type": "oneliner",
         "text": "CRISIL assigned KEI Industries a 'Strong' ESG rating of 65."
       }
-    },
-    {
-      "id": "a80e46bd-37c4-4876-8618-b21d82ce7b00",
-      "symbol": "KEI",
-      "company_name": "KEI Industries Ltd",
-      "filed_at": "2026-10-14T18:16:25.340000+05:30",
-      "headline": "This is to inform you that as per the information received by the Company on October 14, 2026, ESG Risk Assessments & Insights Limited, has reviewed the Environment, Social and Governance ....",
-      "so_what": "Assigned an ESG rating of 71 in the Excellent category by ERAIL.",
-      "category": "credit_rating",
-      "category_source": "llm",
-      "priority": "medium",
-      "score": 0.005,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b71311c4-0e0a-404d-bbf3-ff961de0c6e6.pdf",
-      "price_reaction": null,
-      "enrichment": {
-        "type": "oneliner",
-        "text": "Assigned an ESG rating of 71 in the Excellent category by ERAIL."
-      }
     }
   ],
   "routine": {
-    "count": 11,
+    "count": 10,
     "by_category": {
       "earnings_call": 6,
-      "unclassified": 3,
+      "unclassified": 2,
       "results": 2
     },
     "items": [
@@ -194,7 +176,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.246,
+        "score": 0.227,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/71d743be-ad95-4b18-8751-47634594d564.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -209,7 +191,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.063,
+        "score": 0.058,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4e54d4d8-32a5-4d3c-aca0-c9459e230fa8.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -224,7 +206,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.013,
+        "score": 0.012,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/860a30b8-edbc-4a6f-85f6-ebf63c62afbe.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -239,7 +221,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.013,
+        "score": 0.012,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2ae9ef96-7f76-4fde-86a0-18d3755a87dd.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -254,7 +236,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.013,
+        "score": 0.012,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4b6be751-d34e-421c-8cc1-340cf9955922.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -299,7 +281,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.015,
+        "score": 0.014,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/afb9365a-bae4-4b8a-a90c-488f23b81c1b.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -314,7 +296,7 @@
         "category": "results",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.015,
+        "score": 0.014,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3d157621-812e-45ee-8220-505d90ccf3d6.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -331,21 +313,6 @@
         "priority": "low",
         "score": 0.002,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/52dd4b70-405e-4195-a919-0d55bbf70938.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "a5461911-6231-4a07-bc32-21fcc7d13abf",
-        "symbol": "KEI",
-        "company_name": "KEI Industries Ltd",
-        "filed_at": "2026-10-14T18:33:33.353000+05:30",
-        "headline": "Compliance Certificate of Demat/Remat of shares under Regulation 74(5) of SEBI (Depositories and Participants) Regulations, 2018 for the quarter ended on 30.09.2026.",
-        "so_what": null,
-        "category": "unclassified",
-        "category_source": "rule",
-        "priority": "hidden",
-        "score": 0.0,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e4497b14-f995-45a3-b21c-b95a0b4e2845.pdf",
         "price_reaction": null,
         "enrichment": null
       }

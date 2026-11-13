@@ -1,11 +1,11 @@
 {
-  "as_of": "2026-11-13T16:58:20.193411+05:30",
+  "as_of": "2026-11-14T01:17:50.874577+05:30",
   "totals": {
-    "calls": 193,
-    "tokens_in": 1584573,
-    "tokens_out": 125776,
-    "cache_hits": 227,
-    "cache_hit_pct": 54.0,
+    "calls": 195,
+    "tokens_in": 1587768,
+    "tokens_out": 125916,
+    "cache_hits": 233,
+    "cache_hit_pct": 54.4,
     "spend_inr": 0.0
   },
   "by_feature": [
@@ -21,7 +21,7 @@
       "calls": 45,
       "tokens_in": 70548,
       "tokens_out": 1306,
-      "cache_hits": 4
+      "cache_hits": 8
     },
     {
       "key": "pull.guidance",
@@ -32,9 +32,9 @@
     },
     {
       "key": "push.mgmt_bio",
-      "calls": 21,
-      "tokens_in": 39959,
-      "tokens_out": 1521,
+      "calls": 23,
+      "tokens_in": 43154,
+      "tokens_out": 1661,
       "cache_hits": 63
     },
     {
@@ -42,7 +42,7 @@
       "calls": 18,
       "tokens_in": 49449,
       "tokens_out": 986,
-      "cache_hits": 28
+      "cache_hits": 30
     },
     {
       "key": "pull.pvd",
@@ -72,21 +72,21 @@
       "calls": 84,
       "tokens_in": 572192,
       "tokens_out": 51882,
-      "cache_hits": 46
+      "cache_hits": 49
     },
     {
       "key": "finn-gpt-oss",
-      "calls": 54,
-      "tokens_in": 517226,
-      "tokens_out": 15628,
-      "cache_hits": 168
+      "calls": 56,
+      "tokens_in": 520421,
+      "tokens_out": 15768,
+      "cache_hits": 169
     },
     {
       "key": "gemini-3.1-flash-lite",
       "calls": 26,
       "tokens_in": 83762,
       "tokens_out": 16381,
-      "cache_hits": 2
+      "cache_hits": 4
     },
     {
       "key": "gemini-3.5-flash",

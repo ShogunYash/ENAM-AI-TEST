@@ -32,8 +32,21 @@ with the `finn-gpt-oss` alias; see CLAUDE.md).
 - Open the Pages URL on a phone. With the API asleep the app shows the **SNAPSHOT** chip and real data; when the API answers it
   shows **LIVE**.
 
+
+## Deployed (14 Nov 2026), as reported by the owner
+- **API (Render, free):** https://finn-api-7n6q.onrender.com. `/health` returned `ok: true`, `mode: live`, latest price bar 11 Nov 2026 15:30 IST. `render.yaml` has `autoDeploy: false`, so every new commit needs **Manual Deploy -> Deploy latest commit**.
+- **PWA (Cloudflare Pages):** https://0405d6eb.enam-ai-test.pages.dev/ (production build from `main` at `c8bcaec`; root `/frontend`, `npm run build`, output `/dist`, `VITE_API_BASE=https://finn-api-7n6q.onrender.com`). Pages rebuilds on each push to `main`.
+- **Cloud-source check (`/debug/sources` on Render):**
+  | Source | Result from Render |
+  |---|---|
+  | BSE | **FAIL, HTTP 403** (BSE blocks the cloud IP) |
+  | screener.in | OK (HTTP 200, quarterly table present) |
+  | yfinance | OK (4 TCS price bars) |
+- **What this means (by design, see PLAN risks):** Push ingest and BSE filing PDFs run on the laptop and ship in the committed snapshot/seed, so Today, alerts, results cards, management cards and the four pre-built research reports (INFY, BAJFINANCE, POLYCAB, KPIL) do not need BSE from the cloud. A **live Pull on an unseen ticker** gets the financial snapshot (screener.in works) but transcripts are hosted on BSE, so the report comes back **partial with explicit gaps** ("transcript could not be downloaded (HTTP 403)", "fewer than 2 transcripts"), never invented content. Ask FINN on a filing not in the seed also needs BSE and says so.
+- **Phone verification:** NOT yet confirmed by the agent. Owner to check on a phone: Today 30d, a results card, Research -> INFY, and the LIVE / SNAPSHOT chip.
+
 ## 3. Verify on a phone (the `finn-demo-check` skill lists every step)
-Today (24h/3d/7d/30d), a results card with a green Verified or amber mismatch badge, Research -> INFY, an unseen ticker
+Today (24h/3d/7d/30d), a results card with the "Revenue, PBT, PAT checked" badge (or the amber mismatch badge), Research -> INFY, an unseen ticker
 (shows build progress), Cost screen matches `/stats/llm`.
 
 ## Known limits (say them in the writeup)

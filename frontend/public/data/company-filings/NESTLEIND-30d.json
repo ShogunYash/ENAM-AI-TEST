@@ -3,13 +3,13 @@
   "name": "Nestle India",
   "window": {
     "label": "30d",
-    "start": "2026-10-14T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-10-15T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "counts": {
-    "total": 5,
-    "rule_classified": 5,
+    "total": 4,
+    "rule_classified": 4,
     "llm_classified": 0
   },
   "important": [
@@ -23,7 +23,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.038,
+      "score": 0.035,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0d21e169-46c3-4d2d-aa05-0b3c9c1086bf.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -47,7 +47,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.016,
+      "score": 0.015,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cfe22dbd-7fe2-4890-9963-2ecaa192cb4f.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -102,10 +102,9 @@
     }
   ],
   "routine": {
-    "count": 3,
+    "count": 2,
     "by_category": {
-      "results": 2,
-      "unclassified": 1
+      "results": 2
     },
     "items": [
       {
@@ -118,7 +117,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.004,
+        "score": 0.003,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5531c097-ff73-4ad8-9850-eb15960918fe.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -133,23 +132,8 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.004,
+        "score": 0.003,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bb05df38-f3bf-4a93-bd9f-242c0c16e5c9.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "c98edf20-041b-4d49-87f4-eb447c41c2a9",
-        "symbol": "NESTLEIND",
-        "company_name": "Nestle India Ltd",
-        "filed_at": "2026-10-14T17:14:25.937000+05:30",
-        "headline": "Newspaper advertisement dated 14th October 2026",
-        "so_what": null,
-        "category": "unclassified",
-        "category_source": "rule",
-        "priority": "hidden",
-        "score": 0.0,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/95b700f8-731a-4919-a0f7-de83b996bb10.pdf",
         "price_reaction": null,
         "enrichment": null
       }

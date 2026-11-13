@@ -1,0 +1,26 @@
+{
+  "id": "44ba0161-d9e4-4bd1-aae7-eb3bc46319dd",
+  "symbol": "HDFCBANK",
+  "company_name": "HDFC Bank Ltd",
+  "filed_at": "2026-11-13T16:30:11.850000+05:30",
+  "headline": "Re-appointment of Mr. V. Srinivasa Rangan as the Whole-time Director(designated as Executive Director) of HDFC Bank Limited.",
+  "so_what": null,
+  "category": "management_change",
+  "category_source": "rule",
+  "priority": "medium",
+  "score": 6.891,
+  "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
+  "price_reaction": null,
+  "enrichment": {
+    "type": "management",
+    "person": "Mr. V. Srinivasa Rangan",
+    "role": "Whole-time Director (designated as Executive Director)",
+    "change": "appointed",
+    "background": [
+      "Not related to any other Director or Key Managerial Personnel"
+    ],
+    "links": [],
+    "effective": "2026-11-23",
+    "background_source": "filing"
+  }
+}

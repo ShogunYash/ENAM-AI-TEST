@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "7d",
-    "start": "2026-11-06T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-11-07T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "companies": [
     {
       "symbol": "BAJFINANCE",
@@ -26,17 +26,61 @@
         "category": "fund_raise",
         "category_source": "rule",
         "priority": "high",
-        "score": 6.624,
+        "score": 8.328,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
-        "price_reaction": null,
+        "price_reaction": {
+          "pct_1d": 3.36,
+          "vol_ratio": 1.21
+        },
         "enrichment": {
           "type": "oneliner",
           "text": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price."
         }
       },
       "price": {
-        "pct_1d": 1.31,
-        "vol_ratio": 0.96
+        "pct_1d": 3.36,
+        "vol_ratio": 1.21
+      }
+    },
+    {
+      "symbol": "HDFCBANK",
+      "name": "HDFC Bank",
+      "sector": "Private-sector banking",
+      "in_portfolio": true,
+      "total": 3,
+      "material": 2,
+      "categories": {
+        "management_change": 2
+      },
+      "top": {
+        "id": "44ba0161-d9e4-4bd1-aae7-eb3bc46319dd",
+        "symbol": "HDFCBANK",
+        "company_name": "HDFC Bank Ltd",
+        "filed_at": "2026-11-13T16:30:11.850000+05:30",
+        "headline": "Re-appointment of Mr. V. Srinivasa Rangan as the Whole-time Director(designated as Executive Director) of HDFC Bank Limited.",
+        "so_what": null,
+        "category": "management_change",
+        "category_source": "rule",
+        "priority": "medium",
+        "score": 6.891,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "management",
+          "person": "Mr. V. Srinivasa Rangan",
+          "role": "Whole-time Director (designated as Executive Director)",
+          "change": "appointed",
+          "background": [
+            "Not related to any other Director or Key Managerial Personnel"
+          ],
+          "links": [],
+          "effective": "2026-11-23",
+          "background_source": "filing"
+        }
+      },
+      "price": {
+        "pct_1d": 0.71,
+        "vol_ratio": 1.0
       }
     },
     {
@@ -44,7 +88,7 @@
       "name": "Tata Steel",
       "sector": "Steel",
       "in_portfolio": true,
-      "total": 10,
+      "total": 12,
       "material": 3,
       "categories": {
         "m_and_a": 1,
@@ -61,7 +105,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 3.258,
+        "score": 3.007,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2e7c8bf8-d794-4a55-b670-97951b28e0e8.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -115,47 +159,8 @@
         }
       },
       "price": {
-        "pct_1d": 2.4,
-        "vol_ratio": 1.4
-      }
-    },
-    {
-      "symbol": "ASIANPAINT",
-      "name": "Asian Paints",
-      "sector": "Paints",
-      "in_portfolio": false,
-      "total": 4,
-      "material": 1,
-      "categories": {
-        "management_change": 1
-      },
-      "top": {
-        "id": "d1aaeb85-6ca1-4b7d-9c05-4eb4916c7455",
-        "symbol": "ASIANPAINT",
-        "company_name": "Asian Paints Ltd",
-        "filed_at": "2026-11-06T21:58:36.363000+05:30",
-        "headline": "This is to inform you that the shareholders of the Company have today, i.e. 6th November 2026 approved the appointment of Mr. Leo Puri as an Independent Director of the Company. Mr. Leo ....",
-        "so_what": "Leo Puri appointed as Independent Director from 07 Sep",
-        "category": "management_change",
-        "category_source": "rule",
-        "priority": "medium",
-        "score": 1.562,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c6c189db-e010-4c6e-a997-b50d6d33767a.pdf",
-        "price_reaction": null,
-        "enrichment": {
-          "type": "management",
-          "person": "Leo Puri",
-          "role": "Independent Director",
-          "change": "appointed",
-          "background": [],
-          "links": [],
-          "effective": "2026-09-07",
-          "background_source": "none"
-        }
-      },
-      "price": {
-        "pct_1d": 0.53,
-        "vol_ratio": 0.56
+        "pct_1d": -0.68,
+        "vol_ratio": 0.86
       }
     },
     {
@@ -163,13 +168,13 @@
       "name": "Titan Company",
       "sector": "Jewellery and retail",
       "in_portfolio": true,
-      "total": 4,
+      "total": 5,
       "material": 0,
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -0.7,
-        "vol_ratio": 1.93
+        "pct_1d": -0.97,
+        "vol_ratio": 0.78
       }
     },
     {
@@ -198,6 +203,20 @@
       "price": {
         "pct_1d": 0.48,
         "vol_ratio": 0.57
+      }
+    },
+    {
+      "symbol": "HINDUNILVR",
+      "name": "Hindustan Unilever",
+      "sector": "FMCG",
+      "in_portfolio": false,
+      "total": 2,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.96,
+        "vol_ratio": 0.74
       }
     },
     {
@@ -243,6 +262,48 @@
       }
     },
     {
+      "symbol": "RELIANCE",
+      "name": "Reliance Industries",
+      "sector": "Energy and diversified businesses",
+      "in_portfolio": true,
+      "total": 2,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.32,
+        "vol_ratio": 0.64
+      }
+    },
+    {
+      "symbol": "ULTRACEMCO",
+      "name": "UltraTech Cement",
+      "sector": "Cement",
+      "in_portfolio": true,
+      "total": 2,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.2,
+        "vol_ratio": 0.52
+      }
+    },
+    {
+      "symbol": "ASIANPAINT",
+      "name": "Asian Paints",
+      "sector": "Paints",
+      "in_portfolio": false,
+      "total": 1,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.53,
+        "vol_ratio": 0.56
+      }
+    },
+    {
       "symbol": "ASTRAL",
       "name": "Astral",
       "sector": "Building products",
@@ -252,36 +313,36 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": 0.25,
-        "vol_ratio": 1.09
+        "pct_1d": -0.08,
+        "vol_ratio": 1.01
       }
     },
     {
-      "symbol": "HDFCBANK",
-      "name": "HDFC Bank",
-      "sector": "Private-sector banking",
+      "symbol": "CERA",
+      "name": "Cera Sanitaryware",
+      "sector": "Sanitaryware",
       "in_portfolio": true,
       "total": 1,
       "material": 0,
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": 1.06,
-        "vol_ratio": 1.54
+        "pct_1d": 1.69,
+        "vol_ratio": 1.14
       }
     },
     {
-      "symbol": "HINDUNILVR",
-      "name": "Hindustan Unilever",
-      "sector": "FMCG",
-      "in_portfolio": false,
+      "symbol": "INFY",
+      "name": "Infosys",
+      "sector": "IT services",
+      "in_portfolio": true,
       "total": 1,
       "material": 0,
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": 0.96,
-        "vol_ratio": 0.74
+        "pct_1d": -0.33,
+        "vol_ratio": 0.45
       }
     },
     {
@@ -294,36 +355,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": 0.65,
-        "vol_ratio": 1.18
-      }
-    },
-    {
-      "symbol": "POLYCAB",
-      "name": "Polycab India",
-      "sector": "Wires and cables",
-      "in_portfolio": false,
-      "total": 1,
-      "material": 0,
-      "categories": {},
-      "top": null,
-      "price": {
-        "pct_1d": -2.18,
-        "vol_ratio": 1.1
-      }
-    },
-    {
-      "symbol": "RELIANCE",
-      "name": "Reliance Industries",
-      "sector": "Energy and diversified businesses",
-      "in_portfolio": true,
-      "total": 1,
-      "material": 0,
-      "categories": {},
-      "top": null,
-      "price": {
-        "pct_1d": 0.83,
-        "vol_ratio": 0.82
+        "pct_1d": -1.25,
+        "vol_ratio": 0.99
       }
     },
     {
@@ -336,36 +369,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -0.13,
-        "vol_ratio": 0.7
-      }
-    },
-    {
-      "symbol": "ULTRACEMCO",
-      "name": "UltraTech Cement",
-      "sector": "Cement",
-      "in_portfolio": true,
-      "total": 1,
-      "material": 0,
-      "categories": {},
-      "top": null,
-      "price": {
-        "pct_1d": 0.71,
-        "vol_ratio": 0.93
-      }
-    },
-    {
-      "symbol": "CERA",
-      "name": "Cera Sanitaryware",
-      "sector": "Sanitaryware",
-      "in_portfolio": true,
-      "total": 0,
-      "material": 0,
-      "categories": {},
-      "top": null,
-      "price": {
-        "pct_1d": 3.35,
-        "vol_ratio": 1.55
+        "pct_1d": -1.2,
+        "vol_ratio": 0.37
       }
     },
     {
@@ -392,8 +397,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": 0.39,
-        "vol_ratio": 0.53
+        "pct_1d": -0.04,
+        "vol_ratio": 0.37
       }
     },
     {
@@ -406,8 +411,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": 0.21,
-        "vol_ratio": 0.79
+        "pct_1d": -1.77,
+        "vol_ratio": 0.43
       }
     },
     {
@@ -420,22 +425,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": 0.53,
-        "vol_ratio": 0.71
-      }
-    },
-    {
-      "symbol": "INFY",
-      "name": "Infosys",
-      "sector": "IT services",
-      "in_portfolio": true,
-      "total": 0,
-      "material": 0,
-      "categories": {},
-      "top": null,
-      "price": {
-        "pct_1d": 0.08,
-        "vol_ratio": 0.55
+        "pct_1d": -2.01,
+        "vol_ratio": 0.56
       }
     },
     {
@@ -448,8 +439,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": 0.09,
-        "vol_ratio": 0.37
+        "pct_1d": 3.23,
+        "vol_ratio": 1.06
       }
     },
     {
@@ -476,8 +467,22 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -1.1,
-        "vol_ratio": 0.53
+        "pct_1d": 0.95,
+        "vol_ratio": 0.48
+      }
+    },
+    {
+      "symbol": "POLYCAB",
+      "name": "Polycab India",
+      "sector": "Wires and cables",
+      "in_portfolio": false,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -2.18,
+        "vol_ratio": 1.1
       }
     },
     {
@@ -490,8 +495,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -0.12,
-        "vol_ratio": 1.03
+        "pct_1d": -0.91,
+        "vol_ratio": 1.09
       }
     }
   ]

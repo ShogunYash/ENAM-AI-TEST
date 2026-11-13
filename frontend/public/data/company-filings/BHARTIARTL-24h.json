@@ -3,40 +3,19 @@
   "name": "Bharti Airtel",
   "window": {
     "label": "24h",
-    "start": "2026-11-12T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-11-13T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "counts": {
-    "total": 1,
-    "rule_classified": 1,
+    "total": 0,
+    "rule_classified": 0,
     "llm_classified": 0
   },
   "important": [],
   "routine": {
-    "count": 1,
-    "by_category": {
-      "earnings_call": 1
-    },
-    "items": [
-      {
-        "id": "84eb3673-6777-498a-b5b9-db6515b0a7cb",
-        "symbol": "BHARTIARTL",
-        "company_name": "Bharti Airtel Ltd",
-        "filed_at": "2026-11-12T17:37:34.640000+05:30",
-        "headline": "Transcript of the Earnings Call dated November 6, 2026.",
-        "so_what": null,
-        "category": "earnings_call",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 1.674,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1ff3e14f-7e97-4074-89c7-049408721c5e.pdf",
-        "price_reaction": {
-          "pct_1d": 0.48,
-          "vol_ratio": 0.57
-        },
-        "enrichment": null
-      }
-    ]
+    "count": 0,
+    "by_category": {},
+    "items": []
   }
 }

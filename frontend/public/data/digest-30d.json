@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "30d",
-    "start": "2026-10-14T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-10-15T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "needs_you": [
     {
       "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
@@ -16,9 +16,12 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 6.624,
+      "score": 8.328,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
-      "price_reaction": null,
+      "price_reaction": {
+        "pct_1d": 3.36,
+        "vol_ratio": 1.21
+      },
       "enrichment": {
         "type": "oneliner",
         "text": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price."
@@ -34,7 +37,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 3.258,
+      "score": 3.007,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2e7c8bf8-d794-4a55-b670-97951b28e0e8.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -97,7 +100,7 @@
       "category": "m_and_a",
       "category_source": "rule",
       "priority": "high",
-      "score": 2.965,
+      "score": 2.737,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2630fae6-20d8-4b7f-86fe-81c5b1a22a94.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -115,7 +118,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "high",
-      "score": 2.904,
+      "score": 2.68,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/22765a70-fd05-4bea-85bb-001eca66c2c1.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -141,7 +144,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 2.127,
+      "score": 1.964,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/86009cba-ca03-4d35-bad8-b1988cfcff13.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -197,6 +200,56 @@
   ],
   "also_material": [
     {
+      "id": "44ba0161-d9e4-4bd1-aae7-eb3bc46319dd",
+      "symbol": "HDFCBANK",
+      "company_name": "HDFC Bank Ltd",
+      "filed_at": "2026-11-13T16:30:11.850000+05:30",
+      "headline": "Re-appointment of Mr. V. Srinivasa Rangan as the Whole-time Director(designated as Executive Director) of HDFC Bank Limited.",
+      "so_what": null,
+      "category": "management_change",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 6.891,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "management",
+        "person": "Mr. V. Srinivasa Rangan",
+        "role": "Whole-time Director (designated as Executive Director)",
+        "change": "appointed",
+        "background": [
+          "Not related to any other Director or Key Managerial Personnel"
+        ],
+        "links": [],
+        "effective": "2026-11-23",
+        "background_source": "filing"
+      }
+    },
+    {
+      "id": "16286674-572c-48bc-a47c-b8a9d5c07363",
+      "symbol": "HDFCBANK",
+      "company_name": "HDFC Bank Ltd",
+      "filed_at": "2026-11-12T17:27:27.333000+05:30",
+      "headline": "Approval from the Reserve Bank of India for re-appointment of Mr. V. Srinivasa Rangan as the Whole-time Director (designated as Executive Director) of HDFC Bank Limited",
+      "so_what": null,
+      "category": "management_change",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 5.52,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6df1f05c-9926-47ce-9896-94c41bdb71ab.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "management",
+        "person": "Mr. V. Srinivasa Rangan",
+        "role": "Whole-time Director (designated as Executive Director)",
+        "change": "appointed",
+        "background": [],
+        "links": [],
+        "effective": "2026-11-23",
+        "background_source": "none"
+      }
+    },
+    {
       "id": "dff7d1e2-500b-498c-9b9a-52b2cb4641a8",
       "symbol": "BAJFINANCE",
       "company_name": "Bajaj Finance Ltd",
@@ -206,12 +259,9 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 5.681,
+      "score": 4.636,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/84c0dbf5-4b55-41b9-ab7b-e20d9fe359a9.pdf",
-      "price_reaction": {
-        "pct_1d": 1.31,
-        "vol_ratio": 0.96
-      },
+      "price_reaction": null,
       "enrichment": {
         "type": "oneliner",
         "text": "Approved allotment of 5,74,25,740 warrants at Rs. 1,010 each."
@@ -227,12 +277,9 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 5.672,
+      "score": 4.628,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/41e7bb57-172f-4858-a5ac-8c15fe653e81.pdf",
-      "price_reaction": {
-        "pct_1d": 1.31,
-        "vol_ratio": 0.96
-      },
+      "price_reaction": null,
       "enrichment": {
         "type": "oneliner",
         "text": "Approved issuing 5,74,25,740 warrants for ₹57,99,99,97,400."
@@ -248,7 +295,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 2.114,
+      "score": 1.951,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a39f8b72-303f-42a4-8750-f413346bd742.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -311,7 +358,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "high",
-      "score": 1.924,
+      "score": 1.776,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f2144a96-1845-46b3-b1d6-2df374df6da1.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -335,7 +382,7 @@
       "category": "litigation",
       "category_source": "llm",
       "priority": "medium",
-      "score": 1.771,
+      "score": 1.634,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/53496491-fd25-4172-9f9f-79bf088ea9c5.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -353,7 +400,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 1.666,
+      "score": 1.538,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/191d3534-ded0-412c-9b3e-a8fbe7c38d5a.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -371,7 +418,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 1.616,
+      "score": 1.492,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/96d3143f-2c3f-4cdb-a811-869e422ac1ab.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -434,7 +481,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 1.18,
+      "score": 1.089,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4017e932-6841-4b4b-8669-50a79f27feb2.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -461,7 +508,7 @@
       "category": "m_and_a",
       "category_source": "rule",
       "priority": "high",
-      "score": 1.147,
+      "score": 1.059,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/47583353-38c5-4bf3-8479-d38183666686.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -479,7 +526,7 @@
       "category": "m_and_a",
       "category_source": "rule",
       "priority": "high",
-      "score": 1.143,
+      "score": 1.055,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7dc05352-62f9-4f34-be74-65db96f65c1e.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -497,7 +544,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 1.065,
+      "score": 0.983,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59e35eaa-e87a-4409-aa02-61801b1b852a.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -560,7 +607,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "medium",
-      "score": 1.005,
+      "score": 0.928,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/73a8c540-4229-4137-8e2b-5aae04fa0a35.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -578,7 +625,7 @@
       "category": "m_and_a",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.946,
+      "score": 0.873,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e6ecfc7d-e5f9-46eb-8fb6-c16c59773d0f.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -596,7 +643,7 @@
       "category": "litigation",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.9,
+      "score": 0.831,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/84dc2a7d-1be3-4576-a370-a944f4b2d7bc.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -611,7 +658,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.899,
+      "score": 0.83,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4c5a17a7-fef6-480d-bafd-acf0b72fd969.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -639,7 +686,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.737,
+      "score": 0.68,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/258dfe1d-7ec3-4563-863f-330be44338eb.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -657,7 +704,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.736,
+      "score": 0.679,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e05f8c9-956c-4fbc-9e8e-3f6aa4694621.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -675,7 +722,7 @@
       "category": "m_and_a",
       "category_source": "llm",
       "priority": "high",
-      "score": 0.572,
+      "score": 0.528,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/13e50739-50e7-4b5a-8dba-ac92ece6d35f.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -693,7 +740,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.546,
+      "score": 0.504,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/880087f6-7ecc-40a9-8cac-de48d4616b25.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -756,7 +803,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.518,
+      "score": 0.478,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/658231ad-7203-4355-be99-2a162b722c0c.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -819,7 +866,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.419,
+      "score": 0.387,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/12ace952-a89b-4098-8bd0-e247f6e2a776.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -882,7 +929,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.391,
+      "score": 0.361,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b36ff756-1cf7-44a3-9b2c-4583e7e0e792.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -909,7 +956,7 @@
       "category": "m_and_a",
       "category_source": "llm",
       "priority": "high",
-      "score": 0.347,
+      "score": 0.32,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bc9fc5d1-9c04-4a88-b807-79d27dd63697.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -927,7 +974,7 @@
       "category": "m_and_a",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.289,
+      "score": 0.266,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6a9b9bf7-babc-49c6-86d2-db3cf586ba5c.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -942,7 +989,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.267,
+      "score": 0.246,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/be28659d-c65e-4500-917e-02ef891caee6.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1005,7 +1052,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.231,
+      "score": 0.214,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/20d73044-2322-4d46-883f-67bff54a3b50.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1023,7 +1070,7 @@
       "category": "fund_raise",
       "category_source": "llm",
       "priority": "high",
-      "score": 0.217,
+      "score": 0.201,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/70bfc361-3c9a-45d0-8240-e1b544debd01.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1041,7 +1088,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.217,
+      "score": 0.2,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e5b2d06f-fea8-4dea-aa03-84674215a0fd.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1065,7 +1112,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.2,
+      "score": 0.184,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6e5c35b1-1012-4947-bf92-558cefc37ca6.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1083,7 +1130,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.175,
+      "score": 0.161,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b633b6e5-f968-461c-b8f1-2ac155afc384.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1101,7 +1148,7 @@
       "category": "fund_raise",
       "category_source": "llm",
       "priority": "high",
-      "score": 0.175,
+      "score": 0.161,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4491cbf4-b27c-45f2-a905-1220b80dec9c.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -1116,7 +1163,7 @@
       "category": "fund_raise",
       "category_source": "llm",
       "priority": "high",
-      "score": 0.108,
+      "score": 0.1,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0056a3dc-6357-48ff-a037-f1b206624331.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1134,7 +1181,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.105,
+      "score": 0.097,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26c12463-d44e-4050-bd47-b53cc294b4e0.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1197,7 +1244,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.09,
+      "score": 0.083,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2f44a1be-85a8-4545-a86e-71a27b7b7f15.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1215,7 +1262,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.067,
+      "score": 0.062,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4567cd4f-9037-41ac-9e8d-fd10ff9e2f51.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1278,7 +1325,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.067,
+      "score": 0.062,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2075e5d3-21fa-4857-bf45-55cd905c1f60.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1341,7 +1388,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.053,
+      "score": 0.049,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f7cde952-83d0-475d-b216-02af2204013a.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1359,7 +1406,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.042,
+      "score": 0.039,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/229c460f-9cda-4732-972f-847519b40426.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1422,7 +1469,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.041,
+      "score": 0.038,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b8e22e9-8b97-4151-a045-51669fdac2ae.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1485,7 +1532,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.041,
+      "score": 0.037,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59654d86-af0c-4fe5-bfb9-1a148f65fd6c.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1548,7 +1595,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.036,
+      "score": 0.033,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a564754c-992e-4cb5-9e28-a5ae413e5654.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1572,7 +1619,7 @@
       "category": "credit_rating",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.033,
+      "score": 0.03,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d500e04f-fe02-4b5c-923a-0275b18f6044.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -1587,7 +1634,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.033,
+      "score": 0.03,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fda5e9e1-3aa9-4ccc-837a-d45817ef7360.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1605,7 +1652,7 @@
       "category": "credit_rating",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.031,
+      "score": 0.028,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/75be6169-a776-45a9-aaaf-968aa7a80a3a.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1623,7 +1670,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.028,
+      "score": 0.026,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5bb76cad-5a8c-42c8-8aa3-6d81edf31bf6.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1641,7 +1688,7 @@
       "category": "credit_rating",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.026,
+      "score": 0.024,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/439fef91-1dfa-4639-944f-eccbddfae1ff.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1659,7 +1706,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.024,
+      "score": 0.022,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/eb4bfa8c-5285-4b6f-86c3-852bf82c8015.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1685,7 +1732,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.023,
+      "score": 0.021,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9e27e1c6-ecc1-4d9b-9c89-a91c58b61c03.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1709,7 +1756,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.016,
+      "score": 0.015,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/65a6126a-e1b1-4c5b-a0d8-5b9648dc32b6.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1772,7 +1819,7 @@
       "category": "m_and_a",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.015,
+      "score": 0.014,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ed58c27c-5a50-4923-b54c-652a6e715f3c.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1790,7 +1837,7 @@
       "category": "m_and_a",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.015,
+      "score": 0.014,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6c83c3dd-87e9-48c8-97fe-e7ad20f62800.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -1808,48 +1855,12 @@
       "category": "m_and_a",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.014,
+      "score": 0.013,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ad952e13-3c76-410e-81f8-4fe3d108a196.pdf",
       "price_reaction": null,
       "enrichment": {
         "type": "oneliner",
         "text": "TCS completed acquisition of 100% stake in BBY Services India LLP."
-      }
-    },
-    {
-      "id": "8f0e4798-3443-4095-82a1-4d6b0029483f",
-      "symbol": "RELIANCE",
-      "company_name": "Reliance Industries Ltd",
-      "filed_at": "2026-10-14T20:12:37.070000+05:30",
-      "headline": "Proposed Initial Public Offer of Jio Platforms Limited",
-      "so_what": "Jio Platforms approved IPO price band ₹1,065 to ₹1,119 per share.",
-      "category": "fund_raise",
-      "category_source": "llm",
-      "priority": "high",
-      "score": 0.011,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc57bd43-7392-405d-b507-f1a83de93453.pdf",
-      "price_reaction": null,
-      "enrichment": {
-        "type": "oneliner",
-        "text": "Jio Platforms approved IPO price band ₹1,065 to ₹1,119 per share."
-      }
-    },
-    {
-      "id": "fa7c81b8-d6f0-424d-9f8e-f40b710d9f8a",
-      "symbol": "RELIANCE",
-      "company_name": "Reliance Industries Ltd",
-      "filed_at": "2026-10-14T18:35:09.313000+05:30",
-      "headline": "Proposed Initial Public Offer of Jio Platforms Limited - filing of the Red Herring Prospectus",
-      "so_what": "Jio Platforms filed RHP for IPO opening on October 21, 2026.",
-      "category": "fund_raise",
-      "category_source": "llm",
-      "priority": "high",
-      "score": 0.01,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9f9c9b25-75e8-45ba-83a4-e230e7657f54.pdf",
-      "price_reaction": null,
-      "enrichment": {
-        "type": "oneliner",
-        "text": "Jio Platforms filed RHP for IPO opening on October 21, 2026."
       }
     },
     {
@@ -1862,47 +1873,59 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.009,
+      "score": 0.008,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/68fc3ccb-8531-4cde-b4c6-b612a3ea8718.pdf",
       "price_reaction": null,
       "enrichment": {
         "type": "oneliner",
         "text": "Persistent Systems approved NCD issuance up to INR 8,000 Crores."
       }
-    },
-    {
-      "id": "a80e46bd-37c4-4876-8618-b21d82ce7b00",
-      "symbol": "KEI",
-      "company_name": "KEI Industries Ltd",
-      "filed_at": "2026-10-14T18:16:25.340000+05:30",
-      "headline": "This is to inform you that as per the information received by the Company on October 14, 2026, ESG Risk Assessments & Insights Limited, has reviewed the Environment, Social and Governance ....",
-      "so_what": "Assigned an ESG rating of 71 in the Excellent category by ERAIL.",
-      "category": "credit_rating",
-      "category_source": "llm",
-      "priority": "medium",
-      "score": 0.005,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b71311c4-0e0a-404d-bbf3-ff961de0c6e6.pdf",
-      "price_reaction": null,
-      "enrichment": {
-        "type": "oneliner",
-        "text": "Assigned an ESG rating of 71 in the Excellent category by ERAIL."
-      }
     }
   ],
   "routine": {
-    "count": 188,
+    "count": 193,
     "by_category": {
-      "earnings_call": 31,
+      "earnings_call": 33,
       "press_release": 24,
+      "investor_meetings": 23,
       "results": 28,
-      "investor_meetings": 17,
       "dividend": 3,
       "credit_rating": 2,
       "postal_ballot": 7,
       "agm_egm": 2,
-      "unclassified": 74
+      "unclassified": 71
     },
     "items": [
+      {
+        "id": "fa3d44be-213e-498d-92f3-f32f4a7b1f5b",
+        "symbol": "TATASTEEL",
+        "company_name": "Tata Steel Ltd",
+        "filed_at": "2026-11-12T22:09:38.290000+05:30",
+        "headline": "Transcript of ''Tata Steel 2QFY27 Earnings Discussion''",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 1.54,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/eeedbcb3-2b63-4718-b5b7-b498eedf2b4e.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "6272f3c7-d39e-444d-8b87-f70794b50e16",
+        "symbol": "CERA",
+        "company_name": "Cera Sanitaryware Ltd",
+        "filed_at": "2026-11-12T16:15:33.640000+05:30",
+        "headline": "Transcript of Q2 & H1 FY27 Earnings Conference Call",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 1.455,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/769be2ca-bd51-4ac3-8e63-ce44e430d026.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
       {
         "id": "44ddb649-ee18-4e5e-9b01-ae7a40117b21",
         "symbol": "TITAN",
@@ -1913,11 +1936,11 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.461,
+        "score": 1.247,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/daa6c172-771a-4af5-b4b3-9813fdf7536a.pdf",
         "price_reaction": {
-          "pct_1d": -0.7,
-          "vol_ratio": 1.93
+          "pct_1d": -0.97,
+          "vol_ratio": 0.78
         },
         "enrichment": null
       },
@@ -1931,11 +1954,11 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.276,
+        "score": 1.147,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a9cb0ab8-930f-4400-b70b-fbd01640f54d.pdf",
         "price_reaction": {
-          "pct_1d": 0.25,
-          "vol_ratio": 1.09
+          "pct_1d": -0.08,
+          "vol_ratio": 1.01
         },
         "enrichment": null
       },
@@ -1949,8 +1972,104 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.12,
+        "score": 1.033,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8269aea9-54c0-4a24-a615-6dda0ab8f054.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "5fd0fe11-f12c-44ab-8be0-16d1748e154e",
+        "symbol": "RELIANCE",
+        "company_name": "Reliance Industries Ltd",
+        "filed_at": "2026-11-13T18:23:17.417000+05:30",
+        "headline": "Please note that the Company executives will be participating in the Institutional Investors'' Meeting - Morgan Stanley 25th Annual Asia-Pacific Summit, scheduled to be held on November ....",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.936,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3f614a9e-94b0-42ef-8145-ba0055ba7be5.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "8213af8b-74ba-4762-a8d6-8447a2efb9c7",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-11-13T15:14:47.833000+05:30",
+        "headline": "Intimation regarding Investor meet of UltraTech Cement Limited",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.908,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d7982c18-e8b9-485f-8165-a8333b0d421e.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "c893c34b-5cd3-48b5-9ab3-c16a2ec40606",
+        "symbol": "TITAN",
+        "company_name": "Titan Company Ltd",
+        "filed_at": "2026-11-12T15:24:10.950000+05:30",
+        "headline": "Schedule of Analyst / Institutional Investor Meeting",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.792,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/71268b4d-2f12-447d-bf1e-28310f485d17.pdf",
+        "price_reaction": {
+          "pct_1d": -0.97,
+          "vol_ratio": 0.78
+        },
+        "enrichment": null
+      },
+      {
+        "id": "79f22cb2-fee0-4d03-a8c0-1fe31e06e341",
+        "symbol": "HDFCBANK",
+        "company_name": "HDFC Bank Ltd",
+        "filed_at": "2026-11-12T14:21:58.547000+05:30",
+        "headline": "Intimation of Schedule of Analyst/Institutional Investor Meetings under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.765,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d01ef203-cd61-4f19-b88b-7a373979e5b5.pdf",
+        "price_reaction": {
+          "pct_1d": 0.71,
+          "vol_ratio": 1.0
+        },
+        "enrichment": null
+      },
+      {
+        "id": "874ba6d8-144c-4f43-8a43-cec2927ea144",
+        "symbol": "RELIANCE",
+        "company_name": "Reliance Industries Ltd",
+        "filed_at": "2026-11-12T20:22:14.477000+05:30",
+        "headline": "Please note that the Company executives will be participating in the Institutional Investors'' Meeting - JM Financial India Conference, scheduled to be held on November 17, 2026 at Mumbai. ....",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.757,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/55f9d4f5-8638-4669-abdb-7cc4127221fc.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "782e8cb6-906c-4a17-a08e-2ac89389e272",
+        "symbol": "TATASTEEL",
+        "company_name": "Tata Steel Ltd",
+        "filed_at": "2026-11-12T16:48:53.923000+05:30",
+        "headline": "Intimation of Schedule of Analyst/ Institutional Investor Meeting under the SEBI Listing Regulations",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.731,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fcd5e6ba-794e-420b-ae7a-17a4c8df68e3.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -1964,7 +2083,7 @@
         "category": "results",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.744,
+        "score": 0.687,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/88c1f74a-5faf-4951-bd1c-87ac9c742fd0.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -1979,7 +2098,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.725,
+        "score": 0.669,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5a739d21-7ea5-4c1a-b220-45f77e240c2e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -1994,7 +2113,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.725,
+        "score": 0.669,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/569d3f9e-82d7-45c9-bb22-81509bb8ec3c.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2009,7 +2128,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.725,
+        "score": 0.669,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a10cb52b-e846-4a80-a709-c94b264e6532.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2024,9 +2143,12 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.63,
+        "score": 0.593,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2b934e4e-121f-42d7-a2d0-d3eb4364b9a7.pdf",
-        "price_reaction": null,
+        "price_reaction": {
+          "pct_1d": -0.2,
+          "vol_ratio": 0.52
+        },
         "enrichment": null
       },
       {
@@ -2039,7 +2161,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.595,
+        "score": 0.549,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a4fd562e-8ef5-4e10-8ba9-d2ae42ae09e1.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2054,7 +2176,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.565,
+        "score": 0.521,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c09898ed-8b2d-47cc-9b13-a049755597f5.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2069,7 +2191,7 @@
         "category": "dividend",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.492,
+        "score": 0.454,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c6836e5b-deb6-4c0c-9f93-24f735412d9c.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2084,7 +2206,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.474,
+        "score": 0.437,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4287a766-ee46-4987-a623-d5715303854c.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2099,7 +2221,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.471,
+        "score": 0.435,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/95ba2ee6-f092-4f27-906f-bb30db524807.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2114,7 +2236,7 @@
         "category": "dividend",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.471,
+        "score": 0.435,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7e5ca8e8-4fd9-49cc-ae26-fa1379c898a0.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2129,7 +2251,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.468,
+        "score": 0.432,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/39bd3884-e4c2-46dd-8c4f-71b1dbab4248.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2144,12 +2266,9 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.402,
+        "score": 0.366,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c0a1bde0-4d57-46c0-ac73-940d5ff093d7.pdf",
-        "price_reaction": {
-          "pct_1d": -0.13,
-          "vol_ratio": 0.7
-        },
+        "price_reaction": null,
         "enrichment": null
       },
       {
@@ -2162,7 +2281,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.389,
+        "score": 0.359,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ced01c36-48bf-4c4c-a74b-d17875a41c27.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2177,7 +2296,7 @@
         "category": "credit_rating",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.389,
+        "score": 0.359,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9a4b00d7-4978-4c75-beb2-78403163cb8e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2192,7 +2311,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.373,
+        "score": 0.345,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/29421bbb-42b8-471f-95ca-7258e50b1a1e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2207,7 +2326,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.354,
+        "score": 0.327,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4b1ab7e2-a0c4-40d9-8758-64975aea90d9.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2222,7 +2341,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.33,
+        "score": 0.304,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/795ae202-30f1-4db0-9791-17ef2f57a9ea.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2237,7 +2356,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.326,
+        "score": 0.301,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e7a2f589-b1f3-4953-a599-4d4a69a4c5cd.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2252,7 +2371,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.312,
+        "score": 0.288,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e0fdde76-7cb8-43e7-a642-628ffb402027.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2267,7 +2386,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.31,
+        "score": 0.286,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/182c311c-1ad2-4253-8317-e5af38170da0.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2282,7 +2401,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.31,
+        "score": 0.286,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/68b26084-8aff-4274-9acc-553e814d1dc4.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2297,7 +2416,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.301,
+        "score": 0.278,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3f37569c-9ad2-4f35-a893-fae70f224ec2.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2312,7 +2431,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.301,
+        "score": 0.278,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7de61400-55cf-4e63-a45b-a347c8f96223.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2327,7 +2446,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.256,
+        "score": 0.236,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fe431adc-0e1a-48ee-9c2b-b6e39cba04e4.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2342,7 +2461,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.25,
+        "score": 0.231,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/91ad2b2d-8248-4140-aefc-c17da68fc452.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2357,7 +2476,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.246,
+        "score": 0.227,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/71d743be-ad95-4b18-8751-47634594d564.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2372,7 +2491,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.246,
+        "score": 0.227,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1bbe06aa-8721-4e47-b0b1-985a91279ce9.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2387,7 +2506,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.23,
+        "score": 0.213,
         "pdf_url": null,
         "price_reaction": null,
         "enrichment": null
@@ -2402,7 +2521,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.221,
+        "score": 0.204,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/86cb66bf-7e97-4d77-a803-40ae7750d8f2.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2417,7 +2536,7 @@
         "category": "postal_ballot",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.209,
+        "score": 0.193,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0926e958-96d9-4537-ae2b-188dfe3eb1d1.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2432,7 +2551,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.203,
+        "score": 0.187,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bab324f6-6fab-42fc-8b79-a3881f4fb7c7.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2447,7 +2566,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.196,
+        "score": 0.181,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9e23e65f-ffbd-4e61-be8c-a57227966831.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2462,7 +2581,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.159,
+        "score": 0.147,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d8a69245-c1f1-4bc3-a7c9-9dbc5795aae8.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2477,7 +2596,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.156,
+        "score": 0.144,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/50d58706-f181-4522-8799-b05f65780ce8.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2492,7 +2611,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.151,
+        "score": 0.14,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9ce2ef60-0b4f-44dc-a3a0-435c1066af80.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2507,7 +2626,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.133,
+        "score": 0.122,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e997741-4d35-4188-933a-cf020fb9c816.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2522,7 +2641,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.126,
+        "score": 0.116,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/63d85004-a83c-407e-a649-5d71cfce075f.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2537,7 +2656,7 @@
         "category": "agm_egm",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.123,
+        "score": 0.114,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a2e82696-5059-47a4-9c36-8399f022f4f0.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2552,7 +2671,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.121,
+        "score": 0.112,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0dc8ebe7-5e2d-4946-85ee-1e536c461a71.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2567,7 +2686,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.121,
+        "score": 0.112,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/aacc5fc7-25e5-4901-b682-d9911fe1d21b.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2582,7 +2701,7 @@
         "category": "results",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.121,
+        "score": 0.112,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9d4cb3ed-a184-4662-91fc-f4112ce354b7.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2597,7 +2716,7 @@
         "category": "investor_meetings",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.12,
+        "score": 0.111,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4dbdcf77-227e-4b84-b1de-74b69bdc5ee9.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2612,7 +2731,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.108,
+        "score": 0.1,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b8f28d0-1101-4b12-82d0-e2ef23c8ef6c.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2627,23 +2746,8 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.101,
+        "score": 0.093,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0f665e67-b13f-4624-9278-3f4183d817eb.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "b57093d4-15e7-43ab-a10e-ceb844a9ff0d",
-        "symbol": "ASTRAL",
-        "company_name": "Astral Ltd",
-        "filed_at": "2026-10-31T15:36:58.743000+05:30",
-        "headline": "Earnings Call on Thursday, 05th November, 2026 at 8:00 PM.",
-        "so_what": null,
-        "category": "earnings_call",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.098,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2684ff83-e0e0-41ce-bcd0-935a714cf850.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -2657,8 +2761,23 @@
         "category": "postal_ballot",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.097,
+        "score": 0.09,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6878f31a-dc55-4714-9f81-4231101d1ff3.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "b57093d4-15e7-43ab-a10e-ceb844a9ff0d",
+        "symbol": "ASTRAL",
+        "company_name": "Astral Ltd",
+        "filed_at": "2026-10-31T15:36:58.743000+05:30",
+        "headline": "Earnings Call on Thursday, 05th November, 2026 at 8:00 PM.",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.09,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2684ff83-e0e0-41ce-bcd0-935a714cf850.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -2672,7 +2791,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.095,
+        "score": 0.088,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1f1205bc-a6f9-4dc6-85af-eed6f74e9dc5.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2687,23 +2806,8 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.093,
+        "score": 0.086,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2ac0d096-9180-469d-ae98-64417ec32ae8.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "fa36cde7-2447-4f2a-8bd4-4d99941bbc20",
-        "symbol": "BAJFINANCE",
-        "company_name": "Bajaj Finance Ltd",
-        "filed_at": "2026-11-02T19:17:27.557000+05:30",
-        "headline": "Summary of proceedings of Extraordinary General Meeting",
-        "so_what": null,
-        "category": "agm_egm",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.081,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5f21f715-4d81-4470-9e3b-2ca076cf4e22.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -2717,8 +2821,23 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.081,
+        "score": 0.075,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5e1a8352-6166-444c-848a-29299a80a8d1.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "fa36cde7-2447-4f2a-8bd4-4d99941bbc20",
+        "symbol": "BAJFINANCE",
+        "company_name": "Bajaj Finance Ltd",
+        "filed_at": "2026-11-02T19:17:27.557000+05:30",
+        "headline": "Summary of proceedings of Extraordinary General Meeting",
+        "so_what": null,
+        "category": "agm_egm",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.074,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5f21f715-4d81-4470-9e3b-2ca076cf4e22.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -2732,7 +2851,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.076,
+        "score": 0.071,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/498df898-abfc-4569-b288-56622aa74bef.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2747,7 +2866,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.063,
+        "score": 0.058,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4e54d4d8-32a5-4d3c-aca0-c9459e230fa8.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2762,7 +2881,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.06,
+        "score": 0.056,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/abf880ad-357c-4ff9-b6d7-83c1dcf59cba.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2777,7 +2896,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.06,
+        "score": 0.055,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4c027e30-6b95-4915-9843-bd4e4c437bb1.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2792,7 +2911,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.055,
+        "score": 0.051,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/115618e0-f718-4b8b-81e1-642618cbe608.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2807,7 +2926,7 @@
         "category": "postal_ballot",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.051,
+        "score": 0.047,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e87d46d8-c447-4fc2-9b82-a95a8a922b0f.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2822,7 +2941,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.05,
+        "score": 0.046,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7982fc61-7765-4981-ab3d-6aec36ba2137.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2837,7 +2956,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.041,
+        "score": 0.038,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0e4c11c6-4c96-42c0-ac94-b2cb928c4f4f.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2852,7 +2971,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.04,
+        "score": 0.037,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fd1ecd31-1e5f-494a-9ea9-20dffa50f6d4.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2867,7 +2986,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.038,
+        "score": 0.035,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3892cb51-dbcd-43ad-955f-fe9fafe54003.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2882,7 +3001,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.024,
+        "score": 0.022,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/46b44110-a538-4759-8351-04d4731da2ae.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2897,7 +3016,7 @@
         "category": "dividend",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.023,
+        "score": 0.021,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0f7c4fa3-6c9a-497a-921a-e14c20919f86.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2912,23 +3031,8 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.023,
+        "score": 0.021,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7a7cacec-6e60-4f88-9c95-ad60962ad4d4.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "fd8f06cf-fd65-4a93-944c-e6463ce1eda6",
-        "symbol": "HDFCBANK",
-        "company_name": "HDFC Bank Ltd",
-        "filed_at": "2026-10-23T22:50:38.977000+05:30",
-        "headline": "Transcript of Earnings Call in relation to the unaudited standalone and consolidated financial results of the HDFC Bank Limited for the quarter and half-year ended September 30, 2026",
-        "so_what": null,
-        "category": "earnings_call",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.017,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d7e45614-ae12-4bb9-b92d-623b3a63f166.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -2942,8 +3046,23 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.016,
+        "score": 0.015,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bd352f0e-ac9c-4c6d-94cd-6b50802c665b.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "fd8f06cf-fd65-4a93-944c-e6463ce1eda6",
+        "symbol": "HDFCBANK",
+        "company_name": "HDFC Bank Ltd",
+        "filed_at": "2026-10-23T22:50:38.977000+05:30",
+        "headline": "Transcript of Earnings Call in relation to the unaudited standalone and consolidated financial results of the HDFC Bank Limited for the quarter and half-year ended September 30, 2026",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.015,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d7e45614-ae12-4bb9-b92d-623b3a63f166.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -2957,7 +3076,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.016,
+        "score": 0.015,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/524eadda-3966-4f4f-8888-bfaf2cb0d69e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -2972,23 +3091,8 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.016,
+        "score": 0.015,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f317d625-e7e4-4155-bf66-a43c7def32b6.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "bf30a59b-8e78-4017-bcfc-867b22b7b601",
-        "symbol": "RELIANCE",
-        "company_name": "Reliance Industries Ltd",
-        "filed_at": "2026-10-21T22:42:31.023000+05:30",
-        "headline": "Please find attached a media statement issued by the Company.",
-        "so_what": null,
-        "category": "press_release",
-        "category_source": "llm",
-        "priority": "low",
-        "score": 0.016,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3667a6e5-6d63-45c2-b94e-d09043e401b4.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -3002,113 +3106,8 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.015,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c7855465-32dd-44c8-9c0b-e63ce6ac0be5.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "3edbe0c3-f3ed-4804-92a8-a4bc45e22fb6",
-        "symbol": "BAJFINANCE",
-        "company_name": "Bajaj Finance Ltd",
-        "filed_at": "2026-10-23T14:45:33.633000+05:30",
-        "headline": "Transcript of conference call held in respect of Financial Results for the Quarter and Half Year ended 30 September 2026.",
-        "so_what": null,
-        "category": "earnings_call",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.015,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7873abcb-7f97-487d-a474-028b0a26feea.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "e3ce80df-6eed-4b99-9262-5e8463ceb38f",
-        "symbol": "RELIANCE",
-        "company_name": "Reliance Industries Ltd",
-        "filed_at": "2026-10-21T20:44:48.397000+05:30",
-        "headline": "Intimation of Credit Rating assigned by ICRA Limited",
-        "so_what": null,
-        "category": "credit_rating",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.015,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/77e3ec52-056d-4103-8388-14b48756f70d.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "3e57668b-09d9-46e2-a377-3cce3f0ba033",
-        "symbol": "KEI",
-        "company_name": "KEI Industries Ltd",
-        "filed_at": "2026-10-21T17:48:13.240000+05:30",
-        "headline": "Investor Presentation",
-        "so_what": null,
-        "category": "results",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.015,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/afb9365a-bae4-4b8a-a90c-488f23b81c1b.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "9cc0a213-5337-434c-91ca-5964cbac4454",
-        "symbol": "KEI",
-        "company_name": "KEI Industries Ltd",
-        "filed_at": "2026-10-21T17:21:03.890000+05:30",
-        "headline": "Pursuant to Regulation 30, 33 and other applicable provisions of SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, as amended, this is to inform you that the Board ....",
-        "so_what": null,
-        "category": "results",
-        "category_source": "llm",
-        "priority": "low",
-        "score": 0.015,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3d157621-812e-45ee-8220-505d90ccf3d6.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "aa2ff20b-8cd0-4341-bc00-987cf8b20788",
-        "symbol": "LT",
-        "company_name": "Larsen & Toubro Ltd",
-        "filed_at": "2026-10-21T09:45:02.467000+05:30",
-        "headline": "L&T Wins Orders (Large*) in New Delhi and Andhra Pradesh",
-        "so_what": null,
-        "category": "press_release",
-        "category_source": "rule",
-        "priority": "low",
         "score": 0.014,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/42761949-c90f-4c0c-8fad-6d79416f15d2.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "f54b1c88-37b5-400b-9d5b-6edb273f48c8",
-        "symbol": "KEI",
-        "company_name": "KEI Industries Ltd",
-        "filed_at": "2026-10-22T19:04:44.197000+05:30",
-        "headline": "Pursuant to Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements), Regulations, 2015, given below is the Schedule of Conference Call/Meet with the Analyst / Institutional ....",
-        "so_what": null,
-        "category": "earnings_call",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.013,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/860a30b8-edbc-4a6f-85f6-ebf63c62afbe.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "f6773ce5-be56-45e5-9e73-f58d79713095",
-        "symbol": "KEI",
-        "company_name": "KEI Industries Ltd",
-        "filed_at": "2026-10-22T18:12:05.037000+05:30",
-        "headline": "In accordance with Regulation 30 of SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, please find below the link to the audio recording of the Analysts/Investors ....",
-        "so_what": null,
-        "category": "earnings_call",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.013,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2ae9ef96-7f76-4fde-86a0-18d3755a87dd.pdf",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c7855465-32dd-44c8-9c0b-e63ce6ac0be5.pdf",
         "price_reaction": null,
         "enrichment": null
       }
@@ -3120,7 +3119,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-11T17:06:59.713000+05:30",
-      "value": 6.624,
+      "value": 8.328,
       "threshold": 7.0,
       "message": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price.",
       "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7"
@@ -3130,7 +3129,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-10T12:23:10.163000+05:30",
-      "value": 5.681,
+      "value": 4.636,
       "threshold": 7.0,
       "message": "Approved allotment of 5,74,25,740 warrants at Rs. 1,010 each.",
       "filing_id": "dff7d1e2-500b-498c-9b9a-52b2cb4641a8"
@@ -3140,7 +3139,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-10T12:12:31.463000+05:30",
-      "value": 5.672,
+      "value": 4.628,
       "threshold": 7.0,
       "message": "Approved issuing 5,74,25,740 warrants for ₹57,99,99,97,400.",
       "filing_id": "f9a4f2e2-4e74-49fd-a6bd-9df8d6045e71"
@@ -3150,7 +3149,7 @@
       "symbol": "TATASTEEL",
       "kind": "material_filing",
       "triggered_at": "2026-11-07T15:44:55.163000+05:30",
-      "value": 2.965,
+      "value": 2.737,
       "threshold": 7.0,
       "message": "Tata Steel completed acquisition, increasing CPDPL stake to 57.5%.",
       "filing_id": "c49c17d4-2697-46d5-96f2-6e9b77f10b8e"
@@ -3160,7 +3159,7 @@
       "symbol": "TATASTEEL",
       "kind": "material_filing",
       "triggered_at": "2026-11-07T13:35:49.073000+05:30",
-      "value": 2.904,
+      "value": 2.68,
       "threshold": 7.0,
       "message": "Retirement of Mr. Noel Naval Tata as Non-Executive, Non-Independent Director and as Vice-C",
       "filing_id": "4de0b0df-dd85-401a-9d6b-dd85fc660c4f"
@@ -3170,7 +3169,7 @@
       "symbol": "TATASTEEL",
       "kind": "material_filing",
       "triggered_at": "2026-11-07T13:19:15.060000+05:30",
-      "value": 3.258,
+      "value": 3.007,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT +16%, Rev +12% YoY · EBITDA margin 16.8%",
       "filing_id": "4f4ea23c-0c48-4420-a9bc-7e963dd8cefe"
@@ -3180,7 +3179,7 @@
       "symbol": "TITAN",
       "kind": "material_filing",
       "triggered_at": "2026-11-05T18:49:12.020000+05:30",
-      "value": 1.924,
+      "value": 1.776,
       "threshold": 7.0,
       "message": "Retirement of Mr. Noel. N. Tata as Director and Vice-Chairman",
       "filing_id": "9fe24176-bed0-4206-9717-23b4afe63ad4"
@@ -3190,7 +3189,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-05T17:46:29.097000+05:30",
-      "value": 1.666,
+      "value": 1.538,
       "threshold": 7.0,
       "message": "Board meeting set for 10 Nov 2026 to price warrant issue",
       "filing_id": "6cae5e85-e0dc-4fa9-8f43-11b4bedd4333"
@@ -3200,7 +3199,7 @@
       "symbol": "TITAN",
       "kind": "material_filing",
       "triggered_at": "2026-11-05T17:02:10.910000+05:30",
-      "value": 2.127,
+      "value": 1.964,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT +114%, Rev +10% YoY · EBITDA margin 17.7%",
       "filing_id": "ee6123a8-c373-465b-9347-34adbc250091"
@@ -3210,7 +3209,7 @@
       "symbol": "ASTRAL",
       "kind": "material_filing",
       "triggered_at": "2026-11-05T16:22:52.253000+05:30",
-      "value": 2.114,
+      "value": 1.951,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT −6%, Rev +26% YoY · EBITDA margin 12.6%",
       "filing_id": "36ba38f5-dc7d-4c34-8fc5-a032e67b24a0"
@@ -3220,7 +3219,7 @@
       "symbol": "CERA",
       "kind": "material_filing",
       "triggered_at": "2026-11-04T12:28:41.470000+05:30",
-      "value": 1.616,
+      "value": 1.492,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT −1%, Rev +27% YoY · EBITDA margin 12.2%",
       "filing_id": "a445bb91-cef9-4586-b4c7-3b11993371a2"
@@ -3230,7 +3229,7 @@
       "symbol": "TATASTEEL",
       "kind": "material_filing",
       "triggered_at": "2026-11-03T13:06:37.850000+05:30",
-      "value": 1.147,
+      "value": 1.059,
       "threshold": 7.0,
       "message": "Amalgamation of Rujuvalika Investments with Tata Steel effective Nov 3",
       "filing_id": "af2b83ef-b621-415d-9fac-416f75bf694f"
@@ -3240,7 +3239,7 @@
       "symbol": "TATASTEEL",
       "kind": "material_filing",
       "triggered_at": "2026-11-03T12:46:40.780000+05:30",
-      "value": 1.143,
+      "value": 1.055,
       "threshold": 7.0,
       "message": "Tata Steel's amalgamation with Rujuvalika is effective Nov 3, 2026.",
       "filing_id": "9b3b98e4-83e6-4b21-b477-1eba9573c09d"
@@ -3250,7 +3249,7 @@
       "symbol": "FINEORG",
       "kind": "material_filing",
       "triggered_at": "2026-11-02T17:11:43.230000+05:30",
-      "value": 1.065,
+      "value": 0.983,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT +40%, Rev +22% YoY · EBITDA margin 25.0%",
       "filing_id": "82f1209f-84a3-4b3f-b075-da9ee97716ba"
@@ -3260,7 +3259,7 @@
       "symbol": "FINEORG",
       "kind": "material_filing",
       "triggered_at": "2026-11-02T17:02:47.990000+05:30",
-      "value": 0.946,
+      "value": 0.873,
       "threshold": 7.0,
       "message": "Approved investment limit increase by Rs. 120 crores to Rs. 420 crores",
       "filing_id": "30c3da71-6fc5-4995-97ea-27380694b7a6"
@@ -3270,7 +3269,7 @@
       "symbol": "LT",
       "kind": "material_filing",
       "triggered_at": "2026-10-31T12:49:28.357000+05:30",
-      "value": 0.572,
+      "value": 0.528,
       "threshold": 7.0,
       "message": "L&T extended the sale of L&T Network Services to March 31, 2027.",
       "filing_id": "e37c5322-e4c3-4831-b3c6-48d5930f6d19"
@@ -3280,7 +3279,7 @@
       "symbol": "RELIANCE",
       "kind": "material_filing",
       "triggered_at": "2026-10-30T19:42:49.917000+05:30",
-      "value": 0.546,
+      "value": 0.504,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT +34%, Rev +29% YoY · EBITDA margin 17.0%",
       "filing_id": "3d90a81b-52f2-427a-b1f7-27f545cf1ca5"
@@ -3290,7 +3289,7 @@
       "symbol": "SUNPHARMA",
       "kind": "material_filing",
       "triggered_at": "2026-10-30T14:14:55.960000+05:30",
-      "value": 0.518,
+      "value": 0.478,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT −36%, Rev +12% YoY",
       "filing_id": "7bbcaf67-e404-4ffb-b7fd-07ff385fdb0a"
@@ -3300,7 +3299,7 @@
       "symbol": "GARFIBRES",
       "kind": "material_filing",
       "triggered_at": "2026-10-29T16:17:53.100000+05:30",
-      "value": 0.419,
+      "value": 0.387,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT +83%, Rev +33% YoY · EBITDA margin 17.3%",
       "filing_id": "90d6e197-e3c1-4e7f-be7f-d05c5833d849"
@@ -3310,7 +3309,7 @@
       "symbol": "RELIANCE",
       "kind": "material_filing",
       "triggered_at": "2026-10-29T08:55:13.837000+05:30",
-      "value": 0.347,
+      "value": 0.32,
       "threshold": 7.0,
       "message": "Hamleys (Franchising) Ltd. to be dissolved by late December 2026.",
       "filing_id": "313ccc61-deae-4673-a050-3a78c4290c8f"
@@ -3320,7 +3319,7 @@
       "symbol": "TITAN",
       "kind": "material_filing",
       "triggered_at": "2026-10-28T13:45:53.150000+05:30",
-      "value": 0.289,
+      "value": 0.266,
       "threshold": 7.0,
       "message": "The Company has incorporated a Wholly Owned Subsidiary in Carada in the name and Style of ",
       "filing_id": "b0a80b4b-b280-45ea-a1d5-6f18a24b3ce6"
@@ -3330,7 +3329,7 @@
       "symbol": "RELIANCE",
       "kind": "material_filing",
       "triggered_at": "2026-10-27T22:11:23.110000+05:30",
-      "value": 0.217,
+      "value": 0.201,
       "threshold": 7.0,
       "message": "Jio Platforms IPO trading commences October 28, 2026.",
       "filing_id": "c737601e-dff8-49ed-8959-263b42e68df0"
@@ -3340,7 +3339,7 @@
       "symbol": "LT",
       "kind": "material_filing",
       "triggered_at": "2026-10-27T17:23:45.827000+05:30",
-      "value": 0.267,
+      "value": 0.246,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT +27%, Rev +16% YoY · EBITDA margin 8.7%",
       "filing_id": "84f672d2-60a7-4cef-adec-3711a9c76668"
@@ -3350,7 +3349,7 @@
       "symbol": "LT",
       "kind": "material_filing",
       "triggered_at": "2026-10-27T13:26:54.687000+05:30",
-      "value": 0.2,
+      "value": 0.184,
       "threshold": 7.0,
       "message": "L&T approved the allotment of 21,098 equity shares on Oct 27, 2026.",
       "filing_id": "a696c982-b6cc-4d41-9fe9-ef50f17b2a0f"
@@ -3360,7 +3359,7 @@
       "symbol": "HDFCBANK",
       "kind": "material_filing",
       "triggered_at": "2026-10-27T08:06:22.633000+05:30",
-      "value": 0.217,
+      "value": 0.2,
       "threshold": 7.0,
       "message": "Anup Bagchi appointed as MD and CEO from 27 Oct",
       "filing_id": "eee0209e-2a9c-4d1c-91a1-8b1dbc6868a2"
@@ -3370,7 +3369,7 @@
       "symbol": "PERSISTENT",
       "kind": "material_filing",
       "triggered_at": "2026-10-26T23:29:31.787000+05:30",
-      "value": 0.175,
+      "value": 0.161,
       "threshold": 7.0,
       "message": "Approved allotment of 7,683,981 shares for INR 42,646.09 million.",
       "filing_id": "e4c168b5-0735-49cc-a030-f058d7ebc477"
@@ -3380,7 +3379,7 @@
       "symbol": "PERSISTENT",
       "kind": "material_filing",
       "triggered_at": "2026-10-26T23:23:43.303000+05:30",
-      "value": 0.175,
+      "value": 0.161,
       "threshold": 7.0,
       "message": "The outcome of the Special Committee Meeting held on October 26, 2026, in relation to the ",
       "filing_id": "2147983d-9115-4c12-8ce1-32024d8b1f39"
@@ -3390,7 +3389,7 @@
       "symbol": "RELIANCE",
       "kind": "material_filing",
       "triggered_at": "2026-10-24T21:47:58.737000+05:30",
-      "value": 0.108,
+      "value": 0.1,
       "threshold": 7.0,
       "message": "JPL finalized IPO issue price at ₹1,119 per equity share.",
       "filing_id": "16ea0782-d143-468b-901a-3f244a3373ce"
@@ -3400,7 +3399,7 @@
       "symbol": "INFY",
       "kind": "material_filing",
       "triggered_at": "2026-10-23T16:16:06.710000+05:30",
-      "value": 0.105,
+      "value": 0.097,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT +6%, Rev +11% YoY · EBITDA margin 23.7%",
       "filing_id": "50d31412-9909-4254-b5da-52df1d25080e"
@@ -3410,7 +3409,7 @@
       "symbol": "PERSISTENT",
       "kind": "material_filing",
       "triggered_at": "2026-10-21T19:21:01.967000+05:30",
-      "value": 0.053,
+      "value": 0.049,
       "threshold": 7.0,
       "message": "Opened QIP issue on Oct 21, 2026, with a floor price of INR 5,550.",
       "filing_id": "5f00980e-357d-40e2-a34d-2e8f104df277"
@@ -3420,7 +3419,7 @@
       "symbol": "KEI",
       "kind": "material_filing",
       "triggered_at": "2026-10-21T18:14:31.593000+05:30",
-      "value": 0.067,
+      "value": 0.062,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT +29%, Rev +38% YoY · EBITDA margin 10.0%",
       "filing_id": "d5b192af-7384-42b1-9dac-e57bf6b3639c"
@@ -3430,7 +3429,7 @@
       "symbol": "KEI",
       "kind": "material_filing",
       "triggered_at": "2026-10-21T17:43:25.997000+05:30",
-      "value": 0.067,
+      "value": 0.062,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT +29%, Rev +38% YoY · EBITDA margin 10.0%",
       "filing_id": "159cbdf6-1f00-4f61-813d-b5790b5ec432"
@@ -3440,7 +3439,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-10-19T18:03:33.520000+05:30",
-      "value": 0.033,
+      "value": 0.03,
       "threshold": 7.0,
       "message": "Board approved issue of 49,00,737 equity shares of face value Re.1",
       "filing_id": "913014a6-a273-4cfc-8a62-a2fccb69a061"
@@ -3450,7 +3449,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-10-19T17:39:55+05:30",
-      "value": 0.042,
+      "value": 0.039,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT +29%, Rev +23% YoY",
       "filing_id": "35bf242b-58db-4820-9ded-2d759a71d9f8"
@@ -3460,7 +3459,7 @@
       "symbol": "HINDZINC",
       "kind": "material_filing",
       "triggered_at": "2026-10-19T15:47:44.593000+05:30",
-      "value": 0.041,
+      "value": 0.038,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT +142%, Rev +76% YoY · EBITDA margin 61.3%",
       "filing_id": "0023c44c-f425-4f61-8516-9b738e70db04"
@@ -3470,7 +3469,7 @@
       "symbol": "ULTRACEMCO",
       "kind": "material_filing",
       "triggered_at": "2026-10-19T13:57:39.937000+05:30",
-      "value": 0.036,
+      "value": 0.033,
       "threshold": 7.0,
       "message": "K. K. Maheshwari resigns as Non-Executive Director and Vice Chairman",
       "filing_id": "f993b851-e8a4-42c2-b791-341bb576eebc"
@@ -3480,7 +3479,7 @@
       "symbol": "ULTRACEMCO",
       "kind": "material_filing",
       "triggered_at": "2026-10-19T13:47:54.767000+05:30",
-      "value": 0.041,
+      "value": 0.037,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT +21%, Rev +19% YoY",
       "filing_id": "ec29d900-b6b1-4b6f-8f25-91b061275d31"
@@ -3490,7 +3489,7 @@
       "symbol": "TATASTEEL",
       "kind": "material_filing",
       "triggered_at": "2026-10-15T19:10:15.873000+05:30",
-      "value": 0.015,
+      "value": 0.014,
       "threshold": 7.0,
       "message": "Tata Steel received NCLT order approving Rujuvalika merger on Oct 15.",
       "filing_id": "a6f4cedd-b93b-432b-ade8-bfca19b19d22"
@@ -3500,7 +3499,7 @@
       "symbol": "TATASTEEL",
       "kind": "material_filing",
       "triggered_at": "2026-10-15T19:01:31.730000+05:30",
-      "value": 0.015,
+      "value": 0.014,
       "threshold": 7.0,
       "message": "Receipt of NCLT order approving scheme on 15 Oct 2026.",
       "filing_id": "d29db3bf-13e1-4d63-bc32-d133ad424558"
@@ -3510,7 +3509,7 @@
       "symbol": "PERSISTENT",
       "kind": "material_filing",
       "triggered_at": "2026-10-15T16:05:16.027000+05:30",
-      "value": 0.016,
+      "value": 0.015,
       "threshold": 7.0,
       "message": "Q2 FY27: PAT −25%, Rev +30% YoY · EBITDA margin 13.6%",
       "filing_id": "8e79c896-5803-4f7e-a939-e6380086a31e"
@@ -3520,35 +3519,15 @@
       "symbol": "TCS",
       "kind": "material_filing",
       "triggered_at": "2026-10-15T13:28:35.827000+05:30",
-      "value": 0.014,
+      "value": 0.013,
       "threshold": 7.0,
       "message": "TCS completed acquisition of 100% stake in BBY Services India LLP.",
       "filing_id": "85a90a42-ccad-4d29-983b-6c2164f010e0"
-    },
-    {
-      "id": "fl-8f0e4798-3443-4095-82a1-4d6b0029483f",
-      "symbol": "RELIANCE",
-      "kind": "material_filing",
-      "triggered_at": "2026-10-14T20:12:37.070000+05:30",
-      "value": 0.011,
-      "threshold": 7.0,
-      "message": "Jio Platforms approved IPO price band ₹1,065 to ₹1,119 per share.",
-      "filing_id": "8f0e4798-3443-4095-82a1-4d6b0029483f"
-    },
-    {
-      "id": "fl-fa7c81b8-d6f0-424d-9f8e-f40b710d9f8a",
-      "symbol": "RELIANCE",
-      "kind": "material_filing",
-      "triggered_at": "2026-10-14T18:35:09.313000+05:30",
-      "value": 0.01,
-      "threshold": 7.0,
-      "message": "Jio Platforms filed RHP for IPO opening on October 21, 2026.",
-      "filing_id": "fa7c81b8-d6f0-424d-9f8e-f40b710d9f8a"
     }
   ],
   "counts": {
-    "total": 249,
-    "rule_classified": 213,
-    "llm_classified": 36
+    "total": 253,
+    "rule_classified": 220,
+    "llm_classified": 33
   }
 }

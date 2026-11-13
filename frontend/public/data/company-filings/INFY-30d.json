@@ -3,13 +3,13 @@
   "name": "Infosys",
   "window": {
     "label": "30d",
-    "start": "2026-10-14T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-10-15T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "counts": {
-    "total": 15,
-    "rule_classified": 15,
+    "total": 16,
+    "rule_classified": 16,
     "llm_classified": 0
   },
   "important": [
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.105,
+      "score": 0.097,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26c12463-d44e-4050-bd47-b53cc294b4e0.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -78,14 +78,32 @@
     }
   ],
   "routine": {
-    "count": 14,
+    "count": 15,
     "by_category": {
-      "unclassified": 11,
+      "unclassified": 12,
       "earnings_call": 1,
       "dividend": 1,
       "results": 1
     },
     "items": [
+      {
+        "id": "4a2555f1-fd67-4fb4-bed9-b565b67dced5",
+        "symbol": "INFY",
+        "company_name": "Infosys Ltd",
+        "filed_at": "2026-11-12T11:21:41.480000+05:30",
+        "headline": "Enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2d26cac8-d5b5-4be4-ba93-d18f80ee8c0c.pdf",
+        "price_reaction": {
+          "pct_1d": -0.33,
+          "vol_ratio": 0.45
+        },
+        "enrichment": null
+      },
       {
         "id": "d7e25c1d-68d4-4324-88a0-7cde8b498870",
         "symbol": "INFY",
@@ -156,7 +174,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.05,
+        "score": 0.046,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7982fc61-7765-4981-ab3d-6aec36ba2137.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -246,7 +264,7 @@
         "category": "dividend",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.023,
+        "score": 0.021,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0f7c4fa3-6c9a-497a-921a-e14c20919f86.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -261,7 +279,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.023,
+        "score": 0.021,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7a7cacec-6e60-4f88-9c95-ad60962ad4d4.pdf",
         "price_reaction": null,
         "enrichment": null

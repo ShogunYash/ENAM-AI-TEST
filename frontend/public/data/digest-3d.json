@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "3d",
-    "start": "2026-11-10T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-11-11T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "needs_you": [
     {
       "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
@@ -16,23 +16,108 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 6.624,
+      "score": 8.328,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
-      "price_reaction": null,
+      "price_reaction": {
+        "pct_1d": 3.36,
+        "vol_ratio": 1.21
+      },
       "enrichment": {
         "type": "oneliner",
         "text": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price."
       }
     }
   ],
-  "also_material": [],
+  "also_material": [
+    {
+      "id": "44ba0161-d9e4-4bd1-aae7-eb3bc46319dd",
+      "symbol": "HDFCBANK",
+      "company_name": "HDFC Bank Ltd",
+      "filed_at": "2026-11-13T16:30:11.850000+05:30",
+      "headline": "Re-appointment of Mr. V. Srinivasa Rangan as the Whole-time Director(designated as Executive Director) of HDFC Bank Limited.",
+      "so_what": null,
+      "category": "management_change",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 6.891,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "management",
+        "person": "Mr. V. Srinivasa Rangan",
+        "role": "Whole-time Director (designated as Executive Director)",
+        "change": "appointed",
+        "background": [
+          "Not related to any other Director or Key Managerial Personnel"
+        ],
+        "links": [],
+        "effective": "2026-11-23",
+        "background_source": "filing"
+      }
+    },
+    {
+      "id": "16286674-572c-48bc-a47c-b8a9d5c07363",
+      "symbol": "HDFCBANK",
+      "company_name": "HDFC Bank Ltd",
+      "filed_at": "2026-11-12T17:27:27.333000+05:30",
+      "headline": "Approval from the Reserve Bank of India for re-appointment of Mr. V. Srinivasa Rangan as the Whole-time Director (designated as Executive Director) of HDFC Bank Limited",
+      "so_what": null,
+      "category": "management_change",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 5.52,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6df1f05c-9926-47ce-9896-94c41bdb71ab.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "management",
+        "person": "Mr. V. Srinivasa Rangan",
+        "role": "Whole-time Director (designated as Executive Director)",
+        "change": "appointed",
+        "background": [],
+        "links": [],
+        "effective": "2026-11-23",
+        "background_source": "none"
+      }
+    }
+  ],
   "routine": {
-    "count": 3,
+    "count": 13,
     "by_category": {
-      "earnings_call": 2,
-      "investor_meetings": 1
+      "earnings_call": 4,
+      "investor_meetings": 7,
+      "unclassified": 2
     },
     "items": [
+      {
+        "id": "fa3d44be-213e-498d-92f3-f32f4a7b1f5b",
+        "symbol": "TATASTEEL",
+        "company_name": "Tata Steel Ltd",
+        "filed_at": "2026-11-12T22:09:38.290000+05:30",
+        "headline": "Transcript of ''Tata Steel 2QFY27 Earnings Discussion''",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 1.54,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/eeedbcb3-2b63-4718-b5b7-b498eedf2b4e.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "6272f3c7-d39e-444d-8b87-f70794b50e16",
+        "symbol": "CERA",
+        "company_name": "Cera Sanitaryware Ltd",
+        "filed_at": "2026-11-12T16:15:33.640000+05:30",
+        "headline": "Transcript of Q2 & H1 FY27 Earnings Conference Call",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 1.455,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/769be2ca-bd51-4ac3-8e63-ce44e430d026.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
       {
         "id": "44ddb649-ee18-4e5e-9b01-ae7a40117b21",
         "symbol": "TITAN",
@@ -43,11 +128,11 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.461,
+        "score": 1.247,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/daa6c172-771a-4af5-b4b3-9813fdf7536a.pdf",
         "price_reaction": {
-          "pct_1d": -0.7,
-          "vol_ratio": 1.93
+          "pct_1d": -0.97,
+          "vol_ratio": 0.78
         },
         "enrichment": null
       },
@@ -61,12 +146,108 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.276,
+        "score": 1.147,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a9cb0ab8-930f-4400-b70b-fbd01640f54d.pdf",
         "price_reaction": {
-          "pct_1d": 0.25,
-          "vol_ratio": 1.09
+          "pct_1d": -0.08,
+          "vol_ratio": 1.01
         },
+        "enrichment": null
+      },
+      {
+        "id": "5fd0fe11-f12c-44ab-8be0-16d1748e154e",
+        "symbol": "RELIANCE",
+        "company_name": "Reliance Industries Ltd",
+        "filed_at": "2026-11-13T18:23:17.417000+05:30",
+        "headline": "Please note that the Company executives will be participating in the Institutional Investors'' Meeting - Morgan Stanley 25th Annual Asia-Pacific Summit, scheduled to be held on November ....",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.936,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3f614a9e-94b0-42ef-8145-ba0055ba7be5.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "8213af8b-74ba-4762-a8d6-8447a2efb9c7",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-11-13T15:14:47.833000+05:30",
+        "headline": "Intimation regarding Investor meet of UltraTech Cement Limited",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.908,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d7982c18-e8b9-485f-8165-a8333b0d421e.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "c893c34b-5cd3-48b5-9ab3-c16a2ec40606",
+        "symbol": "TITAN",
+        "company_name": "Titan Company Ltd",
+        "filed_at": "2026-11-12T15:24:10.950000+05:30",
+        "headline": "Schedule of Analyst / Institutional Investor Meeting",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.792,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/71268b4d-2f12-447d-bf1e-28310f485d17.pdf",
+        "price_reaction": {
+          "pct_1d": -0.97,
+          "vol_ratio": 0.78
+        },
+        "enrichment": null
+      },
+      {
+        "id": "79f22cb2-fee0-4d03-a8c0-1fe31e06e341",
+        "symbol": "HDFCBANK",
+        "company_name": "HDFC Bank Ltd",
+        "filed_at": "2026-11-12T14:21:58.547000+05:30",
+        "headline": "Intimation of Schedule of Analyst/Institutional Investor Meetings under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.765,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d01ef203-cd61-4f19-b88b-7a373979e5b5.pdf",
+        "price_reaction": {
+          "pct_1d": 0.71,
+          "vol_ratio": 1.0
+        },
+        "enrichment": null
+      },
+      {
+        "id": "874ba6d8-144c-4f43-8a43-cec2927ea144",
+        "symbol": "RELIANCE",
+        "company_name": "Reliance Industries Ltd",
+        "filed_at": "2026-11-12T20:22:14.477000+05:30",
+        "headline": "Please note that the Company executives will be participating in the Institutional Investors'' Meeting - JM Financial India Conference, scheduled to be held on November 17, 2026 at Mumbai. ....",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.757,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/55f9d4f5-8638-4669-abdb-7cc4127221fc.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "782e8cb6-906c-4a17-a08e-2ac89389e272",
+        "symbol": "TATASTEEL",
+        "company_name": "Tata Steel Ltd",
+        "filed_at": "2026-11-12T16:48:53.923000+05:30",
+        "headline": "Intimation of Schedule of Analyst/ Institutional Investor Meeting under the SEBI Listing Regulations",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.731,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fcd5e6ba-794e-420b-ae7a-17a4c8df68e3.pdf",
+        "price_reaction": null,
         "enrichment": null
       },
       {
@@ -79,9 +260,45 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.63,
+        "score": 0.593,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2b934e4e-121f-42d7-a2d0-d3eb4364b9a7.pdf",
+        "price_reaction": {
+          "pct_1d": -0.2,
+          "vol_ratio": 0.52
+        },
+        "enrichment": null
+      },
+      {
+        "id": "cf9c4d4e-68f7-4bac-a5f2-2a83f7055887",
+        "symbol": "TITAN",
+        "company_name": "Titan Company Ltd",
+        "filed_at": "2026-11-12T18:41:08.577000+05:30",
+        "headline": "Redemption of Commercial Paper",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/77999e05-06f6-4ed6-9998-f9a775dc5c4f.pdf",
         "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "4a2555f1-fd67-4fb4-bed9-b565b67dced5",
+        "symbol": "INFY",
+        "company_name": "Infosys Ltd",
+        "filed_at": "2026-11-12T11:21:41.480000+05:30",
+        "headline": "Enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2d26cac8-d5b5-4be4-ba93-d18f80ee8c0c.pdf",
+        "price_reaction": {
+          "pct_1d": -0.33,
+          "vol_ratio": 0.45
+        },
         "enrichment": null
       }
     ]
@@ -92,15 +309,15 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-11T17:06:59.713000+05:30",
-      "value": 6.624,
+      "value": 8.328,
       "threshold": 7.0,
       "message": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price.",
       "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7"
     }
   ],
   "counts": {
-    "total": 4,
-    "rule_classified": 4,
+    "total": 16,
+    "rule_classified": 16,
     "llm_classified": 0
   }
 }

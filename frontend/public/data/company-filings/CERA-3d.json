@@ -3,19 +3,37 @@
   "name": "Cera Sanitaryware",
   "window": {
     "label": "3d",
-    "start": "2026-11-10T16:58:19.398003+05:30",
-    "end": "2026-11-13T16:58:19.398003+05:30"
+    "start": "2026-11-11T01:17:48.611758+05:30",
+    "end": "2026-11-14T01:17:48.611758+05:30"
   },
-  "generated_at": "2026-11-13T16:58:19.398003+05:30",
+  "generated_at": "2026-11-14T01:17:48.611758+05:30",
   "counts": {
-    "total": 0,
-    "rule_classified": 0,
+    "total": 1,
+    "rule_classified": 1,
     "llm_classified": 0
   },
   "important": [],
   "routine": {
-    "count": 0,
-    "by_category": {},
-    "items": []
+    "count": 1,
+    "by_category": {
+      "earnings_call": 1
+    },
+    "items": [
+      {
+        "id": "6272f3c7-d39e-444d-8b87-f70794b50e16",
+        "symbol": "CERA",
+        "company_name": "Cera Sanitaryware Ltd",
+        "filed_at": "2026-11-12T16:15:33.640000+05:30",
+        "headline": "Transcript of Q2 & H1 FY27 Earnings Conference Call",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 1.455,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/769be2ca-bd51-4ac3-8e63-ce44e430d026.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
   }
 }
