@@ -164,29 +164,42 @@ export const FilingCard: React.FC<FilingCardProps> = ({
       )}
 
       {/* Card Action Bar: [Source PDF ↗]  [Ask FINN] */}
-      <div className="mt-3 pt-2.5 border-t border-zinc-800/60 flex items-center justify-between text-xs">
-        {pdf_url ? (
-          <a
-            href={pdf_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-zinc-400 hover:text-zinc-200 font-medium transition-colors py-1.5 px-2 -ml-2 rounded-lg touch-manipulation"
-          >
-            <span>Source PDF</span>
-            <ExternalLink className="w-3 h-3" />
-          </a>
-        ) : (
-          <span className="text-zinc-600 text-[11px]">No PDF attached</span>
-        )}
+      {(() => {
+        const resolvedPdfUrl =
+          enrichment?.type === 'results' && enrichment.source?.doc_url
+            ? enrichment.source.doc_url
+            : pdf_url
+        const sourcePage =
+          enrichment?.type === 'results' ? enrichment.source?.page : undefined
 
-        <button
-          onClick={() => onAskFinn && onAskFinn(filing)}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700/80 text-zinc-200 text-xs font-medium border border-zinc-700/60 touch-manipulation transition-colors"
-        >
-          <MessageSquare className="w-3 h-3 text-zinc-400" />
-          <span>Ask FINN</span>
-        </button>
-      </div>
+        return (
+          <div className="mt-3 pt-2.5 border-t border-zinc-800/60 flex items-center justify-between text-xs">
+            {resolvedPdfUrl ? (
+              <a
+                href={resolvedPdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-zinc-400 hover:text-zinc-200 font-medium transition-colors py-1.5 px-2 -ml-2 rounded-lg touch-manipulation"
+              >
+                <span>
+                  {sourcePage ? `Source PDF · p.${sourcePage}` : 'Source PDF'}
+                </span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            ) : (
+              <span className="text-zinc-600 text-[11px]">No PDF attached</span>
+            )}
+
+            <button
+              onClick={() => onAskFinn && onAskFinn(filing)}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700/80 text-zinc-200 text-xs font-medium border border-zinc-700/60 touch-manipulation transition-colors"
+            >
+              <MessageSquare className="w-3 h-3 text-zinc-400" />
+              <span>Ask FINN</span>
+            </button>
+          </div>
+        )
+      })()}
     </article>
   )
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { ResultsCard } from '@/api/types'
 import { formatInrCr, formatPercentDelta } from '@/lib/formatters'
-import { CheckCircle2, AlertTriangle, ExternalLink } from 'lucide-react'
+import { CheckCircle2, AlertTriangle } from 'lucide-react'
 
 interface ResultsCardPayloadProps {
   enrichment: ResultsCard
@@ -44,28 +44,13 @@ export const ResultsCardPayload: React.FC<ResultsCardPayloadProps> = ({ enrichme
               <span>Screener mismatch</span>
             </button>
           ) : cross_check && cross_check.status === 'match' ? (
-            /* Revenue, PBT, PAT checked (p. N) links directly to source PDF */
-            source?.doc_url ? (
-              <a
-                href={source.doc_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-[10px] text-emerald-400 hover:text-emerald-300 font-mono underline decoration-emerald-800/80 transition-colors"
-                title={`Open source PDF, page ${source.page ?? 1} (Revenue, PBT, PAT checked against Screener.in)`}
-              >
-                <CheckCircle2 className="w-2.5 h-2.5" />
-                <span>Revenue, PBT, PAT checked{source.page ? ` (p. ${source.page})` : ''}</span>
-                <ExternalLink className="w-2.5 h-2.5 opacity-80" />
-              </a>
-            ) : (
-              <span
-                className="inline-flex items-center gap-1 text-[10px] text-emerald-400 font-mono"
-                title="Revenue, PBT, PAT checked against Screener.in"
-              >
-                <CheckCircle2 className="w-2.5 h-2.5" />
-                <span>Revenue, PBT, PAT checked{source?.page ? ` (p. ${source.page})` : ''}</span>
-              </span>
-            )
+            <span
+              className="inline-flex items-center gap-1 text-[10px] text-emerald-400 font-mono"
+              title="Revenue, PBT, PAT checked against Screener.in"
+            >
+              <CheckCircle2 className="w-2.5 h-2.5" />
+              <span>Revenue, PBT, PAT checked vs screener.in</span>
+            </span>
           ) : null}
         </div>
       </div>
