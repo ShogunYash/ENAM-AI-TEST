@@ -62,6 +62,33 @@ export function getVerdictChip(verdict: Verdict) {
   }
 }
 
+function extractRange(text?: string | null): string | null {
+  if (!text) return null
+  const re = /(\d+(?:\.\d+)?)\s*%\s*(?:to|[-–—‒‑\u2010-\u2015\u2212])\s*(\d+(?:\.\d+)?)\s*%/i
+  const m = text.match(re)
+  if (m) return `${m[1]}–${m[2]}%`
+  const re2 = /(\d+(?:\.\d+)?)\s*(?:to|[-–—‒‑\u2010-\u2015\u2212])\s*(\d+(?:\.\d+)?)\s*%/i
+  const m2 = text.match(re2)
+  if (m2) return `${m2[1]}–${m2[2]}%`
+  return null
+}
+
+function getRangeShift(item: PvDItem): string | null {
+  if (item.verdict !== 'cut' && item.verdict !== 'raised') return null
+  const pRange =
+    extractRange(item.promised.text) ||
+    extractRange(item.promised.sources[0]?.quote)
+  const oRange =
+    extractRange(item.outcome?.text) ||
+    extractRange(item.outcome?.sources[0]?.quote) ||
+    extractRange(item.reason)
+
+  if (pRange && oRange && pRange !== oRange) {
+    return `${pRange} → ${oRange}`
+  }
+  return null
+}
+
 export const PvDTimeline: React.FC<PvDTimelineProps> = ({
   items,
   sourceDocs = [],
@@ -73,6 +100,7 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({
     <div className="space-y-3">
       {items.map((item, idx) => {
         const chip = getVerdictChip(item.verdict)
+        const rangeShift = getRangeShift(item)
         const primaryPromisedSource = item.promised.sources[0]
         const primaryOutcomeSource = item.outcome?.sources[0]
         const actualBadge = formatActual(item.actual, item.horizon)
@@ -99,13 +127,23 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({
                 </div>
               </div>
 
-              {/* Verdict Chip */}
-              <span
-                className={`inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded border flex-shrink-0 ${chip.className}`}
-              >
-                {chip.icon}
-                <span>{chip.label}</span>
-              </span>
+              {/* Verdict Chip & Optional Range Shift */}
+              <div className="flex items-center gap-1.5 flex-shrink-0">
+                {rangeShift && (
+                  <span
+                    className="font-mono text-[11px] text-zinc-300 bg-zinc-800/80 px-1.5 py-0.5 rounded border border-zinc-700/60 font-medium"
+                    title={`Guidance revised: ${rangeShift}`}
+                  >
+                    {rangeShift}
+                  </span>
+                )}
+                <span
+                  className={`inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded border flex-shrink-0 ${chip.className}`}
+                >
+                  {chip.icon}
+                  <span>{chip.label}</span>
+                </span>
+              </div>
             </div>
 
             {/* One-line reason (<=120 chars) and table actual if available */}

@@ -30,12 +30,20 @@ export const GapsList: React.FC<GapsListProps> = ({ gaps = [] }) => {
         Primary sources missing or pending release. FINN never interpolates missing records.
       </p>
       {hasGaps ? (
-        <ul className="text-[11px] text-zinc-300 list-disc pl-4 space-y-1 font-mono">
-          {gaps.map((gap, idx) => (
-            <li key={idx} className="leading-snug">
-              {gap}
-            </li>
-          ))}
+        <ul className="text-[11px] list-disc pl-4 space-y-1 font-mono">
+          {gaps.map((gap, idx) => {
+            const isWithheld = gap.toLowerCase().includes('withheld')
+            return (
+              <li
+                key={idx}
+                className={`leading-snug ${
+                  isWithheld ? 'text-zinc-400 italic marker:text-zinc-600 font-sans' : 'text-zinc-300'
+                }`}
+              >
+                {gap}
+              </li>
+            )
+          })}
         </ul>
       ) : (
         <div className="text-[11px] text-emerald-400/90 font-mono">
