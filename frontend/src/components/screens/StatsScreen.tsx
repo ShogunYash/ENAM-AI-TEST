@@ -1,9 +1,8 @@
 import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { fetchLlmStats } from '@/api/client'
-import { Coins, Zap, Activity } from 'lucide-react'
+import { Coins, Zap, Activity, ChevronDown } from 'lucide-react'
 import { AsOfChip } from '@/components/common/AsOfChip'
-import { formatExactIst } from '@/lib/formatters'
 
 export const StatsScreen: React.FC = () => {
   const {
@@ -32,32 +31,25 @@ export const StatsScreen: React.FC = () => {
 
   const { totals, by_model, by_feature, avg_calls_new_ticker, grounding_dropped, as_of } = stats
 
-  // Three honest states:
-  // "Live ledger" (API live)
-  // "Saved snapshot as of <time>" (stats.json)
-  // "Sample" (mode=mock)
-  let stateLabel = 'Live ledger'
+  let stateLabel = 'LIVE'
   if (statsResult.provenance === 'mock') {
-    stateLabel = 'Sample'
+    stateLabel = 'DEMO DATA'
   } else if (statsResult.provenance === 'snapshot') {
-    stateLabel = `Saved snapshot as of ${formatExactIst(as_of)}`
+    stateLabel = 'SNAPSHOT'
   }
 
-  return (
-    <div className="space-y-4 pb-24 pt-1">
-      {/* Header with Title and Provenance As-Of Chip */}
-      <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
-        <div>
-          <h1 className="text-base font-bold text-zinc-100 flex items-center gap-2">
-            <Activity className="w-4 h-4 text-zinc-300" />
-            LLM Cost & Efficiency Ledger
-          </h1>
-          <p className="text-xs text-zinc-400 mt-0.5">
-            Zero marginal cost architecture · Strict cache-first router
-          </p>
-        </div>
+  const activeModels = by_model.filter((m) => m.calls > 0)
+  const unusedModels = by_model.filter((m) => m.calls === 0)
 
-        <div className="flex items-center gap-1.5 flex-shrink-0">
+  return (
+    <div className="space-y-3.5 pb-24 pt-1">
+      {/* Header with Full-Width Title and Provenance As-Of Chip */}
+      <div className="pb-2 border-b border-zinc-800 space-y-1">
+        <div className="flex items-center justify-between gap-2">
+          <h1 className="text-base font-bold text-zinc-100 flex items-center gap-1.5">
+            <Activity className="w-4 h-4 text-zinc-300" />
+            LLM cost & efficiency
+          </h1>
           <AsOfChip
             asOf={as_of}
             label={stateLabel}
@@ -65,11 +57,14 @@ export const StatsScreen: React.FC = () => {
             onRefresh={() => refetch()}
           />
         </div>
+        <p className="text-xs text-zinc-400">
+          Zero marginal cost architecture · Strict cache-first router
+        </p>
       </div>
 
-      {/* Top Stat Cards: Spend & Cache Hit Rate with hits and queries together */}
-      <div className="grid grid-cols-2 gap-2.5">
-        <div className="p-3 rounded-xl border border-zinc-800 bg-zinc-900/60 space-y-1">
+      {/* Top Stat Cards: Spend & Cache Hit Rate */}
+      <div className="grid grid-cols-2 gap-2">
+        <div className="p-2.5 rounded-xl border border-zinc-800 bg-zinc-900/60 space-y-0.5">
           <div className="flex items-center gap-1.5 text-[11px] text-zinc-400">
             <Coins className="w-3 h-3 text-emerald-400" />
             <span>Total Spend</span>
@@ -78,11 +73,11 @@ export const StatsScreen: React.FC = () => {
             ₹{totals.spend_inr.toFixed(2)}
           </div>
           <p className="text-[10px] text-emerald-400 font-medium">
-            100% Free Tier (Gemini & Groq)
+            Free tiers only
           </p>
         </div>
 
-        <div className="p-3 rounded-xl border border-zinc-800 bg-zinc-900/60 space-y-1">
+        <div className="p-2.5 rounded-xl border border-zinc-800 bg-zinc-900/60 space-y-0.5">
           <div className="flex items-center gap-1.5 text-[11px] text-zinc-400">
             <Zap className="w-3 h-3 text-amber-400" />
             <span>Cache Hit Rate</span>
@@ -92,75 +87,85 @@ export const StatsScreen: React.FC = () => {
               {totals.cache_hit_pct.toFixed(1)}%
             </span>
             <span className="text-[10px] text-zinc-400 font-mono">
-              ({totals.cache_hits} hits / {totals.calls + totals.cache_hits} queries)
+              ({totals.cache_hits} / {totals.calls + totals.cache_hits})
             </span>
           </div>
-          <p className="text-[10px] text-zinc-400 font-mono">
-            Zero marginal cost for repeated filings
-          </p>
         </div>
       </div>
 
-      {/* Totals Banner */}
-      <div className="p-3 rounded-xl border border-zinc-800/80 bg-zinc-900/40 text-xs space-y-2">
-        <div className="flex items-center justify-between text-zinc-400 text-[11px]">
-          <span>Total API Invocations</span>
-          <span className="font-mono text-zinc-200 font-bold">{totals.calls} calls</span>
+      {/* 2x2 Grid of Key Metrics */}
+      <div className="grid grid-cols-2 gap-2 p-2.5 rounded-xl border border-zinc-800/80 bg-zinc-900/40 text-xs">
+        <div className="space-y-0.5">
+          <div className="text-[11px] text-zinc-400">Total API Invocations</div>
+          <div className="font-mono text-zinc-200 font-bold text-sm">{totals.calls} calls</div>
         </div>
-        <div className="flex items-center justify-between text-zinc-400 text-[11px]">
-          <span>Tokens Processed</span>
-          <span className="font-mono text-zinc-200">
-            {(totals.tokens_in + totals.tokens_out).toLocaleString()} tokens
-          </span>
+        <div className="space-y-0.5">
+          <div className="text-[11px] text-zinc-400">Tokens Processed</div>
+          <div className="font-mono text-zinc-200 font-bold text-sm">
+            {(totals.tokens_in + totals.tokens_out).toLocaleString()}
+          </div>
         </div>
-        <div className="flex items-center justify-between text-zinc-400 text-[11px]">
-          <span>Avg Calls / New Ticker</span>
-          <span className="font-mono text-zinc-200 font-bold">
+        <div className="space-y-0.5">
+          <div className="text-[11px] text-zinc-400">Avg Calls / New Ticker</div>
+          <div className="font-mono text-zinc-200 font-bold text-sm">
             {avg_calls_new_ticker ? avg_calls_new_ticker.toFixed(1) : '7.0'}
-          </span>
+          </div>
         </div>
-        <div className="flex items-center justify-between text-zinc-400 text-[11px]">
-          <span>Unverified Quotes Dropped</span>
-          <span className="font-mono text-rose-400 font-bold">
+        <div className="space-y-0.5">
+          <div className="text-[11px] text-zinc-400">Claims rejected by the quote check</div>
+          <div className="font-mono text-zinc-200 font-bold text-sm">
             {grounding_dropped} claims
-          </span>
+          </div>
         </div>
       </div>
 
-      {/* Model Breakdown */}
-      <section className="space-y-2">
+      {/* Router Calls by Model */}
+      <section className="space-y-1.5">
         <h2 className="text-xs font-semibold uppercase tracking-wider text-zinc-400 px-1">
           Router Calls by Model (All Free Tier)
         </h2>
         <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 overflow-hidden divide-y divide-zinc-800/60 text-xs">
-          {by_model.map((row) => (
-            <div key={row.key} className="p-3 flex items-center justify-between">
-              <div>
-                <div className="font-mono font-medium text-zinc-200 text-[13px]">
-                  {row.key}
-                </div>
-                <div className="text-[11px] text-zinc-500 font-mono">
-                  {(row.tokens_in + row.tokens_out).toLocaleString()} tokens · ₹0.00 spend
-                </div>
+          {activeModels.map((row) => (
+            <div key={row.key} className="px-3 py-2 flex items-center justify-between">
+              <div className="font-mono font-medium text-zinc-200 text-xs truncate max-w-[210px]" title={row.key}>
+                {row.key}
               </div>
-              <div className="text-right">
-                <span className="px-2 py-0.5 rounded bg-zinc-800 text-[11px] font-mono font-bold text-zinc-300">
+              <div className="flex items-center gap-2 font-mono text-[11px] text-zinc-400 flex-shrink-0">
+                <span>{(row.tokens_in + row.tokens_out).toLocaleString()} tok</span>
+                <span className="px-1.5 py-0.5 rounded bg-zinc-800 font-bold text-zinc-200">
                   {row.calls} calls
                 </span>
               </div>
             </div>
           ))}
+
+          {unusedModels.length > 0 && (
+            <details className="group border-t border-zinc-800/60">
+              <summary className="px-3 py-2 text-xs text-zinc-500 hover:text-zinc-400 cursor-pointer flex items-center justify-between select-none">
+                <span>Not used yet ({unusedModels.length})</span>
+                <ChevronDown className="w-3.5 h-3.5 transition-transform group-open:rotate-180 text-zinc-500" />
+              </summary>
+              <div className="divide-y divide-zinc-800/40 bg-zinc-950/40">
+                {unusedModels.map((row) => (
+                  <div key={row.key} className="px-3 py-1.5 flex items-center justify-between text-[11px] text-zinc-500 font-mono">
+                    <span className="truncate max-w-[220px]" title={row.key}>{row.key}</span>
+                    <span>0 calls</span>
+                  </div>
+                ))}
+              </div>
+            </details>
+          )}
         </div>
       </section>
 
       {/* Feature Breakdown */}
-      <section className="space-y-2">
+      <section className="space-y-1.5">
         <h2 className="text-xs font-semibold uppercase tracking-wider text-zinc-400 px-1">
           Invocations by Pipeline Task
         </h2>
         <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 overflow-hidden divide-y divide-zinc-800/60 text-xs">
           {by_feature.map((row) => (
-            <div key={row.key} className="p-3 flex items-center justify-between">
+            <div key={row.key} className="px-3 py-2 flex items-center justify-between">
               <span className="font-mono text-zinc-300 capitalize">
                 {row.key.replace(/_/g, ' ')}
               </span>
