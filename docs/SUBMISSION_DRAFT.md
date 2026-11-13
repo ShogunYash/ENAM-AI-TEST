@@ -32,7 +32,7 @@ settles it. KPIL guided at least 25% FY26 revenue growth; its filed consolidated
   the first Infosys draft called two promises "met" using figures that weren't comparable (constant-currency vs reported INR; EBIT vs EBITDA margin).
 - *Second reader.* After building, an independent reviewer re-checked every promised-vs-delivered quote against its page. 11 of 36 items had a quote that did not support the stated metric or a "quietly dropped" verdict that the checked calls could not establish; FINN withholds them and says so in the report's gaps, rather than showing a confident wrong card.
 - *Free-tier reality.* Gemini's free tier has daily per-model quotas, so the router reads the retry time and skips exhausted models, and a local open model on a GPU does
-  the heavy build-time work. Total spend ₹0.00 over 193 measured calls (54.0 % cache hits). The demo serves a committed seed and snapshot, so it never depends on a live model.
+  the heavy build-time work. Total spend ₹0.00 over 195 measured calls (54.4 % cache hits; the live Cost screen keeps counting after deploy, 216 calls / 51.2 % when checked on 14 Nov, still ₹0). The demo serves a committed seed and snapshot, so it never depends on a live model.
 
 **What I deliberately left out.** Voice, auth and real push notifications; web enrichment for bios (they come from the filing text only); bull/bear and the other research modules. (A grounded `/ask` exists in the API; see the README for whether the UI sheet is wired to it.) That time went into verification, because a wrong number is worse than a missing one.
 
