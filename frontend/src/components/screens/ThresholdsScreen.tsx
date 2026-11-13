@@ -40,8 +40,14 @@ export const ThresholdsScreen: React.FC = () => {
     resetSettings,
   } = useSettings()
 
-  // Only one main accordion open at a time (collapsed by default)
-  const [expandedSection, setExpandedSection] = useState<'volume' | 'price' | 'categories' | null>(null)
+  // Only one main accordion open at a time (collapsed by default, supports ?section=<name>)
+  const [expandedSection, setExpandedSection] = useState<'volume' | 'price' | 'categories' | null>(() => {
+    try {
+      const p = new URLSearchParams(window.location.search).get('section')
+      if (p === 'volume' || p === 'price' || p === 'categories') return p
+    } catch {}
+    return null
+  })
   // Subgroup for routine paperwork inside Filing Types (collapsed by default)
   const [routineOpen, setRoutineOpen] = useState(false)
   const [resetConfirm, setResetConfirm] = useState(false)

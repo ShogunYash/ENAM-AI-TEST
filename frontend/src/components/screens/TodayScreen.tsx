@@ -74,9 +74,21 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
   // Scroll position preserved when drilling into a company and coming back
   const [savedScrollY, setSavedScrollY] = useState(0)
 
-  // Help sheet state
-  const [helpOpen, setHelpOpen] = useState(false)
-  const [helpSection, setHelpSection] = useState<'needs_you' | 'period' | 'view' | null>(null)
+  // Help sheet state (supports ?help=true&helpSection=<section>)
+  const [helpOpen, setHelpOpen] = useState(() => {
+    try {
+      return new URLSearchParams(window.location.search).get('help') === 'true'
+    } catch {
+      return false
+    }
+  })
+  const [helpSection, setHelpSection] = useState<'needs_you' | 'period' | 'view' | null>(() => {
+    try {
+      const p = new URLSearchParams(window.location.search).get('helpSection') as any
+      if (p === 'needs_you' || p === 'period' || p === 'view') return p
+    } catch {}
+    return null
+  })
 
   const openHelp = (section?: 'needs_you' | 'period' | 'view') => {
     setHelpSection(section || null)
