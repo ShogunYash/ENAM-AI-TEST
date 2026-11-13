@@ -14,6 +14,8 @@ interface CompanyListProps {
   onSelect: (symbol: string) => void
   searchQuery?: string
   onSearchChange?: (val: string) => void
+  sortMode?: CompanySortOption
+  hideHeaderControls?: boolean
 }
 
 const label = formatCategory
@@ -99,17 +101,21 @@ export const CompanyList: React.FC<CompanyListProps> = ({
   onSelect,
   searchQuery,
   onSearchChange,
+  sortMode: sortModeProp,
+  hideHeaderControls = false,
 }) => {
   const { settings } = useSettings()
 
   // Sort state persisted in localStorage (key finn.companySort)
-  const [sortMode, setSortMode] = useState<CompanySortOption>(() => {
+  const [internalSortMode, setInternalSortMode] = useState<CompanySortOption>(() => {
     try {
       const saved = localStorage.getItem('finn.companySort')
       if (saved === 'az' || saved === 'importance') return saved
     } catch {}
     return 'importance'
   })
+
+  const effectiveSort = sortModeProp || internalSortMode
 
   // Search input state with ~150ms debounce
   const [searchInput, setSearchInput] = useState(searchQuery || '')
@@ -133,7 +139,7 @@ export const CompanyList: React.FC<CompanyListProps> = ({
   }, [searchInput, onSearchChange])
 
   const handleSortChange = (newSort: CompanySortOption) => {
-    setSortMode(newSort)
+    setInternalSortMode(newSort)
     try {
       localStorage.setItem('finn.companySort', newSort)
     } catch {}
@@ -167,11 +173,11 @@ export const CompanyList: React.FC<CompanyListProps> = ({
   // 2. Client-side Sort (Important first = API order; A-Z = alphabetical by symbol)
   // In A-Z, companies with no filings stay in place alphabetically
   const filteredAndSorted = useMemo(() => {
-    if (sortMode === 'az') {
+    if (effectiveSort === 'az') {
       return [...filtered].sort((a, b) => a.symbol.localeCompare(b.symbol))
     }
     return filtered
-  }, [filtered, sortMode])
+  }, [filtered, effectiveSort])
 
   if (isLoading) {
     return (
@@ -200,68 +206,78 @@ export const CompanyList: React.FC<CompanyListProps> = ({
 
   return (
     <section className="space-y-3" aria-label="Companies">
-      {/* Search Input Box */}
-      <div className="relative flex items-center">
-        <Search className="w-4 h-4 text-zinc-500 absolute left-3 pointer-events-none" />
-        <input
-          type="text"
-          inputMode="search"
-          autoFocus={false}
-          value={searchInput}
-          onChange={(e) => setSearchInput(e.target.value)}
-          placeholder="Search stock or sector"
-          className="w-full bg-zinc-900 border border-zinc-800 rounded-xl pl-9 pr-10 py-2.5 min-h-[44px] text-xs text-zinc-100 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-700 transition-colors"
-        />
-        {searchInput && (
-          <button
-            type="button"
-            onClick={() => setSearchInput('')}
-            aria-label="Clear search"
-            className="absolute right-1 p-2 text-zinc-400 hover:text-zinc-200 min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
-          >
-            <X className="w-4 h-4" />
-          </button>
-        )}
-      </div>
-
-      {/* Sort Options Segmented Control & Count */}
-      <div className="flex items-center justify-between gap-2 pt-0.5">
-        <div
-          role="group"
-          aria-label="Sort companies"
-          className="inline-flex items-center p-0.5 rounded-lg bg-zinc-900 border border-zinc-800"
-        >
-          <button
-            type="button"
-            onClick={() => handleSortChange('importance')}
-            className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
-              sortMode === 'importance'
-                ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
-                : 'text-zinc-400 hover:text-zinc-200'
-            }`}
-          >
-            Important first
-          </button>
-          <button
-            type="button"
-            onClick={() => handleSortChange('az')}
-            className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
-              sortMode === 'az'
-                ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
-                : 'text-zinc-400 hover:text-zinc-200'
-            }`}
-          >
-            A–Z
-          </button>
-        </div>
-
-        {/* Row count line */}
-        <span className="text-[11px] text-zinc-400 font-mono">
+      {hideHeaderControls ? (
+        <div className="text-[11px] text-zinc-500 font-mono px-1">
           {debouncedSearch.trim()
             ? `${filteredAndSorted.length} of ${rows.length} matching`
             : `${activeTotal} of ${rows.length} filed in ${windowOption}`}
-        </span>
-      </div>
+        </div>
+      ) : (
+        <>
+          {/* Search Input Box */}
+          <div className="relative flex items-center">
+            <Search className="w-4 h-4 text-zinc-500 absolute left-3 pointer-events-none" />
+            <input
+              type="text"
+              inputMode="search"
+              autoFocus={false}
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+              placeholder="Search stock or sector"
+              className="w-full bg-zinc-900 border border-zinc-800 rounded-xl pl-9 pr-10 py-2.5 min-h-[44px] text-xs text-zinc-100 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-700 transition-colors"
+            />
+            {searchInput && (
+              <button
+                type="button"
+                onClick={() => setSearchInput('')}
+                aria-label="Clear search"
+                className="absolute right-1 p-2 text-zinc-400 hover:text-zinc-200 min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+
+          {/* Sort Options Segmented Control & Count */}
+          <div className="flex items-center justify-between gap-2 pt-0.5">
+            <div
+              role="group"
+              aria-label="Sort companies"
+              className="inline-flex items-center p-0.5 rounded-lg bg-zinc-900 border border-zinc-800"
+            >
+              <button
+                type="button"
+                onClick={() => handleSortChange('importance')}
+                className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
+                  effectiveSort === 'importance'
+                    ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
+                    : 'text-zinc-400 hover:text-zinc-200'
+                }`}
+              >
+                Important first
+              </button>
+              <button
+                type="button"
+                onClick={() => handleSortChange('az')}
+                className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
+                  effectiveSort === 'az'
+                    ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
+                    : 'text-zinc-400 hover:text-zinc-200'
+                }`}
+              >
+                A–Z
+              </button>
+            </div>
+
+            {/* Row count line */}
+            <span className="text-[11px] text-zinc-400 font-mono">
+              {debouncedSearch.trim()
+                ? `${filteredAndSorted.length} of ${rows.length} matching`
+                : `${activeTotal} of ${rows.length} filed in ${windowOption}`}
+            </span>
+          </div>
+        </>
+      )}
 
       {/* Empty State when no companies filed in window */}
       {activeTotal === 0 && !debouncedSearch.trim() && (

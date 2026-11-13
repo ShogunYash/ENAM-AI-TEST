@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import { DigestResult } from '@/api/client'
 import { Filing } from '@/api/types'
-import { WindowPicker, WindowOption } from '@/components/today/WindowPicker'
+import { WindowOption } from '@/components/today/WindowPicker'
+import { TodayToolbar, TodayViewOption } from '@/components/today/TodayToolbar'
+import { HowToReadSheet } from '@/components/today/HowToReadSheet'
 import { AlertsStrip } from '@/components/today/AlertsStrip'
 import { FilingCard } from '@/components/cards/FilingCard'
 import { RoutineGroup } from '@/components/today/RoutineGroup'
 import { CompanyList } from '@/components/today/CompanyList'
 import { CompanyDetail } from '@/components/today/CompanyDetail'
-import { AsOfChip } from '@/components/common/AsOfChip'
 import { CheckCircle, Info } from 'lucide-react'
 
-export const BY_COMPANY_WINDOWS: WindowOption[] = ['3d', '7d', '30d']
-export const TOGGLE_WINDOWS: WindowOption[] = ['3d', '7d']
-export type ViewMode = 'ranked' | 'by_company'
 export type TodayScope = 'portfolio' | 'watchlist'
 
 interface TodayScreenProps {
@@ -48,21 +46,19 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
     return 'portfolio'
   })
 
-  // Track chosen view per window (persisted in localStorage key finn.viewMode.<window>)
-  const [viewModes, setViewModes] = useState<Record<string, ViewMode>>(() => {
-    const initial: Record<string, ViewMode> = {}
-    TOGGLE_WINDOWS.forEach((win) => {
-      try {
-        const saved = localStorage.getItem(`finn.viewMode.${win}`)
-        if (saved === 'by_company' || saved === 'ranked') {
-          initial[win] = saved
-        }
-      } catch {}
-    })
-    return initial
+  // Track chosen view: 'priority' | 'company_important' | 'company_az'
+  const [viewOption, setViewOption] = useState<TodayViewOption>(() => {
+    try {
+      const params = new URLSearchParams(window.location.search)
+      const v = params.get('view') as TodayViewOption
+      if (v === 'priority' || v === 'company_important' || v === 'company_az') return v
+      const saved = localStorage.getItem('finn.todayView') as TodayViewOption
+      if (saved === 'priority' || saved === 'company_important' || saved === 'company_az') return saved
+    } catch {}
+    return 'priority'
   })
 
-  // Selected company drilldown in By company view (supports ?company=<sym> URL param)
+  // Selected company drilldown (supports ?company=<sym> URL param)
   const [selectedSymbol, setSelectedSymbol] = useState<string | null>(() => {
     try {
       const params = new URLSearchParams(window.location.search)
@@ -72,27 +68,35 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
     }
   })
 
-  // Search text kept when drilling into a company and coming back
-  const [companySearch, setCompanySearch] = useState('')
+  // Search query state
+  const [searchQuery, setSearchQuery] = useState('')
 
   // Scroll position preserved when drilling into a company and coming back
   const [savedScrollY, setSavedScrollY] = useState(0)
 
-  // Resolve effective view mode
-  const isToggleWindow = TOGGLE_WINDOWS.includes(windowOption)
-  const effectiveView: ViewMode =
-    windowOption === '30d'
-      ? 'by_company'
-      : windowOption === '24h'
-      ? 'ranked'
-      : viewModes[windowOption] || 'ranked'
+  // Help sheet state
+  const [helpOpen, setHelpOpen] = useState(false)
+  const [helpSection, setHelpSection] = useState<'needs_you' | 'period' | 'view' | null>(null)
+
+  const openHelp = (section?: 'needs_you' | 'period' | 'view') => {
+    setHelpSection(section || null)
+    setHelpOpen(true)
+  }
+
+  // Effective view mode: Watchlist has no ranked digest, so defaults to by-company
+  const effectiveView: TodayViewOption =
+    scope === 'watchlist'
+      ? viewOption === 'company_az'
+        ? 'company_az'
+        : 'company_important'
+      : viewOption
 
   // Switching window always resets to the company list (not an open company)
   useEffect(() => {
     setSelectedSymbol(null)
   }, [windowOption])
 
-  // Phone back gesture / browser back returns from a company to the list instead of leaving the app
+  // Phone back gesture / browser back returns from a company to the list
   useEffect(() => {
     const onPop = () => setSelectedSymbol(null)
     window.addEventListener('popstate', onPop)
@@ -128,11 +132,11 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
     } catch {}
   }
 
-  const handleViewChange = (mode: ViewMode) => {
-    setSelectedSymbol(null) // switching view resets to the list
-    setViewModes((prev) => ({ ...prev, [windowOption]: mode }))
+  const handleViewChange = (newView: TodayViewOption) => {
+    setSelectedSymbol(null)
+    setViewOption(newView)
     try {
-      localStorage.setItem(`finn.viewMode.${windowOption}`, mode)
+      localStorage.setItem('finn.todayView', newView)
     } catch {}
   }
 
@@ -144,98 +148,76 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
     }
   }
 
-  // Scope selector segmented control (>= 44px tap target, same style as WindowPicker)
-  const scopeControl = (
-    <div className="flex items-center justify-between gap-2 pt-0.5 pb-0.5">
-      <div
-        role="group"
-        aria-label="Universe scope"
-        className="inline-flex items-center p-0.5 rounded-lg bg-zinc-900 border border-zinc-800"
-      >
-        <button
-          type="button"
-          onClick={() => handleScopeChange('portfolio')}
-          className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
-            scope === 'portfolio'
-              ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
-              : 'text-zinc-400 hover:text-zinc-200'
-          }`}
-        >
-          My portfolio
-        </button>
-        <button
-          type="button"
-          onClick={() => handleScopeChange('watchlist')}
-          className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
-            scope === 'watchlist'
-              ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
-              : 'text-zinc-400 hover:text-zinc-200'
-          }`}
-        >
-          Watchlist
-        </button>
-      </div>
-    </div>
+  const digest = digestResult?.digest
+  const needsYou = digest?.needs_you || []
+  const alsoMaterial = digest?.also_material || []
+  const routine = digest?.routine
+  const alerts = digest?.alerts || []
+
+  // Filter filings in Priority feed when search query is active
+  const { filteredNeedsYou, filteredAlsoMaterial } = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase()
+    if (!q) {
+      return { filteredNeedsYou: needsYou, filteredAlsoMaterial: alsoMaterial }
+    }
+    const matches = (f: Filing) =>
+      f.symbol.toLowerCase().includes(q) ||
+      f.company_name?.toLowerCase().includes(q) ||
+      f.headline.toLowerCase().includes(q) ||
+      (f.so_what && f.so_what.toLowerCase().includes(q)) ||
+      f.category.toLowerCase().includes(q)
+
+    return {
+      filteredNeedsYou: needsYou.filter(matches),
+      filteredAlsoMaterial: alsoMaterial.filter(matches),
+    }
+  }, [needsYou, alsoMaterial, searchQuery])
+
+  // Shared Toolbar component
+  const toolbar = (
+    <TodayToolbar
+      scope={scope}
+      onScopeChange={handleScopeChange}
+      windowOption={windowOption}
+      onWindowChange={onWindowChange}
+      viewOption={effectiveView}
+      onViewChange={handleViewChange}
+      searchQuery={searchQuery}
+      onSearchChange={setSearchQuery}
+      asOf={digestResult?.asOf || new Date().toISOString()}
+      isLive={digestResult?.isLive}
+      source={digestResult?.source}
+      isRefreshing={isRefreshing}
+      onRefresh={onRefresh}
+      onOpenHelp={openHelp}
+    />
   )
 
-  const headerBar = (
-    <>
-      {scopeControl}
-      <div className="flex items-center justify-between gap-2 pt-0.5 pb-1">
-        <WindowPicker selected={windowOption} onChange={onWindowChange} />
-
-        {digestResult && (
-          <AsOfChip
-            asOf={digestResult.asOf}
-            isLive={digestResult.isLive}
-            source={digestResult.source}
-            isRefreshing={isRefreshing}
-            onRefresh={onRefresh}
-          />
-        )}
+  // 1. Company Detail View (drilled into a stock)
+  if (selectedSymbol) {
+    return (
+      <div className="space-y-3 pb-20">
+        {toolbar}
+        <CompanyDetail
+          symbol={selectedSymbol}
+          windowOption={windowOption}
+          onBack={closeCompany}
+          onAskFinn={onAskFinn}
+        />
+        <HowToReadSheet
+          isOpen={helpOpen}
+          onClose={() => setHelpOpen(false)}
+          initialSection={helpSection}
+        />
       </div>
-    </>
-  )
+    )
+  }
 
-  // View toggle element (only on 3d and 7d in Portfolio mode)
-  const viewToggle = isToggleWindow && scope === 'portfolio' && (
-    <div className="flex items-center justify-start pt-0.5 pb-0.5">
-      <div
-        role="group"
-        aria-label="View mode"
-        className="inline-flex items-center p-0.5 rounded-lg bg-zinc-900 border border-zinc-800"
-      >
-        <button
-          type="button"
-          onClick={() => handleViewChange('ranked')}
-          className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
-            effectiveView === 'ranked'
-              ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
-              : 'text-zinc-400 hover:text-zinc-200'
-          }`}
-        >
-          Ranked
-        </button>
-        <button
-          type="button"
-          onClick={() => handleViewChange('by_company')}
-          className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
-            effectiveView === 'by_company'
-              ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
-              : 'text-zinc-400 hover:text-zinc-200'
-          }`}
-        >
-          By company
-        </button>
-      </div>
-    </div>
-  )
-
-  // 1. Watchlist View (Always by-company, filtered to in_portfolio=false, for whichever window)
+  // 2. Watchlist View (Always by-company)
   if (scope === 'watchlist') {
     return (
-      <div className="space-y-4 pb-20">
-        {headerBar}
+      <div className="space-y-3 pb-20">
+        {toolbar}
 
         {/* Clear banner distinguishing watchlist from portfolio holdings */}
         <div className="rounded-lg bg-zinc-900/60 border border-zinc-800/80 px-3 py-2 text-xs text-zinc-400 flex items-center gap-2">
@@ -243,59 +225,56 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
           <span>Not in your portfolio — filings only, no alerts</span>
         </div>
 
-        {selectedSymbol ? (
-          <CompanyDetail
-            symbol={selectedSymbol}
-            windowOption={windowOption}
-            onBack={closeCompany}
-            onAskFinn={onAskFinn}
-          />
-        ) : (
-          <CompanyList
-            scope="watchlist"
-            windowOption={windowOption}
-            onSelect={openCompany}
-            searchQuery={companySearch}
-            onSearchChange={setCompanySearch}
-          />
-        )}
+        <CompanyList
+          scope="watchlist"
+          windowOption={windowOption}
+          onSelect={openCompany}
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+          sortMode={effectiveView === 'company_az' ? 'az' : 'importance'}
+          hideHeaderControls={true}
+        />
+
+        <HowToReadSheet
+          isOpen={helpOpen}
+          onClose={() => setHelpOpen(false)}
+          initialSection={helpSection}
+        />
       </div>
     )
   }
 
-  // 2. Portfolio By Company View: (30d always, or 3d/7d when By company is selected)
-  if (effectiveView === 'by_company') {
+  // 3. Portfolio By-Company View
+  if (effectiveView === 'company_important' || effectiveView === 'company_az') {
     return (
-      <div className="space-y-4 pb-20">
-        {headerBar}
-        {viewToggle}
+      <div className="space-y-3 pb-20">
+        {toolbar}
 
-        {selectedSymbol ? (
-          <CompanyDetail
-            symbol={selectedSymbol}
-            windowOption={windowOption}
-            onBack={closeCompany}
-            onAskFinn={onAskFinn}
-          />
-        ) : (
-          <CompanyList
-            scope="portfolio"
-            windowOption={windowOption}
-            onSelect={openCompany}
-            searchQuery={companySearch}
-            onSearchChange={setCompanySearch}
-          />
-        )}
+        <CompanyList
+          scope="portfolio"
+          windowOption={windowOption}
+          onSelect={openCompany}
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+          sortMode={effectiveView === 'company_az' ? 'az' : 'importance'}
+          hideHeaderControls={true}
+        />
+
+        <HowToReadSheet
+          isOpen={helpOpen}
+          onClose={() => setHelpOpen(false)}
+          initialSection={helpSection}
+        />
       </div>
     )
   }
 
-  // 3. Portfolio Ranked View:
+  // 4. Portfolio Priority Feed (Ranked View)
   if (isLoading && !digestResult) {
     return (
-      <div className="space-y-4 pb-20">
-        {headerBar}
-        <div className="space-y-4 animate-pulse p-4">
+      <div className="space-y-3 pb-20">
+        {toolbar}
+        <div className="space-y-3 animate-pulse p-4">
           <div className="h-8 bg-zinc-900 rounded-lg w-48"></div>
           <div className="h-16 bg-zinc-900 rounded-xl"></div>
           <div className="h-44 bg-zinc-900 rounded-xl"></div>
@@ -305,39 +284,48 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
     )
   }
 
-  const digest = digestResult?.digest
-  const needsYou = digest?.needs_you || []
-  const alsoMaterial = digest?.also_material || []
-  const routine = digest?.routine
-  const alerts = digest?.alerts || []
-
   return (
-    <div className="space-y-4 pb-20">
-      {headerBar}
-      {viewToggle}
+    <div className="space-y-3 pb-20">
+      {toolbar}
 
-      {/* Alerts Strip (Ranked view only) */}
-      {alerts.length > 0 && (
+      {/* Alerts Strip (Ranked view only, hidden when search is active) */}
+      {!searchQuery && alerts.length > 0 && (
         <AlertsStrip alerts={alerts} onSelectFiling={handleSelectAlertFiling} />
       )}
 
-      {/* "Needs you" Stack (at most 5 filings, Ranked view only) */}
+      {/* Search results notice when searching in Priority view */}
+      {searchQuery && (
+        <div className="text-[11px] text-zinc-400 font-mono px-1">
+          {filteredNeedsYou.length + filteredAlsoMaterial.length} results matching &ldquo;{searchQuery}&rdquo;
+        </div>
+      )}
+
+      {/* "Needs you" Stack */}
       <section className="space-y-2.5">
         <div className="flex items-center justify-between px-1">
           <div className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-300">
             <span>Needs you</span>
             <span className="text-[11px] font-mono text-zinc-400 bg-zinc-900 border border-zinc-800 px-1.5 py-0.2 rounded-full">
-              {needsYou.length} / 5
+              {filteredNeedsYou.length} / 5
             </span>
+            <button
+              type="button"
+              onClick={() => openHelp('needs_you')}
+              className="w-4 h-4 rounded-full border border-zinc-700/80 text-zinc-400 hover:text-zinc-200 text-[10px] font-bold inline-flex items-center justify-center transition-colors touch-manipulation ml-0.5"
+              title="What is Needs you?"
+              aria-label="What is Needs you?"
+            >
+              ?
+            </button>
           </div>
           <span className="text-[11px] text-zinc-400">ranked by priority score</span>
         </div>
 
-        {needsYou.length === 0 ? (
+        {filteredNeedsYou.length === 0 ? (
           <div className="rounded-xl border border-dashed border-zinc-800 p-6 text-center space-y-2 bg-zinc-900/30">
             <CheckCircle className="w-6 h-6 text-emerald-500 mx-auto" />
             <div className="text-sm font-medium text-zinc-300">
-              Nothing material in the last {windowOption}
+              {searchQuery ? `No key filings match "${searchQuery}"` : `Nothing material in the last ${windowOption}`}
             </div>
             <p className="text-xs text-zinc-400">
               {routine?.count ? `${routine.count} routine filings collapsed below.` : 'Your portfolio is clear.'}
@@ -345,7 +333,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
           </div>
         ) : (
           <div className="space-y-3">
-            {needsYou.slice(0, 5).map((filing) => (
+            {filteredNeedsYou.slice(0, 5).map((filing) => (
               <FilingCard
                 key={filing.id}
                 filing={filing}
@@ -358,15 +346,15 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
       </section>
 
       {/* Also Material (if any additional high/medium filings) */}
-      {alsoMaterial.length > 0 && (
-        <section className="space-y-2.5 pt-2">
+      {filteredAlsoMaterial.length > 0 && (
+        <section className="space-y-2.5 pt-1">
           <div className="flex items-center justify-between px-1">
             <h2 className="text-xs font-semibold uppercase tracking-wider text-zinc-300">
-              Also Material ({alsoMaterial.length})
+              Also Material ({filteredAlsoMaterial.length})
             </h2>
           </div>
           <div className="space-y-3">
-            {alsoMaterial.map((filing) => (
+            {filteredAlsoMaterial.map((filing) => (
               <FilingCard
                 key={filing.id}
                 filing={filing}
@@ -378,12 +366,19 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
         </section>
       )}
 
-      {/* Routine (n) Collapsed Group */}
-      {routine && routine.count > 0 && (
-        <section className="pt-2">
+      {/* Routine (n) Collapsed Group (hidden during active search) */}
+      {!searchQuery && routine && routine.count > 0 && (
+        <section className="pt-1">
           <RoutineGroup routine={routine} />
         </section>
       )}
+
+      {/* Help Sheet */}
+      <HowToReadSheet
+        isOpen={helpOpen}
+        onClose={() => setHelpOpen(false)}
+        initialSection={helpSection}
+      />
     </div>
   )
 }
