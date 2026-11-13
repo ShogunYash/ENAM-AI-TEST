@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
 import { MobileShell, NavTab } from '@/components/layout/MobileShell'
 import { TodayScreen } from '@/components/screens/TodayScreen'
@@ -22,11 +22,36 @@ const queryClient = new QueryClient({
 
 function FinnApp() {
   const { settings } = useSettings()
-  const [activeTab, setActiveTab] = useState<NavTab>('today')
+  const getInitialTab = (): NavTab => {
+    try {
+      const hash = window.location.hash.replace(/^#/, '')
+      if (hash === 'research' || hash === 'thresholds' || hash === 'stats' || hash === 'today') {
+        return hash as NavTab
+      }
+      const params = new URLSearchParams(window.location.search)
+      const tabParam = params.get('tab')
+      if (tabParam === 'research' || tabParam === 'thresholds' || tabParam === 'stats' || tabParam === 'today') {
+        return tabParam as NavTab
+      }
+    } catch {}
+    return 'today'
+  }
+  const [activeTab, setActiveTab] = useState<NavTab>(getInitialTab)
   const [windowOption, setWindowOption] = useState<WindowOption>(
     (settings.default_window as WindowOption) || '24h'
   )
   const [askTarget, setAskTarget] = useState<AskFinnTarget | null>(null)
+
+  useEffect(() => {
+    const onHashChange = () => {
+      const hash = window.location.hash.replace(/^#/, '')
+      if (hash === 'today' || hash === 'research' || hash === 'thresholds' || hash === 'stats') {
+        setActiveTab(hash as NavTab)
+      }
+    }
+    window.addEventListener('hashchange', onHashChange)
+    return () => window.removeEventListener('hashchange', onHashChange)
+  }, [])
 
   const {
     data: digestResult,
