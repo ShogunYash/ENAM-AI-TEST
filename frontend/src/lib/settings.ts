@@ -3,12 +3,27 @@ import { Settings, DEFAULT_SETTINGS, Category } from '@/api/types'
 
 const SETTINGS_STORAGE_KEY = 'finn_settings_v1'
 
+export function normalizeSettings(raw: any): Settings {
+  const merged: Settings = { ...DEFAULT_SETTINGS, ...raw }
+  // Normalization rule: if a category is in both categories_of_interest and muted_categories,
+  // muted wins (remove from categories_of_interest)
+  const mutedSet = new Set(merged.muted_categories || [])
+  const cleanedInterest = (merged.categories_of_interest || []).filter(
+    (c: Category) => !mutedSet.has(c)
+  )
+  return {
+    ...merged,
+    categories_of_interest: cleanedInterest,
+    muted_categories: Array.from(mutedSet),
+  }
+}
+
 export function getStoredSettings(): Settings {
   try {
     const raw = localStorage.getItem(SETTINGS_STORAGE_KEY)
     if (raw) {
       const parsed = JSON.parse(raw)
-      return { ...DEFAULT_SETTINGS, ...parsed }
+      return normalizeSettings(parsed)
     }
   } catch (e) {
     console.error('Failed to parse settings from localStorage', e)
@@ -81,6 +96,34 @@ export function useSettings() {
     })
   }
 
+  const setCategoryTriState = (category: Category, state: 'boost' | 'normal' | 'hide') => {
+    updateSettings((prev) => {
+      const withoutInterest = prev.categories_of_interest.filter((c) => c !== category)
+      const withoutMuted = prev.muted_categories.filter((c) => c !== category)
+
+      if (state === 'boost') {
+        return {
+          ...prev,
+          categories_of_interest: [...withoutInterest, category],
+          muted_categories: withoutMuted,
+        }
+      }
+      if (state === 'hide') {
+        return {
+          ...prev,
+          categories_of_interest: withoutInterest,
+          muted_categories: [...withoutMuted, category],
+        }
+      }
+      // normal: removed from both
+      return {
+        ...prev,
+        categories_of_interest: withoutInterest,
+        muted_categories: withoutMuted,
+      }
+    })
+  }
+
   const resetSettings = () => {
     updateSettings(DEFAULT_SETTINGS)
   }
@@ -90,6 +133,16 @@ export function useSettings() {
     updateSettings,
     toggleCategoryInterest,
     toggleCategoryMuted,
+    setCategoryTriState,
     resetSettings,
   }
+}
+
+export function getCategoryTriState(
+  category: Category,
+  settings: Settings
+): 'boost' | 'normal' | 'hide' {
+  if (settings.muted_categories.includes(category)) return 'hide'
+  if (settings.categories_of_interest.includes(category)) return 'boost'
+  return 'normal'
 }
