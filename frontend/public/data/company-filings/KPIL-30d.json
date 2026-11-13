@@ -1,0 +1,365 @@
+{
+  "symbol": "KPIL",
+  "name": "Kalpataru Projects International",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T16:12:14.179682+05:30",
+    "end": "2026-11-13T16:12:14.179682+05:30"
+  },
+  "generated_at": "2026-11-13T16:12:14.179682+05:30",
+  "counts": {
+    "total": 18,
+    "rule_classified": 13,
+    "llm_classified": 5
+  },
+  "important": [
+    {
+      "id": "7ca7514d-125d-4fb0-9f1f-0efd5a39370f",
+      "symbol": "KPIL",
+      "company_name": "Kalpataru Projects International Ltd",
+      "filed_at": "2026-11-05T18:32:57.757000+05:30",
+      "headline": "Unauidted Financial Results",
+      "so_what": "Q2 FY27: PAT +23%, Rev +7% YoY · EBITDA margin 8.3%",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 2.175,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e4d02b37-bd6b-4b11-ac89-98eaa14a7290.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 7004.27,
+            "prev_q": 6407.97,
+            "prev_y": 6528.57,
+            "qoq_pct": 9.3,
+            "yoy_pct": 7.3
+          },
+          {
+            "name": "ebitda",
+            "value": 580.98,
+            "prev_q": 561.87,
+            "prev_y": 561.46,
+            "qoq_pct": 3.4,
+            "yoy_pct": 3.5
+          },
+          {
+            "name": "pbt",
+            "value": 397.76,
+            "prev_q": 420.47,
+            "prev_y": 321.59,
+            "qoq_pct": -5.4,
+            "yoy_pct": 23.7
+          },
+          {
+            "name": "pat",
+            "value": 291.95,
+            "prev_q": 311.53,
+            "prev_y": 237.39,
+            "qoq_pct": -6.3,
+            "yoy_pct": 23.0
+          }
+        ],
+        "margin_ebitda_pct": 8.3,
+        "cross_check": {
+          "status": "match",
+          "note": null
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e4d02b37-bd6b-4b11-ac89-98eaa14a7290.pdf",
+          "page": 7
+        }
+      }
+    },
+    {
+      "id": "ea8b95cc-012c-4460-aa3d-43c2b800858c",
+      "symbol": "KPIL",
+      "company_name": "Kalpataru Projects International Ltd",
+      "filed_at": "2026-11-05T18:38:55.667000+05:30",
+      "headline": "Appointment of Mr. Amit Uplenchwar (DIN: 06862760) as an Additonal Director; Joint Managing Director & CEO (Key Managerial Personnel) of the Company - please refer file",
+      "so_what": "Amit Uplenchwar appointed as Joint MD & CEO (Key Managerial Personnel)",
+      "category": "management_change",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 1.935,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7a810e77-43cf-4b45-87a0-a9c277e3bc62.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "management",
+        "person": "Amit Uplenchwar",
+        "role": "Joint Managing Director & CEO (Key Managerial Personnel)",
+        "change": "appointed",
+        "background": [],
+        "links": [],
+        "effective": "2027-01-01",
+        "background_source": "none"
+      }
+    },
+    {
+      "id": "6b8f7398-6c78-49a1-bb20-4297a2f7c9a1",
+      "symbol": "KPIL",
+      "company_name": "Kalpataru Projects International Ltd",
+      "filed_at": "2026-10-24T13:38:46.987000+05:30",
+      "headline": "Initial public offering of equity shares of Linjemontage i Grastorp AB, a first level step down material subsidiary of the Company (\"LMG\") - Exercise of over-allotment /green shoe option ....",
+      "so_what": "LMG exercised green shoe option for 1,877,911 shares, ending period.",
+      "category": "fund_raise",
+      "category_source": "llm",
+      "priority": "high",
+      "score": 0.101,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a729d6eb-2161-4cd0-8f91-1a0c642b713e.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "LMG exercised green shoe option for 1,877,911 shares, ending period."
+      }
+    },
+    {
+      "id": "cef472e6-98da-4aa9-82f3-c40e518667cb",
+      "symbol": "KPIL",
+      "company_name": "Kalpataru Projects International Ltd",
+      "filed_at": "2026-10-16T10:48:43.260000+05:30",
+      "headline": "Intimation of Credit Rating by CRISIL Ratings Limited",
+      "so_what": "Crisil upgraded long-term rating to Crisil AA+/Stable on Oct 15, 2026.",
+      "category": "credit_rating",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 0.007,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6c834cfe-466b-4e30-b570-9c958ef82614.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Crisil upgraded long-term rating to Crisil AA+/Stable on Oct 15, 2026."
+      }
+    }
+  ],
+  "routine": {
+    "count": 14,
+    "by_category": {
+      "earnings_call": 2,
+      "investor_meetings": 2,
+      "unclassified": 5,
+      "results": 4,
+      "press_release": 1
+    },
+    "items": [
+      {
+        "id": "d00133ef-f46b-484a-a95d-aa70bba66c33",
+        "symbol": "KPIL",
+        "company_name": "Kalpataru Projects International Ltd",
+        "filed_at": "2026-11-12T12:38:57.490000+05:30",
+        "headline": "Transcript of Earnings Conference call held on Unaudited Financial Results (Consolidated and Standalone) for the quarter and half year ended 30th September, 2026",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 1.542,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/04c4e907-80d8-4918-ba5c-9049ad346c86.pdf",
+        "price_reaction": {
+          "pct_1d": -0.05,
+          "vol_ratio": 0.48
+        },
+        "enrichment": null
+      },
+      {
+        "id": "b23f4823-a389-49ae-a76e-0d11e54153d5",
+        "symbol": "KPIL",
+        "company_name": "Kalpataru Projects International Ltd",
+        "filed_at": "2026-11-11T12:18:11.640000+05:30",
+        "headline": "Intimation of schedule of Analyst / Institutional Investor Meet under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.607,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a1fea61a-15d5-45a4-b77e-3a77e8402ed6.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "3ba3f538-b7ab-49e1-89ce-9c3c9fc6606d",
+        "symbol": "KPIL",
+        "company_name": "Kalpataru Projects International Ltd",
+        "filed_at": "2026-11-06T16:33:49.727000+05:30",
+        "headline": "Intimation under Regulation 30 and 31A of SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 - Submission of application with stock exchanges for reclassification",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b78f038-ac8f-48bd-a6a0-bbb53e94be49.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "a3d703b4-cf14-4597-9af4-d62b46e55ab9",
+        "symbol": "KPIL",
+        "company_name": "Kalpataru Projects International Ltd",
+        "filed_at": "2026-11-06T16:22:24.360000+05:30",
+        "headline": "Audio Recording of Earnings Conference Call held for the Unaudited Financial Results (Consolidated and Standalone) for the quarter and half year ended 30th September, 2026",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.397,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2b73a253-4e82-4736-97fb-eee6352de664.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "384df80e-d770-4b41-b474-8dff65fdefee",
+        "symbol": "KPIL",
+        "company_name": "Kalpataru Projects International Ltd",
+        "filed_at": "2026-11-05T18:50:59.400000+05:30",
+        "headline": "Press Release on Unaudited Financial Results for the quarter and half year ended 30.09.2026",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.485,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cd65a01f-5bd6-4321-98ca-0f5449efb01e.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "677c3ba0-da04-4ca9-a253-a3b45e6589c3",
+        "symbol": "KPIL",
+        "company_name": "Kalpataru Projects International Ltd",
+        "filed_at": "2026-11-05T18:47:46.037000+05:30",
+        "headline": "Investors''/Analyst Presentation",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.484,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/aa471fd5-764a-4c79-9732-96785b3ad1cc.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "db116ea9-f031-4de7-95cb-06006778962a",
+        "symbol": "KPIL",
+        "company_name": "Kalpataru Projects International Ltd",
+        "filed_at": "2026-11-05T18:40:52.127000+05:30",
+        "headline": "Please refer file",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8d3d88bd-f224-441a-aea0-4bdbdb997cef.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "d9ac4990-7a7f-4847-9e9f-d6efee622d53",
+        "symbol": "KPIL",
+        "company_name": "Kalpataru Projects International Ltd",
+        "filed_at": "2026-11-05T18:35:23.660000+05:30",
+        "headline": "Consolidated and Standalone Unaudited Financial Results for the quarter and half year ended 30th September, 2026",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.483,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b28b54a7-bb10-4874-a7ee-74c4f0d7b010.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "8c475d63-109f-4a85-9c31-adaed1fa1b5c",
+        "symbol": "KPIL",
+        "company_name": "Kalpataru Projects International Ltd",
+        "filed_at": "2026-11-05T18:19:23.317000+05:30",
+        "headline": "Outcome of Board meeting held on 05.11.2026",
+        "so_what": null,
+        "category": "results",
+        "category_source": "llm",
+        "priority": "low",
+        "score": 0.482,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/be2deca8-9466-44d4-bc39-6c27eb0c3f0b.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "fe71de2f-9806-4efe-8bb8-3d9d39e16354",
+        "symbol": "KPIL",
+        "company_name": "Kalpataru Projects International Ltd",
+        "filed_at": "2026-11-03T17:15:32.057000+05:30",
+        "headline": "Intimation under Regulation 30 and Regulation 31A of SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 - Receipt of requests for reclassification from ''Promoter ....",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e0cf0eb6-c742-4599-9618-38d583669789.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "e3be55aa-7a81-4046-8378-3a73ef50efac",
+        "symbol": "KPIL",
+        "company_name": "Kalpataru Projects International Ltd",
+        "filed_at": "2026-10-29T20:36:36.340000+05:30",
+        "headline": "Intimation of schedule of Analyst / Institutional Investor Meet under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.033,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/862e28a2-ff88-411b-8d9f-1c90520a6250.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "5608d473-4bf2-4171-b1dd-f6201a11212a",
+        "symbol": "KPIL",
+        "company_name": "Kalpataru Projects International Ltd",
+        "filed_at": "2026-10-29T20:26:25.707000+05:30",
+        "headline": "Kalpataru Projects International Ltdhas informed BSE that the meeting of the Board of Directors of the Company is scheduled on 05/11/2026 ,inter alia, to consider and approve Unaudited ....",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/90e231b1-9c0f-499e-a75d-27efa7014017.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "5709a6e2-dbaf-43c4-9871-e4d403b65c9c",
+        "symbol": "KPIL",
+        "company_name": "Kalpataru Projects International Ltd",
+        "filed_at": "2026-10-29T12:56:15.957000+05:30",
+        "headline": "Disclosure under Regulation 30 of SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6429f2ad-efe6-43e3-8bdb-4b0cb0844437.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "2fa98cd9-37e3-4f84-b732-786726e5a89c",
+        "symbol": "KPIL",
+        "company_name": "Kalpataru Projects International Ltd",
+        "filed_at": "2026-10-21T08:45:41.863000+05:30",
+        "headline": "Press Release - KPIL ANNOUNCES NEW ORDER WINS OF RS. 2349 CRORES",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.014,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d9afd7fb-9fd7-4cde-a4a8-037b588fd5d7.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

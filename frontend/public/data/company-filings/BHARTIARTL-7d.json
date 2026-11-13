@@ -1,0 +1,61 @@
+{
+  "symbol": "BHARTIARTL",
+  "name": "Bharti Airtel",
+  "window": {
+    "label": "7d",
+    "start": "2026-11-06T16:12:14.179682+05:30",
+    "end": "2026-11-13T16:12:14.179682+05:30"
+  },
+  "generated_at": "2026-11-13T16:12:14.179682+05:30",
+  "counts": {
+    "total": 2,
+    "rule_classified": 2,
+    "llm_classified": 0
+  },
+  "important": [],
+  "routine": {
+    "count": 2,
+    "by_category": {
+      "earnings_call": 1,
+      "investor_meetings": 1
+    },
+    "items": [
+      {
+        "id": "84eb3673-6777-498a-b5b9-db6515b0a7cb",
+        "symbol": "BHARTIARTL",
+        "company_name": "Bharti Airtel Ltd",
+        "filed_at": "2026-11-12T17:37:34.640000+05:30",
+        "headline": "Transcript of the Earnings Call dated November 6, 2026.",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 1.687,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1ff3e14f-7e97-4074-89c7-049408721c5e.pdf",
+        "price_reaction": {
+          "pct_1d": 0.48,
+          "vol_ratio": 0.57
+        },
+        "enrichment": null
+      },
+      {
+        "id": "21b5c5e0-e3cb-41ac-b89c-ce7b17f68b88",
+        "symbol": "BHARTIARTL",
+        "company_name": "Bharti Airtel Ltd",
+        "filed_at": "2026-11-11T18:34:15.337000+05:30",
+        "headline": "Disclosure under Regulation 30 of SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 ('SEBI Listing Regulations') - Schedule of analysts/ institutional investors' meet",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.675,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ae574f7a-4573-459b-9090-59d84bf2d02a.pdf",
+        "price_reaction": {
+          "pct_1d": 0.48,
+          "vol_ratio": 0.57
+        },
+        "enrichment": null
+      }
+    ]
+  }
+}

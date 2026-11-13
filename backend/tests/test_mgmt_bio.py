@@ -119,3 +119,10 @@ def test_run_task_roundtrip_for_the_prompt(monkeypatch, tmp_path):
         "choices": [{"message": {"content": reply}}], "usage": {"prompt_tokens": 5, "completion_tokens": 5}})))
     out = run_task("mgmt_bio", {"filing": B.build_input("h", "Change in Management", TEXT)}, settings=s, client=client)
     assert out.person == "Prashant Verma" and "web_context: (none)" in B.build_input("h", "s", TEXT)
+
+
+@pytest.mark.parametrize("line", ["withdrawal of nomination by Suzuki Motor Corporation, Japan",
+                                  "continues as Non-executive Director", "Independent Director term 5 years starting 7 Sep 2026"])
+def test_status_and_term_lines_are_not_background(line):
+    c = B.check_bio(bio(background=[line]), TEXT + " " + line)
+    assert c.background == [] and c.background_source == "none"

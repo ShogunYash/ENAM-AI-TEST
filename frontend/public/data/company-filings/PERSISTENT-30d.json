@@ -3,10 +3,10 @@
   "name": "Persistent Systems",
   "window": {
     "label": "30d",
-    "start": "2026-10-14T14:32:25.992946+05:30",
-    "end": "2026-11-13T14:32:25.992946+05:30"
+    "start": "2026-10-14T16:12:14.179682+05:30",
+    "end": "2026-11-13T16:12:14.179682+05:30"
   },
-  "generated_at": "2026-11-13T14:32:25.992946+05:30",
+  "generated_at": "2026-11-13T16:12:14.179682+05:30",
   "counts": {
     "total": 22,
     "rule_classified": 16,
@@ -23,7 +23,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "medium",
-      "score": 1.029,
+      "score": 1.012,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/73a8c540-4229-4137-8e2b-5aae04fa0a35.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -41,7 +41,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.754,
+      "score": 0.742,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/258dfe1d-7ec3-4563-863f-330be44338eb.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -59,7 +59,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.753,
+      "score": 0.741,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e05f8c9-956c-4fbc-9e8e-3f6aa4694621.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -77,7 +77,7 @@
       "category": "fund_raise",
       "category_source": "llm",
       "priority": "high",
-      "score": 0.179,
+      "score": 0.176,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4491cbf4-b27c-45f2-a905-1220b80dec9c.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -92,7 +92,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.179,
+      "score": 0.176,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b633b6e5-f968-461c-b8f1-2ac155afc384.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -110,7 +110,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.054,
+      "score": 0.053,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f7cde952-83d0-475d-b216-02af2204013a.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -128,7 +128,7 @@
       "category": "credit_rating",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.034,
+      "score": 0.033,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d500e04f-fe02-4b5c-923a-0275b18f6044.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -268,7 +268,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.017,
+        "score": 0.016,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/524eadda-3966-4f4f-8888-bfaf2cb0d69e.pdf",
         "price_reaction": null,
         "enrichment": null

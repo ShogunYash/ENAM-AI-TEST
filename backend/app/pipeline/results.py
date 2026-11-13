@@ -99,7 +99,7 @@ def fy_label(date_iso: str | None) -> str:
 
 
 def cross_check(values: dict[str, dict[str, float | None]], periods: dict[str, str | None], symbol: str, basis: str,
-                quarters: dict | None = None) -> m.CrossCheck:
+                quarters: dict | None = None, skip_revenue: bool = False) -> m.CrossCheck:
     """Compare revenue / PBT / PAT of ALL THREE periods (current, previous quarter, year-ago) with screener.in's
     standardised quarterly table. Checking the earlier columns too catches swapped/misread columns, which would
     otherwise corrupt QoQ / YoY silently. `values` = {"current": {"revenue": .., "pbt": .., "pat": ..}, ...}."""
@@ -110,6 +110,8 @@ def cross_check(values: dict[str, dict[str, float | None]], periods: dict[str, s
     except screener.ScreenerError as e:
         return m.CrossCheck(status="unavailable", note=f"screener.in unavailable ({e})")
     pairs = {"revenue": "sales", "pbt": "pbt", "pat": "net_profit"}
+    if skip_revenue:                      # banks / lenders: "revenue" is defined differently in a bank's filing and on screener
+        pairs.pop("revenue")
     diffs, checked = [], 0
     for which in ("current", "previous", "year_ago"):
         date = periods.get(which)
@@ -153,7 +155,7 @@ def build_card(ext: ResultsExtraction, doc_url: str, symbol: str, sector: str | 
         period=fy_label(ext.periods.current), basis=ext.basis, metrics=metrics,
         margin_ebitda_pct=round(eb / rev * 100, 1) if rev and eb is not None else None,
         cross_check=cross_check({p: {n: vals[n][p] for n in METRICS} for p in ("current", "previous", "year_ago")},
-                                ext.periods.model_dump(), symbol, ext.basis, quarters),
+                                ext.periods.model_dump(), symbol, ext.basis, quarters, skip_revenue=no_ebitda),
         source=m.DocRef(doc_url=doc_url, page=page))
 
 

@@ -10,6 +10,7 @@
       "symbol": "CERA",
       "name": "Cera Sanitaryware Ltd",
       "sector": "Sanitaryware",
+      "in_portfolio": true,
       "total": 12,
       "material": 1,
       "categories": {
@@ -90,6 +91,7 @@
       "symbol": "BAJFINANCE",
       "name": "Bajaj Finance Ltd",
       "sector": "Consumer lending",
+      "in_portfolio": true,
       "total": 36,
       "material": 4,
       "categories": {
@@ -125,6 +127,7 @@
       "symbol": "TITAN",
       "name": "Titan Company Ltd",
       "sector": "Jewellery and retail",
+      "in_portfolio": true,
       "total": 26,
       "material": 1,
       "categories": {
@@ -172,6 +175,7 @@
       "symbol": "RELIANCE",
       "name": "Reliance Industries Ltd",
       "sector": "Energy and diversified businesses",
+      "in_portfolio": true,
       "total": 32,
       "material": 0,
       "categories": {},

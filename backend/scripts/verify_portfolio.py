@@ -41,7 +41,7 @@ def main() -> int:
               "strToDate": today.strftime("%Y%m%d")}
     bad = 0
     with httpx.Client(headers=HEADERS, timeout=30, follow_redirects=True) as c:
-        for s in data["portfolio"]:
+        for s in data["portfolio"] + data.get("watchlist", []):
             sym, code, name = s["nse_symbol"], s["bse_scrip_code"], s["name"]
             try:
                 r = c.get(URL, params={**params, "strScrip": code})

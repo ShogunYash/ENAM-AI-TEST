@@ -10,12 +10,11 @@ rule-based classifier is built from.
 from __future__ import annotations
 
 import argparse
-import json
 import sys
 from collections import Counter
 from pathlib import Path
 
-from app import db
+from app import db, universe
 from app.ingest import bse as bse_mod
 from app.ingest import prices as prices_mod
 
@@ -46,11 +45,14 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=60)
     ap.add_argument("--only", help="comma-separated NSE symbols")
+    ap.add_argument("--scope", choices=["all", "portfolio", "watchlist"], default="all",
+                    help="which group to ingest (default: portfolio + watchlist)")
     ap.add_argument("--skip-bse", action="store_true")
     ap.add_argument("--skip-prices", action="store_true")
     a = ap.parse_args()
 
-    pf = json.loads(PORTFOLIO.read_text("utf-8"))["portfolio"]
+    group = {"all": universe.universe(), "portfolio": universe.portfolio(), "watchlist": universe.watchlist()}[a.scope]
+    pf = [{"nse_symbol": c.symbol, "bse_scrip_code": c.bse_code} for c in group]
     if a.only:
         wanted = {s.strip().upper() for s in a.only.split(",")}
         pf = [s for s in pf if s["nse_symbol"] in wanted]

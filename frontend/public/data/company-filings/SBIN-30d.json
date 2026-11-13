@@ -1,0 +1,308 @@
+{
+  "symbol": "SBIN",
+  "name": "State Bank of India",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T16:12:14.179682+05:30",
+    "end": "2026-11-13T16:12:14.179682+05:30"
+  },
+  "generated_at": "2026-11-13T16:12:14.179682+05:30",
+  "counts": {
+    "total": 15,
+    "rule_classified": 13,
+    "llm_classified": 2
+  },
+  "important": [
+    {
+      "id": "fb84b263-f367-4d73-8029-b2d156dcc08e",
+      "symbol": "SBIN",
+      "company_name": "State Bank of India",
+      "filed_at": "2026-11-03T14:08:34.600000+05:30",
+      "headline": "Financial Results for the quarter / half year ended 30.09.2026",
+      "so_what": "Q2 FY27: PAT +20% YoY",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 1.313,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1eaa8912-06ca-45d4-8a04-03df01b47497.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": null,
+            "prev_q": null,
+            "prev_y": null,
+            "qoq_pct": null,
+            "yoy_pct": null
+          },
+          {
+            "name": "ebitda",
+            "value": null,
+            "prev_q": null,
+            "prev_y": null,
+            "qoq_pct": null,
+            "yoy_pct": null
+          },
+          {
+            "name": "pbt",
+            "value": 33555.41,
+            "prev_q": 32883.8,
+            "prev_y": 28656.64,
+            "qoq_pct": 2.0,
+            "yoy_pct": 17.1
+          },
+          {
+            "name": "pat",
+            "value": 25741.47,
+            "prev_q": 24579.04,
+            "prev_y": 21504.49,
+            "qoq_pct": 4.7,
+            "yoy_pct": 19.7
+          }
+        ],
+        "margin_ebitda_pct": null,
+        "cross_check": {
+          "status": "mismatch",
+          "note": "PAT Q1 FY27 24,579 vs screener 25,121 (-2.2%)"
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1eaa8912-06ca-45d4-8a04-03df01b47497.pdf",
+          "page": 2
+        }
+      }
+    }
+  ],
+  "routine": {
+    "count": 14,
+    "by_category": {
+      "investor_meetings": 6,
+      "earnings_call": 1,
+      "results": 4,
+      "unclassified": 2,
+      "press_release": 1
+    },
+    "items": [
+      {
+        "id": "1ac1b35e-939a-4fa2-b69a-0df4aa12b053",
+        "symbol": "SBIN",
+        "company_name": "State Bank of India",
+        "filed_at": "2026-11-11T19:02:07.660000+05:30",
+        "headline": "Interaction with Institutional Investors",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.696,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/068644d8-6a79-4fb7-a225-15c42c0d08a1.pdf",
+        "price_reaction": {
+          "pct_1d": -0.6,
+          "vol_ratio": 1.12
+        },
+        "enrichment": null
+      },
+      {
+        "id": "116e0c0c-0cf7-4d96-9498-bca6dbdab7a4",
+        "symbol": "SBIN",
+        "company_name": "State Bank of India",
+        "filed_at": "2026-11-11T19:00:37.463000+05:30",
+        "headline": "Interaction with Institutional Investors",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.696,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3b3e4091-386f-4b5d-87d5-1d839654249e.pdf",
+        "price_reaction": {
+          "pct_1d": -0.6,
+          "vol_ratio": 1.12
+        },
+        "enrichment": null
+      },
+      {
+        "id": "cbd1602e-e5ca-42f9-8ac0-2f8d123d744d",
+        "symbol": "SBIN",
+        "company_name": "State Bank of India",
+        "filed_at": "2026-11-07T18:22:31.667000+05:30",
+        "headline": "Transcript",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.511,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/91e92b69-f201-4d3b-9060-9f75feee9a58.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "36f3cb22-6525-4247-bbe2-ad56e8075360",
+        "symbol": "SBIN",
+        "company_name": "State Bank of India",
+        "filed_at": "2026-11-06T15:51:21.537000+05:30",
+        "headline": "Interaction with investors organised by CLSA",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.198,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7117581f-eff4-47fe-8b67-bf7a62cc2fe5.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "65932b21-751d-49d0-a754-e739bcec24dd",
+        "symbol": "SBIN",
+        "company_name": "State Bank of India",
+        "filed_at": "2026-11-04T16:25:35.860000+05:30",
+        "headline": "Newspaper publication of Financial Results for Q2FY27",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.376,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8c3bd4fa-4b9d-47bb-983b-8bdc848e5945.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "fb7f7ffa-f699-467a-a99c-7ac86b788920",
+        "symbol": "SBIN",
+        "company_name": "State Bank of India",
+        "filed_at": "2026-11-03T20:27:31.670000+05:30",
+        "headline": "Outcome of Analyst Meet Q2FY27",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.103,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e32562b9-6395-4e3a-a14c-a3887a2b8358.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "5d9eaec4-aec3-4dcb-ac5a-3eb36be4035c",
+        "symbol": "SBIN",
+        "company_name": "State Bank of India",
+        "filed_at": "2026-11-03T15:08:05.007000+05:30",
+        "headline": "Statement of deviation / variation for the quarter ended 30.09.2026",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ea79c5cf-6995-4b6d-a62f-cf772bcdd32d.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "beb87b36-e1b5-4abf-8fd4-acd2e29949fb",
+        "symbol": "SBIN",
+        "company_name": "State Bank of India",
+        "filed_at": "2026-11-03T14:03:41.973000+05:30",
+        "headline": "Analyst Presentation Q2FY27",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.292,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/211c37d3-4d09-4ba6-a104-b5715dc05ff7.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "c0bdd135-619b-4187-a6bf-04e5fc5d31e6",
+        "symbol": "SBIN",
+        "company_name": "State Bank of India",
+        "filed_at": "2026-11-03T14:01:53.200000+05:30",
+        "headline": "Press Release Q2FY27",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.291,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3b3de872-59e6-4ef1-8f2c-95cc3f57887c.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "cd9f9bf8-7a67-46e4-84a0-7e87f40078c1",
+        "symbol": "SBIN",
+        "company_name": "State Bank of India",
+        "filed_at": "2026-11-03T13:49:55.667000+05:30",
+        "headline": "financial result for the quarter ended 30.09.2026",
+        "so_what": null,
+        "category": "results",
+        "category_source": "llm",
+        "priority": "low",
+        "score": 0.291,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/135fbbec-a65f-4964-9aa0-55655a30103c.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "a6bc8e0d-aa46-42fe-85d5-2367f24010b7",
+        "symbol": "SBIN",
+        "company_name": "State Bank of India",
+        "filed_at": "2026-10-29T18:34:58.073000+05:30",
+        "headline": "Interaction with Institutional Investors",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.032,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/aa29bca4-8281-4bee-8766-f7eb8c068344.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "14d3ff10-744f-46bb-88ae-be546a8d8a7d",
+        "symbol": "SBIN",
+        "company_name": "State Bank of India",
+        "filed_at": "2026-10-26T18:52:20.467000+05:30",
+        "headline": "Analyst Meet post declaration of Q2FY27 Results",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.016,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b57bc195-254a-4647-8a51-ec01e9237cb9.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "05e7709e-f8f7-4d77-b15f-01fe9d2159e8",
+        "symbol": "SBIN",
+        "company_name": "State Bank of India",
+        "filed_at": "2026-10-26T18:48:02.077000+05:30",
+        "headline": "State Bank Of Indiahas informed BSE that the meeting of the Board of Directors of the Company is scheduled on 03/11/2026 ,inter alia, to consider and approve financial results of the Bank ....",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.048,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d776a1cb-78dd-4b07-854d-20c589479e03.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "67cf32dd-d8e8-4c57-90b0-f388020ffe7b",
+        "symbol": "SBIN",
+        "company_name": "State Bank of India",
+        "filed_at": "2026-10-21T09:43:05.853000+05:30",
+        "headline": "Updates",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e16e3a1a-ee15-4971-977c-5f9f6aef1fb9.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

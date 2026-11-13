@@ -27,6 +27,7 @@
     "/companies": {
       "get": {
         "summary": "Companies",
+        "description": "Everything FINN tracks: the portfolio (in_portfolio=true) and the watchlist (false).",
         "operationId": "companies_companies_get",
         "responses": {
           "200": {
@@ -1213,6 +1214,12 @@
               }
             ],
             "title": "Sector"
+          },
+          "in_portfolio": {
+            "type": "boolean",
+            "title": "In Portfolio",
+            "description": "True = a holding; False = watchlist only (tracked, never in the ranked digest, never raises alerts)",
+            "default": true
           },
           "total": {
             "type": "integer",
