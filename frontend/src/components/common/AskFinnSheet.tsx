@@ -53,33 +53,49 @@ export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({
   const isFundRaise = effectiveFiling?.category === 'fund_raise'
 
   // Context-aware suggested prompts (all strictly answerable from evidence, never predicting stock)
-  let suggestedPrompts: string[] = []
+  let allSuggestedPrompts: string[] = []
   if (effectiveScreen === 'research') {
-    suggestedPrompts = [
+    allSuggestedPrompts = [
       'What happened to the latest guidance?',
       'Which promises were met or missed?',
+      'What are the disclosed document gaps?',
+      'How do financial snapshot metrics look?',
     ]
   } else if (isResults) {
-    suggestedPrompts = [
+    allSuggestedPrompts = [
       'How did PAT change versus last year?',
       'What was revenue and EBITDA margin?',
+      'What was the QoQ growth rate?',
+      'Were there any exceptional items or tax changes?',
     ]
   } else if (isMgmt) {
-    suggestedPrompts = [
+    allSuggestedPrompts = [
       'When does the change take effect?',
       'What is the management background?',
+      'Who is succeeding whom in this role?',
+      'What was the reason stated in the filing?',
     ]
   } else if (isFundRaise) {
-    suggestedPrompts = [
+    allSuggestedPrompts = [
       'What are the key terms?',
       'What is the issue price or valuation?',
+      'What is the expected use of proceeds?',
+      'Which investors or entities are participating?',
     ]
   } else {
-    suggestedPrompts = [
+    allSuggestedPrompts = [
       'What are the key terms?',
       'What is the stated timeline or impact?',
+      'What approvals or next steps are required?',
+      'What is the financial consideration?',
     ]
   }
+
+  // Rotate/replace any asked question chip with fresh suggestions
+  const askedQuestions = new Set(history.map((h) => h.question.trim().toLowerCase()))
+  const suggestedPrompts = allSuggestedPrompts
+    .filter((p) => !askedQuestions.has(p.trim().toLowerCase()))
+    .slice(0, 2)
 
   const handleAsk = async (textToSend: string) => {
     const qText = textToSend.trim()
@@ -208,6 +224,54 @@ export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({
                 /* Grounded answer with verified evidence */
                 <div className="bg-zinc-950/70 border border-zinc-800/80 p-3.5 rounded-lg text-zinc-200 space-y-3">
                   <p className="leading-relaxed text-zinc-200 font-normal">{h.answer}</p>
+
+                  {/* Tappable primary source line directly below answer */}
+                  {(() => {
+                    const firstClaim = h.claims && h.claims[0]
+                    const firstSrc = firstClaim?.sources && firstClaim.sources[0]
+                    if (!firstSrc) return null
+
+                    const baseTitle = formatDocSourceLabel(
+                      firstSrc.doc_id,
+                      firstSrc.page,
+                      effectiveSourceDocs
+                    )
+                    const docLabel =
+                      effectiveFiling && (baseTitle.startsWith('Filing') || baseTitle.startsWith('Source filing'))
+                        ? `${effectiveFiling.company_name.replace(/ (Ltd|Limited)\.?$/i, '')} filing · p.${firstSrc.page ?? 1}`
+                        : baseTitle
+
+                    let docUrl = effectiveFiling?.pdf_url
+                    if (!docUrl && effectiveSourceDocs) {
+                      const match = effectiveSourceDocs.find((d) => d.doc_id === firstSrc.doc_id)
+                      if (match?.url) docUrl = match.url
+                    }
+                    const linkHref =
+                      docUrl && firstSrc.page !== null && firstSrc.page !== undefined
+                        ? `${docUrl}#page=${firstSrc.page}`
+                        : docUrl
+
+                    return (
+                      <div className="pt-0.5 pb-1">
+                        {linkHref ? (
+                          <a
+                            href={linkHref}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-[11px] font-mono text-zinc-300 hover:text-zinc-100 bg-zinc-900 border border-zinc-800/80 px-2 py-1 rounded transition-colors touch-manipulation group"
+                            title="Open cited document page in official source PDF"
+                          >
+                            <ExternalLink className="w-3 h-3 text-emerald-400 group-hover:text-emerald-300" />
+                            <span className="font-medium underline decoration-zinc-700">{docLabel}</span>
+                          </a>
+                        ) : (
+                          <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-zinc-400 bg-zinc-900 px-2 py-1 rounded border border-zinc-800/80">
+                            <span>{docLabel}</span>
+                          </span>
+                        )}
+                      </div>
+                    )
+                  })()}
 
                   {/* Under the answer, show each claim's sources as evidence */}
                   {h.claims && h.claims.length > 0 && (
