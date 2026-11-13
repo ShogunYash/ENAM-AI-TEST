@@ -3,10 +3,10 @@
   "name": "Polycab India",
   "window": {
     "label": "30d",
-    "start": "2026-10-15T01:17:48.611758+05:30",
-    "end": "2026-11-14T01:17:48.611758+05:30"
+    "start": "2026-10-15T02:39:28.726052+05:30",
+    "end": "2026-11-14T02:39:28.726052+05:30"
   },
-  "generated_at": "2026-11-14T01:17:48.611758+05:30",
+  "generated_at": "2026-11-14T02:39:28.726052+05:30",
   "counts": {
     "total": 16,
     "rule_classified": 7,
@@ -23,7 +23,7 @@
       "category": "litigation",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.313,
+      "score": 0.309,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c3d1ba29-6132-47b7-9f3b-79a294e53189.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -41,7 +41,7 @@
       "category": "litigation",
       "category_source": "llm",
       "priority": "medium",
-      "score": 0.193,
+      "score": 0.191,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ead5c0dc-e464-4e53-8006-b861205174a9.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -150,7 +150,7 @@
         "category": "investor_meetings",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.192,
+        "score": 0.19,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/72c96165-b9ed-4b62-ac86-80cc440b32ff.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -195,7 +195,7 @@
         "category": "investor_meetings",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.019,
+        "score": 0.018,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cafe2036-e51b-413a-80cd-65e331d170be.pdf",
         "price_reaction": null,
         "enrichment": null

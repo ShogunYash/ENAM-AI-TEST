@@ -3,10 +3,10 @@
   "name": "Bajaj Finance",
   "window": {
     "label": "30d",
-    "start": "2026-10-15T01:17:48.611758+05:30",
-    "end": "2026-11-14T01:17:48.611758+05:30"
+    "start": "2026-10-15T02:39:28.726052+05:30",
+    "end": "2026-11-14T02:39:28.726052+05:30"
   },
-  "generated_at": "2026-11-14T01:17:48.611758+05:30",
+  "generated_at": "2026-11-14T02:39:28.726052+05:30",
   "counts": {
     "total": 20,
     "rule_classified": 19,
@@ -23,7 +23,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 8.328,
+      "score": 8.22,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
       "price_reaction": {
         "pct_1d": 3.36,
@@ -44,7 +44,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 4.636,
+      "score": 4.576,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/84c0dbf5-4b55-41b9-ab7b-e20d9fe359a9.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -62,7 +62,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 4.628,
+      "score": 4.568,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/41e7bb57-172f-4858-a5ac-8c15fe653e81.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -80,7 +80,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 1.538,
+      "score": 1.518,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/191d3534-ded0-412c-9b3e-a8fbe7c38d5a.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -98,7 +98,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.214,
+      "score": 0.211,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/20d73044-2322-4d46-883f-67bff54a3b50.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -116,7 +116,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.039,
+      "score": 0.038,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/229c460f-9cda-4732-972f-847519b40426.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -215,7 +215,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.022,
+      "score": 0.021,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/eb4bfa8c-5285-4b6f-86c3-852bf82c8015.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -251,7 +251,7 @@
         "category": "results",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.687,
+        "score": 0.678,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/88c1f74a-5faf-4951-bd1c-87ac9c742fd0.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -266,7 +266,7 @@
         "category": "agm_egm",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.114,
+        "score": 0.112,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a2e82696-5059-47a4-9c36-8399f022f4f0.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -281,7 +281,7 @@
         "category": "agm_egm",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.074,
+        "score": 0.073,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5f21f715-4d81-4470-9e3b-2ca076cf4e22.pdf",
         "price_reaction": null,
         "enrichment": null

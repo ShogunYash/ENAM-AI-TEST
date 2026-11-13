@@ -3,10 +3,10 @@
   "name": "Tata Consultancy Services",
   "window": {
     "label": "30d",
-    "start": "2026-10-15T01:17:48.611758+05:30",
-    "end": "2026-11-14T01:17:48.611758+05:30"
+    "start": "2026-10-15T02:39:28.726052+05:30",
+    "end": "2026-11-14T02:39:28.726052+05:30"
   },
-  "generated_at": "2026-11-14T01:17:48.611758+05:30",
+  "generated_at": "2026-11-14T02:39:28.726052+05:30",
   "counts": {
     "total": 7,
     "rule_classified": 7,
@@ -50,7 +50,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.366,
+        "score": 0.362,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c0a1bde0-4d57-46c0-ac73-940d5ff093d7.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -65,7 +65,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.327,
+        "score": 0.323,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4b1ab7e2-a0c4-40d9-8758-64975aea90d9.pdf",
         "price_reaction": null,
         "enrichment": null

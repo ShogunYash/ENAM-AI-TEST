@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "24h",
-    "start": "2026-11-13T01:17:48.611758+05:30",
-    "end": "2026-11-14T01:17:48.611758+05:30"
+    "start": "2026-11-13T02:39:28.726052+05:30",
+    "end": "2026-11-14T02:39:28.726052+05:30"
   },
-  "generated_at": "2026-11-14T01:17:48.611758+05:30",
+  "generated_at": "2026-11-14T02:39:28.726052+05:30",
   "needs_you": [],
   "also_material": [
     {
@@ -17,7 +17,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 6.891,
+      "score": 6.802,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -25,12 +25,10 @@
         "person": "Mr. V. Srinivasa Rangan",
         "role": "Whole-time Director (designated as Executive Director)",
         "change": "appointed",
-        "background": [
-          "Not related to any other Director or Key Managerial Personnel"
-        ],
+        "background": [],
         "links": [],
         "effective": "2026-11-23",
-        "background_source": "filing"
+        "background_source": "none"
       }
     }
   ],
@@ -50,7 +48,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.936,
+        "score": 0.923,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3f614a9e-94b0-42ef-8145-ba0055ba7be5.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -65,7 +63,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.908,
+        "score": 0.896,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d7982c18-e8b9-485f-8165-a8333b0d421e.pdf",
         "price_reaction": null,
         "enrichment": null

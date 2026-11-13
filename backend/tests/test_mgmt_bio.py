@@ -139,3 +139,10 @@ def test_audited_bio_corrections_apply_by_filing_id():
     gone = apply_bio_review(card, "abcdef12-0000", {"abcdef12": {"drop_background": ["tribute line", "22 years at X"]}})
     assert gone.background == [] and gone.background_source == "none"
     assert apply_bio_review(card, "zzzzzzzz", {"abcdef12": {}}) is card
+
+
+def test_governance_disclosures_are_not_background():
+    from app.pipeline.mgmt_bio import _NOT_BACKGROUND
+    for line in ("Not related to any other Director or Key Managerial Personnel", "Not debarred by SEBI order"):
+        assert _NOT_BACKGROUND.search(line)
+    assert not _NOT_BACKGROUND.search("Over 38 years of HR experience")

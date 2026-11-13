@@ -3,10 +3,10 @@
   "name": "State Bank of India",
   "window": {
     "label": "3d",
-    "start": "2026-11-11T01:17:48.611758+05:30",
-    "end": "2026-11-14T01:17:48.611758+05:30"
+    "start": "2026-11-11T02:39:28.726052+05:30",
+    "end": "2026-11-14T02:39:28.726052+05:30"
   },
-  "generated_at": "2026-11-14T01:17:48.611758+05:30",
+  "generated_at": "2026-11-14T02:39:28.726052+05:30",
   "counts": {
     "total": 2,
     "rule_classified": 2,
@@ -29,7 +29,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.638,
+        "score": 0.629,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/068644d8-6a79-4fb7-a225-15c42c0d08a1.pdf",
         "price_reaction": {
           "pct_1d": -0.6,
@@ -47,7 +47,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.637,
+        "score": 0.629,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3b3e4091-386f-4b5d-87d5-1d839654249e.pdf",
         "price_reaction": {
           "pct_1d": -0.6,

@@ -3,10 +3,10 @@
   "name": "ICICI Bank",
   "window": {
     "label": "30d",
-    "start": "2026-10-15T01:17:48.611758+05:30",
-    "end": "2026-11-14T01:17:48.611758+05:30"
+    "start": "2026-10-15T02:39:28.726052+05:30",
+    "end": "2026-11-14T02:39:28.726052+05:30"
   },
-  "generated_at": "2026-11-14T01:17:48.611758+05:30",
+  "generated_at": "2026-11-14T02:39:28.726052+05:30",
   "counts": {
     "total": 15,
     "rule_classified": 13,
@@ -23,7 +23,7 @@
       "category": "credit_rating",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.044,
+      "score": 0.043,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/94d9e62f-952d-4046-8379-bbdd1761f3ab.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -114,7 +114,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.77,
+        "score": 0.76,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fc247b09-13fa-455a-90ab-e43e40f21412.pdf",
         "price_reaction": {
           "pct_1d": -0.4,
@@ -132,7 +132,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.354,
+        "score": 0.35,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5d528b54-cd3f-477f-9539-fff4ab659b43.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -222,7 +222,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.015,
+        "score": 0.014,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b0db888f-4420-4c21-9c36-9a91bdf5865e.pdf",
         "price_reaction": null,
         "enrichment": null

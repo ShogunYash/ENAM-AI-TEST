@@ -3,10 +3,10 @@
   "name": "Hindustan Unilever",
   "window": {
     "label": "3d",
-    "start": "2026-11-11T01:17:48.611758+05:30",
-    "end": "2026-11-14T01:17:48.611758+05:30"
+    "start": "2026-11-11T02:39:28.726052+05:30",
+    "end": "2026-11-14T02:39:28.726052+05:30"
   },
-  "generated_at": "2026-11-14T01:17:48.611758+05:30",
+  "generated_at": "2026-11-14T02:39:28.726052+05:30",
   "counts": {
     "total": 1,
     "rule_classified": 1,
@@ -29,7 +29,7 @@
         "category": "postal_ballot",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.955,
+        "score": 0.943,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3317b3c1-9d82-4bdb-9a77-80f005c92da7.pdf",
         "price_reaction": null,
         "enrichment": null

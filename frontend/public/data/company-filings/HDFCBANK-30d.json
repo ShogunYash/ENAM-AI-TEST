@@ -3,10 +3,10 @@
   "name": "HDFC Bank",
   "window": {
     "label": "30d",
-    "start": "2026-10-15T01:17:48.611758+05:30",
-    "end": "2026-11-14T01:17:48.611758+05:30"
+    "start": "2026-10-15T02:39:28.726052+05:30",
+    "end": "2026-11-14T02:39:28.726052+05:30"
   },
-  "generated_at": "2026-11-14T01:17:48.611758+05:30",
+  "generated_at": "2026-11-14T02:39:28.726052+05:30",
   "counts": {
     "total": 17,
     "rule_classified": 16,
@@ -23,7 +23,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 6.891,
+      "score": 6.802,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -31,12 +31,10 @@
         "person": "Mr. V. Srinivasa Rangan",
         "role": "Whole-time Director (designated as Executive Director)",
         "change": "appointed",
-        "background": [
-          "Not related to any other Director or Key Managerial Personnel"
-        ],
+        "background": [],
         "links": [],
         "effective": "2026-11-23",
-        "background_source": "filing"
+        "background_source": "none"
       }
     },
     {
@@ -49,7 +47,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 5.52,
+      "score": 5.448,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6df1f05c-9926-47ce-9896-94c41bdb71ab.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -73,7 +71,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.361,
+      "score": 0.357,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b36ff756-1cf7-44a3-9b2c-4583e7e0e792.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -100,7 +98,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.2,
+      "score": 0.198,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e5b2d06f-fea8-4dea-aa03-84674215a0fd.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -135,7 +133,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.765,
+        "score": 0.755,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d01ef203-cd61-4f19-b88b-7a373979e5b5.pdf",
         "price_reaction": {
           "pct_1d": 0.71,
@@ -153,7 +151,7 @@
         "category": "postal_ballot",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.193,
+        "score": 0.191,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0926e958-96d9-4537-ae2b-188dfe3eb1d1.pdf",
         "price_reaction": null,
         "enrichment": null

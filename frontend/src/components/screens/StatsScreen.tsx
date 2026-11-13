@@ -48,7 +48,7 @@ export const StatsScreen: React.FC = () => {
         <div className="flex items-center justify-between gap-2">
           <h1 className="text-base font-bold text-zinc-100 flex items-center gap-1.5">
             <Activity className="w-4 h-4 text-zinc-300" />
-            LLM cost & efficiency
+            AI cost and usage
           </h1>
           <AsOfChip
             asOf={as_of}
@@ -58,7 +58,7 @@ export const StatsScreen: React.FC = () => {
           />
         </div>
         <p className="text-xs text-zinc-400">
-          Zero marginal cost architecture · Strict cache-first router
+          Spending, calls and reuse
         </p>
       </div>
 
@@ -67,27 +67,27 @@ export const StatsScreen: React.FC = () => {
         <div className="p-2.5 rounded-xl border border-zinc-800 bg-zinc-900/60 space-y-0.5">
           <div className="flex items-center gap-1.5 text-[11px] text-zinc-400">
             <Coins className="w-3 h-3 text-emerald-400" />
-            <span>Total Spend</span>
+            <span>Model API spend</span>
           </div>
           <div className="text-lg font-mono font-bold text-zinc-100">
             ₹{totals.spend_inr.toFixed(2)}
           </div>
           <p className="text-[10px] text-emerald-400 font-medium">
-            Free tiers only
+            Free tiers and local models
           </p>
         </div>
 
         <div className="p-2.5 rounded-xl border border-zinc-800 bg-zinc-900/60 space-y-0.5">
           <div className="flex items-center gap-1.5 text-[11px] text-zinc-400">
             <Zap className="w-3 h-3 text-amber-400" />
-            <span>Cache Hit Rate</span>
+            <span>Answers reused</span>
           </div>
           <div className="flex items-baseline gap-1.5 flex-wrap">
             <span className="text-lg font-mono font-bold text-zinc-100">
               {totals.cache_hit_pct.toFixed(1)}%
             </span>
             <span className="text-[10px] text-zinc-400 font-mono">
-              ({totals.cache_hits} / {totals.calls + totals.cache_hits})
+              ({totals.cache_hits} of {totals.calls + totals.cache_hits} requests)
             </span>
           </div>
         </div>
@@ -96,23 +96,23 @@ export const StatsScreen: React.FC = () => {
       {/* 2x2 Grid of Key Metrics */}
       <div className="grid grid-cols-2 gap-2 p-2.5 rounded-xl border border-zinc-800/80 bg-zinc-900/40 text-xs">
         <div className="space-y-0.5">
-          <div className="text-[11px] text-zinc-400">Total API Invocations</div>
+          <div className="text-[11px] text-zinc-400">Model calls</div>
           <div className="font-mono text-zinc-200 font-bold text-sm">{totals.calls} calls</div>
         </div>
         <div className="space-y-0.5">
-          <div className="text-[11px] text-zinc-400">Tokens Processed</div>
+          <div className="text-[11px] text-zinc-400">Input and output tokens</div>
           <div className="font-mono text-zinc-200 font-bold text-sm">
             {(totals.tokens_in + totals.tokens_out).toLocaleString()}
           </div>
         </div>
         <div className="space-y-0.5">
-          <div className="text-[11px] text-zinc-400">Avg Calls / New Ticker</div>
+          <div className="text-[11px] text-zinc-400">Calls per new ticker</div>
           <div className="font-mono text-zinc-200 font-bold text-sm">
-            {avg_calls_new_ticker ? avg_calls_new_ticker.toFixed(1) : '7.0'}
+            {avg_calls_new_ticker ? avg_calls_new_ticker.toFixed(1) : 'Not measured'}
           </div>
         </div>
         <div className="space-y-0.5">
-          <div className="text-[11px] text-zinc-400">Claims rejected by the quote check</div>
+          <div className="text-[11px] text-zinc-400">Claims left out (no verified quote)</div>
           <div className="font-mono text-zinc-200 font-bold text-sm">
             {grounding_dropped} claims
           </div>
@@ -122,7 +122,7 @@ export const StatsScreen: React.FC = () => {
       {/* Router Calls by Model */}
       <section className="space-y-1.5">
         <h2 className="text-xs font-semibold uppercase tracking-wider text-zinc-400 px-1">
-          Router Calls by Model (All Free Tier)
+          Usage by model
         </h2>
         <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 overflow-hidden divide-y divide-zinc-800/60 text-xs">
           {activeModels.map((row) => (
@@ -142,7 +142,7 @@ export const StatsScreen: React.FC = () => {
           {unusedModels.length > 0 && (
             <details className="group border-t border-zinc-800/60">
               <summary className="px-3 py-2 text-xs text-zinc-500 hover:text-zinc-400 cursor-pointer flex items-center justify-between select-none">
-                <span>Not used yet ({unusedModels.length})</span>
+                <span>Models not used yet ({unusedModels.length})</span>
                 <ChevronDown className="w-3.5 h-3.5 transition-transform group-open:rotate-180 text-zinc-500" />
               </summary>
               <div className="divide-y divide-zinc-800/40 bg-zinc-950/40">
@@ -161,7 +161,7 @@ export const StatsScreen: React.FC = () => {
       {/* Feature Breakdown */}
       <section className="space-y-1.5">
         <h2 className="text-xs font-semibold uppercase tracking-wider text-zinc-400 px-1">
-          Invocations by Pipeline Task
+          Calls by task
         </h2>
         <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 overflow-hidden divide-y divide-zinc-800/60 text-xs">
           {by_feature.map((row) => (

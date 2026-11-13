@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "30d",
-    "start": "2026-10-15T01:17:48.611758+05:30",
-    "end": "2026-11-14T01:17:48.611758+05:30"
+    "start": "2026-10-15T02:39:28.726052+05:30",
+    "end": "2026-11-14T02:39:28.726052+05:30"
   },
-  "generated_at": "2026-11-14T01:17:48.611758+05:30",
+  "generated_at": "2026-11-14T02:39:28.726052+05:30",
   "companies": [
     {
       "symbol": "BAJFINANCE",
@@ -28,7 +28,7 @@
         "category": "fund_raise",
         "category_source": "rule",
         "priority": "high",
-        "score": 8.328,
+        "score": 8.22,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
         "price_reaction": {
           "pct_1d": 3.36,
@@ -64,7 +64,7 @@
         "category": "management_change",
         "category_source": "rule",
         "priority": "medium",
-        "score": 6.891,
+        "score": 6.802,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -72,12 +72,10 @@
           "person": "Mr. V. Srinivasa Rangan",
           "role": "Whole-time Director (designated as Executive Director)",
           "change": "appointed",
-          "background": [
-            "Not related to any other Director or Key Managerial Personnel"
-          ],
+          "background": [],
           "links": [],
           "effective": "2026-11-23",
-          "background_source": "filing"
+          "background_source": "none"
         }
       },
       "price": {
@@ -107,7 +105,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 3.007,
+        "score": 2.968,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2e7c8bf8-d794-4a55-b670-97951b28e0e8.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -188,7 +186,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.992,
+        "score": 1.966,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e4d02b37-bd6b-4b11-ac89-98eaa14a7290.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -268,7 +266,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.964,
+        "score": 1.938,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/86009cba-ca03-4d35-bad8-b1988cfcff13.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -347,7 +345,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.954,
+        "score": 1.928,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7e17b4ed-a5e2-4625-9e2b-2af590350caa.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -427,7 +425,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.951,
+        "score": 1.926,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a39f8b72-303f-42a4-8750-f413346bd742.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -507,7 +505,7 @@
         "category": "litigation",
         "category_source": "llm",
         "priority": "medium",
-        "score": 1.634,
+        "score": 1.613,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/53496491-fd25-4172-9f9f-79bf088ea9c5.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -541,7 +539,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.492,
+        "score": 1.472,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/96d3143f-2c3f-4cdb-a811-869e422ac1ab.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -620,7 +618,7 @@
         "category": "management_change",
         "category_source": "rule",
         "priority": "medium",
-        "score": 1.441,
+        "score": 1.423,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c6c189db-e010-4c6e-a997-b50d6d33767a.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -659,7 +657,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.203,
+        "score": 1.187,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1eaa8912-06ca-45d4-8a04-03df01b47497.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -739,7 +737,7 @@
         "category": "fund_raise",
         "category_source": "rule",
         "priority": "medium",
-        "score": 0.928,
+        "score": 0.915,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/73a8c540-4229-4137-8e2b-5aae04fa0a35.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -774,7 +772,7 @@
         "category": "m_and_a",
         "category_source": "llm",
         "priority": "high",
-        "score": 0.528,
+        "score": 0.521,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/13e50739-50e7-4b5a-8dba-ac92ece6d35f.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -809,7 +807,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.504,
+        "score": 0.497,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/880087f6-7ecc-40a9-8cac-de48d4616b25.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -888,7 +886,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.488,
+        "score": 0.481,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d7b8fffb-7a5f-4efa-9241-482c5d765f1d.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -967,7 +965,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.478,
+        "score": 0.472,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/658231ad-7203-4355-be99-2a162b722c0c.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1045,7 +1043,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.387,
+        "score": 0.382,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/12ace952-a89b-4098-8bd0-e247f6e2a776.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1124,7 +1122,7 @@
         "category": "litigation",
         "category_source": "rule",
         "priority": "medium",
-        "score": 0.313,
+        "score": 0.309,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c3d1ba29-6132-47b7-9f3b-79a294e53189.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1157,7 +1155,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.289,
+        "score": 0.285,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f0d1483f-551a-46d8-ade7-7a390baacc1c.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1236,7 +1234,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.242,
+        "score": 0.239,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fca20bad-7bfe-438f-a526-d9f42ccf0346.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1314,7 +1312,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.097,
+        "score": 0.095,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26c12463-d44e-4050-bd47-b53cc294b4e0.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1393,7 +1391,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.062,
+        "score": 0.061,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4567cd4f-9037-41ac-9e8d-fd10ff9e2f51.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1472,7 +1470,7 @@
         "category": "credit_rating",
         "category_source": "rule",
         "priority": "medium",
-        "score": 0.044,
+        "score": 0.043,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/94d9e62f-952d-4046-8379-bbdd1761f3ab.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1663,7 +1661,7 @@
         "category": "management_change",
         "category_source": "rule",
         "priority": "medium",
-        "score": 0.035,
+        "score": 0.034,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0d21e169-46c3-4d2d-aa05-0b3c9c1086bf.pdf",
         "price_reaction": null,
         "enrichment": {

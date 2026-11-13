@@ -391,3 +391,19 @@ def test_analyst_review_withholds_listed_items_and_discloses_it():
     assert "1 item(s) withheld" in out.gaps[-1]
     assert build.apply_review(r, {}) is r                       # nothing listed -> untouched
     assert [p.said_in for p in build.apply_review(r, {"X": [{"said_in": "Q1 FY27", "metric": "credit"}]}).pvd] == ["Q4 FY26"] * 2
+
+
+def test_blocked_transcript_source_becomes_one_plain_gap(monkeypatch):
+    from app.research import build
+    monkeypatch.setattr(build.screener, "fetch_page", lambda s: ("<html></html>", True))
+    monkeypatch.setattr(build.screener, "parse_company_name", lambda h: "X Ltd")
+    monkeypatch.setattr(build.snapshot, "build_snapshot", lambda h: None)
+    monkeypatch.setattr(build, "_latest_reported_quarter", lambda h: None)
+    monkeypatch.setattr(build, "_llm_calls", lambda s: 0)
+    monkeypatch.setattr(build.loader, "load_company", lambda s, n_concalls=5: (
+        [], ["Q2 FY27 concall could not be downloaded (https://x: HTTP 403)",
+             "Q1 FY27 concall could not be downloaded (https://y: HTTP 403)"]))
+    r = build.build_research("XYZ")
+    assert r.status == "partial"
+    assert r.gaps[0].startswith("The financials are available, but earnings-call transcripts were unavailable")
+    assert not any("HTTP 403" in g for g in r.gaps)

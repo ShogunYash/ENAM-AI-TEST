@@ -3,10 +3,10 @@
   "name": "Nestle India",
   "window": {
     "label": "30d",
-    "start": "2026-10-15T01:17:48.611758+05:30",
-    "end": "2026-11-14T01:17:48.611758+05:30"
+    "start": "2026-10-15T02:39:28.726052+05:30",
+    "end": "2026-11-14T02:39:28.726052+05:30"
   },
-  "generated_at": "2026-11-14T01:17:48.611758+05:30",
+  "generated_at": "2026-11-14T02:39:28.726052+05:30",
   "counts": {
     "total": 4,
     "rule_classified": 4,
@@ -23,7 +23,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.035,
+      "score": 0.034,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0d21e169-46c3-4d2d-aa05-0b3c9c1086bf.pdf",
       "price_reaction": null,
       "enrichment": {

@@ -30,7 +30,7 @@ PAGES = 2
 _NOT_BACKGROUND = re.compile(
     r"\b(retir\w*|resign\w*|relinquish\w*|appointed|re-?appointment|assumed charge|assumes charge|takes? over|"
     r"effective|annexure|attached|enclosed|commitments?|engagements?|personal reasons?|reason|cease[ds]?|"
-    r"tenure|approved|valuable|guidance|withdraw\w*|nominat\w*|continues?|\bterm\b|starting|cessation)\b", re.IGNORECASE)
+    r"tenure|approved|valuable|guidance|withdraw\w*|nominat\w*|continues?|\bterm\b|starting|cessation|related|debarred|disqualified|relationship)\b", re.IGNORECASE)
 _TITLES = re.compile(r"\b(mr|ms|mrs|dr|shri|smt|prof|ca|cs|justice|lt|gen|col)\b\.?", re.IGNORECASE)
 
 

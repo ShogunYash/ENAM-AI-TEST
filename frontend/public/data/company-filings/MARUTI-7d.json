@@ -3,10 +3,10 @@
   "name": "Maruti Suzuki India",
   "window": {
     "label": "7d",
-    "start": "2026-11-07T01:17:48.611758+05:30",
-    "end": "2026-11-14T01:17:48.611758+05:30"
+    "start": "2026-11-07T02:39:28.726052+05:30",
+    "end": "2026-11-14T02:39:28.726052+05:30"
   },
-  "generated_at": "2026-11-14T01:17:48.611758+05:30",
+  "generated_at": "2026-11-14T02:39:28.726052+05:30",
   "counts": {
     "total": 2,
     "rule_classified": 2,
@@ -30,7 +30,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.789,
+        "score": 0.779,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/19833a7e-2123-409e-990d-b9c1bfd1a543.pdf",
         "price_reaction": {
           "pct_1d": -1.31,
@@ -48,7 +48,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.319,
+        "score": 1.302,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2b74a7fe-194c-4a61-8cf6-dbba26573f57.pdf",
         "price_reaction": null,
         "enrichment": null

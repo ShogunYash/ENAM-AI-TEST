@@ -90,7 +90,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
                 const v = item.verdict || 'pending'
                 counts[v] = (counts[v] || 0) + 1
               })
-              const priority = ['pending', 'cut', 'raised', 'missed', 'met']
+              const priority = ['missed', 'cut', 'raised', 'pending', 'met']
               const parts: string[] = []
               for (const k of priority) {
                 if (counts[k]) parts.push(`${counts[k]} ${k}`)
@@ -235,7 +235,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Any NSE ticker (e.g. INFY, TCS, TITAN)"
+            placeholder="Search any NSE ticker"
             inputMode="search"
             className="w-full bg-zinc-900 border border-zinc-800 rounded-xl pl-9 pr-16 py-2.5 text-xs text-zinc-100 placeholder:text-zinc-500 font-mono font-semibold focus:outline-none focus:border-zinc-600 transition-colors"
           />
@@ -258,7 +258,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
           </button>
         </form>
 
-        {/* Segmented Control: "My portfolio" | "Watchlist" | "Pre-built" */}
+        {/* Segmented Control: "My portfolio" | "Watchlist" | "Ready reports" */}
         <div className="flex items-center justify-between gap-2 pt-0.5">
           <div
             role="group"
@@ -296,14 +296,14 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
                   : 'text-zinc-400 hover:text-zinc-200'
               }`}
             >
-              Pre-built
+              Ready reports
             </button>
           </div>
         </div>
 
         {/* Count Line */}
         <div className="text-[11px] text-zinc-500 font-mono px-1">
-          {fullReportCount} of {displayedList.length} have a full report
+          {fullReportCount} of {displayedList.length} with guidance reviewed
         </div>
 
         {/* Company List */}
@@ -351,10 +351,10 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
                       {isPrebuilt ? (
                         <>
                           <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold font-mono bg-emerald-950/40 text-emerald-400 border border-emerald-800/60">
-                            Full report
+                            Guidance reviewed
                           </span>
                           {summary && (
-                            <span className="text-[10px] text-zinc-400 font-mono text-right max-w-[160px] truncate">
+                            <span className="text-[10px] text-zinc-400 font-mono text-right max-w-[210px]">
                               {summary}
                             </span>
                           )}

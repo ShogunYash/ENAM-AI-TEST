@@ -1,11 +1,11 @@
 {
-  "as_of": "2026-11-14T01:17:50.874577+05:30",
+  "as_of": "2026-11-14T02:39:30.706906+05:30",
   "totals": {
     "calls": 195,
     "tokens_in": 1587768,
     "tokens_out": 125916,
-    "cache_hits": 233,
-    "cache_hit_pct": 54.4,
+    "cache_hits": 247,
+    "cache_hit_pct": 55.9,
     "spend_inr": 0.0
   },
   "by_feature": [
@@ -35,7 +35,7 @@
       "calls": 23,
       "tokens_in": 43154,
       "tokens_out": 1661,
-      "cache_hits": 63
+      "cache_hits": 77
     },
     {
       "key": "ask",
@@ -79,7 +79,7 @@
       "calls": 56,
       "tokens_in": 520421,
       "tokens_out": 15768,
-      "cache_hits": 169
+      "cache_hits": 183
     },
     {
       "key": "gemini-3.1-flash-lite",

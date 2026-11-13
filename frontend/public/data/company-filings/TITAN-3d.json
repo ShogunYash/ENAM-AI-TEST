@@ -3,10 +3,10 @@
   "name": "Titan Company",
   "window": {
     "label": "3d",
-    "start": "2026-11-11T01:17:48.611758+05:30",
-    "end": "2026-11-14T01:17:48.611758+05:30"
+    "start": "2026-11-11T02:39:28.726052+05:30",
+    "end": "2026-11-14T02:39:28.726052+05:30"
   },
-  "generated_at": "2026-11-14T01:17:48.611758+05:30",
+  "generated_at": "2026-11-14T02:39:28.726052+05:30",
   "counts": {
     "total": 3,
     "rule_classified": 3,
@@ -46,7 +46,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.792,
+        "score": 0.781,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/71268b4d-2f12-447d-bf1e-28310f485d17.pdf",
         "price_reaction": {
           "pct_1d": -0.97,
@@ -64,8 +64,8 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.247,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/daa6c172-771a-4af5-b4b3-9813fdf7536a.pdf",
+        "score": 1.231,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/daa6c172-771a-4af5-b4b3-9813fdf7536a.pdf",
         "price_reaction": {
           "pct_1d": -0.97,
           "vol_ratio": 0.78

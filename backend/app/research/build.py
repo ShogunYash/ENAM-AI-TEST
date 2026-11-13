@@ -139,6 +139,11 @@ def build_research(symbol: str, progress=None) -> m.Research:
     refs, load_gaps = loader.load_company(symbol, n_concalls=5)
     gaps += load_gaps
     concalls = [r for r in refs if r.kind == "concall"]
+    if len(concalls) < 2 and any("could not be downloaded" in g for g in gaps):
+        # the host cannot reach the transcript source (e.g. BSE answers 403 to cloud IPs): say it once, plainly
+        gaps = [g for g in gaps if "could not be downloaded" not in g]
+        gaps.insert(0, "The financials are available, but earnings-call transcripts were unavailable on this server, "
+                       "so management's guidance hasn't been assessed.")
     say(f"Found {len(concalls)} earnings-call transcript{'s' if len(concalls) != 1 else ''}")
     newest_reported = _latest_reported_quarter(html)
     if concalls and newest_reported and pvd.period_key(newest_reported) > max(pvd.period_key(r.period) for r in concalls):
