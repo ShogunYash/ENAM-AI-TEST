@@ -1,0 +1,21 @@
+{
+  "symbol": "LT",
+  "name": "Larsen & Toubro",
+  "window": {
+    "label": "24h",
+    "start": "2026-11-12T16:12:14.179682+05:30",
+    "end": "2026-11-13T16:12:14.179682+05:30"
+  },
+  "generated_at": "2026-11-13T16:12:14.179682+05:30",
+  "counts": {
+    "total": 0,
+    "rule_classified": 0,
+    "llm_classified": 0
+  },
+  "important": [],
+  "routine": {
+    "count": 0,
+    "by_category": {},
+    "items": []
+  }
+}

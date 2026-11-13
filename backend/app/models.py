@@ -207,6 +207,8 @@ class CompanySummary(Model):
     symbol: str
     name: str
     sector: str | None
+    in_portfolio: bool = Field(default=True, description="True = a holding; False = watchlist only (tracked, never in the "
+                                                          "ranked digest, never raises alerts)")
     total: int = Field(description="Filings in the window")
     material: int = Field(description="High/medium-priority filings in the window, muted categories excluded")
     categories: dict[str, int] = Field(description="Material filings per category, e.g. {'results': 1, 'fund_raise': 3}")

@@ -15,6 +15,7 @@ from datetime import datetime
 from pathlib import Path
 
 from app import models as m
+from app import universe
 from app.ingest import prices as prices_mod
 from app.llm import store as llm_store
 from app.pipeline import digest as digest_mod
@@ -43,28 +44,32 @@ def main() -> int:
         print("classify:", classify_pending())
 
     pf = json.loads((ROOT / "data" / "portfolio.json").read_text("utf-8"))
-    symbols = [s["nse_symbol"] for s in pf["portfolio"]]
+    hold = universe.portfolio_symbols()                       # holdings: ranked digest, alerts, prices.json
+    symbols = sorted(hold)
     now = datetime.now(IST)
-    snaps = prices_mod.snapshots(symbols)
+    all_snaps = prices_mod.snapshots(universe.all_symbols())
+    snaps = [x for x in all_snaps if x.symbol in hold]        # prices.json feeds OFFLINE alerts: holdings only
 
-    dump(out / "companies.json", [m.Company(symbol=s["nse_symbol"], bse_code=s["bse_scrip_code"], name=s["name"],
-                                             sector=s["sector"], in_portfolio=True) for s in pf["portfolio"]])
+    dump(out / "companies.json", [m.Company(symbol=c.symbol, bse_code=c.bse_code, name=c.name, sector=c.sector,
+                                             in_portfolio=c.in_portfolio) for c in universe.universe()])
     dump(out / "prices.json", snaps)
 
-    digests = {label: digest_mod.build_digest(label, snaps=snaps, now=now) for label in ("24h", "3d", "7d", "30d")}
+    digests = {label: digest_mod.build_digest(label, snaps=snaps, now=now, symbols=hold)
+               for label in ("24h", "3d", "7d", "30d")}
     for label, d in digests.items():
         dump(out / f"digest-{label}.json", d)
     dump(out / "alerts.json", digests["24h"].alerts)
 
     # by-company view: one list + one uncapped file per company, for 3d / 7d / 30d (works with the API asleep)
-    rows = [(s["nse_symbol"], s["name"], s.get("sector")) for s in pf["portfolio"]]
+    # portfolio AND watchlist rows (each flagged in_portfolio): the UI's "My portfolio | Watchlist" toggle filters on the flag
+    rows = universe.as_rows()
     cdir = out / "company-filings"
     if cdir.exists():
         shutil.rmtree(cdir)
-    for label in ("3d", "7d", "30d"):
-        dump(out / f"digest-companies-{label}.json", digest_mod.build_company_list(rows, label, snaps=snaps, now=now))
-        for sym, name, _ in rows:
-            dump(cdir / f"{sym}-{label}.json", digest_mod.build_company_filings(sym, name, label, snaps=snaps, now=now))
+    for label in ("24h", "3d", "7d", "30d"):
+        dump(out / f"digest-companies-{label}.json", digest_mod.build_company_list(rows, label, snaps=all_snaps, now=now))
+        for sym, name, _, _ in rows:
+            dump(cdir / f"{sym}-{label}.json", digest_mod.build_company_filings(sym, name, label, snaps=all_snaps, now=now))
 
     # enriched filings (results cards etc.) get their own file for the detail view
     fdir = out / "filings"

@@ -7,14 +7,13 @@ Each filing costs 1 Gemini call (cached forever by PDF hash). Prints one line pe
 from __future__ import annotations
 
 import argparse
-import json
 import sys
 import time
 from pathlib import Path
 
 from pydantic import ValidationError
 
-from app import db
+from app import db, universe
 from app.ingest.docs import DocError
 from app.llm import LLMUnavailable
 from app.pipeline import results
@@ -44,7 +43,7 @@ def main() -> int:
     ap.add_argument("--refresh", action="store_true", help="also bypass the cached model answer (re-ask; costs a call)")
     ap.add_argument("--days", type=int, default=60)
     a = ap.parse_args()
-    sectors = {s["nse_symbol"]: s["sector"] for s in json.loads(PORTFOLIO.read_text("utf-8"))["portfolio"]}
+    sectors = universe.sectors()                       # portfolio + watchlist (banks/lenders get no EBITDA)
     only = {s.strip().upper() for s in a.only.split(",")} if a.only else None
 
     with db.connect() as con:

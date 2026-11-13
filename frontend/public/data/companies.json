@@ -117,5 +117,75 @@
     "name": "Hindustan Zinc",
     "sector": "Non-ferrous metals and mining",
     "in_portfolio": true
+  },
+  {
+    "symbol": "POLYCAB",
+    "bse_code": "542652",
+    "name": "Polycab India",
+    "sector": "Wires and cables",
+    "in_portfolio": false
+  },
+  {
+    "symbol": "KPIL",
+    "bse_code": "522287",
+    "name": "Kalpataru Projects International",
+    "sector": "Engineering and construction",
+    "in_portfolio": false
+  },
+  {
+    "symbol": "ICICIBANK",
+    "bse_code": "532174",
+    "name": "ICICI Bank",
+    "sector": "Private-sector banking",
+    "in_portfolio": false
+  },
+  {
+    "symbol": "SBIN",
+    "bse_code": "500112",
+    "name": "State Bank of India",
+    "sector": "Public-sector banking",
+    "in_portfolio": false
+  },
+  {
+    "symbol": "BHARTIARTL",
+    "bse_code": "532454",
+    "name": "Bharti Airtel",
+    "sector": "Telecom",
+    "in_portfolio": false
+  },
+  {
+    "symbol": "MARUTI",
+    "bse_code": "532500",
+    "name": "Maruti Suzuki India",
+    "sector": "Automobiles",
+    "in_portfolio": false
+  },
+  {
+    "symbol": "ASIANPAINT",
+    "bse_code": "500820",
+    "name": "Asian Paints",
+    "sector": "Paints",
+    "in_portfolio": false
+  },
+  {
+    "symbol": "HINDUNILVR",
+    "bse_code": "500696",
+    "name": "Hindustan Unilever",
+    "sector": "FMCG",
+    "in_portfolio": false
+  },
+  {
+    "symbol": "DIXON",
+    "bse_code": "540699",
+    "name": "Dixon Technologies",
+    "sector": "Electronics manufacturing",
+    "in_portfolio": false
+  },
+  {
+    "symbol": "NESTLEIND",
+    "bse_code": "500790",
+    "name": "Nestle India",
+    "sector": "FMCG",
+    "in_portfolio": false
   }
 ]

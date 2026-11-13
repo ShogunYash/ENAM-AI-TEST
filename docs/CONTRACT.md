@@ -77,8 +77,8 @@ meta.json            SnapshotMeta {as_of, portfolio_size, research_symbols}
 companies.json       Company[]
 prices.json          PriceSnapshot[]
 digest-24h.json      Digest      (also digest-3d.json, digest-7d.json, digest-30d.json)
-digest-companies-{3d|7d|30d}.json   CompanyList      (by-company view of that window)
-company-filings/{SYM}-{3d|7d|30d}.json  CompanyFilings  (one per portfolio company and window, uncapped)
+digest-companies-{24h|3d|7d|30d}.json   CompanyList      (by-company view of that window: portfolio + watchlist, flagged in_portfolio)
+company-filings/{SYM}-{24h|3d|7d|30d}.json  CompanyFilings  (one per tracked company and window, uncapped)
 filings/{id}.json    Filing      (enriched filings only)
 research/{SYM}.json  Research    (pre-seeded research names)
 stats.json           LlmStats
@@ -86,6 +86,7 @@ stats.json           LlmStats
 Until B6 exists, seed the folder by copying `docs/examples/`.
 
 ## Changelog
+- 2026-11-13: **portfolio vs watchlist** (additive). `data/portfolio.json` gains `watchlist` (tracked, not held). `CompanySummary.in_portfolio` (default true). Rules: the ranked `GET /digest` (24h/3d/7d/30d), `GET /alerts`, `prices.json` and `Needs you` cover the PORTFOLIO only; `GET /companies`, `GET /digest/companies` and `GET /digest/company/{symbol}` cover portfolio + watchlist, each row flagged `in_portfolio`. The watchlist never raises alerts. UI: a `My portfolio | Watchlist` toggle on Today filters the company list on `in_portfolio` (no new API parameter, so it works offline). Snapshot company files now also exist for `24h` (all windows `24h|3d|7d|30d`), for every tracked company.
 - 2026-11-13: by-company view for the 30-day window (additive). `GET /digest/companies?window=` -> `CompanyList` (one `CompanySummary` per portfolio company: total, material, categories, best headline `top`, latest `price`), and `GET /digest/company/{symbol}?window=` -> `CompanyFilings` (that company's filings, UNCAPPED: `important` best-first + collapsed `routine`). The flat `/digest` caps its lists (5 / 80), so it cannot show a full 30 days per stock. Snapshot gains `digest-companies-{3d,7d,30d}.json` and `company-filings/{SYM}-{3d,7d,30d}.json` (24h has none: the ranked list is enough there). UI: 24h / 3d / 7d keep the ranked list; 30d shows the company list, tap -> that company's headlines.
 - 2026-11-13: `POST /ask` is real. `AskResponse.answerable` (additive, default true). Context `filing` -> answers from the filing card + first PDF pages; `research` -> from the cached report. Every `claims[].sources[]` quote is server-verified; every figure in `answer` already exists in the evidence; otherwise `answerable:false` with a plain sentence (also when no model is reachable). Frontend: show claims' quotes under the answer, and render `answerable:false` as a neutral "FINN can't answer that from this document" state, not an error.
 - 2026-11-12: `Health.mode: "live"|"mock"` (default live), additive. `mock` = the API is serving illustrative fixtures because it has no ingested database. Frontend: show LIVE only when `mode=="live"`; otherwise show DEMO DATA. (Found when a worktree backend without a database answered and the UI labelled mock data LIVE.)

@@ -1,0 +1,297 @@
+{
+  "symbol": "ASIANPAINT",
+  "name": "Asian Paints",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T16:12:14.179682+05:30",
+    "end": "2026-11-13T16:12:14.179682+05:30"
+  },
+  "generated_at": "2026-11-13T16:12:14.179682+05:30",
+  "counts": {
+    "total": 14,
+    "rule_classified": 14,
+    "llm_classified": 0
+  },
+  "important": [
+    {
+      "id": "d1aaeb85-6ca1-4b7d-9c05-4eb4916c7455",
+      "symbol": "ASIANPAINT",
+      "company_name": "Asian Paints Ltd",
+      "filed_at": "2026-11-06T21:58:36.363000+05:30",
+      "headline": "This is to inform you that the shareholders of the Company have today, i.e. 6th November 2026 approved the appointment of Mr. Leo Puri as an Independent Director of the Company. Mr. Leo ....",
+      "so_what": "Leo Puri appointed as Independent Director from 07 Sep",
+      "category": "management_change",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 1.573,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c6c189db-e010-4c6e-a997-b50d6d33767a.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "management",
+        "person": "Leo Puri",
+        "role": "Independent Director",
+        "change": "appointed",
+        "background": [],
+        "links": [],
+        "effective": "2026-09-07",
+        "background_source": "none"
+      }
+    },
+    {
+      "id": "1f0df7d6-ab0a-4d13-b4e7-5f477f62005d",
+      "symbol": "ASIANPAINT",
+      "company_name": "Asian Paints Ltd",
+      "filed_at": "2026-10-29T14:09:12.817000+05:30",
+      "headline": "Find enclosed the audited standalone and unaudited consolidated financial results of the Company for the quarter and half year ended 30th September 2026",
+      "so_what": "Q2 FY27: PAT +7%, Rev +17% YoY",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.414,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6ad6c765-6512-49a8-8de9-8bae58b913ca.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 9976.51,
+            "prev_q": 10541.94,
+            "prev_y": 8531.27,
+            "qoq_pct": -5.4,
+            "yoy_pct": 16.9
+          },
+          {
+            "name": "ebitda",
+            "value": null,
+            "prev_q": null,
+            "prev_y": null,
+            "qoq_pct": null,
+            "yoy_pct": null
+          },
+          {
+            "name": "pbt",
+            "value": 1477.78,
+            "prev_q": 2095.75,
+            "prev_y": 1391.52,
+            "qoq_pct": -29.5,
+            "yoy_pct": 6.2
+          },
+          {
+            "name": "pat",
+            "value": 1085.35,
+            "prev_q": 1559.45,
+            "prev_y": 1018.23,
+            "qoq_pct": -30.4,
+            "yoy_pct": 6.6
+          }
+        ],
+        "margin_ebitda_pct": null,
+        "cross_check": {
+          "status": "match",
+          "note": null
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6ad6c765-6512-49a8-8de9-8bae58b913ca.pdf",
+          "page": 12
+        }
+      }
+    }
+  ],
+  "routine": {
+    "count": 12,
+    "by_category": {
+      "investor_meetings": 1,
+      "postal_ballot": 2,
+      "earnings_call": 2,
+      "results": 3,
+      "dividend": 3,
+      "unclassified": 1
+    },
+    "items": [
+      {
+        "id": "dfe10250-1d80-4d73-8087-2a6b334c69c1",
+        "symbol": "ASIANPAINT",
+        "company_name": "Asian Paints Ltd",
+        "filed_at": "2026-11-09T18:04:50.727000+05:30",
+        "headline": "The Company will be participating in the analyst/institutional investor conferences/meetings on 18th and 19th November 2026 as per enclosed schedule.",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.404,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8a988798-8c55-42be-a6ce-6cb97abd6d5c.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "4309c275-8b2b-4c7e-ab79-d462ab07815f",
+        "symbol": "ASIANPAINT",
+        "company_name": "Asian Paints Ltd",
+        "filed_at": "2026-11-06T21:41:36.657000+05:30",
+        "headline": "Please find enclosed the voting results of Postal Ballot pursuant to Regulation 44 of SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015.",
+        "so_what": null,
+        "category": "postal_ballot",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.209,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/dd885c0b-f490-4da2-9fcc-a0ef6cfb76a3.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "4e64425b-a1b2-4110-9300-00521a8fab34",
+        "symbol": "ASIANPAINT",
+        "company_name": "Asian Paints Ltd",
+        "filed_at": "2026-11-06T21:37:13.330000+05:30",
+        "headline": "Please find enclosed the scrutinizer''s report on the remote e-Voting and the voting results of Postal Ballot pursuant to Regulation 30 and Regulation 44 of the SEBI (Listing Obligations ....",
+        "so_what": null,
+        "category": "postal_ballot",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.209,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ddc90afe-51c7-4e86-984c-dbb5d641c44e.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "5596273f-725d-43ab-9f7d-814cbe4e06d0",
+        "symbol": "ASIANPAINT",
+        "company_name": "Asian Paints Ltd",
+        "filed_at": "2026-11-03T18:15:27.930000+05:30",
+        "headline": "Find enclosed the transcript of the investor conference call held on 29th October 2026 on the performance of the Company for the quarter and half year ended 30th September 2026",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.202,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ee7e6efe-1f9b-4b5e-bff7-1da18902ffeb.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "21f654b0-3568-4225-8da4-79097b69e400",
+        "symbol": "ASIANPAINT",
+        "company_name": "Asian Paints Ltd",
+        "filed_at": "2026-10-29T21:17:13.913000+05:30",
+        "headline": "Find enclosed communication with respect to the link for the audio recording of the investor conference call on the performance of the Company for the quarter and half year ended 30th September ....",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.066,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4463a62c-65c7-4641-8d1f-e6b9325f005b.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "cfac591f-e2c3-44a0-9958-8a97c427d21e",
+        "symbol": "ASIANPAINT",
+        "company_name": "Asian Paints Ltd",
+        "filed_at": "2026-10-29T16:43:09.923000+05:30",
+        "headline": "Find enclosed the investor presentation on the performance of the Company for the quarter and half year ended 30th September 2026",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.094,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/83b2bead-08c8-4789-a658-7985de0c772f.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "d6bab95e-f802-44e9-befa-9f21ac8aa4bf",
+        "symbol": "ASIANPAINT",
+        "company_name": "Asian Paints Ltd",
+        "filed_at": "2026-10-29T14:23:24.267000+05:30",
+        "headline": "The Board of Directors at its meeting held today has approved payment of interim dividend of Rs. 5.75 per equity share for the financial year ending 31st March 2027. Find enclosed the ....",
+        "so_what": null,
+        "category": "dividend",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.092,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cc0c50f8-1d2d-4bbd-95bc-806513fe6062.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "05acb0c8-79a4-4a10-8699-9d45e9c4421e",
+        "symbol": "ASIANPAINT",
+        "company_name": "Asian Paints Ltd",
+        "filed_at": "2026-10-29T14:20:00.653000+05:30",
+        "headline": "The Board of Directors at its meeting held today has approved the payment of interim dividend of Rs. 5.75 per equity share for the financial year ending 31st March 2027. The dividend ....",
+        "so_what": null,
+        "category": "dividend",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.092,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a27ed780-8c39-4533-a783-817445f5f11d.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "4680660e-cf3c-4b0c-99fa-9949e760babe",
+        "symbol": "ASIANPAINT",
+        "company_name": "Asian Paints Ltd",
+        "filed_at": "2026-10-29T14:16:03.337000+05:30",
+        "headline": "Find enclosed the press release on the performance of the Company for the quarter and half year ended 30th September 2026",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.092,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a933af17-dee7-4d6f-a87c-48a70b3a532f.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "1e42f4cc-1281-4e85-abe4-874e9b70a670",
+        "symbol": "ASIANPAINT",
+        "company_name": "Asian Paints Ltd",
+        "filed_at": "2026-10-29T14:13:36.477000+05:30",
+        "headline": "The Board of Directors of the Company at its meeting held today has approved payment of Interim dividend of Rs. 5.75 per equity share for the financial year ending 31st March 2027",
+        "so_what": null,
+        "category": "dividend",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.092,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/67b1b091-294b-47af-aee0-df9fa7211cee.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "92071a93-de8f-4923-85b6-f853a765c9b9",
+        "symbol": "ASIANPAINT",
+        "company_name": "Asian Paints Ltd",
+        "filed_at": "2026-10-29T14:03:16.883000+05:30",
+        "headline": "The Board of Directors at its meeting held today, 29th October 2026 has approved the audited standalone and unaudited consolidated financial results of the Company for the quarter and half ....",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.092,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e20392a9-cbd5-4271-9ad1-450cad3ff835.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "4a96876d-75f1-401c-9f13-0590d469a9f0",
+        "symbol": "ASIANPAINT",
+        "company_name": "Asian Paints Ltd",
+        "filed_at": "2026-10-15T22:49:56.900000+05:30",
+        "headline": "Please find enclosed herewith the Certificate received from MUFG Intime India Private Limited, Company''s Registrar and Share Transfer Agent for the quarter ended 30th September 2026 certifying ....",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ab56187f-c5d5-4433-9ca8-2a8ddb0da877.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

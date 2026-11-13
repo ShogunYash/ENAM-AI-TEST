@@ -81,15 +81,15 @@ def resolve_window(label: str, now: datetime, start: datetime | None, end: datet
 
 def build_digest(label: str = "24h", start: datetime | None = None, end: datetime | None = None,
                  settings: m.Settings | None = None, now: datetime | None = None,
-                 snaps: list[m.PriceSnapshot] | None = None) -> m.Digest:
+                 snaps: list[m.PriceSnapshot] | None = None, symbols: set[str] | None = None) -> m.Digest:
     now = now or datetime.now(IST)
     settings = settings or m.Settings()
     window = resolve_window(label, now, start, end)
-    snaps = snaps or []
+    snaps = [x for x in (snaps or []) if not symbols or x.symbol in symbols]   # watchlist prices never raise alerts
     by_sym = {s.symbol: s for s in snaps}
     muted = {C(c).value for c in settings.muted_categories}
 
-    rows = filings_between(window.start, window.end)
+    rows = filings_between(window.start, window.end, symbols)
     filings = [to_filing(r, settings, by_sym, now) for r in rows]
     attach_enrichments(filings)
 
@@ -139,7 +139,7 @@ def _material(f: m.Filing, muted: set[str]) -> bool:
     return f.priority in (P.high.value, P.medium.value) and C(f.category).value not in muted
 
 
-def build_company_list(companies: list[tuple[str, str, str | None]], label: str = "30d", start: datetime | None = None,
+def build_company_list(companies: list[tuple], label: str = "30d", start: datetime | None = None,
                        end: datetime | None = None, settings: m.Settings | None = None, now: datetime | None = None,
                        snaps: list[m.PriceSnapshot] | None = None) -> m.CompanyList:
     """One row per portfolio company: counts, material categories, the best headline and the latest price move."""
@@ -151,13 +151,14 @@ def build_company_list(companies: list[tuple[str, str, str | None]], label: str 
         by_symbol.setdefault(f.symbol, []).append(f)
     snap_by = {s.symbol: s for s in snaps}
     rows = []
-    for symbol, name, sector in companies:
+    for symbol, name, sector, *rest in companies:        # rest = [in_portfolio] (defaults to True for 3-tuples)
         fs = by_symbol.get(symbol, [])
         material = [f for f in fs if _material(f, muted)]
         top = max(material, key=lambda f: f.score, default=None)
         s = snap_by.get(symbol)
         rows.append(m.CompanySummary(
-            symbol=symbol, name=name, sector=sector, total=len(fs), material=len(material),
+            symbol=symbol, name=name, sector=sector, in_portfolio=bool(rest[0]) if rest else True,
+            total=len(fs), material=len(material),
             categories=dict(Counter(C(f.category).value for f in material)), top=top,
             price=m.PriceReaction(pct_1d=s.pct_1d, vol_ratio=s.vol_ratio) if s else None))
     rows.sort(key=lambda r: (-(r.top.score if r.top else -1.0), -r.total, r.symbol))

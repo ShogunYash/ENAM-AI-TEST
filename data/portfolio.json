@@ -160,5 +160,78 @@
       "date": "2026-11-10",
       "event": "Warrant allotment"
     }
-  ]
+  ],
+  "watchlist": [
+    {
+      "nse_symbol": "POLYCAB",
+      "bse_scrip_code": "542652",
+      "name": "Polycab India",
+      "sector": "Wires and cables",
+      "source": "https://www.screener.in/company/POLYCAB/consolidated/"
+    },
+    {
+      "nse_symbol": "KPIL",
+      "bse_scrip_code": "522287",
+      "name": "Kalpataru Projects International",
+      "sector": "Engineering and construction",
+      "source": "https://www.screener.in/company/KPIL/consolidated/"
+    },
+    {
+      "nse_symbol": "ICICIBANK",
+      "bse_scrip_code": "532174",
+      "name": "ICICI Bank",
+      "sector": "Private-sector banking",
+      "source": "https://www.screener.in/company/ICICIBANK/consolidated/"
+    },
+    {
+      "nse_symbol": "SBIN",
+      "bse_scrip_code": "500112",
+      "name": "State Bank of India",
+      "sector": "Public-sector banking",
+      "source": "https://www.screener.in/company/SBIN/consolidated/"
+    },
+    {
+      "nse_symbol": "BHARTIARTL",
+      "bse_scrip_code": "532454",
+      "name": "Bharti Airtel",
+      "sector": "Telecom",
+      "source": "https://www.screener.in/company/BHARTIARTL/consolidated/"
+    },
+    {
+      "nse_symbol": "MARUTI",
+      "bse_scrip_code": "532500",
+      "name": "Maruti Suzuki India",
+      "sector": "Automobiles",
+      "source": "https://www.screener.in/company/MARUTI/consolidated/"
+    },
+    {
+      "nse_symbol": "ASIANPAINT",
+      "bse_scrip_code": "500820",
+      "name": "Asian Paints",
+      "sector": "Paints",
+      "source": "https://www.screener.in/company/ASIANPAINT/consolidated/"
+    },
+    {
+      "nse_symbol": "HINDUNILVR",
+      "bse_scrip_code": "500696",
+      "name": "Hindustan Unilever",
+      "sector": "FMCG",
+      "source": "https://www.screener.in/company/HINDUNILVR/consolidated/"
+    },
+    {
+      "nse_symbol": "DIXON",
+      "bse_scrip_code": "540699",
+      "name": "Dixon Technologies",
+      "sector": "Electronics manufacturing",
+      "source": "https://www.screener.in/company/DIXON/consolidated/"
+    },
+    {
+      "nse_symbol": "NESTLEIND",
+      "bse_scrip_code": "500790",
+      "name": "Nestle India",
+      "sector": "FMCG",
+      "source": "https://www.screener.in/company/NESTLEIND/consolidated/"
+    }
+  ],
+  "_note": "portfolio = the investor's holdings (Today digest, alerts, Needs-you). watchlist = tracked stocks shown under the Watchlist toggle only (no alerts)."
 }

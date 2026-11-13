@@ -1,0 +1,323 @@
+{
+  "symbol": "MARUTI",
+  "name": "Maruti Suzuki India",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T16:12:14.179682+05:30",
+    "end": "2026-11-13T16:12:14.179682+05:30"
+  },
+  "generated_at": "2026-11-13T16:12:14.179682+05:30",
+  "counts": {
+    "total": 16,
+    "rule_classified": 14,
+    "llm_classified": 2
+  },
+  "important": [
+    {
+      "id": "75d0117b-f394-4adb-9147-6bfa17243576",
+      "symbol": "MARUTI",
+      "company_name": "Maruti Suzuki India Ltd",
+      "filed_at": "2026-10-27T15:27:55.453000+05:30",
+      "headline": "Un-audited financial results for the quarter ended on 30th September 2026",
+      "so_what": "Q2 FY27: PAT −26%, Rev +26% YoY · EBITDA margin 9.1%",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.264,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fca20bad-7bfe-438f-a526-d9f42ccf0346.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 53355.5,
+            "prev_q": 52469.8,
+            "prev_y": 42344.2,
+            "qoq_pct": 1.7,
+            "yoy_pct": 26.0
+          },
+          {
+            "name": "ebitda",
+            "value": 4833.1,
+            "prev_q": 4411.0,
+            "prev_y": 5153.3,
+            "qoq_pct": 9.6,
+            "yoy_pct": -6.2
+          },
+          {
+            "name": "pbt",
+            "value": 3219.1,
+            "prev_q": 4441.2,
+            "prev_y": 4339.3,
+            "qoq_pct": -27.5,
+            "yoy_pct": -25.8
+          },
+          {
+            "name": "pat",
+            "value": 2466.1,
+            "prev_q": 3446.9,
+            "prev_y": 3349.0,
+            "qoq_pct": -28.5,
+            "yoy_pct": -26.4
+          }
+        ],
+        "margin_ebitda_pct": 9.1,
+        "cross_check": {
+          "status": "match",
+          "note": null
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fca20bad-7bfe-438f-a526-d9f42ccf0346.pdf",
+          "page": 6
+        }
+      }
+    },
+    {
+      "id": "94026a0a-352e-4135-aee7-a8b1a54a4349",
+      "symbol": "MARUTI",
+      "company_name": "Maruti Suzuki India Ltd",
+      "filed_at": "2026-10-27T13:18:02.747000+05:30",
+      "headline": "Incorporation of Wholly Owned Subsidiary",
+      "so_what": "Approved incorporating a wholly owned subsidiary for INR 100,000.",
+      "category": "m_and_a",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.23,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9ec6c385-b23c-49cd-9d07-b09dc86c3df7.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Approved incorporating a wholly owned subsidiary for INR 100,000."
+      }
+    }
+  ],
+  "routine": {
+    "count": 14,
+    "by_category": {
+      "investor_meetings": 1,
+      "results": 4,
+      "earnings_call": 3,
+      "press_release": 4,
+      "unclassified": 2
+    },
+    "items": [
+      {
+        "id": "baf9dbfc-15c7-4c76-b287-b1346de91f5b",
+        "symbol": "MARUTI",
+        "company_name": "Maruti Suzuki India Ltd",
+        "filed_at": "2026-11-12T11:57:08.123000+05:30",
+        "headline": "Schedule of Investor Meetings",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.862,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/19833a7e-2123-409e-990d-b9c1bfd1a543.pdf",
+        "price_reaction": {
+          "pct_1d": -1.31,
+          "vol_ratio": 0.88
+        },
+        "enrichment": null
+      },
+      {
+        "id": "7aea2ac1-7c4e-4ed8-bd9c-befc88582683",
+        "symbol": "MARUTI",
+        "company_name": "Maruti Suzuki India Ltd",
+        "filed_at": "2026-11-10T11:55:47.320000+05:30",
+        "headline": "Reference to the Financial Results issued by Suzuki Motor Corporation",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 1.44,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2b74a7fe-194c-4a61-8cf6-dbba26573f57.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "c758cb87-23f0-46d1-9eda-042224b9e9c1",
+        "symbol": "MARUTI",
+        "company_name": "Maruti Suzuki India Ltd",
+        "filed_at": "2026-11-02T21:06:59.820000+05:30",
+        "headline": "Transcript of investors'' call",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.165,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4a189744-1646-4de4-809b-e936a67b6fe4.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "2cea1982-249d-4e8b-b918-9d474f0286b2",
+        "symbol": "MARUTI",
+        "company_name": "Maruti Suzuki India Ltd",
+        "filed_at": "2026-11-01T14:44:08.647000+05:30",
+        "headline": "Maruti Suzuki Production Volume: October 2026",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "llm",
+        "priority": "low",
+        "score": 0.185,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b7585ba4-523e-4c05-b037-263a3e803229.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "1990c9f3-7382-4096-83e8-b9b76621b9f3",
+        "symbol": "MARUTI",
+        "company_name": "Maruti Suzuki India Ltd",
+        "filed_at": "2026-11-01T13:44:54.757000+05:30",
+        "headline": "Maruti Suzuki sales in October 2026",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.183,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/817afcae-2ee4-486a-a3c0-fdbfd7a392e9.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "fa530ca2-8407-45fb-8b01-a30c0680c49c",
+        "symbol": "MARUTI",
+        "company_name": "Maruti Suzuki India Ltd",
+        "filed_at": "2026-10-29T10:49:58.960000+05:30",
+        "headline": "Maruti Suzuki, India''s No. 1 Electric Vehicle exporter, crosses EV exports of 50,000 units",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.089,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/95d1017a-3e9d-46db-ba54-ca6ae2c6dfbe.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "98e275e8-babc-4e2d-89c1-f0377f712a74",
+        "symbol": "MARUTI",
+        "company_name": "Maruti Suzuki India Ltd",
+        "filed_at": "2026-10-28T10:38:37.830000+05:30",
+        "headline": "Copy of Published Results",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fb1e1ced-406b-42d5-96b7-8fda705bdb16.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "f567b375-6095-450c-ac90-15bcd62e5b39",
+        "symbol": "MARUTI",
+        "company_name": "Maruti Suzuki India Ltd",
+        "filed_at": "2026-10-27T20:30:33.677000+05:30",
+        "headline": "Audio Recording of the investors'' call held on 27th October 2026",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.041,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f59fa177-7b03-4b3d-96d2-aeff1847bcb4.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "dec94a6d-eff4-450a-8e7a-801362952950",
+        "symbol": "MARUTI",
+        "company_name": "Maruti Suzuki India Ltd",
+        "filed_at": "2026-10-27T15:44:33.917000+05:30",
+        "headline": "Investor Presentation on the financial results for the quarter ended on 30th September 2026",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.059,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f2035228-03c1-4d40-a644-560d2727c2d1.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "dd204a46-9e22-497b-9557-2c140aaf030f",
+        "symbol": "MARUTI",
+        "company_name": "Maruti Suzuki India Ltd",
+        "filed_at": "2026-10-27T15:39:56.473000+05:30",
+        "headline": "Maruti Suzuki India Limited Financial Results Q2 and H1 FY 2026-27",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.059,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7ec86b0c-ade4-46be-bdb7-bae88ce1dfb8.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "ed51c226-e785-4389-a0e9-7160e6eb21fb",
+        "symbol": "MARUTI",
+        "company_name": "Maruti Suzuki India Ltd",
+        "filed_at": "2026-10-27T15:32:02.277000+05:30",
+        "headline": "Un-audited financial results for the quarter ended on 30th September 2026",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.059,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1dc3fa06-d8da-447c-ad6d-8d2166fd134c.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "f767d1e5-1ad6-4a16-bdce-74d97657a608",
+        "symbol": "MARUTI",
+        "company_name": "Maruti Suzuki India Ltd",
+        "filed_at": "2026-10-24T10:25:04.443000+05:30",
+        "headline": "Maruti Suzuki VICTORIS AURUM Edition Launched to Celebrate 1 Year of Record Sales Success",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.028,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/34cdfd84-89c0-476d-b2dc-82908b76b697.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "8b87c59a-599f-411d-8390-4763ed0e9d3b",
+        "symbol": "MARUTI",
+        "company_name": "Maruti Suzuki India Ltd",
+        "filed_at": "2026-10-21T15:38:39.453000+05:30",
+        "headline": "Schedule of Conference Call",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.01,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c1d60831-6535-483d-9eec-222e52fbe3bb.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "cb1658aa-fce2-4f72-9d9d-d5687e68e83e",
+        "symbol": "MARUTI",
+        "company_name": "Maruti Suzuki India Ltd",
+        "filed_at": "2026-10-15T19:12:49.443000+05:30",
+        "headline": "Intimation under Regulation 30 of SEBI (Listing Obligations & Disclosure Requirements) Regulations, 2015",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fa561a4b-39c9-4134-8db9-b84c580aeaf5.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

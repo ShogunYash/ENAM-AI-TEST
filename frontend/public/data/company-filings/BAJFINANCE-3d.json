@@ -3,10 +3,10 @@
   "name": "Bajaj Finance",
   "window": {
     "label": "3d",
-    "start": "2026-11-10T14:32:25.992946+05:30",
-    "end": "2026-11-13T14:32:25.992946+05:30"
+    "start": "2026-11-10T16:12:14.179682+05:30",
+    "end": "2026-11-13T16:12:14.179682+05:30"
   },
-  "generated_at": "2026-11-13T14:32:25.992946+05:30",
+  "generated_at": "2026-11-13T16:12:14.179682+05:30",
   "counts": {
     "total": 1,
     "rule_classified": 1,
@@ -23,7 +23,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 6.781,
+      "score": 6.673,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
       "price_reaction": null,
       "enrichment": {

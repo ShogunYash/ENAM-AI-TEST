@@ -1,0 +1,158 @@
+{
+  "symbol": "NESTLEIND",
+  "name": "Nestle India",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T16:12:14.179682+05:30",
+    "end": "2026-11-13T16:12:14.179682+05:30"
+  },
+  "generated_at": "2026-11-13T16:12:14.179682+05:30",
+  "counts": {
+    "total": 5,
+    "rule_classified": 5,
+    "llm_classified": 0
+  },
+  "important": [
+    {
+      "id": "04793fd5-64b8-4987-8380-dfc8638caa8e",
+      "symbol": "NESTLEIND",
+      "company_name": "Nestle India Ltd",
+      "filed_at": "2026-10-21T19:36:53.090000+05:30",
+      "headline": "Disclosure of nominations/changes in the Senior Management of the Company effective from 1st January 2027, subject to necessary approvals",
+      "so_what": "Gopichandar Jagatheesan appointed as BEO – Nutrition and Dairy",
+      "category": "management_change",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 0.038,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0d21e169-46c3-4d2d-aa05-0b3c9c1086bf.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "management",
+        "person": "Gopichandar Jagatheesan",
+        "role": "BEO – Nutrition and Dairy",
+        "change": "appointed",
+        "background": [],
+        "links": [],
+        "effective": "2027-01-01",
+        "background_source": "none"
+      }
+    },
+    {
+      "id": "c087f40b-6b18-4cb6-bcb2-cc9bcf7be2a3",
+      "symbol": "NESTLEIND",
+      "company_name": "Nestle India Ltd",
+      "filed_at": "2026-10-15T12:35:20.820000+05:30",
+      "headline": "Unaudited Financial Results (standalone and consolidated) for the second quarter and half year ended 30th September 2026",
+      "so_what": "Q2 FY27: PAT +36%, Rev +20% YoY · EBITDA margin 23.8%",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.016,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cfe22dbd-7fe2-4890-9963-2ecaa192cb4f.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 6788.34,
+            "prev_q": 6378.18,
+            "prev_y": 5643.61,
+            "qoq_pct": 6.4,
+            "yoy_pct": 20.3
+          },
+          {
+            "name": "ebitda",
+            "value": 1615.48,
+            "prev_q": 1538.13,
+            "prev_y": 1232.74,
+            "qoq_pct": 5.0,
+            "yoy_pct": 31.0
+          },
+          {
+            "name": "pbt",
+            "value": 1382.2,
+            "prev_q": 1307.95,
+            "prev_y": 1018.49,
+            "qoq_pct": 5.7,
+            "yoy_pct": 35.7
+          },
+          {
+            "name": "pat",
+            "value": 1009.61,
+            "prev_q": 958.68,
+            "prev_y": 743.17,
+            "qoq_pct": 5.3,
+            "yoy_pct": 35.9
+          }
+        ],
+        "margin_ebitda_pct": 23.8,
+        "cross_check": {
+          "status": "match",
+          "note": null
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cfe22dbd-7fe2-4890-9963-2ecaa192cb4f.pdf",
+          "page": 7
+        }
+      }
+    }
+  ],
+  "routine": {
+    "count": 3,
+    "by_category": {
+      "results": 2,
+      "unclassified": 1
+    },
+    "items": [
+      {
+        "id": "fd0688fa-28c7-4500-be7e-95db50ffff9b",
+        "symbol": "NESTLEIND",
+        "company_name": "Nestle India Ltd",
+        "filed_at": "2026-10-15T12:43:55.330000+05:30",
+        "headline": "Press Release relating to unaudited financial results titled \"Nestle India Delivers Strong Volume-Led Growth across Product Groups\"",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.004,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5531c097-ff73-4ad8-9850-eb15960918fe.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "6705bd4b-ca29-4c2c-8628-57c997239fcc",
+        "symbol": "NESTLEIND",
+        "company_name": "Nestle India Ltd",
+        "filed_at": "2026-10-15T12:25:02.803000+05:30",
+        "headline": "Unaudited Financial Results (standalone and consolidated) for the second quarter and half year ended 30th September 2026",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.004,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bb05df38-f3bf-4a93-bd9f-242c0c16e5c9.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "c98edf20-041b-4d49-87f4-eb447c41c2a9",
+        "symbol": "NESTLEIND",
+        "company_name": "Nestle India Ltd",
+        "filed_at": "2026-10-14T17:14:25.937000+05:30",
+        "headline": "Newspaper advertisement dated 14th October 2026",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/95b700f8-731a-4919-a0f7-de83b996bb10.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

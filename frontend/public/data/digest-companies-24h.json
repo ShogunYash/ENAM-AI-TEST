@@ -1,0 +1,388 @@
+{
+  "window": {
+    "label": "24h",
+    "start": "2026-11-12T16:12:14.179682+05:30",
+    "end": "2026-11-13T16:12:14.179682+05:30"
+  },
+  "generated_at": "2026-11-13T16:12:14.179682+05:30",
+  "companies": [
+    {
+      "symbol": "BHARTIARTL",
+      "name": "Bharti Airtel",
+      "sector": "Telecom",
+      "in_portfolio": false,
+      "total": 1,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.48,
+        "vol_ratio": 0.57
+      }
+    },
+    {
+      "symbol": "ICICIBANK",
+      "name": "ICICI Bank",
+      "sector": "Private-sector banking",
+      "in_portfolio": false,
+      "total": 1,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.4,
+        "vol_ratio": 0.64
+      }
+    },
+    {
+      "symbol": "ASIANPAINT",
+      "name": "Asian Paints",
+      "sector": "Paints",
+      "in_portfolio": false,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.53,
+        "vol_ratio": 0.56
+      }
+    },
+    {
+      "symbol": "ASTRAL",
+      "name": "Astral",
+      "sector": "Building products",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.25,
+        "vol_ratio": 1.09
+      }
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "name": "Bajaj Finance",
+      "sector": "Consumer lending",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 1.31,
+        "vol_ratio": 0.96
+      }
+    },
+    {
+      "symbol": "CERA",
+      "name": "Cera Sanitaryware",
+      "sector": "Sanitaryware",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 3.35,
+        "vol_ratio": 1.55
+      }
+    },
+    {
+      "symbol": "DIXON",
+      "name": "Dixon Technologies",
+      "sector": "Electronics manufacturing",
+      "in_portfolio": false,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -1.49,
+        "vol_ratio": 0.5
+      }
+    },
+    {
+      "symbol": "FINEORG",
+      "name": "Fine Organic Industries",
+      "sector": "Specialty chemicals",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.39,
+        "vol_ratio": 0.53
+      }
+    },
+    {
+      "symbol": "GARFIBRES",
+      "name": "Garware Technical Fibres",
+      "sector": "Technical textiles",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.21,
+        "vol_ratio": 0.79
+      }
+    },
+    {
+      "symbol": "HDFCBANK",
+      "name": "HDFC Bank",
+      "sector": "Private-sector banking",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 1.06,
+        "vol_ratio": 1.54
+      }
+    },
+    {
+      "symbol": "HINDUNILVR",
+      "name": "Hindustan Unilever",
+      "sector": "FMCG",
+      "in_portfolio": false,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.96,
+        "vol_ratio": 0.74
+      }
+    },
+    {
+      "symbol": "HINDZINC",
+      "name": "Hindustan Zinc",
+      "sector": "Non-ferrous metals and mining",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.53,
+        "vol_ratio": 0.71
+      }
+    },
+    {
+      "symbol": "INFY",
+      "name": "Infosys",
+      "sector": "IT services",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.08,
+        "vol_ratio": 0.55
+      }
+    },
+    {
+      "symbol": "KEI",
+      "name": "KEI Industries",
+      "sector": "Wires and cables",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.09,
+        "vol_ratio": 0.37
+      }
+    },
+    {
+      "symbol": "KPIL",
+      "name": "Kalpataru Projects International",
+      "sector": "Engineering and construction",
+      "in_portfolio": false,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.05,
+        "vol_ratio": 0.48
+      }
+    },
+    {
+      "symbol": "LT",
+      "name": "Larsen & Toubro",
+      "sector": "Engineering and construction",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.65,
+        "vol_ratio": 1.18
+      }
+    },
+    {
+      "symbol": "MARUTI",
+      "name": "Maruti Suzuki India",
+      "sector": "Automobiles",
+      "in_portfolio": false,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -1.31,
+        "vol_ratio": 0.88
+      }
+    },
+    {
+      "symbol": "NESTLEIND",
+      "name": "Nestle India",
+      "sector": "FMCG",
+      "in_portfolio": false,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.18,
+        "vol_ratio": 0.39
+      }
+    },
+    {
+      "symbol": "PERSISTENT",
+      "name": "Persistent Systems",
+      "sector": "IT services",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -1.1,
+        "vol_ratio": 0.53
+      }
+    },
+    {
+      "symbol": "POLYCAB",
+      "name": "Polycab India",
+      "sector": "Wires and cables",
+      "in_portfolio": false,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -2.18,
+        "vol_ratio": 1.1
+      }
+    },
+    {
+      "symbol": "RELIANCE",
+      "name": "Reliance Industries",
+      "sector": "Energy and diversified businesses",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.83,
+        "vol_ratio": 0.82
+      }
+    },
+    {
+      "symbol": "SBIN",
+      "name": "State Bank of India",
+      "sector": "Public-sector banking",
+      "in_portfolio": false,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.6,
+        "vol_ratio": 1.12
+      }
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "name": "Sun Pharmaceutical Industries",
+      "sector": "Pharmaceuticals",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.12,
+        "vol_ratio": 1.03
+      }
+    },
+    {
+      "symbol": "TATASTEEL",
+      "name": "Tata Steel",
+      "sector": "Steel",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 2.4,
+        "vol_ratio": 1.4
+      }
+    },
+    {
+      "symbol": "TCS",
+      "name": "Tata Consultancy Services",
+      "sector": "IT services",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.13,
+        "vol_ratio": 0.7
+      }
+    },
+    {
+      "symbol": "TITAN",
+      "name": "Titan Company",
+      "sector": "Jewellery and retail",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.7,
+        "vol_ratio": 1.93
+      }
+    },
+    {
+      "symbol": "ULTRACEMCO",
+      "name": "UltraTech Cement",
+      "sector": "Cement",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.71,
+        "vol_ratio": 0.93
+      }
+    }
+  ]
+}

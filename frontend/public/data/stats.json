@@ -1,27 +1,27 @@
 {
-  "as_of": "2026-11-13T14:32:26.916169+05:30",
+  "as_of": "2026-11-13T16:12:14.987587+05:30",
   "totals": {
-    "calls": 160,
-    "tokens_in": 1372701,
-    "tokens_out": 101597,
-    "cache_hits": 200,
-    "cache_hit_pct": 55.6,
+    "calls": 190,
+    "tokens_in": 1548450,
+    "tokens_out": 121095,
+    "cache_hits": 227,
+    "cache_hit_pct": 54.4,
     "spend_inr": 0.0
   },
   "by_feature": [
     {
-      "key": "push.oneliner",
-      "calls": 36,
-      "tokens_in": 56064,
-      "tokens_out": 1056,
-      "cache_hits": 0
+      "key": "push.results",
+      "calls": 45,
+      "tokens_in": 582171,
+      "tokens_out": 69958,
+      "cache_hits": 21
     },
     {
-      "key": "push.results",
-      "calls": 34,
-      "tokens_in": 442011,
-      "tokens_out": 54746,
-      "cache_hits": 19
+      "key": "push.oneliner",
+      "calls": 45,
+      "tokens_in": 70548,
+      "tokens_out": 1306,
+      "cache_hits": 4
     },
     {
       "key": "pull.guidance",
@@ -29,6 +29,13 @@
       "tokens_in": 577325,
       "tokens_out": 7907,
       "cache_hits": 87
+    },
+    {
+      "key": "push.mgmt_bio",
+      "calls": 21,
+      "tokens_in": 39959,
+      "tokens_out": 1521,
+      "cache_hits": 63
     },
     {
       "key": "ask",
@@ -45,17 +52,10 @@
       "cache_hits": 21
     },
     {
-      "key": "push.mgmt_bio",
-      "calls": 14,
-      "tokens_in": 26026,
-      "tokens_out": 996,
-      "cache_hits": 42
-    },
-    {
       "key": "push.classify",
-      "calls": 6,
-      "tokens_in": 15920,
-      "tokens_out": 9075,
+      "calls": 9,
+      "tokens_in": 23092,
+      "tokens_out": 12586,
       "cache_hits": 3
     },
     {
@@ -69,38 +69,38 @@
   "by_model": [
     {
       "key": "gemini-3.5-flash-lite",
-      "calls": 61,
-      "tokens_in": 416276,
-      "tokens_out": 32712,
-      "cache_hits": 44
+      "calls": 81,
+      "tokens_in": 536069,
+      "tokens_out": 47201,
+      "cache_hits": 46
     },
     {
       "key": "finn-gpt-oss",
-      "calls": 47,
-      "tokens_in": 503293,
-      "tokens_out": 15103,
-      "cache_hits": 146
+      "calls": 54,
+      "tokens_in": 517226,
+      "tokens_out": 15628,
+      "cache_hits": 168
     },
     {
       "key": "gemini-3.1-flash-lite",
       "calls": 26,
       "tokens_in": 83762,
       "tokens_out": 16381,
-      "cache_hits": 0
+      "cache_hits": 2
     },
     {
       "key": "gemini-3.5-flash",
-      "calls": 13,
-      "tokens_in": 197099,
-      "tokens_out": 14870,
+      "calls": 15,
+      "tokens_in": 224321,
+      "tokens_out": 18319,
       "cache_hits": 5
     },
     {
       "key": "gemini-3.6-flash",
-      "calls": 11,
-      "tokens_in": 147674,
-      "tokens_out": 15098,
-      "cache_hits": 5
+      "calls": 12,
+      "tokens_in": 162475,
+      "tokens_out": 16133,
+      "cache_hits": 6
     },
     {
       "key": "nvidia/nemotron-3-ultra-550b-a55b:free",

@@ -11,7 +11,7 @@ import time
 
 from pydantic import ValidationError
 
-from app import db
+from app import db, universe
 from app.ingest import prices as prices_mod
 from app.ingest.docs import DocError
 from app.llm import LLMUnavailable
@@ -24,14 +24,18 @@ def main() -> int:
     ap.add_argument("--window", default="30d", choices=["24h", "3d", "7d", "30d"])
     ap.add_argument("--limit", type=int, default=60)
     a = ap.parse_args()
-    with db.connect() as con:
-        syms = [r["symbol"] for r in con.execute("SELECT DISTINCT symbol FROM filings")]
-    d = digest_mod.build_digest(a.window, snaps=prices_mod.snapshots(syms))
+    snaps = prices_mod.snapshots(universe.all_symbols())
+    # holdings: the ranked digest; watchlist: each company's own "important" list (the digest is holdings-only)
+    d = digest_mod.build_digest(a.window, snaps=snaps, symbols=universe.portfolio_symbols())
+    cands = list(d.needs_you + d.also_material)
+    for sym, name, _, held in universe.as_rows():
+        if not held:
+            cands += digest_mod.build_company_filings(sym, name, a.window, snaps=snaps).important
     pdf = {}
     with db.connect() as con:
         for r in con.execute("SELECT id, pdf_name, subcategory FROM filings"):
             pdf[r["id"]] = (r["pdf_name"], r["subcategory"])
-    todo = [f for f in d.needs_you + d.also_material if f.enrichment is None and pdf.get(f.id, ("",))[0]][: a.limit]
+    todo = [f for f in cands if f.enrichment is None and pdf.get(f.id, ("",))[0]][: a.limit]
     print(f"{len(todo)} filings need a one-liner ({a.window})", flush=True)
     bad = 0
     for f in todo:

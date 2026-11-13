@@ -252,3 +252,15 @@ def test_fit_for_inline_slices_and_keeps_page_numbers(monkeypatch):
     monkeypatch.setattr(docs, "SOFT_BYTES", 5)
     with pytest.raises(docs.DocError, match="even the first 6 pages exceed"):
         docs.fit_for_inline(pdf)
+
+
+def test_banks_are_cross_checked_on_pbt_and_pat_only():
+    """ICICI Bank: 'revenue' 88,161 (total income) vs screener 55,992 flagged a false mismatch; definitions differ for banks."""
+    vals = {"current": {"revenue": 88161.0, "pbt": 18638.0, "pat": 13934.0}}
+    assert R.cross_check(vals, {"current": "2026-09-30"}, "ICICIBANK", "consolidated", Q).status == "mismatch"   # revenue differs
+    ok = R.cross_check(vals, {"current": "2026-09-30"}, "ICICIBANK", "consolidated", Q, skip_revenue=True)
+    assert ok.status == "match"
+    bank = R.build_card(ext(rev=("88,161", "80,000", "76,000")), "u", "ICICIBANK", "Private-sector banking", Q)
+    assert bank.cross_check.status == "match"                                    # build_card applies it for banking/lending sectors
+    plain = R.build_card(ext(rev=("88,161", "80,000", "76,000")), "u", "TCS", "IT services", Q)
+    assert plain.cross_check.status == "mismatch"                                # everyone else is still checked on revenue

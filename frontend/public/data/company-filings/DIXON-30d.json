@@ -1,0 +1,284 @@
+{
+  "symbol": "DIXON",
+  "name": "Dixon Technologies",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T16:12:14.179682+05:30",
+    "end": "2026-11-13T16:12:14.179682+05:30"
+  },
+  "generated_at": "2026-11-13T16:12:14.179682+05:30",
+  "counts": {
+    "total": 13,
+    "rule_classified": 10,
+    "llm_classified": 3
+  },
+  "important": [
+    {
+      "id": "096f1e5a-3667-42a5-b4e2-ba8272ee52fc",
+      "symbol": "DIXON",
+      "company_name": "Dixon Technologies (India) Ltd",
+      "filed_at": "2026-10-30T16:19:51.603000+05:30",
+      "headline": "Results for the quarter and half year ended 30th September, 20206",
+      "so_what": "Q2 FY27: PAT −45%, Rev +47% YoY",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.532,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d7b8fffb-7a5f-4efa-9241-482c5d765f1d.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 21793.64,
+            "prev_q": 15547.66,
+            "prev_y": 14855.04,
+            "qoq_pct": 40.2,
+            "yoy_pct": 46.7
+          },
+          {
+            "name": "ebitda",
+            "value": null,
+            "prev_q": null,
+            "prev_y": null,
+            "qoq_pct": null,
+            "yoy_pct": null
+          },
+          {
+            "name": "pbt",
+            "value": 532.35,
+            "prev_q": 868.98,
+            "prev_y": 923.59,
+            "qoq_pct": -38.7,
+            "yoy_pct": -42.4
+          },
+          {
+            "name": "pat",
+            "value": 410.87,
+            "prev_q": 717.83,
+            "prev_y": 745.7,
+            "qoq_pct": -42.8,
+            "yoy_pct": -44.9
+          }
+        ],
+        "margin_ebitda_pct": null,
+        "cross_check": {
+          "status": "match",
+          "note": null
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d7b8fffb-7a5f-4efa-9241-482c5d765f1d.pdf",
+          "page": 11
+        }
+      }
+    },
+    {
+      "id": "573832b2-d25c-4a3e-a3b4-46c15e9b0178",
+      "symbol": "DIXON",
+      "company_name": "Dixon Technologies (India) Ltd",
+      "filed_at": "2026-10-30T16:09:12.257000+05:30",
+      "headline": "Announcement under Regulation 30 of SEBI LODR- Change in Management",
+      "so_what": "Prithvi Vachani appointed as Additional Director (Executive Director)",
+      "category": "management_change",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 0.295,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/53529778-f611-4f21-b789-0bc1bf52e7e5.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "management",
+        "person": "Prithvi Vachani",
+        "role": "Additional Director (Executive Director)",
+        "change": "appointed",
+        "background": [],
+        "links": [],
+        "effective": "2026-10-30",
+        "background_source": "none"
+      }
+    },
+    {
+      "id": "b04397d4-c23b-4d3c-8d03-f1b4f5aad25a",
+      "symbol": "DIXON",
+      "company_name": "Dixon Technologies (India) Ltd",
+      "filed_at": "2026-10-14T18:25:28.663000+05:30",
+      "headline": "Announcement under Regulation 30 of SEBI LODR- ESG Rating by Crisil ESG Ratings & Analytics Ltd.",
+      "so_what": "Crisil assigned Dixon Tech an ESG rating of 61 for fiscal year 2026.",
+      "category": "credit_rating",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 0.005,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9f64aac8-d0af-437a-ad7d-bfda96989bc9.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Crisil assigned Dixon Tech an ESG rating of 61 for fiscal year 2026."
+      }
+    }
+  ],
+  "routine": {
+    "count": 10,
+    "by_category": {
+      "unclassified": 3,
+      "earnings_call": 3,
+      "investor_meetings": 1,
+      "results": 2,
+      "press_release": 1
+    },
+    "items": [
+      {
+        "id": "5030ef0e-7f6e-4c7f-814f-ca9dd2d4d7bb",
+        "symbol": "DIXON",
+        "company_name": "Dixon Technologies (India) Ltd",
+        "filed_at": "2026-11-05T17:19:14.620000+05:30",
+        "headline": "The Company has allotted 37,750 equity shares under DIXON ESOP 2020 on 05th November 2026.",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bdab8a75-541a-4c8e-bd67-a4c1e81d0a22.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "7fa195bb-8195-4bab-bbfd-1bc23fc1d3a8",
+        "symbol": "DIXON",
+        "company_name": "Dixon Technologies (India) Ltd",
+        "filed_at": "2026-11-05T16:36:05.397000+05:30",
+        "headline": "Announcement under Regulation 30 of SEBI LODR- Transcript of the Q2 FY 27 Earnings Conference Call held on 30th October, 2026",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.316,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "c1839d86-64fb-4058-9623-040b8fb53fe3",
+        "symbol": "DIXON",
+        "company_name": "Dixon Technologies (India) Ltd",
+        "filed_at": "2026-11-03T17:30:11.157000+05:30",
+        "headline": "Announcement under Regulation 30 of SEBI LODR- Intimation regarding change in the Corporate Office of the Registrar and Share Transfer Agent (RTA) of the Company with effect from 1st December, 2026",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d219f169-7be4-4d16-9697-1251e8767e69.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "c20a4206-4700-4f69-a5ef-fd9ae96107fd",
+        "symbol": "DIXON",
+        "company_name": "Dixon Technologies (India) Ltd",
+        "filed_at": "2026-11-03T11:22:54.690000+05:30",
+        "headline": "Pursuant to the provisions of Regulations 30 and 46 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 read with Para A of Part A of Schedule III of the said ....",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.095,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/12486329-18b7-4e94-a0e6-4b851e757235.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "7bdce317-b2e3-4c9b-86de-a59235d0e9f1",
+        "symbol": "DIXON",
+        "company_name": "Dixon Technologies (India) Ltd",
+        "filed_at": "2026-10-31T19:34:28.550000+05:30",
+        "headline": "Announcement under Regulation 30 of SEBI LODR- Copy of Newspaper publication of Un-audited Financial Results (Standalone & Consolidated) of the Company for the quarter and half year ended ....",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.154,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2336e442-6dfb-4af9-81c4-09a8770d2c94.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "491a2b6d-04d1-46b9-a9d6-cbb68f0d0120",
+        "symbol": "DIXON",
+        "company_name": "Dixon Technologies (India) Ltd",
+        "filed_at": "2026-10-30T20:32:54.480000+05:30",
+        "headline": "Audio recording of the Conference Call held for Q2 Results of FY 2027",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.082,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/082ec2fb-f975-4058-aadb-d27d3e69a02d.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "6019615a-1a68-4f5d-ad22-8e5830dceb28",
+        "symbol": "DIXON",
+        "company_name": "Dixon Technologies (India) Ltd",
+        "filed_at": "2026-10-30T16:06:10.097000+05:30",
+        "headline": "Outcome of Board Meeting held on 30th October, 2026",
+        "so_what": null,
+        "category": "results",
+        "category_source": "llm",
+        "priority": "low",
+        "score": 0.118,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f4cee6de-593c-4f4c-a0b0-368c8d0aa43e.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "618d8e5c-8cf3-417f-b2e0-e5bf9310235c",
+        "symbol": "DIXON",
+        "company_name": "Dixon Technologies (India) Ltd",
+        "filed_at": "2026-10-23T18:10:44.700000+05:30",
+        "headline": "We wish to inform you that Dixon Technologies (India) Limited ('Company') has arranged a Conference Call for the Un-Audited Financial Results (Standalone and Consolidated) of the Company ....",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.016,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4260af0d-9e97-44f0-a19a-04b0b0ddb4e5.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "7b023dbb-c6c3-4850-a772-82e5a94a13e4",
+        "symbol": "DIXON",
+        "company_name": "Dixon Technologies (India) Ltd",
+        "filed_at": "2026-10-23T18:04:16.103000+05:30",
+        "headline": "Dixon Technologies (India) Ltdhas informed BSE that the meeting of the Board of Directors of the Company is scheduled on 30/10/2026 ,inter alia, to consider and approve the Un-Audited Financial ....",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4ac4537e-4a64-4682-a4c5-5255ba8895cf.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "aac2d04d-73a4-41a5-a754-134bc50fa2d4",
+        "symbol": "DIXON",
+        "company_name": "Dixon Technologies (India) Ltd",
+        "filed_at": "2026-10-21T18:40:52.833000+05:30",
+        "headline": "Announcement under Regulation 30 of SEBI LODR- Giving of Guarantees or indemnity or becoming a surety for any third party.",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "llm",
+        "priority": "low",
+        "score": 0.015,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/243de729-cff5-4203-a58d-cb59adb578b5.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

@@ -16,7 +16,7 @@ from typing import Any
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
-from app import db, ops
+from app import db, ops, universe
 from app import models as m
 from app.ingest import prices as prices_mod
 from app.llm import store as llm_store
@@ -24,7 +24,7 @@ from app.pipeline import ask as ask_pipeline
 from app.pipeline import digest as digest_mod
 from app.research import build as research_build
 from app.seed import ensure_seed
-from app.settings import REPO_ROOT, get_settings
+from app.settings import get_settings
 
 EXAMPLES = Path(__file__).resolve().parents[2] / "docs" / "examples"
 
@@ -42,12 +42,9 @@ def example(name: str) -> Any:
     return json.loads(path.read_text("utf-8"))
 
 
-def _portfolio() -> dict:
-    return json.loads((REPO_ROOT / "data" / "portfolio.json").read_text("utf-8"))
-
-
 def _symbols() -> list[str]:
-    return [s["nse_symbol"] for s in _portfolio()["portfolio"]]
+    """Portfolio symbols (holdings): what the ranked digest, alerts and /prices cover."""
+    return sorted(universe.portfolio_symbols())
 
 
 def _has_real_data() -> bool:
@@ -88,8 +85,9 @@ def health() -> Any:
 
 @app.get("/companies", response_model=list[m.Company])
 def companies() -> Any:
-    return [m.Company(symbol=s["nse_symbol"], bse_code=s["bse_scrip_code"], name=s["name"], sector=s["sector"],
-                      in_portfolio=True) for s in _portfolio()["portfolio"]]
+    """Everything FINN tracks: the portfolio (in_portfolio=true) and the watchlist (false)."""
+    return [m.Company(symbol=c.symbol, bse_code=c.bse_code, name=c.name, sector=c.sector, in_portfolio=c.in_portfolio)
+            for c in universe.universe()]
 
 
 @app.get("/prices", response_model=list[m.PriceSnapshot])
@@ -112,12 +110,13 @@ def digest(
         raise HTTPException(422, "start and end are required for window=custom")
     if not _has_real_data():
         return example("digest-3d" if window in ("3d", "7d", "custom") else "digest-24h")
+    # the ranked digest and its alerts are about HOLDINGS only; the watchlist is reached through /digest/companies
     return digest_mod.build_digest(window, start, end, _settings(volume_multiple, price_move_pct, interests, muted),
-                                   snaps=prices_mod.snapshots(_symbols()))
+                                   snaps=prices_mod.snapshots(_symbols()), symbols=universe.portfolio_symbols())
 
 
-def _portfolio_rows() -> list[tuple[str, str, str | None]]:
-    return [(s["nse_symbol"], s["name"], s.get("sector")) for s in _portfolio()["portfolio"]]
+def _universe_rows() -> list[tuple[str, str, str | None, bool]]:
+    return universe.as_rows()
 
 
 @app.get("/digest/companies", response_model=m.CompanyList)
@@ -136,9 +135,9 @@ def digest_companies(
         raise HTTPException(422, "start and end are required for window=custom")
     if not _has_real_data():
         return example("company-list")
-    return digest_mod.build_company_list(_portfolio_rows(), window, start, end,
+    return digest_mod.build_company_list(_universe_rows(), window, start, end,
                                          _settings(volume_multiple, price_move_pct, interests, muted),
-                                         snaps=prices_mod.snapshots(_symbols()))
+                                         snaps=prices_mod.snapshots(universe.all_symbols()))
 
 
 @app.get("/digest/company/{symbol}", response_model=m.CompanyFilings)
@@ -158,10 +157,10 @@ def digest_company(
     sym = symbol.strip().upper()
     if not _has_real_data():
         return {**example("company-filings"), "symbol": sym}
-    names = {s: n for s, n, _ in _portfolio_rows()}
+    names = {s: n for s, n, _, _ in _universe_rows()}
     return digest_mod.build_company_filings(sym, names.get(sym), window, start, end,
                                             _settings(volume_multiple, price_move_pct, interests, muted),
-                                            snaps=prices_mod.snapshots(_symbols()))
+                                            snaps=prices_mod.snapshots(universe.all_symbols()))
 
 
 @app.get("/filings/{filing_id}", response_model=m.Filing)
@@ -188,7 +187,7 @@ def alerts(volume_multiple: float = 2.0, price_move_pct: float = 5.0) -> Any:
     if not _has_real_data():
         return example("alerts")
     d = digest_mod.build_digest("24h", settings=_settings(volume_multiple, price_move_pct, None, None),
-                                snaps=prices_mod.snapshots(_symbols()))
+                                snaps=prices_mod.snapshots(_symbols()), symbols=universe.portfolio_symbols())
     return d.alerts
 
 

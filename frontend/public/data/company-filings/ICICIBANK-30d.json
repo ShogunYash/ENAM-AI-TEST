@@ -1,0 +1,307 @@
+{
+  "symbol": "ICICIBANK",
+  "name": "ICICI Bank",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T16:12:14.179682+05:30",
+    "end": "2026-11-13T16:12:14.179682+05:30"
+  },
+  "generated_at": "2026-11-13T16:12:14.179682+05:30",
+  "counts": {
+    "total": 15,
+    "rule_classified": 13,
+    "llm_classified": 2
+  },
+  "important": [
+    {
+      "id": "090d44c9-ed1b-4374-b984-fed3831e72ad",
+      "symbol": "ICICIBANK",
+      "company_name": "ICICI Bank Ltd",
+      "filed_at": "2026-10-24T13:38:34.057000+05:30",
+      "headline": "Enclosed, credit rating press releases issued by ICRA Limited and CARE Ratings Limited.",
+      "so_what": "ICRA and CARE reaffirmed ICICI Bank credit ratings on Oct 23, 2026.",
+      "category": "credit_rating",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 0.048,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/94d9e62f-952d-4046-8379-bbdd1761f3ab.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "ICRA and CARE reaffirmed ICICI Bank credit ratings on Oct 23, 2026."
+      }
+    },
+    {
+      "id": "2871e7ba-96fe-41f0-bc84-79215ff8893e",
+      "symbol": "ICICIBANK",
+      "company_name": "ICICI Bank Ltd",
+      "filed_at": "2026-10-17T15:26:33.900000+05:30",
+      "headline": "Unaudited financial results (standalone and consolidated) for the quarter and six months ended September 30, 2026",
+      "so_what": "Q2 FY27: PAT +22%, Rev +16% YoY",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.026,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cbd56dbf-e0e2-444e-9793-b261a8e0e05e.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 88161.18,
+            "prev_q": 79689.22,
+            "prev_y": 76146.59,
+            "qoq_pct": 10.6,
+            "yoy_pct": 15.8
+          },
+          {
+            "name": "ebitda",
+            "value": null,
+            "prev_q": null,
+            "prev_y": null,
+            "qoq_pct": null,
+            "yoy_pct": null
+          },
+          {
+            "name": "pbt",
+            "value": 23191.75,
+            "prev_q": 21373.61,
+            "prev_y": 19126.33,
+            "qoq_pct": 8.5,
+            "yoy_pct": 21.3
+          },
+          {
+            "name": "pat",
+            "value": 16333.18,
+            "prev_q": 15440.06,
+            "prev_y": 13357.06,
+            "qoq_pct": 5.8,
+            "yoy_pct": 22.3
+          }
+        ],
+        "margin_ebitda_pct": null,
+        "cross_check": {
+          "status": "mismatch",
+          "note": "PAT Q2 FY27 16,333 vs screener 17,389 (-6.1%); PAT Q1 FY27 15,440 vs screener 16,276 (-5.1%); PAT Q2 FY26 13,357 vs screener 14,318 (-6.7%)"
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cbd56dbf-e0e2-444e-9793-b261a8e0e05e.pdf",
+          "page": 13
+        }
+      }
+    }
+  ],
+  "routine": {
+    "count": 13,
+    "by_category": {
+      "investor_meetings": 2,
+      "unclassified": 7,
+      "earnings_call": 3,
+      "results": 1
+    },
+    "items": [
+      {
+        "id": "7ef1c225-6999-437d-a544-7e0c6ad3aaaf",
+        "symbol": "ICICIBANK",
+        "company_name": "ICICI Bank Ltd",
+        "filed_at": "2026-11-12T18:04:39.797000+05:30",
+        "headline": "Enclosed, please find the schedule of investor meet. The Bank will be referring to publicly available documents for discussions during interaction in the meet.",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.84,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fc247b09-13fa-455a-90ab-e43e40f21412.pdf",
+        "price_reaction": {
+          "pct_1d": -0.4,
+          "vol_ratio": 0.64
+        },
+        "enrichment": null
+      },
+      {
+        "id": "a6d975d4-724d-4aff-a106-cc8b5d34f819",
+        "symbol": "ICICIBANK",
+        "company_name": "ICICI Bank Ltd",
+        "filed_at": "2026-11-09T13:32:31.887000+05:30",
+        "headline": "Enclosed, please find the schedule of investor meets. The Bank will be referring to publicly available documents for discussions during interaction in the meet.",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.387,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5d528b54-cd3f-477f-9539-fff4ab659b43.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "0ae966a9-f86a-4eb4-a2cc-e165b793cceb",
+        "symbol": "ICICIBANK",
+        "company_name": "ICICI Bank Ltd",
+        "filed_at": "2026-11-05T11:17:32.880000+05:30",
+        "headline": "Allotment of 36,937 equity shares at FV Rs.2 each on November 5, 2026 under ICICI Bank Employees Stock Unit Scheme - 2022",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1bef81c5-3757-44f3-a2c9-8abc7629ebe6.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "b7e96734-99ad-4148-ad2b-fdae704db01d",
+        "symbol": "ICICIBANK",
+        "company_name": "ICICI Bank Ltd",
+        "filed_at": "2026-11-03T10:17:49.063000+05:30",
+        "headline": "Allotment of 62,879 equity shares at FV Rs. 2 each under ICICI Bank Employees Stock option Scheme 2000",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/11412c86-bb83-44e5-bd5d-4c5ec3b415bb.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "79eb6f4e-650d-43bb-839d-1d1018c29a6d",
+        "symbol": "ICICIBANK",
+        "company_name": "ICICI Bank Ltd",
+        "filed_at": "2026-11-01T09:35:06.270000+05:30",
+        "headline": "Disclosure under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0b2bb991-d0b5-491a-ab93-08cd260db05e.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "d019b02a-5929-4a40-84b6-d05fb8273b90",
+        "symbol": "ICICIBANK",
+        "company_name": "ICICI Bank Ltd",
+        "filed_at": "2026-10-30T10:09:52.840000+05:30",
+        "headline": "Allotment of 109,039 equity shares at FV Rs. 2 each under ICICI Bank Employees Stock Option Scheme 2000.",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b79dc4a-becb-419c-a4cd-a077b89b9d76.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "e9e47b47-0288-41b5-976d-e7c339f0bbe6",
+        "symbol": "ICICIBANK",
+        "company_name": "ICICI Bank Ltd",
+        "filed_at": "2026-10-27T10:26:10.750000+05:30",
+        "headline": "Allotment of equity shares at FV Rs. 2 each under ICICI Bank Employees Stock Option Scheme 2000",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c6e8627c-e5c3-43ef-929c-707b24b1cf4d.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "217ee68f-868b-4216-9304-675440632ce7",
+        "symbol": "ICICIBANK",
+        "company_name": "ICICI Bank Ltd",
+        "filed_at": "2026-10-23T18:02:46.093000+05:30",
+        "headline": "Please find attached the transcripts of the call with media and of earnings call with analysts and investors on the financial results for the quarter and six months ended September 30, 2026.",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.016,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b0db888f-4420-4c21-9c36-9a91bdf5865e.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "87767350-8c39-4a5c-8549-29bb431a0d0d",
+        "symbol": "ICICIBANK",
+        "company_name": "ICICI Bank Ltd",
+        "filed_at": "2026-10-22T16:42:26+05:30",
+        "headline": "Allotment of 24,096 equity shares at FV Rs. 2 each under ICICI Bank Employees Stock Unit Scheme 2022.",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/74fe2093-fb65-447c-b37a-4c94e860f509.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "28f9e367-22e9-456e-8377-3fdf1d4226f0",
+        "symbol": "ICICIBANK",
+        "company_name": "ICICI Bank Ltd",
+        "filed_at": "2026-10-17T20:52:29.320000+05:30",
+        "headline": "Enclosed audio recording of the call with media and earnings call with analysts and investors for the quarter and six months ended September 30, 2026",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.004,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/265811af-e787-4d51-8313-c62c515ae838.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "c04ba836-7b62-471c-9914-e0cd15be7e37",
+        "symbol": "ICICIBANK",
+        "company_name": "ICICI Bank Ltd",
+        "filed_at": "2026-10-17T16:53:49.853000+05:30",
+        "headline": "The investor presentation which will be referred during the earnings call with analysts and investors for the financial results of the Bank for the quarter and six months ended September 30, 2026.",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.004,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b831cebf-9ddc-48a6-861f-1879e07a86fc.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "00c6c092-d2f0-45bd-a878-2da08a512b41",
+        "symbol": "ICICIBANK",
+        "company_name": "ICICI Bank Ltd",
+        "filed_at": "2026-10-17T15:34:42.483000+05:30",
+        "headline": "Outcome of Board Meeting held on October 17, 2026",
+        "so_what": null,
+        "category": "results",
+        "category_source": "llm",
+        "priority": "low",
+        "score": 0.006,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ce99bcac-180c-4c6b-9eb7-89690a4bb498.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "47096e96-af36-4ba8-b2bf-f752f5835b2b",
+        "symbol": "ICICIBANK",
+        "company_name": "ICICI Bank Ltd",
+        "filed_at": "2026-10-15T14:18:26.240000+05:30",
+        "headline": "Allotment of 113,464 equity shares at FV Rs. 2 each under ICICI Bank Employees Stock Option Scheme 2000.",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a45e4737-ef8d-4eab-b353-0a40628db311.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}
