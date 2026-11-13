@@ -39,6 +39,9 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
   // Track universe scope: 'portfolio' (default) vs 'watchlist', persisted in localStorage
   const [scope, setScope] = useState<TodayScope>(() => {
     try {
+      const params = new URLSearchParams(window.location.search)
+      const p = params.get('scope')
+      if (p === 'watchlist' || p === 'portfolio') return p
       const saved = localStorage.getItem('finn.portfolioScope')
       if (saved === 'watchlist' || saved === 'portfolio') return saved
     } catch {}
@@ -59,8 +62,15 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
     return initial
   })
 
-  // Selected company drilldown in By company view
-  const [selectedSymbol, setSelectedSymbol] = useState<string | null>(null)
+  // Selected company drilldown in By company view (supports ?company=<sym> URL param)
+  const [selectedSymbol, setSelectedSymbol] = useState<string | null>(() => {
+    try {
+      const params = new URLSearchParams(window.location.search)
+      return params.get('company')
+    } catch {
+      return null
+    }
+  })
 
   // Search text kept when drilling into a company and coming back
   const [companySearch, setCompanySearch] = useState('')

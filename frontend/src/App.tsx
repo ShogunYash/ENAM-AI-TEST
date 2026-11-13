@@ -37,9 +37,16 @@ function FinnApp() {
     return 'today'
   }
   const [activeTab, setActiveTab] = useState<NavTab>(getInitialTab)
-  const [windowOption, setWindowOption] = useState<WindowOption>(
-    (settings.default_window as WindowOption) || '24h'
-  )
+  const [windowOption, setWindowOption] = useState<WindowOption>(() => {
+    try {
+      const params = new URLSearchParams(window.location.search)
+      const winParam = params.get('window') as WindowOption
+      if (winParam === '24h' || winParam === '3d' || winParam === '7d' || winParam === '30d') {
+        return winParam
+      }
+    } catch {}
+    return (settings.default_window as WindowOption) || '24h'
+  })
   const [askTarget, setAskTarget] = useState<AskFinnTarget | null>(null)
 
   useEffect(() => {

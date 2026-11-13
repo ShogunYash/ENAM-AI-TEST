@@ -31,10 +31,20 @@ interface ResearchScreenProps {
 
 export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => {
   // Navigation: selectedCompany null = Research Home list; string = Company Detail
-  const [selectedCompany, setSelectedCompany] = useState<string | null>(null)
+  const [selectedCompany, setSelectedCompany] = useState<string | null>(() => {
+    try {
+      const params = new URLSearchParams(window.location.search)
+      return params.get('company')
+    } catch {
+      return null
+    }
+  })
   const [searchQuery, setSearchQuery] = useState('')
   const [scope, setScope] = useState<ResearchScope>(() => {
     try {
+      const params = new URLSearchParams(window.location.search)
+      const p = params.get('rscope') as ResearchScope
+      if (p === 'prebuilt' || p === 'portfolio' || p === 'watchlist') return p
       return (localStorage.getItem('finn.researchScope') as ResearchScope) || 'prebuilt'
     } catch {
       return 'prebuilt'
