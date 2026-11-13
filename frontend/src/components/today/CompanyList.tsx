@@ -18,7 +18,11 @@ interface CompanyListProps {
 
 const label = formatCategory
 
-const Row: React.FC<{ c: CompanySummary; onSelect: (symbol: string) => void }> = ({ c, onSelect }) => {
+const Row: React.FC<{
+  c: CompanySummary
+  windowOption: string
+  onSelect: (symbol: string) => void
+}> = ({ c, windowOption, onSelect }) => {
   const quiet = c.total === 0
   const delta = c.price ? formatPercentDelta(c.price.pct_1d) : null
   const cats = Object.entries(c.categories).sort((a, b) => b[1] - a[1]).slice(0, 3)
@@ -41,16 +45,28 @@ const Row: React.FC<{ c: CompanySummary; onSelect: (symbol: string) => void }> =
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
           {delta && c.price && (
-            <span className={`text-[11px] font-mono ${delta.colorClass}`} title={`Latest session, volume ${formatVolumeMultiple(c.price.vol_ratio)} average`}>
-              {delta.arrow}
-              {delta.text}
-            </span>
+            <div className="flex items-center gap-1 font-mono text-[11px]" title={`Latest session, volume ${formatVolumeMultiple(c.price.vol_ratio)} average`}>
+              <span className={delta.colorClass}>
+                {delta.arrow}
+                {delta.text}
+              </span>
+              <span className="text-zinc-500 text-[10px]">({windowOption})</span>
+            </div>
           )}
           <ChevronRight className="w-4 h-4 text-zinc-500" />
         </div>
       </div>
 
-      <div className="mt-1.5 flex items-center gap-1.5 flex-wrap text-[11px]">
+      {/* 2. One-line material event summary (moved above category chips) */}
+      {top && (
+        <div className="mt-2 text-[13px] text-zinc-200 leading-snug line-clamp-2 font-medium">
+          {top.so_what || top.headline}
+          <span className="text-zinc-500 text-[11px] ml-1.5 font-normal">· {formatRelativeIst(top.filed_at)}</span>
+        </div>
+      )}
+
+      {/* 3. Category chips and filing count */}
+      <div className="mt-2 flex items-center gap-1.5 flex-wrap text-[11px]">
         {quiet ? (
           <span className="text-zinc-500">No filings in this window</span>
         ) : (
@@ -73,13 +89,6 @@ const Row: React.FC<{ c: CompanySummary; onSelect: (symbol: string) => void }> =
           </>
         )}
       </div>
-
-      {top && (
-        <div className="mt-2 text-[13px] text-zinc-200 leading-snug line-clamp-2">
-          {top.so_what || top.headline}
-          <span className="text-zinc-500 text-[11px] ml-1.5">· {formatRelativeIst(top.filed_at)}</span>
-        </div>
-      )}
     </button>
   )
 }
@@ -285,7 +294,7 @@ export const CompanyList: React.FC<CompanyListProps> = ({
         /* Company Rows */
         <div className="space-y-2.5">
           {filteredAndSorted.map((c) => (
-            <Row key={c.symbol} c={c} onSelect={onSelect} />
+            <Row key={c.symbol} c={c} windowOption={windowOption} onSelect={onSelect} />
           ))}
         </div>
       )}
