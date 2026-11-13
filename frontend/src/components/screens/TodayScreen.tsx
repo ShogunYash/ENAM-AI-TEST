@@ -8,11 +8,12 @@ import { RoutineGroup } from '@/components/today/RoutineGroup'
 import { CompanyList } from '@/components/today/CompanyList'
 import { CompanyDetail } from '@/components/today/CompanyDetail'
 import { AsOfChip } from '@/components/common/AsOfChip'
-import { CheckCircle } from 'lucide-react'
+import { CheckCircle, Info } from 'lucide-react'
 
 export const BY_COMPANY_WINDOWS: WindowOption[] = ['3d', '7d', '30d']
 export const TOGGLE_WINDOWS: WindowOption[] = ['3d', '7d']
 export type ViewMode = 'ranked' | 'by_company'
+export type TodayScope = 'portfolio' | 'watchlist'
 
 interface TodayScreenProps {
   digestResult: DigestResult | null
@@ -34,6 +35,15 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
   onAskFinn,
 }) => {
   const [highlightedFilingId, setHighlightedFilingId] = useState<string | null>(null)
+
+  // Track universe scope: 'portfolio' (default) vs 'watchlist', persisted in localStorage
+  const [scope, setScope] = useState<TodayScope>(() => {
+    try {
+      const saved = localStorage.getItem('finn.portfolioScope')
+      if (saved === 'watchlist' || saved === 'portfolio') return saved
+    } catch {}
+    return 'portfolio'
+  })
 
   // Track chosen view per window (persisted in localStorage key finn.viewMode.<window>)
   const [viewModes, setViewModes] = useState<Record<string, ViewMode>>(() => {
@@ -100,6 +110,14 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
     else setSelectedSymbol(null)
   }
 
+  const handleScopeChange = (newScope: TodayScope) => {
+    setSelectedSymbol(null)
+    setScope(newScope)
+    try {
+      localStorage.setItem('finn.portfolioScope', newScope)
+    } catch {}
+  }
+
   const handleViewChange = (mode: ViewMode) => {
     setSelectedSymbol(null) // switching view resets to the list
     setViewModes((prev) => ({ ...prev, [windowOption]: mode }))
@@ -116,8 +134,61 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
     }
   }
 
-  // View toggle element (only on 3d and 7d)
-  const viewToggle = isToggleWindow && (
+  // Scope selector segmented control (>= 44px tap target, same style as WindowPicker)
+  const scopeControl = (
+    <div className="flex items-center justify-between gap-2 pt-0.5 pb-0.5">
+      <div
+        role="group"
+        aria-label="Universe scope"
+        className="inline-flex items-center p-0.5 rounded-lg bg-zinc-900 border border-zinc-800"
+      >
+        <button
+          type="button"
+          onClick={() => handleScopeChange('portfolio')}
+          className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
+            scope === 'portfolio'
+              ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
+              : 'text-zinc-400 hover:text-zinc-200'
+          }`}
+        >
+          My portfolio
+        </button>
+        <button
+          type="button"
+          onClick={() => handleScopeChange('watchlist')}
+          className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
+            scope === 'watchlist'
+              ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
+              : 'text-zinc-400 hover:text-zinc-200'
+          }`}
+        >
+          Watchlist
+        </button>
+      </div>
+    </div>
+  )
+
+  const headerBar = (
+    <>
+      {scopeControl}
+      <div className="flex items-center justify-between gap-2 pt-0.5 pb-1">
+        <WindowPicker selected={windowOption} onChange={onWindowChange} />
+
+        {digestResult && (
+          <AsOfChip
+            asOf={digestResult.asOf}
+            isLive={digestResult.isLive}
+            source={digestResult.source}
+            isRefreshing={isRefreshing}
+            onRefresh={onRefresh}
+          />
+        )}
+      </div>
+    </>
+  )
+
+  // View toggle element (only on 3d and 7d in Portfolio mode)
+  const viewToggle = isToggleWindow && scope === 'portfolio' && (
     <div className="flex items-center justify-start pt-0.5 pb-0.5">
       <div
         role="group"
@@ -150,23 +221,43 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
     </div>
   )
 
-  // 1. By Company View: (30d always, or 3d/7d when By company is selected)
+  // 1. Watchlist View (Always by-company, filtered to in_portfolio=false, for whichever window)
+  if (scope === 'watchlist') {
+    return (
+      <div className="space-y-4 pb-20">
+        {headerBar}
+
+        {/* Clear banner distinguishing watchlist from portfolio holdings */}
+        <div className="rounded-lg bg-zinc-900/60 border border-zinc-800/80 px-3 py-2 text-xs text-zinc-400 flex items-center gap-2">
+          <Info className="w-4 h-4 text-zinc-500 flex-shrink-0" />
+          <span>Not in your portfolio — filings only, no alerts</span>
+        </div>
+
+        {selectedSymbol ? (
+          <CompanyDetail
+            symbol={selectedSymbol}
+            windowOption={windowOption}
+            onBack={closeCompany}
+            onAskFinn={onAskFinn}
+          />
+        ) : (
+          <CompanyList
+            scope="watchlist"
+            windowOption={windowOption}
+            onSelect={openCompany}
+            searchQuery={companySearch}
+            onSearchChange={setCompanySearch}
+          />
+        )}
+      </div>
+    )
+  }
+
+  // 2. Portfolio By Company View: (30d always, or 3d/7d when By company is selected)
   if (effectiveView === 'by_company') {
     return (
       <div className="space-y-4 pb-20">
-        <div className="flex items-center justify-between gap-2 pt-1 pb-1">
-          <WindowPicker selected={windowOption} onChange={onWindowChange} />
-          {digestResult && (
-            <AsOfChip
-              asOf={digestResult.asOf}
-              isLive={digestResult.isLive}
-              source={digestResult.source}
-              isRefreshing={isRefreshing}
-              onRefresh={onRefresh}
-            />
-          )}
-        </div>
-
+        {headerBar}
         {viewToggle}
 
         {selectedSymbol ? (
@@ -178,6 +269,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
           />
         ) : (
           <CompanyList
+            scope="portfolio"
             windowOption={windowOption}
             onSelect={openCompany}
             searchQuery={companySearch}
@@ -188,14 +280,17 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
     )
   }
 
-  // 2. Ranked View:
+  // 3. Portfolio Ranked View:
   if (isLoading && !digestResult) {
     return (
-      <div className="space-y-4 animate-pulse p-4">
-        <div className="h-8 bg-zinc-900 rounded-lg w-48"></div>
-        <div className="h-16 bg-zinc-900 rounded-xl"></div>
-        <div className="h-44 bg-zinc-900 rounded-xl"></div>
-        <div className="h-44 bg-zinc-900 rounded-xl"></div>
+      <div className="space-y-4 pb-20">
+        {headerBar}
+        <div className="space-y-4 animate-pulse p-4">
+          <div className="h-8 bg-zinc-900 rounded-lg w-48"></div>
+          <div className="h-16 bg-zinc-900 rounded-xl"></div>
+          <div className="h-44 bg-zinc-900 rounded-xl"></div>
+          <div className="h-44 bg-zinc-900 rounded-xl"></div>
+        </div>
       </div>
     )
   }
@@ -208,21 +303,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
 
   return (
     <div className="space-y-4 pb-20">
-      {/* Top Header Controls: Window Picker & As Of Chip */}
-      <div className="flex items-center justify-between gap-2 pt-1 pb-1">
-        <WindowPicker selected={windowOption} onChange={onWindowChange} />
-
-        {digestResult && (
-          <AsOfChip
-            asOf={digestResult.asOf}
-            isLive={digestResult.isLive}
-            source={digestResult.source}
-            isRefreshing={isRefreshing}
-            onRefresh={onRefresh}
-          />
-        )}
-      </div>
-
+      {headerBar}
       {viewToggle}
 
       {/* Alerts Strip (Ranked view only) */}

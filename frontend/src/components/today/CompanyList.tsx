@@ -4,11 +4,12 @@ import { getCompanyList } from '@/api/client'
 import { CompanySummary } from '@/api/types'
 import { useSettings } from '@/lib/settings'
 import { formatPercentDelta, formatVolumeMultiple, formatRelativeIst, formatCategory } from '@/lib/formatters'
-import { ChevronRight, Search, X } from 'lucide-react'
+import { ChevronRight, Search, X, CheckCircle } from 'lucide-react'
 
 export type CompanySortOption = 'importance' | 'az'
 
 interface CompanyListProps {
+  scope?: 'portfolio' | 'watchlist'
   windowOption: string
   onSelect: (symbol: string) => void
   searchQuery?: string
@@ -84,6 +85,7 @@ const Row: React.FC<{ c: CompanySummary; onSelect: (symbol: string) => void }> =
 }
 
 export const CompanyList: React.FC<CompanyListProps> = ({
+  scope = 'portfolio',
   windowOption,
   onSelect,
   searchQuery,
@@ -133,7 +135,13 @@ export const CompanyList: React.FC<CompanyListProps> = ({
     queryFn: () => getCompanyList(windowOption, settings),
   })
 
-  const rows = data?.data?.companies || []
+  const raw = data?.data?.companies || []
+  const rows = useMemo(() => {
+    if (scope === 'watchlist') {
+      return raw.filter((c) => !c.in_portfolio)
+    }
+    return raw.filter((c) => c.in_portfolio !== false)
+  }, [raw, scope])
 
   // 1. Live Filter (case-insensitive across symbol, name, and sector)
   const filtered = useMemo(() => {
@@ -147,7 +155,7 @@ export const CompanyList: React.FC<CompanyListProps> = ({
     })
   }, [rows, debouncedSearch])
 
-  // 2. Client-side Sort (Most important = API order; A-Z = alphabetical by symbol)
+  // 2. Client-side Sort (Important first = API order; A-Z = alphabetical by symbol)
   // In A-Z, companies with no filings stay in place alphabetically
   const filteredAndSorted = useMemo(() => {
     if (sortMode === 'az') {
@@ -207,7 +215,7 @@ export const CompanyList: React.FC<CompanyListProps> = ({
         )}
       </div>
 
-      {/* Sort Options Segmented Control */}
+      {/* Sort Options Segmented Control & Count */}
       <div className="flex items-center justify-between gap-2 pt-0.5">
         <div
           role="group"
@@ -223,7 +231,7 @@ export const CompanyList: React.FC<CompanyListProps> = ({
                 : 'text-zinc-400 hover:text-zinc-200'
             }`}
           >
-            Most important
+            Important first
           </button>
           <button
             type="button"
@@ -234,15 +242,30 @@ export const CompanyList: React.FC<CompanyListProps> = ({
                 : 'text-zinc-400 hover:text-zinc-200'
             }`}
           >
-            A-Z
+            A–Z
           </button>
         </div>
 
         {/* Row count line */}
         <span className="text-[11px] text-zinc-400 font-mono">
-          {activeTotal} of {rows.length} filed in {windowOption}
+          {debouncedSearch.trim()
+            ? `${filteredAndSorted.length} of ${rows.length} matching`
+            : `${activeTotal} of ${rows.length} filed in ${windowOption}`}
         </span>
       </div>
+
+      {/* Empty State when no companies filed in window */}
+      {activeTotal === 0 && !debouncedSearch.trim() && (
+        <div className="rounded-xl border border-dashed border-zinc-800 p-6 text-center space-y-2 bg-zinc-900/30">
+          <CheckCircle className="w-5 h-5 text-emerald-500 mx-auto" />
+          <div className="text-sm font-medium text-zinc-300">
+            No filings in {windowOption} for these companies
+          </div>
+          <p className="text-xs text-zinc-400">
+            All {rows.length} {scope === 'watchlist' ? 'watchlist' : 'portfolio'} companies are quiet in this window.
+          </p>
+        </div>
+      )}
 
       {/* Empty Search State */}
       {filteredAndSorted.length === 0 ? (

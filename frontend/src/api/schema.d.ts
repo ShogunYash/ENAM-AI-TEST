@@ -28,7 +28,10 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Companies */
+        /**
+         * Companies
+         * @description Everything FINN tracks: the portfolio (in_portfolio=true) and the watchlist (false).
+         */
         get: operations["companies_companies_get"];
         put?: never;
         post?: never;
@@ -438,6 +441,12 @@ export interface components {
             name: string;
             /** Sector */
             sector: string | null;
+            /**
+             * In Portfolio
+             * @description True = a holding; False = watchlist only (tracked, never in the ranked digest, never raises alerts)
+             * @default true
+             */
+            in_portfolio: boolean;
             /**
              * Total
              * @description Filings in the window

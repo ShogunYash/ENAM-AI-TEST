@@ -412,9 +412,9 @@ export async function sendAskQuestion(req: AskRequest): Promise<AskResponse> {
 
 
 
-// ───────────────────────── by-company view (the 30-day window) ─────────────────────────
-// One flat list of ~250 filings is too much for 30 days, so the UI shows one row per stock and opens that stock's own
-// headlines. Live API first; the committed snapshot (digest-companies-30d.json, company-filings/<SYM>-30d.json) when the
+// ───────────────────────── by-company view ─────────────────────────
+// One flat list of ~250 filings is too much for multi-day windows, so the UI shows one row per stock and opens that stock's own
+// headlines. Live API first; the committed snapshot (digest-companies-{window}.json, company-filings/<SYM>-{window}.json) when the
 // API is asleep, so this works offline too.
 export interface CompanyListResult {
   data: CompanyList
@@ -424,6 +424,11 @@ export interface CompanyListResult {
 export interface CompanyFilingsResult {
   data: CompanyFilings
   source: 'live' | 'snapshot'
+}
+
+function normalizeWindow(windowLabel: string): string {
+  if (['24h', '3d', '7d', '30d'].includes(windowLabel)) return windowLabel
+  return '24h'
 }
 
 function viewParams(windowLabel: string, settings: Settings): URLSearchParams {
@@ -438,16 +443,16 @@ function viewParams(windowLabel: string, settings: Settings): URLSearchParams {
 }
 
 export async function getCompanyList(windowLabel: string, settings: Settings): Promise<CompanyListResult> {
+  const win = normalizeWindow(windowLabel)
   try {
-    const res = await fetchWithTimeout(`${API_BASE}/digest/companies?${viewParams(windowLabel, settings)}`, {}, 4000)
+    const res = await fetchWithTimeout(`${API_BASE}/digest/companies?${viewParams(win, settings)}`, {}, 4000)
     if (res.ok) return { data: await res.json(), source: 'live' }
   } catch {
     /* API asleep or unreachable: fall back to the snapshot below */
   }
   const snapFiles = [
-    `/data/digest-companies-${windowLabel}.json`,
-    '/data/digest-companies-7d.json',
-    '/data/digest-companies-30d.json',
+    `/data/digest-companies-${win}.json`,
+    '/data/digest-companies-24h.json',
   ]
   for (const file of snapFiles) {
     try {
@@ -464,9 +469,10 @@ export async function getCompanyFilings(
   settings: Settings
 ): Promise<CompanyFilingsResult> {
   const sym = symbol.toUpperCase()
+  const win = normalizeWindow(windowLabel)
   try {
     const res = await fetchWithTimeout(
-      `${API_BASE}/digest/company/${encodeURIComponent(sym)}?${viewParams(windowLabel, settings)}`,
+      `${API_BASE}/digest/company/${encodeURIComponent(sym)}?${viewParams(win, settings)}`,
       {},
       4000
     )
@@ -475,9 +481,8 @@ export async function getCompanyFilings(
     /* fall back to the snapshot below */
   }
   const snapFiles = [
-    `/data/company-filings/${sym}-${windowLabel}.json`,
-    `/data/company-filings/${sym}-7d.json`,
-    `/data/company-filings/${sym}-30d.json`,
+    `/data/company-filings/${sym}-${win}.json`,
+    `/data/company-filings/${sym}-24h.json`,
   ]
   for (const file of snapFiles) {
     try {
