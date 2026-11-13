@@ -3,7 +3,7 @@
 **To:** assessment@enam.com  **Subject:** IIT Delhi – AI Engineer - 2027  **Deadline:** 15 Nov 2026
 
 ## Deliverables checklist (status on 13 Nov)
-- [x] **Deployed mobile link (14 Nov):** PWA https://0405d6eb.enam-ai-test.pages.dev/ , API https://finn-api-7n6q.onrender.com (`/health` ok, mode live). **Phone check still to be done by the owner** (Today 30d, a results card, INFY research, LIVE/SNAPSHOT chip). Render auto-deploys on commit (`autoDeployTrigger: commit`), so wait for the deploy after the last push and re-check `/health`.
+- [x] **Deployed mobile link (14 Nov):** PWA https://enam-ai-test.pages.dev/ , API https://finn-api-7n6q.onrender.com (`/health` ok, mode live). **Phone check still to be done by the owner** (Today 30d, a results card, INFY research, LIVE/SNAPSHOT chip). Render auto-deploys on commit (`autoDeployTrigger: commit`), so wait for the deploy after the last push and re-check `/health`.
 - [ ] **GitHub repo reachable by the reviewers**: the repo is **private**; make it public or add the ENAM reviewers. Check `git log -p | grep -E "AIza|gsk_|sk-or"` shows nothing (last checked: clean).
 - [ ] **AI build history**: `docs/ai-history/README.md` has the index; replace the `<...>` links (ChatGPT and Antigravity share links; scrubbed Claude Code transcripts).
 - [x] **Demo check (13 Nov):** 300 backend tests, lint clean, BSE / screener.in / Yahoo reachable, frontend builds, no mock data in the snapshot.

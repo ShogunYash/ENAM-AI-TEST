@@ -35,7 +35,7 @@ with the `finn-gpt-oss` alias; see CLAUDE.md).
 
 ## Deployed (14 Nov 2026), as reported by the owner
 - **API (Render, free):** https://finn-api-7n6q.onrender.com. `/health` returned `ok: true`, `mode: live`, latest price bar 11 Nov 2026 15:30 IST. `render.yaml` now sets `autoDeployTrigger: commit` (matching the dashboard), so each push to `main` redeploys; a Blueprint sync will not switch it off.
-- **PWA (Cloudflare Pages):** https://0405d6eb.enam-ai-test.pages.dev/ (production build from `main` at `c8bcaec`; root `/frontend`, `npm run build`, output `/dist`, `VITE_API_BASE=https://finn-api-7n6q.onrender.com`). Pages rebuilds on each push to `main`.
+- **PWA (Cloudflare Pages):** https://enam-ai-test.pages.dev/ (stable project domain, verified 14 Nov to serve the latest build; the owner first reported the deployment-specific URL `0405d6eb.enam-ai-test.pages.dev`, which is an immutable old build, do not share it; built from `main`, root `/frontend`, `npm run build`, output `/dist`, `VITE_API_BASE=https://finn-api-7n6q.onrender.com`). Pages rebuilds on each push to `main`.
 - **Cloud-source check (`/debug/sources` on Render):**
   | Source | Result from Render |
   |---|---|
