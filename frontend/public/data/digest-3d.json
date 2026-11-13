@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "3d",
-    "start": "2026-11-10T13:48:00.359614+05:30",
-    "end": "2026-11-13T13:48:00.359614+05:30"
+    "start": "2026-11-10T14:32:25.992946+05:30",
+    "end": "2026-11-13T14:32:25.992946+05:30"
   },
-  "generated_at": "2026-11-13T13:48:00.359614+05:30",
+  "generated_at": "2026-11-13T14:32:25.992946+05:30",
   "needs_you": [
     {
       "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
@@ -16,7 +16,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 6.829,
+      "score": 6.781,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -43,7 +43,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.507,
+        "score": 1.496,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/daa6c172-771a-4af5-b4b3-9813fdf7536a.pdf",
         "price_reaction": {
           "pct_1d": -0.7,
@@ -61,7 +61,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.315,
+        "score": 1.306,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a9cb0ab8-930f-4400-b70b-fbd01640f54d.pdf",
         "price_reaction": {
           "pct_1d": 0.25,
@@ -79,7 +79,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.65,
+        "score": 0.645,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2b934e4e-121f-42d7-a2d0-d3eb4364b9a7.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -92,7 +92,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-11T17:06:59.713000+05:30",
-      "value": 6.829,
+      "value": 6.781,
       "threshold": 7.0,
       "message": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price.",
       "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7"

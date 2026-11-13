@@ -3,10 +3,10 @@
   "name": "Titan Company",
   "window": {
     "label": "30d",
-    "start": "2026-10-14T13:48:00.359614+05:30",
-    "end": "2026-11-13T13:48:00.359614+05:30"
+    "start": "2026-10-14T14:32:25.992946+05:30",
+    "end": "2026-11-13T14:32:25.992946+05:30"
   },
-  "generated_at": "2026-11-13T13:48:00.359614+05:30",
+  "generated_at": "2026-11-13T14:32:25.992946+05:30",
   "counts": {
     "total": 18,
     "rule_classified": 16,
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 2.193,
+      "score": 2.178,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/86009cba-ca03-4d35-bad8-b1988cfcff13.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -86,7 +86,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "high",
-      "score": 1.983,
+      "score": 1.969,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f2144a96-1845-46b3-b1d6-2df374df6da1.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -110,7 +110,7 @@
       "category": "m_and_a",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.298,
+      "score": 0.295,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6a9b9bf7-babc-49c6-86d2-db3cf586ba5c.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -135,7 +135,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.507,
+        "score": 1.496,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/daa6c172-771a-4af5-b4b3-9813fdf7536a.pdf",
         "price_reaction": {
           "pct_1d": -0.7,
@@ -168,7 +168,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.401,
+        "score": 0.398,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ced01c36-48bf-4c4c-a74b-d17875a41c27.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -183,7 +183,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.614,
+        "score": 0.609,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a4fd562e-8ef5-4e10-8ba9-d2ae42ae09e1.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -198,7 +198,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.336,
+        "score": 0.334,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e7a2f589-b1f3-4953-a599-4d4a69a4c5cd.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -258,7 +258,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.488,
+        "score": 0.485,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4287a766-ee46-4987-a623-d5715303854c.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -318,7 +318,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.017,
+        "score": 0.016,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f317d625-e7e4-4155-bf66-a43c7def32b6.pdf",
         "price_reaction": null,
         "enrichment": null

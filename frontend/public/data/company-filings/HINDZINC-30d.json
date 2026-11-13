@@ -3,10 +3,10 @@
   "name": "Hindustan Zinc",
   "window": {
     "label": "30d",
-    "start": "2026-10-14T13:48:00.359614+05:30",
-    "end": "2026-11-13T13:48:00.359614+05:30"
+    "start": "2026-10-14T14:32:25.992946+05:30",
+    "end": "2026-11-13T14:32:25.992946+05:30"
   },
-  "generated_at": "2026-11-13T13:48:00.359614+05:30",
+  "generated_at": "2026-11-13T14:32:25.992946+05:30",
   "counts": {
     "total": 14,
     "rule_classified": 12,
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.043,
+      "score": 0.042,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b8e22e9-8b97-4151-a045-51669fdac2ae.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -112,7 +112,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.311,
+        "score": 0.308,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3f37569c-9ad2-4f35-a893-fae70f224ec2.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -127,7 +127,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.31,
+        "score": 0.308,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7de61400-55cf-4e63-a45b-a347c8f96223.pdf",
         "price_reaction": null,
         "enrichment": null

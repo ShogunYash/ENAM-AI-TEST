@@ -1,0 +1,250 @@
+{
+  "window": {
+    "label": "3d",
+    "start": "2026-11-10T14:32:25.992946+05:30",
+    "end": "2026-11-13T14:32:25.992946+05:30"
+  },
+  "generated_at": "2026-11-13T14:32:25.992946+05:30",
+  "companies": [
+    {
+      "symbol": "BAJFINANCE",
+      "name": "Bajaj Finance",
+      "sector": "Consumer lending",
+      "total": 1,
+      "material": 1,
+      "categories": {
+        "fund_raise": 1
+      },
+      "top": {
+        "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
+        "symbol": "BAJFINANCE",
+        "company_name": "Bajaj Finance Ltd",
+        "filed_at": "2026-11-11T17:06:59.713000+05:30",
+        "headline": "Outcome of QIP 2026 - Special Committee Meeting",
+        "so_what": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price.",
+        "category": "fund_raise",
+        "category_source": "rule",
+        "priority": "high",
+        "score": 6.781,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "oneliner",
+          "text": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price."
+        }
+      },
+      "price": {
+        "pct_1d": 1.31,
+        "vol_ratio": 0.96
+      }
+    },
+    {
+      "symbol": "ASTRAL",
+      "name": "Astral",
+      "sector": "Building products",
+      "total": 1,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.25,
+        "vol_ratio": 1.09
+      }
+    },
+    {
+      "symbol": "TITAN",
+      "name": "Titan Company",
+      "sector": "Jewellery and retail",
+      "total": 1,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.7,
+        "vol_ratio": 1.93
+      }
+    },
+    {
+      "symbol": "ULTRACEMCO",
+      "name": "UltraTech Cement",
+      "sector": "Cement",
+      "total": 1,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.71,
+        "vol_ratio": 0.93
+      }
+    },
+    {
+      "symbol": "CERA",
+      "name": "Cera Sanitaryware",
+      "sector": "Sanitaryware",
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 3.35,
+        "vol_ratio": 1.55
+      }
+    },
+    {
+      "symbol": "FINEORG",
+      "name": "Fine Organic Industries",
+      "sector": "Specialty chemicals",
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.39,
+        "vol_ratio": 0.53
+      }
+    },
+    {
+      "symbol": "GARFIBRES",
+      "name": "Garware Technical Fibres",
+      "sector": "Technical textiles",
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.21,
+        "vol_ratio": 0.79
+      }
+    },
+    {
+      "symbol": "HDFCBANK",
+      "name": "HDFC Bank",
+      "sector": "Private-sector banking",
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 1.06,
+        "vol_ratio": 1.54
+      }
+    },
+    {
+      "symbol": "HINDZINC",
+      "name": "Hindustan Zinc",
+      "sector": "Non-ferrous metals and mining",
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.53,
+        "vol_ratio": 0.71
+      }
+    },
+    {
+      "symbol": "INFY",
+      "name": "Infosys",
+      "sector": "IT services",
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.08,
+        "vol_ratio": 0.55
+      }
+    },
+    {
+      "symbol": "KEI",
+      "name": "KEI Industries",
+      "sector": "Wires and cables",
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.09,
+        "vol_ratio": 0.37
+      }
+    },
+    {
+      "symbol": "LT",
+      "name": "Larsen & Toubro",
+      "sector": "Engineering and construction",
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.65,
+        "vol_ratio": 1.18
+      }
+    },
+    {
+      "symbol": "PERSISTENT",
+      "name": "Persistent Systems",
+      "sector": "IT services",
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -1.1,
+        "vol_ratio": 0.53
+      }
+    },
+    {
+      "symbol": "RELIANCE",
+      "name": "Reliance Industries",
+      "sector": "Energy and diversified businesses",
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.83,
+        "vol_ratio": 0.82
+      }
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "name": "Sun Pharmaceutical Industries",
+      "sector": "Pharmaceuticals",
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.12,
+        "vol_ratio": 1.03
+      }
+    },
+    {
+      "symbol": "TATASTEEL",
+      "name": "Tata Steel",
+      "sector": "Steel",
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 2.4,
+        "vol_ratio": 1.4
+      }
+    },
+    {
+      "symbol": "TCS",
+      "name": "Tata Consultancy Services",
+      "sector": "IT services",
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.13,
+        "vol_ratio": 0.7
+      }
+    }
+  ]
+}

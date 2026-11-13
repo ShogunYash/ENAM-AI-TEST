@@ -1,0 +1,21 @@
+{
+  "symbol": "KEI",
+  "name": "KEI Industries",
+  "window": {
+    "label": "3d",
+    "start": "2026-11-10T14:32:25.992946+05:30",
+    "end": "2026-11-13T14:32:25.992946+05:30"
+  },
+  "generated_at": "2026-11-13T14:32:25.992946+05:30",
+  "counts": {
+    "total": 0,
+    "rule_classified": 0,
+    "llm_classified": 0
+  },
+  "important": [],
+  "routine": {
+    "count": 0,
+    "by_category": {},
+    "items": []
+  }
+}

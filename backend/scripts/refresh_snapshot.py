@@ -56,14 +56,15 @@ def main() -> int:
         dump(out / f"digest-{label}.json", d)
     dump(out / "alerts.json", digests["24h"].alerts)
 
-    # by-company view of the 30-day window: one list + one uncapped file per company (works with the API asleep)
+    # by-company view: one list + one uncapped file per company, for 3d / 7d / 30d (works with the API asleep)
     rows = [(s["nse_symbol"], s["name"], s.get("sector")) for s in pf["portfolio"]]
-    dump(out / "digest-companies-30d.json", digest_mod.build_company_list(rows, "30d", snaps=snaps, now=now))
     cdir = out / "company-filings"
     if cdir.exists():
         shutil.rmtree(cdir)
-    for sym, name, _ in rows:
-        dump(cdir / f"{sym}-30d.json", digest_mod.build_company_filings(sym, name, "30d", snaps=snaps, now=now))
+    for label in ("3d", "7d", "30d"):
+        dump(out / f"digest-companies-{label}.json", digest_mod.build_company_list(rows, label, snaps=snaps, now=now))
+        for sym, name, _ in rows:
+            dump(cdir / f"{sym}-{label}.json", digest_mod.build_company_filings(sym, name, label, snaps=snaps, now=now))
 
     # enriched filings (results cards etc.) get their own file for the detail view
     fdir = out / "filings"

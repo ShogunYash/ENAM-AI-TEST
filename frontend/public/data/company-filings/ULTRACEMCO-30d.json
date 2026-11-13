@@ -3,10 +3,10 @@
   "name": "UltraTech Cement",
   "window": {
     "label": "30d",
-    "start": "2026-10-14T13:48:00.359614+05:30",
-    "end": "2026-11-13T13:48:00.359614+05:30"
+    "start": "2026-10-14T14:32:25.992946+05:30",
+    "end": "2026-11-13T14:32:25.992946+05:30"
   },
-  "generated_at": "2026-11-13T13:48:00.359614+05:30",
+  "generated_at": "2026-11-13T14:32:25.992946+05:30",
   "counts": {
     "total": 16,
     "rule_classified": 12,
@@ -144,7 +144,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.65,
+        "score": 0.645,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2b934e4e-121f-42d7-a2d0-d3eb4364b9a7.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -189,7 +189,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.04,
+        "score": 0.039,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3892cb51-dbcd-43ad-955f-fe9fafe54003.pdf",
         "price_reaction": null,
         "enrichment": null

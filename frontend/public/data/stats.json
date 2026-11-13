@@ -1,11 +1,11 @@
 {
-  "as_of": "2026-11-13T13:48:00.936100+05:30",
+  "as_of": "2026-11-13T14:32:26.916169+05:30",
   "totals": {
-    "calls": 157,
-    "tokens_in": 1335986,
-    "tokens_out": 100510,
+    "calls": 160,
+    "tokens_in": 1372701,
+    "tokens_out": 101597,
     "cache_hits": 200,
-    "cache_hit_pct": 56.0,
+    "cache_hit_pct": 55.6,
     "spend_inr": 0.0
   },
   "by_feature": [
@@ -25,9 +25,9 @@
     },
     {
       "key": "pull.guidance",
-      "calls": 30,
-      "tokens_in": 549293,
-      "tokens_out": 7259,
+      "calls": 32,
+      "tokens_in": 577325,
+      "tokens_out": 7907,
       "cache_hits": 87
     },
     {
@@ -39,9 +39,9 @@
     },
     {
       "key": "pull.pvd",
-      "calls": 15,
-      "tokens_in": 184107,
-      "tokens_out": 18239,
+      "calls": 16,
+      "tokens_in": 192790,
+      "tokens_out": 18678,
       "cache_hits": 21
     },
     {
@@ -90,16 +90,16 @@
     },
     {
       "key": "gemini-3.5-flash",
-      "calls": 12,
-      "tokens_in": 182140,
-      "tokens_out": 14662,
+      "calls": 13,
+      "tokens_in": 197099,
+      "tokens_out": 14870,
       "cache_hits": 5
     },
     {
       "key": "gemini-3.6-flash",
-      "calls": 9,
-      "tokens_in": 125918,
-      "tokens_out": 14219,
+      "calls": 11,
+      "tokens_in": 147674,
+      "tokens_out": 15098,
       "cache_hits": 5
     },
     {
@@ -124,6 +124,6 @@
       "cache_hits": 0
     }
   ],
-  "avg_calls_new_ticker": 7.5,
+  "avg_calls_new_ticker": 6.9,
   "grounding_dropped": 193
 }
