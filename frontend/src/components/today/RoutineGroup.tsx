@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { RoutineGroup as RoutineGroupType } from '@/api/types'
-import { formatRelativeIst } from '@/lib/formatters'
+import { formatRelativeIst, formatCategory } from '@/lib/formatters'
 import { ChevronDown, ChevronRight, ExternalLink } from 'lucide-react'
 
 interface RoutineGroupProps {
@@ -56,7 +56,7 @@ export const RoutineGroup: React.FC<RoutineGroupProps> = ({ routine }) => {
                 <div className="flex items-center gap-1.5">
                   <span className="font-mono font-bold text-zinc-200">{item.symbol}</span>
                   <span className="text-zinc-600">·</span>
-                  <span className="text-zinc-400">{item.category.replace(/_/g, ' ')}</span>
+                  <span className="text-zinc-400">{formatCategory(item.category)}</span>
                 </div>
                 <time dateTime={item.filed_at} className="text-zinc-400">
                   {formatRelativeIst(item.filed_at)}

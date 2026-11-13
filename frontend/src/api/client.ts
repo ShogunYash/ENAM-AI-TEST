@@ -11,6 +11,8 @@ import {
   PortfolioStock,
   AskRequest,
   AskResponse,
+  CompanyList,
+  CompanyFilings,
 } from './types'
 
 const API_BASE = (import.meta.env.VITE_API_BASE || 'http://localhost:8000').trim()
@@ -408,3 +410,62 @@ export async function sendAskQuestion(req: AskRequest): Promise<AskResponse> {
   return response.json()
 }
 
+
+
+// ───────────────────────── by-company view (the 30-day window) ─────────────────────────
+// One flat list of ~250 filings is too much for 30 days, so the UI shows one row per stock and opens that stock's own
+// headlines. Live API first; the committed snapshot (digest-companies-30d.json, company-filings/<SYM>-30d.json) when the
+// API is asleep, so this works offline too.
+export interface CompanyListResult {
+  data: CompanyList
+  source: 'live' | 'snapshot'
+}
+
+export interface CompanyFilingsResult {
+  data: CompanyFilings
+  source: 'live' | 'snapshot'
+}
+
+function viewParams(windowLabel: string, settings: Settings): URLSearchParams {
+  const params = new URLSearchParams({
+    window: windowLabel,
+    volume_multiple: settings.volume_multiple.toString(),
+    price_move_pct: settings.price_move_pct.toString(),
+  })
+  if (settings.categories_of_interest.length > 0) params.append('interests', settings.categories_of_interest.join(','))
+  if (settings.muted_categories.length > 0) params.append('muted', settings.muted_categories.join(','))
+  return params
+}
+
+export async function getCompanyList(windowLabel: string, settings: Settings): Promise<CompanyListResult> {
+  try {
+    const res = await fetchWithTimeout(`${API_BASE}/digest/companies?${viewParams(windowLabel, settings)}`, {}, 4000)
+    if (res.ok) return { data: await res.json(), source: 'live' }
+  } catch {
+    /* API asleep or unreachable: fall back to the snapshot below */
+  }
+  const snap = await fetch('/data/digest-companies-30d.json')
+  if (!snap.ok) throw new Error('Company view is not available offline')
+  return { data: await snap.json(), source: 'snapshot' }
+}
+
+export async function getCompanyFilings(
+  symbol: string,
+  windowLabel: string,
+  settings: Settings
+): Promise<CompanyFilingsResult> {
+  const sym = symbol.toUpperCase()
+  try {
+    const res = await fetchWithTimeout(
+      `${API_BASE}/digest/company/${encodeURIComponent(sym)}?${viewParams(windowLabel, settings)}`,
+      {},
+      4000
+    )
+    if (res.ok) return { data: await res.json(), source: 'live' }
+  } catch {
+    /* fall back to the snapshot below */
+  }
+  const snap = await fetch(`/data/company-filings/${sym}-30d.json`)
+  if (!snap.ok) throw new Error(`No saved filings for ${sym}`)
+  return { data: await snap.json(), source: 'snapshot' }
+}

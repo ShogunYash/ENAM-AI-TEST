@@ -116,6 +116,54 @@ def digest(
                                    snaps=prices_mod.snapshots(_symbols()))
 
 
+def _portfolio_rows() -> list[tuple[str, str, str | None]]:
+    return [(s["nse_symbol"], s["name"], s.get("sector")) for s in _portfolio()["portfolio"]]
+
+
+@app.get("/digest/companies", response_model=m.CompanyList)
+def digest_companies(
+    window: m.WindowLabel = "30d",
+    start: datetime | None = Query(None, description="Required when window=custom"),
+    end: datetime | None = Query(None, description="Required when window=custom"),
+    volume_multiple: float = 2.0,
+    price_move_pct: float = 5.0,
+    interests: str | None = Query(None, description="Comma-separated Category values to boost"),
+    muted: str | None = Query(None, description="Comma-separated Category values to hide"),
+) -> Any:
+    """By-company view of a window (the UI uses it for 30d, where one flat list is too much): one row per portfolio
+    company with counts, material categories, its best headline and the latest price move."""
+    if window == "custom" and (start is None or end is None):
+        raise HTTPException(422, "start and end are required for window=custom")
+    if not _has_real_data():
+        return example("company-list")
+    return digest_mod.build_company_list(_portfolio_rows(), window, start, end,
+                                         _settings(volume_multiple, price_move_pct, interests, muted),
+                                         snaps=prices_mod.snapshots(_symbols()))
+
+
+@app.get("/digest/company/{symbol}", response_model=m.CompanyFilings)
+def digest_company(
+    symbol: str,
+    window: m.WindowLabel = "30d",
+    start: datetime | None = Query(None, description="Required when window=custom"),
+    end: datetime | None = Query(None, description="Required when window=custom"),
+    volume_multiple: float = 2.0,
+    price_move_pct: float = 5.0,
+    interests: str | None = Query(None, description="Comma-separated Category values to boost"),
+    muted: str | None = Query(None, description="Comma-separated Category values to hide"),
+) -> Any:
+    """Everything one company filed in the window, uncapped: important filings first, routine ones collapsed."""
+    if window == "custom" and (start is None or end is None):
+        raise HTTPException(422, "start and end are required for window=custom")
+    sym = symbol.strip().upper()
+    if not _has_real_data():
+        return {**example("company-filings"), "symbol": sym}
+    names = {s: n for s, n, _ in _portfolio_rows()}
+    return digest_mod.build_company_filings(sym, names.get(sym), window, start, end,
+                                            _settings(volume_multiple, price_move_pct, interests, muted),
+                                            snaps=prices_mod.snapshots(_symbols()))
+
+
 @app.get("/filings/{filing_id}", response_model=m.Filing)
 def filing(filing_id: str) -> Any:
     if _has_real_data():

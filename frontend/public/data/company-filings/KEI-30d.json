@@ -1,0 +1,354 @@
+{
+  "symbol": "KEI",
+  "name": "KEI Industries",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T13:48:00.359614+05:30",
+    "end": "2026-11-13T13:48:00.359614+05:30"
+  },
+  "generated_at": "2026-11-13T13:48:00.359614+05:30",
+  "counts": {
+    "total": 15,
+    "rule_classified": 13,
+    "llm_classified": 2
+  },
+  "important": [
+    {
+      "id": "159cbdf6-1f00-4f61-813d-b5790b5ec432",
+      "symbol": "KEI",
+      "company_name": "KEI Industries Ltd",
+      "filed_at": "2026-10-21T17:43:25.997000+05:30",
+      "headline": "Outcome of Board Meeting - Disclosure/ Announcements pursuant to Regulations 30 and 33 of SEBI ( Listing Obligations and Disclosure Requirements) Regulations, 2015.",
+      "so_what": "Q2 FY27: PAT +29%, Rev +38% YoY · EBITDA margin 10.0%",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.069,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2075e5d3-21fa-4857-bf45-55cd905c1f60.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 3776.42,
+            "prev_q": 3185.34,
+            "prev_y": 2726.35,
+            "qoq_pct": 18.6,
+            "yoy_pct": 38.5
+          },
+          {
+            "name": "ebitda",
+            "value": 376.53,
+            "prev_q": 395.84,
+            "prev_y": 269.34,
+            "qoq_pct": -4.9,
+            "yoy_pct": 39.8
+          },
+          {
+            "name": "pbt",
+            "value": 353.23,
+            "prev_q": 369.16,
+            "prev_y": 277.28,
+            "qoq_pct": -4.3,
+            "yoy_pct": 27.4
+          },
+          {
+            "name": "pat",
+            "value": 262.45,
+            "prev_q": 274.14,
+            "prev_y": 203.51,
+            "qoq_pct": -4.3,
+            "yoy_pct": 29.0
+          }
+        ],
+        "margin_ebitda_pct": 10.0,
+        "cross_check": {
+          "status": "match",
+          "note": null
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2075e5d3-21fa-4857-bf45-55cd905c1f60.pdf",
+          "page": 7
+        }
+      }
+    },
+    {
+      "id": "d5b192af-7384-42b1-9dac-e57bf6b3639c",
+      "symbol": "KEI",
+      "company_name": "KEI Industries Ltd",
+      "filed_at": "2026-10-21T18:14:31.593000+05:30",
+      "headline": "Outcome of Board meeting- Disclosure/Announcements pursuant to Regulation 30 and 33 of SEBI ( Listing Obligations and Disclosure Requirements) Regulations, 2015.",
+      "so_what": "Q2 FY27: PAT +29%, Rev +38% YoY · EBITDA margin 10.0%",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.069,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4567cd4f-9037-41ac-9e8d-fd10ff9e2f51.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 3776.42,
+            "prev_q": 3185.34,
+            "prev_y": 2726.35,
+            "qoq_pct": 18.6,
+            "yoy_pct": 38.5
+          },
+          {
+            "name": "ebitda",
+            "value": 376.53,
+            "prev_q": 395.84,
+            "prev_y": 269.34,
+            "qoq_pct": -4.9,
+            "yoy_pct": 39.8
+          },
+          {
+            "name": "pbt",
+            "value": 353.23,
+            "prev_q": 369.16,
+            "prev_y": 277.28,
+            "qoq_pct": -4.3,
+            "yoy_pct": 27.4
+          },
+          {
+            "name": "pat",
+            "value": 262.45,
+            "prev_q": 274.14,
+            "prev_y": 203.51,
+            "qoq_pct": -4.3,
+            "yoy_pct": 29.0
+          }
+        ],
+        "margin_ebitda_pct": 10.0,
+        "cross_check": {
+          "status": "match",
+          "note": null
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4567cd4f-9037-41ac-9e8d-fd10ff9e2f51.pdf",
+          "page": 7
+        }
+      }
+    },
+    {
+      "id": "48c3ce45-581d-4fba-9ce8-41e4f3ed99cb",
+      "symbol": "KEI",
+      "company_name": "KEI Industries Ltd",
+      "filed_at": "2026-10-22T15:43:24.550000+05:30",
+      "headline": "Pursuant to Regulation 30 read with Schedule III of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 we wish to inform you that CRISIL ESG Ratings & Analytics ....",
+      "so_what": "CRISIL assigned KEI Industries a 'Strong' ESG rating of 65.",
+      "category": "credit_rating",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 0.032,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/75be6169-a776-45a9-aaaf-968aa7a80a3a.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "CRISIL assigned KEI Industries a 'Strong' ESG rating of 65."
+      }
+    },
+    {
+      "id": "a80e46bd-37c4-4876-8618-b21d82ce7b00",
+      "symbol": "KEI",
+      "company_name": "KEI Industries Ltd",
+      "filed_at": "2026-10-14T18:16:25.340000+05:30",
+      "headline": "This is to inform you that as per the information received by the Company on October 14, 2026, ESG Risk Assessments & Insights Limited, has reviewed the Environment, Social and Governance ....",
+      "so_what": "Assigned an ESG rating of 71 in the Excellent category by ERAIL.",
+      "category": "credit_rating",
+      "category_source": "llm",
+      "priority": "medium",
+      "score": 0.005,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b71311c4-0e0a-404d-bbf3-ff961de0c6e6.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Assigned an ESG rating of 71 in the Excellent category by ERAIL."
+      }
+    }
+  ],
+  "routine": {
+    "count": 11,
+    "by_category": {
+      "earnings_call": 6,
+      "unclassified": 3,
+      "results": 2
+    },
+    "items": [
+      {
+        "id": "7fd9716f-2450-4c50-bf73-4eae1c19e781",
+        "symbol": "KEI",
+        "company_name": "KEI Industries Ltd",
+        "filed_at": "2026-11-04T15:12:18.657000+05:30",
+        "headline": "Pursuant to Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements), Regulations, 2015, given below is the Schedule of Conference Call/Meet with the Analyst / Institutional ....",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.253,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/71d743be-ad95-4b18-8751-47634594d564.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "287c5ec8-3efe-4df7-9b02-fb6904ef6ba4",
+        "symbol": "KEI",
+        "company_name": "KEI Industries Ltd",
+        "filed_at": "2026-10-29T17:24:55.850000+05:30",
+        "headline": "Transcripts of Analysts/Investors Call pertaining to the Un-Audited Financial Results for the quarter ended on September 30, 2026.",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.065,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4e54d4d8-32a5-4d3c-aca0-c9459e230fa8.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "f54b1c88-37b5-400b-9d5b-6edb273f48c8",
+        "symbol": "KEI",
+        "company_name": "KEI Industries Ltd",
+        "filed_at": "2026-10-22T19:04:44.197000+05:30",
+        "headline": "Pursuant to Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements), Regulations, 2015, given below is the Schedule of Conference Call/Meet with the Analyst / Institutional ....",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.013,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/860a30b8-edbc-4a6f-85f6-ebf63c62afbe.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "f6773ce5-be56-45e5-9e73-f58d79713095",
+        "symbol": "KEI",
+        "company_name": "KEI Industries Ltd",
+        "filed_at": "2026-10-22T18:12:05.037000+05:30",
+        "headline": "In accordance with Regulation 30 of SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, please find below the link to the audio recording of the Analysts/Investors ....",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.013,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2ae9ef96-7f76-4fde-86a0-18d3755a87dd.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "c9f51700-6a1a-4ed2-b626-07ff7b3fc2c7",
+        "symbol": "KEI",
+        "company_name": "KEI Industries Ltd",
+        "filed_at": "2026-10-22T17:54:11.113000+05:30",
+        "headline": "In accordance with Regulations 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, please find below link to the audio recording of the Analysts/Investors ....",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.013,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4b6be751-d34e-421c-8cc1-340cf9955922.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "7917ca6b-9d18-4f44-9936-3bc52f9aacaf",
+        "symbol": "KEI",
+        "company_name": "KEI Industries Ltd",
+        "filed_at": "2026-10-22T15:57:51.007000+05:30",
+        "headline": "As per Regulation 47 of the SEBI (LODR) Regulations, 2015 read with corresponding circulars and notifications issued thereunder please find enclosed herewith newspaper clippings of the ....",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/680cca83-c8a0-4cd9-aeba-98c2e0ef436d.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "7761a287-6b58-47ea-896a-588dc6896f9f",
+        "symbol": "KEI",
+        "company_name": "KEI Industries Ltd",
+        "filed_at": "2026-10-21T19:01:28.230000+05:30",
+        "headline": "Monitoring Agency Report for the quarter ended on September 30, 2026.",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2cb4340e-7510-4bdb-bfec-3bb916e41c84.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "3e57668b-09d9-46e2-a377-3cce3f0ba033",
+        "symbol": "KEI",
+        "company_name": "KEI Industries Ltd",
+        "filed_at": "2026-10-21T17:48:13.240000+05:30",
+        "headline": "Investor Presentation",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.015,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/afb9365a-bae4-4b8a-a90c-488f23b81c1b.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "9cc0a213-5337-434c-91ca-5964cbac4454",
+        "symbol": "KEI",
+        "company_name": "KEI Industries Ltd",
+        "filed_at": "2026-10-21T17:21:03.890000+05:30",
+        "headline": "Pursuant to Regulation 30, 33 and other applicable provisions of SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, as amended, this is to inform you that the Board ....",
+        "so_what": null,
+        "category": "results",
+        "category_source": "llm",
+        "priority": "low",
+        "score": 0.015,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3d157621-812e-45ee-8220-505d90ccf3d6.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "4373c468-e7e1-4d66-86ab-22bf778b2a88",
+        "symbol": "KEI",
+        "company_name": "KEI Industries Ltd",
+        "filed_at": "2026-10-15T17:44:33.100000+05:30",
+        "headline": "Pursuant to Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements), Regulations, 2015, given below is the Schedule of Conference Call/Meet with the Analyst / Institutional ....",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.003,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/52dd4b70-405e-4195-a919-0d55bbf70938.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "a5461911-6231-4a07-bc32-21fcc7d13abf",
+        "symbol": "KEI",
+        "company_name": "KEI Industries Ltd",
+        "filed_at": "2026-10-14T18:33:33.353000+05:30",
+        "headline": "Compliance Certificate of Demat/Remat of shares under Regulation 74(5) of SEBI (Depositories and Participants) Regulations, 2018 for the quarter ended on 30.09.2026.",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e4497b14-f995-45a3-b21c-b95a0b4e2845.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

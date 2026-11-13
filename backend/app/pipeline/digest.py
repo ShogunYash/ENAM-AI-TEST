@@ -123,3 +123,61 @@ def build_digest(label: str = "24h", start: datetime | None = None, end: datetim
                                items=routine[:ROUTINE_ITEM_CAP]),
         alerts=alerts, counts=m.DigestCounts(total=len(filings), rule_classified=src.get("rule", 0),
                                              llm_classified=src.get("llm", 0)))
+
+
+# ───────────────────────── by-company view (the 30-day window) ─────────────────────────
+def _window_filings(label: str, start: datetime | None, end: datetime | None, settings: m.Settings, now: datetime,
+                    snaps: list[m.PriceSnapshot]) -> tuple[m.DigestWindow, list[m.Filing]]:
+    window = resolve_window(label, now, start, end)
+    by_sym = {s.symbol: s for s in snaps}
+    filings = [to_filing(r, settings, by_sym, now) for r in filings_between(window.start, window.end)]
+    attach_enrichments(filings)
+    return window, filings
+
+
+def _material(f: m.Filing, muted: set[str]) -> bool:
+    return f.priority in (P.high.value, P.medium.value) and C(f.category).value not in muted
+
+
+def build_company_list(companies: list[tuple[str, str, str | None]], label: str = "30d", start: datetime | None = None,
+                       end: datetime | None = None, settings: m.Settings | None = None, now: datetime | None = None,
+                       snaps: list[m.PriceSnapshot] | None = None) -> m.CompanyList:
+    """One row per portfolio company: counts, material categories, the best headline and the latest price move."""
+    now, settings, snaps = now or datetime.now(IST), settings or m.Settings(), snaps or []
+    window, filings = _window_filings(label, start, end, settings, now, snaps)
+    muted = {C(c).value for c in settings.muted_categories}
+    by_symbol: dict[str, list[m.Filing]] = {}
+    for f in filings:
+        by_symbol.setdefault(f.symbol, []).append(f)
+    snap_by = {s.symbol: s for s in snaps}
+    rows = []
+    for symbol, name, sector in companies:
+        fs = by_symbol.get(symbol, [])
+        material = [f for f in fs if _material(f, muted)]
+        top = max(material, key=lambda f: f.score, default=None)
+        s = snap_by.get(symbol)
+        rows.append(m.CompanySummary(
+            symbol=symbol, name=name, sector=sector, total=len(fs), material=len(material),
+            categories=dict(Counter(C(f.category).value for f in material)), top=top,
+            price=m.PriceReaction(pct_1d=s.pct_1d, vol_ratio=s.vol_ratio) if s else None))
+    rows.sort(key=lambda r: (-(r.top.score if r.top else -1.0), -r.total, r.symbol))
+    return m.CompanyList(window=window, generated_at=now, companies=rows)
+
+
+def build_company_filings(symbol: str, name: str | None = None, label: str = "30d", start: datetime | None = None,
+                          end: datetime | None = None, settings: m.Settings | None = None, now: datetime | None = None,
+                          snaps: list[m.PriceSnapshot] | None = None) -> m.CompanyFilings:
+    """All of one company's filings in the window (no caps): important ones first, the rest collapsed."""
+    now, settings = now or datetime.now(IST), settings or m.Settings()
+    window, filings = _window_filings(label, start, end, settings, now, snaps or [])
+    mine = sorted((f for f in filings if f.symbol == symbol), key=lambda f: (-f.score, f.filed_at), reverse=False)
+    muted = {C(c).value for c in settings.muted_categories}
+    important = [f for f in mine if _material(f, muted)]
+    routine = sorted((f for f in mine if not _material(f, muted)), key=lambda f: f.filed_at, reverse=True)
+    src = Counter(f.category_source for f in mine)
+    return m.CompanyFilings(
+        symbol=symbol, name=name or (mine[0].company_name if mine else symbol), window=window, generated_at=now,
+        counts=m.DigestCounts(total=len(mine), rule_classified=src.get("rule", 0), llm_classified=src.get("llm", 0)),
+        important=important,
+        routine=m.RoutineGroup(count=len(routine), by_category=dict(Counter(C(f.category).value for f in routine)),
+                               items=routine))

@@ -17,6 +17,8 @@ SCHEMAS = {
     "prices": list[m.PriceSnapshot],
     "digest-24h": m.Digest,
     "digest-3d": m.Digest,
+    "company-list": m.CompanyList,
+    "company-filings": m.CompanyFilings,
     "filing-results": m.Filing,
     "filing-management": m.Filing,
     "filing-oneliner": m.Filing,
@@ -54,7 +56,7 @@ def test_enrichment_discriminator():
 client = TestClient(app)
 
 
-@pytest.mark.parametrize("path", ["/health", "/companies", "/prices", "/digest", "/digest?window=3d",
+@pytest.mark.parametrize("path", ["/health", "/companies", "/prices", "/digest", "/digest?window=3d", "/digest/companies", "/digest/company/CERA",
                                   "/filings/ex-0001", "/alerts", "/research/INFY", "/research/dixon",
                                   "/stats/llm", "/debug/sources"])
 def test_mock_routes(path):

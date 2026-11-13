@@ -1,0 +1,106 @@
+{
+  "symbol": "CERA",
+  "name": "Cera Sanitaryware Ltd",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-12T18:30:00+05:30",
+    "end": "2026-11-11T18:30:00+05:30"
+  },
+  "generated_at": "2026-11-11T18:30:00+05:30",
+  "counts": {
+    "total": 2,
+    "rule_classified": 2,
+    "llm_classified": 0
+  },
+  "important": [
+    {
+      "id": "ex-0001",
+      "symbol": "CERA",
+      "company_name": "Cera Sanitaryware Ltd",
+      "filed_at": "2026-11-10T16:30:00+05:30",
+      "headline": "Unaudited Financial Results for the quarter and half year ended September 30, 2026",
+      "so_what": "PAT +21% YoY on margin expansion; revenue +9% YoY",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 9.4,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/example-cera-results.pdf",
+      "price_reaction": {
+        "pct_1d": 7.8,
+        "vol_ratio": 4.42
+      },
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 512.4,
+            "prev_q": 468.0,
+            "prev_y": 470.1,
+            "qoq_pct": 9.5,
+            "yoy_pct": 9.0
+          },
+          {
+            "name": "ebitda",
+            "value": 86.6,
+            "prev_q": 71.2,
+            "prev_y": 70.4,
+            "qoq_pct": 21.6,
+            "yoy_pct": 23.0
+          },
+          {
+            "name": "pbt",
+            "value": 82.1,
+            "prev_q": 68.9,
+            "prev_y": 67.5,
+            "qoq_pct": 19.2,
+            "yoy_pct": 21.6
+          },
+          {
+            "name": "pat",
+            "value": 61.3,
+            "prev_q": 51.4,
+            "prev_y": 50.6,
+            "qoq_pct": 19.3,
+            "yoy_pct": 21.1
+          }
+        ],
+        "margin_ebitda_pct": 16.9,
+        "cross_check": {
+          "status": "match",
+          "note": null
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/example-cera-results.pdf",
+          "page": 3
+        }
+      }
+    }
+  ],
+  "routine": {
+    "count": 1,
+    "by_category": {
+      "unclassified": 1
+    },
+    "items": [
+      {
+        "id": "ex-0006",
+        "symbol": "RELIANCE",
+        "company_name": "Reliance Industries Ltd",
+        "filed_at": "2026-11-10T20:30:00+05:30",
+        "headline": "Newspaper publication of financial results",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.1,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/example-ril-ad.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

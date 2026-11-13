@@ -1,0 +1,301 @@
+{
+  "symbol": "INFY",
+  "name": "Infosys",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T13:48:00.359614+05:30",
+    "end": "2026-11-13T13:48:00.359614+05:30"
+  },
+  "generated_at": "2026-11-13T13:48:00.359614+05:30",
+  "counts": {
+    "total": 15,
+    "rule_classified": 15,
+    "llm_classified": 0
+  },
+  "important": [
+    {
+      "id": "50d31412-9909-4254-b5da-52df1d25080e",
+      "symbol": "INFY",
+      "company_name": "Infosys Ltd",
+      "filed_at": "2026-10-23T16:16:06.710000+05:30",
+      "headline": "Results for the quarter and half year ended September 30, 2026 and declaration of interim dividend",
+      "so_what": "Q2 FY27: PAT +6%, Rev +11% YoY · EBITDA margin 23.7%",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.108,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26c12463-d44e-4050-bd47-b53cc294b4e0.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 49244.0,
+            "prev_q": 48211.0,
+            "prev_y": 44490.0,
+            "qoq_pct": 2.1,
+            "yoy_pct": 10.7
+          },
+          {
+            "name": "ebitda",
+            "value": 11689.0,
+            "prev_q": 11409.0,
+            "prev_y": 10535.0,
+            "qoq_pct": 2.5,
+            "yoy_pct": 11.0
+          },
+          {
+            "name": "pbt",
+            "value": 11063.0,
+            "prev_q": 11028.0,
+            "prev_y": 10229.0,
+            "qoq_pct": 0.3,
+            "yoy_pct": 8.2
+          },
+          {
+            "name": "pat",
+            "value": 7838.0,
+            "prev_q": 7775.0,
+            "prev_y": 7375.0,
+            "qoq_pct": 0.8,
+            "yoy_pct": 6.3
+          }
+        ],
+        "margin_ebitda_pct": 23.7,
+        "cross_check": {
+          "status": "match",
+          "note": null
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26c12463-d44e-4050-bd47-b53cc294b4e0.pdf",
+          "page": 18
+        }
+      }
+    }
+  ],
+  "routine": {
+    "count": 14,
+    "by_category": {
+      "unclassified": 11,
+      "earnings_call": 1,
+      "dividend": 1,
+      "results": 1
+    },
+    "items": [
+      {
+        "id": "d7e25c1d-68d4-4324-88a0-7cde8b498870",
+        "symbol": "INFY",
+        "company_name": "Infosys Ltd",
+        "filed_at": "2026-11-04T21:03:26.793000+05:30",
+        "headline": "Enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/83d29514-eb26-466a-a60f-ddc7064a56bf.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "ed229dd3-9d22-4c2c-8214-d65575b6be4d",
+        "symbol": "INFY",
+        "company_name": "Infosys Ltd",
+        "filed_at": "2026-10-30T18:52:32.860000+05:30",
+        "headline": "Enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/de1d0c27-5ad6-474d-b3b4-44084de360c0.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "cbbf7462-ce7a-42d3-8ee4-d7ba539eb9f8",
+        "symbol": "INFY",
+        "company_name": "Infosys Ltd",
+        "filed_at": "2026-10-29T15:14:07.623000+05:30",
+        "headline": "Enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0335049c-de81-4e49-b02a-5887dfa42644.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "7a84603f-bc08-4550-8369-4a85e398b56d",
+        "symbol": "INFY",
+        "company_name": "Infosys Ltd",
+        "filed_at": "2026-10-29T15:07:23.273000+05:30",
+        "headline": "Enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/35b12a6d-e165-42d3-a0d1-cbe42fe2a99f.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "fa202b41-867d-401b-9509-7bb6338f0c2b",
+        "symbol": "INFY",
+        "company_name": "Infosys Ltd",
+        "filed_at": "2026-10-28T17:41:16.470000+05:30",
+        "headline": "Enclosed",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.051,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7982fc61-7765-4981-ab3d-6aec36ba2137.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "78b62689-e2db-497a-a44a-207b3bfd64ed",
+        "symbol": "INFY",
+        "company_name": "Infosys Ltd",
+        "filed_at": "2026-10-28T17:34:48.150000+05:30",
+        "headline": "Enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e740e1c4-75bc-4392-808c-a3323d612194.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "1ee21456-900d-4569-95b2-6e286e6f3ef5",
+        "symbol": "INFY",
+        "company_name": "Infosys Ltd",
+        "filed_at": "2026-10-27T22:51:19.030000+05:30",
+        "headline": "Enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/198a321f-ab50-4557-8e45-2905e7ff1a2b.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "a95a8739-fabf-4609-95cc-a1dd59da22c4",
+        "symbol": "INFY",
+        "company_name": "Infosys Ltd",
+        "filed_at": "2026-10-27T16:39:22.247000+05:30",
+        "headline": "Enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/00c170b0-d771-4ac7-bda2-8424c8729de7.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "f06535b8-cd74-496d-9dcf-e7917aab7604",
+        "symbol": "INFY",
+        "company_name": "Infosys Ltd",
+        "filed_at": "2026-10-24T19:51:19.440000+05:30",
+        "headline": "Enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/33c1b5fb-5050-4952-9b3b-741b61357dfa.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "3ed442c3-8be6-4770-85e4-3986fc47f16a",
+        "symbol": "INFY",
+        "company_name": "Infosys Ltd",
+        "filed_at": "2026-10-23T20:08:50.690000+05:30",
+        "headline": "Enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b0157a38-ac25-43d0-8be4-d73cfead434b.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "af95ecc7-ad1a-42ce-a6ef-7c5a46f327e3",
+        "symbol": "INFY",
+        "company_name": "Infosys Ltd",
+        "filed_at": "2026-10-23T16:19:52.270000+05:30",
+        "headline": "Declared an interim dividend of Rs. 26/- per equity share, fixed November 3, 2026 as a record date and November 11, 2026 as a payout date",
+        "so_what": null,
+        "category": "dividend",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.024,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0f7c4fa3-6c9a-497a-921a-e14c20919f86.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "bbfbd1a4-e4d1-47d2-a70b-69956f4e84f9",
+        "symbol": "INFY",
+        "company_name": "Infosys Ltd",
+        "filed_at": "2026-10-23T16:08:56.303000+05:30",
+        "headline": "Outcome for the quarter and half-year ended September 30, 2026",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.024,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7a7cacec-6e60-4f88-9c95-ad60962ad4d4.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "f1dae341-aa3e-4bf7-970c-fd9bedfff67c",
+        "symbol": "INFY",
+        "company_name": "Infosys Ltd",
+        "filed_at": "2026-10-19T15:41:22.607000+05:30",
+        "headline": "Enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4a39bee0-4f0d-4b6e-9383-284a0ca26e0f.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "af966210-08cc-49da-b19e-b90e2e4b58f9",
+        "symbol": "INFY",
+        "company_name": "Infosys Ltd",
+        "filed_at": "2026-10-19T15:32:46.640000+05:30",
+        "headline": "Enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0fa9a84b-8686-4831-8cee-de8486f1c6c1.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

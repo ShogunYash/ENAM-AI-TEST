@@ -1,0 +1,287 @@
+{
+  "symbol": "HINDZINC",
+  "name": "Hindustan Zinc",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T13:48:00.359614+05:30",
+    "end": "2026-11-13T13:48:00.359614+05:30"
+  },
+  "generated_at": "2026-11-13T13:48:00.359614+05:30",
+  "counts": {
+    "total": 14,
+    "rule_classified": 12,
+    "llm_classified": 2
+  },
+  "important": [
+    {
+      "id": "0023c44c-f425-4f61-8516-9b738e70db04",
+      "symbol": "HINDZINC",
+      "company_name": "Hindustan Zinc Ltd",
+      "filed_at": "2026-10-19T15:47:44.593000+05:30",
+      "headline": "Please refer the enclosed file",
+      "so_what": "Q2 FY27: PAT +142%, Rev +76% YoY · EBITDA margin 61.3%",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.043,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b8e22e9-8b97-4151-a045-51669fdac2ae.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 15093.0,
+            "prev_q": 13747.0,
+            "prev_y": 8549.0,
+            "qoq_pct": 9.8,
+            "yoy_pct": 76.5
+          },
+          {
+            "name": "ebitda",
+            "value": 9248.0,
+            "prev_q": 8050.0,
+            "prev_y": 4415.0,
+            "qoq_pct": 14.9,
+            "yoy_pct": 109.5
+          },
+          {
+            "name": "pbt",
+            "value": 8572.0,
+            "prev_q": 7314.0,
+            "prev_y": 3542.0,
+            "qoq_pct": 17.2,
+            "yoy_pct": 142.0
+          },
+          {
+            "name": "pat",
+            "value": 6412.0,
+            "prev_q": 5469.0,
+            "prev_y": 2649.0,
+            "qoq_pct": 17.2,
+            "yoy_pct": 142.1
+          }
+        ],
+        "margin_ebitda_pct": 61.3,
+        "cross_check": {
+          "status": "match",
+          "note": null
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b8e22e9-8b97-4151-a045-51669fdac2ae.pdf",
+          "page": 5
+        }
+      }
+    }
+  ],
+  "routine": {
+    "count": 13,
+    "by_category": {
+      "unclassified": 5,
+      "press_release": 3,
+      "postal_ballot": 3,
+      "earnings_call": 1,
+      "results": 1
+    },
+    "items": [
+      {
+        "id": "689a841d-c2a5-40e6-95fd-31bad3d92e0f",
+        "symbol": "HINDZINC",
+        "company_name": "Hindustan Zinc Ltd",
+        "filed_at": "2026-11-04T17:43:51.210000+05:30",
+        "headline": "Please refer the enclosed file.",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6c90c8e4-62b1-4ca7-9b41-a9a6604cd350.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "746336aa-846b-4cb1-8ac8-4ddacce12324",
+        "symbol": "HINDZINC",
+        "company_name": "Hindustan Zinc Ltd",
+        "filed_at": "2026-11-03T18:13:00.403000+05:30",
+        "headline": "Please refer the enclosed file",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.311,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3f37569c-9ad2-4f35-a893-fae70f224ec2.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "8adfba5a-cead-4575-bdb1-e333d1cf20d7",
+        "symbol": "HINDZINC",
+        "company_name": "Hindustan Zinc Ltd",
+        "filed_at": "2026-11-03T18:09:12.787000+05:30",
+        "headline": "Hindustan Zinc has launched two new value-added zinc products, ''VedAZ'' and ''VedAyush'', next generation zinc alloys for the galvanizing industry.",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.31,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7de61400-55cf-4e63-a45b-a347c8f96223.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "7343995a-eb3a-4c70-8969-ee9f73df5cfa",
+        "symbol": "HINDZINC",
+        "company_name": "Hindustan Zinc Ltd",
+        "filed_at": "2026-11-03T14:54:04.540000+05:30",
+        "headline": "Please refer the enclosed file.",
+        "so_what": null,
+        "category": "postal_ballot",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.1,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6878f31a-dc55-4714-9f81-4231101d1ff3.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "08181e6d-0fdd-44f3-a282-78aab59198b3",
+        "symbol": "HINDZINC",
+        "company_name": "Hindustan Zinc Ltd",
+        "filed_at": "2026-10-30T16:05:46.307000+05:30",
+        "headline": "Please refer the enclosed file",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/176f19ca-2205-4029-a345-548a9c57f535.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "833b738c-23d1-43f0-b6e1-318861c570ca",
+        "symbol": "HINDZINC",
+        "company_name": "Hindustan Zinc Ltd",
+        "filed_at": "2026-10-23T15:29:36.937000+05:30",
+        "headline": "Please refer the enclosed file.",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.016,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c7855465-32dd-44c8-9c0b-e63ce6ac0be5.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "8a0991fe-df08-4150-8ec7-1e31115916c8",
+        "symbol": "HINDZINC",
+        "company_name": "Hindustan Zinc Ltd",
+        "filed_at": "2026-10-20T17:34:59.137000+05:30",
+        "headline": "Please refer the enclosed file.",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/852c35b3-88d0-4847-8c78-30f5d9c1a535.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "139468d0-008d-4d30-9b8e-004cd9357e90",
+        "symbol": "HINDZINC",
+        "company_name": "Hindustan Zinc Ltd",
+        "filed_at": "2026-10-19T15:42:34.643000+05:30",
+        "headline": "Please refer the enclosed file",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.009,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9d28cec3-e812-4af2-b066-14920c33e5ec.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "9e16b3c7-7ca4-4f32-a29d-0034df2b4d85",
+        "symbol": "HINDZINC",
+        "company_name": "Hindustan Zinc Ltd",
+        "filed_at": "2026-10-19T15:38:58.953000+05:30",
+        "headline": "Please refer the enclosed file",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.009,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f5a6fc55-e31c-4344-9d8c-ee9791e1a1de.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "ff665902-1ac1-4d29-96af-79591b54c178",
+        "symbol": "HINDZINC",
+        "company_name": "Hindustan Zinc Ltd",
+        "filed_at": "2026-10-19T15:34:27.133000+05:30",
+        "headline": "Please refer the enclosed file",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/65eaff92-86fa-4d4a-9bbd-03caa8b091bb.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "fc887c30-0ea9-48fe-bb66-8b566a3f0b91",
+        "symbol": "HINDZINC",
+        "company_name": "Hindustan Zinc Ltd",
+        "filed_at": "2026-10-17T18:11:08.990000+05:30",
+        "headline": "Please refer the enclosed file",
+        "so_what": null,
+        "category": "postal_ballot",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.002,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a206847a-23ea-40ac-a7a0-64a90f611571.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "f16d8ee5-ae89-42c7-8c29-645de4305c34",
+        "symbol": "HINDZINC",
+        "company_name": "Hindustan Zinc Ltd",
+        "filed_at": "2026-10-17T18:05:10.223000+05:30",
+        "headline": "Please refer the enclosed file",
+        "so_what": null,
+        "category": "postal_ballot",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.002,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ab6cfc5a-d3d3-44e0-a39e-dbd9d2d47ec6.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "d87104ae-4765-4e22-8679-09d442c4b869",
+        "symbol": "HINDZINC",
+        "company_name": "Hindustan Zinc Ltd",
+        "filed_at": "2026-10-16T12:58:09.280000+05:30",
+        "headline": "Please refer the enclosed file.",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/591a56c3-479a-46bc-99f8-08b61da34b53.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "symbol": "CERA",
+  "name": "Cera Sanitaryware",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T13:48:00.359614+05:30",
+    "end": "2026-11-13T13:48:00.359614+05:30"
+  },
+  "generated_at": "2026-11-13T13:48:00.359614+05:30",
+  "counts": {
+    "total": 11,
+    "rule_classified": 9,
+    "llm_classified": 2
+  },
+  "important": [
+    {
+      "id": "a445bb91-cef9-4586-b4c7-3b11993371a2",
+      "symbol": "CERA",
+      "company_name": "Cera Sanitaryware Ltd",
+      "filed_at": "2026-11-04T12:28:41.470000+05:30",
+      "headline": "Unaudited Financial Results for the Quarter and Half year ended 30th September, 2026",
+      "so_what": "Q2 FY27: PAT −1%, Rev +27% YoY · EBITDA margin 12.2%",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 1.666,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/96d3143f-2c3f-4cdb-a811-869e422ac1ab.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "standalone",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 602.96,
+            "prev_q": 485.98,
+            "prev_y": 473.41,
+            "qoq_pct": 24.1,
+            "yoy_pct": 27.4
+          },
+          {
+            "name": "ebitda",
+            "value": 73.27,
+            "prev_q": 49.22,
+            "prev_y": 67.14,
+            "qoq_pct": 48.9,
+            "yoy_pct": 9.1
+          },
+          {
+            "name": "pbt",
+            "value": 73.02,
+            "prev_q": 59.81,
+            "prev_y": 72.23,
+            "qoq_pct": 22.1,
+            "yoy_pct": 1.1
+          },
+          {
+            "name": "pat",
+            "value": 56.14,
+            "prev_q": 45.31,
+            "prev_y": 56.65,
+            "qoq_pct": 23.9,
+            "yoy_pct": -0.9
+          }
+        ],
+        "margin_ebitda_pct": 12.2,
+        "cross_check": {
+          "status": "match",
+          "note": null
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/96d3143f-2c3f-4cdb-a811-869e422ac1ab.pdf",
+          "page": 2
+        }
+      }
+    },
+    {
+      "id": "90d3e283-73e5-4158-9705-30fc5e42d072",
+      "symbol": "CERA",
+      "company_name": "Cera Sanitaryware Ltd",
+      "filed_at": "2026-11-04T12:35:12.630000+05:30",
+      "headline": "Change in Directors as per attachment.",
+      "so_what": "Vikram Somany appointed as Chairman and Managing Director from 01 Jul",
+      "category": "management_change",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 0.927,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4c5a17a7-fef6-480d-bafd-acf0b72fd969.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "management",
+        "person": "Vikram Somany",
+        "role": "Chairman and Managing Director",
+        "change": "appointed",
+        "background": [
+          "Chairman & Managing Director since 2002",
+          "Promoter of the Company",
+          "Bachelor degree of Science (B.Sc.)"
+        ],
+        "links": [],
+        "effective": "2027-07-01",
+        "background_source": "filing"
+      }
+    }
+  ],
+  "routine": {
+    "count": 9,
+    "by_category": {
+      "earnings_call": 2,
+      "results": 2,
+      "unclassified": 4,
+      "investor_meetings": 1
+    },
+    "items": [
+      {
+        "id": "5437ad91-75c7-46e6-b949-8287d1b3c752",
+        "symbol": "CERA",
+        "company_name": "Cera Sanitaryware Ltd",
+        "filed_at": "2026-11-05T16:08:33.140000+05:30",
+        "headline": "Link of Audio Recording of Q2 & H1 FY2027 Earnings Conference Call held on 5th November 2026",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.322,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e0fdde76-7cb8-43e7-a642-628ffb402027.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "28a0ef0a-e50e-4230-85e4-585ea0bf2fdb",
+        "symbol": "CERA",
+        "company_name": "Cera Sanitaryware Ltd",
+        "filed_at": "2026-11-05T16:00:52.917000+05:30",
+        "headline": "Newspaper Publication dated 5th November 2026 regarding Extract of Unaudited Financial Results for the quarter and half year ended on 30th September 2026",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.483,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/39bd3884-e4c2-46dd-8c4f-71b1dbab4248.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "0f7b3cfd-34a8-4590-94d5-beffe890cd81",
+        "symbol": "CERA",
+        "company_name": "Cera Sanitaryware Ltd",
+        "filed_at": "2026-11-04T16:31:16.263000+05:30",
+        "headline": "Investor Presentation Q2 & H1 FY 2026-27",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.385,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/29421bbb-42b8-471f-95ca-7258e50b1a1e.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "b33943f2-ff0c-4c91-ae13-b66b942629de",
+        "symbol": "CERA",
+        "company_name": "Cera Sanitaryware Ltd",
+        "filed_at": "2026-11-04T14:26:32.247000+05:30",
+        "headline": "Intimation regarding Grant of Stock Options under Cera Sanitaryware - Employee Stock Options Scheme 2024",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1317dc09-a8e7-44cf-b4c2-735b22aca102.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "36194e48-fb34-49dc-bc26-9196cb5301f8",
+        "symbol": "CERA",
+        "company_name": "Cera Sanitaryware Ltd",
+        "filed_at": "2026-11-04T12:43:04.530000+05:30",
+        "headline": "Board Meeting Outcome - Investor Communication",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "llm",
+        "priority": "low",
+        "score": 0.124,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4dbdcf77-227e-4b84-b1de-74b69bdc5ee9.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "a645b152-6680-4844-ab6f-b3e2c69f9495",
+        "symbol": "CERA",
+        "company_name": "Cera Sanitaryware Ltd",
+        "filed_at": "2026-11-04T12:21:38.700000+05:30",
+        "headline": "Outcome of the Board Meeting dated 4th November 2026",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c322e8d1-5b05-4462-911a-2616ef05f654.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "9f6ecd00-3b2b-4a5d-943b-a6325e9d19c1",
+        "symbol": "CERA",
+        "company_name": "Cera Sanitaryware Ltd",
+        "filed_at": "2026-10-22T17:04:56.133000+05:30",
+        "headline": "Intimation regarding Q2 & H1 FY27 Earnings Conference Call",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.013,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fc5f7ea6-8ea4-44fc-9bf8-be2113e10ec0.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "a9d0c5fb-b50a-42b7-8c1a-c5edf3b5fdf5",
+        "symbol": "CERA",
+        "company_name": "Cera Sanitaryware Ltd",
+        "filed_at": "2026-10-22T15:27:54.057000+05:30",
+        "headline": "Cera Sanitaryware Ltdhas informed BSE that the meeting of the Board of Directors of the Company is scheduled on 04/11/2026 ,inter alia, to consider and approve 1. The Unaudited Financial ....",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bcfc0e98-91d2-4e37-bb3e-9bdc902c162f.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "d8542944-a1d8-48ac-8152-fae3b3a4e324",
+        "symbol": "CERA",
+        "company_name": "Cera Sanitaryware Ltd",
+        "filed_at": "2026-10-14T20:44:09.120000+05:30",
+        "headline": "Certificate under Regulation 74(5) of SEBI (DP) Regulations, 2018",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5eaa74b7-aaf6-4cc5-a03c-b117a879e0e4.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

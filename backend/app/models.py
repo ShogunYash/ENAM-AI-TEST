@@ -201,6 +201,37 @@ class Digest(Model):
     counts: DigestCounts
 
 
+class CompanySummary(Model):
+    """One row of the by-company view (used for the 30-day window, where one flat list is too much)."""
+
+    symbol: str
+    name: str
+    sector: str | None
+    total: int = Field(description="Filings in the window")
+    material: int = Field(description="High/medium-priority filings in the window, muted categories excluded")
+    categories: dict[str, int] = Field(description="Material filings per category, e.g. {'results': 1, 'fund_raise': 3}")
+    top: Filing | None = Field(description="The highest-scoring non-muted filing (headline shown on the row), else null")
+    price: PriceReaction | None = Field(description="Latest session move: pct_1d and volume ratio")
+
+
+class CompanyList(Model):
+    window: DigestWindow
+    generated_at: datetime
+    companies: list[CompanySummary] = Field(description="Every portfolio company, most important first")
+
+
+class CompanyFilings(Model):
+    """Everything one company filed in the window, uncapped (the Digest lists are capped, this is not)."""
+
+    symbol: str
+    name: str
+    window: DigestWindow
+    generated_at: datetime
+    counts: DigestCounts
+    important: list[Filing] = Field(description="High/medium priority, best first")
+    routine: RoutineGroup = Field(description="Low/hidden priority and muted categories, collapsed in the UI")
+
+
 class Settings(Model):
     """Lives on the client (localStorage); sent to the API as query params."""
 

@@ -1,0 +1,154 @@
+{
+  "symbol": "TCS",
+  "name": "Tata Consultancy Services",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T13:48:00.359614+05:30",
+    "end": "2026-11-13T13:48:00.359614+05:30"
+  },
+  "generated_at": "2026-11-13T13:48:00.359614+05:30",
+  "counts": {
+    "total": 8,
+    "rule_classified": 8,
+    "llm_classified": 0
+  },
+  "important": [
+    {
+      "id": "85a90a42-ccad-4d29-983b-6c2164f010e0",
+      "symbol": "TCS",
+      "company_name": "Tata Consultancy Services Ltd",
+      "filed_at": "2026-10-15T13:28:35.827000+05:30",
+      "headline": "Tata Consultancy Services Limited has informed the Exchange about completion of acquisition of BBY Services India LLP.",
+      "so_what": "TCS completed acquisition of 100% stake in BBY Services India LLP.",
+      "category": "m_and_a",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.015,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ad952e13-3c76-410e-81f8-4fe3d108a196.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "TCS completed acquisition of 100% stake in BBY Services India LLP."
+      }
+    }
+  ],
+  "routine": {
+    "count": 7,
+    "by_category": {
+      "investor_meetings": 2,
+      "press_release": 3,
+      "unclassified": 1,
+      "earnings_call": 1
+    },
+    "items": [
+      {
+        "id": "c8b0646b-9893-4091-a16e-02bb68666b91",
+        "symbol": "TCS",
+        "company_name": "Tata Consultancy Services Ltd",
+        "filed_at": "2026-11-09T16:59:25.653000+05:30",
+        "headline": "Schedule of Analyst/Institutional Investor Meeting",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.415,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c0a1bde0-4d57-46c0-ac73-940d5ff093d7.pdf",
+        "price_reaction": {
+          "pct_1d": -0.13,
+          "vol_ratio": 0.7
+        },
+        "enrichment": null
+      },
+      {
+        "id": "90d4d0da-7873-410e-ac11-fef10a5063d1",
+        "symbol": "TCS",
+        "company_name": "Tata Consultancy Services Ltd",
+        "filed_at": "2026-11-04T11:00:53.177000+05:30",
+        "headline": "Press Release - TCS Enterprise AI Study: 84% say productivity is AI''s top benefit; just 10% let AI act without human oversight",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.365,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4b1ab7e2-a0c4-40d9-8758-64975aea90d9.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "915f6d2d-b1e6-4d3c-a9c3-7bc65d709247",
+        "symbol": "TCS",
+        "company_name": "Tata Consultancy Services Ltd",
+        "filed_at": "2026-11-03T18:44:23.970000+05:30",
+        "headline": "Newspaper Advertisement pertaining to Notice of Email Registration",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/878869fb-5e51-4867-b640-2120edd34b6c.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "c37d335d-6a92-418d-a7ec-d1b4092ae322",
+        "symbol": "TCS",
+        "company_name": "Tata Consultancy Services Ltd",
+        "filed_at": "2026-10-19T11:30:41.537000+05:30",
+        "headline": "Press Release - TCS BaNCS for Treasury marks its entry into Sri Lanka with Indian Bank",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.009,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b12e07f0-028d-4c07-a018-036951644a15.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "fccd372b-db66-488d-a963-726b42f7324a",
+        "symbol": "TCS",
+        "company_name": "Tata Consultancy Services Ltd",
+        "filed_at": "2026-10-16T16:29:42.633000+05:30",
+        "headline": "Schedule of Analyst/Institutional Investor Meeting",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.002,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/18a00aec-26f8-4738-9e5b-d33abe1ff616.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "f478aa4a-86b6-4aca-a3c4-bfb9633a571a",
+        "symbol": "TCS",
+        "company_name": "Tata Consultancy Services Ltd",
+        "filed_at": "2026-10-15T11:31:54.800000+05:30",
+        "headline": "Press Release - TCS launches Industrial Intelligence Foundry to accelerate AI-led autonomy and engineering",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.004,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/50f14eb1-bf37-4fd3-a23d-5da7dc974ca4.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "a461d052-8d3d-476e-a68c-1a93703d4a66",
+        "symbol": "TCS",
+        "company_name": "Tata Consultancy Services Ltd",
+        "filed_at": "2026-10-14T15:55:38.440000+05:30",
+        "headline": "Transcript of earnings conference call for quarter and six-month period ended September 30, 2026",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.002,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7dc14216-f892-46f1-bf82-5c7b387a83b9.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

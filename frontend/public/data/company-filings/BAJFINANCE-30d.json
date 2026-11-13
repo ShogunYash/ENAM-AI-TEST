@@ -1,0 +1,414 @@
+{
+  "symbol": "BAJFINANCE",
+  "name": "Bajaj Finance",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T13:48:00.359614+05:30",
+    "end": "2026-11-13T13:48:00.359614+05:30"
+  },
+  "generated_at": "2026-11-13T13:48:00.359614+05:30",
+  "counts": {
+    "total": 20,
+    "rule_classified": 19,
+    "llm_classified": 1
+  },
+  "important": [
+    {
+      "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
+      "symbol": "BAJFINANCE",
+      "company_name": "Bajaj Finance Ltd",
+      "filed_at": "2026-11-11T17:06:59.713000+05:30",
+      "headline": "Outcome of QIP 2026 - Special Committee Meeting",
+      "so_what": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price.",
+      "category": "fund_raise",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 6.829,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price."
+      }
+    },
+    {
+      "id": "dff7d1e2-500b-498c-9b9a-52b2cb4641a8",
+      "symbol": "BAJFINANCE",
+      "company_name": "Bajaj Finance Ltd",
+      "filed_at": "2026-11-10T12:23:10.163000+05:30",
+      "headline": "Outcome of PI 2026 - Allotment Committee meeting held on 10 November 2026",
+      "so_what": "Approved allotment of 5,74,25,740 warrants at Rs. 1,010 each.",
+      "category": "fund_raise",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 5.857,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/84c0dbf5-4b55-41b9-ab7b-e20d9fe359a9.pdf",
+      "price_reaction": {
+        "pct_1d": 1.31,
+        "vol_ratio": 0.96
+      },
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Approved allotment of 5,74,25,740 warrants at Rs. 1,010 each."
+      }
+    },
+    {
+      "id": "f9a4f2e2-4e74-49fd-a6bd-9df8d6045e71",
+      "symbol": "BAJFINANCE",
+      "company_name": "Bajaj Finance Ltd",
+      "filed_at": "2026-11-10T12:12:31.463000+05:30",
+      "headline": "PI 2026 - Special Committee of the Board of Directors of the Company (''Committee'') at its meeting held today i.e., 10 November 2026, has approved the issue of 5,74,25,740 Warrants to ....",
+      "so_what": "Approved issuing 5,74,25,740 warrants for ₹57,99,99,97,400.",
+      "category": "fund_raise",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 5.847,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/41e7bb57-172f-4858-a5ac-8c15fe653e81.pdf",
+      "price_reaction": {
+        "pct_1d": 1.31,
+        "vol_ratio": 0.96
+      },
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Approved issuing 5,74,25,740 warrants for ₹57,99,99,97,400."
+      }
+    },
+    {
+      "id": "6cae5e85-e0dc-4fa9-8f43-11b4bedd4333",
+      "symbol": "BAJFINANCE",
+      "company_name": "Bajaj Finance Ltd",
+      "filed_at": "2026-11-05T17:46:29.097000+05:30",
+      "headline": "Bajaj Finance Ltdhas informed BSE that the meeting of the Board of Directors of the Company is scheduled on 10/11/2026 ,inter alia, to consider and approve the price of warrants to be issued ....",
+      "so_what": "Board meeting set for 10 Nov 2026 to price warrant issue",
+      "category": "fund_raise",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 1.718,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/191d3534-ded0-412c-9b3e-a8fbe7c38d5a.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Board meeting set for 10 Nov 2026 to price warrant issue"
+      }
+    },
+    {
+      "id": "130eee3b-b8b6-49c6-9a19-7b867a942435",
+      "symbol": "BAJFINANCE",
+      "company_name": "Bajaj Finance Ltd",
+      "filed_at": "2026-10-30T14:49:27.630000+05:30",
+      "headline": "Allotment of Secured Redeemable Non-Convertible Debentures on Private Placement basis",
+      "so_what": "Allotted Rs 2,069.501 crore in secured NCDs on 30 October 2026.",
+      "category": "fund_raise",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 0.239,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/20d73044-2322-4d46-883f-67bff54a3b50.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Allotted Rs 2,069.501 crore in secured NCDs on 30 October 2026."
+      }
+    },
+    {
+      "id": "35bf242b-58db-4820-9ded-2d759a71d9f8",
+      "symbol": "BAJFINANCE",
+      "company_name": "Bajaj Finance Ltd",
+      "filed_at": "2026-10-19T17:39:55+05:30",
+      "headline": "Unaudited standalone and consolidated financial results for the quarter and half year ended 30 September 2026",
+      "so_what": "Q2 FY27: PAT +29%, Rev +23% YoY",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.043,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/229c460f-9cda-4732-972f-847519b40426.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 24546.37,
+            "prev_q": 23165.45,
+            "prev_y": 19990.42,
+            "qoq_pct": 6.0,
+            "yoy_pct": 22.8
+          },
+          {
+            "name": "ebitda",
+            "value": null,
+            "prev_q": null,
+            "prev_y": null,
+            "qoq_pct": null,
+            "yoy_pct": null
+          },
+          {
+            "name": "pbt",
+            "value": 8537.2,
+            "prev_q": 8149.0,
+            "prev_y": 6608.13,
+            "qoq_pct": 4.8,
+            "yoy_pct": 29.2
+          },
+          {
+            "name": "pat",
+            "value": 6366.57,
+            "prev_q": 6080.6,
+            "prev_y": 4947.76,
+            "qoq_pct": 4.7,
+            "yoy_pct": 28.7
+          }
+        ],
+        "margin_ebitda_pct": null,
+        "cross_check": {
+          "status": "match",
+          "note": null
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/229c460f-9cda-4732-972f-847519b40426.pdf",
+          "page": 14
+        }
+      }
+    },
+    {
+      "id": "913014a6-a273-4cfc-8a62-a2fccb69a061",
+      "symbol": "BAJFINANCE",
+      "company_name": "Bajaj Finance Ltd",
+      "filed_at": "2026-10-19T18:03:33.520000+05:30",
+      "headline": "The Board of Directors of the Company, at their meeting held today, i.e., 19 October 2026, approved, inter alia, issue of 49,00,737 equity shares of face value of Re. 1 at the respective ....",
+      "so_what": "Board approved issue of 49,00,737 equity shares of face value Re.1",
+      "category": "fund_raise",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.034,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fda5e9e1-3aa9-4ccc-837a-d45817ef7360.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Board approved issue of 49,00,737 equity shares of face value Re.1"
+      }
+    },
+    {
+      "id": "45a6d9d4-9a06-4b97-ab17-780a8d0cf7d4",
+      "symbol": "BAJFINANCE",
+      "company_name": "Bajaj Finance Ltd",
+      "filed_at": "2026-10-21T12:22:21.057000+05:30",
+      "headline": "Allotment of Secured Redeemable Non-Convertible Debentures on Private Placement Basis.",
+      "so_what": "Allotted Rs 2,120 crore in secured NCDs on 21 October 2026.",
+      "category": "fund_raise",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 0.029,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5bb76cad-5a8c-42c8-8aa3-6d81edf31bf6.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Allotted Rs 2,120 crore in secured NCDs on 21 October 2026."
+      }
+    },
+    {
+      "id": "9817a9b7-6de3-4bfa-8e80-ac4cf87d1d6a",
+      "symbol": "BAJFINANCE",
+      "company_name": "Bajaj Finance Ltd",
+      "filed_at": "2026-10-19T18:18:41.203000+05:30",
+      "headline": "The Board of Directors at their meeting held today, i.e., 19 October 2026, approved the re-appointment of Prashant Verma as Chief Information Security Officer (CISO) as per RBI Guidelines, ....",
+      "so_what": "Prashant Verma appointed as Chief Information Security Officer",
+      "category": "management_change",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 0.024,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/eb4bfa8c-5285-4b6f-86c3-852bf82c8015.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "management",
+        "person": "Prashant Verma",
+        "role": "Chief Information Security Officer",
+        "change": "appointed",
+        "background": [
+          "He has around 21 years of full-time experience on Security Domain."
+        ],
+        "links": [],
+        "effective": "2027-02-01",
+        "background_source": "filing"
+      }
+    }
+  ],
+  "routine": {
+    "count": 11,
+    "by_category": {
+      "results": 3,
+      "agm_egm": 2,
+      "investor_meetings": 4,
+      "earnings_call": 2
+    },
+    "items": [
+      {
+        "id": "62fe4e58-cfce-4996-aa60-1e2f715e50e5",
+        "symbol": "BAJFINANCE",
+        "company_name": "Bajaj Finance Ltd",
+        "filed_at": "2026-11-07T16:12:07.090000+05:30",
+        "headline": "Submission of half-yearly report for the FY2026-27 containing the Financial Performance of the Company during the half-year ended 30 September 2026.",
+        "so_what": null,
+        "category": "results",
+        "category_source": "llm",
+        "priority": "low",
+        "score": 0.768,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/88c1f74a-5faf-4951-bd1c-87ac9c742fd0.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "aa9f67f9-d2df-4e64-b288-9b8b3fc1a25d",
+        "symbol": "BAJFINANCE",
+        "company_name": "Bajaj Finance Ltd",
+        "filed_at": "2026-11-04T15:23:15.627000+05:30",
+        "headline": "Submission of Voting Results and Scrutinizer''s Report",
+        "so_what": null,
+        "category": "agm_egm",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.127,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a2e82696-5059-47a4-9c36-8399f022f4f0.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "fa36cde7-2447-4f2a-8bd4-4d99941bbc20",
+        "symbol": "BAJFINANCE",
+        "company_name": "Bajaj Finance Ltd",
+        "filed_at": "2026-11-02T19:17:27.557000+05:30",
+        "headline": "Summary of proceedings of Extraordinary General Meeting",
+        "so_what": null,
+        "category": "agm_egm",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.083,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5f21f715-4d81-4470-9e3b-2ca076cf4e22.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "4c4478a2-f1b2-4f86-a5a2-e999fb27a12a",
+        "symbol": "BAJFINANCE",
+        "company_name": "Bajaj Finance Ltd",
+        "filed_at": "2026-10-26T19:33:10.070000+05:30",
+        "headline": "Schedule of Analysts''/Investors'' meet.",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.017,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bd352f0e-ac9c-4c6d-94cd-6b50802c665b.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "3edbe0c3-f3ed-4804-92a8-a4bc45e22fb6",
+        "symbol": "BAJFINANCE",
+        "company_name": "Bajaj Finance Ltd",
+        "filed_at": "2026-10-23T14:45:33.633000+05:30",
+        "headline": "Transcript of conference call held in respect of Financial Results for the Quarter and Half Year ended 30 September 2026.",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.016,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7873abcb-7f97-487d-a474-028b0a26feea.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "38bd2591-6085-4377-8935-62a6fffdd756",
+        "symbol": "BAJFINANCE",
+        "company_name": "Bajaj Finance Ltd",
+        "filed_at": "2026-10-19T21:05:09.313000+05:30",
+        "headline": "The audio recording of the conference call has been hosted on the website of the Company and is available at 'QUARTERLY EARNINGS CALL' drop down https://www.aboutbajajfinserv.com/finan ....",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.007,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/adefbbb0-caa9-46a5-91aa-41c5359a7271.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "c862464b-817a-43bb-b588-6fc0f0f78eb5",
+        "symbol": "BAJFINANCE",
+        "company_name": "Bajaj Finance Ltd",
+        "filed_at": "2026-10-19T17:27:30.990000+05:30",
+        "headline": "Investor Presentation for the quarter ended 30 September 2026.",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.01,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e7c0f169-e396-4a7d-a57d-b1f7c47f6290.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "bef4c126-a01e-4636-9c8b-e50fc1a82879",
+        "symbol": "BAJFINANCE",
+        "company_name": "Bajaj Finance Ltd",
+        "filed_at": "2026-10-19T17:19:48.927000+05:30",
+        "headline": "The Board Meeting today commenced at 16.15 Hrs. IST and the financial results for the quarter and Half year ended 30 September 2026 were approved at 16:55 Hrs. IST. The proceedings of the ....",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.01,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0477f65f-4dea-40cf-a6bf-67088c43b679.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "5043cd2c-5f3e-44fb-bd46-9a1ec5e35d0b",
+        "symbol": "BAJFINANCE",
+        "company_name": "Bajaj Finance Ltd",
+        "filed_at": "2026-10-16T16:12:35.617000+05:30",
+        "headline": "Schedule of Analysts''/Investors'' Meet.",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.002,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b93f01a0-573d-4aaa-9d02-929ffa10c5ce.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "545db3fb-3a29-4083-8357-bece4653cb77",
+        "symbol": "BAJFINANCE",
+        "company_name": "Bajaj Finance Ltd",
+        "filed_at": "2026-10-16T16:07:54.920000+05:30",
+        "headline": "Schedule of Analysts''/Investors'' Meet.",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.002,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c15837a7-6d43-4f62-9e8c-d6700c138a70.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "f10171fc-5d3d-4905-823a-a6ba1d682a1d",
+        "symbol": "BAJFINANCE",
+        "company_name": "Bajaj Finance Ltd",
+        "filed_at": "2026-10-16T16:06:37.630000+05:30",
+        "headline": "Schedule of Analysts''/Investors'' Meet.",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.002,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fc936909-2b70-497f-8330-629acc3fb6b3.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

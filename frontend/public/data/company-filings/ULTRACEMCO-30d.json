@@ -1,0 +1,334 @@
+{
+  "symbol": "ULTRACEMCO",
+  "name": "UltraTech Cement",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T13:48:00.359614+05:30",
+    "end": "2026-11-13T13:48:00.359614+05:30"
+  },
+  "generated_at": "2026-11-13T13:48:00.359614+05:30",
+  "counts": {
+    "total": 16,
+    "rule_classified": 12,
+    "llm_classified": 4
+  },
+  "important": [
+    {
+      "id": "ec29d900-b6b1-4b6f-8f25-91b061275d31",
+      "symbol": "ULTRACEMCO",
+      "company_name": "UltraTech Cement Ltd",
+      "filed_at": "2026-10-19T13:47:54.767000+05:30",
+      "headline": "Unaudited Financial Results for the quarter and half year ended 30th September, 2026",
+      "so_what": "Q2 FY27: PAT +21%, Rev +19% YoY",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.042,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59654d86-af0c-4fe5-bfb9-1a148f65fd6c.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 23295.07,
+            "prev_q": 24648.2,
+            "prev_y": 19606.93,
+            "qoq_pct": -5.5,
+            "yoy_pct": 18.8
+          },
+          {
+            "name": "ebitda",
+            "value": null,
+            "prev_q": null,
+            "prev_y": null,
+            "qoq_pct": null,
+            "yoy_pct": null
+          },
+          {
+            "name": "pbt",
+            "value": 2058.58,
+            "prev_q": 3480.43,
+            "prev_y": 1655.83,
+            "qoq_pct": -40.9,
+            "yoy_pct": 24.3
+          },
+          {
+            "name": "pat",
+            "value": 1501.38,
+            "prev_q": 2603.72,
+            "prev_y": 1237.98,
+            "qoq_pct": -42.3,
+            "yoy_pct": 21.3
+          }
+        ],
+        "margin_ebitda_pct": null,
+        "cross_check": {
+          "status": "match",
+          "note": null
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59654d86-af0c-4fe5-bfb9-1a148f65fd6c.pdf",
+          "page": 7
+        }
+      }
+    },
+    {
+      "id": "f993b851-e8a4-42c2-b791-341bb576eebc",
+      "symbol": "ULTRACEMCO",
+      "company_name": "UltraTech Cement Ltd",
+      "filed_at": "2026-10-19T13:57:39.937000+05:30",
+      "headline": "Relinquishment of position ad Non-Executive Vice Chairman of the company by Mr. K. K. Maheshwari.",
+      "so_what": "K. K. Maheshwari resigns as Non-Executive Vice Chairman from 01 Jan",
+      "category": "management_change",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.037,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a564754c-992e-4cb5-9e28-a5ae413e5654.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "management",
+        "person": "K. K. Maheshwari",
+        "role": "Non-Executive Vice Chairman",
+        "change": "resigned",
+        "background": [],
+        "links": [],
+        "effective": "2027-01-01",
+        "background_source": "none"
+      }
+    },
+    {
+      "id": "f9af6120-5da7-497d-82da-4444b74ef32a",
+      "symbol": "ULTRACEMCO",
+      "company_name": "UltraTech Cement Ltd",
+      "filed_at": "2026-10-19T13:50:19.440000+05:30",
+      "headline": "Changes in Board Composition",
+      "so_what": "K. K. Maheshwari resigns as Non-Executive Vice Chairman from 01 Jan",
+      "category": "management_change",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 0.023,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9e27e1c6-ecc1-4d9b-9c89-a91c58b61c03.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "management",
+        "person": "K. K. Maheshwari",
+        "role": "Non-Executive Vice Chairman",
+        "change": "resigned",
+        "background": [],
+        "links": [],
+        "effective": "2027-01-01",
+        "background_source": "none"
+      }
+    }
+  ],
+  "routine": {
+    "count": 13,
+    "by_category": {
+      "investor_meetings": 1,
+      "unclassified": 7,
+      "earnings_call": 2,
+      "results": 3
+    },
+    "items": [
+      {
+        "id": "1c0c85f6-07aa-4efe-a10a-44a9e9b36de2",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-11-11T17:02:23.470000+05:30",
+        "headline": "Intimation regarding Investor meet of UltraTech Cement Limited",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.65,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2b934e4e-121f-42d7-a2d0-d3eb4364b9a7.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "9959be11-addb-4146-bf38-daf6b9890e19",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-11-04T12:43:25.200000+05:30",
+        "headline": "Change in Corporate Office address of Registrar and Share Transfer Agent for correspondence",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9507ed32-6089-4c3f-9ac6-2890d914fd0e.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "2e41642a-dd4e-4b2c-a055-91e82e79348d",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-10-28T14:07:20.323000+05:30",
+        "headline": "Newspaper Advertisement reagrding loss of share certificate.",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c75d66a2-2ff2-4713-8320-c8353b38f190.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "e72a9cd2-4d8b-48c5-a092-4198876691eb",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-10-27T14:31:29.537000+05:30",
+        "headline": "Transcript of Q2 FY27 Earnings Call of UltraTech Cement Limited",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.04,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3892cb51-dbcd-43ad-955f-fe9fafe54003.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "a8b29386-6664-48e8-bdba-0494edd8d72a",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-10-26T18:46:24.480000+05:30",
+        "headline": "Corporate Dossier of UltraTech Cement Limited",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3508aa22-42c9-4ecf-85ab-d81352c06cb1.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "89f83f6d-7340-48e1-a9a4-0d09d9410598",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-10-22T14:32:12.963000+05:30",
+        "headline": "Newspaper Advertisement regarding loss of share certificate.",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4cbed3a2-b34b-4fbd-9a4b-9906c0684a48.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "0dd2230e-3094-4ac2-b4c8-1adf6f48df51",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-10-20T14:22:18.350000+05:30",
+        "headline": "Newspaper Advertisement of Financial Results of UltraTech Cement Limited",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.012,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e938d14b-77fa-42a2-a59e-3a5775ccc38e.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "3080e646-17c1-4869-9148-df59d885ca88",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-10-19T18:39:05.040000+05:30",
+        "headline": "Audio recording - Earnings Call",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.006,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c09c313d-8e45-40e3-aec3-c84052908538.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "110ecc5b-4943-4d59-b882-1bd59373731c",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-10-19T18:38:42.483000+05:30",
+        "headline": "Grant of Stock Options - UltraTech Cement Limited Employee Stock Option Scheme 2022",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/aea4ff0b-6660-431c-b0e2-b50f50b5d3d2.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "f1acb882-e39d-4800-900c-ace9b7af432e",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-10-19T17:40:26.410000+05:30",
+        "headline": "Regulation 30(11) of the SEBI (LODR) Regulations, 2015.",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5a68c935-685f-40b6-af4a-b28570baf371.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "b2010fea-3a72-45f1-8dd9-666f51b29f0e",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-10-19T14:07:14.953000+05:30",
+        "headline": "Investor Presentation for the quarter and half year ended 30th September, 2026.",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.009,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/abada049-22e4-4ac0-8c18-1ff1787555a7.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "0c1fb639-b000-49f4-b991-30f2649770bb",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-10-19T13:54:57.057000+05:30",
+        "headline": "Unaudited Financial Results for the quarter and half year ended 30th September, 2026.",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.009,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fcb67e56-9163-4653-ac79-5b9d36238d60.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "f1181090-8611-4544-a923-f26b96b08c7f",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-10-19T13:52:11.500000+05:30",
+        "headline": "Issuance of Corporate Guarantee",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/46ea80db-1a49-466a-9731-fafed9a90d23.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

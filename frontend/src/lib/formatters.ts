@@ -178,3 +178,9 @@ export function formatActual(
   return `Filed: ${formattedVal} (screener.in ${yr})`
 }
 
+
+/** Category id -> reader-facing label: 'm_and_a' -> 'M&A', 'fund_raise' -> 'fund raise'. */
+export function formatCategory(category: string): string {
+  if (category === 'm_and_a') return 'M&A'
+  return category.replace(/_/g, ' ')
+}

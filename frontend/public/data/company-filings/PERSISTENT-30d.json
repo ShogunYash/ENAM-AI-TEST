@@ -1,0 +1,428 @@
+{
+  "symbol": "PERSISTENT",
+  "name": "Persistent Systems",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T13:48:00.359614+05:30",
+    "end": "2026-11-13T13:48:00.359614+05:30"
+  },
+  "generated_at": "2026-11-13T13:48:00.359614+05:30",
+  "counts": {
+    "total": 22,
+    "rule_classified": 16,
+    "llm_classified": 6
+  },
+  "important": [
+    {
+      "id": "2f1814b6-221f-4151-83d3-dce3aa6fa2ac",
+      "symbol": "PERSISTENT",
+      "company_name": "Persistent Systems Ltd",
+      "filed_at": "2026-11-05T23:21:51.610000+05:30",
+      "headline": "The intimation of the allotment of Commercial Paper (CPs) dated November 5, 2026, is as enclosed.",
+      "so_what": "Allotted 12,000 commercial papers aggregating to INR 6 billion.",
+      "category": "fund_raise",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 1.036,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/73a8c540-4229-4137-8e2b-5aae04fa0a35.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Allotted 12,000 commercial papers aggregating to INR 6 billion."
+      }
+    },
+    {
+      "id": "5f5b780c-c4f7-43a4-96d4-02c2f3b1cb0e",
+      "symbol": "PERSISTENT",
+      "company_name": "Persistent Systems Ltd",
+      "filed_at": "2026-11-04T15:07:07.400000+05:30",
+      "headline": "The intimation of the allotment of Non-convertible Debentures dated November 4, 2026, is as enclosed.",
+      "so_what": "Approved allotment of 700,000 NCDs aggregating to INR 70 billion.",
+      "category": "fund_raise",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 0.76,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/258dfe1d-7ec3-4563-863f-330be44338eb.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Approved allotment of 700,000 NCDs aggregating to INR 70 billion."
+      }
+    },
+    {
+      "id": "9def2f80-68a4-4981-875d-5bab9b24ccef",
+      "symbol": "PERSISTENT",
+      "company_name": "Persistent Systems Ltd",
+      "filed_at": "2026-11-04T15:00:41.100000+05:30",
+      "headline": "The Outcome of the Special Committee Meeting held on November 4, 2026, for allotment of NCDs is as enclosed.",
+      "so_what": "Approved allotment of 700,000 NCDs aggregating to INR 70 billion.",
+      "category": "fund_raise",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 0.759,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e05f8c9-956c-4fbc-9e8e-3f6aa4694621.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Approved allotment of 700,000 NCDs aggregating to INR 70 billion."
+      }
+    },
+    {
+      "id": "2147983d-9115-4c12-8ce1-32024d8b1f39",
+      "symbol": "PERSISTENT",
+      "company_name": "Persistent Systems Ltd",
+      "filed_at": "2026-10-26T23:23:43.303000+05:30",
+      "headline": "The outcome of the Special Committee Meeting held on October 26, 2026, in relation to the allotment of shares is as enclosed.",
+      "so_what": null,
+      "category": "fund_raise",
+      "category_source": "llm",
+      "priority": "high",
+      "score": 0.18,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4491cbf4-b27c-45f2-a905-1220b80dec9c.pdf",
+      "price_reaction": null,
+      "enrichment": null
+    },
+    {
+      "id": "e4c168b5-0735-49cc-a030-f058d7ebc477",
+      "symbol": "PERSISTENT",
+      "company_name": "Persistent Systems Ltd",
+      "filed_at": "2026-10-26T23:29:31.787000+05:30",
+      "headline": "The disclosure of allotment of shares dated October 26, 2026, is as enclosed.",
+      "so_what": "Approved allotment of 7,683,981 shares for INR 42,646.09 million.",
+      "category": "fund_raise",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.18,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b633b6e5-f968-461c-b8f1-2ac155afc384.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Approved allotment of 7,683,981 shares for INR 42,646.09 million."
+      }
+    },
+    {
+      "id": "5f00980e-357d-40e2-a34d-2e8f104df277",
+      "symbol": "PERSISTENT",
+      "company_name": "Persistent Systems Ltd",
+      "filed_at": "2026-10-21T19:21:01.967000+05:30",
+      "headline": "The outcome of the Committee Meeting in relation to the QIP issue opening dated October 21, 2026, is as enclosed.",
+      "so_what": "Opened QIP issue on Oct 21, 2026, with a floor price of INR 5,550.",
+      "category": "fund_raise",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.055,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f7cde952-83d0-475d-b216-02af2204013a.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Opened QIP issue on Oct 21, 2026, with a floor price of INR 5,550."
+      }
+    },
+    {
+      "id": "3dbcfb55-1bb7-4987-a427-1be66b13b9de",
+      "symbol": "PERSISTENT",
+      "company_name": "Persistent Systems Ltd",
+      "filed_at": "2026-10-22T23:06:18.910000+05:30",
+      "headline": "The intimation regarding the receipt of Credit Rating from M/s. ICRA Limited, is as enclosed.",
+      "so_what": null,
+      "category": "credit_rating",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 0.034,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d500e04f-fe02-4b5c-923a-0275b18f6044.pdf",
+      "price_reaction": null,
+      "enrichment": null
+    },
+    {
+      "id": "ea10492d-a916-49a2-8c21-2438b7dad808",
+      "symbol": "PERSISTENT",
+      "company_name": "Persistent Systems Ltd",
+      "filed_at": "2026-10-21T20:52:55.087000+05:30",
+      "headline": "The Intimation regarding the receipt of Credit Rating from M/s. CRISIL Ratings Limited, is as enclosed.",
+      "so_what": "CRISIL assigned Crisil AA+ rating to proposed NCDs on Oct 21, 2026.",
+      "category": "credit_rating",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 0.026,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/439fef91-1dfa-4639-944f-eccbddfae1ff.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "CRISIL assigned Crisil AA+ rating to proposed NCDs on Oct 21, 2026."
+      }
+    },
+    {
+      "id": "8e79c896-5803-4f7e-a939-e6380086a31e",
+      "symbol": "PERSISTENT",
+      "company_name": "Persistent Systems Ltd",
+      "filed_at": "2026-10-15T16:05:16.027000+05:30",
+      "headline": "The outcome of the Board Meeting is as enclosed",
+      "so_what": "Q2 FY27: PAT −25%, Rev +30% YoY",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.017,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/65a6126a-e1b1-4c5b-a0d8-5b9648dc32b6.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 4663.9,
+            "prev_q": 4303.23,
+            "prev_y": 3580.72,
+            "qoq_pct": 8.4,
+            "yoy_pct": 30.3
+          },
+          {
+            "name": "ebitda",
+            "value": null,
+            "prev_q": null,
+            "prev_y": null,
+            "qoq_pct": null,
+            "yoy_pct": null
+          },
+          {
+            "name": "pbt",
+            "value": 453.68,
+            "prev_q": 623.1,
+            "prev_y": 616.83,
+            "qoq_pct": -27.2,
+            "yoy_pct": -26.4
+          },
+          {
+            "name": "pat",
+            "value": 351.51,
+            "prev_q": 483.04,
+            "prev_y": 471.47,
+            "qoq_pct": -27.2,
+            "yoy_pct": -25.4
+          }
+        ],
+        "margin_ebitda_pct": null,
+        "cross_check": {
+          "status": "match",
+          "note": null
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/65a6126a-e1b1-4c5b-a0d8-5b9648dc32b6.pdf",
+          "page": 19
+        }
+      }
+    },
+    {
+      "id": "ef085bc5-f876-4a36-8110-ada91aea4c11",
+      "symbol": "PERSISTENT",
+      "company_name": "Persistent Systems Ltd",
+      "filed_at": "2026-10-16T10:52:52.170000+05:30",
+      "headline": "The intimation of approval of the terms of NCD and CP issuance in as enclosed",
+      "so_what": "Persistent Systems approved NCD issuance up to INR 8,000 Crores.",
+      "category": "fund_raise",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 0.009,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/68fc3ccb-8531-4cde-b4c6-b612a3ea8718.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Persistent Systems approved NCD issuance up to INR 8,000 Crores."
+      }
+    }
+  ],
+  "routine": {
+    "count": 12,
+    "by_category": {
+      "unclassified": 7,
+      "earnings_call": 1,
+      "investor_meetings": 1,
+      "results": 2,
+      "press_release": 1
+    },
+    "items": [
+      {
+        "id": "4db0280f-72d0-493e-bbe5-7f64c848f71c",
+        "symbol": "PERSISTENT",
+        "company_name": "Persistent Systems Ltd",
+        "filed_at": "2026-10-26T19:28:42.710000+05:30",
+        "headline": "The outcome of the Special Committee Meeting held on October 26, 2026, is as enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d3ba2a8b-279a-4e0f-9ee8-c99ca501552b.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "cf7dff3e-65f6-4857-9129-8234b8197245",
+        "symbol": "PERSISTENT",
+        "company_name": "Persistent Systems Ltd",
+        "filed_at": "2026-10-23T20:45:10.390000+05:30",
+        "headline": "The Transcript of the investor/analyst call held on Thursday, October 15, 2026, is as enclosed.",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.017,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/524eadda-3966-4f4f-8888-bfaf2cb0d69e.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "5025e69b-c76d-417c-bc8f-43a172b48b48",
+        "symbol": "PERSISTENT",
+        "company_name": "Persistent Systems Ltd",
+        "filed_at": "2026-10-21T20:02:26.940000+05:30",
+        "headline": "The update on the Outcome of the Special Committee of the Board of Directors dated October 21, 2026, is as enclosed.",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/34d0f640-5c7b-4bfa-b042-6b4fbe63daa0.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "998906f5-4298-4498-8977-a63f685ad332",
+        "symbol": "PERSISTENT",
+        "company_name": "Persistent Systems Ltd",
+        "filed_at": "2026-10-21T19:17:49.400000+05:30",
+        "headline": "The outcome of the Committee Meeting held on October 21, 2026, is as enclosed.",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c4c190cd-e98b-41fe-add8-8a367bb3917b.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "07a5e3b2-0795-42c9-b0bb-f9154de9ca54",
+        "symbol": "PERSISTENT",
+        "company_name": "Persistent Systems Ltd",
+        "filed_at": "2026-10-16T22:32:07.103000+05:30",
+        "headline": "The newspaper publication dated October 16, 2026, is as enclosed.",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/87710a11-22c5-4ad7-80f8-57b4f726a01b.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "a56229ae-c9cc-4c63-9cb4-d20281687574",
+        "symbol": "PERSISTENT",
+        "company_name": "Persistent Systems Ltd",
+        "filed_at": "2026-10-16T10:47:11.523000+05:30",
+        "headline": "The outcome of the Special Committee meeting held on October 16, 2026, is as enclosed.",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4cbf9c00-c806-4272-80e2-b35583f0d919.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "4fc9232f-3186-4ae5-af7c-4159fd44e390",
+        "symbol": "PERSISTENT",
+        "company_name": "Persistent Systems Ltd",
+        "filed_at": "2026-10-15T21:16:04.503000+05:30",
+        "headline": "The intimation of Submission of the Outcome, Audio and Video Recording of the investor/analyst call held on Thursday, October 15, 2026 (IST), is as enclosed.",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.001,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/312baade-09ef-453c-b5ef-d4e3125d6a42.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "a68646d0-bc61-4f82-9b6e-1e49d3344946",
+        "symbol": "PERSISTENT",
+        "company_name": "Persistent Systems Ltd",
+        "filed_at": "2026-10-15T16:48:02.450000+05:30",
+        "headline": "The audited financial statements for the quarter and half year ended September 30, 2026, is as enclosed.",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.004,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b434e771-e1e4-44d8-ba0f-4a92c67031ac.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "5da9c5e9-76c1-4837-a6f5-910f871cf54b",
+        "symbol": "PERSISTENT",
+        "company_name": "Persistent Systems Ltd",
+        "filed_at": "2026-10-15T16:12:23.750000+05:30",
+        "headline": "The Press Release dated October 15, 2026, is as enclosed",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.004,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/166b7245-95f9-4dbd-85e2-ccdea03e53c0.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "356e9c74-a646-4703-9331-16bae2e5b67e",
+        "symbol": "PERSISTENT",
+        "company_name": "Persistent Systems Ltd",
+        "filed_at": "2026-10-15T16:08:34.663000+05:30",
+        "headline": "The fact sheet for the quarter and half year ended is as enclosed.",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.004,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/69eb4f2c-1eb5-4654-a500-c7bef33d2f19.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "8cffcf45-1cae-48e0-b764-4bc3926817dd",
+        "symbol": "PERSISTENT",
+        "company_name": "Persistent Systems Ltd",
+        "filed_at": "2026-10-15T15:55:42.367000+05:30",
+        "headline": "The outcome of the Board Meeting is as enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b34da17b-32f8-4d73-8f1a-803d6f561798.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "6b206d73-a52f-4427-98c1-d8eb113b60ec",
+        "symbol": "PERSISTENT",
+        "company_name": "Persistent Systems Ltd",
+        "filed_at": "2026-10-14T20:08:52.807000+05:30",
+        "headline": "The certificate under Regulation 74(5) of SEBI (DP) Regulations 2018 is as enclosed.",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/195ef251-f91a-49b2-9b7a-2aeba811e4ab.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

@@ -209,6 +209,299 @@
         }
       }
     },
+    "/digest/companies": {
+      "get": {
+        "summary": "Digest Companies",
+        "description": "By-company view of a window (the UI uses it for 30d, where one flat list is too much): one row per portfolio\ncompany with counts, material categories, its best headline and the latest price move.",
+        "operationId": "digest_companies_digest_companies_get",
+        "parameters": [
+          {
+            "name": "window",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "24h",
+                "3d",
+                "7d",
+                "30d",
+                "custom"
+              ],
+              "type": "string",
+              "default": "30d",
+              "title": "Window"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Required when window=custom",
+              "title": "Start"
+            },
+            "description": "Required when window=custom"
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Required when window=custom",
+              "title": "End"
+            },
+            "description": "Required when window=custom"
+          },
+          {
+            "name": "volume_multiple",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "default": 2.0,
+              "title": "Volume Multiple"
+            }
+          },
+          {
+            "name": "price_move_pct",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "default": 5.0,
+              "title": "Price Move Pct"
+            }
+          },
+          {
+            "name": "interests",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Comma-separated Category values to boost",
+              "title": "Interests"
+            },
+            "description": "Comma-separated Category values to boost"
+          },
+          {
+            "name": "muted",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Comma-separated Category values to hide",
+              "title": "Muted"
+            },
+            "description": "Comma-separated Category values to hide"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyList"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/digest/company/{symbol}": {
+      "get": {
+        "summary": "Digest Company",
+        "description": "Everything one company filed in the window, uncapped: important filings first, routine ones collapsed.",
+        "operationId": "digest_company_digest_company__symbol__get",
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Symbol"
+            }
+          },
+          {
+            "name": "window",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "24h",
+                "3d",
+                "7d",
+                "30d",
+                "custom"
+              ],
+              "type": "string",
+              "default": "30d",
+              "title": "Window"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Required when window=custom",
+              "title": "Start"
+            },
+            "description": "Required when window=custom"
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Required when window=custom",
+              "title": "End"
+            },
+            "description": "Required when window=custom"
+          },
+          {
+            "name": "volume_multiple",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "default": 2.0,
+              "title": "Volume Multiple"
+            }
+          },
+          {
+            "name": "price_move_pct",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "default": 5.0,
+              "title": "Price Move Pct"
+            }
+          },
+          {
+            "name": "interests",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Comma-separated Category values to boost",
+              "title": "Interests"
+            },
+            "description": "Comma-separated Category values to boost"
+          },
+          {
+            "name": "muted",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Comma-separated Category values to hide",
+              "title": "Muted"
+            },
+            "description": "Comma-separated Category values to hide"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyFilings"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/filings/{filing_id}": {
       "get": {
         "summary": "Filing",
@@ -823,6 +1116,159 @@
           "in_portfolio"
         ],
         "title": "Company"
+      },
+      "CompanyFilings": {
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "title": "Symbol"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "window": {
+            "$ref": "#/components/schemas/DigestWindow"
+          },
+          "generated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Generated At"
+          },
+          "counts": {
+            "$ref": "#/components/schemas/DigestCounts"
+          },
+          "important": {
+            "items": {
+              "$ref": "#/components/schemas/Filing"
+            },
+            "type": "array",
+            "title": "Important",
+            "description": "High/medium priority, best first"
+          },
+          "routine": {
+            "$ref": "#/components/schemas/RoutineGroup",
+            "description": "Low/hidden priority and muted categories, collapsed in the UI"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "symbol",
+          "name",
+          "window",
+          "generated_at",
+          "counts",
+          "important",
+          "routine"
+        ],
+        "title": "CompanyFilings",
+        "description": "Everything one company filed in the window, uncapped (the Digest lists are capped, this is not)."
+      },
+      "CompanyList": {
+        "properties": {
+          "window": {
+            "$ref": "#/components/schemas/DigestWindow"
+          },
+          "generated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Generated At"
+          },
+          "companies": {
+            "items": {
+              "$ref": "#/components/schemas/CompanySummary"
+            },
+            "type": "array",
+            "title": "Companies",
+            "description": "Every portfolio company, most important first"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "window",
+          "generated_at",
+          "companies"
+        ],
+        "title": "CompanyList"
+      },
+      "CompanySummary": {
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "title": "Symbol"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "sector": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sector"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total",
+            "description": "Filings in the window"
+          },
+          "material": {
+            "type": "integer",
+            "title": "Material",
+            "description": "High/medium-priority filings in the window, muted categories excluded"
+          },
+          "categories": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Categories",
+            "description": "Material filings per category, e.g. {'results': 1, 'fund_raise': 3}"
+          },
+          "top": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Filing"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The highest-scoring non-muted filing (headline shown on the row), else null"
+          },
+          "price": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PriceReaction"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Latest session move: pct_1d and volume ratio"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "symbol",
+          "name",
+          "sector",
+          "total",
+          "material",
+          "categories",
+          "top",
+          "price"
+        ],
+        "title": "CompanySummary",
+        "description": "One row of the by-company view (used for the 30-day window, where one flat list is too much)."
       },
       "CrossCheck": {
         "properties": {

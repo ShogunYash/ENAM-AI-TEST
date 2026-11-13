@@ -41,6 +41,8 @@ Base URL: `VITE_API_BASE` (the Render URL in production, `http://localhost:8000`
 | `GET /prices` | `PriceSnapshot[]` | — | `prices.json` |
 | `GET /digest` | `Digest` | `window` (default `24h`); `start`, `end` (required if `custom`); `volume_multiple`, `price_move_pct`; `interests`, `muted` (comma-separated `Category`) | `digest-24h.json`, `digest-3d.json` |
 | `GET /filings/{id}` | `Filing` | — (the enrichment is computed lazily and cached) | `filing-results.json`, `filing-management.json`, `filing-oneliner.json` |
+| `GET /digest/companies` | `CompanyList` | `window` (default `30d`) + the same threshold/interest params as `/digest` | `company-list.json` |
+| `GET /digest/company/{symbol}` | `CompanyFilings` | `window` (default `30d`), same params | `company-filings.json` |
 | `GET /alerts` | `Alert[]` | `volume_multiple`, `price_move_pct` | `alerts.json` |
 | `GET /research/{symbol}` | `Research` | — | `research-INFY.json` (ready), `research-building.json` |
 | `GET /stats/llm` | `LlmStats` | — | `stats.json` |
@@ -75,6 +77,8 @@ meta.json            SnapshotMeta {as_of, portfolio_size, research_symbols}
 companies.json       Company[]
 prices.json          PriceSnapshot[]
 digest-24h.json      Digest      (also digest-3d.json, digest-7d.json, digest-30d.json)
+digest-companies-30d.json   CompanyList      (by-company view of the 30-day window)
+company-filings/{SYM}-30d.json  CompanyFilings  (one per portfolio company, uncapped)
 filings/{id}.json    Filing      (enriched filings only)
 research/{SYM}.json  Research    (pre-seeded research names)
 stats.json           LlmStats
@@ -82,6 +86,7 @@ stats.json           LlmStats
 Until B6 exists, seed the folder by copying `docs/examples/`.
 
 ## Changelog
+- 2026-11-13: by-company view for the 30-day window (additive). `GET /digest/companies?window=` -> `CompanyList` (one `CompanySummary` per portfolio company: total, material, categories, best headline `top`, latest `price`), and `GET /digest/company/{symbol}?window=` -> `CompanyFilings` (that company's filings, UNCAPPED: `important` best-first + collapsed `routine`). The flat `/digest` caps its lists (5 / 80), so it cannot show a full 30 days per stock. Snapshot gains `digest-companies-30d.json` and `company-filings/{SYM}-30d.json`. UI: 24h / 3d / 7d keep the ranked list; 30d shows the company list, tap -> that company's headlines.
 - 2026-11-13: `POST /ask` is real. `AskResponse.answerable` (additive, default true). Context `filing` -> answers from the filing card + first PDF pages; `research` -> from the cached report. Every `claims[].sources[]` quote is server-verified; every figure in `answer` already exists in the evidence; otherwise `answerable:false` with a plain sentence (also when no model is reachable). Frontend: show claims' quotes under the answer, and render `answerable:false` as a neutral "FINN can't answer that from this document" state, not an error.
 - 2026-11-12: `Health.mode: "live"|"mock"` (default live), additive. `mock` = the API is serving illustrative fixtures because it has no ingested database. Frontend: show LIVE only when `mode=="live"`; otherwise show DEMO DATA. (Found when a worktree backend without a database answered and the UI labelled mock data LIVE.)
 - 2026-11-12: `WindowLabel` gains `30d` (additive) and the snapshot gains `digest-30d.json`: results season ends ~10 days before the demo, so the 7-day view shows few results cards. Frontend: add a 30d chip to the window picker.

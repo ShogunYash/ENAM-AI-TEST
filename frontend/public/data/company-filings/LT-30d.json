@@ -1,0 +1,323 @@
+{
+  "symbol": "LT",
+  "name": "Larsen & Toubro",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T13:48:00.359614+05:30",
+    "end": "2026-11-13T13:48:00.359614+05:30"
+  },
+  "generated_at": "2026-11-13T13:48:00.359614+05:30",
+  "counts": {
+    "total": 16,
+    "rule_classified": 13,
+    "llm_classified": 3
+  },
+  "important": [
+    {
+      "id": "e37c5322-e4c3-4831-b3c6-48d5930f6d19",
+      "symbol": "LT",
+      "company_name": "Larsen & Toubro Ltd",
+      "filed_at": "2026-10-31T12:49:28.357000+05:30",
+      "headline": "Update on Business Transfer Agreement with Vyoma.AI Limited (Vyoma), Wholly owned Subsidiary of the Company and Share Purchase Agreement towards sale of entire stake held in L&T Network ....",
+      "so_what": "L&T extended the sale of L&T Network Services to March 31, 2027.",
+      "category": "m_and_a",
+      "category_source": "llm",
+      "priority": "high",
+      "score": 0.59,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/13e50739-50e7-4b5a-8dba-ac92ece6d35f.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "L&T extended the sale of L&T Network Services to March 31, 2027."
+      }
+    },
+    {
+      "id": "84f672d2-60a7-4cef-adec-3711a9c76668",
+      "symbol": "LT",
+      "company_name": "Larsen & Toubro Ltd",
+      "filed_at": "2026-10-27T17:23:45.827000+05:30",
+      "headline": "Outcome of Board Meeting of Larsen & Toubro Limited held on October 27,2026",
+      "so_what": "Q2 FY27: PAT +27%, Rev +16% YoY · EBITDA margin 8.7%",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.275,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/be28659d-c65e-4500-917e-02ef891caee6.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 78749.94,
+            "prev_q": 67941.74,
+            "prev_y": 67983.53,
+            "qoq_pct": 15.9,
+            "yoy_pct": 15.8
+          },
+          {
+            "name": "ebitda",
+            "value": 6844.65,
+            "prev_q": 6116.48,
+            "prev_y": 6806.41,
+            "qoq_pct": 11.9,
+            "yoy_pct": 0.6
+          },
+          {
+            "name": "pbt",
+            "value": 7641.06,
+            "prev_q": 6922.26,
+            "prev_y": 6336.11,
+            "qoq_pct": 10.4,
+            "yoy_pct": 20.6
+          },
+          {
+            "name": "pat",
+            "value": 5949.15,
+            "prev_q": 4988.03,
+            "prev_y": 4678.01,
+            "qoq_pct": 19.3,
+            "yoy_pct": 27.2
+          }
+        ],
+        "margin_ebitda_pct": 8.7,
+        "cross_check": {
+          "status": "match",
+          "note": null
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/be28659d-c65e-4500-917e-02ef891caee6.pdf",
+          "page": 11
+        }
+      }
+    },
+    {
+      "id": "a696c982-b6cc-4d41-9fe9-ef50f17b2a0f",
+      "symbol": "LT",
+      "company_name": "Larsen & Toubro Ltd",
+      "filed_at": "2026-10-27T13:26:54.687000+05:30",
+      "headline": "Allotment of Shares",
+      "so_what": "L&T approved the allotment of 21,098 equity shares on Oct 27, 2026.",
+      "category": "fund_raise",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.206,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6e5c35b1-1012-4947-bf92-558cefc37ca6.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "L&T approved the allotment of 21,098 equity shares on Oct 27, 2026."
+      }
+    }
+  ],
+  "routine": {
+    "count": 13,
+    "by_category": {
+      "press_release": 5,
+      "investor_meetings": 2,
+      "unclassified": 2,
+      "earnings_call": 2,
+      "results": 2
+    },
+    "items": [
+      {
+        "id": "64936a52-eff1-44b5-8d2c-7b6f402261a2",
+        "symbol": "LT",
+        "company_name": "Larsen & Toubro Ltd",
+        "filed_at": "2026-11-09T10:35:44.513000+05:30",
+        "headline": "L&T bags (Significant*) order from Noida Metro for Aqua Line Extension",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 1.154,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8269aea9-54c0-4a24-a615-6dda0ab8f054.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "bfd899f9-9048-4d86-8a91-b9d2008f2b83",
+        "symbol": "LT",
+        "company_name": "Larsen & Toubro Ltd",
+        "filed_at": "2026-11-06T15:33:17.957000+05:30",
+        "headline": "Schedule of Analyst / Institutional Investors'' Meet",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.202,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9e23e65f-ffbd-4e61-be8c-a57227966831.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "ea811131-d45a-40ed-8e27-324c46e3e413",
+        "symbol": "LT",
+        "company_name": "Larsen & Toubro Ltd",
+        "filed_at": "2026-11-04T18:48:07.340000+05:30",
+        "headline": "Change in Corporate office Address of Registrar and Share Transfer Agent",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1a1e858a-92de-4d39-9433-a8d3d62ccd22.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "4af229f2-39ef-4980-a1a7-c3e0a1a49c84",
+        "symbol": "LT",
+        "company_name": "Larsen & Toubro Ltd",
+        "filed_at": "2026-11-02T17:53:21.997000+05:30",
+        "headline": "Transcript of Q2/ H1 FY27 Earnings Call",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.164,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d8a69245-c1f1-4bc3-a7c9-9dbc5795aae8.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "833e55a7-6c4c-498a-b036-5aba03db10d8",
+        "symbol": "LT",
+        "company_name": "Larsen & Toubro Ltd",
+        "filed_at": "2026-11-02T10:16:54.810000+05:30",
+        "headline": "L&T Wins Orders (Significant*) for Residential, Commercial Buildings & Factories Business",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.228,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/86cb66bf-7e97-4d77-a803-40ae7750d8f2.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "1e7845ea-ba96-4134-9226-e5b2379f88c9",
+        "symbol": "LT",
+        "company_name": "Larsen & Toubro Ltd",
+        "filed_at": "2026-10-28T19:44:03.750000+05:30",
+        "headline": "Intimation to Stock Exchanges regarding publication of Financial Results in Newspapers",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.079,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/498df898-abfc-4569-b288-56622aa74bef.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "19d277c1-25e8-493a-9f8d-be8df0f3b012",
+        "symbol": "LT",
+        "company_name": "Larsen & Toubro Ltd",
+        "filed_at": "2026-10-27T22:09:20.433000+05:30",
+        "headline": "Audio recording of Q2 / H1 FY 27 Earning Call",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.043,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0e4c11c6-4c96-42c0-ac94-b2cb928c4f4f.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "a73ed781-aabf-4244-bf6c-c44c2668e94f",
+        "symbol": "LT",
+        "company_name": "Larsen & Toubro Ltd",
+        "filed_at": "2026-10-27T18:33:55.297000+05:30",
+        "headline": "Analyst Presentation - Q2 / H1 FY27",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.062,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4c027e30-6b95-4915-9843-bd4e4c437bb1.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "ff19303b-925a-4392-9219-6125d7ea71f7",
+        "symbol": "LT",
+        "company_name": "Larsen & Toubro Ltd",
+        "filed_at": "2026-10-27T17:14:57.130000+05:30",
+        "headline": "Outcome of Board Meeting of Larsen & Toubro Limited held on October 27, 2026",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e0efae36-4554-4d02-8938-9a63b303f9c3.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "23b4e4f8-3d8b-4f89-a385-4bc94ffbf939",
+        "symbol": "LT",
+        "company_name": "Larsen & Toubro Ltd",
+        "filed_at": "2026-10-27T10:14:11.920000+05:30",
+        "headline": "L&T Wins Orders (Major*) for Dhaka Metro",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.057,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/115618e0-f718-4b8b-81e1-642618cbe608.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "aa2ff20b-8cd0-4341-bc00-987cf8b20788",
+        "symbol": "LT",
+        "company_name": "Larsen & Toubro Ltd",
+        "filed_at": "2026-10-21T09:45:02.467000+05:30",
+        "headline": "L&T Wins Orders (Large*) in New Delhi and Andhra Pradesh",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.014,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/42761949-c90f-4c0c-8fad-6d79416f15d2.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "8a57b0a9-8570-41ad-90a3-970cbc391c7b",
+        "symbol": "LT",
+        "company_name": "Larsen & Toubro Ltd",
+        "filed_at": "2026-10-19T10:13:18.670000+05:30",
+        "headline": "L&T Commences Initial Activities for New Tashkent International Airport (Ultra-mega*) Project",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.009,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3f057a04-479c-4785-9250-f18c7d1ad88a.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "aca9a93b-4d2b-4922-a053-6d58155669e9",
+        "symbol": "LT",
+        "company_name": "Larsen & Toubro Ltd",
+        "filed_at": "2026-10-16T16:52:23.523000+05:30",
+        "headline": "Schedule of Analyst / Institutional Investors'' Meet",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.002,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/821c9264-499f-4c19-a55c-233ed13d8e11.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

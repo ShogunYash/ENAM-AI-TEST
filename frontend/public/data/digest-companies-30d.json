@@ -1,0 +1,1079 @@
+{
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T13:48:00.359614+05:30",
+    "end": "2026-11-13T13:48:00.359614+05:30"
+  },
+  "generated_at": "2026-11-13T13:48:00.359614+05:30",
+  "companies": [
+    {
+      "symbol": "BAJFINANCE",
+      "name": "Bajaj Finance",
+      "sector": "Consumer lending",
+      "total": 20,
+      "material": 9,
+      "categories": {
+        "fund_raise": 7,
+        "management_change": 1,
+        "results": 1
+      },
+      "top": {
+        "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
+        "symbol": "BAJFINANCE",
+        "company_name": "Bajaj Finance Ltd",
+        "filed_at": "2026-11-11T17:06:59.713000+05:30",
+        "headline": "Outcome of QIP 2026 - Special Committee Meeting",
+        "so_what": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price.",
+        "category": "fund_raise",
+        "category_source": "rule",
+        "priority": "high",
+        "score": 6.829,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "oneliner",
+          "text": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price."
+        }
+      },
+      "price": {
+        "pct_1d": 1.31,
+        "vol_ratio": 0.96
+      }
+    },
+    {
+      "symbol": "TATASTEEL",
+      "name": "Tata Steel",
+      "sector": "Steel",
+      "total": 18,
+      "material": 7,
+      "categories": {
+        "m_and_a": 5,
+        "management_change": 1,
+        "results": 1
+      },
+      "top": {
+        "id": "4f4ea23c-0c48-4420-a9bc-7e963dd8cefe",
+        "symbol": "TATASTEEL",
+        "company_name": "Tata Steel Ltd",
+        "filed_at": "2026-11-07T13:19:15.060000+05:30",
+        "headline": "Financial Results for quarter and half year ended September 30, 2026",
+        "so_what": "Q2 FY27: PAT +16%, Rev +12% YoY · EBITDA margin 16.8%",
+        "category": "results",
+        "category_source": "rule",
+        "priority": "high",
+        "score": 3.359,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2e7c8bf8-d794-4a55-b670-97951b28e0e8.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "results",
+          "period": "Q2 FY27",
+          "basis": "consolidated",
+          "unit": "INR_CR",
+          "metrics": [
+            {
+              "name": "revenue",
+              "value": 65436.24,
+              "prev_q": 60794.29,
+              "prev_y": 58689.29,
+              "qoq_pct": 7.6,
+              "yoy_pct": 11.5
+            },
+            {
+              "name": "ebitda",
+              "value": 10994.02,
+              "prev_q": 9015.01,
+              "prev_y": 8526.88,
+              "qoq_pct": 22.0,
+              "yoy_pct": 28.9
+            },
+            {
+              "name": "pbt",
+              "value": 5455.15,
+              "prev_q": 3837.53,
+              "prev_y": 4222.47,
+              "qoq_pct": 42.2,
+              "yoy_pct": 29.2
+            },
+            {
+              "name": "pat",
+              "value": 3699.59,
+              "prev_q": 2385.24,
+              "prev_y": 3183.09,
+              "qoq_pct": 55.1,
+              "yoy_pct": 16.2
+            }
+          ],
+          "margin_ebitda_pct": 16.8,
+          "cross_check": {
+            "status": "match",
+            "note": null
+          },
+          "source": {
+            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2e7c8bf8-d794-4a55-b670-97951b28e0e8.pdf",
+            "page": 15
+          }
+        }
+      },
+      "price": {
+        "pct_1d": 2.4,
+        "vol_ratio": 1.4
+      }
+    },
+    {
+      "symbol": "TITAN",
+      "name": "Titan Company",
+      "sector": "Jewellery and retail",
+      "total": 18,
+      "material": 3,
+      "categories": {
+        "management_change": 1,
+        "results": 1,
+        "m_and_a": 1
+      },
+      "top": {
+        "id": "ee6123a8-c373-465b-9347-34adbc250091",
+        "symbol": "TITAN",
+        "company_name": "Titan Company Ltd",
+        "filed_at": "2026-11-05T17:02:10.910000+05:30",
+        "headline": "Outcome of the Board Meeting",
+        "so_what": "Q2 FY27: PAT +114%, Rev +10% YoY · EBITDA margin 17.7%",
+        "category": "results",
+        "category_source": "rule",
+        "priority": "high",
+        "score": 2.193,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/86009cba-ca03-4d35-bad8-b1988cfcff13.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "results",
+          "period": "Q2 FY27",
+          "basis": "consolidated",
+          "unit": "INR_CR",
+          "metrics": [
+            {
+              "name": "revenue",
+              "value": 20614.0,
+              "prev_q": 21356.0,
+              "prev_y": 18725.0,
+              "qoq_pct": -3.5,
+              "yoy_pct": 10.1
+            },
+            {
+              "name": "ebitda",
+              "value": 3654.0,
+              "prev_q": 2892.0,
+              "prev_y": 1876.0,
+              "qoq_pct": 26.3,
+              "yoy_pct": 94.8
+            },
+            {
+              "name": "pbt",
+              "value": 3000.0,
+              "prev_q": 2429.0,
+              "prev_y": 1522.0,
+              "qoq_pct": 23.5,
+              "yoy_pct": 97.1
+            },
+            {
+              "name": "pat",
+              "value": 2393.0,
+              "prev_q": 1777.0,
+              "prev_y": 1120.0,
+              "qoq_pct": 34.7,
+              "yoy_pct": 113.7
+            }
+          ],
+          "margin_ebitda_pct": 17.7,
+          "cross_check": {
+            "status": "match",
+            "note": null
+          },
+          "source": {
+            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/86009cba-ca03-4d35-bad8-b1988cfcff13.pdf",
+            "page": 10
+          }
+        }
+      },
+      "price": {
+        "pct_1d": -0.7,
+        "vol_ratio": 1.93
+      }
+    },
+    {
+      "symbol": "ASTRAL",
+      "name": "Astral",
+      "sector": "Building products",
+      "total": 13,
+      "material": 3,
+      "categories": {
+        "management_change": 1,
+        "results": 1,
+        "litigation": 1
+      },
+      "top": {
+        "id": "36ba38f5-dc7d-4c34-8fc5-a032e67b24a0",
+        "symbol": "ASTRAL",
+        "company_name": "Astral Ltd",
+        "filed_at": "2026-11-05T16:22:52.253000+05:30",
+        "headline": "Financial result for the Quarter and Half Year ended 30th September, 2026",
+        "so_what": "Q2 FY27: PAT −6%, Rev +26% YoY",
+        "category": "results",
+        "category_source": "rule",
+        "priority": "high",
+        "score": 2.18,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a39f8b72-303f-42a4-8750-f413346bd742.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "results",
+          "period": "Q2 FY27",
+          "basis": "consolidated",
+          "unit": "INR_CR",
+          "metrics": [
+            {
+              "name": "revenue",
+              "value": 1988.3,
+              "prev_q": 1578.0,
+              "prev_y": 1577.4,
+              "qoq_pct": 26.0,
+              "yoy_pct": 26.0
+            },
+            {
+              "name": "ebitda",
+              "value": null,
+              "prev_q": null,
+              "prev_y": null,
+              "qoq_pct": null,
+              "yoy_pct": null
+            },
+            {
+              "name": "pbt",
+              "value": 171.9,
+              "prev_q": 162.8,
+              "prev_y": 179.9,
+              "qoq_pct": 5.6,
+              "yoy_pct": -4.4
+            },
+            {
+              "name": "pat",
+              "value": 127.3,
+              "prev_q": 120.2,
+              "prev_y": 134.8,
+              "qoq_pct": 5.9,
+              "yoy_pct": -5.6
+            }
+          ],
+          "margin_ebitda_pct": null,
+          "cross_check": {
+            "status": "match",
+            "note": null
+          },
+          "source": {
+            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a39f8b72-303f-42a4-8750-f413346bd742.pdf",
+            "page": 12
+          }
+        }
+      },
+      "price": {
+        "pct_1d": 0.25,
+        "vol_ratio": 1.09
+      }
+    },
+    {
+      "symbol": "FINEORG",
+      "name": "Fine Organic Industries",
+      "sector": "Specialty chemicals",
+      "total": 9,
+      "material": 3,
+      "categories": {
+        "litigation": 1,
+        "results": 1,
+        "m_and_a": 1
+      },
+      "top": {
+        "id": "98d6a02a-dd08-44ac-9686-48d4b9a70b6d",
+        "symbol": "FINEORG",
+        "company_name": "Fine Organic Industries Ltd",
+        "filed_at": "2026-11-06T16:05:07.413000+05:30",
+        "headline": "Conclusion of Search proceedings initiated by Maharashtra Goods and Services Tax Department",
+        "so_what": "Company paid Rs 5,00,47,594 tax and interest after search concluded.",
+        "category": "litigation",
+        "category_source": "llm",
+        "priority": "medium",
+        "score": 1.826,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/53496491-fd25-4172-9f9f-79bf088ea9c5.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "oneliner",
+          "text": "Company paid Rs 5,00,47,594 tax and interest after search concluded."
+        }
+      },
+      "price": {
+        "pct_1d": 0.39,
+        "vol_ratio": 0.53
+      }
+    },
+    {
+      "symbol": "CERA",
+      "name": "Cera Sanitaryware",
+      "sector": "Sanitaryware",
+      "total": 11,
+      "material": 2,
+      "categories": {
+        "management_change": 1,
+        "results": 1
+      },
+      "top": {
+        "id": "a445bb91-cef9-4586-b4c7-3b11993371a2",
+        "symbol": "CERA",
+        "company_name": "Cera Sanitaryware Ltd",
+        "filed_at": "2026-11-04T12:28:41.470000+05:30",
+        "headline": "Unaudited Financial Results for the Quarter and Half year ended 30th September, 2026",
+        "so_what": "Q2 FY27: PAT −1%, Rev +27% YoY · EBITDA margin 12.2%",
+        "category": "results",
+        "category_source": "rule",
+        "priority": "high",
+        "score": 1.666,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/96d3143f-2c3f-4cdb-a811-869e422ac1ab.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "results",
+          "period": "Q2 FY27",
+          "basis": "standalone",
+          "unit": "INR_CR",
+          "metrics": [
+            {
+              "name": "revenue",
+              "value": 602.96,
+              "prev_q": 485.98,
+              "prev_y": 473.41,
+              "qoq_pct": 24.1,
+              "yoy_pct": 27.4
+            },
+            {
+              "name": "ebitda",
+              "value": 73.27,
+              "prev_q": 49.22,
+              "prev_y": 67.14,
+              "qoq_pct": 48.9,
+              "yoy_pct": 9.1
+            },
+            {
+              "name": "pbt",
+              "value": 73.02,
+              "prev_q": 59.81,
+              "prev_y": 72.23,
+              "qoq_pct": 22.1,
+              "yoy_pct": 1.1
+            },
+            {
+              "name": "pat",
+              "value": 56.14,
+              "prev_q": 45.31,
+              "prev_y": 56.65,
+              "qoq_pct": 23.9,
+              "yoy_pct": -0.9
+            }
+          ],
+          "margin_ebitda_pct": 12.2,
+          "cross_check": {
+            "status": "match",
+            "note": null
+          },
+          "source": {
+            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/96d3143f-2c3f-4cdb-a811-869e422ac1ab.pdf",
+            "page": 2
+          }
+        }
+      },
+      "price": {
+        "pct_1d": 3.35,
+        "vol_ratio": 1.55
+      }
+    },
+    {
+      "symbol": "PERSISTENT",
+      "name": "Persistent Systems",
+      "sector": "IT services",
+      "total": 22,
+      "material": 10,
+      "categories": {
+        "fund_raise": 7,
+        "credit_rating": 2,
+        "results": 1
+      },
+      "top": {
+        "id": "2f1814b6-221f-4151-83d3-dce3aa6fa2ac",
+        "symbol": "PERSISTENT",
+        "company_name": "Persistent Systems Ltd",
+        "filed_at": "2026-11-05T23:21:51.610000+05:30",
+        "headline": "The intimation of the allotment of Commercial Paper (CPs) dated November 5, 2026, is as enclosed.",
+        "so_what": "Allotted 12,000 commercial papers aggregating to INR 6 billion.",
+        "category": "fund_raise",
+        "category_source": "rule",
+        "priority": "medium",
+        "score": 1.036,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/73a8c540-4229-4137-8e2b-5aae04fa0a35.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "oneliner",
+          "text": "Allotted 12,000 commercial papers aggregating to INR 6 billion."
+        }
+      },
+      "price": {
+        "pct_1d": -1.1,
+        "vol_ratio": 0.53
+      }
+    },
+    {
+      "symbol": "LT",
+      "name": "Larsen & Toubro",
+      "sector": "Engineering and construction",
+      "total": 16,
+      "material": 3,
+      "categories": {
+        "m_and_a": 1,
+        "results": 1,
+        "fund_raise": 1
+      },
+      "top": {
+        "id": "e37c5322-e4c3-4831-b3c6-48d5930f6d19",
+        "symbol": "LT",
+        "company_name": "Larsen & Toubro Ltd",
+        "filed_at": "2026-10-31T12:49:28.357000+05:30",
+        "headline": "Update on Business Transfer Agreement with Vyoma.AI Limited (Vyoma), Wholly owned Subsidiary of the Company and Share Purchase Agreement towards sale of entire stake held in L&T Network ....",
+        "so_what": "L&T extended the sale of L&T Network Services to March 31, 2027.",
+        "category": "m_and_a",
+        "category_source": "llm",
+        "priority": "high",
+        "score": 0.59,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/13e50739-50e7-4b5a-8dba-ac92ece6d35f.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "oneliner",
+          "text": "L&T extended the sale of L&T Network Services to March 31, 2027."
+        }
+      },
+      "price": {
+        "pct_1d": 0.65,
+        "vol_ratio": 1.18
+      }
+    },
+    {
+      "symbol": "RELIANCE",
+      "name": "Reliance Industries",
+      "sector": "Energy and diversified businesses",
+      "total": 20,
+      "material": 6,
+      "categories": {
+        "results": 1,
+        "m_and_a": 1,
+        "fund_raise": 4
+      },
+      "top": {
+        "id": "3d90a81b-52f2-427a-b1f7-27f545cf1ca5",
+        "symbol": "RELIANCE",
+        "company_name": "Reliance Industries Ltd",
+        "filed_at": "2026-10-30T19:42:49.917000+05:30",
+        "headline": "Please find attached Unaudited Financial Results (Consolidated and Standalone) for the quarter and half year ended September 30, 2026",
+        "so_what": "Q2 FY27: PAT +34%, Rev +29% YoY · EBITDA margin 17.0%",
+        "category": "results",
+        "category_source": "rule",
+        "priority": "high",
+        "score": 0.563,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/880087f6-7ecc-40a9-8cac-de48d4616b25.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "results",
+          "period": "Q2 FY27",
+          "basis": "consolidated",
+          "unit": "INR_CR",
+          "metrics": [
+            {
+              "name": "revenue",
+              "value": 332861.0,
+              "prev_q": 311850.0,
+              "prev_y": 258898.0,
+              "qoq_pct": 6.7,
+              "yoy_pct": 28.6
+            },
+            {
+              "name": "ebitda",
+              "value": 56616.0,
+              "prev_q": 47517.0,
+              "prev_y": 45885.0,
+              "qoq_pct": 19.1,
+              "yoy_pct": 23.4
+            },
+            {
+              "name": "pbt",
+              "value": 38613.0,
+              "prev_q": 30630.0,
+              "prev_y": 29124.0,
+              "qoq_pct": 26.1,
+              "yoy_pct": 32.6
+            },
+            {
+              "name": "pat",
+              "value": 29550.0,
+              "prev_q": 23196.0,
+              "prev_y": 22092.0,
+              "qoq_pct": 27.4,
+              "yoy_pct": 33.8
+            }
+          ],
+          "margin_ebitda_pct": 17.0,
+          "cross_check": {
+            "status": "match",
+            "note": null
+          },
+          "source": {
+            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/880087f6-7ecc-40a9-8cac-de48d4616b25.pdf",
+            "page": 10
+          }
+        }
+      },
+      "price": {
+        "pct_1d": 0.83,
+        "vol_ratio": 0.82
+      }
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "name": "Sun Pharmaceutical Industries",
+      "sector": "Pharmaceuticals",
+      "total": 16,
+      "material": 2,
+      "categories": {
+        "results": 1,
+        "fund_raise": 1
+      },
+      "top": {
+        "id": "7bbcaf67-e404-4ffb-b7fd-07ff385fdb0a",
+        "symbol": "SUNPHARMA",
+        "company_name": "Sun Pharmaceutical Industries Ltd",
+        "filed_at": "2026-10-30T14:14:55.960000+05:30",
+        "headline": "Unaudited Financial Results for the quarter and half year ended 30 September 2026",
+        "so_what": "Q2 FY27: PAT −36%, Rev +12% YoY",
+        "category": "results",
+        "category_source": "rule",
+        "priority": "high",
+        "score": 0.534,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/658231ad-7203-4355-be99-2a162b722c0c.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "results",
+          "period": "Q2 FY27",
+          "basis": "consolidated",
+          "unit": "INR_CR",
+          "metrics": [
+            {
+              "name": "revenue",
+              "value": 16198.71,
+              "prev_q": 15299.88,
+              "prev_y": 14478.31,
+              "qoq_pct": 5.9,
+              "yoy_pct": 11.9
+            },
+            {
+              "name": "ebitda",
+              "value": null,
+              "prev_q": null,
+              "prev_y": null,
+              "qoq_pct": null,
+              "yoy_pct": null
+            },
+            {
+              "name": "pbt",
+              "value": 3159.37,
+              "prev_q": 4098.81,
+              "prev_y": 4167.61,
+              "qoq_pct": -22.9,
+              "yoy_pct": -24.2
+            },
+            {
+              "name": "pat",
+              "value": 1988.53,
+              "prev_q": 2894.79,
+              "prev_y": 3117.95,
+              "qoq_pct": -31.3,
+              "yoy_pct": -36.2
+            }
+          ],
+          "margin_ebitda_pct": null,
+          "cross_check": {
+            "status": "match",
+            "note": null
+          },
+          "source": {
+            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/658231ad-7203-4355-be99-2a162b722c0c.pdf",
+            "page": 12
+          }
+        }
+      },
+      "price": {
+        "pct_1d": -0.12,
+        "vol_ratio": 1.03
+      }
+    },
+    {
+      "symbol": "GARFIBRES",
+      "name": "Garware Technical Fibres",
+      "sector": "Technical textiles",
+      "total": 5,
+      "material": 1,
+      "categories": {
+        "results": 1
+      },
+      "top": {
+        "id": "90d6e197-e3c1-4e7f-be7f-d05c5833d849",
+        "symbol": "GARFIBRES",
+        "company_name": "Garware Technical Fibres Ltd",
+        "filed_at": "2026-10-29T16:17:53.100000+05:30",
+        "headline": "We refer to our letter dated October 22, 2026 and inform that the meeting of the Board of Directors of the Company was held today i.e., Thursday, October 29, 2026. The Board of Directors ....",
+        "so_what": "Q2 FY27: PAT +83%, Rev +33% YoY · EBITDA margin 17.3%",
+        "category": "results",
+        "category_source": "rule",
+        "priority": "high",
+        "score": 0.432,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/12ace952-a89b-4098-8bd0-e247f6e2a776.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "results",
+          "period": "Q2 FY27",
+          "basis": "consolidated",
+          "unit": "INR_CR",
+          "metrics": [
+            {
+              "name": "revenue",
+              "value": 462.62,
+              "prev_q": 482.37,
+              "prev_y": 347.9,
+              "qoq_pct": -4.1,
+              "yoy_pct": 33.0
+            },
+            {
+              "name": "ebitda",
+              "value": 80.0,
+              "prev_q": 90.09,
+              "prev_y": 48.42,
+              "qoq_pct": -11.2,
+              "yoy_pct": 65.2
+            },
+            {
+              "name": "pbt",
+              "value": 76.15,
+              "prev_q": 86.36,
+              "prev_y": 45.65,
+              "qoq_pct": -11.8,
+              "yoy_pct": 66.8
+            },
+            {
+              "name": "pat",
+              "value": 58.56,
+              "prev_q": 64.6,
+              "prev_y": 31.93,
+              "qoq_pct": -9.3,
+              "yoy_pct": 83.4
+            }
+          ],
+          "margin_ebitda_pct": 17.3,
+          "cross_check": {
+            "status": "match",
+            "note": null
+          },
+          "source": {
+            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/12ace952-a89b-4098-8bd0-e247f6e2a776.pdf",
+            "page": 9
+          }
+        }
+      },
+      "price": {
+        "pct_1d": 0.21,
+        "vol_ratio": 0.79
+      }
+    },
+    {
+      "symbol": "HDFCBANK",
+      "name": "HDFC Bank",
+      "sector": "Private-sector banking",
+      "total": 14,
+      "material": 2,
+      "categories": {
+        "management_change": 2
+      },
+      "top": {
+        "id": "be305212-ae95-4757-93fe-23429494a3c8",
+        "symbol": "HDFCBANK",
+        "company_name": "HDFC Bank Ltd",
+        "filed_at": "2026-10-31T22:14:41.877000+05:30",
+        "headline": "Disclosure under Regulation 30 read with Clause 7 of Paragraph A of Part A of Schedule III of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015",
+        "so_what": null,
+        "category": "management_change",
+        "category_source": "rule",
+        "priority": "medium",
+        "score": 0.404,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b36ff756-1cf7-44a3-9b2c-4583e7e0e792.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "management",
+          "person": "Sanjay D’Souza",
+          "role": "Group Head – Business Banking, Emerging & Micro Enterprises Group",
+          "change": "retired",
+          "background": [
+            "Key architect of the Bank’s SME business",
+            "Contributed significantly across Credit and Business",
+            "Nearly 27 years of service"
+          ],
+          "links": [],
+          "effective": "2026-10-31",
+          "background_source": "filing"
+        }
+      },
+      "price": {
+        "pct_1d": 1.06,
+        "vol_ratio": 1.54
+      }
+    },
+    {
+      "symbol": "INFY",
+      "name": "Infosys",
+      "sector": "IT services",
+      "total": 15,
+      "material": 1,
+      "categories": {
+        "results": 1
+      },
+      "top": {
+        "id": "50d31412-9909-4254-b5da-52df1d25080e",
+        "symbol": "INFY",
+        "company_name": "Infosys Ltd",
+        "filed_at": "2026-10-23T16:16:06.710000+05:30",
+        "headline": "Results for the quarter and half year ended September 30, 2026 and declaration of interim dividend",
+        "so_what": "Q2 FY27: PAT +6%, Rev +11% YoY · EBITDA margin 23.7%",
+        "category": "results",
+        "category_source": "rule",
+        "priority": "high",
+        "score": 0.108,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26c12463-d44e-4050-bd47-b53cc294b4e0.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "results",
+          "period": "Q2 FY27",
+          "basis": "consolidated",
+          "unit": "INR_CR",
+          "metrics": [
+            {
+              "name": "revenue",
+              "value": 49244.0,
+              "prev_q": 48211.0,
+              "prev_y": 44490.0,
+              "qoq_pct": 2.1,
+              "yoy_pct": 10.7
+            },
+            {
+              "name": "ebitda",
+              "value": 11689.0,
+              "prev_q": 11409.0,
+              "prev_y": 10535.0,
+              "qoq_pct": 2.5,
+              "yoy_pct": 11.0
+            },
+            {
+              "name": "pbt",
+              "value": 11063.0,
+              "prev_q": 11028.0,
+              "prev_y": 10229.0,
+              "qoq_pct": 0.3,
+              "yoy_pct": 8.2
+            },
+            {
+              "name": "pat",
+              "value": 7838.0,
+              "prev_q": 7775.0,
+              "prev_y": 7375.0,
+              "qoq_pct": 0.8,
+              "yoy_pct": 6.3
+            }
+          ],
+          "margin_ebitda_pct": 23.7,
+          "cross_check": {
+            "status": "match",
+            "note": null
+          },
+          "source": {
+            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26c12463-d44e-4050-bd47-b53cc294b4e0.pdf",
+            "page": 18
+          }
+        }
+      },
+      "price": {
+        "pct_1d": 0.08,
+        "vol_ratio": 0.55
+      }
+    },
+    {
+      "symbol": "KEI",
+      "name": "KEI Industries",
+      "sector": "Wires and cables",
+      "total": 15,
+      "material": 4,
+      "categories": {
+        "credit_rating": 2,
+        "results": 2
+      },
+      "top": {
+        "id": "d5b192af-7384-42b1-9dac-e57bf6b3639c",
+        "symbol": "KEI",
+        "company_name": "KEI Industries Ltd",
+        "filed_at": "2026-10-21T18:14:31.593000+05:30",
+        "headline": "Outcome of Board meeting- Disclosure/Announcements pursuant to Regulation 30 and 33 of SEBI ( Listing Obligations and Disclosure Requirements) Regulations, 2015.",
+        "so_what": "Q2 FY27: PAT +29%, Rev +38% YoY · EBITDA margin 10.0%",
+        "category": "results",
+        "category_source": "rule",
+        "priority": "high",
+        "score": 0.069,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4567cd4f-9037-41ac-9e8d-fd10ff9e2f51.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "results",
+          "period": "Q2 FY27",
+          "basis": "consolidated",
+          "unit": "INR_CR",
+          "metrics": [
+            {
+              "name": "revenue",
+              "value": 3776.42,
+              "prev_q": 3185.34,
+              "prev_y": 2726.35,
+              "qoq_pct": 18.6,
+              "yoy_pct": 38.5
+            },
+            {
+              "name": "ebitda",
+              "value": 376.53,
+              "prev_q": 395.84,
+              "prev_y": 269.34,
+              "qoq_pct": -4.9,
+              "yoy_pct": 39.8
+            },
+            {
+              "name": "pbt",
+              "value": 353.23,
+              "prev_q": 369.16,
+              "prev_y": 277.28,
+              "qoq_pct": -4.3,
+              "yoy_pct": 27.4
+            },
+            {
+              "name": "pat",
+              "value": 262.45,
+              "prev_q": 274.14,
+              "prev_y": 203.51,
+              "qoq_pct": -4.3,
+              "yoy_pct": 29.0
+            }
+          ],
+          "margin_ebitda_pct": 10.0,
+          "cross_check": {
+            "status": "match",
+            "note": null
+          },
+          "source": {
+            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4567cd4f-9037-41ac-9e8d-fd10ff9e2f51.pdf",
+            "page": 7
+          }
+        }
+      },
+      "price": {
+        "pct_1d": 0.09,
+        "vol_ratio": 0.37
+      }
+    },
+    {
+      "symbol": "HINDZINC",
+      "name": "Hindustan Zinc",
+      "sector": "Non-ferrous metals and mining",
+      "total": 14,
+      "material": 1,
+      "categories": {
+        "results": 1
+      },
+      "top": {
+        "id": "0023c44c-f425-4f61-8516-9b738e70db04",
+        "symbol": "HINDZINC",
+        "company_name": "Hindustan Zinc Ltd",
+        "filed_at": "2026-10-19T15:47:44.593000+05:30",
+        "headline": "Please refer the enclosed file",
+        "so_what": "Q2 FY27: PAT +142%, Rev +76% YoY · EBITDA margin 61.3%",
+        "category": "results",
+        "category_source": "rule",
+        "priority": "high",
+        "score": 0.043,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b8e22e9-8b97-4151-a045-51669fdac2ae.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "results",
+          "period": "Q2 FY27",
+          "basis": "consolidated",
+          "unit": "INR_CR",
+          "metrics": [
+            {
+              "name": "revenue",
+              "value": 15093.0,
+              "prev_q": 13747.0,
+              "prev_y": 8549.0,
+              "qoq_pct": 9.8,
+              "yoy_pct": 76.5
+            },
+            {
+              "name": "ebitda",
+              "value": 9248.0,
+              "prev_q": 8050.0,
+              "prev_y": 4415.0,
+              "qoq_pct": 14.9,
+              "yoy_pct": 109.5
+            },
+            {
+              "name": "pbt",
+              "value": 8572.0,
+              "prev_q": 7314.0,
+              "prev_y": 3542.0,
+              "qoq_pct": 17.2,
+              "yoy_pct": 142.0
+            },
+            {
+              "name": "pat",
+              "value": 6412.0,
+              "prev_q": 5469.0,
+              "prev_y": 2649.0,
+              "qoq_pct": 17.2,
+              "yoy_pct": 142.1
+            }
+          ],
+          "margin_ebitda_pct": 61.3,
+          "cross_check": {
+            "status": "match",
+            "note": null
+          },
+          "source": {
+            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b8e22e9-8b97-4151-a045-51669fdac2ae.pdf",
+            "page": 5
+          }
+        }
+      },
+      "price": {
+        "pct_1d": 0.53,
+        "vol_ratio": 0.71
+      }
+    },
+    {
+      "symbol": "ULTRACEMCO",
+      "name": "UltraTech Cement",
+      "sector": "Cement",
+      "total": 16,
+      "material": 3,
+      "categories": {
+        "management_change": 2,
+        "results": 1
+      },
+      "top": {
+        "id": "ec29d900-b6b1-4b6f-8f25-91b061275d31",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-10-19T13:47:54.767000+05:30",
+        "headline": "Unaudited Financial Results for the quarter and half year ended 30th September, 2026",
+        "so_what": "Q2 FY27: PAT +21%, Rev +19% YoY",
+        "category": "results",
+        "category_source": "rule",
+        "priority": "high",
+        "score": 0.042,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59654d86-af0c-4fe5-bfb9-1a148f65fd6c.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "results",
+          "period": "Q2 FY27",
+          "basis": "consolidated",
+          "unit": "INR_CR",
+          "metrics": [
+            {
+              "name": "revenue",
+              "value": 23295.07,
+              "prev_q": 24648.2,
+              "prev_y": 19606.93,
+              "qoq_pct": -5.5,
+              "yoy_pct": 18.8
+            },
+            {
+              "name": "ebitda",
+              "value": null,
+              "prev_q": null,
+              "prev_y": null,
+              "qoq_pct": null,
+              "yoy_pct": null
+            },
+            {
+              "name": "pbt",
+              "value": 2058.58,
+              "prev_q": 3480.43,
+              "prev_y": 1655.83,
+              "qoq_pct": -40.9,
+              "yoy_pct": 24.3
+            },
+            {
+              "name": "pat",
+              "value": 1501.38,
+              "prev_q": 2603.72,
+              "prev_y": 1237.98,
+              "qoq_pct": -42.3,
+              "yoy_pct": 21.3
+            }
+          ],
+          "margin_ebitda_pct": null,
+          "cross_check": {
+            "status": "match",
+            "note": null
+          },
+          "source": {
+            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59654d86-af0c-4fe5-bfb9-1a148f65fd6c.pdf",
+            "page": 7
+          }
+        }
+      },
+      "price": {
+        "pct_1d": 0.71,
+        "vol_ratio": 0.93
+      }
+    },
+    {
+      "symbol": "TCS",
+      "name": "Tata Consultancy Services",
+      "sector": "IT services",
+      "total": 8,
+      "material": 1,
+      "categories": {
+        "m_and_a": 1
+      },
+      "top": {
+        "id": "85a90a42-ccad-4d29-983b-6c2164f010e0",
+        "symbol": "TCS",
+        "company_name": "Tata Consultancy Services Ltd",
+        "filed_at": "2026-10-15T13:28:35.827000+05:30",
+        "headline": "Tata Consultancy Services Limited has informed the Exchange about completion of acquisition of BBY Services India LLP.",
+        "so_what": "TCS completed acquisition of 100% stake in BBY Services India LLP.",
+        "category": "m_and_a",
+        "category_source": "rule",
+        "priority": "high",
+        "score": 0.015,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ad952e13-3c76-410e-81f8-4fe3d108a196.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "oneliner",
+          "text": "TCS completed acquisition of 100% stake in BBY Services India LLP."
+        }
+      },
+      "price": {
+        "pct_1d": -0.13,
+        "vol_ratio": 0.7
+      }
+    }
+  ]
+}

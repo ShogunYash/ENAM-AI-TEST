@@ -1,0 +1,216 @@
+{
+  "symbol": "FINEORG",
+  "name": "Fine Organic Industries",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T13:48:00.359614+05:30",
+    "end": "2026-11-13T13:48:00.359614+05:30"
+  },
+  "generated_at": "2026-11-13T13:48:00.359614+05:30",
+  "counts": {
+    "total": 9,
+    "rule_classified": 7,
+    "llm_classified": 2
+  },
+  "important": [
+    {
+      "id": "98d6a02a-dd08-44ac-9686-48d4b9a70b6d",
+      "symbol": "FINEORG",
+      "company_name": "Fine Organic Industries Ltd",
+      "filed_at": "2026-11-06T16:05:07.413000+05:30",
+      "headline": "Conclusion of Search proceedings initiated by Maharashtra Goods and Services Tax Department",
+      "so_what": "Company paid Rs 5,00,47,594 tax and interest after search concluded.",
+      "category": "litigation",
+      "category_source": "llm",
+      "priority": "medium",
+      "score": 1.826,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/53496491-fd25-4172-9f9f-79bf088ea9c5.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Company paid Rs 5,00,47,594 tax and interest after search concluded."
+      }
+    },
+    {
+      "id": "82f1209f-84a3-4b3f-b075-da9ee97716ba",
+      "symbol": "FINEORG",
+      "company_name": "Fine Organic Industries Ltd",
+      "filed_at": "2026-11-02T17:11:43.230000+05:30",
+      "headline": "As enclosed",
+      "so_what": "Q2 FY27: PAT +40%, Rev +22% YoY · EBITDA margin 25.0%",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 1.098,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59e35eaa-e87a-4409-aa02-61801b1b852a.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 729.39,
+            "prev_q": 694.17,
+            "prev_y": 597.29,
+            "qoq_pct": 5.1,
+            "yoy_pct": 22.1
+          },
+          {
+            "name": "ebitda",
+            "value": 182.49,
+            "prev_q": 174.02,
+            "prev_y": 134.13,
+            "qoq_pct": 4.9,
+            "yoy_pct": 36.1
+          },
+          {
+            "name": "pbt",
+            "value": 196.59,
+            "prev_q": 183.55,
+            "prev_y": 142.02,
+            "qoq_pct": 7.1,
+            "yoy_pct": 38.4
+          },
+          {
+            "name": "pat",
+            "value": 152.12,
+            "prev_q": 138.14,
+            "prev_y": 108.55,
+            "qoq_pct": 10.1,
+            "yoy_pct": 40.1
+          }
+        ],
+        "margin_ebitda_pct": 25.0,
+        "cross_check": {
+          "status": "match",
+          "note": null
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59e35eaa-e87a-4409-aa02-61801b1b852a.pdf",
+          "page": 12
+        }
+      }
+    },
+    {
+      "id": "30c3da71-6fc5-4995-97ea-27380694b7a6",
+      "symbol": "FINEORG",
+      "company_name": "Fine Organic Industries Ltd",
+      "filed_at": "2026-11-02T17:02:47.990000+05:30",
+      "headline": "As enclosed",
+      "so_what": "Approved investment limit increase by Rs. 120 crores to Rs. 420 crores",
+      "category": "m_and_a",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 0.975,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e6ecfc7d-e5f9-46eb-8fb6-c16c59773d0f.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "oneliner",
+        "text": "Approved investment limit increase by Rs. 120 crores to Rs. 420 crores"
+      }
+    }
+  ],
+  "routine": {
+    "count": 6,
+    "by_category": {
+      "unclassified": 4,
+      "press_release": 1,
+      "results": 1
+    },
+    "items": [
+      {
+        "id": "8ec09d8b-e407-40cb-ba2d-b0f39b3cfd47",
+        "symbol": "FINEORG",
+        "company_name": "Fine Organic Industries Ltd",
+        "filed_at": "2026-11-04T15:32:07.527000+05:30",
+        "headline": "As enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d43f1072-c611-4b66-b27e-bd369fa727fb.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "0aa885bd-7c1f-4b1f-bae4-d364594ee8ed",
+        "symbol": "FINEORG",
+        "company_name": "Fine Organic Industries Ltd",
+        "filed_at": "2026-11-03T21:15:27.367000+05:30",
+        "headline": "As enclosed",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.32,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/182c311c-1ad2-4253-8317-e5af38170da0.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "dd2f24b1-e06f-4b79-828a-57a6a5abc790",
+        "symbol": "FINEORG",
+        "company_name": "Fine Organic Industries Ltd",
+        "filed_at": "2026-11-03T21:12:08.837000+05:30",
+        "headline": "As enclosed",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.32,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/68b26084-8aff-4274-9acc-553e814d1dc4.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "6faa15dd-baeb-4df3-9fdb-826dcf900add",
+        "symbol": "FINEORG",
+        "company_name": "Fine Organic Industries Ltd",
+        "filed_at": "2026-11-02T16:50:38.067000+05:30",
+        "headline": "As enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c7d851b1-dfb3-472f-bc0f-0c13797e1c6b.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "53583411-ec73-4b99-adcd-ed0250548cca",
+        "symbol": "FINEORG",
+        "company_name": "Fine Organic Industries Ltd",
+        "filed_at": "2026-10-30T20:25:59.890000+05:30",
+        "headline": "As enclosed",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/32d3730d-2d8b-49c2-a80c-77d6f9d051dd.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "9ec78574-6e0d-4443-8f38-afc868c518a0",
+        "symbol": "FINEORG",
+        "company_name": "Fine Organic Industries Ltd",
+        "filed_at": "2026-10-22T12:44:58.620000+05:30",
+        "headline": "Fine Organic Industries Ltdhas informed BSE that the meeting of the Board of Directors of the Company is scheduled on 02/11/2026 ,inter alia, to consider and approve the unaudited financial ....",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "rule",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/77443775-006f-416c-b0e8-562d084d0063.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

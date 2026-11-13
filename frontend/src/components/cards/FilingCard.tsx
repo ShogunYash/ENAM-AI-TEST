@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Filing } from '@/api/types'
-import { formatPercentDelta, formatVolumeMultiple, formatRelativeIst } from '@/lib/formatters'
+import { formatPercentDelta, formatVolumeMultiple, formatRelativeIst, formatCategory } from '@/lib/formatters'
 import { ResultsCardPayload } from './ResultsCardPayload'
 import { BioCardPayload } from './BioCardPayload'
 import { OneLinerPayload } from './OneLinerPayload'
@@ -56,7 +56,7 @@ export const FilingCard: React.FC<FilingCardProps> = ({
           <span className="font-mono font-bold text-zinc-100 tracking-tight">{symbol}</span>
           <span className="text-zinc-600">·</span>
           <span className="px-1.5 py-0.5 rounded bg-zinc-800/90 text-[10px] font-medium text-zinc-300 border border-zinc-700/50">
-            {category.replace(/_/g, ' ')}
+            {formatCategory(category)}
           </span>
           <span className="text-zinc-600">·</span>
           <time dateTime={filed_at} className="text-zinc-400 text-[11px]">
@@ -134,7 +134,8 @@ export const FilingCard: React.FC<FilingCardProps> = ({
       {enrichment && enrichment.type === 'management' && (
         <BioCardPayload enrichment={enrichment} />
       )}
-      {enrichment && enrichment.type === 'oneliner' && (
+      {/* The one-liner is already the card heading (so_what): repeating it in a box underneath is noise. */}
+      {enrichment && enrichment.type === 'oneliner' && enrichment.text !== so_what && (
         <OneLinerPayload enrichment={enrichment} />
       )}
 

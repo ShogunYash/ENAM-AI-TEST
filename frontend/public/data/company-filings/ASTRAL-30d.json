@@ -1,0 +1,288 @@
+{
+  "symbol": "ASTRAL",
+  "name": "Astral",
+  "window": {
+    "label": "30d",
+    "start": "2026-10-14T13:48:00.359614+05:30",
+    "end": "2026-11-13T13:48:00.359614+05:30"
+  },
+  "generated_at": "2026-11-13T13:48:00.359614+05:30",
+  "counts": {
+    "total": 13,
+    "rule_classified": 12,
+    "llm_classified": 1
+  },
+  "important": [
+    {
+      "id": "36ba38f5-dc7d-4c34-8fc5-a032e67b24a0",
+      "symbol": "ASTRAL",
+      "company_name": "Astral Ltd",
+      "filed_at": "2026-11-05T16:22:52.253000+05:30",
+      "headline": "Financial result for the Quarter and Half Year ended 30th September, 2026",
+      "so_what": "Q2 FY27: PAT −6%, Rev +26% YoY",
+      "category": "results",
+      "category_source": "rule",
+      "priority": "high",
+      "score": 2.18,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a39f8b72-303f-42a4-8750-f413346bd742.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "results",
+        "period": "Q2 FY27",
+        "basis": "consolidated",
+        "unit": "INR_CR",
+        "metrics": [
+          {
+            "name": "revenue",
+            "value": 1988.3,
+            "prev_q": 1578.0,
+            "prev_y": 1577.4,
+            "qoq_pct": 26.0,
+            "yoy_pct": 26.0
+          },
+          {
+            "name": "ebitda",
+            "value": null,
+            "prev_q": null,
+            "prev_y": null,
+            "qoq_pct": null,
+            "yoy_pct": null
+          },
+          {
+            "name": "pbt",
+            "value": 171.9,
+            "prev_q": 162.8,
+            "prev_y": 179.9,
+            "qoq_pct": 5.6,
+            "yoy_pct": -4.4
+          },
+          {
+            "name": "pat",
+            "value": 127.3,
+            "prev_q": 120.2,
+            "prev_y": 134.8,
+            "qoq_pct": 5.9,
+            "yoy_pct": -5.6
+          }
+        ],
+        "margin_ebitda_pct": null,
+        "cross_check": {
+          "status": "match",
+          "note": null
+        },
+        "source": {
+          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a39f8b72-303f-42a4-8750-f413346bd742.pdf",
+          "page": 12
+        }
+      }
+    },
+    {
+      "id": "e0881287-e544-4572-97ba-48ab5998966d",
+      "symbol": "ASTRAL",
+      "company_name": "Astral Ltd",
+      "filed_at": "2026-11-05T16:52:09.117000+05:30",
+      "headline": "Regulation 30 - Senior Management Personnel",
+      "so_what": null,
+      "category": "management_change",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 1.217,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4017e932-6841-4b4b-8669-50a79f27feb2.pdf",
+      "price_reaction": null,
+      "enrichment": {
+        "type": "management",
+        "person": "Mr. Ritesh Patel",
+        "role": "Associate Vice President – Technical Operations",
+        "change": "appointed",
+        "background": [
+          "BE in Chemical Engineering with 24 years of experience in plastic piping systems",
+          "Active member of BIS standardization committees"
+        ],
+        "links": [],
+        "effective": "2026-11-05",
+        "background_source": "filing"
+      }
+    },
+    {
+      "id": "911dd43a-263e-4e01-92fc-00a76c7ce269",
+      "symbol": "ASTRAL",
+      "company_name": "Astral Ltd",
+      "filed_at": "2026-11-03T17:46:25.977000+05:30",
+      "headline": "Intimation under Regulation 30 - Receipt of GST Order",
+      "so_what": null,
+      "category": "litigation",
+      "category_source": "rule",
+      "priority": "medium",
+      "score": 0.928,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/84dc2a7d-1be3-4576-a370-a944f4b2d7bc.pdf",
+      "price_reaction": null,
+      "enrichment": null
+    }
+  ],
+  "routine": {
+    "count": 10,
+    "by_category": {
+      "earnings_call": 3,
+      "results": 2,
+      "dividend": 2,
+      "press_release": 1,
+      "unclassified": 1,
+      "investor_meetings": 1
+    },
+    "items": [
+      {
+        "id": "9324f8da-f7e9-4a27-8d52-fcb111b14078",
+        "symbol": "ASTRAL",
+        "company_name": "Astral Ltd",
+        "filed_at": "2026-11-11T14:34:23.423000+05:30",
+        "headline": "Transcript of Earnings Call held on November 05, 2026",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 1.315,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/a9cb0ab8-930f-4400-b70b-fbd01640f54d.pdf",
+        "price_reaction": {
+          "pct_1d": 0.25,
+          "vol_ratio": 1.09
+        },
+        "enrichment": null
+      },
+      {
+        "id": "c6d20cb4-d05e-4865-9790-f1f98887dedb",
+        "symbol": "ASTRAL",
+        "company_name": "Astral Ltd",
+        "filed_at": "2026-11-06T11:27:40.167000+05:30",
+        "headline": "Newspaper Advertisement Pertaining to Unaudited Financial result for the Quarter and Half year ended on 30th September, 2026 and Notice of Record date of Interim Dividend for FY 26-27",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.582,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c09898ed-8b2d-47cc-9b13-a049755597f5.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "d56b4c78-fa3f-4459-97a5-1e0b07292da9",
+        "symbol": "ASTRAL",
+        "company_name": "Astral Ltd",
+        "filed_at": "2026-11-05T21:44:38.260000+05:30",
+        "headline": "Audio Recording - Q2 ( FY 2026 -27 ) Earnings Call",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.34,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/795ae202-30f1-4db0-9791-17ef2f57a9ea.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "a152ae26-3d44-4245-956f-af0d4b9df12d",
+        "symbol": "ASTRAL",
+        "company_name": "Astral Ltd",
+        "filed_at": "2026-11-05T21:05:08.703000+05:30",
+        "headline": "Shareholders Communication - TDS on Interim Dividend - FY 2026-27",
+        "so_what": null,
+        "category": "dividend",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.507,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c6836e5b-deb6-4c0c-9f93-24f735412d9c.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "8bb2e40f-64f6-4b6f-a301-fd595d31fe15",
+        "symbol": "ASTRAL",
+        "company_name": "Astral Ltd",
+        "filed_at": "2026-11-05T16:42:25.357000+05:30",
+        "headline": "Press Release",
+        "so_what": null,
+        "category": "press_release",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.486,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/95ba2ee6-f092-4f27-906f-bb30db524807.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "f5b7c93e-cc54-44b8-9627-7197c43d7053",
+        "symbol": "ASTRAL",
+        "company_name": "Astral Ltd",
+        "filed_at": "2026-11-05T16:37:07.213000+05:30",
+        "headline": "Declaration of Interim Dividend for the Financial Year 2026-27",
+        "so_what": null,
+        "category": "dividend",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.485,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7e5ca8e8-4fd9-49cc-ae26-fa1379c898a0.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "7e5cd2fe-5640-4757-8c03-2e51a5512963",
+        "symbol": "ASTRAL",
+        "company_name": "Astral Ltd",
+        "filed_at": "2026-11-05T16:10:32.310000+05:30",
+        "headline": "Outcome of Board Meeting held on 05th November 2026",
+        "so_what": null,
+        "category": "unclassified",
+        "category_source": "llm",
+        "priority": "hidden",
+        "score": 0.0,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f78ee5a4-c8d9-4e0f-825f-b0b339cfb904.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "eecbc97c-10d5-4268-9bbf-15c24aaa3884",
+        "symbol": "ASTRAL",
+        "company_name": "Astral Ltd",
+        "filed_at": "2026-11-04T17:25:15.200000+05:30",
+        "headline": "Intimation of Analyst Meet dated 16th November, 2026",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.129,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/63d85004-a83c-407e-a649-5d71cfce075f.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "b57093d4-15e7-43ab-a10e-ceb844a9ff0d",
+        "symbol": "ASTRAL",
+        "company_name": "Astral Ltd",
+        "filed_at": "2026-10-31T15:36:58.743000+05:30",
+        "headline": "Earnings Call on Thursday, 05th November, 2026 at 8:00 PM.",
+        "so_what": null,
+        "category": "earnings_call",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.101,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2684ff83-e0e0-41ce-bcd0-935a714cf850.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "46c8b4db-5927-475f-9cb6-e4222ef054f2",
+        "symbol": "ASTRAL",
+        "company_name": "Astral Ltd",
+        "filed_at": "2026-10-29T18:20:26.223000+05:30",
+        "headline": "Astral Ltdhas informed BSE that the meeting of the Board of Directors of the Company is scheduled on 05/11/2026 ,inter alia, to consider and approve The Unaudited Financial Results (Standalone ....",
+        "so_what": null,
+        "category": "results",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.098,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1f1205bc-a6f9-4dc6-85af-eed6f74e9dc5.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      }
+    ]
+  }
+}

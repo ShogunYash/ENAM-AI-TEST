@@ -280,3 +280,76 @@ def test_seed_is_off_in_the_test_environment():
     from app.seed import ensure_seed
     from app.settings import get_settings
     assert get_settings().finn_seed is False and ensure_seed() == []
+
+
+# ───────── by-company view (30d) ─────────
+COMPANIES = [("AAA", "Alpha Ltd", "IT"), ("BBB", "Beta Ltd", "Cement"), ("CCC", "Gamma Ltd", None), ("DDD", "Delta Ltd", "Steel")]
+
+
+def seed_company_data():
+    seed([
+        F(1, "AAA", 30, "Financial Results", "Q2 results"),
+        F(2, "AAA", 40, "Newspaper Publication", "As enclosed"),
+        F(3, "BBB", 50, "Qualified Institutional Placement", "QIP outcome"),
+        F(4, "BBB", 60, "Qualified Institutional Placement", "QIP allotment"),     # same category as #3: both listed here
+        F(5, "BBB", 70, "Credit Rating", "Rating action by agency"),
+        F(6, "CCC", 80, "Earnings Call Transcript", "Transcript"),
+    ])
+    classify_all({"f1": C.results, "f2": C.unclassified, "f3": C.fund_raise, "f4": C.fund_raise, "f5": C.credit_rating,
+                  "f6": C.earnings_call})
+
+
+def test_company_list_has_every_company_most_important_first():
+    seed_company_data()
+    cl = digest.build_company_list(COMPANIES, "30d", now=NOW)
+    assert [c.symbol for c in cl.companies] == ["AAA", "BBB", "CCC", "DDD"]      # results (9) > fund raise > routine-only > none
+    a, b, c_, d = cl.companies
+    assert (a.total, a.material, a.categories) == (2, 1, {"results": 1}) and a.top.id == "f1"
+    assert (b.total, b.material) == (3, 3) and b.categories == {"fund_raise": 2, "credit_rating": 1}
+    assert (c_.total, c_.material, c_.top) == (1, 0, None)                         # only routine -> no headline on the row
+    assert (d.total, d.material, d.top) == (0, 0, None)                            # quiet companies still appear
+    assert d.sector == "Steel" and c_.sector is None
+    m.CompanyList.model_validate(cl.model_dump(mode="json"))
+
+
+def test_company_filings_are_uncapped_best_first_with_routine_collapsed():
+    seed([F(i, "AAA", 30 + i, "Financial Results", f"results {i}") for i in range(12)] +
+         [F(100 + i, "AAA", 30 + i, "Newspaper Publication", "As enclosed") for i in range(90)])
+    classify_all({**{f"f{i}": C.results for i in range(12)}, **{f"f{100 + i}": C.unclassified for i in range(90)}})
+    cf = digest.build_company_filings("AAA", "Alpha Ltd", "30d", now=NOW)
+    assert len(cf.important) == 12 and cf.routine.count == 90 and len(cf.routine.items) == 90   # the digest caps at 5 / 80
+    assert cf.counts.total == 102 and cf.name == "Alpha Ltd"
+    assert [f.score for f in cf.important] == sorted((f.score for f in cf.important), reverse=True)
+    assert all(f.symbol == "AAA" for f in cf.important + cf.routine.items)
+    m.CompanyFilings.model_validate(cf.model_dump(mode="json"))
+
+
+def test_company_view_respects_muted_categories_and_window():
+    seed_company_data()
+    seed([F(7, "AAA", 24 * 40, "Financial Results", "ancient results")])             # outside 30 days
+    classify_all({"f7": C.results})
+    muted = m.Settings(muted_categories=[C.results])
+    cl = digest.build_company_list(COMPANIES, "30d", settings=muted, now=NOW)
+    a = next(c for c in cl.companies if c.symbol == "AAA")
+    assert a.total == 2 and a.material == 0 and a.top is None                       # results muted; 40-day-old one excluded
+    cf = digest.build_company_filings("AAA", None, "30d", settings=muted, now=NOW)
+    assert cf.important == [] and cf.routine.count == 2
+    short = digest.build_company_list(COMPANIES, "7d", now=NOW)
+    assert next(c for c in short.companies if c.symbol == "BBB").total == 3         # 50-70 h old: inside 7 days
+
+
+def test_company_row_carries_the_latest_price_move():
+    seed_company_data()
+    cl = digest.build_company_list(COMPANIES, "30d", now=NOW, snaps=[snap("BBB", 6.0, 3.0)])
+    b = next(c for c in cl.companies if c.symbol == "BBB")
+    assert (b.price.pct_1d, b.price.vol_ratio) == (6.0, 3.0)
+    assert next(c for c in cl.companies if c.symbol == "AAA").price is None
+
+
+def test_company_routes_validate_in_mock_mode():
+    from fastapi.testclient import TestClient
+
+    from app import main
+    c = TestClient(main.app)
+    assert c.get("/digest/companies").status_code == 200 and c.get("/digest/company/cera").json()["symbol"] == "CERA"
+    assert c.get("/digest/companies?window=custom").status_code == 422

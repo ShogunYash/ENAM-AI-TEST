@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DigestResult } from '@/api/client'
 import { Filing } from '@/api/types'
 import { WindowPicker, WindowOption } from '@/components/today/WindowPicker'
 import { AlertsStrip } from '@/components/today/AlertsStrip'
 import { FilingCard } from '@/components/cards/FilingCard'
 import { RoutineGroup } from '@/components/today/RoutineGroup'
+import { CompanyList } from '@/components/today/CompanyList'
+import { CompanyDetail } from '@/components/today/CompanyDetail'
 import { AsOfChip } from '@/components/common/AsOfChip'
 import { Inbox, CheckCircle } from 'lucide-react'
 
@@ -29,12 +31,60 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
 }) => {
   const [highlightedFilingId, setHighlightedFilingId] = useState<string | null>(null)
 
+  // 30d is shown BY COMPANY (one row per stock -> that stock's own headlines); 24h / 3d / 7d keep the single ranked list.
+  const [selectedSymbol, setSelectedSymbol] = useState<string | null>(null)
+  const byCompany = windowOption === '30d'
+
+  useEffect(() => {
+    setSelectedSymbol(null) // changing the window always returns to the list
+  }, [windowOption])
+
+  useEffect(() => {
+    // Phone back gesture / browser back returns from a company to the list instead of leaving the app.
+    const onPop = () => setSelectedSymbol(null)
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
+  }, [])
+
+  const openCompany = (symbol: string) => {
+    window.history.pushState({ finnCompany: symbol }, '')
+    setSelectedSymbol(symbol)
+  }
+  const closeCompany = () => {
+    if (window.history.state?.finnCompany) window.history.back()
+    else setSelectedSymbol(null)
+  }
+
   const handleSelectAlertFiling = (filingId: string) => {
     setHighlightedFilingId(filingId)
     const el = document.getElementById(`filing-${filingId}`)
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
+  }
+
+  if (byCompany) {
+    return (
+      <div className="space-y-4 pb-20">
+        <div className="flex items-center justify-between gap-2 pt-1 pb-1">
+          <WindowPicker selected={windowOption} onChange={onWindowChange} />
+          {digestResult && (
+            <AsOfChip
+              asOf={digestResult.asOf}
+              isLive={digestResult.isLive}
+              source={digestResult.source}
+              isRefreshing={isRefreshing}
+              onRefresh={onRefresh}
+            />
+          )}
+        </div>
+        {selectedSymbol ? (
+          <CompanyDetail symbol={selectedSymbol} windowOption={windowOption} onBack={closeCompany} onAskFinn={onAskFinn} />
+        ) : (
+          <CompanyList windowOption={windowOption} onSelect={openCompany} />
+        )}
+      </div>
+    )
   }
 
   if (isLoading && !digestResult) {

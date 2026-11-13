@@ -72,6 +72,47 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/digest/companies": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Digest Companies
+         * @description By-company view of a window (the UI uses it for 30d, where one flat list is too much): one row per portfolio
+         *     company with counts, material categories, its best headline and the latest price move.
+         */
+        get: operations["digest_companies_digest_companies_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/digest/company/{symbol}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Digest Company
+         * @description Everything one company filed in the window, uncapped: important filings first, routine ones collapsed.
+         */
+        get: operations["digest_company_digest_company__symbol__get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/filings/{filing_id}": {
         parameters: {
             query?: never;
@@ -347,6 +388,77 @@ export interface components {
             sector: string | null;
             /** In Portfolio */
             in_portfolio: boolean;
+        };
+        /**
+         * CompanyFilings
+         * @description Everything one company filed in the window, uncapped (the Digest lists are capped, this is not).
+         */
+        CompanyFilings: {
+            /** Symbol */
+            symbol: string;
+            /** Name */
+            name: string;
+            window: components["schemas"]["DigestWindow"];
+            /**
+             * Generated At
+             * Format: date-time
+             */
+            generated_at: string;
+            counts: components["schemas"]["DigestCounts"];
+            /**
+             * Important
+             * @description High/medium priority, best first
+             */
+            important: components["schemas"]["Filing"][];
+            /** @description Low/hidden priority and muted categories, collapsed in the UI */
+            routine: components["schemas"]["RoutineGroup"];
+        };
+        /** CompanyList */
+        CompanyList: {
+            window: components["schemas"]["DigestWindow"];
+            /**
+             * Generated At
+             * Format: date-time
+             */
+            generated_at: string;
+            /**
+             * Companies
+             * @description Every portfolio company, most important first
+             */
+            companies: components["schemas"]["CompanySummary"][];
+        };
+        /**
+         * CompanySummary
+         * @description One row of the by-company view (used for the 30-day window, where one flat list is too much).
+         */
+        CompanySummary: {
+            /** Symbol */
+            symbol: string;
+            /** Name */
+            name: string;
+            /** Sector */
+            sector: string | null;
+            /**
+             * Total
+             * @description Filings in the window
+             */
+            total: number;
+            /**
+             * Material
+             * @description High/medium-priority filings in the window, muted categories excluded
+             */
+            material: number;
+            /**
+             * Categories
+             * @description Material filings per category, e.g. {'results': 1, 'fund_raise': 3}
+             */
+            categories: {
+                [key: string]: number;
+            };
+            /** @description The highest-scoring non-muted filing (headline shown on the row), else null */
+            top: components["schemas"]["Filing"] | null;
+            /** @description Latest session move: pct_1d and volume ratio */
+            price: components["schemas"]["PriceReaction"] | null;
         };
         /** CrossCheck */
         CrossCheck: {
@@ -940,6 +1052,90 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["Digest"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    digest_companies_digest_companies_get: {
+        parameters: {
+            query?: {
+                window?: "24h" | "3d" | "7d" | "30d" | "custom";
+                /** @description Required when window=custom */
+                start?: string | null;
+                /** @description Required when window=custom */
+                end?: string | null;
+                volume_multiple?: number;
+                price_move_pct?: number;
+                /** @description Comma-separated Category values to boost */
+                interests?: string | null;
+                /** @description Comma-separated Category values to hide */
+                muted?: string | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CompanyList"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    digest_company_digest_company__symbol__get: {
+        parameters: {
+            query?: {
+                window?: "24h" | "3d" | "7d" | "30d" | "custom";
+                /** @description Required when window=custom */
+                start?: string | null;
+                /** @description Required when window=custom */
+                end?: string | null;
+                volume_multiple?: number;
+                price_move_pct?: number;
+                /** @description Comma-separated Category values to boost */
+                interests?: string | null;
+                /** @description Comma-separated Category values to hide */
+                muted?: string | null;
+            };
+            header?: never;
+            path: {
+                symbol: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CompanyFilings"];
                 };
             };
             /** @description Validation Error */

@@ -254,7 +254,26 @@ stats = m.LlmStats(
     avg_calls_new_ticker=6.4, grounding_dropped=3,
 )
 
+# ───────────── by-company view (30d) ─────────────
+w30 = m.DigestWindow(label="30d", start=t(24 * 30), end=NOW)
+company_list = m.CompanyList(window=w30, generated_at=NOW, companies=[
+    m.CompanySummary(symbol="CERA", name="Cera Sanitaryware Ltd", sector="Sanitaryware", total=12, material=1,
+                     categories={"results": 1}, top=cera_results, price=m.PriceReaction(pct_1d=7.8, vol_ratio=4.42)),
+    m.CompanySummary(symbol="BAJFINANCE", name="Bajaj Finance Ltd", sector="Consumer lending", total=36, material=4,
+                     categories={"fund_raise": 4}, top=bajfin_warrants, price=m.PriceReaction(pct_1d=-2.1, vol_ratio=1.24)),
+    m.CompanySummary(symbol="TITAN", name="Titan Company Ltd", sector="Jewellery and retail", total=26, material=1,
+                     categories={"management_change": 1}, top=titan_cfo, price=m.PriceReaction(pct_1d=0.6, vol_ratio=0.89)),
+    m.CompanySummary(symbol="RELIANCE", name="Reliance Industries Ltd", sector="Energy and diversified businesses",
+                     total=32, material=0, categories={}, top=None, price=m.PriceReaction(pct_1d=0.3, vol_ratio=1.08)),
+])
+company_filings = m.CompanyFilings(
+    symbol="CERA", name="Cera Sanitaryware Ltd", window=w30, generated_at=NOW,
+    counts=m.DigestCounts(total=2, rule_classified=2, llm_classified=0), important=[cera_results],
+    routine=m.RoutineGroup(count=1, by_category={"unclassified": 1}, items=[reliance_ad]))
+
 EXAMPLES: dict[str, object] = {
+    "company-list": company_list,
+    "company-filings": company_filings,
     "companies": companies,
     "prices": prices,
     "digest-24h": digest,
