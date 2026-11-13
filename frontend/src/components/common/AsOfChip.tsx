@@ -36,9 +36,9 @@ export const AsOfChip: React.FC<AsOfChipProps> = ({
     : 'text-amber-400'
 
   return (
-    <div className="flex items-center gap-1.5 text-xs text-zinc-400 bg-zinc-900/90 border border-zinc-800/80 rounded-full px-2.5 py-1 backdrop-blur-sm">
+    <div className="inline-flex items-center gap-1.5 text-[10px] text-zinc-400 bg-zinc-900/90 border border-zinc-800/80 rounded-full px-2.5 py-0.5 backdrop-blur-sm whitespace-nowrap flex-shrink-0">
       <span
-        className={`w-1.5 h-1.5 rounded-full ${dotColor}`}
+        className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${dotColor}`}
         title={
           isGreen
             ? 'Connected to live backend (mode: live)'
@@ -47,10 +47,11 @@ export const AsOfChip: React.FC<AsOfChipProps> = ({
             : 'Demo fixture data (mode: mock)'
         }
       />
-      <span className="font-mono text-[11px] text-zinc-300">
-        as of {formatExactIst(asOf)}
+      <span className="font-mono text-zinc-300">
+        {formatExactIst(asOf)}
       </span>
-      <span className={`text-[10px] tracking-wider font-semibold font-mono ${textColor}`}>
+      <span className="text-zinc-600 font-mono">·</span>
+      <span className={`tracking-wider font-semibold font-mono ${textColor}`}>
         {displayLabel}
       </span>
       {onRefresh && (
@@ -61,7 +62,7 @@ export const AsOfChip: React.FC<AsOfChipProps> = ({
           title="Refresh from API"
           aria-label="Refresh data"
         >
-          <RefreshCw className={`w-3 h-3 ${isRefreshing ? 'animate-spin text-zinc-300' : ''}`} />
+          <RefreshCw className={`w-2.5 h-2.5 ${isRefreshing ? 'animate-spin text-zinc-300' : ''}`} />
         </button>
       )}
     </div>

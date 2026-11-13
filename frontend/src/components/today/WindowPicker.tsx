@@ -21,7 +21,7 @@ export const WindowPicker: React.FC<WindowPickerProps> = ({
   ]
 
   return (
-    <div className="inline-flex items-center p-0.5 rounded-lg bg-zinc-900 border border-zinc-800">
+    <div className="inline-flex items-center p-0.5 rounded-lg bg-zinc-900 border border-zinc-800 flex-shrink-0">
       {options.map((opt) => {
         const isActive = selected === opt.id
         return (
@@ -30,7 +30,7 @@ export const WindowPicker: React.FC<WindowPickerProps> = ({
             type="button"
             disabled={disabled}
             onClick={() => onChange(opt.id)}
-            className={`px-3 py-1.5 min-h-[36px] text-xs font-medium rounded-md touch-manipulation transition-all ${
+            className={`px-2 sm:px-3 py-1.5 min-h-[36px] text-xs font-medium rounded-md touch-manipulation transition-all ${
               isActive
                 ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
                 : 'text-zinc-400 hover:text-zinc-200'
