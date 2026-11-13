@@ -1,11 +1,11 @@
 {
-  "as_of": "2026-11-13T02:53:53.827855+05:30",
+  "as_of": "2026-11-13T13:32:21.578179+05:30",
   "totals": {
-    "calls": 134,
-    "tokens_in": 1061744,
-    "tokens_out": 88639,
-    "cache_hits": 172,
-    "cache_hit_pct": 56.2,
+    "calls": 144,
+    "tokens_in": 1099290,
+    "tokens_out": 91058,
+    "cache_hits": 200,
+    "cache_hit_pct": 58.1,
     "spend_inr": 0.0
   },
   "by_feature": [
@@ -18,9 +18,9 @@
     },
     {
       "key": "push.results",
-      "calls": 33,
-      "tokens_in": 427026,
-      "tokens_out": 52831,
+      "calls": 34,
+      "tokens_in": 442011,
+      "tokens_out": 54746,
       "cache_hits": 19
     },
     {
@@ -29,6 +29,13 @@
       "tokens_in": 345730,
       "tokens_out": 5808,
       "cache_hits": 87
+    },
+    {
+      "key": "ask",
+      "calls": 18,
+      "tokens_in": 49449,
+      "tokens_out": 986,
+      "cache_hits": 28
     },
     {
       "key": "push.mgmt_bio",
@@ -43,13 +50,6 @@
       "tokens_in": 150974,
       "tokens_out": 10238,
       "cache_hits": 21
-    },
-    {
-      "key": "ask",
-      "calls": 9,
-      "tokens_in": 26888,
-      "tokens_out": 482,
-      "cache_hits": 0
     },
     {
       "key": "push.classify",
@@ -68,18 +68,18 @@
   ],
   "by_model": [
     {
+      "key": "gemini-3.5-flash-lite",
+      "calls": 55,
+      "tokens_in": 310088,
+      "tokens_out": 32392,
+      "cache_hits": 44
+    },
+    {
       "key": "finn-gpt-oss",
       "calls": 47,
       "tokens_in": 503293,
       "tokens_out": 15103,
       "cache_hits": 146
-    },
-    {
-      "key": "gemini-3.5-flash-lite",
-      "calls": 46,
-      "tokens_in": 287527,
-      "tokens_out": 31888,
-      "cache_hits": 16
     },
     {
       "key": "gemini-3.1-flash-lite",
@@ -89,17 +89,17 @@
       "cache_hits": 0
     },
     {
+      "key": "gemini-3.6-flash",
+      "calls": 8,
+      "tokens_in": 100616,
+      "tokens_out": 14214,
+      "cache_hits": 5
+    },
+    {
       "key": "gemini-3.5-flash",
       "calls": 8,
       "tokens_in": 101531,
       "tokens_out": 12968,
-      "cache_hits": 5
-    },
-    {
-      "key": "gemini-3.6-flash",
-      "calls": 7,
-      "tokens_in": 85631,
-      "tokens_out": 12299,
       "cache_hits": 5
     },
     {

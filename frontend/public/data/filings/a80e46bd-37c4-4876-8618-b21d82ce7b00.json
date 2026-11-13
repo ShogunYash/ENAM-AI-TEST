@@ -8,7 +8,7 @@
   "category": "credit_rating",
   "category_source": "llm",
   "priority": "medium",
-  "score": 0.006,
+  "score": 0.005,
   "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b71311c4-0e0a-404d-bbf3-ff961de0c6e6.pdf",
   "price_reaction": null,
   "enrichment": {

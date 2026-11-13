@@ -45,8 +45,8 @@ Every call goes through one router; numbers below come from the app's own ledger
 | T2 extract | results PDF (native PDF input), guidance from transcripts, management bio | Gemini Flash, local gpt-oss-20b, Flash-Lite | once per document, cached forever |
 | T3 reason | promised-vs-delivered verdicts | Gemini Flash, local gpt-oss-20b (medium effort), OpenRouter | once per ticker |
 
-**Measured:** 134 model calls, 1.06 M input tokens, 89 K output tokens, **56.2 % cache hits**, ₹0.00. By model: local gpt-oss-20b 47 calls,
-Flash-Lite 72, Flash 15. A new ticker costs **6 to 8 calls** (measured on an unseen ticker with the local GPU off: 346 s, 6 calls).
+**Measured:** 144 model calls, 1.10 M input tokens, 91 K output tokens, **58.1 % cache hits**, ₹0.00. By model: local gpt-oss-20b 47 calls,
+Flash-Lite 81, Flash 16. A new ticker costs **6 to 8 calls** (measured on an unseen ticker with the local GPU off: 346 s, 6 calls).
 On the same hardware-free path the answer is partial-but-honest when quotas bite (see *Limits*).
 
 ## How FINN stays honest (found by reading its own output)
@@ -84,7 +84,7 @@ earnings-call transcripts, annual reports and filed numbers. No news, no broker 
 - **Free-tier quotas**: Gemini enforces *daily per-model* request limits (the Flash models ran out after ~40 calls). The router reads the retry time and
   skips an exhausted model; the demo serves a committed seed and snapshot, so it never depends on a live model. A live build for an unseen ticker is
   quota-bound and may return a partial report with an explicit gap (e.g. "Judgment batch 2 failed").
-- **Titan's results card** is flagged `Screener mismatch` (revenue sub-lines): a weaker fallback model produced it; it is shown honestly, not hidden.
+- A results card that fails the screener cross-check is shown with an amber `Screener mismatch` badge, never hidden. (Titan's was one until its PDF was re-read by a stronger model once the daily quota returned: all 17 now match.)
 - Render's free tier sleeps (a keep-warm ping is documented) and has an ephemeral disk (the API restores a committed seed at boot).
 - **Not built:** voice, auth, real push notifications, web enrichment for bios (filing text only), bull/bear and the other research modules, intraday data.
   `POST /ask` (grounded Q&A on the filing or report on screen) is built and tested; check whether the Ask sheet in the deployed UI is wired to it.
