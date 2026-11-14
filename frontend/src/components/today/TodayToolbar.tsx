@@ -215,7 +215,11 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
                       ? 'text-emerald-400 font-semibold hover:bg-zinc-800/80'
                       : 'text-zinc-300 hover:bg-zinc-800/80'
                   }`}
-                  title={scope === 'watchlist' ? 'Holdings only' : undefined}
+                  title={
+                    scope === 'watchlist'
+                      ? 'The priority feed covers your holdings. View watchlist filings by company.'
+                      : undefined
+                  }
                 >
                   <div className="flex flex-col">
                     <span>Priority feed</span>
@@ -291,7 +295,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
             onClick={() => onOpenHelp()}
             className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-zinc-200 transition-colors touch-manipulation"
             aria-label="Help: How to read this"
-            title="How to read FINN"
+            title="How to read Today"
           >
             <Info className="w-4 h-4" />
           </button>

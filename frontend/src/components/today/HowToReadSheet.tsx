@@ -45,7 +45,7 @@ export const HowToReadSheet: React.FC<HowToReadSheetProps> = ({
           <div className="flex items-center gap-2">
             <HelpCircle className="w-4 h-4 text-emerald-400" />
             <h2 id="help-sheet-title" className="text-sm font-bold text-zinc-100">
-              How to read FINN
+              How to read Today
             </h2>
           </div>
           <button
@@ -57,63 +57,66 @@ export const HowToReadSheet: React.FC<HowToReadSheetProps> = ({
           </button>
         </div>
 
-        <div className="px-4 py-2 text-[11px] text-zinc-400 bg-zinc-900/40 border-b border-zinc-800/60">
-          A triage desk for Indian public markets, grounded in primary exchange filings.
+        <div className="px-4 py-2 text-[11px] text-zinc-400 bg-zinc-900/40 border-b border-zinc-800/60 leading-relaxed">
+          Choose a period, then decide whether to scan events or companies.
         </div>
 
         {/* Scrollable Definition List */}
-        <div className="px-4 py-3 overflow-y-auto space-y-3.5 text-xs">
+        <div className="px-4 py-3 overflow-y-auto space-y-3 text-xs">
           {/* Period */}
-          <div className="space-y-1">
+          <div className="space-y-0.5">
             <dt className="font-semibold text-zinc-200 font-mono text-[11px] uppercase tracking-wider">
-              Period (24h · 3d · 7d · 30d)
+              Period
             </dt>
-            <dd className="text-zinc-400 text-[12px] leading-relaxed">
-              Lookback window counting BSE filings by exchange timestamp in IST. 30 days is the maximum window stored.
+            <dd className="text-zinc-400 text-xs leading-relaxed">
+              BSE filing time in IST: past 24 hours, 3, 7 or 30 days maximum.
             </dd>
           </div>
 
-          {/* View Modes */}
-          <div className="space-y-1">
+          {/* View */}
+          <div className="space-y-0.5">
             <dt className="font-semibold text-zinc-200 font-mono text-[11px] uppercase tracking-wider">
               View
             </dt>
-            <dd className="text-zinc-400 text-[12px] leading-relaxed">
-              Switch between a prioritized digest feed or by-company grouping.
+            <dd className="text-zinc-400 text-xs leading-relaxed">
+              Choose how to group or sort filings from the same period.
             </dd>
           </div>
 
-          <div className="space-y-1 pl-2 border-l border-zinc-800">
-            <dt className="font-semibold text-zinc-300 text-[11px]">
-              Priority feed
-            </dt>
-            <dd className="text-zinc-400 text-[12px] leading-relaxed">
-              Ranked digest scoring filings by materiality, custom interest boosts, and price reaction. Available for holdings.
-            </dd>
-          </div>
+          {/* Sub-views */}
+          <div className="space-y-2 pl-2.5 border-l-2 border-zinc-800/80">
+            <div className="space-y-0.5">
+              <dt className="font-semibold text-zinc-300 text-[11px]">
+                Priority feed
+              </dt>
+              <dd className="text-zinc-400 text-xs leading-relaxed">
+                Ranks filings across your 17 holdings by what needs attention first.
+              </dd>
+            </div>
 
-          <div className="space-y-1 pl-2 border-l border-zinc-800">
-            <dt className="font-semibold text-zinc-300 text-[11px]">
-              By company: important first
-            </dt>
-            <dd className="text-zinc-400 text-[12px] leading-relaxed">
-              Groups filings per company, ordered by the highest-scoring filing event.
-            </dd>
-          </div>
+            <div className="space-y-0.5">
+              <dt className="font-semibold text-zinc-300 text-[11px]">
+                By company: important first
+              </dt>
+              <dd className="text-zinc-400 text-xs leading-relaxed">
+                Shows each stock’s material filing count; its highest-ranked filing determines its place.
+              </dd>
+            </div>
 
-          <div className="space-y-1 pl-2 border-l border-zinc-800">
-            <dt className="font-semibold text-zinc-300 text-[11px]">
-              By company: A-Z
-            </dt>
-            <dd className="text-zinc-400 text-[12px] leading-relaxed">
-              Alphabetical list of companies by ticker symbol.
-            </dd>
+            <div className="space-y-0.5">
+              <dt className="font-semibold text-zinc-300 text-[11px]">
+                By company: A–Z
+              </dt>
+              <dd className="text-zinc-400 text-xs leading-relaxed">
+                Lists companies alphabetically by stock symbol.
+              </dd>
+            </div>
           </div>
 
           {/* Buckets */}
           <section
             ref={needsYouRef}
-            className={`space-y-1 rounded-lg p-2 transition-colors ${
+            className={`space-y-0.5 rounded-lg p-2 transition-colors ${
               initialSection === 'needs_you'
                 ? 'bg-emerald-950/30 border border-emerald-800/60'
                 : ''
@@ -125,26 +128,26 @@ export const HowToReadSheet: React.FC<HowToReadSheetProps> = ({
                 <span className="text-[10px] text-emerald-400 font-normal">Highlighted</span>
               )}
             </dt>
-            <dd className="text-zinc-300 text-[12px] leading-relaxed">
-              Top 5 highest-scoring filing events requiring investor attention. Repeated filings for the same event are merged.
+            <dd className="text-zinc-300 text-xs leading-relaxed">
+              Up to five top-ranked events; repeat filings about the same event share one card.
             </dd>
           </section>
 
-          <div className="space-y-1">
+          <div className="space-y-0.5">
             <dt className="font-semibold text-zinc-200 font-mono text-[11px] uppercase tracking-wider">
               Also material
             </dt>
-            <dd className="text-zinc-400 text-[12px] leading-relaxed">
-              Other high and medium priority filings outside the top 5 focus items.
+            <dd className="text-zinc-400 text-xs leading-relaxed">
+              Other high- or medium-priority filings outside the top group.
             </dd>
           </div>
 
-          <div className="space-y-1">
+          <div className="space-y-0.5">
             <dt className="font-semibold text-zinc-200 font-mono text-[11px] uppercase tracking-wider">
               Routine
             </dt>
-            <dd className="text-zinc-400 text-[12px] leading-relaxed">
-              Low-signal compliance filings (reconciliations, trading window notices) collapsed into scannable groups.
+            <dd className="text-zinc-400 text-xs leading-relaxed">
+              Remaining filings, folded away until you open them.
             </dd>
           </div>
         </div>
