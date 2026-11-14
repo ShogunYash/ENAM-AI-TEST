@@ -8,7 +8,7 @@
 - [ ] **AI build history**: `docs/ai-history/README.md` has the index; replace the `<...>` links (ChatGPT and Antigravity share links; scrubbed Claude Code transcripts).
 - [x] **Demo check (13 Nov):** 300 backend tests, lint clean, BSE / screener.in / Yahoo reachable, frontend builds, no mock data in the snapshot.
 - [x] Titan results card fixed (13 Nov): all 17 results cards match screener.in.
-- [x] `GET /debug/sources` on Render (14 Nov): **BSE 403 (blocked), screener.in OK, yfinance OK**. Consequence stated in the writeup: pre-built research and Push are unaffected; live research on an unseen ticker is partial (financial snapshot plus explicit gaps) because transcripts sit on BSE.
+- [x] `GET /debug/sources` on Render (14 Nov): BSE announcement API 403, screener.in OK, yfinance OK. BSE's announcement API answers 403 to the Render host (so Push ingest stays on the laptop and ships in the snapshot/seed), but the earnings-call PDFs download fine: a live research build for an unseen ticker (GODREJCP, 14 Nov) finished on Render in about a minute with 4 transcripts read and 8 promises judged. If a transcript host ever blocks, the report degrades to the financials plus an explicit gap.
 - [ ] **Re-run before sending:** after the last push, wait for the Render auto-deploy and confirm `/health` and the Pages site.
 - [ ] **Email** (below): fill the URLs and your name.
 
@@ -39,7 +39,7 @@ settles it. KPIL guided at least 25% FY26 revenue growth; its filed consolidated
 **Where I'd take it next.** Evaluate verdicts against analyst-labelled examples; narrative-vs-numbers (drafted); intraday filings over a websocket;
 portfolio-level drift in management tone.
 
-Known limits are in the README: free-tier quotas, and BSE blocks cloud IPs (HTTP 403 from the Render host), so a live research build on an unseen ticker returns the screener.in financial snapshot with explicit gaps instead of the transcript-based promised-vs-delivered; the four pre-built reports and all of Push are unaffected because they ship in the committed snapshot and seed.
+Known limits are in the README: free-tier daily quotas can make a live build slower or partial (the report says what it could not finish), and BSE's announcement API blocks the cloud host, so Push data is refreshed on a laptop and shipped in the snapshot.
 
 Thanks,
 `<your name>`

@@ -42,7 +42,7 @@ with the `finn-gpt-oss` alias; see CLAUDE.md).
   | BSE | **FAIL, HTTP 403** (BSE blocks the cloud IP) |
   | screener.in | OK (HTTP 200, quarterly table present) |
   | yfinance | OK (4 TCS price bars) |
-- **What this means (by design, see PLAN risks):** Push ingest and BSE filing PDFs run on the laptop and ship in the committed snapshot/seed, so Today, alerts, results cards, management cards and the four pre-built research reports (INFY, BAJFINANCE, POLYCAB, KPIL) do not need BSE from the cloud. A **live Pull on an unseen ticker** gets the financial snapshot (screener.in works) but transcripts are hosted on BSE, so the report comes back **partial with explicit gaps** ("transcript could not be downloaded (HTTP 403)", "fewer than 2 transcripts"), never invented content. Ask FINN on a filing not in the seed also needs BSE and says so.
+- **What this means:** BSE's announcement API answers 403 to the Render host (so Push ingest stays on the laptop and ships in the snapshot/seed), but the earnings-call PDFs download fine: a live research build for an unseen ticker (GODREJCP, 14 Nov) finished on Render in about a minute with 4 transcripts read and 8 promises judged. If a transcript host ever blocks, the report degrades to the financials plus an explicit gap.
 - **Phone verification:** NOT yet confirmed by the agent. Owner to check on a phone: Today 30d, a results card, Research -> INFY, and the LIVE / SNAPSHOT chip.
 
 ## 3. Verify on a phone (the `finn-demo-check` skill lists every step)
