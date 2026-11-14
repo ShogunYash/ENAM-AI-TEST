@@ -33,10 +33,53 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        zinc: {
+          50: 'rgb(var(--z-50) / <alpha-value>)',
+          100: 'rgb(var(--z-100) / <alpha-value>)',
+          200: 'rgb(var(--z-200) / <alpha-value>)',
+          300: 'rgb(var(--z-300) / <alpha-value>)',
+          400: 'rgb(var(--z-400) / <alpha-value>)',
+          500: 'rgb(var(--z-500) / <alpha-value>)',
+          600: 'rgb(var(--z-600) / <alpha-value>)',
+          700: 'rgb(var(--z-700) / <alpha-value>)',
+          800: 'rgb(var(--z-800) / <alpha-value>)',
+          900: 'rgb(var(--z-900) / <alpha-value>)',
+          950: 'rgb(var(--z-950) / <alpha-value>)',
+        },
+        emerald: {
+          300: 'rgb(var(--emerald-300) / <alpha-value>)',
+          400: 'rgb(var(--emerald-400) / <alpha-value>)',
+          500: 'rgb(var(--emerald-500) / <alpha-value>)',
+          950: 'rgb(var(--emerald-950) / <alpha-value>)',
+        },
+        amber: {
+          300: 'rgb(var(--amber-300) / <alpha-value>)',
+          400: 'rgb(var(--amber-400) / <alpha-value>)',
+          500: 'rgb(var(--amber-500) / <alpha-value>)',
+          950: 'rgb(var(--amber-950) / <alpha-value>)',
+        },
+        rose: {
+          300: 'rgb(var(--rose-300) / <alpha-value>)',
+          400: 'rgb(var(--rose-400) / <alpha-value>)',
+          500: 'rgb(var(--rose-500) / <alpha-value>)',
+          950: 'rgb(var(--rose-950) / <alpha-value>)',
+        },
+        sky: {
+          300: 'rgb(var(--sky-300) / <alpha-value>)',
+          400: 'rgb(var(--sky-400) / <alpha-value>)',
+          500: 'rgb(var(--sky-500) / <alpha-value>)',
+          950: 'rgb(var(--sky-950) / <alpha-value>)',
+        },
+        brand: {
+          DEFAULT: 'rgb(var(--brand-primary) / <alpha-value>)',
+          hover: 'rgb(var(--brand-hover) / <alpha-value>)',
+          tint: 'rgb(var(--brand-tint) / <alpha-value>)',
+          text: 'rgb(var(--brand-text) / <alpha-value>)',
+        },
         finn: {
-          green: "#10b981", // emerald-500
-          red: "#f43f5e",   // rose-500
-          neutral: "#71717a", // zinc-500
+          green: 'rgb(var(--emerald-500) / <alpha-value>)',
+          red: 'rgb(var(--rose-500) / <alpha-value>)',
+          neutral: 'rgb(var(--z-500) / <alpha-value>)',
         }
       },
       borderRadius: {
