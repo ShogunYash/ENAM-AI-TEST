@@ -23,21 +23,21 @@ async function runScreenshotSuite() {
 
   const chromeProc = spawn(chromePath, [
     '--headless=new',
-    '--remote-debugging-port=9232',
+    '--remote-debugging-port=9240',
     '--window-size=390,844',
     '--user-data-dir=' + tmpUserData,
-    'http://localhost:5199/',
+    'http://localhost:5199/?tab=today',
   ])
 
   await new Promise((r) => setTimeout(r, 2000))
 
   try {
-    const listRes = await fetch('http://localhost:9232/json')
+    const listRes = await fetch('http://localhost:9240/json')
     const tabs = await listRes.json()
     const tab = tabs.find((t) => t.type === 'page') || tabs[0]
 
     if (!tab || !tab.webSocketDebuggerUrl) {
-      throw new Error('No page tab found in Chrome on port 9232')
+      throw new Error('No page tab found in Chrome on port 9240')
     }
 
     const ws = new WebSocket(tab.webSocketDebuggerUrl)
@@ -91,16 +91,22 @@ async function runScreenshotSuite() {
     }
 
     const themes = ['light', 'dark']
+    const targetUrl = 'http://localhost:5199/?tab=today'
 
     for (const theme of themes) {
       console.log(`\n================== THEME: ${theme.toUpperCase()} ==================`)
 
-      // Set theme via script and localStorage
+      // Set theme via localStorage and fresh navigation
+      await evaluate(`localStorage.setItem('finn.theme', '${theme}')`)
+      await send('Page.navigate', { url: targetUrl })
+      await new Promise((r) => setTimeout(r, 2000))
+
+      // Ensure theme classes and meta colors match
       await evaluate(`(() => {
         localStorage.setItem('finn.theme', '${theme}');
         if ('${theme}' === 'dark') {
           document.documentElement.classList.add('dark');
-          document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#0E1424');
+          document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#09090B');
         } else {
           document.documentElement.classList.remove('dark');
           document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#F4F6FB');
@@ -111,22 +117,43 @@ async function runScreenshotSuite() {
       // 1. Today (24h Priority feed)
       console.log('Capturing: Today 24h Priority feed...')
       await evaluate(`(() => {
-        const navBtns = Array.from(document.querySelectorAll('nav button'));
-        const todayNav = navBtns.find(b => b.innerText.includes('Today'));
-        if (todayNav) todayNav.click();
-
-        const scopeBtns = Array.from(document.querySelectorAll('div[aria-label="Universe scope"] button'));
-        const portBtn = scopeBtns.find(b => b.innerText.includes('portfolio'));
-        if (portBtn) portBtn.click();
-
-        const winBtns = Array.from(document.querySelectorAll('button'));
-        const b24 = winBtns.find(b => b.innerText.trim() === '24h');
-        if (b24) b24.click();
-
         window.scrollTo(0, 0);
       })()`)
-      await new Promise((r) => setTimeout(r, 1200))
+      await new Promise((r) => setTimeout(r, 800))
       await capture(`theme-${theme}-1-today-24h-priority.png`)
+
+      // 10. Ask sheet (from Today 24h card)
+      console.log('Capturing: Ask sheet...')
+      await evaluate(`(() => {
+        const askBtn = Array.from(document.querySelectorAll('button')).find(b => b.innerText.includes('Ask FINN'));
+        if (askBtn) askBtn.click();
+      })()`)
+      await new Promise((r) => setTimeout(r, 1200))
+      await capture(`theme-${theme}-10-ask-sheet.png`)
+
+      // Close Ask sheet
+      await evaluate(`(() => {
+        const close = document.querySelector('button[aria-label="Close Ask FINN"]');
+        if (close) close.click();
+      })()`)
+      await new Promise((r) => setTimeout(r, 800))
+
+      // 11. Help sheet
+      console.log('Capturing: Help sheet...')
+      await evaluate(`(() => {
+        const helpBtn = document.querySelector('button[aria-label="How to read this digest"]') ||
+                        Array.from(document.querySelectorAll('button')).find(b => b.getAttribute('aria-label')?.includes('How to read'));
+        if (helpBtn) helpBtn.click();
+      })()`)
+      await new Promise((r) => setTimeout(r, 1200))
+      await capture(`theme-${theme}-11-help-sheet.png`)
+
+      // Close Help sheet
+      await evaluate(`(() => {
+        const close = Array.from(document.querySelectorAll('button')).find(b => b.innerText.trim() === 'Got it' || b.getAttribute('aria-label')?.includes('Close'));
+        if (close) close.click();
+      })()`)
+      await new Promise((r) => setTimeout(r, 800))
 
       // 2. Today 30d by company
       console.log('Capturing: Today 30d by company...')
@@ -136,7 +163,7 @@ async function runScreenshotSuite() {
         if (b30d) b30d.click();
         window.scrollTo(0, 0);
       })()`)
-      await new Promise((r) => setTimeout(r, 1200))
+      await new Promise((r) => setTimeout(r, 1500))
       await capture(`theme-${theme}-2-today-30d-companies.png`)
 
       // Drill into BAJFINANCE from 30d list
@@ -171,43 +198,6 @@ async function runScreenshotSuite() {
       await new Promise((r) => setTimeout(r, 600))
       await capture(`theme-${theme}-4-management-card.png`)
 
-      // 10. Ask sheet (from BAJFINANCE card)
-      console.log('Capturing: Ask sheet...')
-      const openedAsk = await evaluate(`(() => {
-        const btns = Array.from(document.querySelectorAll('button'));
-        const ask = btns.find(b => b.innerText && b.innerText.includes('Ask FINN'));
-        if (ask) {
-          ask.click();
-          return true;
-        }
-        return false;
-      })()`)
-      console.log('  Ask button clicked:', openedAsk)
-      await new Promise((r) => setTimeout(r, 1000))
-
-      // Tap first suggested question chip
-      await evaluate(`(() => {
-        const chips = Array.from(document.querySelectorAll('button.rounded-full'));
-        if (chips.length > 0) chips[0].click();
-      })()`)
-      // Wait for response to load from backend
-      for (let i = 0; i < 15; i++) {
-        const hasAnswer = await evaluate(`(() => {
-          return document.querySelector('div.bg-zinc-800\\/50') !== null || document.querySelector('p.text-xs') !== null;
-        })()`)
-        if (hasAnswer) break
-        await new Promise((r) => setTimeout(r, 300))
-      }
-      await new Promise((r) => setTimeout(r, 800))
-      await capture(`theme-${theme}-10-ask-sheet.png`)
-
-      // Close Ask sheet
-      await evaluate(`(() => {
-        const close = document.querySelector('button[aria-label="Close Ask FINN"]');
-        if (close) close.click();
-      })()`)
-      await new Promise((r) => setTimeout(r, 600))
-
       // Back to Today list
       await evaluate(`(() => {
         const backBtn = document.querySelector('button[aria-label="Back to all companies"]') ||
@@ -215,23 +205,6 @@ async function runScreenshotSuite() {
                         Array.from(document.querySelectorAll('button')).find(b => b.innerText.includes('All companies') || b.querySelector('svg.lucide-arrow-left'));
         if (backBtn) backBtn.click();
         else window.history.back();
-      })()`)
-      await new Promise((r) => setTimeout(r, 600))
-
-      // 11. Help sheet
-      console.log('Capturing: Help sheet...')
-      await evaluate(`(() => {
-        const helpBtn = document.querySelector('button[aria-label="How to read this digest"]') ||
-                        Array.from(document.querySelectorAll('button')).find(b => b.getAttribute('aria-label')?.includes('How to read'));
-        if (helpBtn) helpBtn.click();
-      })()`)
-      await new Promise((r) => setTimeout(r, 1000))
-      await capture(`theme-${theme}-11-help-sheet.png`)
-
-      // Close Help sheet
-      await evaluate(`(() => {
-        const close = Array.from(document.querySelectorAll('button')).find(b => b.innerText.trim() === 'Got it' || b.getAttribute('aria-label')?.includes('Close'));
-        if (close) close.click();
       })()`)
       await new Promise((r) => setTimeout(r, 600))
 

@@ -54,7 +54,7 @@ export const RoutineGroup: React.FC<RoutineGroupProps> = ({ routine }) => {
             <div key={item.id} className="p-3 text-xs space-y-1">
               <div className="flex items-center justify-between text-[11px]">
                 <div className="flex items-center gap-1.5">
-                  <span className="font-mono font-bold text-zinc-200">{item.symbol}</span>
+                  <span className="font-mono font-bold text-stock">{item.symbol}</span>
                   <span className="text-zinc-600">·</span>
                   <span className="text-zinc-400">{formatCategory(item.category)}</span>
                 </div>

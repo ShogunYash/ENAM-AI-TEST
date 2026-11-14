@@ -159,7 +159,7 @@ export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({
               <div className="text-xs font-bold text-zinc-100 flex items-center gap-1.5 flex-wrap">
                 <span>Ask FINN</span>
                 {effectiveSymbol && (
-                  <span className="font-mono text-zinc-400">· {effectiveSymbol}</span>
+                  <span className="font-mono text-stock">· {effectiveSymbol}</span>
                 )}
               </div>
               <p className="text-[10px] text-zinc-400 truncate max-w-[260px]">

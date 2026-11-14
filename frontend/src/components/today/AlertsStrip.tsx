@@ -59,7 +59,7 @@ export const AlertsStrip: React.FC<AlertsStripProps> = ({ alerts, onSelectFiling
             >
               <div className="flex items-center gap-1.5">
                 {badgeIcon}
-                <span className="font-mono font-bold text-zinc-100">{al.symbol}</span>
+                <span className="font-mono font-bold text-stock">{al.symbol}</span>
               </div>
               <span className="text-zinc-300 font-medium">
                 {al.message}

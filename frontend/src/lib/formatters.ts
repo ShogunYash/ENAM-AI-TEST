@@ -194,7 +194,7 @@ export function getCategoryBadgeClasses(cat: string): string {
     return 'bg-teal-50 text-teal-700 border-teal-200 dark:bg-teal-950/60 dark:text-teal-300 dark:border-teal-800/60'
   }
   if (c === 'm_and_a' || c === 'm&a') {
-    return 'bg-violet-50 text-violet-700 border-violet-200 dark:bg-violet-950/60 dark:text-violet-300 dark:border-violet-800/60'
+    return 'bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/60 dark:text-[#D8B4FE] dark:border-purple-800/60'
   }
   if (c === 'management_change' || c === 'management') {
     return 'bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800/60'

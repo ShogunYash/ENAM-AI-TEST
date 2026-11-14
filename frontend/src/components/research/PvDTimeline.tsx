@@ -202,12 +202,12 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({
                   title="Tap to view verified verbatim quote"
                 >
                   <div className="flex items-center justify-between text-[11px]">
-                    <span className="text-emerald-400 font-semibold uppercase tracking-wider text-[10px]">
+                    <span className="text-[#37465C] dark:text-[#B6C0D6] font-semibold uppercase tracking-wider text-[10px]">
                       Delivered Outcome
                     </span>
                     {primaryOutcomeSource && (
                       <span className="text-[10px] font-mono text-zinc-400 group-hover:text-zinc-200 underline decoration-zinc-700 flex items-center gap-1">
-                        <FileText className="w-2.5 h-2.5 text-emerald-400" />
+                        <FileText className="w-2.5 h-2.5 text-zinc-400" />
                         <span>
                           {formatDocSourceLabel(
                             primaryOutcomeSource.doc_id,

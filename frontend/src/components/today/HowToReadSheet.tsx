@@ -156,7 +156,7 @@ export const HowToReadSheet: React.FC<HowToReadSheetProps> = ({
         <div className="p-3 bg-zinc-900/50 border-t border-zinc-800/80">
           <button
             onClick={onClose}
-            className="w-full py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-medium text-xs transition-colors touch-manipulation"
+            className="w-full py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-medium text-xs transition-colors touch-manipulation border border-zinc-700 dark:border-[#7C8AA8]"
           >
             Got it
           </button>

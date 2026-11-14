@@ -23,7 +23,7 @@ export const BuildProgress: React.FC<BuildProgressProps> = ({
           <div>
             <div className="text-sm font-bold text-zinc-100 flex items-center gap-1.5 font-mono">
               <span>Building Research</span>
-              <span className="text-amber-400">· {symbol}</span>
+              <span className="text-stock">· {symbol}</span>
             </div>
             <div className="text-[11px] text-zinc-400 font-mono">
               Grounding in primary filings & transcripts

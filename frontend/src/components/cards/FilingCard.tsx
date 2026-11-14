@@ -64,12 +64,12 @@ export const FilingCard: React.FC<FilingCardProps> = ({
   const managementHeadline = getManagementHeadline(filing)
   const displayHeadline = managementHeadline || so_what || headline
 
-  const priorityColor =
+  const priorityDotClasses =
     priority === 'high'
-      ? 'bg-rose-500 shadow-[0_0_8px_rgba(200,40,58,0.5)] dark:shadow-[0_0_8px_rgba(255,122,134,0.5)]'
+      ? 'w-2 h-2 rounded-full bg-rose-500 ring-2 ring-rose-500/40 ring-offset-1 ring-offset-zinc-900 shadow-[0_0_8px_rgba(200,40,58,0.5)] dark:shadow-[0_0_8px_rgba(255,122,134,0.5)]'
       : priority === 'medium'
-      ? 'bg-amber-400 shadow-[0_0_8px_rgba(168,95,0,0.4)] dark:shadow-[0_0_8px_rgba(255,194,77,0.4)]'
-      : 'bg-zinc-500'
+      ? 'w-2 h-2 rounded-full bg-amber-400 ring-1 ring-amber-500/60 shadow-[0_0_6px_rgba(168,95,0,0.3)]'
+      : 'w-1.5 h-1.5 rounded-full bg-zinc-500 border border-zinc-600/80'
 
   return (
     <article
@@ -81,9 +81,14 @@ export const FilingCard: React.FC<FilingCardProps> = ({
       }`}
     >
       {/* Top row: [Company · Category chip · Time ago]   [Priority dot · Score] */}
-      <div className="flex items-center justify-between text-xs mb-2">
-        <div className="flex items-center gap-1.5 flex-wrap">
-          <span className="font-mono font-bold text-zinc-100 tracking-tight">{symbol}</span>
+      <div className="flex items-center justify-between gap-2 text-xs mb-2">
+        <div className="flex min-w-0 items-center gap-1.5 flex-wrap">
+          <span className="inline-flex max-w-full flex-wrap items-baseline gap-x-1.5 text-stock">
+            <span className="font-mono font-bold tracking-tight">{symbol}</span>
+            {company_name && company_name.trim().toUpperCase() !== symbol.toUpperCase() && (
+              <span className="font-medium break-words">{company_name}</span>
+            )}
+          </span>
           <span className="text-zinc-600">·</span>
           <span className={`px-1.5 py-0.5 rounded text-[10px] font-medium border ${getCategoryBadgeClasses(category)}`}>
             {formatCategory(category)}
@@ -98,7 +103,7 @@ export const FilingCard: React.FC<FilingCardProps> = ({
           <span className="text-[11px] font-mono text-zinc-400 font-medium">
             {score.toFixed(1)}
           </span>
-          <span className={`w-2 h-2 rounded-full ${priorityColor}`} />
+          <span className={priorityDotClasses} />
         </div>
       </div>
 

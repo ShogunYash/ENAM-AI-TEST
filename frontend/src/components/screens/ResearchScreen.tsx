@@ -270,7 +270,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
               onClick={() => handleScopeChange('portfolio')}
               className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
                 scope === 'portfolio'
-                  ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/30 font-semibold'
+                  ? 'bg-brand-tint text-stock shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
                   : 'text-zinc-400 hover:text-zinc-200'
               }`}
             >
@@ -281,7 +281,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
               onClick={() => handleScopeChange('watchlist')}
               className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
                 scope === 'watchlist'
-                  ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/30 font-semibold'
+                  ? 'bg-brand-tint text-stock shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
                   : 'text-zinc-400 hover:text-zinc-200'
               }`}
             >
@@ -292,7 +292,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
               onClick={() => handleScopeChange('prebuilt')}
               className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
                 scope === 'prebuilt'
-                  ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/30 font-semibold'
+                  ? 'bg-brand-tint text-stock shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
                   : 'text-zinc-400 hover:text-zinc-200'
               }`}
             >
@@ -335,10 +335,10 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
                   <div className="flex items-start justify-between gap-2">
                     <div className="min-w-0">
                       <div className="flex items-baseline gap-2">
-                        <span className="font-mono font-bold text-zinc-100 text-sm tracking-tight">
+                        <span className="font-mono font-bold text-stock text-sm tracking-tight">
                           {c.symbol}
                         </span>
-                        <span className="text-[12px] text-zinc-400 truncate">
+                        <span className="text-[12px] text-stock truncate">
                           {c.name.replace(/ (Ltd|Limited)\.?$/i, '')}
                         </span>
                       </div>
@@ -424,11 +424,11 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
             <div className="flex items-start justify-between">
               <div>
                 <div className="flex items-center gap-2 flex-wrap">
-                  <h1 className="text-base font-bold text-zinc-100 font-mono tracking-tight">
+                  <h1 className="text-base font-bold text-stock font-mono tracking-tight">
                     {research.symbol}
                   </h1>
                   {research.name && (
-                    <span className="text-xs text-zinc-400 font-medium">
+                    <span className="text-xs text-stock font-medium">
                       {research.name}
                     </span>
                   )}

@@ -71,6 +71,7 @@ export default {
           500: 'rgb(var(--sky-500) / <alpha-value>)',
           950: 'rgb(var(--sky-950) / <alpha-value>)',
         },
+        stock: 'rgb(var(--stock-text) / <alpha-value>)',
         brand: {
           DEFAULT: 'rgb(var(--brand-primary) / <alpha-value>)',
           hover: 'rgb(var(--brand-hover) / <alpha-value>)',

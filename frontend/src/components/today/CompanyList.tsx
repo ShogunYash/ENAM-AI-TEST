@@ -48,8 +48,8 @@ const Row: React.FC<{
     >
       <div className="flex items-center justify-between gap-2">
         <div className="min-w-0 flex items-baseline gap-2">
-          <span className="font-mono font-bold text-zinc-100 tracking-tight">{c.symbol}</span>
-          <span className="text-[12px] text-zinc-400 truncate">{c.name.replace(/ (Ltd|Limited)\.?$/i, '')}</span>
+          <span className="font-mono font-bold text-stock tracking-tight">{c.symbol}</span>
+          <span className="text-[12px] text-stock truncate">{c.name.replace(/ (Ltd|Limited)\.?$/i, '')}</span>
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
           {delta && c.price && (
@@ -259,7 +259,7 @@ export const CompanyList: React.FC<CompanyListProps> = ({
                 onClick={() => handleSortChange('importance')}
                 className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
                   effectiveSort === 'importance'
-                    ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/30 font-semibold'
+                    ? 'bg-brand-tint text-stock shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
@@ -270,7 +270,7 @@ export const CompanyList: React.FC<CompanyListProps> = ({
                 onClick={() => handleSortChange('az')}
                 className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
                   effectiveSort === 'az'
-                    ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/30 font-semibold'
+                    ? 'bg-brand-tint text-stock shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >

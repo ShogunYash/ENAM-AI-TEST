@@ -70,8 +70,8 @@ export const CompanyDetail: React.FC<CompanyDetailProps> = ({ symbol, windowOpti
       {header}
       <div className="px-1 space-y-0.5">
         <h1 className="text-lg font-bold text-zinc-100 tracking-tight">
-          <span className="font-mono">{c.symbol}</span>
-          <span className="text-zinc-400 font-normal text-sm ml-2">{c.name.replace(/ (Ltd|Limited)\.?$/i, '')}</span>
+          <span className="font-mono text-stock">{c.symbol}</span>
+          <span className="text-stock font-normal text-sm ml-2">{c.name.replace(/ (Ltd|Limited)\.?$/i, '')}</span>
         </h1>
         <p className="text-[12px] text-zinc-400">
           {c.counts.total} filings in the last {windowOption} · {c.important.length} important

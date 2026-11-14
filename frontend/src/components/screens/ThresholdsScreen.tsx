@@ -114,7 +114,7 @@ export const ThresholdsScreen: React.FC = () => {
             <span>Appearance</span>
           </div>
           <div className="text-[11px] text-zinc-500 mt-0.5">
-            Light paper default or navy dark mode
+            Light paper default or black dark mode
           </div>
         </div>
 
@@ -133,7 +133,7 @@ export const ThresholdsScreen: React.FC = () => {
                 onClick={() => setTheme(mode)}
                 className={`px-3 py-1.5 min-h-[36px] text-xs rounded-md touch-manipulation transition-all font-medium ${
                   isSelected
-                    ? 'bg-brand-tint text-brand-text font-semibold shadow-sm'
+                    ? 'bg-brand-tint text-brand-text font-semibold shadow-sm border border-[#667389] dark:border-[#7C8AA8]'
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
@@ -228,7 +228,7 @@ export const ThresholdsScreen: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-sm font-mono font-bold text-emerald-400">
+              <span className="text-sm font-mono font-bold text-[#37465C] dark:text-[#B6C0D6]">
                 ±{priceStr}%
               </span>
               <ChevronDown
