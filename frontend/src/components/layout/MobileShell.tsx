@@ -55,7 +55,7 @@ export const MobileShell: React.FC<MobileShellProps> = ({
         {/* Brand App Bar */}
         <header className="sticky top-0 z-40 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-900 px-4 py-2.5 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="font-mono font-black text-base tracking-wider text-zinc-100">
+            <span className="font-mono font-black text-base tracking-wider bg-gradient-to-r from-[#3558E6] to-[#5B7CFF] bg-clip-text text-transparent">
               FINN
             </span>
             <span className="text-[10px] uppercase font-semibold text-zinc-400 tracking-wider px-1.5 py-0.5 rounded bg-zinc-900 border border-zinc-800">
@@ -67,6 +67,8 @@ export const MobileShell: React.FC<MobileShellProps> = ({
             NSE · BSE
           </div>
         </header>
+        {/* Slim brand top bar */}
+        <div className="h-[2px] w-full bg-gradient-to-r from-[#3558E6] via-[#5B7CFF] to-[#3558E6] flex-shrink-0" />
 
         {/* Scrollable Content Area */}
         <main className="flex-1 px-3.5 pt-2 overflow-y-auto">
@@ -84,7 +86,7 @@ export const MobileShell: React.FC<MobileShellProps> = ({
                   onClick={() => onTabChange(tab.id)}
                   className={`flex flex-col items-center justify-center flex-1 py-1 px-1 rounded-xl min-h-[48px] touch-manipulation transition-colors relative ${
                     isActive
-                      ? 'text-zinc-100 font-semibold'
+                      ? 'text-brand-text font-bold'
                       : 'text-zinc-500 hover:text-zinc-300'
                   }`}
                 >

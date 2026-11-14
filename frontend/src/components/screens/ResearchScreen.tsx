@@ -252,7 +252,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
           )}
           <button
             type="submit"
-            className="absolute right-2 px-2.5 py-1 text-[11px] font-mono font-semibold rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border border-zinc-700 transition-colors"
+            className="absolute right-2 px-2.5 py-1 text-[11px] font-mono font-semibold rounded-lg bg-brand hover:bg-brand-hover text-white shadow-sm transition-colors"
           >
             GO
           </button>
@@ -270,7 +270,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
               onClick={() => handleScopeChange('portfolio')}
               className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
                 scope === 'portfolio'
-                  ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
+                  ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/30 font-semibold'
                   : 'text-zinc-400 hover:text-zinc-200'
               }`}
             >
@@ -281,7 +281,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
               onClick={() => handleScopeChange('watchlist')}
               className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
                 scope === 'watchlist'
-                  ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
+                  ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/30 font-semibold'
                   : 'text-zinc-400 hover:text-zinc-200'
               }`}
             >
@@ -292,7 +292,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
               onClick={() => handleScopeChange('prebuilt')}
               className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
                 scope === 'prebuilt'
-                  ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
+                  ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/30 font-semibold'
                   : 'text-zinc-400 hover:text-zinc-200'
               }`}
             >
@@ -330,7 +330,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
                 <article
                   key={c.symbol}
                   onClick={() => openDetail(c.symbol)}
-                  className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-3 hover:bg-zinc-900/70 hover:border-zinc-700 transition-colors cursor-pointer"
+                  className="rounded-xl border border-zinc-700/80 bg-zinc-900 shadow-[0_1px_2px_rgba(16,24,40,0.06)] dark:shadow-none p-3 hover:border-zinc-600 transition-all cursor-pointer"
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div className="min-w-0">
@@ -449,10 +449,10 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
                 <button
                   type="button"
                   onClick={() => onAskFinn && onAskFinn(research.symbol, sourceDocs)}
-                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-zinc-800 hover:bg-zinc-700/80 text-zinc-200 border border-zinc-700/70 text-[11px] font-mono font-medium transition-colors touch-manipulation"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand hover:bg-brand-hover text-white text-xs font-semibold shadow-sm transition-colors touch-manipulation"
                   title={`Ask FINN about ${research.symbol}`}
                 >
-                  <Bot className="w-3.5 h-3.5 text-zinc-300" />
+                  <Bot className="w-3.5 h-3.5 text-white/90" />
                   <span>Ask FINN</span>
                 </button>
                 <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-950/40 border border-emerald-800/60 px-2 py-0.5 rounded">

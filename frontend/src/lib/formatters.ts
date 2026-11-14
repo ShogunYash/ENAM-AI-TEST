@@ -184,3 +184,33 @@ export function formatCategory(category: string): string {
   if (category === 'm_and_a') return 'M&A'
   return category.replace(/_/g, ' ')
 }
+
+export function getCategoryBadgeClasses(cat: string): string {
+  const c = cat.toLowerCase()
+  if (c === 'results') {
+    return 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/60 dark:text-blue-300 dark:border-blue-800/60'
+  }
+  if (c === 'fund_raise') {
+    return 'bg-teal-50 text-teal-700 border-teal-200 dark:bg-teal-950/60 dark:text-teal-300 dark:border-teal-800/60'
+  }
+  if (c === 'm_and_a' || c === 'm&a') {
+    return 'bg-violet-50 text-violet-700 border-violet-200 dark:bg-violet-950/60 dark:text-violet-300 dark:border-violet-800/60'
+  }
+  if (c === 'management_change' || c === 'management') {
+    return 'bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800/60'
+  }
+  if (c === 'litigation') {
+    return 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/60 dark:text-rose-300 dark:border-rose-800/60'
+  }
+  if (c === 'insider_trading' || c === 'pledging') {
+    return 'bg-orange-50 text-orange-800 border-orange-200 dark:bg-orange-950/60 dark:text-orange-300 dark:border-orange-800/60'
+  }
+  if (c === 'credit_rating') {
+    return 'bg-sky-50 text-sky-700 border-sky-200 dark:bg-sky-950/60 dark:text-sky-300 dark:border-sky-800/60'
+  }
+  if (c === 'dividend' || c === 'bonus_split') {
+    return 'bg-emerald-50 text-emerald-800 border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800/60'
+  }
+  // Routine paperwork
+  return 'bg-zinc-800/70 text-zinc-400 border-zinc-700/60 dark:bg-zinc-800/80 dark:text-zinc-400 dark:border-zinc-700/50'
+}

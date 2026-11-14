@@ -1,6 +1,12 @@
 import React, { useState } from 'react'
 import { Filing } from '@/api/types'
-import { formatPercentDelta, formatVolumeMultiple, formatRelativeIst, formatCategory } from '@/lib/formatters'
+import {
+  formatPercentDelta,
+  formatVolumeMultiple,
+  formatRelativeIst,
+  formatCategory,
+  getCategoryBadgeClasses,
+} from '@/lib/formatters'
 import { ResultsCardPayload } from './ResultsCardPayload'
 import { BioCardPayload } from './BioCardPayload'
 import { OneLinerPayload } from './OneLinerPayload'
@@ -60,18 +66,18 @@ export const FilingCard: React.FC<FilingCardProps> = ({
 
   const priorityColor =
     priority === 'high'
-      ? 'bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.6)]'
+      ? 'bg-rose-500 shadow-[0_0_8px_rgba(200,40,58,0.5)] dark:shadow-[0_0_8px_rgba(255,122,134,0.5)]'
       : priority === 'medium'
-      ? 'bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.5)]'
+      ? 'bg-amber-400 shadow-[0_0_8px_rgba(168,95,0,0.4)] dark:shadow-[0_0_8px_rgba(255,194,77,0.4)]'
       : 'bg-zinc-500'
 
   return (
     <article
       id={`filing-${id}`}
-      className={`rounded-xl border bg-zinc-900/80 p-3.5 transition-all ${
+      className={`rounded-xl border bg-zinc-900 p-3.5 transition-all shadow-[0_1px_2px_rgba(16,24,40,0.06)] dark:shadow-none ${
         highlight
-          ? 'border-zinc-500 ring-1 ring-zinc-500 bg-zinc-900'
-          : 'border-zinc-800/90 hover:border-zinc-700/80'
+          ? 'border-brand ring-1 ring-brand'
+          : 'border-zinc-700/80 hover:border-zinc-600'
       }`}
     >
       {/* Top row: [Company · Category chip · Time ago]   [Priority dot · Score] */}
@@ -79,7 +85,7 @@ export const FilingCard: React.FC<FilingCardProps> = ({
         <div className="flex items-center gap-1.5 flex-wrap">
           <span className="font-mono font-bold text-zinc-100 tracking-tight">{symbol}</span>
           <span className="text-zinc-600">·</span>
-          <span className="px-1.5 py-0.5 rounded bg-zinc-800/90 text-[10px] font-medium text-zinc-300 border border-zinc-700/50">
+          <span className={`px-1.5 py-0.5 rounded text-[10px] font-medium border ${getCategoryBadgeClasses(category)}`}>
             {formatCategory(category)}
           </span>
           <span className="text-zinc-600">·</span>
@@ -192,9 +198,9 @@ export const FilingCard: React.FC<FilingCardProps> = ({
 
             <button
               onClick={() => onAskFinn && onAskFinn(filing)}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700/80 text-zinc-200 text-xs font-medium border border-zinc-700/60 touch-manipulation transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand hover:bg-brand-hover text-white text-xs font-semibold shadow-sm touch-manipulation transition-colors"
             >
-              <MessageSquare className="w-3 h-3 text-zinc-400" />
+              <MessageSquare className="w-3.5 h-3.5 text-white/90" />
               <span>Ask FINN</span>
             </button>
           </div>

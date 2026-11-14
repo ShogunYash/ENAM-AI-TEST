@@ -189,7 +189,7 @@ export const ThresholdsScreen: React.FC = () => {
                       onClick={() => updateSettings({ volume_multiple: vp })}
                       className={`px-3 py-1.5 text-xs font-mono rounded-md border min-h-[36px] transition-all touch-manipulation ${
                         isSelected
-                          ? 'bg-zinc-800 text-zinc-100 border-zinc-600 font-semibold shadow-sm'
+                          ? 'bg-brand-tint text-brand-text border-brand/40 font-semibold shadow-sm'
                           : 'bg-zinc-950/40 text-zinc-400 border-zinc-800 hover:text-zinc-200'
                       }`}
                     >
@@ -256,7 +256,7 @@ export const ThresholdsScreen: React.FC = () => {
                       onClick={() => updateSettings({ price_move_pct: pp })}
                       className={`px-3 py-1.5 text-xs font-mono rounded-md border min-h-[36px] transition-all touch-manipulation ${
                         isSelected
-                          ? 'bg-zinc-800 text-zinc-100 border-zinc-600 font-semibold shadow-sm'
+                          ? 'bg-brand-tint text-brand-text border-brand/40 font-semibold shadow-sm'
                           : 'bg-zinc-950/40 text-zinc-400 border-zinc-800 hover:text-zinc-200'
                       }`}
                     >

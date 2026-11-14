@@ -3,7 +3,13 @@ import { useQuery } from '@tanstack/react-query'
 import { getCompanyList } from '@/api/client'
 import { CompanySummary } from '@/api/types'
 import { useSettings } from '@/lib/settings'
-import { formatPercentDelta, formatVolumeMultiple, formatRelativeIst, formatCategory } from '@/lib/formatters'
+import {
+  formatPercentDelta,
+  formatVolumeMultiple,
+  formatRelativeIst,
+  formatCategory,
+  getCategoryBadgeClasses,
+} from '@/lib/formatters'
 import { ChevronRight, Search, X, CheckCircle } from 'lucide-react'
 
 export type CompanySortOption = 'importance' | 'az'
@@ -34,10 +40,10 @@ const Row: React.FC<{
       type="button"
       onClick={() => onSelect(c.symbol)}
       aria-label={`${c.name}: ${c.total} filings, ${c.material} material. Open`}
-      className={`w-full text-left rounded-xl border p-3.5 min-h-[88px] touch-manipulation transition-colors ${
+      className={`w-full text-left rounded-xl border p-3.5 min-h-[88px] touch-manipulation transition-all shadow-[0_1px_2px_rgba(16,24,40,0.06)] dark:shadow-none ${
         quiet
-          ? 'border-zinc-800/60 bg-zinc-900/30 opacity-70'
-          : 'border-zinc-800/90 bg-zinc-900/80 hover:border-zinc-700/80 active:bg-zinc-900'
+          ? 'border-zinc-700/50 bg-zinc-900/40 opacity-70'
+          : 'border-zinc-700/80 bg-zinc-900 hover:border-zinc-600'
       }`}
     >
       <div className="flex items-center justify-between gap-2">
@@ -84,7 +90,10 @@ const Row: React.FC<{
             )}
             <span className="text-zinc-500">{c.total} filings</span>
             {cats.map(([cat, n]) => (
-              <span key={cat} className="px-1.5 py-0.5 rounded bg-zinc-800/90 border border-zinc-700/50 text-zinc-300">
+              <span
+                key={cat}
+                className={`px-1.5 py-0.5 rounded text-[10px] font-medium border ${getCategoryBadgeClasses(cat)}`}
+              >
                 {label(cat)} {n > 1 ? `×${n}` : ''}
               </span>
             ))}
@@ -250,7 +259,7 @@ export const CompanyList: React.FC<CompanyListProps> = ({
                 onClick={() => handleSortChange('importance')}
                 className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
                   effectiveSort === 'importance'
-                    ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
+                    ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/30 font-semibold'
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
@@ -261,7 +270,7 @@ export const CompanyList: React.FC<CompanyListProps> = ({
                 onClick={() => handleSortChange('az')}
                 className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
                   effectiveSort === 'az'
-                    ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
+                    ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/30 font-semibold'
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >

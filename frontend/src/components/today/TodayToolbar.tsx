@@ -99,7 +99,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
             onClick={() => onScopeChange('portfolio')}
             className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
               scope === 'portfolio'
-                ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
+                ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/30 font-semibold'
                 : 'text-zinc-400 hover:text-zinc-200'
             }`}
           >
@@ -110,7 +110,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
             onClick={() => onScopeChange('watchlist')}
             className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
               scope === 'watchlist'
-                ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
+                ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/30 font-semibold'
                 : 'text-zinc-400 hover:text-zinc-200'
             }`}
           >
@@ -281,7 +281,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
             onClick={() => setSearchOpen((prev) => !prev)}
             className={`min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg border transition-all touch-manipulation ${
               searchOpen || searchQuery
-                ? 'bg-emerald-950/40 text-emerald-400 border-emerald-800/60'
+                ? 'bg-brand-tint text-brand-text border-brand/40'
                 : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:text-zinc-200'
             }`}
             aria-label="Toggle search"

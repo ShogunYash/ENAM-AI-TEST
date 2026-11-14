@@ -32,7 +32,7 @@ export const WindowPicker: React.FC<WindowPickerProps> = ({
             onClick={() => onChange(opt.id)}
             className={`px-2 sm:px-3 py-1.5 min-h-[36px] text-xs font-medium rounded-md touch-manipulation transition-all ${
               isActive
-                ? 'bg-zinc-800 text-zinc-100 shadow-sm border border-zinc-700/60 font-semibold'
+                ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/30 font-semibold'
                 : 'text-zinc-400 hover:text-zinc-200'
             }`}
           >
