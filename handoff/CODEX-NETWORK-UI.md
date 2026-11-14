@@ -1,16 +1,19 @@
-# Brief for GPT: build the Network UI for FINN (React + TypeScript + Tailwind PWA)
+# Task for Codex: build the Network UI for FINN (React + TypeScript + Tailwind PWA)
 
 You are writing the frontend for the **Network layer** of FINN, a mobile-first investor app ("a triage desk, not a news feed").
 The brief it answers: the investor's own contacts become an intelligence layer that appears INSIDE Push (filings) and Pull
 (research) at the moments it matters, and can also be queried directly. It must feel like "a quiet advantage, not a contact
 list": dense, calm, elegant, no AI slop. All data is a SYNTHETIC demo network and the UI must say so.
 
-## What you receive (zip)
-- `repo/` = the files you need, same relative paths as the repository. Read `AGENTS.md` and
-  `.claude/skills/finn-ui-principles/SKILL.md` first (rules, anatomy, density), then `frontend/tailwind.config.js` and
-  `frontend/src/index.css` (the colour tokens: use ONLY these), `frontend/src/api/network.ts` (the data layer, finished),
+## Where you work
+- Your own git worktree on branch `codex/network-ui` (created from `network`). Never touch `main` or `network`. Do not push.
+- Read `AGENTS.md` and `.claude/skills/finn-ui-principles/SKILL.md` first (rules, anatomy, density), then `frontend/tailwind.config.js`
+  and `frontend/src/index.css` (the colour tokens: use ONLY these), `frontend/src/api/network.ts` (the data layer, finished),
   `docs/CONTRACT.md` (Network rows) and `docs/examples/network-*.json` (real shapes).
-- `screenshots/` = the current app at 390x844, light and dark. Match its look and density.
+- `handoff/ui-ref/` (untracked, do not commit) = screenshots of the current app at 390x844, light and dark. Match its look and density.
+- Run from `frontend/`: `npm run dev` (the app falls back to the committed snapshot in `public/data/`, so you do not need the API),
+  `npx tsc -b`, `npm run build`. Browser suites in `frontend/scripts/*.js` need Chrome and port 5199; skip them if you cannot run them,
+  Claude Code runs them at merge.
 
 ## Data layer (DONE, do not edit `frontend/src/api/*`)
 `useNetworkInsights()` (Map keyed by filing id), `useCompanyNetwork(symbol)`, `useWarmNudges()`, `useExpertise()`,
@@ -61,7 +64,6 @@ If you need a field that does not exist, say so in CHANGES.md instead of inventi
 - Do not touch `frontend/src/api/*`, `backend/`, `docs/`, `data/`.
 
 ## Output
-Return ONE zip, `finn-network-ui.zip`, containing ONLY new or changed files with their full contents and the same relative paths
-(for example `frontend/src/components/network/NetworkScreen.tsx`), plus `CHANGES.md` (what you built, anything you could not do,
-anything you assumed). Do not return diffs or partial files. If you can run code, run `npx tsc -b` and `npm run build` in `frontend/`
-and say so; if you cannot, say that plainly.
+Edit the repository directly and make small commits on `codex/network-ui` (messages like "Network UI: NetworkStrip"; no Co-Authored-By
+or any AI attribution lines). Keep a root file `handoff/CODEX-NOTES.md` (commit it): what you built, what you could not do, anything you assumed,
+and the result of `npx tsc -b` and `npm run build`. Do not leave the build broken at the last commit.

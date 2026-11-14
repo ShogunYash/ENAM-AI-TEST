@@ -2,19 +2,19 @@
 
 Done on branch `network`: backend, contract, examples, snapshot export, docs/ARCHITECTURE.md, and the frontend DATA layer
 (`frontend/src/api/network.ts` + types). The demo network is SYNTHETIC (data/network.json, 10 seed people).
-Owner decision 15 Nov: **GPT writes the Network UI** (Antigravity stands down on it; it can be used later for QA only).
+Owner decision 15 Nov: **Codex writes the Network UI** (it has repo access; Antigravity stands down on it).
 
-## GPT chat 1: the UI (this is the critical path)
-Upload `handoff/GPT-UI-PACK.zip` (it contains BRIEF.md, the repo files it needs and 10 screenshots) and paste:
+## Codex: the UI (critical path). Codex has access to the repo
+Work happens in the worktree `D:ReposENAM-AI-TEST-codex` on branch `codex/network-ui` (made from `network`). Start Codex in THAT folder
+(not in D:ReposENAM-AI-TEST, where Claude Code works) and paste:
 ```
-Read BRIEF.md in the zip and do exactly what it says. You are building the Network UI for an existing React + Tailwind PWA.
-First read AGENTS.md, the finn-ui-principles skill, tailwind.config.js and index.css, then the data layer in api/network.ts and
-the screenshots. Return one zip `finn-network-ui.zip` with only new or changed files (full contents, same relative paths) plus
-CHANGES.md. If you can run `npx tsc -b` and `npm run build` in frontend/, do and report; if you cannot, say so.
+Read AGENTS.md and handoff/CODEX-NETWORK-UI.md and do exactly what the task file says: build the Network UI for this React + Tailwind PWA
+in the worktree you are in, branch codex/network-ui. Read the rules and the data layer first. Make small commits (no AI attribution lines),
+never touch main or network, never push, keep the build green, and write handoff/CODEX-NOTES.md at the end.
 ```
-When it returns: save the zip, tell Claude Code; Claude Code copies the files over, runs tsc, build, the 3 browser suites and screenshots at 360px, fixes small issues, commits.
+When Codex is done: tell Claude Code. Claude Code reviews the branch, merges it into `network`, runs tsc, build, the 3 browser suites and 360px screenshots, fixes small issues.
 
-## GPT chat 2 (parallel, separate chat): the data
+## ChatGPT chat A (parallel, separate chat): the data
 Attach `data/network.json` and `data/portfolio.json` and paste the GPT-12 prompt below. Save its output over `data/network.json`; Claude Code re-runs `scripts.refresh_snapshot` and the tests.
 ```
 Produce data/network.json with 36 people (keep the 10 seeds p01-p10 unchanged, add p11-p36). Same schema exactly: id, name, headline,
@@ -34,7 +34,7 @@ city, jobs[{org, nse_symbol|null, role, start_year, end_year|null}], education[{
 - Mix of men and women, Indian regions, mid-career to senior. Return ONLY valid JSON for the whole file, including "_note" and "as_of".
 ```
 
-## GPT chat 3 (parallel, optional): privacy review of docs/ARCHITECTURE.md
+## ChatGPT chat B (parallel, optional): privacy review of docs/ARCHITECTURE.md
 ```
 Act as a privacy-minded CTO reviewing the attached docs/ARCHITECTURE.md for a hiring panel. List (1) claims that overstate what the demo
 actually does, (2) missing risks (consent for third-party profile data, retention, re-identification, prompt leakage, access control),
