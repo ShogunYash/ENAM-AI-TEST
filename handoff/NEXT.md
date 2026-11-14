@@ -1,43 +1,22 @@
 # NEXT (overwrite each round): the Network layer, branch `network`, 15 Nov 2026
 
-Backend, contract, examples, snapshot export and docs/ARCHITECTURE.md are DONE on branch `network` (320 tests pass).
-Contract: docs/CONTRACT.md "Network" rows; examples: docs/examples/network-*.json; snapshot: frontend/public/data/network/*.json.
-The demo network is SYNTHETIC (data/network.json, 10 seed people). Never present it as real people.
+Done on branch `network`: backend, contract, examples, snapshot export, docs/ARCHITECTURE.md, and the frontend DATA layer
+(`frontend/src/api/network.ts` + types). The demo network is SYNTHETIC (data/network.json, 10 seed people).
+Owner decision 15 Nov: **GPT writes the Network UI** (Antigravity stands down on it; it can be used later for QA only).
 
-## Antigravity (frontend only; run in the ../ENAM-AI-TEST-fe worktree: `git checkout -b frontend/network network`)
+## GPT chat 1: the UI (this is the critical path)
+Upload `handoff/GPT-UI-PACK.zip` (it contains BRIEF.md, the repo files it needs and 10 screenshots) and paste:
 ```
-Read AGENTS.md, .claude/skills/finn-ui-principles/SKILL.md and docs/CONTRACT.md (Network rows + changelog). Test at 360x780 and 390x844,
-light and dark. Types: regenerate with openapi-typescript docs/openapi.json (or add to api/types.ts). Edit only frontend/.
-Data layer (api/client.ts): live API first, snapshot fallback, same pattern as the rest:
-  getNetworkInsights() -> /network/insights | /data/network/insights.json   (index by NetworkInsight.key = filing id)
-  getNetworkCompany(sym) -> /network/company/{sym} | /data/network/companies/{sym}.json
-  getNetworkWarm(), getNetworkExpertise(), getNetworkPeople()  (same pattern)
-  askNetwork(q) -> POST /network/ask (live only; offline: show "needs the live API" and the expertise chips)
+Read BRIEF.md in the zip and do exactly what it says. You are building the Network UI for an existing React + Tailwind PWA.
+First read AGENTS.md, the finn-ui-principles skill, tailwind.config.js and index.css, then the data layer in api/network.ts and
+the screenshots. Return one zip `finn-network-ui.zip` with only new or changed files (full contents, same relative paths) plus
+CHANGES.md. If you can run `npx tsc -b` and `npm run build` in frontend/, do and report; if you cannot, say so.
+```
+When it returns: save the zip, tell Claude Code; Claude Code copies the files over, runs tsc, build, the 3 browser suites and screenshots at 360px, fixes small issues, commits.
 
-NW-1 Woven into Push: on a filing card whose id has a NetworkInsight, add an "In your network" strip under the card body.
-  Collapsed = one line: people icon + insight.headline + chevron. Expanded = up to 3 matches: name, headline, strength as 5 dots,
-  the `why` line, and the `evidence` facts in small muted text; show insight.note (amber, small) when present.
-  management_change cards: the headline names the subject ("2 contacts overlapped with Prashant Verma").
-  material_event cards: show "Best person to call" first. Cards without an insight are unchanged.
-NW-2 Woven into Pull: on the Research detail page (any status, also while building), under the header card add "Who to call about
-  {company}" (getNetworkCompany): top 3 matches, same match row component as NW-1.
-NW-3 Network tab: 5th bottom-nav tab "Network" (Users icon; keep the 4 existing tabs, shrink labels if needed at 360px).
-  Top: "Ask your network" input + chips ("Who knows Bajaj Finance?", "wires and cables", "Who should I reconnect with?").
-  Result: the answer sentence, match cards, and a collapsed "How FINN found this" listing `steps` (tool + summary).
-  Below: "Keep warm" = WarmNudge cards (name, "last spoke N days ago", trigger line, the opener text with a Copy button),
-  then "Expertise map" = theme chips sorted by member count; tapping a chip lists its members and the tracked companies.
-  Header line: "Synthetic demo network · {N} people" (small, muted) so nobody mistakes it for real contacts.
-NW-4 Person sheet: tapping any person name opens a bottom sheet: headline, city, jobs timeline (org, role, years; mark tracked
-  companies), education, expertise tags, "How you know them" and last contact. Reuse the existing sheet pattern.
-NW-5 Profile screen: add a "Your network is private to you" card: 3 short lines (stored per investor, never used to train models,
-  you can delete it), plus the synthetic notice. Copy: GPT-14 if it exists, else keep it plain.
-Strength dots, link badges (worked at / overlapped / same school / expert) must not rely on colour alone. No new colours beyond the theme.
-Run the three browser suites and the offline test. Report with 390x844 screenshots of NW-1 (management + event), NW-2, NW-3, NW-4.
+## GPT chat 2 (parallel, separate chat): the data
+Attach `data/network.json` and `data/portfolio.json` and paste the GPT-12 prompt below. Save its output over `data/network.json`; Claude Code re-runs `scripts.refresh_snapshot` and the tests.
 ```
-
-## ChatGPT (never commits)
-```
-GPT-12 Expand the synthetic network (attach data/network.json and data/portfolio.json)
 Produce data/network.json with 36 people (keep the 10 seeds p01-p10 unchanged, add p11-p36). Same schema exactly: id, name, headline,
 city, jobs[{org, nse_symbol|null, role, start_year, end_year|null}], education[{school, degree, year}], expertise[], relationship
 {strength 1-5, how_met, last_contact YYYY-MM-DD}. Rules:
@@ -54,20 +33,16 @@ city, jobs[{org, nse_symbol|null, role, start_year, end_year|null}], education[{
 - Schools: IIT Delhi, IIT Bombay, IIM Ahmedabad, IIM Bangalore, ISB, SRCC, BITS Pilani, NIT, ICAI; at least 4 people from IIT Delhi.
 - Mix of men and women, Indian regions, mid-career to senior. Return ONLY valid JSON for the whole file, including "_note" and "as_of".
 ```
+
+## GPT chat 3 (parallel, optional): privacy review of docs/ARCHITECTURE.md
 ```
-GPT-13 Privacy and architecture review (attach docs/ARCHITECTURE.md and the brief section "Architecture, data security & privacy")
-Act as a privacy-minded CTO reviewing this page for a hiring panel. List (1) claims that overstate what the demo actually does,
-(2) missing risks (consent for third-party profile data, retention, re-identification, prompt leakage, access control),
-(3) wording to tighten, max 12 bullets, each with the exact replacement sentence. Do not add features. Keep "what the demo does"
-and "what a real deployment would do" clearly separate.
-```
-```
-GPT-14 Network copy (attach a screenshot of the Network tab when it exists, else this file)
-Write: the "Your network is private to you" card (3 lines, max 14 words each), 3 chips for the question box, the empty state
-for "no matches", the offline message for the question box, and the one-line label for each link type (worked at / overlapped /
-same school / expert) with a tooltip sentence. Plain English, no hype.
+Act as a privacy-minded CTO reviewing the attached docs/ARCHITECTURE.md for a hiring panel. List (1) claims that overstate what the demo
+actually does, (2) missing risks (consent for third-party profile data, retention, re-identification, prompt leakage, access control),
+(3) wording to tighten: max 12 bullets, each with the exact replacement sentence. Do not add features. Keep "what the demo does" and
+"what a real deployment would do" clearly separate.
 ```
 
-## Claude Code (me), after both
-Merge `frontend/network` into `network`, build, run suites, check both themes at 360px, regenerate snapshot with the 36-person file,
-update README, SUBMISSION_DRAFT (Founding subject + Network paragraph + link to docs/ARCHITECTURE.md), then merge `network` into `main`.
+## Claude Code (me), after the zips come back
+Apply UI zip, tsc + build + suites + 360px screenshots, apply the data file, regenerate snapshot, fold in the privacy review, update README and
+SUBMISSION_DRAFT (Founding subject, Network paragraph, link to docs/ARCHITECTURE.md), merge `network` into `main`, push main, check Render and Pages.
+Fallback if the UI cannot be finished in time: tag `ai-engineer-v1` is the Push + Pull version with the old subject line.

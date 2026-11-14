@@ -90,3 +90,14 @@ export const DEFAULT_SETTINGS: Settings = {
   muted_categories: ['unclassified'],
   default_window: '24h',
 }
+
+// Network (the investor's contacts; the demo network is SYNTHETIC)
+export type NetworkPerson = components['schemas']['NetworkPerson']
+export type NetworkJob = components['schemas']['NetworkJob']
+export type NetworkEdu = components['schemas']['NetworkEdu']
+export type PersonMatch = components['schemas']['PersonMatch']
+export type NetworkInsight = components['schemas']['NetworkInsight']
+export type WarmNudge = components['schemas']['WarmNudge']
+export type ExpertiseTheme = components['schemas']['ExpertiseTheme']
+export type NetworkAskResponse = components['schemas']['NetworkAskResponse']
+export type AgentStep = components['schemas']['AgentStep']

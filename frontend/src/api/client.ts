@@ -15,7 +15,7 @@ import {
   CompanyFilings,
 } from './types'
 
-const API_BASE = (import.meta.env.VITE_API_BASE || 'http://localhost:8000').trim()
+export const API_BASE = (import.meta.env.VITE_API_BASE || 'http://localhost:8000').trim()
 
 export interface DigestResult {
   digest: Digest
@@ -38,7 +38,7 @@ export interface StatsResult {
 }
 
 // Timeout fetch helper to ensure fast fallback if backend is offline
-async function fetchWithTimeout(url: string, options: RequestInit = {}, timeoutMs = 2500): Promise<Response> {
+export async function fetchWithTimeout(url: string, options: RequestInit = {}, timeoutMs = 2500): Promise<Response> {
   const controller = new AbortController()
   const id = setTimeout(() => controller.abort(), timeoutMs)
   try {

@@ -21,6 +21,119 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/network/people": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Network People
+         * @description The investor's contacts (SYNTHETIC demo network; see docs/ARCHITECTURE.md for the privacy design).
+         */
+        get: operations["network_people_network_people_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/network/insights": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Network Insights
+         * @description Network matches for the last 30 days of filings: management changes (who overlaps with the new person) and
+         *     material events (who is best placed to give context). Keyed by filing id.
+         */
+        get: operations["network_insights_network_insights_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/network/company/{symbol}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Network Company */
+        get: operations["network_company_network_company__symbol__get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/network/warm": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Network Warm */
+        get: operations["network_warm_network_warm_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/network/expertise": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Network Expertise */
+        get: operations["network_expertise_network_expertise_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/network/ask": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Network Ask
+         * @description Direct question to the network. A small agent: a model picks one tool, code runs it, the answer is built from
+         *     the tool's matches (it cannot name anyone who is not in the network).
+         */
+        post: operations["network_ask_network_ask_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/companies": {
         parameters: {
             query?: never;
@@ -250,6 +363,15 @@ export interface components {
              * @description 'screener.quarters', 'screener.profit-loss', or a doc_id
              */
             source: string;
+        };
+        /** AgentStep */
+        AgentStep: {
+            /** Tool */
+            tool: string;
+            /** Input */
+            input: string;
+            /** Summary */
+            summary: string;
         };
         /** Alert */
         Alert: {
@@ -533,6 +655,27 @@ export interface components {
             /** Page */
             page: number | null;
         };
+        /** ExpertiseMember */
+        ExpertiseMember: {
+            /** Person Id */
+            person_id: string;
+            /** Name */
+            name: string;
+            /** Strength */
+            strength: number;
+        };
+        /** ExpertiseTheme */
+        ExpertiseTheme: {
+            /** Theme */
+            theme: string;
+            /** Members */
+            members: components["schemas"]["ExpertiseMember"][];
+            /**
+             * Companies
+             * @description Tracked NSE symbols in this theme
+             */
+            companies: string[];
+        };
         /** Filing */
         Filing: {
             /**
@@ -666,6 +809,127 @@ export interface components {
              */
             spend_inr: number;
         };
+        /** NetworkAskRequest */
+        NetworkAskRequest: {
+            /** Question */
+            question: string;
+        };
+        /** NetworkAskResponse */
+        NetworkAskResponse: {
+            /** Answer */
+            answer: string;
+            /** Matches */
+            matches: components["schemas"]["PersonMatch"][];
+            /**
+             * Steps
+             * @description The tool calls the agent made, shown to the user
+             */
+            steps: components["schemas"]["AgentStep"][];
+            /**
+             * Answerable
+             * @default true
+             */
+            answerable: boolean;
+        };
+        /** NetworkEdu */
+        NetworkEdu: {
+            /** School */
+            school: string;
+            /** Degree */
+            degree: string | null;
+            /** Year */
+            year: number | null;
+        };
+        /** NetworkInsight */
+        NetworkInsight: {
+            /**
+             * Key
+             * @description filing id for management_change / material_event, NSE symbol for company
+             */
+            key: string;
+            /**
+             * Kind
+             * @enum {string}
+             */
+            kind: "management_change" | "material_event" | "company";
+            /** Symbol */
+            symbol: string;
+            /**
+             * Headline
+             * @description e.g. '2 contacts overlapped with Prashant Verma'
+             */
+            headline: string;
+            /**
+             * Subject
+             * @description The person in the filing, when there is one
+             */
+            subject: string | null;
+            /** Matches */
+            matches: components["schemas"]["PersonMatch"][];
+            /**
+             * Note
+             * @description Honest limit, e.g. 'The filing gives no career history, so this matches on the employer only'
+             */
+            note?: string | null;
+        };
+        /** NetworkJob */
+        NetworkJob: {
+            /** Org */
+            org: string;
+            /**
+             * Nse Symbol
+             * @description NSE symbol when `org` is a company FINN tracks, else null
+             */
+            nse_symbol: string | null;
+            /** Role */
+            role: string;
+            /** Start Year */
+            start_year: number;
+            /**
+             * End Year
+             * @description null = current job
+             */
+            end_year: number | null;
+        };
+        /** NetworkPerson */
+        NetworkPerson: {
+            /** Id */
+            id: string;
+            /** Name */
+            name: string;
+            /** Headline */
+            headline: string;
+            /** City */
+            city: string | null;
+            /** Jobs */
+            jobs: components["schemas"]["NetworkJob"][];
+            /** Education */
+            education: components["schemas"]["NetworkEdu"][];
+            /** Expertise */
+            expertise: string[];
+            relationship: components["schemas"]["NetworkRelationship"];
+            /**
+             * Synthetic
+             * @description True for the demo network; the UI says so
+             * @default true
+             */
+            synthetic: boolean;
+        };
+        /** NetworkRelationship */
+        NetworkRelationship: {
+            /**
+             * Strength
+             * @description 1 = acquaintance, 5 = close, trusted contact
+             */
+            strength: number;
+            /** How Met */
+            how_met: string;
+            /**
+             * Last Contact
+             * @description YYYY-MM-DD
+             */
+            last_contact: string;
+        };
         /** OneLiner */
         OneLiner: {
             /**
@@ -675,6 +939,37 @@ export interface components {
             type: "oneliner";
             /** Text */
             text: string;
+        };
+        /** PersonMatch */
+        PersonMatch: {
+            /** Person Id */
+            person_id: string;
+            /** Name */
+            name: string;
+            /** Headline */
+            headline: string;
+            /**
+             * Strength
+             * @description relationship strength 1-5
+             */
+            strength: number;
+            /**
+             * Link
+             * @enum {string}
+             */
+            link: "worked_at_company" | "overlapped_with_person" | "same_school" | "sector_expert";
+            /**
+             * Why
+             * @description One line the investor can act on
+             */
+            why: string;
+            /**
+             * Evidence
+             * @description The facts the match rests on, e.g. 'Bajaj Finance 2014-2019, credit risk'
+             */
+            evidence: string[];
+            /** Score */
+            score: number;
         };
         /** PriceReaction */
         PriceReaction: {
@@ -964,6 +1259,33 @@ export interface components {
          * @enum {string}
          */
         Verdict: "met" | "missed" | "slipped" | "quietly_dropped" | "pending" | "raised" | "cut";
+        /** WarmNudge */
+        WarmNudge: {
+            /** Person Id */
+            person_id: string;
+            /** Name */
+            name: string;
+            /** Headline */
+            headline: string;
+            /** Last Contact */
+            last_contact: string;
+            /** Days Since */
+            days_since: number;
+            /** Symbol */
+            symbol: string;
+            /**
+             * Trigger
+             * @description Why now, e.g. 'Bajaj Finance: Q2 FY27 PAT +29% YoY'
+             */
+            trigger: string;
+            /** Filing Id */
+            filing_id: string | null;
+            /**
+             * Opener
+             * @description A natural first line for reconnecting
+             */
+            opener: string;
+        };
     };
     responses: never;
     parameters: never;
@@ -989,6 +1311,150 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["Health"];
+                };
+            };
+        };
+    };
+    network_people_network_people_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NetworkPerson"][];
+                };
+            };
+        };
+    };
+    network_insights_network_insights_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NetworkInsight"][];
+                };
+            };
+        };
+    };
+    network_company_network_company__symbol__get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                symbol: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NetworkInsight"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    network_warm_network_warm_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["WarmNudge"][];
+                };
+            };
+        };
+    };
+    network_expertise_network_expertise_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ExpertiseTheme"][];
+                };
+            };
+        };
+    };
+    network_ask_network_ask_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["NetworkAskRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["NetworkAskResponse"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
                 };
             };
         };
