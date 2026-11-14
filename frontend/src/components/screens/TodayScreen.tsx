@@ -95,9 +95,9 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
     setHelpOpen(true)
   }
 
-  // Effective view mode: Watchlist has no ranked digest, so defaults to by-company
+  // Effective view mode: Watchlist and 30d have no ranked digest, so defaults to by-company
   const effectiveView: TodayViewOption =
-    scope === 'watchlist'
+    scope === 'watchlist' || windowOption === '30d'
       ? viewOption === 'company_az'
         ? 'company_az'
         : 'company_important'

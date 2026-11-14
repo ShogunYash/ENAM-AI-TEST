@@ -105,11 +105,16 @@ async function runOfflineTest() {
     await new Promise((r) => setTimeout(r, 1200))
 
     // Verify 7d companies loaded from snapshot (17 companies)
-    const symbols7dOffline = await evaluate(`(() => {
-      const sec = document.querySelector('section[aria-label="Companies"]');
-      if (!sec) return [];
-      return Array.from(sec.querySelectorAll('button span.font-mono.font-bold')).map(s => s.innerText.trim());
-    })()`)
+    let symbols7dOffline = []
+    for (let i = 0; i < 25; i++) {
+      symbols7dOffline = await evaluate(`(() => {
+        const sec = document.querySelector('section[aria-label="Companies"]');
+        if (!sec) return [];
+        return Array.from(sec.querySelectorAll('button span.font-mono.font-bold')).map(s => s.innerText.trim());
+      })()`)
+      if (symbols7dOffline && symbols7dOffline.length === 17) break
+      await new Promise((r) => setTimeout(r, 400))
+    }
     console.log('  7d Offline By company symbols:', symbols7dOffline.slice(0, 5), '... total:', symbols7dOffline.length)
     if (symbols7dOffline.length !== 17) {
       throw new Error(`[FAIL] Expected 17 companies in offline 7d By company, got ${symbols7dOffline.length}`)
@@ -134,11 +139,16 @@ async function runOfflineTest() {
     })()`)
     await new Promise((r) => setTimeout(r, 1000))
 
-    const symbols3dOffline = await evaluate(`(() => {
-      const sec = document.querySelector('section[aria-label="Companies"]');
-      if (!sec) return [];
-      return Array.from(sec.querySelectorAll('button span.font-mono.font-bold')).map(s => s.innerText.trim());
-    })()`)
+    let symbols3dOffline = []
+    for (let i = 0; i < 15; i++) {
+      symbols3dOffline = await evaluate(`(() => {
+        const sec = document.querySelector('section[aria-label="Companies"]');
+        if (!sec) return [];
+        return Array.from(sec.querySelectorAll('button span.font-mono.font-bold')).map(s => s.innerText.trim());
+      })()`)
+      if (symbols3dOffline && symbols3dOffline.length === 17) break
+      await new Promise((r) => setTimeout(r, 400))
+    }
     console.log('  3d Offline By company symbols count:', symbols3dOffline.length)
     if (symbols3dOffline.length !== 17) {
       throw new Error(`[FAIL] Expected 17 companies in offline 3d By company, got ${symbols3dOffline.length}`)
@@ -154,11 +164,16 @@ async function runOfflineTest() {
     })()`)
     await new Promise((r) => setTimeout(r, 1000))
 
-    const symbols30dOffline = await evaluate(`(() => {
-      const sec = document.querySelector('section[aria-label="Companies"]');
-      if (!sec) return [];
-      return Array.from(sec.querySelectorAll('button span.font-mono.font-bold')).map(s => s.innerText.trim());
-    })()`)
+    let symbols30dOffline = []
+    for (let i = 0; i < 15; i++) {
+      symbols30dOffline = await evaluate(`(() => {
+        const sec = document.querySelector('section[aria-label="Companies"]');
+        if (!sec) return [];
+        return Array.from(sec.querySelectorAll('button span.font-mono.font-bold')).map(s => s.innerText.trim());
+      })()`)
+      if (symbols30dOffline && symbols30dOffline.length === 17) break
+      await new Promise((r) => setTimeout(r, 400))
+    }
     console.log('  30d Offline By company symbols count:', symbols30dOffline.length)
     if (symbols30dOffline.length !== 17) {
       throw new Error(`[FAIL] Expected 17 companies in offline 30d By company, got ${symbols30dOffline.length}`)
@@ -173,6 +188,7 @@ async function runOfflineTest() {
       chromeProc.kill()
     } catch {}
     try {
+      spawn('taskkill', ['/pid', String(offlineVite.pid), '/f', '/t'])
       offlineVite.kill()
     } catch {}
     try {
