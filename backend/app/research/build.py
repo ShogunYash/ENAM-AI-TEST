@@ -21,6 +21,8 @@ from app.signals.eod import IST
 _SCHEMA_DONE = False
 _lock = threading.Lock()
 _running: dict[str, list[str]] = {}          # symbol -> progress messages of an in-flight build
+_partial: dict[str, m.Research] = {}         # symbol -> the report so far (snapshot, sources, judged promises) while building
+LIVE_CONCALLS = 4                            # the brief asks for the last 4 quarters; 4 calls also build faster than 5
 
 
 def _ensure_table() -> None:
@@ -124,6 +126,16 @@ def build_research(symbol: str, progress=None) -> m.Research:
             progress(msg)
 
     calls0 = _llm_calls(symbol)
+
+    def publish(**fields) -> None:
+        """Make what is finished readable now: the client polls and shows it below the progress steps."""
+        with _lock:
+            if symbol in _running:
+                cur = _partial.get(symbol) or m.Research(
+                    symbol=symbol, name=None, status="building", progress=[], generated_at=None, sources=[],
+                    snapshot=None, pvd=[], extra=None, gaps=[], cost=m.ResearchCost(llm_calls=0, cached=False))
+                _partial[symbol] = cur.model_copy(update=fields)
+
     say(f"Resolving {symbol} on screener.in")
     try:
         html, consolidated = screener.fetch_page(symbol)
@@ -134,9 +146,10 @@ def build_research(symbol: str, progress=None) -> m.Research:
     name = screener.parse_company_name(html)
     snap = snapshot.build_snapshot(html)
     say("Loaded financial tables" + ("" if consolidated else " (standalone: no consolidated statements)"))
+    publish(name=name, snapshot=snap)                                  # financials are readable within seconds
 
     gaps: list[str] = []
-    refs, load_gaps = loader.load_company(symbol, n_concalls=5)
+    refs, load_gaps = loader.load_company(symbol, n_concalls=LIVE_CONCALLS)
     gaps += load_gaps
     concalls = [r for r in refs if r.kind == "concall"]
     if len(concalls) < 2 and any("could not be downloaded" in g for g in gaps):
@@ -150,12 +163,15 @@ def build_research(symbol: str, progress=None) -> m.Research:
         gaps.append(f"{newest_reported} earnings-call transcript not yet published; latest call covered is "
                     f"{max(concalls, key=lambda r: pvd.period_key(r.period)).period}")
 
+    publish(gaps=list(gaps), sources=[m.SourceDoc(doc_id=r.doc_id, kind=r.kind, period=r.period, url=r.url, pages=None)
+                                     for r in refs])
     items: list[m.PvDItem] = []
     if len(concalls) >= 2:
         g_items, notes = guidance.extract_all(symbol, progress=say)
         gaps += notes
         say(f"Extracted {len(g_items)} guidance statements with verified quotes")
-        items = pvd.build_pvd(symbol, g_items, html, gaps, progress=say)
+        items = pvd.build_pvd(symbol, g_items, html, gaps, progress=say,
+                              on_items=lambda got: publish(pvd=got, gaps=list(gaps)))
         say(f"Judged {len(items)} promises against later calls and reported numbers")
     else:
         gaps.append("Fewer than 2 transcripts available, so promised-vs-delivered cannot be built")
@@ -179,6 +195,7 @@ def _run(symbol: str) -> None:
         save(r)                                   # failures are not cached: the next request retries
     with _lock:
         _running.pop(symbol, None)
+        _partial.pop(symbol, None)
         _failed[symbol] = r if r.status == "failed" else None
 
 
@@ -203,6 +220,10 @@ def status(symbol: str) -> m.Research:
         return done
     prog = in_progress(symbol)
     if prog is not None:
+        with _lock:
+            part = _partial.get(symbol)
+        if part is not None:                      # what is finished so far, plus the live progress steps
+            return part.model_copy(update={"progress": prog})
         return m.Research(symbol=symbol, name=None, status="building", progress=prog, generated_at=None, sources=[],
                           snapshot=None, pvd=[], extra=None, gaps=[], cost=m.ResearchCost(llm_calls=0, cached=False))
     with _lock:

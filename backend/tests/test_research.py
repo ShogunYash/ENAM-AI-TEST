@@ -407,3 +407,42 @@ def test_blocked_transcript_source_becomes_one_plain_gap(monkeypatch):
     assert r.status == "partial"
     assert r.gaps[0].startswith("The financials are available, but earnings-call transcripts were unavailable")
     assert not any("HTTP 403" in g for g in r.gaps)
+
+
+def test_build_publishes_partial_report_while_running(monkeypatch):
+    from app import models as m
+    from app.research import build
+    snap = m.FinancialSnapshot.model_construct(latest_period="FY26")
+    monkeypatch.setattr(build.screener, "fetch_page", lambda s: ("<html></html>", True))
+    monkeypatch.setattr(build.screener, "parse_company_name", lambda h: "Y Ltd")
+    monkeypatch.setattr(build.snapshot, "build_snapshot", lambda h: snap)
+    monkeypatch.setattr(build, "_latest_reported_quarter", lambda h: None)
+    monkeypatch.setattr(build, "_llm_calls", lambda s: 0)
+    monkeypatch.setattr(build.loader, "load_company", lambda s, n_concalls=5: ([], []))
+    seen = {}
+    build._running["YYY"] = ["Starting"]
+    try:
+        r = build.build_research("YYY")
+        seen = build.status("YYY")                  # still "running": the partial report is what the API serves
+    finally:
+        build._running.pop("YYY", None)
+        build._partial.pop("YYY", None)
+    assert r.status == "partial"
+    assert seen.status == "building" and seen.name == "Y Ltd" and seen.snapshot is snap
+    assert seen.progress and any("financial tables" in p for p in seen.progress)
+
+
+def test_guidance_reads_transcripts_in_parallel_but_returns_oldest_first(monkeypatch):
+    import time
+    docs = [{"doc_id": f"X:c{i}", "kind": "concall", "period": p} for i, p in
+            enumerate(["Q3 FY26", "Q1 FY26", "Q2 FY26"])]
+    monkeypatch.setattr(guidance.loader, "stored_docs", lambda s: docs)
+
+    def fake(doc_id, period, symbol):
+        time.sleep(0.3 if period == "Q1 FY26" else 0.01)          # the oldest call finishes LAST
+        return [Guidance(doc_id + "#1", doc_id, period, "m", "t", None, "q", 1)], {"dropped": 0}
+    monkeypatch.setattr(guidance, "extract_for_doc", fake)
+    t0 = time.time()
+    items, notes = guidance.extract_all("X")
+    assert [g.period for g in items] == ["Q1 FY26", "Q2 FY26", "Q3 FY26"] and notes == []
+    assert time.time() - t0 < 0.6

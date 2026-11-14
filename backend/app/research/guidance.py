@@ -7,12 +7,15 @@ from __future__ import annotations
 
 import hashlib
 import re
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 
 from app.llm import run_task, store
 from app.research import loader
 from app.research.verify import verify_quote
 from app.settings import get_settings
+
+PARALLEL = 3          # transcripts read at once (each call mostly waits on a model)
 
 
 @dataclass(frozen=True)
@@ -80,16 +83,31 @@ def extract_all(symbol: str, progress=None) -> tuple[list[Guidance], list[str]]:
         q, fy = d["period"].split()
         return int(fy[2:]), int(q[1])
     docs.sort(key=key)
+    results: dict[int, tuple[list[Guidance], dict] | Exception] = {}
+
+    def one(i: int, d: dict) -> None:
+        try:
+            results[i] = extract_for_doc(d["doc_id"], d["period"], symbol)
+        except Exception as e:  # noqa: BLE001 - one bad transcript must not sink the report
+            results[i] = e
+
+    # the calls are independent and mostly waiting on a model: read the transcripts side by side
+    if progress and docs:
+        progress(f"Reading {len(docs)} earnings calls side by side")
+    with ThreadPoolExecutor(max_workers=PARALLEL) as pool:
+        futures = {pool.submit(one, i, d): i for i, d in enumerate(docs)}
+        for n, fut in enumerate(as_completed(futures), 1):
+            fut.result()
+            if progress:
+                progress(f"Read the {docs[futures[fut]]['period']} call ({n}/{len(docs)})")
     allg: list[Guidance] = []
     notes: list[str] = []
-    for i, d in enumerate(docs, 1):
-        if progress:
-            progress(f"Extracting guidance {i}/{len(docs)} ({d['period']} call)")
-        try:
-            items, st = extract_for_doc(d["doc_id"], d["period"], symbol)
-        except Exception as e:  # noqa: BLE001 - one bad transcript must not sink the report
-            notes.append(f"{d['period']} call: guidance extraction failed ({type(e).__name__})")
+    for i, d in enumerate(docs):                                  # oldest call first, as before
+        got = results[i]
+        if isinstance(got, Exception):
+            notes.append(f"{d['period']} call: guidance extraction failed ({type(got).__name__})")
             continue
+        items, st = got
         allg += items
         if st["dropped"]:
             notes.append(f"{d['period']} call: {st['dropped']} unverifiable quote(s) dropped")

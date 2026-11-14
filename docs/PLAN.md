@@ -25,7 +25,7 @@ Rules for every agent: `AGENTS.md`. API contract: `docs/CONTRACT.md`.
 | Local GPU | ✅ | Ollama gpt-oss-20b on the station over an SSH tunnel: free, build-time only (`FINN_USE_LOCAL_LLM=0` on Render and in tests) |
 | Frontend (Antigravity) | ✅ | PWA with a light default theme and a dark option (Appearance in Thresholds): Today (period/view toolbar, portfolio/watchlist, by-company), Research (portfolio/watchlist/ready-reports), Settings, Cost, Profile (name, holdings, data sources; stored on the device), Ask sheet; remembers the section and open stock on reload; offline from snapshot |
 | D1-D2 deploy | ✅ 14 Nov | Render API + Cloudflare Pages ([DEPLOY.md](DEPLOY.md)); `/debug/sources` from Render: BSE 403, screener.in OK, yfinance OK |
-| Unseen ticker (measured) | ✅ | 346 s, 6 calls with the GPU off; degrades to a partial report with an explicit gap, never fakes |
+| Unseen ticker (measured) | ✅ | first build 346 s (14 Nov, GPU off). Then made faster: transcripts read and promises judged in parallel, a failing or slow model is skipped for minutes instead of retried, fast models ahead of slow free ones, 4 calls not 5; the report now streams (financials in ~2 s, then sources, then each judged promise). Re-measured on HINDUNILVR with the daily quotas partly used up: ready in under 2 minutes. Degrades to a partial report with an explicit gap, never fakes |
 | Left for the owner | ⏳ | Phone check, repo visibility, `docs/ai-history/README.md` links, send the email ([SUBMISSION_DRAFT.md](SUBMISSION_DRAFT.md)) |
 
 ### Decisions added after the first plan

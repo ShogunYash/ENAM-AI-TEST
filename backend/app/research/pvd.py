@@ -14,6 +14,7 @@ import json
 import math
 import re
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from app import models as m
 from app.ingest import screener
@@ -24,6 +25,7 @@ from app.research.guidance import Guidance
 from app.research.verify import verify_quote
 from app.settings import get_settings
 
+PARALLEL = 2  # judging batches in flight at once (free tiers allow it; more just trips rate limits)
 BATCH = 6  # guidance items per reduce call (keeps reasoning + output manageable)
 PASSAGES_PER_CALL = 2
 PASSAGE_CHARS = 700
@@ -387,7 +389,7 @@ def deterministic_item(g: Guidance, actual_index: dict[str, dict]) -> m.PvDItem 
 
 
 def build_pvd(
-    symbol: str, guidance: list[Guidance], html: str, gaps: list[str], progress=None
+    symbol: str, guidance: list[Guidance], html: str, gaps: list[str], progress=None, on_items=None
 ) -> list[m.PvDItem]:
     """All promised-vs-delivered items for a symbol (oldest calls judged against everything that came after)."""
     docs = sorted(
@@ -418,17 +420,30 @@ def build_pvd(
     chosen = [g for g in chosen if g.gid not in settled]
     by_gid = {g.gid: g for g in chosen}
     as_of = f"{docs[-1]['period']} earnings call" if docs else "latest available"
-    for i in range(0, len(chosen), BATCH):
-        batch = chosen[i : i + BATCH]
-        if progress:
-            progress(f"Judging promises vs outcomes {min(i + BATCH, len(chosen))}/{len(chosen)}")
-        ev = build_evidence(batch, later, actuals, gaps, as_of)
+    if items and on_items:
+        on_items(list(items))                    # arithmetic-settled promises are ready immediately: show them now
+    batches = [chosen[i : i + BATCH] for i in range(0, len(chosen), BATCH)]
+    evidence = [build_evidence(b, later, actuals, gaps, as_of) for b in batches]    # cheap, no model
+    done: dict[int, list[m.PvDItem]] = {}
+
+    def judge(k: int) -> tuple[int, list[m.PvDItem] | Exception]:
         try:
-            got, _ = reduce_batch(symbol, batch, ev, pages, by_gid, actual_index)
+            return k, reduce_batch(symbol, batches[k], evidence[k], pages, by_gid, actual_index)[0]
         except Exception as e:  # noqa: BLE001
-            gaps.append(
-                f"Judgment batch {i // BATCH + 1} failed ({type(e).__name__}); those promises are not shown"
-            )
-            continue
-        items += got
+            return k, e
+
+    with ThreadPoolExecutor(max_workers=min(PARALLEL, max(1, len(batches)))) as pool:
+        futs = [pool.submit(judge, k) for k in range(len(batches))]
+        for finished, fut in enumerate(as_completed(futs), 1):
+            k, got = fut.result()
+            if isinstance(got, Exception):
+                gaps.append(f"Judgment batch {k + 1} failed ({type(got).__name__}); those promises are not shown")
+                continue
+            done[k] = got
+            if progress:
+                progress(f"Judged promises {min(finished * BATCH, len(chosen))}/{len(chosen)}")
+            if on_items:                                              # show each batch the moment it is judged
+                on_items(items + [x for j in sorted(done) for x in done[j]])
+    for k in sorted(done):
+        items += done[k]
     return items

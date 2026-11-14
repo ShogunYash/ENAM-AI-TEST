@@ -43,10 +43,11 @@ tiers:
     - {provider: gemini,     model: gemini-3.6-flash}
     - {provider: gemini,     model: gemini-3.5-flash}
     - {provider: local,      model: finn-gpt-oss, max_input_chars: 140000, timeout_s: 420, max_output_tokens: 16000, reasoning_effort: medium}   # reasoning over transcripts; no quota
-    - {provider: gemini,     model: gemini-3.8-flash}   # best reasoning but flaky: 503 + a 90 s timeout seen on 12 Nov
-    - {provider: openrouter, model: "nvidia/nemotron-3-ultra-550b-a55b:free", max_input_chars: 200000}
+    - {provider: gemini,     model: gemini-3.5-flash-lite}   # answers in ~4 s with a quota of its own; weaker reasoning, but every verdict still passes the quote and number checks
+    - {provider: gemini,     model: gemini-3.1-flash-lite}   # separate quota, 2-6 s
+    - {provider: gemini,     model: gemini-3.8-flash, timeout_s: 30}   # best reasoning but timed out in every recent build: after the fast options, 30 s cap
     - {provider: openrouter, model: "google/gemma-4-31b-it:free", max_input_chars: 100000}
-    - {provider: gemini,     model: gemini-3.5-flash-lite}   # last resort: weaker reasoning, but a daily quota of its own
+    - {provider: openrouter, model: "nvidia/nemotron-3-ultra-550b-a55b:free", max_input_chars: 200000, timeout_s: 45}   # invalid on every pvd attempt in the ledger (50-110 s each): last resort only
 
 # Per-request settings
 request:

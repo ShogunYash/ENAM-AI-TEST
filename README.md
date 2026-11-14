@@ -46,7 +46,7 @@ Every call goes through one router; numbers below come from the app's own ledger
 | T3 reason | promised-vs-delivered verdicts | Gemini Flash, local gpt-oss-20b (medium effort), OpenRouter | once per ticker |
 
 **Measured:** 195 model calls, 1.59 M input tokens, 126 K output tokens, **54.4 % cache hits**, ₹0.00. By model: local gpt-oss-20b 54 calls,
-Flash-Lite 110 (two versions), Flash 27, OpenRouter free 2. A new ticker costs **6 to 8 calls** (measured on an unseen ticker with the local GPU off: 346 s, 6 calls).
+Flash-Lite 110 (two versions), Flash 27, OpenRouter free 2. A new ticker costs **6 to 8 calls** (unseen ticker, local GPU off: 346 s before the 14 Nov speed-up, under 2 minutes after; the report streams in, financials within ~2 s).
 The universe is **17 holdings + a curated 10-name watchlist** (`data/portfolio.json`); the digest and alerts cover holdings only, the by-company view covers both.
 On the same hardware-free path the answer is partial-but-honest when quotas bite (see *Limits*).
 

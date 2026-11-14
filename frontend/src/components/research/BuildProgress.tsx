@@ -5,13 +5,31 @@ interface BuildProgressProps {
   symbol: string
   progress: string[]
   pollCount?: number
+  /** once some results are already on screen, shrink to a one-line live strip above them */
+  compact?: boolean
 }
 
 export const BuildProgress: React.FC<BuildProgressProps> = ({
   symbol,
   progress = [],
   pollCount = 0,
+  compact = false,
 }) => {
+  if (compact) {
+    const latest = progress[progress.length - 1] || 'Working…'
+    return (
+      <div className="rounded-xl border border-amber-800/50 bg-amber-950/20 px-3 py-2 text-xs" role="status" aria-live="polite">
+        <div className="flex items-center gap-2 text-zinc-100 font-medium">
+          <Loader2 className="w-3.5 h-3.5 text-amber-400 animate-spin flex-shrink-0" />
+          <span className="leading-tight">{latest}</span>
+        </div>
+        <div className="mt-1 text-[11px] text-zinc-400">
+          Still reading. Finished parts appear below as they are ready.
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="p-4 rounded-xl border border-zinc-800 bg-zinc-900/60 space-y-4 text-xs">
       {/* Header */}

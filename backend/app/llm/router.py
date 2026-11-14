@@ -33,6 +33,12 @@ class LLMUnavailable(RuntimeError):
 
 # (provider, model) -> monotonic time until which it is skipped after a 429
 _cooldown: dict[tuple[str, str], float] = {}
+# circuit breaker: (provider, model, task or '*') -> monotonic time until skipped after a timeout / two invalid replies,
+# so parallel and later calls stop paying for a model that just failed slowly
+_bad: dict[tuple[str, str, str], float] = {}
+BAD_TIMEOUT_S = 300
+BAD_INVALID_S = 600
+SLOW_INVALID_MS = 20_000
 _config_cache: dict[str, LLMConfig] = {}
 
 
@@ -188,11 +194,16 @@ def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str
             if _cooldown.get((ref.provider, ref.model), 0) > time.monotonic():
                 errors.append(f"{label}: cooling down after 429")
                 continue
+            now = time.monotonic()
+            if max(_bad.get((ref.provider, ref.model, "*"), 0), _bad.get((ref.provider, ref.model, task), 0)) > now:
+                errors.append(f"{label}: skipped after a recent timeout / invalid replies")
+                continue
             if long_cd := store.cooldown_until(db, ref.provider, ref.model):
                 errors.append(f"{label}: skipped, {long_cd[1]} (for ~{(long_cd[0] - time.time()) / 3600:.1f} h)")
                 continue
 
             extra_user = ""
+            invalid = 0
             for attempt in (1, 2):  # attempt 2 = corrective retry after unparseable output
                 t0 = time.monotonic()
                 try:
@@ -215,6 +226,8 @@ def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str
                     errors.append(f"{label}: HTTP {code}")
                     break
                 except (httpx.TransportError, KeyError, ValueError) as e:
+                    if isinstance(e, httpx.TimeoutException):
+                        _bad[(ref.provider, ref.model, "*")] = time.monotonic() + BAD_TIMEOUT_S
                     store.record(db, feature=feature, task=task, unit=unit, provider=ref.provider,
                                  model=ref.model, ok=False, error=type(e).__name__,
                                  latency_ms=int((time.monotonic() - t0) * 1000))
@@ -229,6 +242,12 @@ def run_task(task: str, inputs: dict, *, cache_key_extra: str = "", feature: str
                                  model=ref.model, tokens_in=tin, tokens_out=tout, ok=False,
                                  error="invalid_output", latency_ms=latency)
                     errors.append(f"{label}: invalid output ({type(e).__name__})")
+                    invalid += 1
+                    if latency > SLOW_INVALID_MS:        # a slow wrong answer will repeat: do not pay for the retry
+                        invalid = 2
+                    if invalid >= 2:
+                        _bad[(ref.provider, ref.model, task)] = time.monotonic() + BAD_INVALID_S
+                        break
                     extra_user = "\n\nYour previous reply was not valid JSON for the schema. Reply with ONLY valid JSON."
                     continue
 

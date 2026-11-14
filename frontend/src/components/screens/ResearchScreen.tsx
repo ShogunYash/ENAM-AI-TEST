@@ -132,7 +132,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
     enabled: Boolean(selectedCompany),
     refetchInterval: (query) => {
       const status = query.state.data?.data?.status
-      return status === 'building' ? 3000 : false
+      return status === 'building' ? 2000 : false
     },
   })
 
@@ -420,15 +420,16 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
           symbol={research.symbol}
           progress={research.progress}
           pollCount={pollCount}
+          compact={Boolean(research.snapshot)}
         />
       )}
 
-      {/* Ready / Partial State View */}
-      {isReady && research && (
+      {/* Report body: shown as soon as anything is ready, and fills in below while the build continues */}
+      {(isReady || isBuilding) && research && (
         <div className="space-y-4">
           {/* Company & Financial Snapshot Header */}
           <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-3.5 space-y-3">
-            <div className="flex items-start justify-between">
+            <div className="flex flex-wrap items-start justify-between gap-x-2 gap-y-2">
               <div>
                 <div className="flex items-center gap-2 flex-wrap">
                   <h1 className="text-base font-bold text-stock font-mono tracking-tight">
@@ -462,7 +463,13 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
                   <Bot className="w-3.5 h-3.5 text-white/90" />
                   <span>Ask FINN</span>
                 </button>
-                <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-950/40 border border-emerald-800/60 px-2 py-0.5 rounded">
+                <span
+                  className={`text-[10px] font-mono font-semibold uppercase tracking-wider px-2 py-0.5 rounded border ${
+                    isBuilding
+                      ? 'text-amber-400 bg-amber-950/40 border-amber-800/60'
+                      : 'text-emerald-400 bg-emerald-950/40 border-emerald-800/60'
+                  }`}
+                >
                   {research.status}
                 </span>
                 <button
@@ -541,7 +548,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
           </div>
 
           {/* Gaps List at TOP for partial reports */}
-          {research.status === 'partial' && (
+          {(research.status === 'partial' || (isBuilding && research.gaps.length > 0)) && (
             <section className="pt-0.5">
               <GapsList gaps={research.gaps} />
             </section>
@@ -567,13 +574,23 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
               <span className="text-[11px] text-zinc-500">Tap claim for verified quote</span>
             </div>
 
-            <PvDTimeline
-              items={research.pvd}
-              sourceDocs={sourceDocs}
-              onSelectClaim={(claim, metricTitle) =>
-                setSelectedClaim({ claim, metricTitle })
-              }
-            />
+            {(research.pvd.length > 0 || !isBuilding) && (
+              <PvDTimeline
+                items={research.pvd}
+                sourceDocs={sourceDocs}
+                onSelectClaim={(claim, metricTitle) =>
+                  setSelectedClaim({ claim, metricTitle })
+                }
+              />
+            )}
+            {isBuilding && (
+              <div className="rounded-xl border border-dashed border-zinc-800 p-3 text-[11px] text-zinc-400 flex items-center gap-2 animate-pulse">
+                <RefreshCw className="w-3 h-3 animate-spin" />
+                {research.pvd.length === 0
+                  ? 'Promises appear here as soon as each is checked against later calls.'
+                  : 'Checking more promises against later calls…'}
+              </div>
+            )}
           </section>
 
           {/* Bull vs Bear Extra Grounded Claims */}

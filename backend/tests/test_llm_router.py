@@ -13,8 +13,10 @@ from app.settings import BACKEND_DIR, AppSettings
 @pytest.fixture(autouse=True)
 def _reset():
     router._cooldown.clear()
+    router._bad.clear()
     yield
     router._cooldown.clear()
+    router._bad.clear()
 
 
 def make_settings(tmp_path, **keys) -> AppSettings:
@@ -351,3 +353,52 @@ def test_bypass_cache_reasks_and_overwrites_the_cached_answer(tmp_path):
     assert run_task("ping", {"word": "b"}, settings=s, client=client).echo == "weak" and len(seen) == 1     # cached
     assert run_task("ping", {"word": "b"}, bypass_cache=True, settings=s, client=client).echo == "strong"
     assert run_task("ping", {"word": "b"}, settings=s, client=client).echo == "strong" and len(seen) == 2   # new answer cached
+
+
+def test_a_model_that_just_timed_out_is_skipped_by_the_next_call(tmp_path):
+    s = make_settings(tmp_path, gemini_api_key="g", groq_api_key="q")
+    calls: list[str] = []
+
+    def handler(req):
+        m = json.loads(req.content)["model"]
+        calls.append(m)
+        if m == "gemini-3.5-flash-lite":
+            raise httpx.ReadTimeout("slow")
+        return ok_response()
+
+    client, _ = client_for(handler)
+    run_task("ping", {"word": "one"}, settings=s, client=client)
+    assert calls.count("gemini-3.5-flash-lite") == 1
+    run_task("ping", {"word": "two"}, settings=s, client=client)
+    assert calls.count("gemini-3.5-flash-lite") == 1          # breaker open: no second 90 s wait
+
+
+def test_two_invalid_replies_open_the_breaker_for_that_task(tmp_path):
+    s = make_settings(tmp_path, gemini_api_key="g", groq_api_key="q")
+    calls: list[str] = []
+
+    def handler(req):
+        m = json.loads(req.content)["model"]
+        calls.append(m)
+        return ok_response('{"wrong": 1}' if m == "gemini-3.5-flash-lite" else '{"ok": true, "echo": "x"}')
+
+    client, _ = client_for(handler)
+    run_task("ping", {"word": "one"}, settings=s, client=client)
+    assert calls.count("gemini-3.5-flash-lite") == 2          # first reply + corrective retry
+    run_task("ping", {"word": "two"}, settings=s, client=client)
+    assert calls.count("gemini-3.5-flash-lite") == 2          # skipped now
+
+
+def test_a_slow_invalid_reply_is_not_retried(tmp_path, monkeypatch):
+    s = make_settings(tmp_path, gemini_api_key="g", groq_api_key="q")
+    monkeypatch.setattr(router, "SLOW_INVALID_MS", -1)           # treat every invalid reply as "slow"
+    calls: list[str] = []
+
+    def handler(req):
+        m = json.loads(req.content)["model"]
+        calls.append(m)
+        return ok_response('{"wrong": 1}' if m == "gemini-3.5-flash-lite" else '{"ok": true, "echo": "x"}')
+
+    client, _ = client_for(handler)
+    run_task("ping", {"word": "slow"}, settings=s, client=client)
+    assert calls.count("gemini-3.5-flash-lite") == 1             # no corrective retry
