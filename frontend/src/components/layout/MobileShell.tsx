@@ -51,9 +51,17 @@ export const MobileShell: React.FC<MobileShellProps> = ({
   ]
 
   return (
-    <div className="min-h-screen bg-zinc-950 flex justify-center selection:bg-zinc-800">
+    <div className="min-h-screen bg-zinc-950 flex justify-center selection:bg-zinc-800 lg:bg-[radial-gradient(70%_55%_at_50%_0%,rgb(var(--brand-primary)/0.16),transparent),radial-gradient(50%_40%_at_100%_100%,rgb(var(--brand-primary)/0.10),transparent)]">
       {/* Mobile-constrained viewport container: 390px base, up to 430px */}
-      <div className="w-full max-w-[430px] min-h-screen bg-zinc-950 border-x border-zinc-900/80 flex flex-col relative shadow-2xl">
+      <div className="w-full max-w-[430px] min-h-screen bg-zinc-950 border-x border-zinc-900/80 flex flex-col relative shadow-2xl lg:shadow-[0_0_80px_rgba(30,41,90,0.28)] lg:border-zinc-800">
+        {/* Desktop only: the app is a phone layout, say so beside it */}
+        <aside className="hidden lg:block fixed top-24 left-1/2 ml-[245px] w-[230px]">
+          <div className="font-mono font-black text-3xl tracking-[0.18em] text-brand-text">FINN</div>
+          <p className="mt-3 text-sm leading-relaxed text-zinc-300">
+            FINN is designed for your phone. Open this link on mobile for the full experience.
+          </p>
+          <p className="mt-3 text-[11px] font-mono uppercase tracking-wider text-zinc-500">A triage desk, not a news feed</p>
+        </aside>
         {/* Brand App Bar */}
         <header className="sticky top-0 z-40 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-900 px-4 py-2.5 flex items-center justify-between">
           <div className="flex items-center gap-2">

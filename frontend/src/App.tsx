@@ -6,6 +6,7 @@ import { ThresholdsScreen } from '@/components/screens/ThresholdsScreen'
 import { ResearchScreen } from '@/components/screens/ResearchScreen'
 import { StatsScreen } from '@/components/screens/StatsScreen'
 import { ProfileScreen } from '@/components/screens/ProfileScreen'
+import { Splash } from '@/components/common/Splash'
 import { AskFinnSheet, AskFinnTarget } from '@/components/common/AskFinnSheet'
 import { getDigestData } from '@/api/client'
 import { useSettings } from '@/lib/settings'
@@ -139,6 +140,7 @@ function FinnApp() {
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
+      <Splash />
       <FinnApp />
     </QueryClientProvider>
   )
