@@ -87,7 +87,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
   return (
     <div className="space-y-2 pb-1">
       {/* Row 1: [My portfolio | Watchlist] + LIVE/SNAPSHOT Chip */}
-      <div className="flex items-center justify-between gap-2">
+      <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1.5">
         {/* Segmented Control */}
         <div
           role="group"
@@ -97,7 +97,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
           <button
             type="button"
             onClick={() => onScopeChange('portfolio')}
-            className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
+            className={`px-2.5 py-1.5 min-h-[44px] text-xs whitespace-nowrap rounded-md touch-manipulation transition-all flex items-center justify-center ${
               scope === 'portfolio'
                 ? 'bg-brand-tint text-brand-text shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
                 : 'text-zinc-400 hover:text-zinc-200'
@@ -108,7 +108,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
           <button
             type="button"
             onClick={() => onScopeChange('watchlist')}
-            className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
+            className={`px-2.5 py-1.5 min-h-[44px] text-xs whitespace-nowrap rounded-md touch-manipulation transition-all flex items-center justify-center ${
               scope === 'watchlist'
                 ? 'bg-brand-tint text-brand-text shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
                 : 'text-zinc-400 hover:text-zinc-200'

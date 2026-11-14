@@ -23,7 +23,7 @@ Rules for every agent: `AGENTS.md`. API contract: `docs/CONTRACT.md`.
 | C1-C3 research | ✅ | Transcript loader, verified guidance, promised-vs-delivered with computed closed-year checks; INFY, BAJFINANCE, POLYCAB, KPIL pre-built; 11 unsupported items withheld after audit (`config/research_review.json`) |
 | C6 `/ask` | ✅ | Grounded Q&A on the filing or report on screen; every quote and number verified; refuses leading questions |
 | Local GPU | ✅ | Ollama gpt-oss-20b on the station over an SSH tunnel: free, build-time only (`FINN_USE_LOCAL_LLM=0` on Render and in tests) |
-| Frontend (Antigravity) | ✅ | PWA: Today (period/view toolbar, portfolio/watchlist, by-company), Research (portfolio/watchlist/ready-reports), Thresholds, Cost, Ask sheet; offline from snapshot |
+| Frontend (Antigravity) | ✅ | PWA with a light default theme and a dark option (Appearance in Thresholds): Today (period/view toolbar, portfolio/watchlist, by-company), Research (portfolio/watchlist/ready-reports), Thresholds, Cost, Ask sheet; offline from snapshot |
 | D1-D2 deploy | ✅ 14 Nov | Render API + Cloudflare Pages ([DEPLOY.md](DEPLOY.md)); `/debug/sources` from Render: BSE 403, screener.in OK, yfinance OK |
 | Unseen ticker (measured) | ✅ | 346 s, 6 calls with the GPU off; degrades to a partial report with an explicit gap, never fakes |
 | Left for the owner | ⏳ | Phone check, repo visibility, `docs/ai-history/README.md` links, send the email ([SUBMISSION_DRAFT.md](SUBMISSION_DRAFT.md)) |

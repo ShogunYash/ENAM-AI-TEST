@@ -270,7 +270,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
               onClick={() => handleScopeChange('portfolio')}
               className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
                 scope === 'portfolio'
-                  ? 'bg-brand-tint text-stock shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
+                  ? 'bg-brand-tint text-brand shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
                   : 'text-zinc-400 hover:text-zinc-200'
               }`}
             >
@@ -281,7 +281,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
               onClick={() => handleScopeChange('watchlist')}
               className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
                 scope === 'watchlist'
-                  ? 'bg-brand-tint text-stock shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
+                  ? 'bg-brand-tint text-brand shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
                   : 'text-zinc-400 hover:text-zinc-200'
               }`}
             >
@@ -292,7 +292,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
               onClick={() => handleScopeChange('prebuilt')}
               className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
                 scope === 'prebuilt'
-                  ? 'bg-brand-tint text-stock shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
+                  ? 'bg-brand-tint text-brand shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
                   : 'text-zinc-400 hover:text-zinc-200'
               }`}
             >
