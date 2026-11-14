@@ -10,6 +10,7 @@ import { getDigestData } from '@/api/client'
 import { useSettings } from '@/lib/settings'
 import { Filing, SourceDoc } from '@/api/types'
 import { WindowOption } from '@/components/today/WindowPicker'
+import { useTheme } from '@/lib/theme'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -21,6 +22,7 @@ const queryClient = new QueryClient({
 })
 
 function FinnApp() {
+  useTheme()
   const { settings } = useSettings()
   const getInitialTab = (): NavTab => {
     try {

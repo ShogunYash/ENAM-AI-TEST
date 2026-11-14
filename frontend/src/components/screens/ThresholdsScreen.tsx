@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useSettings, getCategoryTriState } from '@/lib/settings'
 import { Category } from '@/api/types'
-import { Sliders, RotateCcw, ChevronDown, Check, BellRing } from 'lucide-react'
+import { Sliders, RotateCcw, ChevronDown, Check, BellRing, SunMoon } from 'lucide-react'
+import { useTheme } from '@/lib/theme'
 
 interface CategoryConfig {
   id: Category
@@ -39,6 +40,7 @@ export const ThresholdsScreen: React.FC = () => {
     setCategoryTriState,
     resetSettings,
   } = useSettings()
+  const { theme, setTheme } = useTheme()
 
   // Only one main accordion open at a time (collapsed by default, supports ?section=<name>)
   const [expandedSection, setExpandedSection] = useState<'volume' | 'price' | 'categories' | null>(() => {
@@ -102,6 +104,44 @@ export const ThresholdsScreen: React.FC = () => {
       {/* Top One-Sentence Summary Line (GPT-9 template) */}
       <div className="p-3 rounded-xl bg-zinc-900/40 border border-zinc-800/80 text-xs text-zinc-300 leading-relaxed font-mono">
         Alerts start at {volStr}× average volume or a {priceStr}% move either way; filing types: {boostedCount} boosted, {hiddenCount} hidden.
+      </div>
+
+      {/* Appearance Control (Light | Dark | Auto) */}
+      <div className="p-3.5 rounded-xl border border-zinc-800 bg-zinc-900/60 flex items-center justify-between gap-3">
+        <div>
+          <div className="text-xs font-semibold text-zinc-200 flex items-center gap-1.5">
+            <SunMoon className="w-3.5 h-3.5 text-zinc-400" />
+            <span>Appearance</span>
+          </div>
+          <div className="text-[11px] text-zinc-500 mt-0.5">
+            Light paper default or navy dark mode
+          </div>
+        </div>
+
+        <div
+          role="group"
+          aria-label="Appearance theme"
+          className="inline-flex items-center p-0.5 rounded-lg bg-zinc-900 border border-zinc-800 flex-shrink-0"
+        >
+          {(['light', 'dark', 'auto'] as const).map((mode) => {
+            const isSelected = theme === mode
+            const label = mode === 'light' ? 'Light' : mode === 'dark' ? 'Dark' : 'Auto'
+            return (
+              <button
+                key={mode}
+                type="button"
+                onClick={() => setTheme(mode)}
+                className={`px-3 py-1.5 min-h-[36px] text-xs rounded-md touch-manipulation transition-all font-medium ${
+                  isSelected
+                    ? 'bg-brand-tint text-brand-text font-semibold shadow-sm'
+                    : 'text-zinc-400 hover:text-zinc-200'
+                }`}
+              >
+                {label}
+              </button>
+            )
+          })}
+        </div>
       </div>
 
       {/* Accordion Container */}
