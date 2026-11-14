@@ -12,17 +12,15 @@ Two deterministic checks on top of the model (it is never trusted):
 from __future__ import annotations
 
 import re
-from datetime import datetime, timedelta
+from datetime import datetime
 
 import httpx
 
-from app import db
 from app import models as m
-from app.ingest import bse, docs
+from app.ingest import docs
 from app.llm import run_task
 from app.pipeline.results import save_enrichment
 from app.research.verify import norm, numbers
-from app.signals.eod import IST
 
 PAGES = 2
 # A background line must describe the PERSON's career. These are the model's usual lapses: restating the event, giving the
@@ -100,11 +98,3 @@ def enrich_management(filing_id: str, symbol: str, pdf_name: str, headline: str,
         save_enrichment(filing_id, card)
     return card
 
-
-def age_of(filing_id: str) -> timedelta:
-    with db.connect() as con:
-        row = con.execute("SELECT filed_at FROM filings WHERE id=?", (filing_id,)).fetchone()
-    return datetime.now(IST) - datetime.fromisoformat(row["filed_at"]) if row else timedelta(days=30)
-
-
-_UNUSED = bse    # (bse is re-exported for callers that build source links)

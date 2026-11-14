@@ -108,19 +108,6 @@ def test_ingest_updates_existing_rows():
         assert con.execute("SELECT headline FROM filings WHERE id='id-1'").fetchone()[0] == "corrected"
 
 
-def test_resolve_pdf_url_falls_back_to_attachhis():
-    def h(req):
-        if "AttachLive" in str(req.url):
-            return httpx.Response(404)
-        return httpx.Response(206, content=b"%PDF-1.7 ...")
-
-    http = httpx.Client(transport=httpx.MockTransport(h))
-    assert bse.resolve_pdf_url("a.pdf", http) == bse.pdf_url("a.pdf", "AttachHis")
-    assert bse.resolve_pdf_url("", http) is None
-    http404 = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(404)))
-    assert bse.resolve_pdf_url("a.pdf", http404) is None
-
-
 # ───────── EOD snapshot maths ─────────
 def bars(n=25, vol=100, close=100.0):
     d0 = date(2026, 10, 1)

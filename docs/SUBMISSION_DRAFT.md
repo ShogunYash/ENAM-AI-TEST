@@ -43,7 +43,3 @@ Known limits are in the README: free-tier quotas, and BSE blocks cloud IPs (HTTP
 
 Thanks,
 `<your name>`
-
----
-## Alternative text from ChatGPT (GPT-4, 13 Nov): shorter email + one-page writeup
-See `handoff/GPT-4-submission.md`. Before using it: its KPIL paragraph says the earlier target was "described as fully delivered"; that item is now withheld after the audit, so delete that sentence. Its ICICI line (PAT basis) is our best explanation, not a confirmed one: say "likely". Replace `[Name]`, `[PAGES_URL]`, `[RENDER_URL]`, `[REPO_URL]`.

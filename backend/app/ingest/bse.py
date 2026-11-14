@@ -61,17 +61,6 @@ def pdf_link(name: str, age: timedelta) -> str | None:
     return pdf_url(name, "AttachLive" if age < timedelta(days=2.5) else "AttachHis")
 
 
-def resolve_pdf_url(name: str, client: httpx.Client) -> str | None:
-    """Return the first of AttachLive/AttachHis that really serves a PDF (1 KB range request each)."""
-    if not name:
-        return None
-    for folder in PDF_FOLDERS:
-        r = client.get(pdf_url(name, folder), headers={"Range": "bytes=0-1023"})
-        if r.status_code in (200, 206) and r.content[:4] == b"%PDF":
-            return pdf_url(name, folder)
-    return None
-
-
 def to_record(row: dict, symbol: str, scrip_code: str) -> dict | None:
     """Raw BSE row -> filings-table record. Rows with no id or time are dropped."""
     fid, filed = _s(row.get("NEWSID")), parse_time(row)

@@ -9,7 +9,6 @@ import hashlib
 import re
 from dataclasses import dataclass
 
-from app import db
 from app.llm import run_task, store
 from app.research import loader
 from app.research.verify import verify_quote
@@ -96,6 +95,3 @@ def extract_all(symbol: str, progress=None) -> tuple[list[Guidance], list[str]]:
             notes.append(f"{d['period']} call: {st['dropped']} unverifiable quote(s) dropped")
     return allg, notes
 
-
-def _unused() -> None:       # keep `db` import honest for linters while this module grows (stored guidance, C3)
-    _ = db

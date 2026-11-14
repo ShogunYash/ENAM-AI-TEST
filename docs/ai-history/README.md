@@ -3,7 +3,7 @@
 How FINN was built with AI tools. Roles: **Claude Code** = backend, pipelines, integration, deploy prep; **Antigravity** = `frontend/`;
 **ChatGPT** = product thinking, prompt drafting, review. Plan and task IDs: [../PLAN.md](../PLAN.md). Rules every agent followed: [../../AGENTS.md](../../AGENTS.md).
 
-Prompts written by ChatGPT are kept verbatim in [`../../handoff/`](../../handoff/) (G3 test pack and outputs, G4 bio prompt, D4/C5 screen reviews, G5 email outline and narrative-vs-numbers).
+ChatGPT-written prompt drafts (classification, results extraction, one-liners, guidance, promised-vs-delivered, management bio) are kept verbatim in [`chatgpt-prompts/`](chatgpt-prompts/); the production versions are in `backend/app/prompts/`. ChatGPT also audited every research item, management card and results card (its findings are applied in `backend/config/research_review.json` and `bio_review.json`) and wrote the Cost/Research/Thresholds screen copy.
 The prompts that run in the app are in [`../../backend/app/prompts/`](../../backend/app/prompts/) (versioned).
 
 | Date (IST) | Tool / model | Task IDs | What happened (decisions, not activity) | Link |

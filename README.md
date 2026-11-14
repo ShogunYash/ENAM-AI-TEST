@@ -92,7 +92,7 @@ earnings-call transcripts, annual reports and filed numbers. No news, no broker 
 - **Deployed (14 Nov):** API https://finn-api-7n6q.onrender.com, PWA https://enam-ai-test.pages.dev/. From the Render host `/debug/sources` reports **BSE 403 (cloud IP blocked)**, screener.in OK, yfinance OK. So Push data and the four pre-built research reports (served from the committed seed/snapshot) are unaffected, but a live research build on an unseen ticker returns the screener.in financial snapshot plus explicit gaps ("transcript could not be downloaded (HTTP 403)"): transcripts are hosted on BSE. The Docker build succeeded on Render.
 
 ## Next
-Evaluate verdicts against analyst-labelled examples; add narrative-vs-numbers (prompt drafted in `handoff/`); websocket intraday filings; portfolio-level drift.
+Evaluate verdicts against analyst-labelled examples; add narrative-vs-numbers; websocket intraday filings; portfolio-level drift.
 
 ## AI build history
 How this was built (Claude Code for backend and integration, Antigravity for the frontend, ChatGPT for product, prompts and review): [docs/ai-history/README.md](docs/ai-history/README.md).

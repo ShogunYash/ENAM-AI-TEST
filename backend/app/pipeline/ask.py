@@ -19,7 +19,6 @@ from app import db
 from app import models as m
 from app.ingest import docs
 from app.llm import LLMUnavailable, run_task
-from app.pipeline import mgmt_bio
 from app.pipeline.results import load_enrichments
 from app.research import build as research_build
 from app.research.verify import verify_quote
@@ -158,5 +157,3 @@ def _quoted_text_needed(answer: str, ev: dict) -> bool:
     facts_text = json.dumps(ev["facts"], default=str)
     return not numbers_supported(answer, facts_text) or not _floats(answer)
 
-
-_UNUSED = mgmt_bio
