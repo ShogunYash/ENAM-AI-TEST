@@ -1,0 +1,34 @@
+{
+  "key": "DIXON",
+  "kind": "company",
+  "symbol": "DIXON",
+  "headline": "1 contact worked at Dixon Technologies",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p05",
+      "name": "Vikram Desai",
+      "headline": "Electronics manufacturing operator",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Worked at Dixon Technologies 2012-2019 as VP Operations",
+      "evidence": [
+        "Dixon Technologies 2012-2019, VP Operations"
+      ],
+      "score": 5.3
+    },
+    {
+      "person_id": "p02",
+      "name": "Arjun Rao",
+      "headline": "Former CISO and technology risk lead",
+      "strength": 3,
+      "link": "sector_expert",
+      "why": "technology risk expert (former ciso and technology risk lead); no direct tie to Dixon Technologies",
+      "evidence": [
+        "expertise: technology risk"
+      ],
+      "score": 3.0
+    }
+  ],
+  "note": null
+}

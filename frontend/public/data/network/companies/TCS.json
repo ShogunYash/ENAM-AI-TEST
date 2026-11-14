@@ -1,0 +1,34 @@
+{
+  "key": "TCS",
+  "kind": "company",
+  "symbol": "TCS",
+  "headline": "No one worked at Tata Consultancy Services; closest: Meera Iyer",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p01",
+      "name": "Meera Iyer",
+      "headline": "Ex-credit risk head, consumer lending",
+      "strength": 5,
+      "link": "sector_expert",
+      "why": "consumer lending expert (ex-credit risk head, consumer lending); no direct tie to Tata Consultancy Services",
+      "evidence": [
+        "expertise: consumer lending"
+      ],
+      "score": 4.0
+    },
+    {
+      "person_id": "p09",
+      "name": "Anand Gupta",
+      "headline": "Consumer and paints industry veteran",
+      "strength": 4,
+      "link": "sector_expert",
+      "why": "consumer demand expert (consumer and paints industry veteran); no direct tie to Tata Consultancy Services",
+      "evidence": [
+        "expertise: consumer demand"
+      ],
+      "score": 3.5
+    }
+  ],
+  "note": null
+}

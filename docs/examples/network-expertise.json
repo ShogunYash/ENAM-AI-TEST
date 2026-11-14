@@ -1,0 +1,365 @@
+[
+  {
+    "theme": "nbfc",
+    "members": [
+      {
+        "person_id": "p01",
+        "name": "Meera Iyer",
+        "strength": 5
+      },
+      {
+        "person_id": "p02",
+        "name": "Arjun Rao",
+        "strength": 3
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "auto components",
+    "members": [
+      {
+        "person_id": "p10",
+        "name": "Farah Khan",
+        "strength": 2
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "bank governance",
+    "members": [
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "strength": 4
+      }
+    ],
+    "companies": [
+      "HDFCBANK",
+      "ICICIBANK",
+      "SBIN"
+    ]
+  },
+  {
+    "theme": "bank treasury",
+    "members": [
+      {
+        "person_id": "p04",
+        "name": "Nandini Shah",
+        "strength": 4
+      }
+    ],
+    "companies": [
+      "HDFCBANK",
+      "ICICIBANK",
+      "SBIN"
+    ]
+  },
+  {
+    "theme": "capex and plant ramp-up",
+    "members": [
+      {
+        "person_id": "p05",
+        "name": "Vikram Desai",
+        "strength": 3
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "capital markets",
+    "members": [
+      {
+        "person_id": "p04",
+        "name": "Nandini Shah",
+        "strength": 4
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "channel distribution",
+    "members": [
+      {
+        "person_id": "p06",
+        "name": "Sunita Reddy",
+        "strength": 2
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "consumer demand",
+    "members": [
+      {
+        "person_id": "p09",
+        "name": "Anand Gupta",
+        "strength": 4
+      }
+    ],
+    "companies": [
+      "TCS",
+      "BAJFINANCE"
+    ]
+  },
+  {
+    "theme": "consumer lending",
+    "members": [
+      {
+        "person_id": "p01",
+        "name": "Meera Iyer",
+        "strength": 5
+      }
+    ],
+    "companies": [
+      "TCS",
+      "BAJFINANCE"
+    ]
+  },
+  {
+    "theme": "corporate strategy",
+    "members": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "strength": 5
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "credit risk",
+    "members": [
+      {
+        "person_id": "p01",
+        "name": "Meera Iyer",
+        "strength": 5
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "cybersecurity",
+    "members": [
+      {
+        "person_id": "p02",
+        "name": "Arjun Rao",
+        "strength": 3
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "electronics manufacturing",
+    "members": [
+      {
+        "person_id": "p05",
+        "name": "Vikram Desai",
+        "strength": 3
+      }
+    ],
+    "companies": [
+      "DIXON"
+    ]
+  },
+  {
+    "theme": "epc and infrastructure",
+    "members": [
+      {
+        "person_id": "p08",
+        "name": "Pooja Nair",
+        "strength": 3
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "exports",
+    "members": [
+      {
+        "person_id": "p06",
+        "name": "Sunita Reddy",
+        "strength": 2
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "fmcg distribution",
+    "members": [
+      {
+        "person_id": "p09",
+        "name": "Anand Gupta",
+        "strength": 4
+      }
+    ],
+    "companies": [
+      "HINDUNILVR",
+      "NESTLEIND"
+    ]
+  },
+  {
+    "theme": "m&a and integration",
+    "members": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "strength": 5
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "paints and coatings",
+    "members": [
+      {
+        "person_id": "p09",
+        "name": "Anand Gupta",
+        "strength": 4
+      }
+    ],
+    "companies": [
+      "ASIANPAINT"
+    ]
+  },
+  {
+    "theme": "private banking",
+    "members": [
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "strength": 4
+      }
+    ],
+    "companies": [
+      "HDFCBANK",
+      "ICICIBANK",
+      "SBIN"
+    ]
+  },
+  {
+    "theme": "project finance",
+    "members": [
+      {
+        "person_id": "p08",
+        "name": "Pooja Nair",
+        "strength": 3
+      }
+    ],
+    "companies": [
+      "BAJFINANCE",
+      "KPIL"
+    ]
+  },
+  {
+    "theme": "qip and fund raising",
+    "members": [
+      {
+        "person_id": "p04",
+        "name": "Nandini Shah",
+        "strength": 4
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "semiconductors",
+    "members": [
+      {
+        "person_id": "p05",
+        "name": "Vikram Desai",
+        "strength": 3
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "sme lending",
+    "members": [
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "strength": 4
+      }
+    ],
+    "companies": [
+      "BAJFINANCE"
+    ]
+  },
+  {
+    "theme": "steel and metals",
+    "members": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "strength": 5
+      }
+    ],
+    "companies": [
+      "TATASTEEL",
+      "HINDZINC"
+    ]
+  },
+  {
+    "theme": "supplier governance",
+    "members": [
+      {
+        "person_id": "p10",
+        "name": "Farah Khan",
+        "strength": 2
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "supply chain",
+    "members": [
+      {
+        "person_id": "p10",
+        "name": "Farah Khan",
+        "strength": 2
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "technology risk",
+    "members": [
+      {
+        "person_id": "p02",
+        "name": "Arjun Rao",
+        "strength": 3
+      }
+    ],
+    "companies": [
+      "GARFIBRES",
+      "DIXON"
+    ]
+  },
+  {
+    "theme": "transmission and power",
+    "members": [
+      {
+        "person_id": "p08",
+        "name": "Pooja Nair",
+        "strength": 3
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "wires and cables",
+    "members": [
+      {
+        "person_id": "p06",
+        "name": "Sunita Reddy",
+        "strength": 2
+      }
+    ],
+    "companies": [
+      "KEI",
+      "POLYCAB"
+    ]
+  }
+]

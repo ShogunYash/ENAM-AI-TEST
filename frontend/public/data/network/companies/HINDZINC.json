@@ -1,0 +1,22 @@
+{
+  "key": "HINDZINC",
+  "kind": "company",
+  "symbol": "HINDZINC",
+  "headline": "No one worked at Hindustan Zinc; closest: Rohan Kapoor",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p07",
+      "name": "Rohan Kapoor",
+      "headline": "Ex-Tata group strategy and M&A",
+      "strength": 5,
+      "link": "sector_expert",
+      "why": "steel and metals expert (ex-tata group strategy and m&a); no direct tie to Hindustan Zinc",
+      "evidence": [
+        "expertise: steel and metals"
+      ],
+      "score": 4.0
+    }
+  ],
+  "note": null
+}

@@ -1,0 +1,73 @@
+[
+  {
+    "key": "example-filing-management",
+    "kind": "management_change",
+    "symbol": "BAJFINANCE",
+    "headline": "2 contacts overlapped with Prashant Verma",
+    "subject": "Prashant Verma",
+    "matches": [
+      {
+        "person_id": "p01",
+        "name": "Meera Iyer",
+        "headline": "Ex-credit risk head, consumer lending",
+        "strength": 5,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~7 yrs at Bajaj Finance with Prashant Verma (Head of Credit Risk, 2014-2020)",
+        "evidence": [
+          "Bajaj Finance 2014-2020",
+          "filing: Prashant Verma tenure since ~2006"
+        ],
+        "score": 11.1
+      },
+      {
+        "person_id": "p02",
+        "name": "Arjun Rao",
+        "headline": "Former CISO and technology risk lead",
+        "strength": 3,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~6 yrs at Bajaj Finance with Prashant Verma (Deputy CISO, 2016-2021)",
+        "evidence": [
+          "Bajaj Finance 2016-2021",
+          "filing: Prashant Verma tenure since ~2006"
+        ],
+        "score": 9.6
+      },
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "headline": "Retired private-banking executive",
+        "strength": 4,
+        "link": "sector_expert",
+        "why": "SME lending expert (retired private-banking executive); no direct tie to Bajaj Finance",
+        "evidence": [
+          "expertise: SME lending"
+        ],
+        "score": 4.5
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "example-filing-event",
+    "kind": "material_event",
+    "symbol": "TATASTEEL",
+    "headline": "Best person to call on this M&A: Rohan Kapoor",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "headline": "Ex-Tata group strategy and M&A",
+        "strength": 5,
+        "link": "worked_at_company",
+        "why": "Worked at Tata Steel 2010-2017 as GM, Corporate Strategy and M&A; M&A and integration expertise",
+        "evidence": [
+          "Tata Steel 2010-2017, GM, Corporate Strategy and M&A",
+          "expertise: M&A and integration"
+        ],
+        "score": 7.5
+      }
+    ],
+    "note": null
+  }
+]

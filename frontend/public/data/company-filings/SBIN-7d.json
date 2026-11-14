@@ -3,21 +3,20 @@
   "name": "State Bank of India",
   "window": {
     "label": "7d",
-    "start": "2026-11-07T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-11-08T00:03:38.771853+05:30",
+    "end": "2026-11-15T00:03:38.771853+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T00:03:38.771853+05:30",
   "counts": {
-    "total": 3,
-    "rule_classified": 3,
+    "total": 2,
+    "rule_classified": 2,
     "llm_classified": 0
   },
   "important": [],
   "routine": {
-    "count": 3,
+    "count": 2,
     "by_category": {
-      "investor_meetings": 2,
-      "earnings_call": 1
+      "investor_meetings": 2
     },
     "items": [
       {
@@ -30,8 +29,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.629,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/068644d8-6a79-4fb7-a225-15c42c0d08a1.pdf",
+        "score": 0.512,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/068644d8-6a79-4fb7-a225-15c42c0d08a1.pdf",
         "price_reaction": {
           "pct_1d": -0.6,
           "vol_ratio": 1.12
@@ -48,27 +47,12 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.629,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3b3e4091-386f-4b5d-87d5-1d839654249e.pdf",
+        "score": 0.512,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3b3e4091-386f-4b5d-87d5-1d839654249e.pdf",
         "price_reaction": {
           "pct_1d": -0.6,
           "vol_ratio": 1.12
         },
-        "enrichment": null
-      },
-      {
-        "id": "cbd1602e-e5ca-42f9-8ac0-2f8d123d744d",
-        "symbol": "SBIN",
-        "company_name": "State Bank of India",
-        "filed_at": "2026-11-07T18:22:31.667000+05:30",
-        "headline": "Transcript",
-        "so_what": null,
-        "category": "earnings_call",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.462,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/91e92b69-f201-4d3b-9060-9f75feee9a58.pdf",
-        "price_reaction": null,
         "enrichment": null
       }
     ]

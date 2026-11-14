@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "30d",
-    "start": "2026-10-15T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-10-16T00:03:38.771853+05:30",
+    "end": "2026-11-15T00:03:38.771853+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T00:03:38.771853+05:30",
   "companies": [
     {
       "symbol": "BAJFINANCE",
@@ -28,8 +28,8 @@
         "category": "fund_raise",
         "category_source": "rule",
         "priority": "high",
-        "score": 8.22,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
+        "score": 6.689,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
         "price_reaction": {
           "pct_1d": 3.36,
           "vol_ratio": 1.21
@@ -64,7 +64,7 @@
         "category": "management_change",
         "category_source": "rule",
         "priority": "medium",
-        "score": 6.802,
+        "score": 5.535,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -88,10 +88,10 @@
       "name": "Tata Steel",
       "sector": "Steel",
       "in_portfolio": true,
-      "total": 20,
-      "material": 7,
+      "total": 17,
+      "material": 5,
       "categories": {
-        "m_and_a": 5,
+        "m_and_a": 3,
         "management_change": 1,
         "results": 1
       },
@@ -105,7 +105,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 2.968,
+        "score": 2.416,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2e7c8bf8-d794-4a55-b670-97951b28e0e8.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -186,7 +186,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.966,
+        "score": 1.6,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e4d02b37-bd6b-4b11-ac89-98eaa14a7290.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -266,7 +266,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.938,
+        "score": 1.577,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/86009cba-ca03-4d35-bad8-b1988cfcff13.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -345,7 +345,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.928,
+        "score": 1.569,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7e17b4ed-a5e2-4625-9e2b-2af590350caa.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -425,7 +425,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.926,
+        "score": 1.567,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a39f8b72-303f-42a4-8750-f413346bd742.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -505,7 +505,7 @@
         "category": "litigation",
         "category_source": "llm",
         "priority": "medium",
-        "score": 1.613,
+        "score": 1.313,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/53496491-fd25-4172-9f9f-79bf088ea9c5.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -539,7 +539,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.472,
+        "score": 1.198,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/96d3143f-2c3f-4cdb-a811-869e422ac1ab.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -602,7 +602,7 @@
       "name": "Asian Paints",
       "sector": "Paints",
       "in_portfolio": false,
-      "total": 14,
+      "total": 13,
       "material": 2,
       "categories": {
         "management_change": 1,
@@ -618,7 +618,7 @@
         "category": "management_change",
         "category_source": "rule",
         "priority": "medium",
-        "score": 1.423,
+        "score": 1.158,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c6c189db-e010-4c6e-a997-b50d6d33767a.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -657,7 +657,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.187,
+        "score": 0.966,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1eaa8912-06ca-45d4-8a04-03df01b47497.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -720,12 +720,11 @@
       "name": "Persistent Systems",
       "sector": "IT services",
       "in_portfolio": true,
-      "total": 21,
-      "material": 10,
+      "total": 15,
+      "material": 9,
       "categories": {
         "fund_raise": 7,
-        "credit_rating": 2,
-        "results": 1
+        "credit_rating": 2
       },
       "top": {
         "id": "2f1814b6-221f-4151-83d3-dce3aa6fa2ac",
@@ -737,7 +736,7 @@
         "category": "fund_raise",
         "category_source": "rule",
         "priority": "medium",
-        "score": 0.915,
+        "score": 0.745,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/73a8c540-4229-4137-8e2b-5aae04fa0a35.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -772,7 +771,7 @@
         "category": "m_and_a",
         "category_source": "llm",
         "priority": "high",
-        "score": 0.521,
+        "score": 0.424,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/13e50739-50e7-4b5a-8dba-ac92ece6d35f.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -790,7 +789,7 @@
       "name": "Reliance Industries",
       "sector": "Energy and diversified businesses",
       "in_portfolio": true,
-      "total": 20,
+      "total": 19,
       "material": 4,
       "categories": {
         "results": 1,
@@ -807,7 +806,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.497,
+        "score": 0.405,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/880087f6-7ecc-40a9-8cac-de48d4616b25.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -886,7 +885,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.481,
+        "score": 0.392,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d7b8fffb-7a5f-4efa-9241-482c5d765f1d.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -949,7 +948,7 @@
       "name": "Sun Pharmaceutical Industries",
       "sector": "Pharmaceuticals",
       "in_portfolio": true,
-      "total": 14,
+      "total": 13,
       "material": 2,
       "categories": {
         "results": 1,
@@ -965,7 +964,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.472,
+        "score": 0.384,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/658231ad-7203-4355-be99-2a162b722c0c.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1043,7 +1042,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.382,
+        "score": 0.311,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/12ace952-a89b-4098-8bd0-e247f6e2a776.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1106,11 +1105,10 @@
       "name": "Polycab India",
       "sector": "Wires and cables",
       "in_portfolio": false,
-      "total": 16,
-      "material": 4,
+      "total": 10,
+      "material": 3,
       "categories": {
-        "litigation": 3,
-        "results": 1
+        "litigation": 3
       },
       "top": {
         "id": "0df598a9-08f7-48f3-b53d-f69d332706e2",
@@ -1122,7 +1120,7 @@
         "category": "litigation",
         "category_source": "rule",
         "priority": "medium",
-        "score": 0.309,
+        "score": 0.251,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c3d1ba29-6132-47b7-9f3b-79a294e53189.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1155,7 +1153,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.285,
+        "score": 0.232,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f0d1483f-551a-46d8-ade7-7a390baacc1c.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1218,7 +1216,7 @@
       "name": "Maruti Suzuki India",
       "sector": "Automobiles",
       "in_portfolio": false,
-      "total": 16,
+      "total": 15,
       "material": 2,
       "categories": {
         "results": 1,
@@ -1234,7 +1232,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.239,
+        "score": 0.194,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fca20bad-7bfe-438f-a526-d9f42ccf0346.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1312,7 +1310,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.095,
+        "score": 0.078,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26c12463-d44e-4050-bd47-b53cc294b4e0.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1375,7 +1373,7 @@
       "name": "KEI Industries",
       "sector": "Wires and cables",
       "in_portfolio": true,
-      "total": 13,
+      "total": 12,
       "material": 3,
       "categories": {
         "credit_rating": 1,
@@ -1391,7 +1389,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.061,
+        "score": 0.05,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4567cd4f-9037-41ac-9e8d-fd10ff9e2f51.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1454,7 +1452,7 @@
       "name": "ICICI Bank",
       "sector": "Private-sector banking",
       "in_portfolio": false,
-      "total": 15,
+      "total": 14,
       "material": 2,
       "categories": {
         "credit_rating": 1,
@@ -1470,7 +1468,7 @@
         "category": "credit_rating",
         "category_source": "rule",
         "priority": "medium",
-        "score": 0.043,
+        "score": 0.035,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/94d9e62f-952d-4046-8379-bbdd1761f3ab.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1503,7 +1501,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.038,
+        "score": 0.031,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b8e22e9-8b97-4151-a045-51669fdac2ae.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1582,7 +1580,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.037,
+        "score": 0.03,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59654d86-af0c-4fe5-bfb9-1a148f65fd6c.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1645,11 +1643,10 @@
       "name": "Nestle India",
       "sector": "FMCG",
       "in_portfolio": false,
-      "total": 4,
-      "material": 2,
+      "total": 1,
+      "material": 1,
       "categories": {
-        "management_change": 1,
-        "results": 1
+        "management_change": 1
       },
       "top": {
         "id": "04793fd5-64b8-4987-8380-dfc8638caa8e",
@@ -1661,7 +1658,7 @@
         "category": "management_change",
         "category_source": "rule",
         "priority": "medium",
-        "score": 0.034,
+        "score": 0.028,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0d21e169-46c3-4d2d-aa05-0b3c9c1086bf.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1685,29 +1682,10 @@
       "name": "Tata Consultancy Services",
       "sector": "IT services",
       "in_portfolio": true,
-      "total": 7,
-      "material": 1,
-      "categories": {
-        "m_and_a": 1
-      },
-      "top": {
-        "id": "85a90a42-ccad-4d29-983b-6c2164f010e0",
-        "symbol": "TCS",
-        "company_name": "Tata Consultancy Services Ltd",
-        "filed_at": "2026-10-15T13:28:35.827000+05:30",
-        "headline": "Tata Consultancy Services Limited has informed the Exchange about completion of acquisition of BBY Services India LLP.",
-        "so_what": "TCS completed acquisition of 100% stake in BBY Services India LLP.",
-        "category": "m_and_a",
-        "category_source": "rule",
-        "priority": "high",
-        "score": 0.013,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ad952e13-3c76-410e-81f8-4fe3d108a196.pdf",
-        "price_reaction": null,
-        "enrichment": {
-          "type": "oneliner",
-          "text": "TCS completed acquisition of 100% stake in BBY Services India LLP."
-        }
-      },
+      "total": 5,
+      "material": 0,
+      "categories": {},
+      "top": null,
       "price": {
         "pct_1d": -1.2,
         "vol_ratio": 0.37

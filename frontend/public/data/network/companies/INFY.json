@@ -1,0 +1,22 @@
+{
+  "key": "INFY",
+  "kind": "company",
+  "symbol": "INFY",
+  "headline": "1 contact worked at Infosys",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p02",
+      "name": "Arjun Rao",
+      "headline": "Former CISO and technology risk lead",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Works at Infosys 2021-now as Head of Cyber Risk",
+      "evidence": [
+        "Infosys 2021-now, Head of Cyber Risk"
+      ],
+      "score": 5.8
+    }
+  ],
+  "note": null
+}

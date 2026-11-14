@@ -1,0 +1,22 @@
+{
+  "key": "GARFIBRES",
+  "kind": "company",
+  "symbol": "GARFIBRES",
+  "headline": "No one worked at Garware Technical Fibres; closest: Arjun Rao",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p02",
+      "name": "Arjun Rao",
+      "headline": "Former CISO and technology risk lead",
+      "strength": 3,
+      "link": "sector_expert",
+      "why": "technology risk expert (former ciso and technology risk lead); no direct tie to Garware Technical Fibres",
+      "evidence": [
+        "expertise: technology risk"
+      ],
+      "score": 3.0
+    }
+  ],
+  "note": null
+}

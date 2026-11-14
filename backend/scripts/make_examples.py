@@ -298,6 +298,32 @@ EXAMPLES: dict[str, object] = {
 }
 
 
+# ───────────── network (SYNTHETIC people) ─────────────
+from app import network as net
+
+_bio = m.BioCard(person="Prashant Verma", role="Chief Information Security Officer", change="appointed", links=[],
+                 effective="2027-02-01", background=["He has around 21 years of full-time experience on Security Domain."],
+                 background_source="filing")
+_mgmt = net.management_insight("example-filing-management", "BAJFINANCE", _bio, 2026)
+_event = net.event_insight("example-filing-event", "TATASTEEL", "m_and_a")
+_p = {p.id: p for p in net.people()}
+EXAMPLES.update({
+    "network-people": net.people(),
+    "network-insights": [i for i in (_mgmt, _event) if i],
+    "network-company": net.company_insight("BAJFINANCE"),
+    "network-warm": [m.WarmNudge(
+        person_id="p07", name=_p["p07"].name, headline=_p["p07"].headline, last_contact=_p["p07"].relationship.last_contact,
+        days_since=46, symbol="TATASTEEL", trigger="Tata Steel: acquisition announced", filing_id=None,
+        opener="Tata Steel just announced a deal. You know that business better than most: any quick read?")],
+    "network-expertise": net.expertise_map(),
+    "network-ask": m.NetworkAskResponse(
+        answer="Start with Meera Iyer (Worked at Bajaj Finance 2014-2020 as Head of Credit Risk).",
+        matches=net.company_insight("BAJFINANCE").matches[:2],
+        steps=[m.AgentStep(tool="plan", input="Who knows Bajaj Finance?", summary="use company_contacts(BAJFINANCE)"),
+               m.AgentStep(tool="company_contacts", input="BAJFINANCE", summary="2 contacts worked at Bajaj Finance")]),
+})
+
+
 def dump(obj: object) -> object:
     if isinstance(obj, list):
         return [o.model_dump(mode="json") for o in obj]

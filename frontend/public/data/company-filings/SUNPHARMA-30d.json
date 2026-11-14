@@ -3,13 +3,13 @@
   "name": "Sun Pharmaceutical Industries",
   "window": {
     "label": "30d",
-    "start": "2026-10-15T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-10-16T00:03:38.771853+05:30",
+    "end": "2026-11-15T00:03:38.771853+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T00:03:38.771853+05:30",
   "counts": {
-    "total": 14,
-    "rule_classified": 13,
+    "total": 13,
+    "rule_classified": 12,
     "llm_classified": 1
   },
   "important": [
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.472,
+      "score": 0.384,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/658231ad-7203-4355-be99-2a162b722c0c.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -86,7 +86,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.082,
+      "score": 0.067,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2f44a1be-85a8-4545-a86e-71a27b7b7f15.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -96,10 +96,10 @@
     }
   ],
   "routine": {
-    "count": 12,
+    "count": 11,
     "by_category": {
       "investor_meetings": 1,
-      "earnings_call": 3,
+      "earnings_call": 2,
       "press_release": 5,
       "postal_ballot": 1,
       "results": 1,
@@ -116,7 +116,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.142,
+        "score": 0.116,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/50d58706-f181-4522-8799-b05f65780ce8.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -131,7 +131,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.233,
+        "score": 0.19,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fe431adc-0e1a-48ee-9c2b-b6e39cba04e4.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -146,7 +146,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.224,
+        "score": 0.182,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1bbe06aa-8721-4e47-b0b1-985a91279ce9.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -161,7 +161,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.21,
+        "score": 0.171,
         "pdf_url": null,
         "price_reaction": null,
         "enrichment": null
@@ -176,7 +176,7 @@
         "category": "postal_ballot",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.047,
+        "score": 0.038,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e87d46d8-c447-4fc2-9b82-a95a8a922b0f.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -191,7 +191,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.138,
+        "score": 0.112,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9ce2ef60-0b4f-44dc-a3a0-435c1066af80.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -206,7 +206,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.074,
+        "score": 0.06,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5e1a8352-6166-444c-848a-29299a80a8d1.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -236,7 +236,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.099,
+        "score": 0.08,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b8f28d0-1101-4b12-82d0-e2ef23c8ef6c.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -251,7 +251,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.022,
+        "score": 0.018,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/46b44110-a538-4759-8351-04d4731da2ae.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -266,23 +266,8 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.011,
+        "score": 0.009,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9a434af1-62a4-4822-a754-fa547098def0.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "9f479947-019f-43b7-b145-e75f77043e24",
-        "symbol": "SUNPHARMA",
-        "company_name": "Sun Pharmaceutical Industries Ltd",
-        "filed_at": "2026-10-15T18:24:16.537000+05:30",
-        "headline": "Earnings call for the financial results of the second quarter on 30 October 2026",
-        "so_what": null,
-        "category": "earnings_call",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.002,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fee4866d-b8c6-40e5-b8d5-c93ade038a11.pdf",
         "price_reaction": null,
         "enrichment": null
       }

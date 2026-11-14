@@ -1,6 +1,6 @@
 # Submission draft (DRAFT ONLY: the user sends it; nothing here has been sent)
 
-**To:** assessment@enam.com  **Subject:** IIT Delhi – AI Engineer - 2027  **Deadline:** 15 Nov 2026
+**To:** assessment@enam.com  **Subject:** IIT Delhi – Founding AI Engineer - 2027  **Deadline:** 15 Nov 2026
 
 ## Deliverables checklist (status on 13 Nov)
 - [x] **Deployed mobile link (14 Nov):** PWA https://enam-ai-test.pages.dev/ , API https://finn-api-7n6q.onrender.com (`/health` ok, mode live). **Phone check still to be done by the owner** (Today 30d, a results card, INFY research, LIVE/SNAPSHOT chip). Render auto-deploys on commit (`autoDeployTrigger: commit`), so wait for the deploy after the last push and re-check `/health`.

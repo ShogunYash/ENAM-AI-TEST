@@ -1,0 +1,34 @@
+{
+  "key": "HDFCBANK",
+  "kind": "company",
+  "symbol": "HDFCBANK",
+  "headline": "1 contact worked at HDFC Bank",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p03",
+      "name": "Kabir Malhotra",
+      "headline": "Retired private-banking executive",
+      "strength": 4,
+      "link": "worked_at_company",
+      "why": "Worked at HDFC Bank 2003-2022 as Group Head, Business Banking",
+      "evidence": [
+        "HDFC Bank 2003-2022, Group Head, Business Banking"
+      ],
+      "score": 5.9
+    },
+    {
+      "person_id": "p04",
+      "name": "Nandini Shah",
+      "headline": "Ex-ICICI treasury and capital markets",
+      "strength": 4,
+      "link": "sector_expert",
+      "why": "bank treasury expert (ex-icici treasury and capital markets); no direct tie to HDFC Bank",
+      "evidence": [
+        "expertise: bank treasury"
+      ],
+      "score": 3.5
+    }
+  ],
+  "note": null
+}

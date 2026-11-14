@@ -3,13 +3,13 @@
   "name": "KEI Industries",
   "window": {
     "label": "30d",
-    "start": "2026-10-15T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-10-16T00:03:38.771853+05:30",
+    "end": "2026-11-15T00:03:38.771853+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T00:03:38.771853+05:30",
   "counts": {
-    "total": 13,
-    "rule_classified": 12,
+    "total": 12,
+    "rule_classified": 11,
     "llm_classified": 1
   },
   "important": [
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.061,
+      "score": 0.05,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2075e5d3-21fa-4857-bf45-55cd905c1f60.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -86,7 +86,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.061,
+      "score": 0.05,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4567cd4f-9037-41ac-9e8d-fd10ff9e2f51.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -149,7 +149,7 @@
       "category": "credit_rating",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.028,
+      "score": 0.023,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/75be6169-a776-45a9-aaaf-968aa7a80a3a.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -159,9 +159,9 @@
     }
   ],
   "routine": {
-    "count": 10,
+    "count": 9,
     "by_category": {
-      "earnings_call": 6,
+      "earnings_call": 5,
       "unclassified": 2,
       "results": 2
     },
@@ -176,7 +176,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.224,
+        "score": 0.182,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/71d743be-ad95-4b18-8751-47634594d564.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -191,7 +191,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.057,
+        "score": 0.047,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4e54d4d8-32a5-4d3c-aca0-c9459e230fa8.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -206,7 +206,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.012,
+        "score": 0.009,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/860a30b8-edbc-4a6f-85f6-ebf63c62afbe.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -221,7 +221,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.011,
+        "score": 0.009,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2ae9ef96-7f76-4fde-86a0-18d3755a87dd.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -236,7 +236,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.011,
+        "score": 0.009,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4b6be751-d34e-421c-8cc1-340cf9955922.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -281,7 +281,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.014,
+        "score": 0.011,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/afb9365a-bae4-4b8a-a90c-488f23b81c1b.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -296,23 +296,8 @@
         "category": "results",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.013,
+        "score": 0.011,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3d157621-812e-45ee-8220-505d90ccf3d6.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "4373c468-e7e1-4d66-86ab-22bf778b2a88",
-        "symbol": "KEI",
-        "company_name": "KEI Industries Ltd",
-        "filed_at": "2026-10-15T17:44:33.100000+05:30",
-        "headline": "Pursuant to Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements), Regulations, 2015, given below is the Schedule of Conference Call/Meet with the Analyst / Institutional ....",
-        "so_what": null,
-        "category": "earnings_call",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.002,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/52dd4b70-405e-4195-a919-0d55bbf70938.pdf",
         "price_reaction": null,
         "enrichment": null
       }

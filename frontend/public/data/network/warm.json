@@ -1,0 +1,79 @@
+[
+  {
+    "person_id": "p05",
+    "name": "Vikram Desai",
+    "headline": "Electronics manufacturing operator",
+    "last_contact": "2026-03-11",
+    "days_since": 249,
+    "symbol": "DIXON",
+    "trigger": "Dixon Technologies: Announcement under Regulation 30 of SEBI LODR- Copy of Newspaper publi",
+    "filing_id": "7bdce317-b2e3-4c9b-86de-a59235d0e9f1",
+    "opener": "Saw Dixon Technologies's results. Thought of your time there. How does it look from the outside?"
+  },
+  {
+    "person_id": "p10",
+    "name": "Farah Khan",
+    "headline": "Auto industry supply chain and policy",
+    "last_contact": "2025-12-09",
+    "days_since": 341,
+    "symbol": "MARUTI",
+    "trigger": "Maruti Suzuki: Reference to the Financial Results issued by Suzuki Motor Corporation",
+    "filing_id": "7aea2ac1-7c4e-4ed8-bd9c-befc88582683",
+    "opener": "Saw Maruti Suzuki's results. Thought of your time there. How does it look from the outside?"
+  },
+  {
+    "person_id": "p08",
+    "name": "Pooja Nair",
+    "headline": "Infrastructure projects and EPC finance",
+    "last_contact": "2026-04-05",
+    "days_since": 224,
+    "symbol": "KPIL",
+    "trigger": "Kalpataru Projects International: Press Release on Unaudited Financial Results for the quarter and half ",
+    "filing_id": "384df80e-d770-4b41-b474-8dff65fdefee",
+    "opener": "Saw Kalpataru Projects International's results. Thought of your time there. How does it look from the outside?"
+  },
+  {
+    "person_id": "p02",
+    "name": "Arjun Rao",
+    "headline": "Former CISO and technology risk lead",
+    "last_contact": "2026-05-02",
+    "days_since": 197,
+    "symbol": "BAJFINANCE",
+    "trigger": "Bajaj Finance: Outcome of QIP 2026 - Special Committee Meeting",
+    "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
+    "opener": "Bajaj Finance is raising capital. You'd know how the market will take it."
+  },
+  {
+    "person_id": "p09",
+    "name": "Anand Gupta",
+    "headline": "Consumer and paints industry veteran",
+    "last_contact": "2026-06-22",
+    "days_since": 146,
+    "symbol": "ASIANPAINT",
+    "trigger": "Asian Paints: This is to inform you that the shareholders of the Company have today,",
+    "filing_id": "d1aaeb85-6ca1-4b7d-9c05-4eb4916c7455",
+    "opener": "Asian Paints has a leadership change. Do you know the person coming in?"
+  },
+  {
+    "person_id": "p03",
+    "name": "Kabir Malhotra",
+    "headline": "Retired private-banking executive",
+    "last_contact": "2026-08-14",
+    "days_since": 93,
+    "symbol": "HDFCBANK",
+    "trigger": "HDFC Bank: Re-appointment of Mr. V. Srinivasa Rangan as the Whole-time Director(d",
+    "filing_id": "44ba0161-d9e4-4bd1-aae7-eb3bc46319dd",
+    "opener": "HDFC Bank has a leadership change. Do you know the person coming in?"
+  },
+  {
+    "person_id": "p07",
+    "name": "Rohan Kapoor",
+    "headline": "Ex-Tata group strategy and M&A",
+    "last_contact": "2026-09-30",
+    "days_since": 46,
+    "symbol": "TATASTEEL",
+    "trigger": "Tata Steel: Acquisition of 38,222 equity shares of face value ?10/- each in Creati",
+    "filing_id": "c49c17d4-2697-46d5-96f2-6e9b77f10b8e",
+    "opener": "Tata Steel just announced a deal. You know that business better than most: any quick read?"
+  }
+]

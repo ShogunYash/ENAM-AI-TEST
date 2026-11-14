@@ -1,0 +1,22 @@
+{
+  "key": "NESTLEIND",
+  "kind": "company",
+  "symbol": "NESTLEIND",
+  "headline": "No one worked at Nestle; closest: Anand Gupta",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p09",
+      "name": "Anand Gupta",
+      "headline": "Consumer and paints industry veteran",
+      "strength": 4,
+      "link": "sector_expert",
+      "why": "FMCG distribution expert (consumer and paints industry veteran); no direct tie to Nestle",
+      "evidence": [
+        "expertise: FMCG distribution"
+      ],
+      "score": 3.5
+    }
+  ],
+  "note": null
+}

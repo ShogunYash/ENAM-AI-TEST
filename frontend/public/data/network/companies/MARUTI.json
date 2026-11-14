@@ -1,0 +1,22 @@
+{
+  "key": "MARUTI",
+  "kind": "company",
+  "symbol": "MARUTI",
+  "headline": "1 contact worked at Maruti Suzuki",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p10",
+      "name": "Farah Khan",
+      "headline": "Auto industry supply chain and policy",
+      "strength": 2,
+      "link": "worked_at_company",
+      "why": "Worked at Maruti Suzuki 2008-2019 as GM, Supplier Development",
+      "evidence": [
+        "Maruti Suzuki 2008-2019, GM, Supplier Development"
+      ],
+      "score": 4.7
+    }
+  ],
+  "note": null
+}

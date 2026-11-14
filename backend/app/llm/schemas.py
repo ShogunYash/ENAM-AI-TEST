@@ -17,6 +17,12 @@ class Ping(BaseModel):
     echo: str
 
 
+class NetworkPlan(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    tool: str
+    argument: str = ""
+
+
 class GuidanceItem(BaseModel):
     """One guidance statement extracted from one transcript (prompt: guidance_map)."""
     model_config = ConfigDict(extra="ignore")
@@ -160,6 +166,7 @@ class AskAnswer(BaseModel):
 
 
 SCHEMAS: dict[str, type[BaseModel]] = {
+    "NetworkPlan": NetworkPlan,
     "Ping": Ping,
     "GuidanceItems": GuidanceItems,
     "PvDVerdicts": PvDVerdicts,

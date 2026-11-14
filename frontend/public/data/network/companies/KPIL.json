@@ -1,0 +1,22 @@
+{
+  "key": "KPIL",
+  "kind": "company",
+  "symbol": "KPIL",
+  "headline": "1 contact worked at Kalpataru Projects International",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p08",
+      "name": "Pooja Nair",
+      "headline": "Infrastructure projects and EPC finance",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Worked at Kalpataru Projects International 2013-2021 as Head, Project Finance",
+      "evidence": [
+        "Kalpataru Projects International 2013-2021, Head, Project Finance"
+      ],
+      "score": 5.3
+    }
+  ],
+  "note": null
+}

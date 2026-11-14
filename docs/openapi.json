@@ -24,6 +24,174 @@
         }
       }
     },
+    "/network/people": {
+      "get": {
+        "summary": "Network People",
+        "description": "The investor's contacts (SYNTHETIC demo network; see docs/ARCHITECTURE.md for the privacy design).",
+        "operationId": "network_people_network_people_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/NetworkPerson"
+                  },
+                  "type": "array",
+                  "title": "Response Network People Network People Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/network/insights": {
+      "get": {
+        "summary": "Network Insights",
+        "description": "Network matches for the last 30 days of filings: management changes (who overlaps with the new person) and\nmaterial events (who is best placed to give context). Keyed by filing id.",
+        "operationId": "network_insights_network_insights_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/NetworkInsight"
+                  },
+                  "type": "array",
+                  "title": "Response Network Insights Network Insights Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/network/company/{symbol}": {
+      "get": {
+        "summary": "Network Company",
+        "operationId": "network_company_network_company__symbol__get",
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Symbol"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NetworkInsight"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/network/warm": {
+      "get": {
+        "summary": "Network Warm",
+        "operationId": "network_warm_network_warm_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/WarmNudge"
+                  },
+                  "type": "array",
+                  "title": "Response Network Warm Network Warm Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/network/expertise": {
+      "get": {
+        "summary": "Network Expertise",
+        "operationId": "network_expertise_network_expertise_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ExpertiseTheme"
+                  },
+                  "type": "array",
+                  "title": "Response Network Expertise Network Expertise Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/network/ask": {
+      "post": {
+        "summary": "Network Ask",
+        "description": "Direct question to the network. A small agent: a model picks one tool, code runs it, the answer is built from\nthe tool's matches (it cannot name anyone who is not in the network).",
+        "operationId": "network_ask_network_ask_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NetworkAskRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NetworkAskResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/companies": {
       "get": {
         "summary": "Companies",
@@ -749,6 +917,30 @@
         ],
         "title": "Actual"
       },
+      "AgentStep": {
+        "properties": {
+          "tool": {
+            "type": "string",
+            "title": "Tool"
+          },
+          "input": {
+            "type": "string",
+            "title": "Input"
+          },
+          "summary": {
+            "type": "string",
+            "title": "Summary"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "tool",
+          "input",
+          "summary"
+        ],
+        "title": "AgentStep"
+      },
       "Alert": {
         "properties": {
           "id": {
@@ -1444,6 +1636,61 @@
         ],
         "title": "DocRef"
       },
+      "ExpertiseMember": {
+        "properties": {
+          "person_id": {
+            "type": "string",
+            "title": "Person Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "strength": {
+            "type": "integer",
+            "title": "Strength"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "person_id",
+          "name",
+          "strength"
+        ],
+        "title": "ExpertiseMember"
+      },
+      "ExpertiseTheme": {
+        "properties": {
+          "theme": {
+            "type": "string",
+            "title": "Theme"
+          },
+          "members": {
+            "items": {
+              "$ref": "#/components/schemas/ExpertiseMember"
+            },
+            "type": "array",
+            "title": "Members"
+          },
+          "companies": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Companies",
+            "description": "Tracked NSE symbols in this theme"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "theme",
+          "members",
+          "companies"
+        ],
+        "title": "ExpertiseTheme"
+      },
       "Filing": {
         "properties": {
           "id": {
@@ -1831,6 +2078,312 @@
         ],
         "title": "LlmTotals"
       },
+      "NetworkAskRequest": {
+        "properties": {
+          "question": {
+            "type": "string",
+            "title": "Question"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "question"
+        ],
+        "title": "NetworkAskRequest"
+      },
+      "NetworkAskResponse": {
+        "properties": {
+          "answer": {
+            "type": "string",
+            "title": "Answer"
+          },
+          "matches": {
+            "items": {
+              "$ref": "#/components/schemas/PersonMatch"
+            },
+            "type": "array",
+            "title": "Matches"
+          },
+          "steps": {
+            "items": {
+              "$ref": "#/components/schemas/AgentStep"
+            },
+            "type": "array",
+            "title": "Steps",
+            "description": "The tool calls the agent made, shown to the user"
+          },
+          "answerable": {
+            "type": "boolean",
+            "title": "Answerable",
+            "default": true
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "answer",
+          "matches",
+          "steps"
+        ],
+        "title": "NetworkAskResponse"
+      },
+      "NetworkEdu": {
+        "properties": {
+          "school": {
+            "type": "string",
+            "title": "School"
+          },
+          "degree": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Degree"
+          },
+          "year": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Year"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "school",
+          "degree",
+          "year"
+        ],
+        "title": "NetworkEdu"
+      },
+      "NetworkInsight": {
+        "properties": {
+          "key": {
+            "type": "string",
+            "title": "Key",
+            "description": "filing id for management_change / material_event, NSE symbol for company"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "management_change",
+              "material_event",
+              "company"
+            ],
+            "title": "Kind"
+          },
+          "symbol": {
+            "type": "string",
+            "title": "Symbol"
+          },
+          "headline": {
+            "type": "string",
+            "maxLength": 90,
+            "title": "Headline",
+            "description": "e.g. '2 contacts overlapped with Prashant Verma'"
+          },
+          "subject": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Subject",
+            "description": "The person in the filing, when there is one"
+          },
+          "matches": {
+            "items": {
+              "$ref": "#/components/schemas/PersonMatch"
+            },
+            "type": "array",
+            "title": "Matches"
+          },
+          "note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Note",
+            "description": "Honest limit, e.g. 'The filing gives no career history, so this matches on the employer only'"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "key",
+          "kind",
+          "symbol",
+          "headline",
+          "subject",
+          "matches"
+        ],
+        "title": "NetworkInsight"
+      },
+      "NetworkJob": {
+        "properties": {
+          "org": {
+            "type": "string",
+            "title": "Org"
+          },
+          "nse_symbol": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nse Symbol",
+            "description": "NSE symbol when `org` is a company FINN tracks, else null"
+          },
+          "role": {
+            "type": "string",
+            "title": "Role"
+          },
+          "start_year": {
+            "type": "integer",
+            "title": "Start Year"
+          },
+          "end_year": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End Year",
+            "description": "null = current job"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "org",
+          "nse_symbol",
+          "role",
+          "start_year",
+          "end_year"
+        ],
+        "title": "NetworkJob"
+      },
+      "NetworkPerson": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "headline": {
+            "type": "string",
+            "title": "Headline"
+          },
+          "city": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "City"
+          },
+          "jobs": {
+            "items": {
+              "$ref": "#/components/schemas/NetworkJob"
+            },
+            "type": "array",
+            "title": "Jobs"
+          },
+          "education": {
+            "items": {
+              "$ref": "#/components/schemas/NetworkEdu"
+            },
+            "type": "array",
+            "title": "Education"
+          },
+          "expertise": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Expertise"
+          },
+          "relationship": {
+            "$ref": "#/components/schemas/NetworkRelationship"
+          },
+          "synthetic": {
+            "type": "boolean",
+            "title": "Synthetic",
+            "description": "True for the demo network; the UI says so",
+            "default": true
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "headline",
+          "city",
+          "jobs",
+          "education",
+          "expertise",
+          "relationship"
+        ],
+        "title": "NetworkPerson"
+      },
+      "NetworkRelationship": {
+        "properties": {
+          "strength": {
+            "type": "integer",
+            "maximum": 5.0,
+            "minimum": 1.0,
+            "title": "Strength",
+            "description": "1 = acquaintance, 5 = close, trusted contact"
+          },
+          "how_met": {
+            "type": "string",
+            "title": "How Met"
+          },
+          "last_contact": {
+            "type": "string",
+            "title": "Last Contact",
+            "description": "YYYY-MM-DD"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "strength",
+          "how_met",
+          "last_contact"
+        ],
+        "title": "NetworkRelationship"
+      },
       "OneLiner": {
         "properties": {
           "type": {
@@ -1851,6 +2404,68 @@
           "text"
         ],
         "title": "OneLiner"
+      },
+      "PersonMatch": {
+        "properties": {
+          "person_id": {
+            "type": "string",
+            "title": "Person Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "headline": {
+            "type": "string",
+            "title": "Headline"
+          },
+          "strength": {
+            "type": "integer",
+            "title": "Strength",
+            "description": "relationship strength 1-5"
+          },
+          "link": {
+            "type": "string",
+            "enum": [
+              "worked_at_company",
+              "overlapped_with_person",
+              "same_school",
+              "sector_expert"
+            ],
+            "title": "Link"
+          },
+          "why": {
+            "type": "string",
+            "maxLength": 140,
+            "title": "Why",
+            "description": "One line the investor can act on"
+          },
+          "evidence": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Evidence",
+            "description": "The facts the match rests on, e.g. 'Bajaj Finance 2014-2019, credit risk'"
+          },
+          "score": {
+            "type": "number",
+            "title": "Score"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "person_id",
+          "name",
+          "headline",
+          "strength",
+          "link",
+          "why",
+          "evidence",
+          "score"
+        ],
+        "title": "PersonMatch"
       },
       "PriceReaction": {
         "properties": {
@@ -2677,6 +3292,70 @@
           "cut"
         ],
         "title": "Verdict"
+      },
+      "WarmNudge": {
+        "properties": {
+          "person_id": {
+            "type": "string",
+            "title": "Person Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "headline": {
+            "type": "string",
+            "title": "Headline"
+          },
+          "last_contact": {
+            "type": "string",
+            "title": "Last Contact"
+          },
+          "days_since": {
+            "type": "integer",
+            "title": "Days Since"
+          },
+          "symbol": {
+            "type": "string",
+            "title": "Symbol"
+          },
+          "trigger": {
+            "type": "string",
+            "title": "Trigger",
+            "description": "Why now, e.g. 'Bajaj Finance: Q2 FY27 PAT +29% YoY'"
+          },
+          "filing_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Filing Id"
+          },
+          "opener": {
+            "type": "string",
+            "maxLength": 200,
+            "title": "Opener",
+            "description": "A natural first line for reconnecting"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "person_id",
+          "name",
+          "headline",
+          "last_contact",
+          "days_since",
+          "symbol",
+          "trigger",
+          "filing_id",
+          "opener"
+        ],
+        "title": "WarmNudge"
       }
     }
   }

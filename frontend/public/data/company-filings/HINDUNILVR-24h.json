@@ -3,37 +3,19 @@
   "name": "Hindustan Unilever",
   "window": {
     "label": "24h",
-    "start": "2026-11-13T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-11-14T00:03:38.771853+05:30",
+    "end": "2026-11-15T00:03:38.771853+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T00:03:38.771853+05:30",
   "counts": {
-    "total": 1,
-    "rule_classified": 1,
+    "total": 0,
+    "rule_classified": 0,
     "llm_classified": 0
   },
   "important": [],
   "routine": {
-    "count": 1,
-    "by_category": {
-      "postal_ballot": 1
-    },
-    "items": [
-      {
-        "id": "0fb9b104-30c3-4052-86df-51854480c7d1",
-        "symbol": "HINDUNILVR",
-        "company_name": "Hindustan Unilever Ltd",
-        "filed_at": "2026-11-13T20:33:04.950000+05:30",
-        "headline": "Notice of Postal Ballot for revision in overall limits of commission payable to Non-Executive Directors",
-        "so_what": null,
-        "category": "postal_ballot",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.943,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3317b3c1-9d82-4bdb-9a77-80f005c92da7.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      }
-    ]
+    "count": 0,
+    "by_category": {},
+    "items": []
   }
 }

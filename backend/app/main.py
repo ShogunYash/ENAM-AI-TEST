@@ -18,6 +18,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app import db, ops, universe
 from app import models as m
+from app import network as network_mod
 from app.ingest import prices as prices_mod
 from app.llm import store as llm_store
 from app.pipeline import ask as ask_pipeline
@@ -81,6 +82,41 @@ def health() -> Any:
     live = _has_real_data()
     return {**example("health"), "mode": "live" if live else "mock",
             "snapshot_as_of": as_of.isoformat() if as_of else example("health")["snapshot_as_of"]}
+
+
+@app.get("/network/people", response_model=list[m.NetworkPerson])
+def network_people() -> Any:
+    """The investor's contacts (SYNTHETIC demo network; see docs/ARCHITECTURE.md for the privacy design)."""
+    return network_mod.people()
+
+
+@app.get("/network/insights", response_model=list[m.NetworkInsight])
+def network_insights() -> Any:
+    """Network matches for the last 30 days of filings: management changes (who overlaps with the new person) and
+    material events (who is best placed to give context). Keyed by filing id."""
+    return network_mod.insights()
+
+
+@app.get("/network/company/{symbol}", response_model=m.NetworkInsight)
+def network_company(symbol: str) -> Any:
+    return network_mod.company_insight(symbol.strip().upper())
+
+
+@app.get("/network/warm", response_model=list[m.WarmNudge])
+def network_warm() -> Any:
+    return network_mod.warm_nudges()
+
+
+@app.get("/network/expertise", response_model=list[m.ExpertiseTheme])
+def network_expertise() -> Any:
+    return network_mod.expertise_map()
+
+
+@app.post("/network/ask", response_model=m.NetworkAskResponse)
+def network_ask(req: m.NetworkAskRequest) -> Any:
+    """Direct question to the network. A small agent: a model picks one tool, code runs it, the answer is built from
+    the tool's matches (it cannot name anyone who is not in the network)."""
+    return network_mod.ask(req.question)
 
 
 @app.get("/companies", response_model=list[m.Company])

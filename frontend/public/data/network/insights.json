@@ -1,0 +1,617 @@
+[
+  {
+    "key": "44ba0161-d9e4-4bd1-aae7-eb3bc46319dd",
+    "kind": "management_change",
+    "symbol": "HDFCBANK",
+    "headline": "1 contact know HDFC Bank",
+    "subject": "Mr. V. Srinivasa Rangan",
+    "matches": [
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "headline": "Retired private-banking executive",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at HDFC Bank 2003-2022 as Group Head, Business Banking; bank governance expertise",
+        "evidence": [
+          "HDFC Bank 2003-2022, Group Head, Business Banking",
+          "expertise: bank governance"
+        ],
+        "score": 7.4
+      },
+      {
+        "person_id": "p04",
+        "name": "Nandini Shah",
+        "headline": "Ex-ICICI treasury and capital markets",
+        "strength": 4,
+        "link": "sector_expert",
+        "why": "bank treasury expert (ex-icici treasury and capital markets); no direct tie to HDFC Bank",
+        "evidence": [
+          "expertise: bank treasury"
+        ],
+        "score": 3.5
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "16286674-572c-48bc-a47c-b8a9d5c07363",
+    "kind": "management_change",
+    "symbol": "HDFCBANK",
+    "headline": "1 contact know HDFC Bank",
+    "subject": "Mr. V. Srinivasa Rangan",
+    "matches": [
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "headline": "Retired private-banking executive",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at HDFC Bank 2003-2022 as Group Head, Business Banking; bank governance expertise",
+        "evidence": [
+          "HDFC Bank 2003-2022, Group Head, Business Banking",
+          "expertise: bank governance"
+        ],
+        "score": 7.4
+      },
+      {
+        "person_id": "p04",
+        "name": "Nandini Shah",
+        "headline": "Ex-ICICI treasury and capital markets",
+        "strength": 4,
+        "link": "sector_expert",
+        "why": "bank treasury expert (ex-icici treasury and capital markets); no direct tie to HDFC Bank",
+        "evidence": [
+          "expertise: bank treasury"
+        ],
+        "score": 3.5
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
+    "kind": "material_event",
+    "symbol": "BAJFINANCE",
+    "headline": "Best person to call on this fund raise: Meera Iyer",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p01",
+        "name": "Meera Iyer",
+        "headline": "Ex-credit risk head, consumer lending",
+        "strength": 5,
+        "link": "worked_at_company",
+        "why": "Worked at Bajaj Finance 2014-2020 as Head of Credit Risk",
+        "evidence": [
+          "Bajaj Finance 2014-2020, Head of Credit Risk"
+        ],
+        "score": 6.5
+      },
+      {
+        "person_id": "p02",
+        "name": "Arjun Rao",
+        "headline": "Former CISO and technology risk lead",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at Bajaj Finance 2016-2021 as Deputy CISO",
+        "evidence": [
+          "Bajaj Finance 2016-2021, Deputy CISO"
+        ],
+        "score": 5.3
+      },
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "headline": "Retired private-banking executive",
+        "strength": 4,
+        "link": "sector_expert",
+        "why": "SME lending expert (retired private-banking executive); no direct tie to Bajaj Finance",
+        "evidence": [
+          "expertise: SME lending"
+        ],
+        "score": 3.5
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "f9a4f2e2-4e74-49fd-a6bd-9df8d6045e71",
+    "kind": "material_event",
+    "symbol": "BAJFINANCE",
+    "headline": "Best person to call on this fund raise: Meera Iyer",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p01",
+        "name": "Meera Iyer",
+        "headline": "Ex-credit risk head, consumer lending",
+        "strength": 5,
+        "link": "worked_at_company",
+        "why": "Worked at Bajaj Finance 2014-2020 as Head of Credit Risk",
+        "evidence": [
+          "Bajaj Finance 2014-2020, Head of Credit Risk"
+        ],
+        "score": 6.5
+      },
+      {
+        "person_id": "p02",
+        "name": "Arjun Rao",
+        "headline": "Former CISO and technology risk lead",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at Bajaj Finance 2016-2021 as Deputy CISO",
+        "evidence": [
+          "Bajaj Finance 2016-2021, Deputy CISO"
+        ],
+        "score": 5.3
+      },
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "headline": "Retired private-banking executive",
+        "strength": 4,
+        "link": "sector_expert",
+        "why": "SME lending expert (retired private-banking executive); no direct tie to Bajaj Finance",
+        "evidence": [
+          "expertise: SME lending"
+        ],
+        "score": 3.5
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "c49c17d4-2697-46d5-96f2-6e9b77f10b8e",
+    "kind": "material_event",
+    "symbol": "TATASTEEL",
+    "headline": "Best person to call on this M&A: Rohan Kapoor",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "headline": "Ex-Tata group strategy and M&A",
+        "strength": 5,
+        "link": "worked_at_company",
+        "why": "Worked at Tata Steel 2010-2017 as GM, Corporate Strategy and M&A; M&A and integration expertise",
+        "evidence": [
+          "Tata Steel 2010-2017, GM, Corporate Strategy and M&A",
+          "expertise: M&A and integration"
+        ],
+        "score": 7.5
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "4de0b0df-dd85-401a-9d6b-dd85fc660c4f",
+    "kind": "management_change",
+    "symbol": "TATASTEEL",
+    "headline": "1 contact know Tata Steel",
+    "subject": "Noel Naval Tata",
+    "matches": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "headline": "Ex-Tata group strategy and M&A",
+        "strength": 5,
+        "link": "worked_at_company",
+        "why": "Worked at Tata Steel 2010-2017 as GM, Corporate Strategy and M&A",
+        "evidence": [
+          "Tata Steel 2010-2017, GM, Corporate Strategy and M&A"
+        ],
+        "score": 6.0
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "d1aaeb85-6ca1-4b7d-9c05-4eb4916c7455",
+    "kind": "management_change",
+    "symbol": "ASIANPAINT",
+    "headline": "1 contact know Asian Paints",
+    "subject": "Leo Puri",
+    "matches": [
+      {
+        "person_id": "p09",
+        "name": "Anand Gupta",
+        "headline": "Consumer and paints industry veteran",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at Asian Paints 2005-2016 as Regional Sales Director",
+        "evidence": [
+          "Asian Paints 2005-2016, Regional Sales Director"
+        ],
+        "score": 5.4
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "9fe24176-bed0-4206-9717-23b4afe63ad4",
+    "kind": "management_change",
+    "symbol": "TITAN",
+    "headline": "1 contact know Titan",
+    "subject": "Noel N. Tata",
+    "matches": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "headline": "Ex-Tata group strategy and M&A",
+        "strength": 5,
+        "link": "worked_at_company",
+        "why": "Worked at Titan Company 2017-2023 as Head of Corporate Development",
+        "evidence": [
+          "Titan Company 2017-2023, Head of Corporate Development"
+        ],
+        "score": 6.5
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "ea8b95cc-012c-4460-aa3d-43c2b800858c",
+    "kind": "management_change",
+    "symbol": "KPIL",
+    "headline": "1 contact know Kalpataru Projects International",
+    "subject": "Amit Uplenchwar",
+    "matches": [
+      {
+        "person_id": "p08",
+        "name": "Pooja Nair",
+        "headline": "Infrastructure projects and EPC finance",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at Kalpataru Projects International 2013-2021 as Head, Project Finance",
+        "evidence": [
+          "Kalpataru Projects International 2013-2021, Head, Project Finance"
+        ],
+        "score": 5.3
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "af2b83ef-b621-415d-9fac-416f75bf694f",
+    "kind": "material_event",
+    "symbol": "TATASTEEL",
+    "headline": "Best person to call on this M&A: Rohan Kapoor",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "headline": "Ex-Tata group strategy and M&A",
+        "strength": 5,
+        "link": "worked_at_company",
+        "why": "Worked at Tata Steel 2010-2017 as GM, Corporate Strategy and M&A; M&A and integration expertise",
+        "evidence": [
+          "Tata Steel 2010-2017, GM, Corporate Strategy and M&A",
+          "expertise: M&A and integration"
+        ],
+        "score": 7.5
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "be305212-ae95-4757-93fe-23429494a3c8",
+    "kind": "management_change",
+    "symbol": "HDFCBANK",
+    "headline": "1 contact overlapped with Sanjay D’Souza",
+    "subject": "Sanjay D’Souza",
+    "matches": [
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "headline": "Retired private-banking executive",
+        "strength": 4,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~20 yrs at HDFC Bank with Sanjay D’Souza (Group Head, Business Banking, 2003-2022)",
+        "evidence": [
+          "HDFC Bank 2003-2022",
+          "filing: Sanjay D’Souza tenure since ~1999"
+        ],
+        "score": 14.4
+      },
+      {
+        "person_id": "p04",
+        "name": "Nandini Shah",
+        "headline": "Ex-ICICI treasury and capital markets",
+        "strength": 4,
+        "link": "sector_expert",
+        "why": "bank treasury expert (ex-icici treasury and capital markets); no direct tie to HDFC Bank",
+        "evidence": [
+          "expertise: bank treasury"
+        ],
+        "score": 3.5
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "e37c5322-e4c3-4831-b3c6-48d5930f6d19",
+    "kind": "material_event",
+    "symbol": "LT",
+    "headline": "Best person to call on this M&A: Pooja Nair",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p08",
+        "name": "Pooja Nair",
+        "headline": "Infrastructure projects and EPC finance",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Works at L&T 2021-now as VP, Project Controls",
+        "evidence": [
+          "L&T 2021-now, VP, Project Controls"
+        ],
+        "score": 5.8
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "573832b2-d25c-4a3e-a3b4-46c15e9b0178",
+    "kind": "management_change",
+    "symbol": "DIXON",
+    "headline": "1 contact know Dixon Technologies",
+    "subject": "Prithvi Vachani",
+    "matches": [
+      {
+        "person_id": "p05",
+        "name": "Vikram Desai",
+        "headline": "Electronics manufacturing operator",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at Dixon Technologies 2012-2019 as VP Operations",
+        "evidence": [
+          "Dixon Technologies 2012-2019, VP Operations"
+        ],
+        "score": 5.3
+      },
+      {
+        "person_id": "p02",
+        "name": "Arjun Rao",
+        "headline": "Former CISO and technology risk lead",
+        "strength": 3,
+        "link": "sector_expert",
+        "why": "technology risk expert (former ciso and technology risk lead); no direct tie to Dixon Technologies",
+        "evidence": [
+          "expertise: technology risk"
+        ],
+        "score": 3.0
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "0df598a9-08f7-48f3-b53d-f69d332706e2",
+    "kind": "material_event",
+    "symbol": "POLYCAB",
+    "headline": "Best person to call on this litigation: Sunita Reddy",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p06",
+        "name": "Sunita Reddy",
+        "headline": "Cables and wires channel and exports specialist",
+        "strength": 2,
+        "link": "worked_at_company",
+        "why": "Worked at Polycab India 2011-2018 as Head, Export Markets",
+        "evidence": [
+          "Polycab India 2011-2018, Head, Export Markets"
+        ],
+        "score": 4.7
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "b0a80b4b-b280-45ea-a1d5-6f18a24b3ce6",
+    "kind": "material_event",
+    "symbol": "TITAN",
+    "headline": "Best person to call on this M&A: Rohan Kapoor",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "headline": "Ex-Tata group strategy and M&A",
+        "strength": 5,
+        "link": "worked_at_company",
+        "why": "Worked at Titan Company 2017-2023 as Head of Corporate Development; M&A and integration expertise",
+        "evidence": [
+          "Titan Company 2017-2023, Head of Corporate Development",
+          "expertise: M&A and integration"
+        ],
+        "score": 8.0
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "ec5b190e-b037-4cb0-91a8-d037cfad8574",
+    "kind": "material_event",
+    "symbol": "POLYCAB",
+    "headline": "Best person to call on this litigation: Sunita Reddy",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p06",
+        "name": "Sunita Reddy",
+        "headline": "Cables and wires channel and exports specialist",
+        "strength": 2,
+        "link": "worked_at_company",
+        "why": "Worked at Polycab India 2011-2018 as Head, Export Markets",
+        "evidence": [
+          "Polycab India 2011-2018, Head, Export Markets"
+        ],
+        "score": 4.7
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "94026a0a-352e-4135-aee7-a8b1a54a4349",
+    "kind": "material_event",
+    "symbol": "MARUTI",
+    "headline": "Best person to call on this M&A: Farah Khan",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p10",
+        "name": "Farah Khan",
+        "headline": "Auto industry supply chain and policy",
+        "strength": 2,
+        "link": "worked_at_company",
+        "why": "Worked at Maruti Suzuki 2008-2019 as GM, Supplier Development",
+        "evidence": [
+          "Maruti Suzuki 2008-2019, GM, Supplier Development"
+        ],
+        "score": 4.7
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "eee0209e-2a9c-4d1c-91a1-8b1dbc6868a2",
+    "kind": "management_change",
+    "symbol": "HDFCBANK",
+    "headline": "1 contact know HDFC Bank",
+    "subject": "Anup Bagchi",
+    "matches": [
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "headline": "Retired private-banking executive",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at HDFC Bank 2003-2022 as Group Head, Business Banking; bank governance expertise",
+        "evidence": [
+          "HDFC Bank 2003-2022, Group Head, Business Banking",
+          "expertise: bank governance"
+        ],
+        "score": 7.4
+      },
+      {
+        "person_id": "p04",
+        "name": "Nandini Shah",
+        "headline": "Ex-ICICI treasury and capital markets",
+        "strength": 4,
+        "link": "sector_expert",
+        "why": "bank treasury expert (ex-icici treasury and capital markets); no direct tie to HDFC Bank",
+        "evidence": [
+          "expertise: bank treasury"
+        ],
+        "score": 3.5
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "04793fd5-64b8-4987-8380-dfc8638caa8e",
+    "kind": "management_change",
+    "symbol": "NESTLEIND",
+    "headline": "Closest: Anand Gupta",
+    "subject": "Gopichandar Jagatheesan",
+    "matches": [
+      {
+        "person_id": "p09",
+        "name": "Anand Gupta",
+        "headline": "Consumer and paints industry veteran",
+        "strength": 4,
+        "link": "sector_expert",
+        "why": "FMCG distribution expert (consumer and paints industry veteran); no direct tie to Nestle",
+        "evidence": [
+          "expertise: FMCG distribution"
+        ],
+        "score": 3.5
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "9817a9b7-6de3-4bfa-8e80-ac4cf87d1d6a",
+    "kind": "management_change",
+    "symbol": "BAJFINANCE",
+    "headline": "2 contacts overlapped with Prashant Verma",
+    "subject": "Prashant Verma",
+    "matches": [
+      {
+        "person_id": "p01",
+        "name": "Meera Iyer",
+        "headline": "Ex-credit risk head, consumer lending",
+        "strength": 5,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~7 yrs at Bajaj Finance with Prashant Verma (Head of Credit Risk, 2014-2020)",
+        "evidence": [
+          "Bajaj Finance 2014-2020",
+          "filing: Prashant Verma tenure since ~2006"
+        ],
+        "score": 11.1
+      },
+      {
+        "person_id": "p02",
+        "name": "Arjun Rao",
+        "headline": "Former CISO and technology risk lead",
+        "strength": 3,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~6 yrs at Bajaj Finance with Prashant Verma (Deputy CISO, 2016-2021)",
+        "evidence": [
+          "Bajaj Finance 2016-2021",
+          "filing: Prashant Verma tenure since ~2006"
+        ],
+        "score": 9.6
+      },
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "headline": "Retired private-banking executive",
+        "strength": 4,
+        "link": "sector_expert",
+        "why": "SME lending expert (retired private-banking executive); no direct tie to Bajaj Finance",
+        "evidence": [
+          "expertise: SME lending"
+        ],
+        "score": 4.5
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "85a90a42-ccad-4d29-983b-6c2164f010e0",
+    "kind": "material_event",
+    "symbol": "TCS",
+    "headline": "Best person to call on this M&A: Meera Iyer",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p01",
+        "name": "Meera Iyer",
+        "headline": "Ex-credit risk head, consumer lending",
+        "strength": 5,
+        "link": "sector_expert",
+        "why": "consumer lending expert (ex-credit risk head, consumer lending); no direct tie to Tata Consultancy Services",
+        "evidence": [
+          "expertise: consumer lending"
+        ],
+        "score": 4.0
+      },
+      {
+        "person_id": "p09",
+        "name": "Anand Gupta",
+        "headline": "Consumer and paints industry veteran",
+        "strength": 4,
+        "link": "sector_expert",
+        "why": "consumer demand expert (consumer and paints industry veteran); no direct tie to Tata Consultancy Services",
+        "evidence": [
+          "expertise: consumer demand"
+        ],
+        "score": 3.5
+      }
+    ],
+    "note": "No contact has worked at Tata Consultancy Services; matched on expertise"
+  }
+]

@@ -47,6 +47,12 @@ Base URL: `VITE_API_BASE` (the Render URL in production, `http://localhost:8000`
 | `GET /research/{symbol}` | `Research` | — | `research-INFY.json` (ready), `research-building.json` |
 | `GET /stats/llm` | `LlmStats` | — | `stats.json` |
 | `GET /debug/sources` | `SourcesReport` | — (runs the live source checks from the server; used as the cloud-IP test at deploy) | `debug-sources.json` |
+| `GET /network/people` | `NetworkPerson[]` | — (the investor's contacts; SYNTHETIC demo network, `synthetic: true`) | `network-people.json` |
+| `GET /network/insights` | `NetworkInsight[]` | — (matches for the last 30 days of filings; `key` = filing id; `kind` management_change or material_event) | `network-insights.json` |
+| `GET /network/company/{symbol}` | `NetworkInsight` | — (`kind` company: who worked at / is near this company) | `network-company.json` |
+| `GET /network/warm` | `WarmNudge[]` | — (contacts not spoken to for 45+ days whose former employer filed something in the last 14 days) | `network-warm.json` |
+| `GET /network/expertise` | `ExpertiseTheme[]` | — (go-to people per theme, plus the tracked companies in that theme) | `network-expertise.json` |
+| `POST /network/ask` | `NetworkAskResponse` | body `NetworkAskRequest {question}`; a small agent: a model picks one tool, code runs it; `steps` shows the tool calls | `network-ask.json` |
 | `POST /ask` *(stretch)* | `AskResponse` | body `AskRequest {question, context {screen, symbol?, filing_id?}}` | `ask.json` |
 
 ### Behaviour rules
@@ -82,10 +88,17 @@ company-filings/{SYM}-{24h|3d|7d|30d}.json  CompanyFilings  (one per tracked com
 filings/{id}.json    Filing      (enriched filings only)
 research/{SYM}.json  Research    (pre-seeded research names)
 stats.json           LlmStats
+network/people.json       NetworkPerson[]
+network/insights.json     NetworkInsight[]   (look up by filing id = NetworkInsight.key)
+network/warm.json         WarmNudge[]
+network/expertise.json    ExpertiseTheme[]
+network/companies/{SYM}.json  NetworkInsight   (kind company)
 ```
+`POST /network/ask` needs the live API (it calls a model); offline the UI falls back to the expertise map.
 Until B6 exists, seed the folder by copying `docs/examples/`.
 
 ## Changelog
+- 2026-11-15: **Network layer** (additive, no existing shape changed). New models `NetworkPerson`, `PersonMatch`, `NetworkInsight`, `WarmNudge`, `ExpertiseTheme`, `NetworkAskRequest/Response`, `AgentStep`; endpoints `/network/{people,insights,company/{symbol},warm,expertise}` and `POST /network/ask`; snapshot folder `network/`. The demo network is synthetic. Matches are rules over listed facts (`PersonMatch.evidence`); the only model call is the planner of `/network/ask`.
 - 2026-11-13: **portfolio vs watchlist** (additive). `data/portfolio.json` gains `watchlist` (tracked, not held). `CompanySummary.in_portfolio` (default true). Rules: the ranked `GET /digest` (24h/3d/7d/30d), `GET /alerts`, `prices.json` and `Needs you` cover the PORTFOLIO only; `GET /companies`, `GET /digest/companies` and `GET /digest/company/{symbol}` cover portfolio + watchlist, each row flagged `in_portfolio`. The watchlist never raises alerts. UI: a `My portfolio | Watchlist` toggle on Today filters the company list on `in_portfolio` (no new API parameter, so it works offline). Snapshot company files now also exist for `24h` (all windows `24h|3d|7d|30d`), for every tracked company.
 - 2026-11-13: by-company view for the 30-day window (additive). `GET /digest/companies?window=` -> `CompanyList` (one `CompanySummary` per portfolio company: total, material, categories, best headline `top`, latest `price`), and `GET /digest/company/{symbol}?window=` -> `CompanyFilings` (that company's filings, UNCAPPED: `important` best-first + collapsed `routine`). The flat `/digest` caps its lists (5 / 80), so it cannot show a full 30 days per stock. Snapshot gains `digest-companies-{3d,7d,30d}.json` and `company-filings/{SYM}-{3d,7d,30d}.json` (24h has none: the ranked list is enough there). UI: 24h / 3d / 7d keep the ranked list; 30d shows the company list, tap -> that company's headlines.
 - 2026-11-13: `POST /ask` is real. `AskResponse.answerable` (additive, default true). Context `filing` -> answers from the filing card + first PDF pages; `research` -> from the cached report. Every `claims[].sources[]` quote is server-verified; every figure in `answer` already exists in the evidence; otherwise `answerable:false` with a plain sentence (also when no model is reachable). Frontend: show claims' quotes under the answer, and render `answerable:false` as a neutral "FINN can't answer that from this document" state, not an error.

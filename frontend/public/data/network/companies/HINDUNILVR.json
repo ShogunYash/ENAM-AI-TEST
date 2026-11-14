@@ -1,0 +1,22 @@
+{
+  "key": "HINDUNILVR",
+  "kind": "company",
+  "symbol": "HINDUNILVR",
+  "headline": "1 contact worked at Hindustan Unilever",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p09",
+      "name": "Anand Gupta",
+      "headline": "Consumer and paints industry veteran",
+      "strength": 4,
+      "link": "worked_at_company",
+      "why": "Worked at Hindustan Unilever 2016-2024 as Category Head",
+      "evidence": [
+        "Hindustan Unilever 2016-2024, Category Head"
+      ],
+      "score": 5.9
+    }
+  ],
+  "note": null
+}

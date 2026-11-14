@@ -1,0 +1,22 @@
+{
+  "key": "TATASTEEL",
+  "kind": "company",
+  "symbol": "TATASTEEL",
+  "headline": "1 contact worked at Tata Steel",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p07",
+      "name": "Rohan Kapoor",
+      "headline": "Ex-Tata group strategy and M&A",
+      "strength": 5,
+      "link": "worked_at_company",
+      "why": "Worked at Tata Steel 2010-2017 as GM, Corporate Strategy and M&A",
+      "evidence": [
+        "Tata Steel 2010-2017, GM, Corporate Strategy and M&A"
+      ],
+      "score": 6.0
+    }
+  ],
+  "note": null
+}

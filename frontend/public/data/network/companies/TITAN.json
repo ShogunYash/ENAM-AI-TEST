@@ -1,0 +1,22 @@
+{
+  "key": "TITAN",
+  "kind": "company",
+  "symbol": "TITAN",
+  "headline": "1 contact worked at Titan",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p07",
+      "name": "Rohan Kapoor",
+      "headline": "Ex-Tata group strategy and M&A",
+      "strength": 5,
+      "link": "worked_at_company",
+      "why": "Worked at Titan Company 2017-2023 as Head of Corporate Development",
+      "evidence": [
+        "Titan Company 2017-2023, Head of Corporate Development"
+      ],
+      "score": 6.5
+    }
+  ],
+  "note": null
+}

@@ -1,0 +1,34 @@
+{
+  "key": "ICICIBANK",
+  "kind": "company",
+  "symbol": "ICICIBANK",
+  "headline": "1 contact worked at ICICI Bank",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p04",
+      "name": "Nandini Shah",
+      "headline": "Ex-ICICI treasury and capital markets",
+      "strength": 4,
+      "link": "worked_at_company",
+      "why": "Worked at ICICI Bank 2009-2018 as Head, Capital Markets",
+      "evidence": [
+        "ICICI Bank 2009-2018, Head, Capital Markets"
+      ],
+      "score": 5.9
+    },
+    {
+      "person_id": "p03",
+      "name": "Kabir Malhotra",
+      "headline": "Retired private-banking executive",
+      "strength": 4,
+      "link": "sector_expert",
+      "why": "private banking expert (retired private-banking executive); no direct tie to ICICI Bank",
+      "evidence": [
+        "expertise: private banking"
+      ],
+      "score": 3.5
+    }
+  ],
+  "note": null
+}

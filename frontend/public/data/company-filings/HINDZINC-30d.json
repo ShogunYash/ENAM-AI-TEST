@@ -3,10 +3,10 @@
   "name": "Hindustan Zinc",
   "window": {
     "label": "30d",
-    "start": "2026-10-15T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-10-16T00:03:38.771853+05:30",
+    "end": "2026-11-15T00:03:38.771853+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T00:03:38.771853+05:30",
   "counts": {
     "total": 14,
     "rule_classified": 12,
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.038,
+      "score": 0.031,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9b8e22e9-8b97-4151-a045-51669fdac2ae.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -112,7 +112,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.274,
+        "score": 0.223,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3f37569c-9ad2-4f35-a893-fae70f224ec2.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -127,7 +127,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.274,
+        "score": 0.223,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7de61400-55cf-4e63-a45b-a347c8f96223.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -142,7 +142,7 @@
         "category": "postal_ballot",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.089,
+        "score": 0.072,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6878f31a-dc55-4714-9f81-4231101d1ff3.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -172,7 +172,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.014,
+        "score": 0.011,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c7855465-32dd-44c8-9c0b-e63ce6ac0be5.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -202,7 +202,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.008,
+        "score": 0.007,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9d28cec3-e812-4af2-b066-14920c33e5ec.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -217,7 +217,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.008,
+        "score": 0.007,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f5a6fc55-e31c-4344-9d8c-ee9791e1a1de.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -247,7 +247,7 @@
         "category": "postal_ballot",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.002,
+        "score": 0.001,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a206847a-23ea-40ac-a7a0-64a90f611571.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -262,7 +262,7 @@
         "category": "postal_ballot",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.002,
+        "score": 0.001,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ab6cfc5a-d3d3-44e0-a39e-dbd9d2d47ec6.pdf",
         "price_reaction": null,
         "enrichment": null

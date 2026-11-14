@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "7d",
-    "start": "2026-11-07T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-11-08T00:03:38.771853+05:30",
+    "end": "2026-11-15T00:03:38.771853+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T00:03:38.771853+05:30",
   "needs_you": [
     {
       "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
@@ -16,8 +16,8 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 8.22,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
+      "score": 6.689,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
       "price_reaction": {
         "pct_1d": 3.36,
         "vol_ratio": 1.21
@@ -25,113 +25,6 @@
       "enrichment": {
         "type": "oneliner",
         "text": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price."
-      }
-    },
-    {
-      "id": "4f4ea23c-0c48-4420-a9bc-7e963dd8cefe",
-      "symbol": "TATASTEEL",
-      "company_name": "Tata Steel Ltd",
-      "filed_at": "2026-11-07T13:19:15.060000+05:30",
-      "headline": "Financial Results for quarter and half year ended September 30, 2026",
-      "so_what": "Q2 FY27: PAT +16%, Rev +12% YoY · EBITDA margin 16.8%",
-      "category": "results",
-      "category_source": "rule",
-      "priority": "high",
-      "score": 2.968,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2e7c8bf8-d794-4a55-b670-97951b28e0e8.pdf",
-      "price_reaction": null,
-      "enrichment": {
-        "type": "results",
-        "period": "Q2 FY27",
-        "basis": "consolidated",
-        "unit": "INR_CR",
-        "metrics": [
-          {
-            "name": "revenue",
-            "value": 65436.24,
-            "prev_q": 60794.29,
-            "prev_y": 58689.29,
-            "qoq_pct": 7.6,
-            "yoy_pct": 11.5
-          },
-          {
-            "name": "ebitda",
-            "value": 10994.02,
-            "prev_q": 9015.01,
-            "prev_y": 8526.88,
-            "qoq_pct": 22.0,
-            "yoy_pct": 28.9
-          },
-          {
-            "name": "pbt",
-            "value": 5455.15,
-            "prev_q": 3837.53,
-            "prev_y": 4222.47,
-            "qoq_pct": 42.2,
-            "yoy_pct": 29.2
-          },
-          {
-            "name": "pat",
-            "value": 3699.59,
-            "prev_q": 2385.24,
-            "prev_y": 3183.09,
-            "qoq_pct": 55.1,
-            "yoy_pct": 16.2
-          }
-        ],
-        "margin_ebitda_pct": 16.8,
-        "cross_check": {
-          "status": "match",
-          "note": null
-        },
-        "source": {
-          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2e7c8bf8-d794-4a55-b670-97951b28e0e8.pdf",
-          "page": 15
-        }
-      }
-    },
-    {
-      "id": "c49c17d4-2697-46d5-96f2-6e9b77f10b8e",
-      "symbol": "TATASTEEL",
-      "company_name": "Tata Steel Ltd",
-      "filed_at": "2026-11-07T15:44:55.163000+05:30",
-      "headline": "Acquisition of 38,222 equity shares of face value ?10/- each in Creative Port Development Private Limited (''CPDPL'') due to conversion of 25,10,830 Optionally Convertible Redeemable Preference ....",
-      "so_what": "Tata Steel completed acquisition, increasing CPDPL stake to 57.5%.",
-      "category": "m_and_a",
-      "category_source": "rule",
-      "priority": "high",
-      "score": 2.701,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2630fae6-20d8-4b7f-86fe-81c5b1a22a94.pdf",
-      "price_reaction": null,
-      "enrichment": {
-        "type": "oneliner",
-        "text": "Tata Steel completed acquisition, increasing CPDPL stake to 57.5%."
-      }
-    },
-    {
-      "id": "4de0b0df-dd85-401a-9d6b-dd85fc660c4f",
-      "symbol": "TATASTEEL",
-      "company_name": "Tata Steel Ltd",
-      "filed_at": "2026-11-07T13:35:49.073000+05:30",
-      "headline": "Retirement of Mr. Noel Naval Tata as Non-Executive, Non-Independent Director and as Vice-Chairman of the Board",
-      "so_what": null,
-      "category": "management_change",
-      "category_source": "rule",
-      "priority": "high",
-      "score": 2.646,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/22765a70-fd05-4bea-85bb-001eca66c2c1.pdf",
-      "price_reaction": null,
-      "enrichment": {
-        "type": "management",
-        "person": "Noel Naval Tata",
-        "role": "Non-Executive, Non-Independent Director and Vice Chairman of the Board",
-        "change": "retired",
-        "background": [
-          "Associated with the Company since March 2022"
-        ],
-        "links": [],
-        "effective": "2026-11-11",
-        "background_source": "filing"
       }
     }
   ],
@@ -146,7 +39,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 6.802,
+      "score": 5.535,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -170,7 +63,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 5.448,
+      "score": 4.434,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6df1f05c-9926-47ce-9896-94c41bdb71ab.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -194,7 +87,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 4.576,
+      "score": 3.724,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/84c0dbf5-4b55-41b9-ab7b-e20d9fe359a9.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -212,7 +105,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 4.568,
+      "score": 3.718,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/41e7bb57-172f-4858-a5ac-8c15fe653e81.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -222,13 +115,12 @@
     }
   ],
   "routine": {
-    "count": 25,
+    "count": 18,
     "by_category": {
       "earnings_call": 4,
-      "press_release": 4,
-      "investor_meetings": 10,
-      "results": 1,
-      "unclassified": 6
+      "press_release": 1,
+      "investor_meetings": 9,
+      "unclassified": 4
     },
     "items": [
       {
@@ -241,7 +133,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.52,
+        "score": 1.237,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/eeedbcb3-2b63-4718-b5b7-b498eedf2b4e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -256,7 +148,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.436,
+        "score": 1.169,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/769be2ca-bd51-4ac3-8e63-ce44e430d026.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -271,7 +163,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.231,
+        "score": 1.002,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/daa6c172-771a-4af5-b4b3-9813fdf7536a.pdf",
         "price_reaction": {
           "pct_1d": -0.97,
@@ -289,7 +181,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.132,
+        "score": 0.921,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a9cb0ab8-930f-4400-b70b-fbd01640f54d.pdf",
         "price_reaction": {
           "pct_1d": -0.08,
@@ -307,7 +199,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.02,
+        "score": 0.83,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8269aea9-54c0-4a24-a615-6dda0ab8f054.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -322,7 +214,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.923,
+        "score": 0.752,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3f614a9e-94b0-42ef-8145-ba0055ba7be5.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -337,7 +229,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.896,
+        "score": 0.729,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d7982c18-e8b9-485f-8165-a8333b0d421e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -352,7 +244,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.781,
+        "score": 0.636,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/71268b4d-2f12-447d-bf1e-28310f485d17.pdf",
         "price_reaction": {
           "pct_1d": -0.97,
@@ -370,7 +262,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.755,
+        "score": 0.615,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d01ef203-cd61-4f19-b88b-7a373979e5b5.pdf",
         "price_reaction": {
           "pct_1d": 0.71,
@@ -388,7 +280,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.747,
+        "score": 0.608,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/55f9d4f5-8638-4669-abdb-7cc4127221fc.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -403,68 +295,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.722,
+        "score": 0.588,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fcd5e6ba-794e-420b-ae7a-17a4c8df68e3.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "62fe4e58-cfce-4996-aa60-1e2f715e50e5",
-        "symbol": "BAJFINANCE",
-        "company_name": "Bajaj Finance Ltd",
-        "filed_at": "2026-11-07T16:12:07.090000+05:30",
-        "headline": "Submission of half-yearly report for the FY2026-27 containing the Financial Performance of the Company during the half-year ended 30 September 2026.",
-        "so_what": null,
-        "category": "results",
-        "category_source": "llm",
-        "priority": "low",
-        "score": 0.678,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/88c1f74a-5faf-4951-bd1c-87ac9c742fd0.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "724af60b-cd38-4eed-8d7d-3df3f2c6c03a",
-        "symbol": "TATASTEEL",
-        "company_name": "Tata Steel Ltd",
-        "filed_at": "2026-11-07T13:28:28.420000+05:30",
-        "headline": "Press Release and Investor Presentation",
-        "so_what": null,
-        "category": "press_release",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.661,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5a739d21-7ea5-4c1a-b220-45f77e240c2e.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "a21e7cd0-569d-424c-9edd-b2c6e657187e",
-        "symbol": "TATASTEEL",
-        "company_name": "Tata Steel Ltd",
-        "filed_at": "2026-11-07T13:25:50.230000+05:30",
-        "headline": "Press Release and Investor Presentation - Tata Steel Limited",
-        "so_what": null,
-        "category": "press_release",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.66,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/569d3f9e-82d7-45c9-bb22-81509bb8ec3c.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "3b5706e9-8062-4f28-ae69-9e7d6e5ec668",
-        "symbol": "TATASTEEL",
-        "company_name": "Tata Steel Ltd",
-        "filed_at": "2026-11-07T13:23:16.830000+05:30",
-        "headline": "Press Release and Investor Presentation - Tata Steel Limited",
-        "so_what": null,
-        "category": "press_release",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.66,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a10cb52b-e846-4a80-a709-c94b264e6532.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -478,8 +310,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.586,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2b934e4e-121f-42d7-a2d0-d3eb4364b9a7.pdf",
+        "score": 0.477,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2b934e4e-121f-42d7-a2d0-d3eb4364b9a7.pdf",
         "price_reaction": {
           "pct_1d": -0.2,
           "vol_ratio": 0.52
@@ -496,7 +328,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.362,
+        "score": 0.294,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c0a1bde0-4d57-46c0-ac73-940d5ff093d7.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -511,23 +343,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.354,
+        "score": 0.288,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ced01c36-48bf-4c4c-a74b-d17875a41c27.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "04645946-3942-4053-b0a7-b6a99bd00b51",
-        "symbol": "TATASTEEL",
-        "company_name": "Tata Steel Ltd",
-        "filed_at": "2026-11-07T16:53:51.870000+05:30",
-        "headline": "Audio-video recording of ''Tata Steel 2QFY27 Earnings Discussion''",
-        "so_what": null,
-        "category": "investor_meetings",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.228,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/91ad2b2d-8248-4140-aefc-c17da68fc452.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -557,7 +374,7 @@
         "category_source": "rule",
         "priority": "hidden",
         "score": 0.0,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2d26cac8-d5b5-4be4-ba93-d18f80ee8c0c.pdf",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2d26cac8-d5b5-4be4-ba93-d18f80ee8c0c.pdf",
         "price_reaction": {
           "pct_1d": -0.33,
           "vol_ratio": 0.45
@@ -593,36 +410,6 @@
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a49dd503-8f9b-4631-a016-8eeaf6578790.pdf",
         "price_reaction": null,
         "enrichment": null
-      },
-      {
-        "id": "b5bdea83-6ca3-4a06-9022-06b0feeee105",
-        "symbol": "TATASTEEL",
-        "company_name": "Tata Steel Ltd",
-        "filed_at": "2026-11-07T13:38:30.133000+05:30",
-        "headline": "Outcome of Board Meeting",
-        "so_what": null,
-        "category": "unclassified",
-        "category_source": "rule",
-        "priority": "hidden",
-        "score": 0.0,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c12dc530-62e0-44b2-863c-bd10307275ee.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "e8ad3451-edb1-45c3-aec0-56966e7a9399",
-        "symbol": "TATASTEEL",
-        "company_name": "Tata Steel Ltd",
-        "filed_at": "2026-11-07T13:07:27.497000+05:30",
-        "headline": "Outcome of Board Meeting - Tata Steel Limited",
-        "so_what": null,
-        "category": "unclassified",
-        "category_source": "llm",
-        "priority": "hidden",
-        "score": 0.0,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4785489a-e064-459a-a469-f438883b0f30.pdf",
-        "price_reaction": null,
-        "enrichment": null
       }
     ]
   },
@@ -632,7 +419,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-11T17:06:59.713000+05:30",
-      "value": 8.22,
+      "value": 6.689,
       "threshold": 7.0,
       "message": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price.",
       "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7"
@@ -642,7 +429,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-10T12:23:10.163000+05:30",
-      "value": 4.576,
+      "value": 3.724,
       "threshold": 7.0,
       "message": "Approved allotment of 5,74,25,740 warrants at Rs. 1,010 each.",
       "filing_id": "dff7d1e2-500b-498c-9b9a-52b2cb4641a8"
@@ -652,45 +439,15 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-10T12:12:31.463000+05:30",
-      "value": 4.568,
+      "value": 3.718,
       "threshold": 7.0,
       "message": "Approved issuing 5,74,25,740 warrants for ₹57,99,99,97,400.",
       "filing_id": "f9a4f2e2-4e74-49fd-a6bd-9df8d6045e71"
-    },
-    {
-      "id": "fl-c49c17d4-2697-46d5-96f2-6e9b77f10b8e",
-      "symbol": "TATASTEEL",
-      "kind": "material_filing",
-      "triggered_at": "2026-11-07T15:44:55.163000+05:30",
-      "value": 2.701,
-      "threshold": 7.0,
-      "message": "Tata Steel completed acquisition, increasing CPDPL stake to 57.5%.",
-      "filing_id": "c49c17d4-2697-46d5-96f2-6e9b77f10b8e"
-    },
-    {
-      "id": "fl-4de0b0df-dd85-401a-9d6b-dd85fc660c4f",
-      "symbol": "TATASTEEL",
-      "kind": "material_filing",
-      "triggered_at": "2026-11-07T13:35:49.073000+05:30",
-      "value": 2.646,
-      "threshold": 7.0,
-      "message": "Retirement of Mr. Noel Naval Tata as Non-Executive, Non-Independent Director and as Vice-C",
-      "filing_id": "4de0b0df-dd85-401a-9d6b-dd85fc660c4f"
-    },
-    {
-      "id": "fl-4f4ea23c-0c48-4420-a9bc-7e963dd8cefe",
-      "symbol": "TATASTEEL",
-      "kind": "material_filing",
-      "triggered_at": "2026-11-07T13:19:15.060000+05:30",
-      "value": 2.968,
-      "threshold": 7.0,
-      "message": "Q2 FY27: PAT +16%, Rev +12% YoY · EBITDA margin 16.8%",
-      "filing_id": "4f4ea23c-0c48-4420-a9bc-7e963dd8cefe"
     }
   ],
   "counts": {
-    "total": 33,
-    "rule_classified": 31,
-    "llm_classified": 2
+    "total": 23,
+    "rule_classified": 23,
+    "llm_classified": 0
   }
 }

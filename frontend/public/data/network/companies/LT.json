@@ -1,0 +1,22 @@
+{
+  "key": "LT",
+  "kind": "company",
+  "symbol": "LT",
+  "headline": "1 contact worked at Larsen & Toubro",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p08",
+      "name": "Pooja Nair",
+      "headline": "Infrastructure projects and EPC finance",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Works at L&T 2021-now as VP, Project Controls",
+      "evidence": [
+        "L&T 2021-now, VP, Project Controls"
+      ],
+      "score": 5.8
+    }
+  ],
+  "note": null
+}

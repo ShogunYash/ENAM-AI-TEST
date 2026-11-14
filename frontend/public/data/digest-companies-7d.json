@@ -1,17 +1,17 @@
 {
   "window": {
     "label": "7d",
-    "start": "2026-11-07T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-11-08T00:03:38.771853+05:30",
+    "end": "2026-11-15T00:03:38.771853+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T00:03:38.771853+05:30",
   "companies": [
     {
       "symbol": "BAJFINANCE",
       "name": "Bajaj Finance",
       "sector": "Consumer lending",
       "in_portfolio": true,
-      "total": 4,
+      "total": 3,
       "material": 3,
       "categories": {
         "fund_raise": 3
@@ -26,8 +26,8 @@
         "category": "fund_raise",
         "category_source": "rule",
         "priority": "high",
-        "score": 8.22,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
+        "score": 6.689,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
         "price_reaction": {
           "pct_1d": 3.36,
           "vol_ratio": 1.21
@@ -62,7 +62,7 @@
         "category": "management_change",
         "category_source": "rule",
         "priority": "medium",
-        "score": 6.802,
+        "score": 5.535,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -82,86 +82,6 @@
       }
     },
     {
-      "symbol": "TATASTEEL",
-      "name": "Tata Steel",
-      "sector": "Steel",
-      "in_portfolio": true,
-      "total": 12,
-      "material": 3,
-      "categories": {
-        "m_and_a": 1,
-        "management_change": 1,
-        "results": 1
-      },
-      "top": {
-        "id": "4f4ea23c-0c48-4420-a9bc-7e963dd8cefe",
-        "symbol": "TATASTEEL",
-        "company_name": "Tata Steel Ltd",
-        "filed_at": "2026-11-07T13:19:15.060000+05:30",
-        "headline": "Financial Results for quarter and half year ended September 30, 2026",
-        "so_what": "Q2 FY27: PAT +16%, Rev +12% YoY · EBITDA margin 16.8%",
-        "category": "results",
-        "category_source": "rule",
-        "priority": "high",
-        "score": 2.968,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2e7c8bf8-d794-4a55-b670-97951b28e0e8.pdf",
-        "price_reaction": null,
-        "enrichment": {
-          "type": "results",
-          "period": "Q2 FY27",
-          "basis": "consolidated",
-          "unit": "INR_CR",
-          "metrics": [
-            {
-              "name": "revenue",
-              "value": 65436.24,
-              "prev_q": 60794.29,
-              "prev_y": 58689.29,
-              "qoq_pct": 7.6,
-              "yoy_pct": 11.5
-            },
-            {
-              "name": "ebitda",
-              "value": 10994.02,
-              "prev_q": 9015.01,
-              "prev_y": 8526.88,
-              "qoq_pct": 22.0,
-              "yoy_pct": 28.9
-            },
-            {
-              "name": "pbt",
-              "value": 5455.15,
-              "prev_q": 3837.53,
-              "prev_y": 4222.47,
-              "qoq_pct": 42.2,
-              "yoy_pct": 29.2
-            },
-            {
-              "name": "pat",
-              "value": 3699.59,
-              "prev_q": 2385.24,
-              "prev_y": 3183.09,
-              "qoq_pct": 55.1,
-              "yoy_pct": 16.2
-            }
-          ],
-          "margin_ebitda_pct": 16.8,
-          "cross_check": {
-            "status": "match",
-            "note": null
-          },
-          "source": {
-            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2e7c8bf8-d794-4a55-b670-97951b28e0e8.pdf",
-            "page": 15
-          }
-        }
-      },
-      "price": {
-        "pct_1d": -0.68,
-        "vol_ratio": 0.86
-      }
-    },
-    {
       "symbol": "TITAN",
       "name": "Titan Company",
       "sector": "Jewellery and retail",
@@ -176,17 +96,17 @@
       }
     },
     {
-      "symbol": "SBIN",
-      "name": "State Bank of India",
-      "sector": "Public-sector banking",
-      "in_portfolio": false,
+      "symbol": "TATASTEEL",
+      "name": "Tata Steel",
+      "sector": "Steel",
+      "in_portfolio": true,
       "total": 3,
       "material": 0,
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -0.6,
-        "vol_ratio": 1.12
+        "pct_1d": -0.68,
+        "vol_ratio": 0.86
       }
     },
     {
@@ -271,6 +191,20 @@
       "price": {
         "pct_1d": 0.32,
         "vol_ratio": 0.64
+      }
+    },
+    {
+      "symbol": "SBIN",
+      "name": "State Bank of India",
+      "sector": "Public-sector banking",
+      "in_portfolio": false,
+      "total": 2,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.6,
+        "vol_ratio": 1.12
       }
     },
     {

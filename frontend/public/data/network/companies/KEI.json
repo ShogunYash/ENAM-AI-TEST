@@ -1,0 +1,22 @@
+{
+  "key": "KEI",
+  "kind": "company",
+  "symbol": "KEI",
+  "headline": "1 contact worked at KEI",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p06",
+      "name": "Sunita Reddy",
+      "headline": "Cables and wires channel and exports specialist",
+      "strength": 2,
+      "link": "worked_at_company",
+      "why": "Works at KEI Industries 2018-now as VP Sales",
+      "evidence": [
+        "KEI Industries 2018-now, VP Sales"
+      ],
+      "score": 5.2
+    }
+  ],
+  "note": null
+}
