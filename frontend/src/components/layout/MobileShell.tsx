@@ -1,7 +1,8 @@
 import React from 'react'
-import { Flame, Search, Sliders, Activity } from 'lucide-react'
+import { Flame, Search, Sliders, Activity, User } from 'lucide-react'
+import { initialsOf, useProfileName } from '@/lib/profile'
 
-export type NavTab = 'today' | 'research' | 'thresholds' | 'stats'
+export type NavTab = 'today' | 'research' | 'thresholds' | 'stats' | 'profile'
 
 interface MobileShellProps {
   children: React.ReactNode
@@ -18,6 +19,7 @@ export const MobileShell: React.FC<MobileShellProps> = ({
   needsYouCount = 0,
   alertCount = 0,
 }) => {
+  const profileName = useProfileName()
   const tabs: Array<{
     id: NavTab
     label: string
@@ -37,7 +39,7 @@ export const MobileShell: React.FC<MobileShellProps> = ({
     },
     {
       id: 'thresholds',
-      label: 'Thresholds',
+      label: 'Settings',
       icon: <Sliders className="w-5 h-5" />,
       badge: alertCount > 0 ? alertCount : undefined,
     },
@@ -55,7 +57,7 @@ export const MobileShell: React.FC<MobileShellProps> = ({
         {/* Brand App Bar */}
         <header className="sticky top-0 z-40 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-900 px-4 py-2.5 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="font-mono font-black text-base tracking-wider bg-gradient-to-r from-[#3558E6] to-[#5B7CFF] dark:from-zinc-100 dark:to-zinc-300 bg-clip-text text-transparent">
+            <span className="font-mono font-black text-base tracking-wider bg-gradient-to-r from-[#3558E6] to-[#5B7CFF] dark:from-[#8EA4FF] dark:to-[#C7D2FE] bg-clip-text text-transparent">
               FINN
             </span>
             <span className="text-[10px] uppercase font-semibold text-zinc-400 tracking-wider px-1.5 py-0.5 rounded bg-zinc-900 border border-zinc-800">
@@ -63,12 +65,26 @@ export const MobileShell: React.FC<MobileShellProps> = ({
             </span>
           </div>
 
-          <div className="text-[11px] text-zinc-400 font-mono">
-            NSE · BSE
-          </div>
+          <button
+            type="button"
+            onClick={() => onTabChange('profile')}
+            aria-label="Profile"
+            aria-current={activeTab === 'profile' ? 'page' : undefined}
+            className={`min-h-[44px] min-w-[44px] -mr-2 flex items-center justify-center touch-manipulation`}
+          >
+            <span
+              className={`w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold border transition-colors ${
+                activeTab === 'profile'
+                  ? 'bg-brand text-white border-brand'
+                  : 'bg-brand-tint text-brand-text border-zinc-800'
+              }`}
+            >
+              {initialsOf(profileName) || <User className="w-4 h-4" />}
+            </span>
+          </button>
         </header>
         {/* Slim brand top bar */}
-        <div className="h-[2px] w-full bg-gradient-to-r from-[#3558E6] via-[#5B7CFF] to-[#3558E6] dark:from-zinc-700 dark:via-zinc-600 dark:to-zinc-700 flex-shrink-0" />
+        <div className="h-[2px] w-full bg-gradient-to-r from-[#3558E6] via-[#5B7CFF] to-[#3558E6] dark:from-[#4A69F0] dark:via-[#7C93FF] dark:to-[#4A69F0] flex-shrink-0" />
 
         {/* Scrollable Content Area */}
         <main className="flex-1 px-3.5 pt-2 overflow-y-auto">

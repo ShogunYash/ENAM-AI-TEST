@@ -5,6 +5,7 @@ import { TodayScreen } from '@/components/screens/TodayScreen'
 import { ThresholdsScreen } from '@/components/screens/ThresholdsScreen'
 import { ResearchScreen } from '@/components/screens/ResearchScreen'
 import { StatsScreen } from '@/components/screens/StatsScreen'
+import { ProfileScreen } from '@/components/screens/ProfileScreen'
 import { AskFinnSheet, AskFinnTarget } from '@/components/common/AskFinnSheet'
 import { getDigestData } from '@/api/client'
 import { useSettings } from '@/lib/settings'
@@ -21,24 +22,38 @@ const queryClient = new QueryClient({
   },
 })
 
+const TAB_KEY = 'finn.tab'
+const TABS = ['today', 'research', 'thresholds', 'stats', 'profile']
+const isTab = (v: string | null): v is NavTab => !!v && TABS.includes(v)
+
 function FinnApp() {
   useTheme()
   const { settings } = useSettings()
   const getInitialTab = (): NavTab => {
     try {
       const hash = window.location.hash.replace(/^#/, '')
-      if (hash === 'research' || hash === 'thresholds' || hash === 'stats' || hash === 'today') {
+      if (isTab(hash)) {
         return hash as NavTab
       }
       const params = new URLSearchParams(window.location.search)
       const tabParam = params.get('tab')
-      if (tabParam === 'research' || tabParam === 'thresholds' || tabParam === 'stats' || tabParam === 'today') {
+      if (isTab(tabParam)) {
         return tabParam as NavTab
       }
+      // reload: come back to the section the user was in
+      const saved = localStorage.getItem(TAB_KEY)
+      if (isTab(saved)) return saved
     } catch {}
     return 'today'
   }
-  const [activeTab, setActiveTab] = useState<NavTab>(getInitialTab)
+  const [activeTab, setActiveTabState] = useState<NavTab>(getInitialTab)
+  const setActiveTab = (tab: NavTab) => {
+    setActiveTabState(tab)
+    try {
+      localStorage.setItem(TAB_KEY, tab)
+      if (window.location.hash !== `#${tab}`) window.history.replaceState(null, '', `#${tab}`)
+    } catch {}
+  }
   const [windowOption, setWindowOption] = useState<WindowOption>(() => {
     try {
       const params = new URLSearchParams(window.location.search)
@@ -54,8 +69,11 @@ function FinnApp() {
   useEffect(() => {
     const onHashChange = () => {
       const hash = window.location.hash.replace(/^#/, '')
-      if (hash === 'today' || hash === 'research' || hash === 'thresholds' || hash === 'stats') {
-        setActiveTab(hash as NavTab)
+      if (isTab(hash)) {
+        setActiveTabState(hash as NavTab)
+        try {
+          localStorage.setItem(TAB_KEY, hash)
+        } catch {}
       }
     }
     window.addEventListener('hashchange', onHashChange)
@@ -105,6 +123,8 @@ function FinnApp() {
       {activeTab === 'thresholds' && <ThresholdsScreen />}
 
       {activeTab === 'stats' && <StatsScreen />}
+
+      {activeTab === 'profile' && <ProfileScreen />}
 
       {/* Ask FINN Grounded Copilot Bottom Sheet */}
       <AskFinnSheet

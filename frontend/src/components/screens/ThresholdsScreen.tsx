@@ -86,10 +86,10 @@ export const ThresholdsScreen: React.FC = () => {
         <div>
           <h1 className="text-base font-bold text-zinc-100 flex items-center gap-2">
             <Sliders className="w-4 h-4 text-zinc-300" />
-            Alerts & Thresholds
+            Settings
           </h1>
           <p className="text-xs text-zinc-400 mt-0.5">
-            Configures Push digest triggers · Saved locally
+            Alerts, filing types and appearance · Saved on this device
           </p>
         </div>
         <button
@@ -133,7 +133,7 @@ export const ThresholdsScreen: React.FC = () => {
                 onClick={() => setTheme(mode)}
                 className={`px-3 py-1.5 min-h-[36px] text-xs rounded-md touch-manipulation transition-all font-medium ${
                   isSelected
-                    ? 'bg-brand-tint text-brand-text font-semibold shadow-sm border border-[#667389] dark:border-[#7C8AA8]'
+                    ? 'bg-brand-tint text-brand-text font-semibold shadow-sm border border-brand/60'
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >

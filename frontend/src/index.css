@@ -23,7 +23,7 @@
     --z-100: 18 28 46;    /* #121C2E body text */
     --z-50: 10 17 32;     /* #0A1120 deep text */
 
-    --stock-text: 128 46 110; /* #802E6E */
+    --stock-text: 67 56 202; /* #4338CA indigo */
 
     /* Brand */
     --brand-primary: 53 88 230;  /* #3558E6 */
@@ -84,13 +84,13 @@
     --z-100: 244 244 245; /* #F4F4F5 */
     --z-50: 250 250 250; /* #FAFAFA */
 
-    --stock-text: 246 177 222; /* #F6B1DE */
+    --stock-text: 165 180 252; /* #A5B4FC soft indigo */
 
     /* Brand */
-    --brand-primary: 63 63 70;
-    --brand-hover: 82 82 91;
-    --brand-tint: 39 39 42;
-    --brand-text: 244 244 245;
+    --brand-primary: 74 105 240;  /* #4A69F0 */
+    --brand-hover: 99 128 255;   /* #6380FF */
+    --brand-tint: 30 42 90;      /* #1E2A5A navy tint */
+    --brand-text: 199 210 254;   /* #C7D2FE */
 
     /* Semantics (lighter text, 15% tints in dark) */
     /* Gain: #3DD68C text */

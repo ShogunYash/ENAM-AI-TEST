@@ -62,11 +62,18 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
   const [selectedSymbol, setSelectedSymbol] = useState<string | null>(() => {
     try {
       const params = new URLSearchParams(window.location.search)
-      return params.get('company')
+      return params.get('company') || localStorage.getItem('finn.today.company') || null
     } catch {
       return null
     }
   })
+  // remember the open company so a reload returns to it
+  useEffect(() => {
+    try {
+      if (selectedSymbol) localStorage.setItem('finn.today.company', selectedSymbol)
+      else localStorage.removeItem('finn.today.company')
+    } catch {}
+  }, [selectedSymbol])
 
   // Search query state
   const [searchQuery, setSearchQuery] = useState('')

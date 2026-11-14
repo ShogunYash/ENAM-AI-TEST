@@ -99,7 +99,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
             onClick={() => onScopeChange('portfolio')}
             className={`px-2.5 py-1.5 min-h-[44px] text-xs whitespace-nowrap rounded-md touch-manipulation transition-all flex items-center justify-center ${
               scope === 'portfolio'
-                ? 'bg-brand-tint text-brand-text shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
+                ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/60 font-semibold'
                 : 'text-zinc-400 hover:text-zinc-200'
             }`}
           >
@@ -110,7 +110,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
             onClick={() => onScopeChange('watchlist')}
             className={`px-2.5 py-1.5 min-h-[44px] text-xs whitespace-nowrap rounded-md touch-manipulation transition-all flex items-center justify-center ${
               scope === 'watchlist'
-                ? 'bg-brand-tint text-brand-text shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
+                ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/60 font-semibold'
                 : 'text-zinc-400 hover:text-zinc-200'
             }`}
           >

@@ -34,11 +34,18 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
   const [selectedCompany, setSelectedCompany] = useState<string | null>(() => {
     try {
       const params = new URLSearchParams(window.location.search)
-      return params.get('company')
+      return params.get('company') || localStorage.getItem('finn.research.company') || null
     } catch {
       return null
     }
   })
+  // remember the open report so a reload returns to it
+  useEffect(() => {
+    try {
+      if (selectedCompany) localStorage.setItem('finn.research.company', selectedCompany)
+      else localStorage.removeItem('finn.research.company')
+    } catch {}
+  }, [selectedCompany])
   const [searchQuery, setSearchQuery] = useState('')
   const [scope, setScope] = useState<ResearchScope>(() => {
     try {
@@ -270,7 +277,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
               onClick={() => handleScopeChange('portfolio')}
               className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
                 scope === 'portfolio'
-                  ? 'bg-brand-tint text-brand shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
+                  ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/60 font-semibold'
                   : 'text-zinc-400 hover:text-zinc-200'
               }`}
             >
@@ -281,7 +288,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
               onClick={() => handleScopeChange('watchlist')}
               className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
                 scope === 'watchlist'
-                  ? 'bg-brand-tint text-brand shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
+                  ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/60 font-semibold'
                   : 'text-zinc-400 hover:text-zinc-200'
               }`}
             >
@@ -292,7 +299,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
               onClick={() => handleScopeChange('prebuilt')}
               className={`px-3 py-1.5 min-h-[44px] text-xs rounded-md touch-manipulation transition-all flex items-center justify-center ${
                 scope === 'prebuilt'
-                  ? 'bg-brand-tint text-brand shadow-sm border border-[#667389] dark:border-[#7C8AA8] font-semibold'
+                  ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/60 font-semibold'
                   : 'text-zinc-400 hover:text-zinc-200'
               }`}
             >
