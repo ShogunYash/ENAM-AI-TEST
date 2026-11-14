@@ -2,7 +2,7 @@
   "key": "ICICIBANK",
   "kind": "company",
   "symbol": "ICICIBANK",
-  "headline": "1 contact worked at ICICI Bank",
+  "headline": "3 contacts worked at ICICI Bank",
   "subject": null,
   "matches": [
     {
@@ -18,16 +18,40 @@
       "score": 5.9
     },
     {
-      "person_id": "p03",
-      "name": "Kabir Malhotra",
-      "headline": "Retired private-banking executive",
-      "strength": 4,
-      "link": "sector_expert",
-      "why": "private banking expert (retired private-banking executive); no direct tie to ICICI Bank",
+      "person_id": "p14",
+      "name": "Sameer Joshi",
+      "headline": "Wealth and private banking leader",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Worked at ICICI Bank 2008-2022 as Head, Wealth Management",
       "evidence": [
-        "expertise: private banking"
+        "ICICI Bank 2008-2022, Head, Wealth Management"
       ],
-      "score": 3.5
+      "score": 5.3
+    },
+    {
+      "person_id": "p13",
+      "name": "Tara Bhatt",
+      "headline": "Retail credit policy specialist",
+      "strength": 2,
+      "link": "worked_at_company",
+      "why": "Worked at ICICI Bank 2005-2020 as Head, Retail Credit Policy",
+      "evidence": [
+        "ICICI Bank 2005-2020, Head, Retail Credit Policy"
+      ],
+      "score": 4.7
+    },
+    {
+      "person_id": "p17",
+      "name": "Gaurav Sethi",
+      "headline": "Large-deal delivery head, IT services",
+      "strength": 5,
+      "link": "sector_expert",
+      "why": "bank technology expert (large-deal delivery head, it services); no direct tie to ICICI Bank",
+      "evidence": [
+        "expertise: bank technology"
+      ],
+      "score": 4.0
     }
   ],
   "note": null

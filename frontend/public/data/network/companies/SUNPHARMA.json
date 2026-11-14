@@ -2,8 +2,21 @@
   "key": "SUNPHARMA",
   "kind": "company",
   "symbol": "SUNPHARMA",
-  "headline": "No contacts near Sun Pharmaceutical",
+  "headline": "1 contact worked at Sun Pharmaceutical",
   "subject": null,
-  "matches": [],
+  "matches": [
+    {
+      "person_id": "p27",
+      "name": "Prakash Nambiar",
+      "headline": "Pharma regulatory affairs veteran",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Worked at Sun Pharmaceutical Industries 2006-2019 as Head, Regulatory Affairs",
+      "evidence": [
+        "Sun Pharmaceutical Industries 2006-2019, Head, Regulatory Affairs"
+      ],
+      "score": 5.3
+    }
+  ],
   "note": null
 }

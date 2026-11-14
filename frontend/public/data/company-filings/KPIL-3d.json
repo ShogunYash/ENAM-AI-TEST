@@ -3,10 +3,10 @@
   "name": "Kalpataru Projects International",
   "window": {
     "label": "3d",
-    "start": "2026-11-12T00:03:38.771853+05:30",
-    "end": "2026-11-15T00:03:38.771853+05:30"
+    "start": "2026-11-12T05:19:46.040314+05:30",
+    "end": "2026-11-15T05:19:46.040314+05:30"
   },
-  "generated_at": "2026-11-15T00:03:38.771853+05:30",
+  "generated_at": "2026-11-15T05:19:46.040314+05:30",
   "counts": {
     "total": 1,
     "rule_classified": 1,
@@ -29,8 +29,8 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.134,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/04c4e907-80d8-4918-ba5c-9049ad346c86.pdf",
+        "score": 1.078,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/04c4e907-80d8-4918-ba5c-9049ad346c86.pdf",
         "price_reaction": {
           "pct_1d": -0.05,
           "vol_ratio": 0.48

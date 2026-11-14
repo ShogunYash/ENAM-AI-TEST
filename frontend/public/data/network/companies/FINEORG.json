@@ -2,8 +2,45 @@
   "key": "FINEORG",
   "kind": "company",
   "symbol": "FINEORG",
-  "headline": "No contacts near Fine Organic",
+  "headline": "1 contact worked at Fine Organic",
   "subject": null,
-  "matches": [],
+  "matches": [
+    {
+      "person_id": "p28",
+      "name": "Yamini Das",
+      "headline": "Specialty chemicals exports",
+      "strength": 4,
+      "link": "worked_at_company",
+      "why": "Worked at Fine Organic Industries 2011-2021 as Head, Exports",
+      "evidence": [
+        "Fine Organic Industries 2011-2021, Head, Exports"
+      ],
+      "score": 5.9
+    },
+    {
+      "person_id": "p25",
+      "name": "Mohit Bansal",
+      "headline": "Paints supply chain and raw materials",
+      "strength": 3,
+      "link": "sector_expert",
+      "why": "specialty chemicals expert (paints supply chain and raw materials); no direct tie to Fine Organic",
+      "evidence": [
+        "expertise: specialty chemicals"
+      ],
+      "score": 3.0
+    },
+    {
+      "person_id": "p35",
+      "name": "Rajeev Menon",
+      "headline": "Technical textiles R&D and exports",
+      "strength": 3,
+      "link": "sector_expert",
+      "why": "specialty chemicals expert (technical textiles r&d and exports); no direct tie to Fine Organic",
+      "evidence": [
+        "expertise: specialty chemicals"
+      ],
+      "score": 3.0
+    }
+  ],
   "note": null
 }

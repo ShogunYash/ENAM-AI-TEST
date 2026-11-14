@@ -29,7 +29,7 @@ flowchart LR
 | BSE filings | `scripts/ingest` on the laptop (BSE blocks cloud IPs), 1 req/s | on demand, incremental | `filings` (SQLite) | NSE symbol + BSE scrip code (`data/portfolio.json`, verified against BSE company names) |
 | Prices | yfinance end-of-day | with ingest | `bars` | NSE symbol |
 | Fundamentals | screener.in tables and transcript links, any NSE ticker, live on the API | once per document, cached by content | `documents`, `doc_pages`, `research_cache` | symbol, call period |
-| Network profiles | `data/network.json`: **synthetic** people (the real source would be a consented profile export or a licensed profile API) | edited by the investor | read-only file | person to company by NSE symbol on each job; person to filing by the rules below |
+| Network profiles | `data/network.json`: **synthetic** people (the real source would be a consented profile export or a licensed profile API) | edited in the repo (demo); a real product would have an import and edit screen | read-only file | person to company by NSE symbol on each job; person to filing by the rules below |
 
 **Matching a name in a filing to a person in the network** (`app/network.py`, no model involved):
 1. A management filing gives a `BioCard` (name, role, effective date, background lines, all verified against the filing text).
@@ -40,12 +40,12 @@ flowchart LR
 Warm nudges join contacts to filings of their former employers (last 14 days, not spoken to for 45+ days).
 
 ## 2. Data security and privacy
-What the demo does: the network is **synthetic** and flagged `synthetic: true` in every response; no real person's profile is stored. Filing people appear only with what the filing itself says. The Profile name lives in the browser's localStorage and is never sent to the server. No analytics, no cookies, keys only in server env.
+What the demo does: the network is **synthetic** and flagged `synthetic: true` in every response; no real person's profile is stored. Because it is synthetic, the demo deliberately does **not** protect it: `data/network.json` is in the public repository, the snapshot copies are static files on a public CDN, and the `/network/*` API routes need no login. That would be unacceptable for real contacts, which is why the deployment plan below differs. Filing people appear only with what the filing itself says. The Profile name lives in the browser's localStorage and is never sent to the server. No analytics, no cookies, keys only in server env.
 What a real deployment would do:
-- **Ownership and access:** one network per investor, rows keyed by `owner_id`, every query filtered by the authenticated owner (row-level security); other users, and FINN staff by default, cannot read it.
+- **Ownership and access:** no real network is ever shipped in a repository or a static file; one network per investor, rows keyed by `owner_id`, every query filtered by the authenticated owner (row-level security); other users, and FINN staff by default, cannot read it.
 - **Consent:** contacts are the investor's own data. Third-party profile fields come only from a source with a licence or from the person's consent; nothing is scraped against a platform's terms. A person can ask to be removed, which deletes their node and every derived match.
 - **Minimisation and retention:** store role, employer, tenure, school, expertise tags and relationship metadata, not messages or contact details; profile data refreshed or deleted after 12 months without use; the export button and "delete my network" are one tap.
-- **LLM exposure:** the only network text sent to a model is the user's question and the list of tracked company names; contact data is never put in a prompt. Models are free-tier APIs plus a local model, no training on the data.
+- **LLM exposure:** the only text sent to a model for the Network is the user's question (including any name the user types) and the list of tracked company names; the contacts themselves are never put in a prompt. Models are free-tier APIs plus a local model, no training on the data.
 - **At rest and in transit:** HTTPS everywhere, encrypted database volume, secrets in the host's env store, audit log of reads of network data.
 
 ## 3. Models and agents

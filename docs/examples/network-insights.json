@@ -3,9 +3,35 @@
     "key": "example-filing-management",
     "kind": "management_change",
     "symbol": "BAJFINANCE",
-    "headline": "2 contacts overlapped with Prashant Verma",
+    "headline": "3 contacts overlapped with Prashant Verma",
     "subject": "Prashant Verma",
     "matches": [
+      {
+        "person_id": "p15",
+        "name": "Deepika Menon",
+        "headline": "Collections and rural consumer finance",
+        "strength": 4,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~14 yrs at Bajaj Finance with Prashant Verma (Head, Collections, 2010-2023)",
+        "evidence": [
+          "Bajaj Finance 2010-2023",
+          "filing: Prashant Verma tenure since ~2006"
+        ],
+        "score": 12.6
+      },
+      {
+        "person_id": "p16",
+        "name": "Harsh Vardhan",
+        "headline": "Former CTO of a consumer lender",
+        "strength": 3,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~12 yrs at Bajaj Finance with Prashant Verma (Chief Technology Officer, 2008-2019)",
+        "evidence": [
+          "Bajaj Finance 2008-2019",
+          "filing: Prashant Verma tenure since ~2006"
+        ],
+        "score": 11.4
+      },
       {
         "person_id": "p01",
         "name": "Meera Iyer",
@@ -18,31 +44,6 @@
           "filing: Prashant Verma tenure since ~2006"
         ],
         "score": 11.1
-      },
-      {
-        "person_id": "p02",
-        "name": "Arjun Rao",
-        "headline": "Former CISO and technology risk lead",
-        "strength": 3,
-        "link": "overlapped_with_person",
-        "why": "Overlapped ~6 yrs at Bajaj Finance with Prashant Verma (Deputy CISO, 2016-2021)",
-        "evidence": [
-          "Bajaj Finance 2016-2021",
-          "filing: Prashant Verma tenure since ~2006"
-        ],
-        "score": 9.6
-      },
-      {
-        "person_id": "p03",
-        "name": "Kabir Malhotra",
-        "headline": "Retired private-banking executive",
-        "strength": 4,
-        "link": "sector_expert",
-        "why": "SME lending expert (retired private-banking executive); no direct tie to Bajaj Finance",
-        "evidence": [
-          "expertise: SME lending"
-        ],
-        "score": 4.5
       }
     ],
     "note": null
@@ -66,6 +67,18 @@
           "expertise: M&A and integration"
         ],
         "score": 7.5
+      },
+      {
+        "person_id": "p21",
+        "name": "Siddharth Rane",
+        "headline": "Steel and cement plant operations",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at Tata Steel 2006-2019 as Plant Head, Flat Products",
+        "evidence": [
+          "Tata Steel 2006-2019, Plant Head, Flat Products"
+        ],
+        "score": 5.3
       }
     ],
     "note": null

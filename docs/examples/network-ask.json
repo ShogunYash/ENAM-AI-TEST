@@ -14,16 +14,16 @@
       "score": 6.5
     },
     {
-      "person_id": "p02",
-      "name": "Arjun Rao",
-      "headline": "Former CISO and technology risk lead",
-      "strength": 3,
+      "person_id": "p15",
+      "name": "Deepika Menon",
+      "headline": "Collections and rural consumer finance",
+      "strength": 4,
       "link": "worked_at_company",
-      "why": "Worked at Bajaj Finance 2016-2021 as Deputy CISO",
+      "why": "Worked at Bajaj Finance 2010-2023 as Head, Collections",
       "evidence": [
-        "Bajaj Finance 2016-2021, Deputy CISO"
+        "Bajaj Finance 2010-2023, Head, Collections"
       ],
-      "score": 5.3
+      "score": 5.9
     }
   ],
   "steps": [

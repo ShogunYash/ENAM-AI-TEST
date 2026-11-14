@@ -2,8 +2,21 @@
   "key": "ASTRAL",
   "kind": "company",
   "symbol": "ASTRAL",
-  "headline": "No contacts near Astral",
+  "headline": "1 contact worked at Astral",
   "subject": null,
-  "matches": [],
+  "matches": [
+    {
+      "person_id": "p34",
+      "name": "Nisha Kapadia",
+      "headline": "Building products marketing and channels",
+      "strength": 2,
+      "link": "worked_at_company",
+      "why": "Worked at Astral 2013-2023 as Head, Marketing",
+      "evidence": [
+        "Astral 2013-2023, Head, Marketing"
+      ],
+      "score": 4.7
+    }
+  ],
   "note": null
 }

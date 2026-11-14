@@ -2,7 +2,7 @@
   "key": "HDFCBANK",
   "kind": "company",
   "symbol": "HDFCBANK",
-  "headline": "1 contact worked at HDFC Bank",
+  "headline": "3 contacts worked at HDFC Bank",
   "subject": null,
   "matches": [
     {
@@ -18,16 +18,40 @@
       "score": 5.9
     },
     {
-      "person_id": "p04",
-      "name": "Nandini Shah",
-      "headline": "Ex-ICICI treasury and capital markets",
+      "person_id": "p12",
+      "name": "Imran Siddiqui",
+      "headline": "SME and rural lending operator",
       "strength": 4,
-      "link": "sector_expert",
-      "why": "bank treasury expert (ex-icici treasury and capital markets); no direct tie to HDFC Bank",
+      "link": "worked_at_company",
+      "why": "Worked at HDFC Bank 2006-2021 as Zonal Head, SME Lending",
       "evidence": [
-        "expertise: bank treasury"
+        "HDFC Bank 2006-2021, Zonal Head, SME Lending"
       ],
-      "score": 3.5
+      "score": 5.9
+    },
+    {
+      "person_id": "p11",
+      "name": "Lakshmi Venkatesh",
+      "headline": "Ex-retail liabilities head, private-sector bank",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Worked at HDFC Bank 2004-2019 as Head, Retail Liabilities",
+      "evidence": [
+        "HDFC Bank 2004-2019, Head, Retail Liabilities"
+      ],
+      "score": 5.3
+    },
+    {
+      "person_id": "p17",
+      "name": "Gaurav Sethi",
+      "headline": "Large-deal delivery head, IT services",
+      "strength": 5,
+      "link": "sector_expert",
+      "why": "bank technology expert (large-deal delivery head, it services); no direct tie to HDFC Bank",
+      "evidence": [
+        "expertise: bank technology"
+      ],
+      "score": 4.0
     }
   ],
   "note": null

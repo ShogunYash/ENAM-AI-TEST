@@ -2,8 +2,21 @@
   "key": "CERA",
   "kind": "company",
   "symbol": "CERA",
-  "headline": "No contacts near Cera Sanitaryware",
+  "headline": "1 contact worked at Cera Sanitaryware",
   "subject": null,
-  "matches": [],
+  "matches": [
+    {
+      "person_id": "p34",
+      "name": "Nisha Kapadia",
+      "headline": "Building products marketing and channels",
+      "strength": 2,
+      "link": "worked_at_company",
+      "why": "Works at Cera Sanitaryware 2023-now as Head, Brand and Channels",
+      "evidence": [
+        "Cera Sanitaryware 2023-now, Head, Brand and Channels"
+      ],
+      "score": 5.2
+    }
+  ],
   "note": null
 }

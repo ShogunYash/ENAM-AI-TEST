@@ -2,7 +2,7 @@
   "key": "TITAN",
   "kind": "company",
   "symbol": "TITAN",
-  "headline": "1 contact worked at Titan",
+  "headline": "2 contacts worked at Titan",
   "subject": null,
   "matches": [
     {
@@ -16,6 +16,30 @@
         "Titan Company 2017-2023, Head of Corporate Development"
       ],
       "score": 6.5
+    },
+    {
+      "person_id": "p20",
+      "name": "Neha Agarwal",
+      "headline": "Retail strategy, jewellery and lifestyle",
+      "strength": 4,
+      "link": "worked_at_company",
+      "why": "Worked at Titan Company 2012-2022 as Head, Retail Strategy",
+      "evidence": [
+        "Titan Company 2012-2022, Head, Retail Strategy"
+      ],
+      "score": 5.9
+    },
+    {
+      "person_id": "p11",
+      "name": "Lakshmi Venkatesh",
+      "headline": "Ex-retail liabilities head, private-sector bank",
+      "strength": 3,
+      "link": "sector_expert",
+      "why": "retail deposits expert (ex-retail liabilities head, private-sector bank); no direct tie to Titan",
+      "evidence": [
+        "expertise: retail deposits"
+      ],
+      "score": 3.0
     }
   ],
   "note": null

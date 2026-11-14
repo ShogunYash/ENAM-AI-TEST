@@ -2,7 +2,7 @@
   "key": "TATASTEEL",
   "kind": "company",
   "symbol": "TATASTEEL",
-  "headline": "1 contact worked at Tata Steel",
+  "headline": "2 contacts worked at Tata Steel",
   "subject": null,
   "matches": [
     {
@@ -16,6 +16,18 @@
         "Tata Steel 2010-2017, GM, Corporate Strategy and M&A"
       ],
       "score": 6.0
+    },
+    {
+      "person_id": "p21",
+      "name": "Siddharth Rane",
+      "headline": "Steel and cement plant operations",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Worked at Tata Steel 2006-2019 as Plant Head, Flat Products",
+      "evidence": [
+        "Tata Steel 2006-2019, Plant Head, Flat Products"
+      ],
+      "score": 5.3
     }
   ],
   "note": null

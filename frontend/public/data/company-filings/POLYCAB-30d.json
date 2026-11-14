@@ -3,10 +3,10 @@
   "name": "Polycab India",
   "window": {
     "label": "30d",
-    "start": "2026-10-16T00:03:38.771853+05:30",
-    "end": "2026-11-15T00:03:38.771853+05:30"
+    "start": "2026-10-16T05:19:46.040314+05:30",
+    "end": "2026-11-15T05:19:46.040314+05:30"
   },
-  "generated_at": "2026-11-15T00:03:38.771853+05:30",
+  "generated_at": "2026-11-15T05:19:46.040314+05:30",
   "counts": {
     "total": 10,
     "rule_classified": 2,
@@ -23,7 +23,7 @@
       "category": "litigation",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.251,
+      "score": 0.239,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c3d1ba29-6132-47b7-9f3b-79a294e53189.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -41,7 +41,7 @@
       "category": "litigation",
       "category_source": "llm",
       "priority": "medium",
-      "score": 0.155,
+      "score": 0.148,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ead5c0dc-e464-4e53-8006-b861205174a9.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -59,7 +59,7 @@
       "category": "litigation",
       "category_source": "llm",
       "priority": "medium",
-      "score": 0.01,
+      "score": 0.009,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a0fba81c-bd84-40eb-8435-9643b019e9fc.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -86,7 +86,7 @@
         "category": "investor_meetings",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.154,
+        "score": 0.147,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/72c96165-b9ed-4b62-ac86-80cc440b32ff.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -116,7 +116,7 @@
         "category": "investor_meetings",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.019,
+        "score": 0.018,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26cdd582-7e95-4019-88b5-fdff3d5e60e1.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -131,7 +131,7 @@
         "category": "investor_meetings",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.015,
+        "score": 0.014,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cafe2036-e51b-413a-80cd-65e331d170be.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -146,7 +146,7 @@
         "category": "investor_meetings",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.006,
+        "score": 0.005,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a9743040-8809-46d3-85ca-c6ca01bc322a.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -161,7 +161,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.005,
+        "score": 0.004,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/77b6d277-0ffc-440d-ba8a-2bd9bc3dc43e.pdf",
         "price_reaction": null,
         "enrichment": null

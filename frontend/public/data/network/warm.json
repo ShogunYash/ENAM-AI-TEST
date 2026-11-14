@@ -1,5 +1,38 @@
 [
   {
+    "person_id": "p29",
+    "name": "Ravi Teja",
+    "headline": "Public-sector bank rural and agri lending",
+    "last_contact": "2026-01-16",
+    "days_since": 303,
+    "symbol": "SBIN",
+    "trigger": "State Bank of: Newspaper publication of Financial Results for Q2FY27",
+    "filing_id": "65932b21-751d-49d0-a754-e739bcec24dd",
+    "opener": "Saw State Bank of's results. Thought of your time there. How does it look from the outside?"
+  },
+  {
+    "person_id": "p11",
+    "name": "Lakshmi Venkatesh",
+    "headline": "Ex-retail liabilities head, private-sector bank",
+    "last_contact": "2026-02-10",
+    "days_since": 278,
+    "symbol": "HDFCBANK",
+    "trigger": "HDFC Bank: Re-appointment of Mr. V. Srinivasa Rangan as the Whole-time Director(d",
+    "filing_id": "44ba0161-d9e4-4bd1-aae7-eb3bc46319dd",
+    "opener": "HDFC Bank has a leadership change. Do you know the person coming in?"
+  },
+  {
+    "person_id": "p28",
+    "name": "Yamini Das",
+    "headline": "Specialty chemicals exports",
+    "last_contact": "2026-05-09",
+    "days_since": 190,
+    "symbol": "FINEORG",
+    "trigger": "Fine Organic: Conclusion of Search proceedings initiated by Maharashtra Goods and Se",
+    "filing_id": "98d6a02a-dd08-44ac-9686-48d4b9a70b6d",
+    "opener": "Noticed the Fine Organic legal update. Is this as significant as it reads?"
+  },
+  {
     "person_id": "p05",
     "name": "Vikram Desai",
     "headline": "Electronics manufacturing operator",
@@ -9,6 +42,17 @@
     "trigger": "Dixon Technologies: Announcement under Regulation 30 of SEBI LODR- Copy of Newspaper publi",
     "filing_id": "7bdce317-b2e3-4c9b-86de-a59235d0e9f1",
     "opener": "Saw Dixon Technologies's results. Thought of your time there. How does it look from the outside?"
+  },
+  {
+    "person_id": "p21",
+    "name": "Siddharth Rane",
+    "headline": "Steel and cement plant operations",
+    "last_contact": "2026-03-27",
+    "days_since": 233,
+    "symbol": "TATASTEEL",
+    "trigger": "Tata Steel: Acquisition of 38,222 equity shares of face value ?10/- each in Creati",
+    "filing_id": "c49c17d4-2697-46d5-96f2-6e9b77f10b8e",
+    "opener": "Tata Steel just announced a deal. You know that business better than most: any quick read?"
   },
   {
     "person_id": "p10",
@@ -33,6 +77,39 @@
     "opener": "Saw Kalpataru Projects International's results. Thought of your time there. How does it look from the outside?"
   },
   {
+    "person_id": "p12",
+    "name": "Imran Siddiqui",
+    "headline": "SME and rural lending operator",
+    "last_contact": "2026-06-01",
+    "days_since": 167,
+    "symbol": "HDFCBANK",
+    "trigger": "HDFC Bank: Re-appointment of Mr. V. Srinivasa Rangan as the Whole-time Director(d",
+    "filing_id": "44ba0161-d9e4-4bd1-aae7-eb3bc46319dd",
+    "opener": "HDFC Bank has a leadership change. Do you know the person coming in?"
+  },
+  {
+    "person_id": "p16",
+    "name": "Harsh Vardhan",
+    "headline": "Former CTO of a consumer lender",
+    "last_contact": "2026-04-14",
+    "days_since": 215,
+    "symbol": "BAJFINANCE",
+    "trigger": "Bajaj Finance: Outcome of QIP 2026 - Special Committee Meeting",
+    "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
+    "opener": "Bajaj Finance is raising capital. You'd know how the market will take it."
+  },
+  {
+    "person_id": "p27",
+    "name": "Prakash Nambiar",
+    "headline": "Pharma regulatory affairs veteran",
+    "last_contact": "2026-04-30",
+    "days_since": 199,
+    "symbol": "SUNPHARMA",
+    "trigger": "Sun Pharmaceutical: Newspaper publication for unaudited financial results for the quarter ",
+    "filing_id": "e35ea451-a1f8-4dc0-9cba-c10cd3a02125",
+    "opener": "Saw Sun Pharmaceutical's results. Thought of your time there. How does it look from the outside?"
+  },
+  {
     "person_id": "p02",
     "name": "Arjun Rao",
     "headline": "Former CISO and technology risk lead",
@@ -55,6 +132,72 @@
     "opener": "Asian Paints has a leadership change. Do you know the person coming in?"
   },
   {
+    "person_id": "p23",
+    "name": "Tushar Kulkarni",
+    "headline": "Transmission EPC executive",
+    "last_contact": "2026-02-14",
+    "days_since": 274,
+    "symbol": "KPIL",
+    "trigger": "Kalpataru Projects International: Press Release on Unaudited Financial Results for the quarter and half ",
+    "filing_id": "384df80e-d770-4b41-b474-8dff65fdefee",
+    "opener": "Saw Kalpataru Projects International's results. Thought of your time there. How does it look from the outside?"
+  },
+  {
+    "person_id": "p34",
+    "name": "Nisha Kapadia",
+    "headline": "Building products marketing and channels",
+    "last_contact": "2026-02-27",
+    "days_since": 261,
+    "symbol": "ASTRAL",
+    "trigger": "Astral: Newspaper Advertisement Pertaining to Unaudited Financial result for t",
+    "filing_id": "c6d20cb4-d05e-4865-9790-f1f98887dedb",
+    "opener": "Saw Astral's results. Thought of your time there. How does it look from the outside?"
+  },
+  {
+    "person_id": "p20",
+    "name": "Neha Agarwal",
+    "headline": "Retail strategy, jewellery and lifestyle",
+    "last_contact": "2026-07-08",
+    "days_since": 130,
+    "symbol": "TITAN",
+    "trigger": "Titan: Newspaper Publication for Unaudited Financial results for the second q",
+    "filing_id": "f1b76f73-5eea-417e-8914-8caef01ebf2f",
+    "opener": "Saw Titan's results. Thought of your time there. How does it look from the outside?"
+  },
+  {
+    "person_id": "p30",
+    "name": "Shalini Oberoi",
+    "headline": "Enterprise telecom and connectivity",
+    "last_contact": "2026-03-03",
+    "days_since": 257,
+    "symbol": "BHARTIARTL",
+    "trigger": "Bharti Airtel: Publication of Newspaper Advertisements w.r.t Audited Financial Result",
+    "filing_id": "fe106b61-b5fd-42ef-8df0-0299ad22e8a2",
+    "opener": "Saw Bharti Airtel's results. Thought of your time there. How does it look from the outside?"
+  },
+  {
+    "person_id": "p32",
+    "name": "Pallavi Joshi",
+    "headline": "Construction risk and project finance",
+    "last_contact": "2026-07-25",
+    "days_since": 113,
+    "symbol": "KPIL",
+    "trigger": "Kalpataru Projects International: Press Release on Unaudited Financial Results for the quarter and half ",
+    "filing_id": "384df80e-d770-4b41-b474-8dff65fdefee",
+    "opener": "Saw Kalpataru Projects International's results. Thought of your time there. How does it look from the outside?"
+  },
+  {
+    "person_id": "p25",
+    "name": "Mohit Bansal",
+    "headline": "Paints supply chain and raw materials",
+    "last_contact": "2026-06-18",
+    "days_since": 150,
+    "symbol": "ASIANPAINT",
+    "trigger": "Asian Paints: This is to inform you that the shareholders of the Company have today,",
+    "filing_id": "d1aaeb85-6ca1-4b7d-9c05-4eb4916c7455",
+    "opener": "Asian Paints has a leadership change. Do you know the person coming in?"
+  },
+  {
     "person_id": "p03",
     "name": "Kabir Malhotra",
     "headline": "Retired private-banking executive",
@@ -66,6 +209,17 @@
     "opener": "HDFC Bank has a leadership change. Do you know the person coming in?"
   },
   {
+    "person_id": "p15",
+    "name": "Deepika Menon",
+    "headline": "Collections and rural consumer finance",
+    "last_contact": "2026-09-10",
+    "days_since": 66,
+    "symbol": "BAJFINANCE",
+    "trigger": "Bajaj Finance: Outcome of QIP 2026 - Special Committee Meeting",
+    "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
+    "opener": "Bajaj Finance is raising capital. You'd know how the market will take it."
+  },
+  {
     "person_id": "p07",
     "name": "Rohan Kapoor",
     "headline": "Ex-Tata group strategy and M&A",
@@ -75,5 +229,16 @@
     "trigger": "Tata Steel: Acquisition of 38,222 equity shares of face value ?10/- each in Creati",
     "filing_id": "c49c17d4-2697-46d5-96f2-6e9b77f10b8e",
     "opener": "Tata Steel just announced a deal. You know that business better than most: any quick read?"
+  },
+  {
+    "person_id": "p26",
+    "name": "Ritu Saxena",
+    "headline": "Auto industry policy and corporate affairs",
+    "last_contact": "2026-09-02",
+    "days_since": 74,
+    "symbol": "MARUTI",
+    "trigger": "Maruti Suzuki: Reference to the Financial Results issued by Suzuki Motor Corporation",
+    "filing_id": "7aea2ac1-7c4e-4ed8-bd9c-befc88582683",
+    "opener": "Saw Maruti Suzuki's results. Thought of your time there. How does it look from the outside?"
   }
 ]

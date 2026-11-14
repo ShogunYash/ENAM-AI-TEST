@@ -16,6 +16,18 @@
         "KEI Industries 2018-now, VP Sales"
       ],
       "score": 5.2
+    },
+    {
+      "person_id": "p22",
+      "name": "Kavita Pillai",
+      "headline": "Treasury and cost of capital, cables sector",
+      "strength": 4,
+      "link": "sector_expert",
+      "why": "wires and cables expert (treasury and cost of capital, cables sector); no direct tie to KEI",
+      "evidence": [
+        "expertise: wires and cables"
+      ],
+      "score": 3.5
     }
   ],
   "note": null

@@ -2,7 +2,7 @@
   "key": "BAJFINANCE",
   "kind": "company",
   "symbol": "BAJFINANCE",
-  "headline": "2 contacts worked at Bajaj Finance",
+  "headline": "4 contacts worked at Bajaj Finance",
   "subject": null,
   "matches": [
     {
@@ -18,6 +18,18 @@
       "score": 6.5
     },
     {
+      "person_id": "p15",
+      "name": "Deepika Menon",
+      "headline": "Collections and rural consumer finance",
+      "strength": 4,
+      "link": "worked_at_company",
+      "why": "Worked at Bajaj Finance 2010-2023 as Head, Collections",
+      "evidence": [
+        "Bajaj Finance 2010-2023, Head, Collections"
+      ],
+      "score": 5.9
+    },
+    {
       "person_id": "p02",
       "name": "Arjun Rao",
       "headline": "Former CISO and technology risk lead",
@@ -30,28 +42,16 @@
       "score": 5.3
     },
     {
-      "person_id": "p03",
-      "name": "Kabir Malhotra",
-      "headline": "Retired private-banking executive",
-      "strength": 4,
-      "link": "sector_expert",
-      "why": "SME lending expert (retired private-banking executive); no direct tie to Bajaj Finance",
+      "person_id": "p16",
+      "name": "Harsh Vardhan",
+      "headline": "Former CTO of a consumer lender",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Worked at Bajaj Finance 2008-2019 as Chief Technology Officer",
       "evidence": [
-        "expertise: SME lending"
+        "Bajaj Finance 2008-2019, Chief Technology Officer"
       ],
-      "score": 3.5
-    },
-    {
-      "person_id": "p09",
-      "name": "Anand Gupta",
-      "headline": "Consumer and paints industry veteran",
-      "strength": 4,
-      "link": "sector_expert",
-      "why": "consumer demand expert (consumer and paints industry veteran); no direct tie to Bajaj Finance",
-      "evidence": [
-        "expertise: consumer demand"
-      ],
-      "score": 3.5
+      "score": 5.3
     }
   ],
   "note": null

@@ -2,9 +2,21 @@
   "key": "HINDZINC",
   "kind": "company",
   "symbol": "HINDZINC",
-  "headline": "No one worked at Hindustan Zinc; closest: Rohan Kapoor",
+  "headline": "1 contact worked at Hindustan Zinc",
   "subject": null,
   "matches": [
+    {
+      "person_id": "p33",
+      "name": "Jayant Rao",
+      "headline": "Mining operations and zinc supply",
+      "strength": 2,
+      "link": "worked_at_company",
+      "why": "Worked at Hindustan Zinc 2007-2020 as Head, Mining Operations",
+      "evidence": [
+        "Hindustan Zinc 2007-2020, Head, Mining Operations"
+      ],
+      "score": 4.7
+    },
     {
       "person_id": "p07",
       "name": "Rohan Kapoor",
@@ -16,6 +28,18 @@
         "expertise: steel and metals"
       ],
       "score": 4.0
+    },
+    {
+      "person_id": "p21",
+      "name": "Siddharth Rane",
+      "headline": "Steel and cement plant operations",
+      "strength": 3,
+      "link": "sector_expert",
+      "why": "steel and metals expert (steel and cement plant operations); no direct tie to Hindustan Zinc",
+      "evidence": [
+        "expertise: steel and metals"
+      ],
+      "score": 3.0
     }
   ],
   "note": null

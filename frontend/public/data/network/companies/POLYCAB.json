@@ -2,9 +2,21 @@
   "key": "POLYCAB",
   "kind": "company",
   "symbol": "POLYCAB",
-  "headline": "1 contact worked at Polycab",
+  "headline": "2 contacts worked at Polycab",
   "subject": null,
   "matches": [
+    {
+      "person_id": "p22",
+      "name": "Kavita Pillai",
+      "headline": "Treasury and cost of capital, cables sector",
+      "strength": 4,
+      "link": "worked_at_company",
+      "why": "Worked at Polycab India 2009-2020 as Head, Treasury",
+      "evidence": [
+        "Polycab India 2009-2020, Head, Treasury"
+      ],
+      "score": 5.9
+    },
     {
       "person_id": "p06",
       "name": "Sunita Reddy",

@@ -2,9 +2,33 @@
   "key": "SBIN",
   "kind": "company",
   "symbol": "SBIN",
-  "headline": "No one worked at State Bank of; closest: Kabir Malhotra",
+  "headline": "1 contact worked at State Bank of",
   "subject": null,
   "matches": [
+    {
+      "person_id": "p29",
+      "name": "Ravi Teja",
+      "headline": "Public-sector bank rural and agri lending",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Worked at State Bank of India 2003-2021 as General Manager, Rural Banking",
+      "evidence": [
+        "State Bank of India 2003-2021, General Manager, Rural Banking"
+      ],
+      "score": 5.3
+    },
+    {
+      "person_id": "p17",
+      "name": "Gaurav Sethi",
+      "headline": "Large-deal delivery head, IT services",
+      "strength": 5,
+      "link": "sector_expert",
+      "why": "bank technology expert (large-deal delivery head, it services); no direct tie to State Bank of",
+      "evidence": [
+        "expertise: bank technology"
+      ],
+      "score": 4.0
+    },
     {
       "person_id": "p03",
       "name": "Kabir Malhotra",

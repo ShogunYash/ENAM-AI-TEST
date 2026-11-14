@@ -2,7 +2,7 @@
   "key": "INFY",
   "kind": "company",
   "symbol": "INFY",
-  "headline": "1 contact worked at Infosys",
+  "headline": "2 contacts worked at Infosys",
   "subject": null,
   "matches": [
     {
@@ -16,6 +16,18 @@
         "Infosys 2021-now, Head of Cyber Risk"
       ],
       "score": 5.8
+    },
+    {
+      "person_id": "p19",
+      "name": "Aditya Bose",
+      "headline": "Enterprise AI and IT consulting",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Worked at Infosys 2005-2018 as Principal Consultant",
+      "evidence": [
+        "Infosys 2005-2018, Principal Consultant"
+      ],
+      "score": 5.3
     }
   ],
   "note": null

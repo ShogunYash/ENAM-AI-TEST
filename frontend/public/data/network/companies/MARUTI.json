@@ -2,9 +2,21 @@
   "key": "MARUTI",
   "kind": "company",
   "symbol": "MARUTI",
-  "headline": "1 contact worked at Maruti Suzuki",
+  "headline": "2 contacts worked at Maruti Suzuki",
   "subject": null,
   "matches": [
+    {
+      "person_id": "p26",
+      "name": "Ritu Saxena",
+      "headline": "Auto industry policy and corporate affairs",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Worked at Maruti Suzuki India 2010-2023 as Head, Corporate Affairs",
+      "evidence": [
+        "Maruti Suzuki India 2010-2023, Head, Corporate Affairs"
+      ],
+      "score": 5.3
+    },
     {
       "person_id": "p10",
       "name": "Farah Khan",

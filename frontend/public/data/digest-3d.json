@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "3d",
-    "start": "2026-11-12T00:03:38.771853+05:30",
-    "end": "2026-11-15T00:03:38.771853+05:30"
+    "start": "2026-11-12T05:19:46.040314+05:30",
+    "end": "2026-11-15T05:19:46.040314+05:30"
   },
-  "generated_at": "2026-11-15T00:03:38.771853+05:30",
+  "generated_at": "2026-11-15T05:19:46.040314+05:30",
   "needs_you": [],
   "also_material": [
     {
@@ -17,7 +17,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 5.535,
+      "score": 5.261,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -41,7 +41,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 4.434,
+      "score": 4.214,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6df1f05c-9926-47ce-9896-94c41bdb71ab.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -74,7 +74,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.237,
+        "score": 1.176,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/eeedbcb3-2b63-4718-b5b7-b498eedf2b4e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -89,8 +89,8 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.169,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/769be2ca-bd51-4ac3-8e63-ce44e430d026.pdf",
+        "score": 1.111,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/769be2ca-bd51-4ac3-8e63-ce44e430d026.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -104,7 +104,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.752,
+        "score": 0.714,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3f614a9e-94b0-42ef-8145-ba0055ba7be5.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -119,7 +119,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.729,
+        "score": 0.693,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d7982c18-e8b9-485f-8165-a8333b0d421e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -134,8 +134,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.636,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/71268b4d-2f12-447d-bf1e-28310f485d17.pdf",
+        "score": 0.604,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/71268b4d-2f12-447d-bf1e-28310f485d17.pdf",
         "price_reaction": {
           "pct_1d": -0.97,
           "vol_ratio": 0.78
@@ -152,8 +152,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.615,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d01ef203-cd61-4f19-b88b-7a373979e5b5.pdf",
+        "score": 0.584,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d01ef203-cd61-4f19-b88b-7a373979e5b5.pdf",
         "price_reaction": {
           "pct_1d": 0.71,
           "vol_ratio": 1.0
@@ -170,7 +170,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.608,
+        "score": 0.578,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/55f9d4f5-8638-4669-abdb-7cc4127221fc.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -185,8 +185,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.588,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fcd5e6ba-794e-420b-ae7a-17a4c8df68e3.pdf",
+        "score": 0.558,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fcd5e6ba-794e-420b-ae7a-17a4c8df68e3.pdf",
         "price_reaction": null,
         "enrichment": null
       },

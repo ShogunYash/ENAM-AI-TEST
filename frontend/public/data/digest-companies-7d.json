@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "7d",
-    "start": "2026-11-08T00:03:38.771853+05:30",
-    "end": "2026-11-15T00:03:38.771853+05:30"
+    "start": "2026-11-08T05:19:46.040314+05:30",
+    "end": "2026-11-15T05:19:46.040314+05:30"
   },
-  "generated_at": "2026-11-15T00:03:38.771853+05:30",
+  "generated_at": "2026-11-15T05:19:46.040314+05:30",
   "companies": [
     {
       "symbol": "BAJFINANCE",
@@ -26,7 +26,7 @@
         "category": "fund_raise",
         "category_source": "rule",
         "priority": "high",
-        "score": 6.689,
+        "score": 6.358,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
         "price_reaction": {
           "pct_1d": 3.36,
@@ -62,7 +62,7 @@
         "category": "management_change",
         "category_source": "rule",
         "priority": "medium",
-        "score": 5.535,
+        "score": 5.261,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
         "price_reaction": null,
         "enrichment": {

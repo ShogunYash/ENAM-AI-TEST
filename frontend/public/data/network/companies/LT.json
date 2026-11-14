@@ -2,7 +2,7 @@
   "key": "LT",
   "kind": "company",
   "symbol": "LT",
-  "headline": "1 contact worked at Larsen & Toubro",
+  "headline": "2 contacts worked at Larsen & Toubro",
   "subject": null,
   "matches": [
     {
@@ -16,6 +16,18 @@
         "L&T 2021-now, VP, Project Controls"
       ],
       "score": 5.8
+    },
+    {
+      "person_id": "p32",
+      "name": "Pallavi Joshi",
+      "headline": "Construction risk and project finance",
+      "strength": 4,
+      "link": "worked_at_company",
+      "why": "Worked at L&T 2005-2017 as Head, Construction Risk",
+      "evidence": [
+        "L&T 2005-2017, Head, Construction Risk"
+      ],
+      "score": 5.4
     }
   ],
   "note": null

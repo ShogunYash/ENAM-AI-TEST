@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "7d",
-    "start": "2026-11-08T00:03:38.771853+05:30",
-    "end": "2026-11-15T00:03:38.771853+05:30"
+    "start": "2026-11-08T05:19:46.040314+05:30",
+    "end": "2026-11-15T05:19:46.040314+05:30"
   },
-  "generated_at": "2026-11-15T00:03:38.771853+05:30",
+  "generated_at": "2026-11-15T05:19:46.040314+05:30",
   "needs_you": [
     {
       "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
@@ -16,7 +16,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 6.689,
+      "score": 6.358,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
       "price_reaction": {
         "pct_1d": 3.36,
@@ -39,7 +39,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 5.535,
+      "score": 5.261,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -63,7 +63,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 4.434,
+      "score": 4.214,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6df1f05c-9926-47ce-9896-94c41bdb71ab.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -87,7 +87,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 3.724,
+      "score": 3.54,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/84c0dbf5-4b55-41b9-ab7b-e20d9fe359a9.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -105,7 +105,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 3.718,
+      "score": 3.534,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/41e7bb57-172f-4858-a5ac-8c15fe653e81.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -133,7 +133,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.237,
+        "score": 1.176,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/eeedbcb3-2b63-4718-b5b7-b498eedf2b4e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -148,8 +148,8 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.169,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/769be2ca-bd51-4ac3-8e63-ce44e430d026.pdf",
+        "score": 1.111,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/769be2ca-bd51-4ac3-8e63-ce44e430d026.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -163,7 +163,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.002,
+        "score": 0.952,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/daa6c172-771a-4af5-b4b3-9813fdf7536a.pdf",
         "price_reaction": {
           "pct_1d": -0.97,
@@ -181,7 +181,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.921,
+        "score": 0.876,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a9cb0ab8-930f-4400-b70b-fbd01640f54d.pdf",
         "price_reaction": {
           "pct_1d": -0.08,
@@ -199,7 +199,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.83,
+        "score": 0.789,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8269aea9-54c0-4a24-a615-6dda0ab8f054.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -214,7 +214,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.752,
+        "score": 0.714,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3f614a9e-94b0-42ef-8145-ba0055ba7be5.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -229,7 +229,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.729,
+        "score": 0.693,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d7982c18-e8b9-485f-8165-a8333b0d421e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -244,8 +244,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.636,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/71268b4d-2f12-447d-bf1e-28310f485d17.pdf",
+        "score": 0.604,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/71268b4d-2f12-447d-bf1e-28310f485d17.pdf",
         "price_reaction": {
           "pct_1d": -0.97,
           "vol_ratio": 0.78
@@ -262,8 +262,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.615,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d01ef203-cd61-4f19-b88b-7a373979e5b5.pdf",
+        "score": 0.584,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d01ef203-cd61-4f19-b88b-7a373979e5b5.pdf",
         "price_reaction": {
           "pct_1d": 0.71,
           "vol_ratio": 1.0
@@ -280,7 +280,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.608,
+        "score": 0.578,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/55f9d4f5-8638-4669-abdb-7cc4127221fc.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -295,8 +295,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.588,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fcd5e6ba-794e-420b-ae7a-17a4c8df68e3.pdf",
+        "score": 0.558,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fcd5e6ba-794e-420b-ae7a-17a4c8df68e3.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -310,7 +310,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.477,
+        "score": 0.453,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2b934e4e-121f-42d7-a2d0-d3eb4364b9a7.pdf",
         "price_reaction": {
           "pct_1d": -0.2,
@@ -328,7 +328,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.294,
+        "score": 0.28,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c0a1bde0-4d57-46c0-ac73-940d5ff093d7.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -343,7 +343,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.288,
+        "score": 0.274,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ced01c36-48bf-4c4c-a74b-d17875a41c27.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -419,7 +419,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-11T17:06:59.713000+05:30",
-      "value": 6.689,
+      "value": 6.358,
       "threshold": 7.0,
       "message": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price.",
       "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7"
@@ -429,7 +429,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-10T12:23:10.163000+05:30",
-      "value": 3.724,
+      "value": 3.54,
       "threshold": 7.0,
       "message": "Approved allotment of 5,74,25,740 warrants at Rs. 1,010 each.",
       "filing_id": "dff7d1e2-500b-498c-9b9a-52b2cb4641a8"
@@ -439,7 +439,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-10T12:12:31.463000+05:30",
-      "value": 3.718,
+      "value": 3.534,
       "threshold": 7.0,
       "message": "Approved issuing 5,74,25,740 warrants for ₹57,99,99,97,400.",
       "filing_id": "f9a4f2e2-4e74-49fd-a6bd-9df8d6045e71"
