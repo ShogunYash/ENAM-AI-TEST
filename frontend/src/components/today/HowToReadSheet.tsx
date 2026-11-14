@@ -25,7 +25,7 @@ export const HowToReadSheet: React.FC<HowToReadSheetProps> = ({
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-end justify-center bg-overlay backdrop-blur-sm animate-in fade-in duration-200">
       {/* Backdrop tap to close */}
       <div className="absolute inset-0" onClick={onClose} aria-hidden="true" />
 

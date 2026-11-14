@@ -49,7 +49,7 @@ export const MobileShell: React.FC<MobileShellProps> = ({
   ]
 
   return (
-    <div className="min-h-screen bg-black flex justify-center selection:bg-zinc-800">
+    <div className="min-h-screen bg-zinc-950 flex justify-center selection:bg-zinc-800">
       {/* Mobile-constrained viewport container: 390px base, up to 430px */}
       <div className="w-full max-w-[430px] min-h-screen bg-zinc-950 border-x border-zinc-900/80 flex flex-col relative shadow-2xl">
         {/* Brand App Bar */}

@@ -490,7 +490,7 @@ export const ThresholdsScreen: React.FC = () => {
 
       {/* Reset Confirmation Dialog from GPT-9 */}
       {showResetDialog && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-in fade-in duration-150">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-overlay backdrop-blur-sm animate-in fade-in duration-150">
           <div
             role="alertdialog"
             aria-labelledby="reset-dialog-title"

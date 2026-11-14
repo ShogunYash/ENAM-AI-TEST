@@ -8,6 +8,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        overlay: 'var(--backdrop-overlay)',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

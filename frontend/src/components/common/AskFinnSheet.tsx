@@ -147,7 +147,7 @@ export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-end justify-center bg-overlay backdrop-blur-sm animate-in fade-in duration-200">
       <div className="w-full max-w-[430px] bg-zinc-900 border-t border-zinc-800 rounded-t-2xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden animate-in slide-in-from-bottom duration-200">
         {/* Header */}
         <div className="p-3.5 border-b border-zinc-800 flex items-center justify-between bg-zinc-950/60">
