@@ -226,30 +226,19 @@ async function runNetworkTests() {
     // =========================================================================
     console.log('\n--- Check 2: Expertise Chips ---')
     try {
-      // The compact map exposes eight themes first; reveal the remaining themes before selecting wires.
-      await evaluate(`(() => {
-        const section = document.querySelector('section[aria-labelledby="expertise-title"]');
-        const more = Array.from(section?.querySelectorAll('button') || []).find(b => b.innerText.trim() === 'More themes');
-        more?.click();
-      })()`)
-      await new Promise((r) => setTimeout(r, 200))
-      // Scope specifically to the Expertise map section to avoid the Ask-box suggestion chip
+      // The expertise map is a select: choose "wires and cables" and the people appear below it.
       const chipClicked = await evaluate(`(() => {
-        const section = document.querySelector('section[aria-labelledby="expertise-title"]') ||
-                        Array.from(document.querySelectorAll('section')).find(s => (s.innerText || '').includes('Expertise map'));
-        if (!section) return false;
-        const btns = Array.from(section.querySelectorAll('button'));
-        const chip = btns.find(b => (b.innerText || '').toLowerCase().includes('wires and cables'));
-        if (chip) {
-          chip.scrollIntoView({ behavior: 'instant', block: 'center' });
-          chip.click();
-          return true;
-        }
-        return false;
+        const sel = document.querySelector('#theme-select');
+        if (!sel) return false;
+        sel.scrollIntoView({ behavior: 'instant', block: 'center' });
+        const setter = Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, 'value').set;
+        setter.call(sel, 'wires and cables');
+        sel.dispatchEvent(new Event('change', { bubbles: true }));
+        return sel.value === 'wires and cables';
       })()`)
 
       if (!chipClicked) {
-        throw new Error('Chip "wires and cables" not found in Expertise map section')
+        throw new Error('Theme "wires and cables" not selectable in the Expertise map')
       }
 
       let revealed = false

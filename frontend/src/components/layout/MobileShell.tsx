@@ -152,7 +152,7 @@ export const MobileShell: React.FC<MobileShellProps> = ({
                       </span>
                     )}
                   </div>
-                  {theme === 'terminal' ? <span className="flex flex-col items-center font-mono text-[11px]"><span>F{index + 1}</span><span>{tab.label.toUpperCase()}</span></span>
+                  {theme === 'terminal' ? <span className="font-mono text-[11px]" title={`${tab.label} (F${index + 1})`}>{tab.label.toUpperCase()}</span>
                     : <span className="text-[11px] mt-0.5 tracking-tight">{tab.label}</span>}
                 </button>
               )
