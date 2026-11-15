@@ -69,3 +69,16 @@ Not: "The company reported strong results this quarter."
 - **Motion:** 150-250ms ease-out, opacity and transform only, honour `prefers-reduced-motion`. No looping animation after the opening screen.
 - **States:** every list has loading (skeleton), empty (one line + what to do), and unavailable (one calm line) states, none of them a red error.
 - **Review loop:** screenshot at 390x844 and 360x844 in light AND dark; list at most 5 problems against these rules; fix only those; re-screenshot.
+
+## Separation and grouping rules (added 15 Nov: "everything looks the same, nothing is delimited")
+- **Three surface levels, always:** page (`zinc-950`), card (`zinc-900` + 1px border + soft shadow in light), inset (`zinc-800/50`, for quoted text, evidence, chips' groups).
+  Never put a card inside a card; use an inset or a divider inside a card instead.
+- **Group, then separate the groups:** related facts sit together at 8px; different groups are separated by 24px, a hairline, or a section header.
+  A screen is a short list of clearly labelled sections, not a stream of look-alike blocks.
+- **Section header anatomy:** 11px uppercase tracking-wide label + count chip + (optional) one-line helper on the right. Same on every screen.
+- **Items of different kinds must look different at a glance:** a filing, a person, an alert and a research claim each get their own silhouette:
+  a leading icon or avatar shape (square = company, circle = person), a 2-3px left rail in the category colour, and a distinct first-line style.
+  Same kind = identical layout everywhere it appears (Today, Network, Research).
+- **Rows inside one card are separated by hairlines (`divide-y`), not by repeating cards.**
+- **Emphasis budget per screen:** one thing in brand colour, one thing in bold weight above the body size; the rest recedes (`zinc-400/500`).
+- **Check:** squint test at 390x844, light and dark: you must still see the section boundaries and which block is a person, a filing, an alert.
