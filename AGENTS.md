@@ -26,6 +26,7 @@ AI Engineer Build Challenge (deadline **15 Nov 2026**).
 | `frontend/src/components/network/` and the Network wiring in `handoff/CODEX-NETWORK-UI.md` (15 Nov round) | **Codex**, own worktree, branch `codex/network-ui`, never on `main`; Claude Code merges | read-only |
 | the UI polish in `handoff/CODEX-UI-POLISH.md` (15 Nov, after the Network round) | **Codex**, same worktree, branch `codex/ui-polish`, never on `main`; Claude Code merges | read-only |
 | the visual-distinction pass in `handoff/CODEX-UI-DISTINCT.md` (15 Nov) | **Codex**, same worktree, branch `codex/ui-distinct`, never on `main`; Claude Code merges | read-only |
+| the three UX fixes in `handoff/CODEX-UX-FIXES.md` (15 Nov) | **Codex**, same worktree, branch `codex/ux-fixes`, never on `main`; Claude Code merges | read-only |
 | — | **ChatGPT** | never commits. It produces prompts, reviews and copy, which get pasted into the repo by the owner |
 
 ## Hard rules
