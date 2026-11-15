@@ -22,7 +22,7 @@ export function NetworkStrip({ filingId }: { filingId: string }) {
         <p className="text-[11px] text-zinc-400">{SYNTHETIC_NOTE}</p>
         {insight.kind === 'material_event' && <p className="mt-2 font-semibold text-zinc-100">Best person to call</p>}
         <div className="divide-y divide-zinc-700">{insight.matches.slice(0, 3).map(match => <PersonMatchRow key={match.person_id} match={match} />)}</div>
-        {insight.note && <p className="mb-2 flex items-start gap-1.5 text-[11px] leading-relaxed text-amber-400"><Info className="h-4 w-4 shrink-0" />{insight.note}</p>}
+        {insight.note && <p className="mb-2 flex items-start gap-2 text-[11px] leading-relaxed text-amber-400"><Info className="h-4 w-4 shrink-0" />{insight.note}</p>}
       </div>}
     </section>
   )

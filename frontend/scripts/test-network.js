@@ -226,6 +226,13 @@ async function runNetworkTests() {
     // =========================================================================
     console.log('\n--- Check 2: Expertise Chips ---')
     try {
+      // The compact map exposes eight themes first; reveal the remaining themes before selecting wires.
+      await evaluate(`(() => {
+        const section = document.querySelector('section[aria-labelledby="expertise-title"]');
+        const more = Array.from(section?.querySelectorAll('button') || []).find(b => b.innerText.trim() === 'More themes');
+        more?.click();
+      })()`)
+      await new Promise((r) => setTimeout(r, 200))
       // Scope specifically to the Expertise map section to avoid the Ask-box suggestion chip
       const chipClicked = await evaluate(`(() => {
         const section = document.querySelector('section[aria-labelledby="expertise-title"]') ||
