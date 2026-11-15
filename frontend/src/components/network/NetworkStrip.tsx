@@ -11,10 +11,11 @@ export function NetworkStrip({ filingId }: { filingId: string }) {
   if (!insight) return null
   return (
     <section className="mt-3 border-t border-zinc-700 text-xs">
-      <button type="button" aria-expanded={expanded} aria-controls={contentId} onClick={() => setExpanded(!expanded)}
+      <button type="button" aria-label={`In your network: ${insight.headline}`} title={insight.headline} aria-expanded={expanded} aria-controls={contentId} onClick={() => setExpanded(!expanded)}
         className="flex min-h-[44px] w-full items-center gap-2 rounded py-2 text-left text-brand-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">
         <Users className="h-4 w-4 shrink-0" aria-hidden="true" />
-        <span className="min-w-0 flex-1"><span className="block text-[11px] font-semibold">In your network</span>{insight.headline}</span>
+        <span className="shrink-0 text-[11px] font-semibold">In your network</span>
+        <span className="min-w-0 flex-1 truncate">{insight.headline}</span>
         <ChevronDown className={`h-4 w-4 shrink-0 ${expanded ? 'rotate-180' : ''}`} aria-hidden="true" />
       </button>
       {expanded && <div id={contentId}>
