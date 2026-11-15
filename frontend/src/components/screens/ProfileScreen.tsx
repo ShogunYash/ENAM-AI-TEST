@@ -49,18 +49,18 @@ export const ProfileScreen: React.FC = () => {
         className="w-full min-h-[48px] px-3 flex items-center justify-between touch-manipulation"
       >
         <span className="text-sm font-semibold text-zinc-100">{title}</span>
-        <span className="flex items-center gap-2 text-xs text-zinc-400 font-mono">
+        <span className="flex items-center gap-2 text-xs text-zinc-400 ">
           {rows.length} stocks
-          <ChevronDown className={`w-4 h-4 transition-transform ${open === key ? 'rotate-180' : ''}`} />
+          <ChevronDown className={`w-4 h-4 transition-transform duration-200 ease-out motion-reduce:transition-none ${open === key ? 'rotate-180' : ''}`} />
         </span>
       </button>
       {open === key && (
         <ul className="px-3 pb-2 divide-y divide-zinc-800/70">
           {rows.map((c) => (
-            <li key={c.symbol} className="py-1.5 flex items-baseline justify-between gap-2 text-xs">
+            <li key={c.symbol} className="py-2 flex items-baseline justify-between gap-2 text-xs">
               <span>
-                <strong className="font-mono text-stock">{c.symbol}</strong>{' '}
-                <span className="text-zinc-300">{c.name}</span>
+                <strong className="font-mono font-semibold text-stock">{c.symbol}</strong>{' '}
+                <span className="text-stock">{c.name}</span>
               </span>
               <span className="text-zinc-500 text-right">{c.sector}</span>
             </li>
@@ -71,17 +71,17 @@ export const ProfileScreen: React.FC = () => {
   )
 
   return (
-    <div className="space-y-4 pb-24 pt-1">
+    <div className="space-y-2 pb-24 pt-1">
       <div className="pb-2 border-b border-zinc-800">
-        <h1 className="text-base font-bold text-zinc-100 flex items-center gap-2">
+        <h1 className="text-xl font-semibold text-zinc-100 flex items-center gap-2">
           <User className="w-4 h-4 text-zinc-300" />
           Profile
         </h1>
-        <p className="text-xs text-zinc-400 mt-0.5">Stored on this device only · no account needed</p>
+        <p className="text-xs text-zinc-400 mt-1">Stored on this device only · no account needed</p>
       </div>
 
       <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-3 flex items-center gap-3">
-        <div className="w-12 h-12 rounded-full bg-brand text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
+        <div className="w-12 h-12 rounded-full bg-zinc-800 text-zinc-300 flex items-center justify-center font-semibold text-base flex-shrink-0">
           {initials || <User className="w-5 h-5" />}
         </div>
         <form
@@ -115,11 +115,11 @@ export const ProfileScreen: React.FC = () => {
       <PrivacyCard />
 
       <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-3 space-y-2">
-        <h2 className="text-sm font-semibold text-zinc-100 flex items-center gap-2">
-          <ShieldCheck className="w-4 h-4 text-emerald-500" />
+        <h2 className="text-base font-semibold text-zinc-100 flex items-center gap-2">
+          <ShieldCheck className="w-4 h-4 text-zinc-400" />
           Where the data comes from
         </h2>
-        <dl className="text-xs space-y-1">
+        <dl className="text-xs space-y-2">
           {SOURCES.map(([k, v]) => (
             <div key={k} className="flex justify-between gap-3">
               <dt className="text-zinc-400">{k}</dt>
@@ -143,7 +143,7 @@ export const ProfileScreen: React.FC = () => {
             <div className="flex gap-2">
               <button
                 onClick={resetAll}
-                className="min-h-[44px] px-3 rounded-lg bg-rose-600 text-white text-xs font-semibold touch-manipulation"
+                className="min-h-[44px] px-3 rounded-lg bg-zinc-800 text-zinc-100 text-xs font-semibold touch-manipulation"
               >
                 Clear everything
               </button>
