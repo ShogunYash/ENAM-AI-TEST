@@ -206,7 +206,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
     }
 
     // Sort inside tab: pre-built first, then A-Z
-    const sorted = list.filter(company => !savedReports.some(report => report.data.symbol === company.symbol)).sort((a, b) => {
+    const sorted = list.sort((a, b) => {
       const aPre = prebuiltSymbols.includes(a.symbol)
       const bPre = prebuiltSymbols.includes(b.symbol)
       if (aPre && !bPre) return -1
@@ -228,7 +228,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
       : sorted
 
     return { displayedList: filtered, fullReportCount: fullCount }
-  }, [catalog, scope, prebuiltSymbols, searchQuery, savedReports])
+  }, [catalog, scope, prebuiltSymbols, searchQuery])
 
   // ==========================================
   // VIEW 1: RESEARCH HOME (Company Picker)
@@ -264,8 +264,6 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
             GO
           </button>
         </form>
-
-        <SavedResearch reports={matchingSaved} onOpen={openDetail} />
 
         {/* Segmented Control: "My portfolio" | "Watchlist" | "Ready reports" */}
         <div className="flex items-center justify-between gap-2 pt-0.5">
@@ -312,12 +310,12 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
 
         {/* Count Line */}
         <div className="text-[11px] text-zinc-500 font-mono px-1">
-          {matchingSaved.length > 0 ? `${matchingSaved.length} saved on this device · ${displayedList.length} other companies` : `${fullReportCount} of ${displayedList.length} with guidance reviewed`}
+          {fullReportCount} of {displayedList.length} with guidance reviewed
         </div>
 
         {/* Company List */}
         <div className="space-y-2">
-          {displayedList.length === 0 && matchingSaved.length > 0 ? <p className="py-3 text-xs text-zinc-400">Saved reports are listed above.</p> : displayedList.length === 0 ? (
+          {displayedList.length === 0 ? (
             <div className="py-8 text-center space-y-2">
               <p className="text-xs text-zinc-400">
                 No stock matches &ldquo;{searchQuery}&rdquo;
@@ -381,6 +379,8 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
             })
           )}
         </div>
+
+        {scope === 'prebuilt' && <SavedResearch reports={matchingSaved} onOpen={openDetail} />}
       </div>
     )
   }

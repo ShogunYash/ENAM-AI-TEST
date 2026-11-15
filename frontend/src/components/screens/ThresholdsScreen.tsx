@@ -152,7 +152,7 @@ export const ThresholdsScreen: React.FC = () => {
           <b className="text-zinc-200">RSH</b> Research · <b className="text-zinc-200">NET</b> Network ·{' '}
           <b className="text-zinc-200">EXP</b> Expertise · <b className="text-zinc-200">ASK</b> Ask ·{' '}
           <b className="text-zinc-200">SET</b> Settings · <b className="text-zinc-200">CST</b> Cost ·{' '}
-          <b className="text-zinc-200">PRF</b> Profile · <b className="text-zinc-200">SRC</b> Sources
+          <b className="text-zinc-200">PRF</b> Profile · <b className="text-zinc-200">SRC</b> Sources · <b className="text-zinc-200">DEV</b> Saved on this device
         </p>
       )}
 
