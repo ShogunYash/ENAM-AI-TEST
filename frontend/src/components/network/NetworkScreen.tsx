@@ -1,3 +1,4 @@
+import { NetworkState } from './NetworkState'
 import { useId, useState, type FormEvent } from 'react'
 import { Check, Copy, Send } from 'lucide-react'
 import { askNetwork, SYNTHETIC_NOTE, useExpertise, useNetworkPeople, useWarmNudges } from '@/api/network'
@@ -59,6 +60,7 @@ export function NetworkScreen() {
   const [showSteps, setShowSteps] = useState(false)
   const [showAllThemes, setShowAllThemes] = useState(false)
   const [themeSearch, setThemeSearch] = useState('')
+  const [showAllMembers, setShowAllMembers] = useState(false)
   const [theme, setTheme] = useState<string | null>(null)
   const stepsId = useId()
   const memberId = useId()
@@ -99,7 +101,7 @@ export function NetworkScreen() {
           <label htmlFor="network-question" className="sr-only">Ask your network</label>
           <input id="network-question" value={question} onChange={event => setQuestion(event.target.value)}
             placeholder="A company, a theme, or a person" maxLength={2000}
-            className="min-h-[44px] min-w-0 flex-1 rounded-lg border border-zinc-700 bg-zinc-900 px-3 text-xs text-zinc-100 placeholder:text-zinc-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand" />
+            className="min-h-[44px] min-w-0 flex-1 rounded-lg border border-zinc-500 bg-zinc-900 px-3 text-xs text-zinc-100 placeholder:text-zinc-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand" />
           <button type="submit" disabled={busy || !question.trim()} aria-label="Send network question"
             className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg bg-brand text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">
             <Send aria-hidden="true" className="h-4 w-4" />
@@ -107,7 +109,7 @@ export function NetworkScreen() {
         </form>
         <div className="mt-2 flex flex-wrap gap-2">
           {['Who knows Bajaj Finance?', 'wires and cables', 'Who should I reconnect with?'].map(chip => <button key={chip} type="button" disabled={busy}
-            onClick={() => void submit(chip)} className="min-h-[44px] rounded-lg border border-zinc-700 px-2 text-[11px] text-zinc-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand disabled:opacity-50">{chip}</button>)}
+            onClick={() => void submit(chip)} className="min-h-[44px] rounded-lg border border-zinc-500 px-2 text-[11px] text-zinc-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand disabled:opacity-50">{chip}</button>)}
         </div>
         <div role="status" aria-live="polite">
           {busy && <p className="mt-3 text-xs text-zinc-400 motion-safe:animate-pulse">Looking through your network…</p>}
@@ -127,8 +129,8 @@ export function NetworkScreen() {
       <section aria-labelledby="warm-title">
         <h2 id="warm-title" className="text-base font-semibold text-zinc-100">Keep warm</h2>
         {warm.isLoading && <p className="py-3 text-xs text-zinc-400 motion-safe:animate-pulse">Loading reconnect suggestions…</p>}
-        {warm.isError && <p className="py-3 text-xs text-zinc-400">Reconnect suggestions are unavailable.</p>}
-        {warm.data?.length === 0 && <p className="py-3 text-xs text-zinc-400">No reconnect suggestions right now.</p>}
+        {warm.isError && <NetworkState>Reconnect suggestions are unavailable.</NetworkState>}
+        {warm.data?.length === 0 && <NetworkState>No reconnect suggestions. Browse expertise below.</NetworkState>}
         <div id="warm-items">
           {(showAllWarm ? warm.data : warm.data?.slice(0, 3))?.map(nudge => <WarmCard key={nudge.person_id} nudge={nudge} />)}
         </div>
@@ -142,17 +144,17 @@ export function NetworkScreen() {
       <section aria-labelledby="expertise-title">
         <h2 id="expertise-title" className="mb-2 text-base font-semibold text-zinc-100">Expertise map</h2>
         {expertise.isLoading && <p className="py-3 text-xs text-zinc-400 motion-safe:animate-pulse">Loading expertise…</p>}
-        {expertise.isError && <p className="py-3 text-xs text-zinc-400">Expertise is unavailable.</p>}
-        {themes.length === 0 && !expertise.isLoading && !expertise.isError && <p className="py-3 text-xs text-zinc-400">No expertise themes supplied.</p>}
+        {expertise.isError && <NetworkState>Expertise is unavailable.</NetworkState>}
+        {themes.length === 0 && !expertise.isLoading && !expertise.isError && <NetworkState>No expertise themes supplied. Try again later.</NetworkState>}
         <label htmlFor="theme-search" className="sr-only">Search expertise themes</label>
         <input id="theme-search" type="search" value={themeSearch} onChange={event => setThemeSearch(event.target.value)}
           placeholder="Search all themes"
-          className="mb-2 min-h-[44px] w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 text-xs text-zinc-100 placeholder:text-zinc-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand" />
+          className="mb-2 min-h-[44px] w-full rounded-lg border border-zinc-500 bg-zinc-900 px-3 text-xs text-zinc-100 placeholder:text-zinc-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand" />
         {themes.length > 0 && visibleThemes.length === 0 && <p className="py-2 text-xs text-zinc-400">No themes match. Try another search.</p>}
         <div id="expertise-themes" className="flex flex-wrap gap-2">
           {visibleThemes.map(item => <button key={item.theme} type="button" aria-expanded={theme === item.theme} aria-controls={memberId}
-            onClick={() => setTheme(theme === item.theme ? null : item.theme)}
-            className={`min-h-[44px] rounded-lg border px-2 text-left text-[11px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand ${theme === item.theme ? 'border-brand bg-brand-tint font-semibold text-brand-text' : 'border-zinc-700 bg-zinc-900 text-zinc-300'}`}>
+            onClick={() => { setTheme(theme === item.theme ? null : item.theme); setShowAllMembers(false) }}
+            className={`min-h-[44px] rounded-lg border px-2 text-left text-[11px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand ${theme === item.theme ? 'border-brand bg-brand-tint font-semibold text-brand-text' : 'border-zinc-500 bg-zinc-900 text-zinc-300'}`}>
             {item.theme} <span className="font-mono">({item.members.length})</span>
           </button>)}
         </div>
@@ -164,10 +166,14 @@ export function NetworkScreen() {
         )}
         {selected && <div id={memberId} className="mt-3 border-t border-zinc-700 pt-2">
           <h3 className="py-2 text-xs font-semibold text-zinc-200">{selected.theme}</h3>
-          <ul className="divide-y divide-zinc-700">{selected.members.map(member => <li key={member.person_id} className="flex items-center justify-between gap-2">
+          <ul className="divide-y divide-zinc-700">{(showAllMembers ? selected.members : selected.members.slice(0, 3)).map(member => <li key={member.person_id} className="flex items-center justify-between gap-2">
             <button type="button" onClick={() => openPerson(member.person_id)} className="min-h-[44px] rounded text-left text-sm font-semibold text-zinc-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">{member.name}</button>
             <Strength value={member.strength} />
           </li>)}</ul>
+          {selected.members.length > 3 && <button type="button" aria-expanded={showAllMembers} onClick={() => setShowAllMembers(!showAllMembers)}
+            className="min-h-[44px] rounded text-xs text-zinc-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">
+            {showAllMembers ? 'Show fewer' : `Show all (${selected.members.length})`}
+          </button>}
           <p className="mt-2 text-[11px] text-zinc-400">Tracked companies</p>
           <p className="mt-1 font-mono text-[11px] leading-relaxed text-stock">{selected.companies.length ? selected.companies.join(' · ') : 'No tracked companies in this theme.'}</p>
         </div>}

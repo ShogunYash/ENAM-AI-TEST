@@ -88,13 +88,13 @@ export const ThresholdsScreen: React.FC = () => {
             <Sliders className="w-4 h-4 text-zinc-300" />
             Settings
           </h1>
-          <p className="text-xs text-zinc-400 mt-1 truncate" title="Alerts, filing types and appearance � Saved on this device">
+          <p className="text-xs text-zinc-400 mt-1 truncate" title="Alerts, filing types and appearance · Saved on this device">
             Alerts, filing types and appearance · Saved on this device
           </p>
         </div>
         <button
           onClick={() => setShowResetDialog(true)}
-          className="inline-flex items-center gap-1 text-[11px] text-zinc-400 hover:text-zinc-200 px-2 py-1 min-h-[44px] rounded bg-zinc-900 border border-zinc-800 transition-colors touch-manipulation"
+          className="inline-flex items-center gap-1 text-[11px] text-zinc-400 hover:text-zinc-200 px-2 py-1 min-h-[44px] rounded bg-zinc-900 border border-zinc-500 transition-colors touch-manipulation"
         >
           <RotateCcw className="w-3 h-3" />
           <span>{resetNotification ? 'Reset!' : 'Reset'}</span>
@@ -121,7 +121,7 @@ export const ThresholdsScreen: React.FC = () => {
         <div
           role="group"
           aria-label="Appearance theme"
-          className="inline-flex items-center p-1 rounded-lg bg-zinc-900 border border-zinc-800 flex-shrink-0"
+          className="inline-flex items-center p-1 rounded-lg bg-zinc-900 border border-zinc-500 flex-shrink-0"
         >
           {(['light', 'dark', 'auto'] as const).map((mode) => {
             const isSelected = theme === mode
@@ -133,7 +133,7 @@ export const ThresholdsScreen: React.FC = () => {
                 onClick={() => setTheme(mode)}
                 className={`px-3 py-2 min-h-[44px] min-w-[44px] text-xs rounded-md touch-manipulation transition-colors duration-200 ease-out motion-reduce:transition-none font-semibold ${
                   isSelected
-                    ? 'bg-brand-tint text-brand-text font-semibold shadow-sm border border-brand/60'
+                    ? 'bg-brand-tint text-brand-text font-semibold shadow-sm border border-brand'
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
@@ -189,8 +189,8 @@ export const ThresholdsScreen: React.FC = () => {
                       onClick={() => updateSettings({ volume_multiple: vp })}
                       className={`px-3 py-2 text-xs rounded-md border min-h-[44px] transition-colors duration-200 ease-out motion-reduce:transition-none touch-manipulation ${
                         isSelected
-                          ? 'bg-brand-tint text-brand-text border-brand/40 font-semibold shadow-sm'
-                          : 'bg-zinc-950/40 text-zinc-400 border-zinc-800 hover:text-zinc-200'
+                          ? 'bg-brand-tint text-brand-text border-brand font-semibold shadow-sm'
+                          : 'bg-zinc-950/40 text-zinc-400 border-zinc-500 hover:text-zinc-200'
                       }`}
                     >
                       {vp.toFixed(vp % 1 === 0 ? 0 : 1)}×
@@ -256,8 +256,8 @@ export const ThresholdsScreen: React.FC = () => {
                       onClick={() => updateSettings({ price_move_pct: pp })}
                       className={`px-3 py-2 text-xs rounded-md border min-h-[44px] transition-colors duration-200 ease-out motion-reduce:transition-none touch-manipulation ${
                         isSelected
-                          ? 'bg-brand-tint text-brand-text border-brand/40 font-semibold shadow-sm'
-                          : 'bg-zinc-950/40 text-zinc-400 border-zinc-800 hover:text-zinc-200'
+                          ? 'bg-brand-tint text-brand-text border-brand font-semibold shadow-sm'
+                          : 'bg-zinc-950/40 text-zinc-400 border-zinc-500 hover:text-zinc-200'
                       }`}
                     >
                       ±{pp.toFixed(0)}%
@@ -343,7 +343,7 @@ export const ThresholdsScreen: React.FC = () => {
                         <div
                           role="group"
                           aria-label={`${cat.label} priority`}
-                          className="inline-flex items-center p-1 rounded-lg bg-zinc-900 border border-zinc-800 flex-shrink-0"
+                          className="inline-flex items-center p-1 rounded-lg bg-zinc-900 border border-zinc-500 flex-shrink-0"
                         >
                           <button
                             type="button"
@@ -421,7 +421,7 @@ export const ThresholdsScreen: React.FC = () => {
                           <div
                             role="group"
                             aria-label={`${cat.label} priority`}
-                            className="inline-flex items-center p-1 rounded-lg bg-zinc-900 border border-zinc-800 flex-shrink-0"
+                            className="inline-flex items-center p-1 rounded-lg bg-zinc-900 border border-zinc-500 flex-shrink-0"
                           >
                             <button
                               type="button"

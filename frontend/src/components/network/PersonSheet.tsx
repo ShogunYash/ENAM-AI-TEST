@@ -1,3 +1,4 @@
+import { NetworkState } from './NetworkState'
 import { useEffect, useRef } from 'react'
 import { X } from 'lucide-react'
 import { SYNTHETIC_NOTE, useNetworkPeople } from '@/api/network'
@@ -44,7 +45,8 @@ export function PersonSheet({ personId, onClose }: { personId: string; onClose: 
           <button type="button" aria-label="Close person" onClick={onClose} className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand"><X className="h-5 w-5" /></button>
         </div>
         {isLoading && <p role="status" className="py-4 text-xs text-zinc-400 motion-safe:animate-pulse">Loading contact…</p>}
-        {(isError || (!isLoading && !person)) && <p className="py-4 text-xs text-zinc-400">Contact details are unavailable.</p>}
+        {isError && <NetworkState>Contact details are unavailable.</NetworkState>}
+        {!isLoading && !isError && !person && <NetworkState>No contact found. Choose another person.</NetworkState>}
         {person && <div className="space-y-2 pt-2 text-xs text-zinc-300">
           <p className="leading-relaxed">{person.headline}{person.city && ` · ${person.city}`}</p>
           <section>
@@ -65,6 +67,7 @@ export function PersonSheet({ personId, onClose }: { personId: string; onClose: 
             {person.education.length ? person.education.map((edu, i) => <p key={i} className="mb-2">{edu.school}{edu.degree && ` · ${edu.degree}`}{edu.year && ` · ${edu.year}`}</p>) : <p>No education supplied.</p>}
           </section>
           <section><h3 className="mb-2 font-semibold text-zinc-100">Expertise</h3>
+            {!person.expertise.length && <NetworkState>No expertise supplied. Check their experience.</NetworkState>}
             <div className="flex flex-wrap gap-2">{person.expertise.map(theme => <span key={theme} className="rounded border border-zinc-700 px-2 py-1 text-[11px]">{theme}</span>)}</div>
           </section>
         </div>}

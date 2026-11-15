@@ -356,7 +356,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
             </p>
             {!searchQuery && monthContext && (
               <p className="mt-1 text-xs text-zinc-400">
-                30 days: {monthContext.digest.counts.total} filings · {monthContext.digest.needs_you.length} need you
+                30 days: {monthContext.digest.counts.total} filings Â· {monthContext.digest.needs_you.length} need you
               </p>
             )}
           </div>

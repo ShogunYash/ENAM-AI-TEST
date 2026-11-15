@@ -97,7 +97,7 @@ export const ProfileScreen: React.FC = () => {
             maxLength={40}
             placeholder="Your name"
             aria-label="Your name"
-            className="flex-1 min-w-0 min-h-[44px] px-3 rounded-lg bg-zinc-950 border border-zinc-800 text-sm text-zinc-100 placeholder:text-zinc-500 focus:outline-none focus:border-brand"
+            className="flex-1 min-w-0 min-h-[44px] px-3 rounded-lg bg-zinc-950 border border-zinc-500 text-sm text-zinc-100 placeholder:text-zinc-500 focus:outline-none focus:border-brand"
           />
           <button
             type="submit"
