@@ -6,7 +6,7 @@
 - [x] **Deployed mobile link (14 Nov):** PWA https://enam-ai-test.pages.dev/ , API https://finn-api-7n6q.onrender.com (`/health` ok, mode live). **Phone check still to be done by the owner** (Today 30d, a results card, INFY research, LIVE/SNAPSHOT chip). Render auto-deploys on commit (`autoDeployTrigger: commit`), so wait for the deploy after the last push and re-check `/health`.
 - [ ] **GitHub repo reachable by the reviewers**: the brief asks for a **public** repository and it is currently private: make it public (check the secrets scan first). Check `git log -p | grep -E "AIza|gsk_|sk-or"` shows nothing (last checked: clean).
 - [ ] **AI build history**: `docs/ai-history/README.md` has the index; replace the `<...>` links (ChatGPT, Antigravity and Codex share links; scrubbed Claude Code transcripts).
-- [x] **Demo check (13 Nov):** 321 backend tests, lint clean, BSE / screener.in / Yahoo reachable, frontend builds, no mock data in the snapshot.
+- [x] **Demo check (15 Nov):** 328 backend tests, 4 browser suites + 8 Network checks + 9 chart checks, lint clean, BSE / screener.in / Yahoo reachable, frontend builds, no mock data in the snapshot.
 - [x] Titan results card fixed (13 Nov): all 17 results cards match screener.in.
 - [x] `GET /debug/sources` on Render (14 Nov): BSE announcement API 403, screener.in OK, yfinance OK. BSE's announcement API answers 403 to the Render host (so Push ingest stays on the laptop and ships in the snapshot/seed), but the earnings-call PDFs download fine: a live research build for an unseen ticker (GODREJCP, 14 Nov) finished on Render in about a minute with 4 transcripts read and 8 promises judged. If a transcript host ever blocks, the report degrades to the financials plus an explicit gap.
 - [ ] **Re-run before sending:** after the last push, wait for the Render auto-deploy and confirm `/health` and the Pages site.
@@ -20,7 +20,7 @@ Hi ENAM team,
 
 **What I built.** FINN is a triage desk for a public-markets investor: it shows which BSE filings across a 17-stock portfolio deserve attention
 today, and lets you research any NSE company from its earnings calls. Push has a windowed digest, configurable alerts, a results card
-(Revenue, EBITDA, PBT, PAT with QoQ/YoY) and a management-change card. Pull has a financial snapshot and a promised-vs-delivered timeline.
+(Revenue, EBITDA, PBT, PAT with QoQ/YoY) and a management-change card. Pull has a financial snapshot, 1D/3D/7D/30D price charts and a promised-vs-delivered timeline. The interface has light, dark and an opt-in Terminal skin, with a command bar and a ticker tape.
 The part I'm proudest of: every claim carries a quote the server has checked against the page, and where the numbers can settle a promise, code
 settles it. KPIL guided at least 25% FY26 revenue growth; its filed consolidated growth was 21.6%, and FINN says missed.
 
