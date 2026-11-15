@@ -17,12 +17,12 @@ Arguments: `$ARGUMENTS`, in the form `<tool> <link|local> <summary>`. If any par
    ```markdown
    # AI build history
    How FINN was built with AI tools. Tool roles: Claude Code = backend/integration, Antigravity = frontend,
-   Codex = product/prompt design/review. Plan: docs/PLAN.md.
+   Codex = product/prompt design/review and the UI passes.
 
    | Date (IST) | Tool / model | Task ID | What happened | Link / file |
    |---|---|---|---|---|
    ```
-2. Append one row. The task ID comes from `docs/PLAN.md` (A0–D6), or `—`. Write "What happened" as a decision, not an activity.
+2. Append one row. Name the task in a few words. Write "What happened" as a decision, not an activity.
    For example: "Chose BSE over NSE after cloud-IP test", not "worked on ingest".
 3. **For Claude Code with `local`:** the transcripts are JSONL files under
    `~/.claude/projects/<project-dir>/`.

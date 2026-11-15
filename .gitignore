@@ -9,3 +9,6 @@ backend/data/cache/
 .claude/settings.local.json
 backend/data/finn.sqlite
 .claude/settings.json
+
+# Local working notes (not part of the submission)
+docs/SUBMISSION_DRAFT.md

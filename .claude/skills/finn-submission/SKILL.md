@@ -20,7 +20,7 @@ Draft only. **Never send email or publish anything yourself.** The user sends it
 1. One-line thesis and **demo link** at the top, plus a 30-second "try this" path for graders
 2. Screenshots or GIF (phone frame)
 3. What FINN does: Push (digest, alerts, results card, bio card) and Pull (snapshot, promised-vs-delivered)
-4. Architecture diagram (from `docs/PLAN.md` §2)
+4. Architecture diagram (from `docs/ARCHITECTURE.md`)
 5. **Model routing and cost:** the tier table with **measured** numbers from `/stats/llm`
    (calls per new ticker, cache-hit %, ₹0 spend)
 6. Grounding approach (quote verification, how many claims were dropped)

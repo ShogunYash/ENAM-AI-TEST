@@ -8,7 +8,7 @@ disable-model-invocation: true
 # FINN demo check
 
 "A demo that doesn't run is the worst outcome." Run every step in order and report a pass/fail table at the end.
-If a script below doesn't exist yet, say which plan task creates it (see `docs/PLAN.md`) and skip that step.
+If a script below doesn't exist, say so and skip that step.
 Never fake a pass.
 
 Unseen ticker to test: `$ARGUMENTS`. If it's empty, pick a mid-cap NSE stock that isn't in `data/portfolio.json`

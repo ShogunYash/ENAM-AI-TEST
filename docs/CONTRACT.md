@@ -32,7 +32,7 @@ uv run python -m scripts.make_examples && uv run python -m scripts.export_openap
 | `WindowLabel` | `24h, 3d, 7d, 30d, custom` |
 
 ## Endpoints
-Base URL: `VITE_API_BASE` (the Render URL in production, `http://localhost:8000` locally). The backend currently runs in **mock mode**, serving `docs/examples/` with the same shapes as the real implementation.
+Base URL: `VITE_API_BASE` (the Render URL in production, `http://localhost:8000` locally). The API serves real data from its database; only if the database is empty (a fresh checkout) does it fall back to the illustrative fixtures in `docs/examples/`, with the same shapes. `GET /health` reports which (`mode: live` or `mock`).
 
 | Method / path | Response | Query / body | Example |
 |---|---|---|---|
@@ -78,7 +78,7 @@ Base URL: `VITE_API_BASE` (the Render URL in production, `http://localhost:8000`
 
   This is the **one deliberate logic duplication** between backend and frontend.
 
-### Snapshot layout (`frontend/public/data/`, written by `scripts/refresh_snapshot`, task B6)
+### Snapshot layout (`frontend/public/data/`, written by `backend/scripts/refresh_snapshot.py`)
 ```
 meta.json            SnapshotMeta {as_of, portfolio_size, research_symbols}
 companies.json       Company[]
@@ -97,7 +97,6 @@ network/expertise.json    ExpertiseTheme[]
 network/companies/{SYM}.json  NetworkInsight   (kind company)
 ```
 `POST /network/ask` needs the live API (it calls a model); offline the UI falls back to the expertise map.
-Until B6 exists, seed the folder by copying `docs/examples/`.
 
 ## Changelog
 - 2026-11-15: **price charts** (additive). `GET /prices/{symbol}/chart?range=1d|3d|7d|30d` -> `PriceChart {symbol, range, points[{t,c}], source, change_pct, high, low, as_of, note}`; snapshot folder `charts/`. New table `intraday` (15-minute closes from Yahoo, filled by `scripts/ingest`).
@@ -108,4 +107,4 @@ Until B6 exists, seed the folder by copying `docs/examples/`.
 - 2026-11-12: `Health.mode: "live"|"mock"` (default live), additive. `mock` = the API is serving illustrative fixtures because it has no ingested database. Frontend: show LIVE only when `mode=="live"`; otherwise show DEMO DATA. (Found when a worktree backend without a database answered and the UI labelled mock data LIVE.)
 - 2026-11-12: `WindowLabel` gains `30d` (additive) and the snapshot gains `digest-30d.json`: results season ends ~10 days before the demo, so the 7-day view shows few results cards. Frontend: add a 30d chip to the window picker.
 - 2026-11-12: `Research.is_sample: bool` (default false), additive. True for illustrative fixtures (all of `docs/examples/research-*`); the UI must show a SAMPLE badge whenever it is true, and must NOT infer sample-ness from anything else. Real builds (C1-C3) set it false. Frontend: read `research.is_sample ?? true` so old snapshot files stay badged.
-- 2026-11-11: v0.1.0, initial contract (A2). Mock API serving examples. `DigestWindow` uses `start`/`end` (not `from`/`to`, to avoid reserved words in TS/Python). Added `GET /alerts` and `GET /debug/sources`.
+- 2026-11-11: v0.1.0, initial contract. Mock API serving examples. `DigestWindow` uses `start`/`end` (not `from`/`to`, to avoid reserved words in TS/Python). Added `GET /alerts` and `GET /debug/sources`.

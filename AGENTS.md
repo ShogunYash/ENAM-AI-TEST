@@ -13,7 +13,8 @@ AI Engineer Build Challenge (deadline **15 Nov 2026**).
 
 | Doc | What |
 |---|---|
-| `docs/PLAN.md` | Master plan: architecture, task board (A0–D6), tool/model per task, risks |
+| `README.md` | What FINN is, what it does, how it works, cost, limits |
+| `docs/ARCHITECTURE.md` | Pipelines, privacy, models and agents, cloud |
 | `docs/CONTRACT.md` | API contract: endpoints, enums, conventions, snapshot layout |
 | `docs/CHALLENGE_SUMMARY.md` | The brief, condensed |
 | `.claude/skills/*/SKILL.md` | Detailed playbooks: data sources, LLM features, grounding, UI principles, contract changes, demo check, AI history, submission |
@@ -41,7 +42,7 @@ AI Engineer Build Challenge (deadline **15 Nov 2026**).
 ```bash
 # backend (from backend/)
 uv sync                                   # install
-uv run uvicorn app.main:app --reload      # API on :8000 (mock mode until real routes land)
+uv run uvicorn app.main:app --reload      # API on :8000 (serves fixtures only if there is no database)
 uv run pytest -q                          # tests (contract tests must stay green)
 uv run python -m scripts.make_examples    # regenerate docs/examples from models
 uv run python -m scripts.export_openapi   # regenerate docs/openapi.json
