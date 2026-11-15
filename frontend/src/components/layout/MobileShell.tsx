@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useTheme } from '@/lib/theme'
 import { CommandBar } from './CommandBar'
+import { TickerTape } from './TickerTape'
 import { Flame, Search, Sliders, Activity, User, Users } from 'lucide-react'
 import { initialsOf, useProfileName } from '@/lib/profile'
 
@@ -114,6 +115,7 @@ export const MobileShell: React.FC<MobileShellProps> = ({
           </button>
         </header>
         <CommandBar onTabChange={onTabChange} onOpenCompany={onOpenCompany} />
+        <TickerTape />
         </div>
         {/* Slim brand top bar */}
         <div className="desk-brand-rule h-[2px] w-full bg-gradient-to-r from-[#3558E6] via-[#5B7CFF] to-[#3558E6] dark:from-[#4A69F0] dark:via-[#7C93FF] dark:to-[#4A69F0] flex-shrink-0" />
