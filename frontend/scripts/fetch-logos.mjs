@@ -1,4 +1,5 @@
-// Build-time only: node scripts/fetch-logos.mjs [--refresh] [--only=TCS,INFY]
+// Build-time only: node scripts/fetch-logos.mjs [--refresh] [--only=TCS,INFY] [--wiki-only]
+// --wiki-only skips the company-site and Google attempts and goes straight to Wikidata/Commons (for symbols the site attempts already missed).
 // All requests, including redirects, are sequential and at least one second apart.
 import fs from 'node:fs/promises'
 import path from 'node:path'
@@ -13,6 +14,7 @@ const mapping = JSON.parse((await fs.readFile(path.join(here, 'logo-domains.json
 const previous = await fs.readFile(reportPath, 'utf8').then(JSON.parse).catch(() => [])
 const reports = new Map(previous.map(row => [row.symbol, row]))
 const only = process.argv.find(arg => arg.startsWith('--only='))?.slice(7).split(',')
+const wikiOnly = process.argv.includes('--wiki-only')
 let lastRequest = 0
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 const sha = buffer => createHash('sha256').update(buffer).digest('hex')
@@ -102,6 +104,41 @@ async function googleIcon(domain) {
   if (sha(result.buffer) === globe.hash || distance < 2) throw Error('Google generic globe rejected')
   return result
 }
+// Last resort (build time only): the company's official logo image from Wikidata (P154), served by Wikimedia Commons.
+const commonsFiles = JSON.parse(await fs.readFile(path.join(here, 'logo-commons-files.json'), 'utf8').catch(() => '{}'))   // explicit, reviewed file names
+const wikiTitles = JSON.parse(await fs.readFile(path.join(here, 'logo-wikipedia.json'), 'utf8').catch(() => '{}'))
+// Wide wordmarks are unreadable in a 32px square: for these, keep only the emblem at the left (a square of the logo's height).
+const cropEmblem = new Set(['HDFCBANK', 'PERSISTENT', 'SBIN', 'MARUTI'])
+async function wikiLogo(symbol) {
+  const title = wikiTitles[symbol]
+  if (!title) throw Error('No Wikipedia title configured')
+  const page = JSON.parse((await request('https://en.wikipedia.org/w/api.php?action=query&prop=pageprops&ppprop=wikibase_item&redirects=1&format=json&titles=' + encodeURIComponent(title))).buffer.toString('utf8'))
+  const item = Object.values(page.query?.pages || {})[0]?.pageprops?.wikibase_item
+  if (!item) throw Error('No Wikidata item for ' + title)
+  const data = JSON.parse((await request('https://www.wikidata.org/wiki/Special:EntityData/' + item + '.json')).buffer.toString('utf8'))
+  const claims = data.entities?.[item]?.claims || {}
+  let pick = commonsFiles[symbol] || ['P154', 'P8972', 'P2910'].map(p => claims[p]?.[0]?.mainsnak?.datavalue?.value).find(Boolean)
+  if (!pick) {   // no logo property: use the article's lead image, but only when its file name says it is a logo
+    const lead = JSON.parse((await request('https://en.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(title.replace(/ /g, '_')))).buffer.toString('utf8'))
+    const src = lead.originalimage?.source || ''
+    const name = decodeURIComponent(src.split('/').pop() || '')
+    if (!/logo|emblem|wordmark|symbol/i.test(name)) throw Error('No logo property and the lead image is not a logo (' + name + ')')
+    pick = name
+  }
+  const asset = await request('https://commons.wikimedia.org/wiki/Special:FilePath/' + encodeURIComponent(pick) + '?width=' + (cropEmblem.has(symbol) ? 1024 : 256))
+  return { ...asset, wiki: item + ' / ' + pick }
+}
+// Final fallback: search Wikimedia Commons for a file whose name contains the company name and "logo" (reviewed by eye before committing).
+async function commonsSearch(symbol) {
+  const title = wikiTitles[symbol]
+  const first = title.split(' ')[0].toLowerCase()
+  const result = JSON.parse((await request('https://commons.wikimedia.org/w/api.php?action=query&list=search&srnamespace=6&srlimit=8&format=json&srsearch=' + encodeURIComponent(title + ' logo'))).buffer.toString('utf8'))
+  const names = (result.query?.search || []).map(row => row.title.replace(/^File:/, ''))
+  const pick = names.find(name => name.toLowerCase().includes(first) && /logo|emblem/i.test(name) && /.(svg|png)$/i.test(name) && !/old|former|vintage|19dd|20[01]d/i.test(name))
+  if (!pick) throw Error('Commons search found no logo file for ' + title)
+  const asset = await request('https://commons.wikimedia.org/wiki/Special:FilePath/' + encodeURIComponent(pick) + '?width=256')
+  return { ...asset, wiki: 'commons-search / ' + pick }
+}
 await fs.mkdir(output, { recursive: true })
 for (const [symbol, domain] of Object.entries(mapping)) {
   if (only && !only.includes(symbol)) continue
@@ -115,7 +152,7 @@ for (const [symbol, domain] of Object.entries(mapping)) {
     }
   }
   const errors = []; let page, candidates = []
-  for (const home of [`https://${domain}/`, `https://www.${domain}/`]) {
+  for (const home of (wikiOnly ? [] : [`https://${domain}/`, `https://www.${domain}/`])) {
     try { page = await request(home); candidates = pageIcons(page.buffer.toString('utf8'), page.url); break }
     catch (error) { errors.push(`${home}: ${error.message}`) }
   }
@@ -124,7 +161,7 @@ for (const [symbol, domain] of Object.entries(mapping)) {
   let saved
   const seen = new Set()
   const googleDomains = [...new Set([domain, new URL(base).hostname, domain.startsWith('www.') ? domain : 'www.' + domain])]
-  for (const candidate of [...candidates, ...googleDomains.map(googleDomain => ({ google: true, googleDomain }))]) {
+  for (const candidate of (wikiOnly ? [] : [...candidates, ...googleDomains.map(googleDomain => ({ google: true, googleDomain }))])) {
     if (candidate.url && seen.has(candidate.url)) continue
     seen.add(candidate.url)
     try {
@@ -138,6 +175,18 @@ for (const [symbol, domain] of Object.entries(mapping)) {
         source: asset.url, via: candidate.google ? 'google-fallback' : 'company-site', original: `${width}x${height}`, size: '128x128', bytes: png.length, sha256: sha(png), fetchedAt: new Date().toISOString(), errors }
       break
     } catch (error) { errors.push(`${candidate.google ? 'Google ' + candidate.googleDomain : candidate.url}: ${error.message}`) }
+  }
+  if (!saved && wikiTitles[symbol]) {
+    try {
+      const asset = await wikiLogo(symbol).catch(async firstError => { try { return await commonsSearch(symbol) } catch (secondError) { throw Error(firstError.message + '; ' + secondError.message) } })
+      let { pipeline, width, height } = await image(asset.buffer)
+      if (cropEmblem.has(symbol) && width > height * 1.6) { pipeline = pipeline.extract({ left: 0, top: 0, width: height, height }); width = height }
+      if (Math.min(width, height) < 48) throw Error(`Too small (${width}x${height})`)
+      const png = await pipeline.resize(116, 116, { fit: 'contain', background: '#00000000' })
+        .extend({ top: 6, right: 6, bottom: 6, left: 6, background: '#00000000' }).png({ compressionLevel: 9, palette: true, effort: 10 }).toBuffer()
+      await fs.writeFile(file, png)
+      saved = { symbol, domain, page: null, pageTitle: wikiTitles[symbol], source: asset.url, via: 'wikidata-commons (' + asset.wiki + ')', original: `${width}x${height}`, size: '128x128', bytes: png.length, sha256: sha(png), fetchedAt: new Date().toISOString(), errors }
+    } catch (error) { errors.push('Wikidata/Commons: ' + error.message) }
   }
   if (!saved) { await fs.rm(file, { force: true }); saved = { symbol, domain, page: page?.url || null, pageTitle: page?.buffer.toString('utf8').match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1].trim() || null, source: 'MISSING', bytes: 0, errors } }
   reports.set(symbol, saved)

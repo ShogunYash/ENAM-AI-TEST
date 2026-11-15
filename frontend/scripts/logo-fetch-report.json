@@ -41,43 +41,38 @@
   {
     "symbol": "BAJFINANCE",
     "domain": "bajajfinserv.in",
+    "page": null,
+    "pageTitle": null,
     "source": "MISSING",
     "bytes": 0,
     "errors": [
-      "https://bajajfinserv.in/: HTTP 403",
-      "https://www.bajajfinserv.in/: HTTP 403",
-      "https://bajajfinserv.in/apple-touch-icon.png: HTTP 403",
-      "https://bajajfinserv.in/favicon.ico: HTTP 403",
-      "Google bajajfinserv.in: Too small (32x32)",
-      "Google www.bajajfinserv.in: Too small (32x32)"
+      "Wikidata/Commons: Too small (330x32)"
     ]
   },
   {
     "symbol": "RELIANCE",
     "domain": "ril.com",
+    "page": null,
+    "pageTitle": null,
     "source": "MISSING",
     "bytes": 0,
     "errors": [
-      "https://www.ril.com/sites/default/files/favicon_0.ico: No ICO frame >=48px",
-      "https://rilstaticasset.akamaized.net/sites/default/files/images/favicon.ico: No ICO frame >=48px",
-      "https://www.ril.com/apple-touch-icon.png: HTTP 404",
-      "https://www.ril.com/favicon.ico: Input buffer contains unsupported image format",
-      "Google ril.com: Too small (16x16)",
-      "Google www.ril.com: Too small (16x16)"
+      "Wikidata/Commons: No logo property and the lead image is not a logo (500px-Reliance_Industries.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail); Commons search found no logo file for Reliance Industries"
     ]
   },
   {
     "symbol": "LT",
     "domain": "larsentoubro.com",
-    "source": "MISSING",
-    "bytes": 0,
-    "errors": [
-      "https://www.larsentoubro.com/favicon.ico?favicon.034c59d2.ico: No ICO frame >=48px",
-      "https://www.larsentoubro.com/apple-touch-icon.png: HTTP 404",
-      "https://www.larsentoubro.com/favicon.ico: No ICO frame >=48px",
-      "Google larsentoubro.com: Too small (16x16)",
-      "Google www.larsentoubro.com: Too small (16x16)"
-    ]
+    "page": null,
+    "pageTitle": "Larsen & Toubro",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Larsen-%26-Toubro-Logo.svg/330px-Larsen-%26-Toubro-Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "via": "wikidata-commons (Q638231 / Larsen-&-Toubro-Logo.svg)",
+    "original": "330x330",
+    "size": "128x128",
+    "bytes": 4161,
+    "sha256": "2617e9381f8be3b099e56e267d7160aa08e438a59b928472826eaf5bf4713456",
+    "fetchedAt": "2026-11-15T12:31:47.817Z",
+    "errors": []
   },
   {
     "symbol": "SUNPHARMA",
@@ -115,54 +110,48 @@
   {
     "symbol": "ULTRACEMCO",
     "domain": "ultratechcement.com",
+    "page": null,
+    "pageTitle": null,
     "source": "MISSING",
     "bytes": 0,
     "errors": [
-      "https://www.ultratechcement.com/content/dam/ultratechcement/site-identity/Favicon32.ico: No ICO frame >=48px",
-      "https://www.ultratechcement.com/apple-touch-icon.png: HTTP 404",
-      "https://www.ultratechcement.com/favicon.ico: HTTP 404",
-      "Google ultratechcement.com: Too small (24x24)",
-      "Google www.ultratechcement.com: Too small (24x24)"
+      "Wikidata/Commons: HTTP 404; Commons search found no logo file for UltraTech Cement"
     ]
   },
   {
     "symbol": "TATASTEEL",
     "domain": "tatasteel.com",
+    "page": null,
+    "pageTitle": null,
     "source": "MISSING",
     "bytes": 0,
     "errors": [
-      "https://www.tatasteel.com/images/favicon.ico: Too small (21x20)",
-      "https://www.tatasteel.com/apple-touch-icon.png: Input buffer contains unsupported image format",
-      "https://www.tatasteel.com/favicon.ico: Input buffer contains unsupported image format",
-      "Google tatasteel.com: Too small (21x20)",
-      "Google www.tatasteel.com: Too small (21x20)"
+      "Wikidata/Commons: Too small (330x44)"
     ]
   },
   {
     "symbol": "PERSISTENT",
     "domain": "persistent.com",
-    "source": "MISSING",
-    "bytes": 0,
-    "errors": [
-      "https://validate.perfdrive.com/apple-touch-icon.png: Input buffer contains unsupported image format",
-      "https://validate.perfdrive.com/favicon.ico: Input buffer contains unsupported image format",
-      "Google persistent.com: Too small (16x16)",
-      "Google validate.perfdrive.com: HTTP 404",
-      "Google www.persistent.com: Too small (16x16)"
-    ]
+    "page": null,
+    "pageTitle": "Persistent Systems",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Persistent_Systems_Logo.svg/1280px-Persistent_Systems_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "via": "wikidata-commons (Q7170401 / Persistent Systems Logo.svg)",
+    "original": "300x300",
+    "size": "128x128",
+    "bytes": 4067,
+    "sha256": "7362472599763ed4d73b3ef8c08d8dff3fede449e428dbfe2d938c7372278753",
+    "fetchedAt": "2026-11-15T12:33:50.109Z",
+    "errors": []
   },
   {
     "symbol": "ASTRAL",
     "domain": "astralltd.com",
+    "page": null,
+    "pageTitle": null,
     "source": "MISSING",
     "bytes": 0,
     "errors": [
-      "https://www.astralltd.com/wp-content/uploads/2023/01/favicon-2.png: Too small (16x16)",
-      "https://www.astralltd.com/wp-content/themes/astral-theme/images/favicon.ico: No ICO frame >=48px",
-      "https://www.astralltd.com/apple-touch-icon.png: HTTP 404",
-      "https://www.astralltd.com/favicon.ico: HTTP 404",
-      "Google astralltd.com: Too small (16x16)",
-      "Google www.astralltd.com: Too small (16x16)"
+      "Wikidata/Commons: No Wikidata item for Astral Limited; Commons search found no logo file for Astral Limited"
     ]
   },
   {
@@ -182,29 +171,23 @@
   {
     "symbol": "CERA",
     "domain": "cera-india.com",
+    "page": null,
+    "pageTitle": null,
     "source": "MISSING",
     "bytes": 0,
     "errors": [
-      "https://cera-india.com/: fetch failed",
-      "https://www.cera-india.com/: fetch failed",
-      "https://cera-india.com/apple-touch-icon.png: fetch failed",
-      "https://cera-india.com/favicon.ico: fetch failed",
-      "Google cera-india.com: Too small (32x32)",
-      "Google www.cera-india.com: Too small (32x32)"
+      "Wikidata/Commons: No Wikidata item for Cera Sanitaryware; Commons search found no logo file for Cera Sanitaryware"
     ]
   },
   {
     "symbol": "GARFIBRES",
     "domain": "garwarefibres.com",
+    "page": null,
+    "pageTitle": null,
     "source": "MISSING",
     "bytes": 0,
     "errors": [
-      "https://garwarefibres.com/: HTTP 403",
-      "https://www.garwarefibres.com/: HTTP 403",
-      "https://garwarefibres.com/apple-touch-icon.png: HTTP 404",
-      "https://garwarefibres.com/favicon.ico: HTTP 404",
-      "Google garwarefibres.com: Too small (16x16)",
-      "Google www.garwarefibres.com: Too small (16x16)"
+      "Wikidata/Commons: No Wikidata item for Garware Technical Fibres; Commons search found no logo file for Garware Technical Fibres"
     ]
   },
   {
@@ -224,14 +207,16 @@
   {
     "symbol": "HDFCBANK",
     "domain": "hdfc.bank.in",
-    "source": "MISSING",
-    "bytes": 0,
-    "errors": [
-      "https://www.hdfc.bank.in/favicon.ico: No ICO frame >=48px",
-      "https://www.hdfc.bank.in/apple-touch-icon.png: HTTP 404",
-      "Google hdfc.bank.in: Too small (16x16)",
-      "Google www.hdfc.bank.in: Too small (16x16)"
-    ]
+    "page": null,
+    "pageTitle": "HDFC Bank",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/HDFC-Bank-Logo.svg/1280px-HDFC-Bank-Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "via": "wikidata-commons (Q631047 / HDFC-Bank-Logo.svg)",
+    "original": "205x205",
+    "size": "128x128",
+    "bytes": 1434,
+    "sha256": "09d0b5ee3d6cf9a672e8c2bdbc7f41e849c83f5f3cd72f9a12cc1ae1d033a823",
+    "fetchedAt": "2026-11-15T12:33:55.772Z",
+    "errors": []
   },
   {
     "symbol": "HINDZINC",
@@ -292,56 +277,53 @@
   {
     "symbol": "SBIN",
     "domain": "sbi.bank.in",
-    "source": "MISSING",
-    "bytes": 0,
-    "errors": [
-      "https://sbi.bank.in/o/SBI-Theme/images/favicon.ico: No ICO frame >=48px",
-      "https://sbi.bank.in/apple-touch-icon.png: HTTP 404",
-      "https://sbi.bank.in/favicon.ico: The operation was aborted due to timeout",
-      "Google sbi.bank.in: HTTP 404",
-      "Google www.sbi.bank.in: HTTP 404"
-    ]
+    "page": null,
+    "pageTitle": "State Bank of India",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/State_Bank_of_India.svg/1280px-State_Bank_of_India.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "via": "wikidata-commons (Q1340361 / State Bank of India.svg)",
+    "original": "439x439",
+    "size": "128x128",
+    "bytes": 3428,
+    "sha256": "c5b13f2c2ca162f3688e29803922d1edf3a9e7a8dc0c81e61fc715734c06761b",
+    "fetchedAt": "2026-11-15T12:34:00.819Z",
+    "errors": []
   },
   {
     "symbol": "BHARTIARTL",
     "domain": "airtel.in",
-    "source": "MISSING",
-    "bytes": 0,
-    "errors": [
-      "https://assets.airtel.in/static-assets/new-home/img/favicon.ico: Too small (31x30)",
-      "https://assets.airtel.in/static-assets/new-home/img/favicon-32x32.png: Too small (31x30)",
-      "https://assets.airtel.in/static-assets/new-home/img/favicon-16x16.png: Too small (31x30)",
-      "https://www.airtel.in/apple-touch-icon.png: Input buffer contains unsupported image format",
-      "https://www.airtel.in/favicon.ico: Too small (31x30)",
-      "Google airtel.in: Too small (31x30)",
-      "Google www.airtel.in: Too small (31x30)"
-    ]
+    "page": null,
+    "pageTitle": "Bharti Airtel",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Bharti_Airtel_logo.svg/330px-Bharti_Airtel_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "via": "wikidata-commons (Q854867 / Bharti Airtel logo.svg)",
+    "original": "330x115",
+    "size": "128x128",
+    "bytes": 2469,
+    "sha256": "d461c87e173738265bd4e50b58eaecbfc4279058755cf538161a7e5de535ac18",
+    "fetchedAt": "2026-11-15T12:32:17.762Z",
+    "errors": []
   },
   {
     "symbol": "MARUTI",
     "domain": "marutisuzuki.com",
-    "source": "MISSING",
-    "bytes": 0,
-    "errors": [
-      "https://www.marutisuzuki.com/apple-touch-icon.png: HTTP 404",
-      "https://www.marutisuzuki.com/favicon.ico: No ICO frame >=48px",
-      "Google marutisuzuki.com: Too small (16x16)",
-      "Google www.marutisuzuki.com: Too small (16x16)"
-    ]
+    "page": null,
+    "pageTitle": "Maruti Suzuki",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Maruti_Suzuki_logo.svg/1280px-Maruti_Suzuki_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "via": "wikidata-commons (Q963718 / Maruti Suzuki logo.svg)",
+    "original": "142x142",
+    "size": "128x128",
+    "bytes": 4098,
+    "sha256": "0c6c703d013d1b320e55e513a7f452e3748e7b4d2e71175cbcb5a174519cd343",
+    "fetchedAt": "2026-11-15T12:34:29.279Z",
+    "errors": []
   },
   {
     "symbol": "ASIANPAINT",
     "domain": "asianpaints.com",
+    "page": null,
+    "pageTitle": null,
     "source": "MISSING",
     "bytes": 0,
-    "errors": [
-      "https://asianpaints.com/: fetch failed",
-      "https://www.asianpaints.com/: fetch failed",
-      "https://asianpaints.com/apple-touch-icon.png: fetch failed",
-      "https://asianpaints.com/favicon.ico: fetch failed",
-      "Google asianpaints.com: Too small (16x16)",
-      "Google www.asianpaints.com: Too small (16x16)"
-    ]
+    "errors": []
   },
   {
     "symbol": "HINDUNILVR",
