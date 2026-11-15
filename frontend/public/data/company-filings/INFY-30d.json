@@ -3,10 +3,10 @@
   "name": "Infosys",
   "window": {
     "label": "30d",
-    "start": "2026-10-15T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-10-16T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
   "counts": {
     "total": 16,
     "rule_classified": 16,
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.095,
+      "score": 0.069,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26c12463-d44e-4050-bd47-b53cc294b4e0.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -97,7 +97,7 @@
         "category_source": "rule",
         "priority": "hidden",
         "score": 0.0,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2d26cac8-d5b5-4be4-ba93-d18f80ee8c0c.pdf",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2d26cac8-d5b5-4be4-ba93-d18f80ee8c0c.pdf",
         "price_reaction": {
           "pct_1d": -0.33,
           "vol_ratio": 0.45
@@ -174,7 +174,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.046,
+        "score": 0.033,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7982fc61-7765-4981-ab3d-6aec36ba2137.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -264,7 +264,7 @@
         "category": "dividend",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.021,
+        "score": 0.015,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0f7c4fa3-6c9a-497a-921a-e14c20919f86.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -279,7 +279,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.021,
+        "score": 0.015,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7a7cacec-6e60-4f88-9c95-ad60962ad4d4.pdf",
         "price_reaction": null,
         "enrichment": null

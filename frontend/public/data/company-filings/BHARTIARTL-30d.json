@@ -3,10 +3,10 @@
   "name": "Bharti Airtel",
   "window": {
     "label": "30d",
-    "start": "2026-10-15T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-10-16T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
   "counts": {
     "total": 23,
     "rule_classified": 17,
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 1.928,
+      "score": 1.396,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7e17b4ed-a5e2-4625-9e2b-2af590350caa.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -86,7 +86,7 @@
       "category": "fund_raise",
       "category_source": "llm",
       "priority": "high",
-      "score": 1.0,
+      "score": 0.724,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c2694b22-e5e8-41af-b6f4-e820ee6cf481.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -115,8 +115,8 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.525,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/1ff3e14f-7e97-4074-89c7-049408721c5e.pdf",
+        "score": 1.104,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1ff3e14f-7e97-4074-89c7-049408721c5e.pdf",
         "price_reaction": {
           "pct_1d": 0.48,
           "vol_ratio": 0.57
@@ -133,8 +133,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.611,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/ae574f7a-4573-459b-9090-59d84bf2d02a.pdf",
+        "score": 0.442,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ae574f7a-4573-459b-9090-59d84bf2d02a.pdf",
         "price_reaction": {
           "pct_1d": 0.48,
           "vol_ratio": 0.57
@@ -151,7 +151,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.359,
+        "score": 0.26,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c0ebd50a-d1d2-4c02-8be7-cf5e771bb8ff.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -181,7 +181,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.522,
+        "score": 0.378,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/74915aaa-1875-4cc4-af7c-1684eabee116.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -226,7 +226,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.428,
+        "score": 0.31,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5f677c46-d64d-4c66-9851-541120179fe4.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -241,7 +241,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.428,
+        "score": 0.31,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/422774be-d5f4-4a17-a483-ffb3b7728020.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -256,7 +256,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.428,
+        "score": 0.31,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e6d9bef6-f458-40de-9c71-9da5d56b6f47.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -271,7 +271,7 @@
         "category": "postal_ballot",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.139,
+        "score": 0.101,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/dfc259d1-be1e-465f-a9da-e6eb390c5353.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -286,7 +286,7 @@
         "category": "postal_ballot",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.12,
+        "score": 0.087,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3eba3f7a-167e-4bd6-8c15-ea13bdefd1e5.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -361,7 +361,7 @@
         "category": "postal_ballot",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.035,
+        "score": 0.026,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/500d7b1a-2dd6-4bec-b711-ea723571ad36.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -391,7 +391,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.046,
+        "score": 0.033,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/dfa80ddb-f524-419d-b71e-d3c606e27c93.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -406,7 +406,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.044,
+        "score": 0.032,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1a5ea611-ba91-4312-95aa-59a8cc634910.pdf",
         "price_reaction": null,
         "enrichment": null

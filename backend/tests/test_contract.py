@@ -31,6 +31,12 @@ SCHEMAS = {
     "debug-sources": m.SourcesReport,
     "meta": m.SnapshotMeta,
     "ask": m.AskResponse,
+    "network-people": list[m.NetworkPerson],
+    "network-insights": list[m.NetworkInsight],
+    "network-company": m.NetworkInsight,
+    "network-warm": list[m.WarmNudge],
+    "network-expertise": list[m.ExpertiseTheme],
+    "network-ask": m.NetworkAskResponse,
 }
 
 

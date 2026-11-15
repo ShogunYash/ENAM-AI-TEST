@@ -1,0 +1,58 @@
+{
+  "key": "TCS",
+  "kind": "company",
+  "symbol": "TCS",
+  "headline": "2 contacts worked at Tata Consultancy Services",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p17",
+      "name": "Gaurav Sethi",
+      "headline": "Large-deal delivery head, IT services",
+      "strength": 5,
+      "link": "worked_at_company",
+      "why": "Worked at Tata Consultancy Services 2002-2020 as Head, Global Delivery",
+      "evidence": [
+        "Tata Consultancy Services 2002-2020, Head, Global Delivery"
+      ],
+      "score": 6.5
+    },
+    {
+      "person_id": "p18",
+      "name": "Revathi Krishnan",
+      "headline": "Ex-BFSI vertical head, IT services",
+      "strength": 2,
+      "link": "worked_at_company",
+      "why": "Worked at Tata Consultancy Services 2007-2018 as Vertical Head, Banking",
+      "evidence": [
+        "Tata Consultancy Services 2007-2018, Vertical Head, Banking"
+      ],
+      "score": 4.7
+    },
+    {
+      "person_id": "p01",
+      "name": "Meera Iyer",
+      "headline": "Ex-credit risk head, consumer lending",
+      "strength": 5,
+      "link": "sector_expert",
+      "why": "consumer lending expert (ex-credit risk head, consumer lending); no direct tie to Tata Consultancy Services",
+      "evidence": [
+        "expertise: consumer lending"
+      ],
+      "score": 4.0
+    },
+    {
+      "person_id": "p09",
+      "name": "Anand Gupta",
+      "headline": "Consumer and paints industry veteran",
+      "strength": 4,
+      "link": "sector_expert",
+      "why": "consumer demand expert (consumer and paints industry veteran); no direct tie to Tata Consultancy Services",
+      "evidence": [
+        "expertise: consumer demand"
+      ],
+      "score": 3.5
+    }
+  ],
+  "note": null
+}

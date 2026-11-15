@@ -1,0 +1,34 @@
+{
+  "key": "HINDUNILVR",
+  "kind": "company",
+  "symbol": "HINDUNILVR",
+  "headline": "2 contacts worked at Hindustan Unilever",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p09",
+      "name": "Anand Gupta",
+      "headline": "Consumer and paints industry veteran",
+      "strength": 4,
+      "link": "worked_at_company",
+      "why": "Worked at Hindustan Unilever 2016-2024 as Category Head",
+      "evidence": [
+        "Hindustan Unilever 2016-2024, Category Head"
+      ],
+      "score": 5.9
+    },
+    {
+      "person_id": "p36",
+      "name": "Smita Patwardhan",
+      "headline": "FMCG rural distribution",
+      "strength": 4,
+      "link": "worked_at_company",
+      "why": "Worked at Hindustan Unilever 2006-2018 as Head, Rural Distribution",
+      "evidence": [
+        "Hindustan Unilever 2006-2018, Head, Rural Distribution"
+      ],
+      "score": 5.9
+    }
+  ],
+  "note": null
+}

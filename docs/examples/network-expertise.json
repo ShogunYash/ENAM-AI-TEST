@@ -1,0 +1,946 @@
+[
+  {
+    "theme": "capex and plant ramp-up",
+    "members": [
+      {
+        "person_id": "p05",
+        "name": "Vikram Desai",
+        "strength": 3
+      },
+      {
+        "person_id": "p21",
+        "name": "Siddharth Rane",
+        "strength": 3
+      },
+      {
+        "person_id": "p31",
+        "name": "Ashwin Nair",
+        "strength": 3
+      },
+      {
+        "person_id": "p30",
+        "name": "Shalini Oberoi",
+        "strength": 2
+      },
+      {
+        "person_id": "p33",
+        "name": "Jayant Rao",
+        "strength": 2
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "consumer demand",
+    "members": [
+      {
+        "person_id": "p09",
+        "name": "Anand Gupta",
+        "strength": 4
+      },
+      {
+        "person_id": "p20",
+        "name": "Neha Agarwal",
+        "strength": 4
+      },
+      {
+        "person_id": "p36",
+        "name": "Smita Patwardhan",
+        "strength": 4
+      },
+      {
+        "person_id": "p18",
+        "name": "Revathi Krishnan",
+        "strength": 2
+      },
+      {
+        "person_id": "p34",
+        "name": "Nisha Kapadia",
+        "strength": 2
+      }
+    ],
+    "companies": [
+      "TCS",
+      "BAJFINANCE"
+    ]
+  },
+  {
+    "theme": "bank governance",
+    "members": [
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "strength": 4
+      },
+      {
+        "person_id": "p11",
+        "name": "Lakshmi Venkatesh",
+        "strength": 3
+      },
+      {
+        "person_id": "p29",
+        "name": "Ravi Teja",
+        "strength": 3
+      },
+      {
+        "person_id": "p13",
+        "name": "Tara Bhatt",
+        "strength": 2
+      }
+    ],
+    "companies": [
+      "HDFCBANK",
+      "ICICIBANK",
+      "SBIN"
+    ]
+  },
+  {
+    "theme": "exports",
+    "members": [
+      {
+        "person_id": "p28",
+        "name": "Yamini Das",
+        "strength": 4
+      },
+      {
+        "person_id": "p27",
+        "name": "Prakash Nambiar",
+        "strength": 3
+      },
+      {
+        "person_id": "p35",
+        "name": "Rajeev Menon",
+        "strength": 3
+      },
+      {
+        "person_id": "p06",
+        "name": "Sunita Reddy",
+        "strength": 2
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "nbfc",
+    "members": [
+      {
+        "person_id": "p01",
+        "name": "Meera Iyer",
+        "strength": 5
+      },
+      {
+        "person_id": "p12",
+        "name": "Imran Siddiqui",
+        "strength": 4
+      },
+      {
+        "person_id": "p02",
+        "name": "Arjun Rao",
+        "strength": 3
+      },
+      {
+        "person_id": "p16",
+        "name": "Harsh Vardhan",
+        "strength": 3
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "rural lending",
+    "members": [
+      {
+        "person_id": "p12",
+        "name": "Imran Siddiqui",
+        "strength": 4
+      },
+      {
+        "person_id": "p15",
+        "name": "Deepika Menon",
+        "strength": 4
+      },
+      {
+        "person_id": "p36",
+        "name": "Smita Patwardhan",
+        "strength": 4
+      },
+      {
+        "person_id": "p29",
+        "name": "Ravi Teja",
+        "strength": 3
+      }
+    ],
+    "companies": [
+      "BAJFINANCE"
+    ]
+  },
+  {
+    "theme": "channel distribution",
+    "members": [
+      {
+        "person_id": "p28",
+        "name": "Yamini Das",
+        "strength": 4
+      },
+      {
+        "person_id": "p06",
+        "name": "Sunita Reddy",
+        "strength": 2
+      },
+      {
+        "person_id": "p34",
+        "name": "Nisha Kapadia",
+        "strength": 2
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "consumer lending",
+    "members": [
+      {
+        "person_id": "p01",
+        "name": "Meera Iyer",
+        "strength": 5
+      },
+      {
+        "person_id": "p15",
+        "name": "Deepika Menon",
+        "strength": 4
+      },
+      {
+        "person_id": "p13",
+        "name": "Tara Bhatt",
+        "strength": 2
+      }
+    ],
+    "companies": [
+      "TCS",
+      "BAJFINANCE"
+    ]
+  },
+  {
+    "theme": "corporate strategy",
+    "members": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "strength": 5
+      },
+      {
+        "person_id": "p24",
+        "name": "Anjali Chawla",
+        "strength": 5
+      },
+      {
+        "person_id": "p20",
+        "name": "Neha Agarwal",
+        "strength": 4
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "credit risk",
+    "members": [
+      {
+        "person_id": "p01",
+        "name": "Meera Iyer",
+        "strength": 5
+      },
+      {
+        "person_id": "p15",
+        "name": "Deepika Menon",
+        "strength": 4
+      },
+      {
+        "person_id": "p13",
+        "name": "Tara Bhatt",
+        "strength": 2
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "epc and infrastructure",
+    "members": [
+      {
+        "person_id": "p32",
+        "name": "Pallavi Joshi",
+        "strength": 4
+      },
+      {
+        "person_id": "p08",
+        "name": "Pooja Nair",
+        "strength": 3
+      },
+      {
+        "person_id": "p23",
+        "name": "Tushar Kulkarni",
+        "strength": 2
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "it services",
+    "members": [
+      {
+        "person_id": "p17",
+        "name": "Gaurav Sethi",
+        "strength": 5
+      },
+      {
+        "person_id": "p19",
+        "name": "Aditya Bose",
+        "strength": 3
+      },
+      {
+        "person_id": "p18",
+        "name": "Revathi Krishnan",
+        "strength": 2
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "private banking",
+    "members": [
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "strength": 4
+      },
+      {
+        "person_id": "p11",
+        "name": "Lakshmi Venkatesh",
+        "strength": 3
+      },
+      {
+        "person_id": "p14",
+        "name": "Sameer Joshi",
+        "strength": 3
+      }
+    ],
+    "companies": [
+      "HDFCBANK",
+      "ICICIBANK",
+      "SBIN"
+    ]
+  },
+  {
+    "theme": "specialty chemicals",
+    "members": [
+      {
+        "person_id": "p28",
+        "name": "Yamini Das",
+        "strength": 4
+      },
+      {
+        "person_id": "p25",
+        "name": "Mohit Bansal",
+        "strength": 3
+      },
+      {
+        "person_id": "p35",
+        "name": "Rajeev Menon",
+        "strength": 3
+      }
+    ],
+    "companies": [
+      "FINEORG"
+    ]
+  },
+  {
+    "theme": "technology risk",
+    "members": [
+      {
+        "person_id": "p02",
+        "name": "Arjun Rao",
+        "strength": 3
+      },
+      {
+        "person_id": "p16",
+        "name": "Harsh Vardhan",
+        "strength": 3
+      },
+      {
+        "person_id": "p19",
+        "name": "Aditya Bose",
+        "strength": 3
+      }
+    ],
+    "companies": [
+      "GARFIBRES",
+      "DIXON"
+    ]
+  },
+  {
+    "theme": "auto components",
+    "members": [
+      {
+        "person_id": "p26",
+        "name": "Ritu Saxena",
+        "strength": 3
+      },
+      {
+        "person_id": "p10",
+        "name": "Farah Khan",
+        "strength": 2
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "bank technology",
+    "members": [
+      {
+        "person_id": "p17",
+        "name": "Gaurav Sethi",
+        "strength": 5
+      },
+      {
+        "person_id": "p18",
+        "name": "Revathi Krishnan",
+        "strength": 2
+      }
+    ],
+    "companies": [
+      "GARFIBRES",
+      "HDFCBANK",
+      "ICICIBANK",
+      "SBIN",
+      "DIXON"
+    ]
+  },
+  {
+    "theme": "capital markets",
+    "members": [
+      {
+        "person_id": "p04",
+        "name": "Nandini Shah",
+        "strength": 4
+      },
+      {
+        "person_id": "p14",
+        "name": "Sameer Joshi",
+        "strength": 3
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "cybersecurity",
+    "members": [
+      {
+        "person_id": "p02",
+        "name": "Arjun Rao",
+        "strength": 3
+      },
+      {
+        "person_id": "p16",
+        "name": "Harsh Vardhan",
+        "strength": 3
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "electronics manufacturing",
+    "members": [
+      {
+        "person_id": "p24",
+        "name": "Anjali Chawla",
+        "strength": 5
+      },
+      {
+        "person_id": "p05",
+        "name": "Vikram Desai",
+        "strength": 3
+      }
+    ],
+    "companies": [
+      "DIXON"
+    ]
+  },
+  {
+    "theme": "fmcg distribution",
+    "members": [
+      {
+        "person_id": "p09",
+        "name": "Anand Gupta",
+        "strength": 4
+      },
+      {
+        "person_id": "p36",
+        "name": "Smita Patwardhan",
+        "strength": 4
+      }
+    ],
+    "companies": [
+      "HINDUNILVR",
+      "NESTLEIND"
+    ]
+  },
+  {
+    "theme": "paints and coatings",
+    "members": [
+      {
+        "person_id": "p09",
+        "name": "Anand Gupta",
+        "strength": 4
+      },
+      {
+        "person_id": "p25",
+        "name": "Mohit Bansal",
+        "strength": 3
+      }
+    ],
+    "companies": [
+      "ASIANPAINT"
+    ]
+  },
+  {
+    "theme": "project finance",
+    "members": [
+      {
+        "person_id": "p32",
+        "name": "Pallavi Joshi",
+        "strength": 4
+      },
+      {
+        "person_id": "p08",
+        "name": "Pooja Nair",
+        "strength": 3
+      }
+    ],
+    "companies": [
+      "BAJFINANCE",
+      "KPIL"
+    ]
+  },
+  {
+    "theme": "semiconductors",
+    "members": [
+      {
+        "person_id": "p24",
+        "name": "Anjali Chawla",
+        "strength": 5
+      },
+      {
+        "person_id": "p05",
+        "name": "Vikram Desai",
+        "strength": 3
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "sme lending",
+    "members": [
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "strength": 4
+      },
+      {
+        "person_id": "p12",
+        "name": "Imran Siddiqui",
+        "strength": 4
+      }
+    ],
+    "companies": [
+      "BAJFINANCE"
+    ]
+  },
+  {
+    "theme": "steel and metals",
+    "members": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "strength": 5
+      },
+      {
+        "person_id": "p21",
+        "name": "Siddharth Rane",
+        "strength": 3
+      }
+    ],
+    "companies": [
+      "TATASTEEL",
+      "HINDZINC"
+    ]
+  },
+  {
+    "theme": "supplier governance",
+    "members": [
+      {
+        "person_id": "p26",
+        "name": "Ritu Saxena",
+        "strength": 3
+      },
+      {
+        "person_id": "p10",
+        "name": "Farah Khan",
+        "strength": 2
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "supply chain",
+    "members": [
+      {
+        "person_id": "p25",
+        "name": "Mohit Bansal",
+        "strength": 3
+      },
+      {
+        "person_id": "p10",
+        "name": "Farah Khan",
+        "strength": 2
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "transmission and power",
+    "members": [
+      {
+        "person_id": "p08",
+        "name": "Pooja Nair",
+        "strength": 3
+      },
+      {
+        "person_id": "p23",
+        "name": "Tushar Kulkarni",
+        "strength": 2
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "wires and cables",
+    "members": [
+      {
+        "person_id": "p22",
+        "name": "Kavita Pillai",
+        "strength": 4
+      },
+      {
+        "person_id": "p06",
+        "name": "Sunita Reddy",
+        "strength": 2
+      }
+    ],
+    "companies": [
+      "KEI",
+      "POLYCAB"
+    ]
+  },
+  {
+    "theme": "bank treasury",
+    "members": [
+      {
+        "person_id": "p04",
+        "name": "Nandini Shah",
+        "strength": 4
+      }
+    ],
+    "companies": [
+      "HDFCBANK",
+      "ICICIBANK",
+      "SBIN"
+    ]
+  },
+  {
+    "theme": "building products",
+    "members": [
+      {
+        "person_id": "p34",
+        "name": "Nisha Kapadia",
+        "strength": 2
+      }
+    ],
+    "companies": [
+      "ASTRAL"
+    ]
+  },
+  {
+    "theme": "cement",
+    "members": [
+      {
+        "person_id": "p21",
+        "name": "Siddharth Rane",
+        "strength": 3
+      }
+    ],
+    "companies": [
+      "ULTRACEMCO"
+    ]
+  },
+  {
+    "theme": "energy",
+    "members": [
+      {
+        "person_id": "p31",
+        "name": "Ashwin Nair",
+        "strength": 3
+      }
+    ],
+    "companies": [
+      "RELIANCE"
+    ]
+  },
+  {
+    "theme": "enterprise ai",
+    "members": [
+      {
+        "person_id": "p19",
+        "name": "Aditya Bose",
+        "strength": 3
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "enterprise connectivity",
+    "members": [
+      {
+        "person_id": "p30",
+        "name": "Shalini Oberoi",
+        "strength": 2
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "large-deal delivery",
+    "members": [
+      {
+        "person_id": "p17",
+        "name": "Gaurav Sethi",
+        "strength": 5
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "legal and contracts",
+    "members": [
+      {
+        "person_id": "p32",
+        "name": "Pallavi Joshi",
+        "strength": 4
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "m&a and integration",
+    "members": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "strength": 5
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "mining",
+    "members": [
+      {
+        "person_id": "p33",
+        "name": "Jayant Rao",
+        "strength": 2
+      }
+    ],
+    "companies": [
+      "HINDZINC"
+    ]
+  },
+  {
+    "theme": "non-ferrous metals",
+    "members": [
+      {
+        "person_id": "p33",
+        "name": "Jayant Rao",
+        "strength": 2
+      }
+    ],
+    "companies": [
+      "HINDZINC"
+    ]
+  },
+  {
+    "theme": "order book",
+    "members": [
+      {
+        "person_id": "p23",
+        "name": "Tushar Kulkarni",
+        "strength": 2
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "petrochemicals",
+    "members": [
+      {
+        "person_id": "p31",
+        "name": "Ashwin Nair",
+        "strength": 3
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "pharmaceuticals",
+    "members": [
+      {
+        "person_id": "p27",
+        "name": "Prakash Nambiar",
+        "strength": 3
+      }
+    ],
+    "companies": [
+      "SUNPHARMA"
+    ]
+  },
+  {
+    "theme": "policy and regulation",
+    "members": [
+      {
+        "person_id": "p26",
+        "name": "Ritu Saxena",
+        "strength": 3
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "public-sector banking",
+    "members": [
+      {
+        "person_id": "p29",
+        "name": "Ravi Teja",
+        "strength": 3
+      }
+    ],
+    "companies": [
+      "HDFCBANK",
+      "ICICIBANK",
+      "SBIN"
+    ]
+  },
+  {
+    "theme": "qip and fund raising",
+    "members": [
+      {
+        "person_id": "p04",
+        "name": "Nandini Shah",
+        "strength": 4
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "regulatory and compliance",
+    "members": [
+      {
+        "person_id": "p27",
+        "name": "Prakash Nambiar",
+        "strength": 3
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "retail and jewellery",
+    "members": [
+      {
+        "person_id": "p20",
+        "name": "Neha Agarwal",
+        "strength": 4
+      }
+    ],
+    "companies": [
+      "TITAN"
+    ]
+  },
+  {
+    "theme": "retail deposits",
+    "members": [
+      {
+        "person_id": "p11",
+        "name": "Lakshmi Venkatesh",
+        "strength": 3
+      }
+    ],
+    "companies": [
+      "TITAN"
+    ]
+  },
+  {
+    "theme": "technical textiles",
+    "members": [
+      {
+        "person_id": "p35",
+        "name": "Rajeev Menon",
+        "strength": 3
+      }
+    ],
+    "companies": [
+      "GARFIBRES",
+      "DIXON"
+    ]
+  },
+  {
+    "theme": "telecom",
+    "members": [
+      {
+        "person_id": "p30",
+        "name": "Shalini Oberoi",
+        "strength": 2
+      }
+    ],
+    "companies": [
+      "BHARTIARTL"
+    ]
+  },
+  {
+    "theme": "treasury",
+    "members": [
+      {
+        "person_id": "p22",
+        "name": "Kavita Pillai",
+        "strength": 4
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "wealth management",
+    "members": [
+      {
+        "person_id": "p14",
+        "name": "Sameer Joshi",
+        "strength": 3
+      }
+    ],
+    "companies": []
+  },
+  {
+    "theme": "working capital",
+    "members": [
+      {
+        "person_id": "p22",
+        "name": "Kavita Pillai",
+        "strength": 4
+      }
+    ],
+    "companies": []
+  }
+]

@@ -1,11 +1,11 @@
 {
-  "as_of": "2026-11-14T02:39:30.706906+05:30",
+  "as_of": "2026-11-15T12:11:20.238968+05:30",
   "totals": {
-    "calls": 195,
-    "tokens_in": 1587768,
-    "tokens_out": 125916,
-    "cache_hits": 247,
-    "cache_hit_pct": 55.9,
+    "calls": 207,
+    "tokens_in": 1744647,
+    "tokens_out": 134006,
+    "cache_hits": 251,
+    "cache_hit_pct": 54.8,
     "spend_inr": 0.0
   },
   "by_feature": [
@@ -25,10 +25,10 @@
     },
     {
       "key": "pull.guidance",
-      "calls": 32,
-      "tokens_in": 577325,
-      "tokens_out": 7907,
-      "cache_hits": 87
+      "calls": 40,
+      "tokens_in": 698008,
+      "tokens_out": 10287,
+      "cache_hits": 91
     },
     {
       "key": "push.mgmt_bio",
@@ -38,18 +38,18 @@
       "cache_hits": 77
     },
     {
+      "key": "pull.pvd",
+      "calls": 20,
+      "tokens_in": 228986,
+      "tokens_out": 24388,
+      "cache_hits": 21
+    },
+    {
       "key": "ask",
       "calls": 18,
       "tokens_in": 49449,
       "tokens_out": 986,
       "cache_hits": 30
-    },
-    {
-      "key": "pull.pvd",
-      "calls": 16,
-      "tokens_in": 192790,
-      "tokens_out": 18678,
-      "cache_hits": 21
     },
     {
       "key": "push.classify",
@@ -69,10 +69,10 @@
   "by_model": [
     {
       "key": "gemini-3.5-flash-lite",
-      "calls": 84,
-      "tokens_in": 572192,
-      "tokens_out": 51882,
-      "cache_hits": 49
+      "calls": 87,
+      "tokens_in": 605357,
+      "tokens_out": 54022,
+      "cache_hits": 50
     },
     {
       "key": "finn-gpt-oss",
@@ -83,17 +83,17 @@
     },
     {
       "key": "gemini-3.1-flash-lite",
-      "calls": 26,
-      "tokens_in": 83762,
-      "tokens_out": 16381,
-      "cache_hits": 4
+      "calls": 32,
+      "tokens_in": 168528,
+      "tokens_out": 19017,
+      "cache_hits": 6
     },
     {
       "key": "gemini-3.5-flash",
-      "calls": 15,
-      "tokens_in": 224321,
-      "tokens_out": 18319,
-      "cache_hits": 5
+      "calls": 17,
+      "tokens_in": 256548,
+      "tokens_out": 19036,
+      "cache_hits": 6
     },
     {
       "key": "gemini-3.6-flash",
@@ -104,9 +104,9 @@
     },
     {
       "key": "nvidia/nemotron-3-ultra-550b-a55b:free",
-      "calls": 2,
-      "tokens_in": 24597,
-      "tokens_out": 7433,
+      "calls": 3,
+      "tokens_in": 31318,
+      "tokens_out": 10030,
       "cache_hits": 0
     },
     {
@@ -124,6 +124,6 @@
       "cache_hits": 0
     }
   ],
-  "avg_calls_new_ticker": 6.9,
+  "avg_calls_new_ticker": 6.7,
   "grounding_dropped": 193
 }

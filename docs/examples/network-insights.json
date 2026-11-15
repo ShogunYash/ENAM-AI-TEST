@@ -1,0 +1,86 @@
+[
+  {
+    "key": "example-filing-management",
+    "kind": "management_change",
+    "symbol": "BAJFINANCE",
+    "headline": "3 contacts overlapped with Prashant Verma",
+    "subject": "Prashant Verma",
+    "matches": [
+      {
+        "person_id": "p15",
+        "name": "Deepika Menon",
+        "headline": "Collections and rural consumer finance",
+        "strength": 4,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~14 yrs at Bajaj Finance with Prashant Verma (Head, Collections, 2010-2023)",
+        "evidence": [
+          "Bajaj Finance 2010-2023",
+          "filing: Prashant Verma tenure since ~2006"
+        ],
+        "score": 12.6
+      },
+      {
+        "person_id": "p16",
+        "name": "Harsh Vardhan",
+        "headline": "Former CTO of a consumer lender",
+        "strength": 3,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~12 yrs at Bajaj Finance with Prashant Verma (Chief Technology Officer, 2008-2019)",
+        "evidence": [
+          "Bajaj Finance 2008-2019",
+          "filing: Prashant Verma tenure since ~2006"
+        ],
+        "score": 11.4
+      },
+      {
+        "person_id": "p01",
+        "name": "Meera Iyer",
+        "headline": "Ex-credit risk head, consumer lending",
+        "strength": 5,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~7 yrs at Bajaj Finance with Prashant Verma (Head of Credit Risk, 2014-2020)",
+        "evidence": [
+          "Bajaj Finance 2014-2020",
+          "filing: Prashant Verma tenure since ~2006"
+        ],
+        "score": 11.1
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "example-filing-event",
+    "kind": "material_event",
+    "symbol": "TATASTEEL",
+    "headline": "Best person to call on this M&A: Rohan Kapoor",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "headline": "Ex-Tata group strategy and M&A",
+        "strength": 5,
+        "link": "worked_at_company",
+        "why": "Worked at Tata Steel 2010-2017 as GM, Corporate Strategy and M&A; M&A and integration expertise",
+        "evidence": [
+          "Tata Steel 2010-2017, GM, Corporate Strategy and M&A",
+          "expertise: M&A and integration"
+        ],
+        "score": 7.5
+      },
+      {
+        "person_id": "p21",
+        "name": "Siddharth Rane",
+        "headline": "Steel and cement plant operations",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at Tata Steel 2006-2019 as Plant Head, Flat Products",
+        "evidence": [
+          "Tata Steel 2006-2019, Plant Head, Flat Products"
+        ],
+        "score": 5.3
+      }
+    ],
+    "note": null
+  }
+]

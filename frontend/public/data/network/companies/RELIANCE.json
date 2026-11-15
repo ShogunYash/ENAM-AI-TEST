@@ -1,0 +1,22 @@
+{
+  "key": "RELIANCE",
+  "kind": "company",
+  "symbol": "RELIANCE",
+  "headline": "1 contact worked at Reliance",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p31",
+      "name": "Ashwin Nair",
+      "headline": "Petrochemicals planning and energy capex",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Worked at Reliance Industries 2004-2016 as Head, Petrochemical Planning",
+      "evidence": [
+        "Reliance Industries 2004-2016, Head, Petrochemical Planning"
+      ],
+      "score": 4.8
+    }
+  ],
+  "note": null
+}

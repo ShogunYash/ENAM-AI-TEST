@@ -1,33 +1,11 @@
 {
   "window": {
     "label": "3d",
-    "start": "2026-11-11T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-11-12T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
-  "needs_you": [
-    {
-      "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
-      "symbol": "BAJFINANCE",
-      "company_name": "Bajaj Finance Ltd",
-      "filed_at": "2026-11-11T17:06:59.713000+05:30",
-      "headline": "Outcome of QIP 2026 - Special Committee Meeting",
-      "so_what": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price.",
-      "category": "fund_raise",
-      "category_source": "rule",
-      "priority": "high",
-      "score": 8.22,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
-      "price_reaction": {
-        "pct_1d": 3.36,
-        "vol_ratio": 1.21
-      },
-      "enrichment": {
-        "type": "oneliner",
-        "text": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price."
-      }
-    }
-  ],
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
+  "needs_you": [],
   "also_material": [
     {
       "id": "44ba0161-d9e4-4bd1-aae7-eb3bc46319dd",
@@ -39,7 +17,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 6.802,
+      "score": 4.925,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -63,8 +41,8 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 5.448,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6df1f05c-9926-47ce-9896-94c41bdb71ab.pdf",
+      "score": 3.945,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6df1f05c-9926-47ce-9896-94c41bdb71ab.pdf",
       "price_reaction": null,
       "enrichment": {
         "type": "management",
@@ -79,11 +57,11 @@
     }
   ],
   "routine": {
-    "count": 13,
+    "count": 9,
     "by_category": {
-      "earnings_call": 4,
-      "investor_meetings": 7,
-      "unclassified": 2
+      "earnings_call": 2,
+      "investor_meetings": 6,
+      "unclassified": 1
     },
     "items": [
       {
@@ -96,8 +74,8 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.52,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/eeedbcb3-2b63-4718-b5b7-b498eedf2b4e.pdf",
+        "score": 1.101,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/eeedbcb3-2b63-4718-b5b7-b498eedf2b4e.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -111,45 +89,9 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.436,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/769be2ca-bd51-4ac3-8e63-ce44e430d026.pdf",
+        "score": 1.04,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/769be2ca-bd51-4ac3-8e63-ce44e430d026.pdf",
         "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "44ddb649-ee18-4e5e-9b01-ae7a40117b21",
-        "symbol": "TITAN",
-        "company_name": "Titan Company Ltd",
-        "filed_at": "2026-11-11T14:37:34.420000+05:30",
-        "headline": "Earnings call Transcripts",
-        "so_what": null,
-        "category": "earnings_call",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 1.231,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/daa6c172-771a-4af5-b4b3-9813fdf7536a.pdf",
-        "price_reaction": {
-          "pct_1d": -0.97,
-          "vol_ratio": 0.78
-        },
-        "enrichment": null
-      },
-      {
-        "id": "9324f8da-f7e9-4a27-8d52-fcb111b14078",
-        "symbol": "ASTRAL",
-        "company_name": "Astral Ltd",
-        "filed_at": "2026-11-11T14:34:23.423000+05:30",
-        "headline": "Transcript of Earnings Call held on November 05, 2026",
-        "so_what": null,
-        "category": "earnings_call",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 1.132,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a9cb0ab8-930f-4400-b70b-fbd01640f54d.pdf",
-        "price_reaction": {
-          "pct_1d": -0.08,
-          "vol_ratio": 1.01
-        },
         "enrichment": null
       },
       {
@@ -162,7 +104,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.923,
+        "score": 0.669,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3f614a9e-94b0-42ef-8145-ba0055ba7be5.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -177,7 +119,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.896,
+        "score": 0.649,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d7982c18-e8b9-485f-8165-a8333b0d421e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -192,8 +134,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.781,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/71268b4d-2f12-447d-bf1e-28310f485d17.pdf",
+        "score": 0.566,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/71268b4d-2f12-447d-bf1e-28310f485d17.pdf",
         "price_reaction": {
           "pct_1d": -0.97,
           "vol_ratio": 0.78
@@ -210,8 +152,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.755,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d01ef203-cd61-4f19-b88b-7a373979e5b5.pdf",
+        "score": 0.547,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d01ef203-cd61-4f19-b88b-7a373979e5b5.pdf",
         "price_reaction": {
           "pct_1d": 0.71,
           "vol_ratio": 1.0
@@ -228,8 +170,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.747,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/55f9d4f5-8638-4669-abdb-7cc4127221fc.pdf",
+        "score": 0.541,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/55f9d4f5-8638-4669-abdb-7cc4127221fc.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -243,27 +185,9 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.722,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fcd5e6ba-794e-420b-ae7a-17a4c8df68e3.pdf",
+        "score": 0.523,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fcd5e6ba-794e-420b-ae7a-17a4c8df68e3.pdf",
         "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "1c0c85f6-07aa-4efe-a10a-44a9e9b36de2",
-        "symbol": "ULTRACEMCO",
-        "company_name": "UltraTech Cement Ltd",
-        "filed_at": "2026-11-11T17:02:23.470000+05:30",
-        "headline": "Intimation regarding Investor meet of UltraTech Cement Limited",
-        "so_what": null,
-        "category": "investor_meetings",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.586,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2b934e4e-121f-42d7-a2d0-d3eb4364b9a7.pdf",
-        "price_reaction": {
-          "pct_1d": -0.2,
-          "vol_ratio": 0.52
-        },
         "enrichment": null
       },
       {
@@ -277,45 +201,16 @@
         "category_source": "rule",
         "priority": "hidden",
         "score": 0.0,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/77999e05-06f6-4ed6-9998-f9a775dc5c4f.pdf",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/77999e05-06f6-4ed6-9998-f9a775dc5c4f.pdf",
         "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "4a2555f1-fd67-4fb4-bed9-b565b67dced5",
-        "symbol": "INFY",
-        "company_name": "Infosys Ltd",
-        "filed_at": "2026-11-12T11:21:41.480000+05:30",
-        "headline": "Enclosed",
-        "so_what": null,
-        "category": "unclassified",
-        "category_source": "rule",
-        "priority": "hidden",
-        "score": 0.0,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2d26cac8-d5b5-4be4-ba93-d18f80ee8c0c.pdf",
-        "price_reaction": {
-          "pct_1d": -0.33,
-          "vol_ratio": 0.45
-        },
         "enrichment": null
       }
     ]
   },
-  "alerts": [
-    {
-      "id": "fl-9865b7f5-5041-41a3-980c-5aa5206c9fb7",
-      "symbol": "BAJFINANCE",
-      "kind": "material_filing",
-      "triggered_at": "2026-11-11T17:06:59.713000+05:30",
-      "value": 8.22,
-      "threshold": 7.0,
-      "message": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price.",
-      "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7"
-    }
-  ],
+  "alerts": [],
   "counts": {
-    "total": 16,
-    "rule_classified": 16,
+    "total": 11,
+    "rule_classified": 11,
     "llm_classified": 0
   }
 }

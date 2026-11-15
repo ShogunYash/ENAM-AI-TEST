@@ -1,47 +1,11 @@
 {
   "window": {
     "label": "3d",
-    "start": "2026-11-11T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-11-12T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
   "companies": [
-    {
-      "symbol": "BAJFINANCE",
-      "name": "Bajaj Finance",
-      "sector": "Consumer lending",
-      "in_portfolio": true,
-      "total": 1,
-      "material": 1,
-      "categories": {
-        "fund_raise": 1
-      },
-      "top": {
-        "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
-        "symbol": "BAJFINANCE",
-        "company_name": "Bajaj Finance Ltd",
-        "filed_at": "2026-11-11T17:06:59.713000+05:30",
-        "headline": "Outcome of QIP 2026 - Special Committee Meeting",
-        "so_what": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price.",
-        "category": "fund_raise",
-        "category_source": "rule",
-        "priority": "high",
-        "score": 8.22,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
-        "price_reaction": {
-          "pct_1d": 3.36,
-          "vol_ratio": 1.21
-        },
-        "enrichment": {
-          "type": "oneliner",
-          "text": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price."
-        }
-      },
-      "price": {
-        "pct_1d": 3.36,
-        "vol_ratio": 1.21
-      }
-    },
     {
       "symbol": "HDFCBANK",
       "name": "HDFC Bank",
@@ -62,7 +26,7 @@
         "category": "management_change",
         "category_source": "rule",
         "priority": "medium",
-        "score": 6.802,
+        "score": 4.925,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -82,48 +46,6 @@
       }
     },
     {
-      "symbol": "TITAN",
-      "name": "Titan Company",
-      "sector": "Jewellery and retail",
-      "in_portfolio": true,
-      "total": 3,
-      "material": 0,
-      "categories": {},
-      "top": null,
-      "price": {
-        "pct_1d": -0.97,
-        "vol_ratio": 0.78
-      }
-    },
-    {
-      "symbol": "BHARTIARTL",
-      "name": "Bharti Airtel",
-      "sector": "Telecom",
-      "in_portfolio": false,
-      "total": 2,
-      "material": 0,
-      "categories": {},
-      "top": null,
-      "price": {
-        "pct_1d": 0.48,
-        "vol_ratio": 0.57
-      }
-    },
-    {
-      "symbol": "KPIL",
-      "name": "Kalpataru Projects International",
-      "sector": "Engineering and construction",
-      "in_portfolio": false,
-      "total": 2,
-      "material": 0,
-      "categories": {},
-      "top": null,
-      "price": {
-        "pct_1d": -0.05,
-        "vol_ratio": 0.48
-      }
-    },
-    {
       "symbol": "RELIANCE",
       "name": "Reliance Industries",
       "sector": "Energy and diversified businesses",
@@ -135,20 +57,6 @@
       "price": {
         "pct_1d": 0.32,
         "vol_ratio": 0.64
-      }
-    },
-    {
-      "symbol": "SBIN",
-      "name": "State Bank of India",
-      "sector": "Public-sector banking",
-      "in_portfolio": false,
-      "total": 2,
-      "material": 0,
-      "categories": {},
-      "top": null,
-      "price": {
-        "pct_1d": -0.6,
-        "vol_ratio": 1.12
       }
     },
     {
@@ -166,31 +74,31 @@
       }
     },
     {
-      "symbol": "ULTRACEMCO",
-      "name": "UltraTech Cement",
-      "sector": "Cement",
+      "symbol": "TITAN",
+      "name": "Titan Company",
+      "sector": "Jewellery and retail",
       "in_portfolio": true,
       "total": 2,
       "material": 0,
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -0.2,
-        "vol_ratio": 0.52
+        "pct_1d": -0.97,
+        "vol_ratio": 0.78
       }
     },
     {
-      "symbol": "ASTRAL",
-      "name": "Astral",
-      "sector": "Building products",
-      "in_portfolio": true,
+      "symbol": "BHARTIARTL",
+      "name": "Bharti Airtel",
+      "sector": "Telecom",
+      "in_portfolio": false,
       "total": 1,
       "material": 0,
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -0.08,
-        "vol_ratio": 1.01
+        "pct_1d": 0.48,
+        "vol_ratio": 0.57
       }
     },
     {
@@ -236,31 +144,31 @@
       }
     },
     {
-      "symbol": "INFY",
-      "name": "Infosys",
-      "sector": "IT services",
-      "in_portfolio": true,
-      "total": 1,
-      "material": 0,
-      "categories": {},
-      "top": null,
-      "price": {
-        "pct_1d": -0.33,
-        "vol_ratio": 0.45
-      }
-    },
-    {
-      "symbol": "MARUTI",
-      "name": "Maruti Suzuki India",
-      "sector": "Automobiles",
+      "symbol": "KPIL",
+      "name": "Kalpataru Projects International",
+      "sector": "Engineering and construction",
       "in_portfolio": false,
       "total": 1,
       "material": 0,
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -1.31,
-        "vol_ratio": 0.88
+        "pct_1d": -0.05,
+        "vol_ratio": 0.48
+      }
+    },
+    {
+      "symbol": "ULTRACEMCO",
+      "name": "UltraTech Cement",
+      "sector": "Cement",
+      "in_portfolio": true,
+      "total": 1,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.2,
+        "vol_ratio": 0.52
       }
     },
     {
@@ -275,6 +183,34 @@
       "price": {
         "pct_1d": 0.53,
         "vol_ratio": 0.56
+      }
+    },
+    {
+      "symbol": "ASTRAL",
+      "name": "Astral",
+      "sector": "Building products",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.08,
+        "vol_ratio": 1.01
+      }
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "name": "Bajaj Finance",
+      "sector": "Consumer lending",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 3.36,
+        "vol_ratio": 1.21
       }
     },
     {
@@ -334,6 +270,20 @@
       }
     },
     {
+      "symbol": "INFY",
+      "name": "Infosys",
+      "sector": "IT services",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.33,
+        "vol_ratio": 0.45
+      }
+    },
+    {
       "symbol": "KEI",
       "name": "KEI Industries",
       "sector": "Wires and cables",
@@ -359,6 +309,20 @@
       "price": {
         "pct_1d": -1.25,
         "vol_ratio": 0.99
+      }
+    },
+    {
+      "symbol": "MARUTI",
+      "name": "Maruti Suzuki India",
+      "sector": "Automobiles",
+      "in_portfolio": false,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -1.31,
+        "vol_ratio": 0.88
       }
     },
     {
@@ -401,6 +365,20 @@
       "price": {
         "pct_1d": -2.18,
         "vol_ratio": 1.1
+      }
+    },
+    {
+      "symbol": "SBIN",
+      "name": "State Bank of India",
+      "sector": "Public-sector banking",
+      "in_portfolio": false,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.6,
+        "vol_ratio": 1.12
       }
     },
     {

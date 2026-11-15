@@ -1,0 +1,34 @@
+{
+  "key": "POLYCAB",
+  "kind": "company",
+  "symbol": "POLYCAB",
+  "headline": "2 contacts worked at Polycab",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p22",
+      "name": "Kavita Pillai",
+      "headline": "Treasury and cost of capital, cables sector",
+      "strength": 4,
+      "link": "worked_at_company",
+      "why": "Worked at Polycab India 2009-2020 as Head, Treasury",
+      "evidence": [
+        "Polycab India 2009-2020, Head, Treasury"
+      ],
+      "score": 5.9
+    },
+    {
+      "person_id": "p06",
+      "name": "Sunita Reddy",
+      "headline": "Cables and wires channel and exports specialist",
+      "strength": 2,
+      "link": "worked_at_company",
+      "why": "Worked at Polycab India 2011-2018 as Head, Export Markets",
+      "evidence": [
+        "Polycab India 2011-2018, Head, Export Markets"
+      ],
+      "score": 4.7
+    }
+  ],
+  "note": null
+}

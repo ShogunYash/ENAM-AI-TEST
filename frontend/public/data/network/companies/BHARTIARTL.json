@@ -1,0 +1,22 @@
+{
+  "key": "BHARTIARTL",
+  "kind": "company",
+  "symbol": "BHARTIARTL",
+  "headline": "1 contact worked at Bharti Airtel",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p30",
+      "name": "Shalini Oberoi",
+      "headline": "Enterprise telecom and connectivity",
+      "strength": 2,
+      "link": "worked_at_company",
+      "why": "Worked at Bharti Airtel 2008-2020 as Head, Enterprise Business",
+      "evidence": [
+        "Bharti Airtel 2008-2020, Head, Enterprise Business"
+      ],
+      "score": 4.7
+    }
+  ],
+  "note": null
+}

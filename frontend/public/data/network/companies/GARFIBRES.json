@@ -1,0 +1,58 @@
+{
+  "key": "GARFIBRES",
+  "kind": "company",
+  "symbol": "GARFIBRES",
+  "headline": "1 contact worked at Garware Technical Fibres",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p35",
+      "name": "Rajeev Menon",
+      "headline": "Technical textiles R&D and exports",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Worked at Garware Technical Fibres 2009-2022 as Head, R&D",
+      "evidence": [
+        "Garware Technical Fibres 2009-2022, Head, R&D"
+      ],
+      "score": 5.3
+    },
+    {
+      "person_id": "p17",
+      "name": "Gaurav Sethi",
+      "headline": "Large-deal delivery head, IT services",
+      "strength": 5,
+      "link": "sector_expert",
+      "why": "bank technology expert (large-deal delivery head, it services); no direct tie to Garware Technical Fibres",
+      "evidence": [
+        "expertise: bank technology"
+      ],
+      "score": 4.0
+    },
+    {
+      "person_id": "p02",
+      "name": "Arjun Rao",
+      "headline": "Former CISO and technology risk lead",
+      "strength": 3,
+      "link": "sector_expert",
+      "why": "technology risk expert (former ciso and technology risk lead); no direct tie to Garware Technical Fibres",
+      "evidence": [
+        "expertise: technology risk"
+      ],
+      "score": 3.0
+    },
+    {
+      "person_id": "p16",
+      "name": "Harsh Vardhan",
+      "headline": "Former CTO of a consumer lender",
+      "strength": 3,
+      "link": "sector_expert",
+      "why": "technology risk expert (former cto of a consumer lender); no direct tie to Garware Technical Fibres",
+      "evidence": [
+        "expertise: technology risk"
+      ],
+      "score": 3.0
+    }
+  ],
+  "note": null
+}

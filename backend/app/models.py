@@ -416,3 +416,104 @@ class AskResponse(Model):
     claims: list[Claim]
     answerable: bool = Field(default=True, description="False when the evidence on screen does not contain the answer, "
                                                        "or no model could be reached; `answer` then says so plainly.")
+
+
+# ───────────────────────────── Network (the investor's own contacts) ─────────────────────────────
+# Everything below describes PEOPLE. The demo network is SYNTHETIC (`synthetic: true`); see docs/ARCHITECTURE.md for
+# how real profile data and consent would be handled. Matches are derived by rules from the facts listed in `evidence`.
+NetworkLink = Literal["worked_at_company", "overlapped_with_person", "same_school", "sector_expert"]
+
+
+class NetworkJob(Model):
+    org: str
+    nse_symbol: str | None = Field(description="NSE symbol when `org` is a company FINN tracks, else null")
+    role: str
+    start_year: int
+    end_year: int | None = Field(description="null = current job")
+
+
+class NetworkEdu(Model):
+    school: str
+    degree: str | None
+    year: int | None
+
+
+class NetworkRelationship(Model):
+    strength: int = Field(ge=1, le=5, description="1 = acquaintance, 5 = close, trusted contact")
+    how_met: str
+    last_contact: str = Field(description="YYYY-MM-DD")
+
+
+class NetworkPerson(Model):
+    id: str
+    name: str
+    headline: str
+    city: str | None
+    jobs: list[NetworkJob]
+    education: list[NetworkEdu]
+    expertise: list[str]
+    relationship: NetworkRelationship
+    synthetic: bool = Field(default=True, description="True for the demo network; the UI says so")
+
+
+class PersonMatch(Model):
+    person_id: str
+    name: str
+    headline: str
+    strength: int = Field(description="relationship strength 1-5")
+    link: NetworkLink
+    why: str = Field(max_length=140, description="One line the investor can act on")
+    evidence: list[str] = Field(description="The facts the match rests on, e.g. 'Bajaj Finance 2014-2019, credit risk'")
+    score: float
+
+
+class NetworkInsight(Model):
+    key: str = Field(description="filing id for management_change / material_event, NSE symbol for company")
+    kind: Literal["management_change", "material_event", "company"]
+    symbol: str
+    headline: str = Field(max_length=90, description="e.g. '2 contacts overlapped with Prashant Verma'")
+    subject: str | None = Field(description="The person in the filing, when there is one")
+    matches: list[PersonMatch]
+    note: str | None = Field(default=None, description="Honest limit, e.g. 'The filing gives no career history, so this "
+                                                      "matches on the employer only'")
+
+
+class WarmNudge(Model):
+    person_id: str
+    name: str
+    headline: str
+    last_contact: str
+    days_since: int
+    symbol: str
+    trigger: str = Field(description="Why now, e.g. 'Bajaj Finance: Q2 FY27 PAT +29% YoY'")
+    filing_id: str | None
+    opener: str = Field(max_length=200, description="A natural first line for reconnecting")
+
+
+class ExpertiseMember(Model):
+    person_id: str
+    name: str
+    strength: int
+
+
+class ExpertiseTheme(Model):
+    theme: str
+    members: list[ExpertiseMember]
+    companies: list[str] = Field(description="Tracked NSE symbols in this theme")
+
+
+class AgentStep(Model):
+    tool: str
+    input: str
+    summary: str
+
+
+class NetworkAskRequest(Model):
+    question: str
+
+
+class NetworkAskResponse(Model):
+    answer: str
+    matches: list[PersonMatch]
+    steps: list[AgentStep] = Field(description="The tool calls the agent made, shown to the user")
+    answerable: bool = True

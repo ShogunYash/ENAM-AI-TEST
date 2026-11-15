@@ -1,0 +1,34 @@
+{
+  "key": "NESTLEIND",
+  "kind": "company",
+  "symbol": "NESTLEIND",
+  "headline": "1 contact worked at Nestle",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p36",
+      "name": "Smita Patwardhan",
+      "headline": "FMCG rural distribution",
+      "strength": 4,
+      "link": "worked_at_company",
+      "why": "Worked at Nestle India 2018-2025 as Director, Sales",
+      "evidence": [
+        "Nestle India 2018-2025, Director, Sales"
+      ],
+      "score": 5.9
+    },
+    {
+      "person_id": "p09",
+      "name": "Anand Gupta",
+      "headline": "Consumer and paints industry veteran",
+      "strength": 4,
+      "link": "sector_expert",
+      "why": "FMCG distribution expert (consumer and paints industry veteran); no direct tie to Nestle",
+      "evidence": [
+        "expertise: FMCG distribution"
+      ],
+      "score": 3.5
+    }
+  ],
+  "note": null
+}

@@ -3,38 +3,16 @@
   "name": "Bajaj Finance",
   "window": {
     "label": "3d",
-    "start": "2026-11-11T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-11-12T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
   "counts": {
-    "total": 1,
-    "rule_classified": 1,
+    "total": 0,
+    "rule_classified": 0,
     "llm_classified": 0
   },
-  "important": [
-    {
-      "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
-      "symbol": "BAJFINANCE",
-      "company_name": "Bajaj Finance Ltd",
-      "filed_at": "2026-11-11T17:06:59.713000+05:30",
-      "headline": "Outcome of QIP 2026 - Special Committee Meeting",
-      "so_what": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price.",
-      "category": "fund_raise",
-      "category_source": "rule",
-      "priority": "high",
-      "score": 8.22,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
-      "price_reaction": {
-        "pct_1d": 3.36,
-        "vol_ratio": 1.21
-      },
-      "enrichment": {
-        "type": "oneliner",
-        "text": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price."
-      }
-    }
-  ],
+  "important": [],
   "routine": {
     "count": 0,
     "by_category": {},

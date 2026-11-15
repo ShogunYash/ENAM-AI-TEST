@@ -1,0 +1,46 @@
+{
+  "key": "KPIL",
+  "kind": "company",
+  "symbol": "KPIL",
+  "headline": "3 contacts worked at Kalpataru Projects International",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p32",
+      "name": "Pallavi Joshi",
+      "headline": "Construction risk and project finance",
+      "strength": 4,
+      "link": "worked_at_company",
+      "why": "Worked at Kalpataru Projects International 2017-2024 as Head, Risk and Contracts",
+      "evidence": [
+        "Kalpataru Projects International 2017-2024, Head, Risk and Contracts"
+      ],
+      "score": 5.9
+    },
+    {
+      "person_id": "p08",
+      "name": "Pooja Nair",
+      "headline": "Infrastructure projects and EPC finance",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Worked at Kalpataru Projects International 2013-2021 as Head, Project Finance",
+      "evidence": [
+        "Kalpataru Projects International 2013-2021, Head, Project Finance"
+      ],
+      "score": 5.3
+    },
+    {
+      "person_id": "p23",
+      "name": "Tushar Kulkarni",
+      "headline": "Transmission EPC executive",
+      "strength": 2,
+      "link": "worked_at_company",
+      "why": "Worked at Kalpataru Projects International 2007-2019 as Head, Transmission",
+      "evidence": [
+        "Kalpataru Projects International 2007-2019, Head, Transmission"
+      ],
+      "score": 4.7
+    }
+  ],
+  "note": null
+}

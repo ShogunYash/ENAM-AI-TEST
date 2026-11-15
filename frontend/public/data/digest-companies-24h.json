@@ -1,92 +1,11 @@
 {
   "window": {
     "label": "24h",
-    "start": "2026-11-13T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-11-14T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
   "companies": [
-    {
-      "symbol": "HDFCBANK",
-      "name": "HDFC Bank",
-      "sector": "Private-sector banking",
-      "in_portfolio": true,
-      "total": 1,
-      "material": 1,
-      "categories": {
-        "management_change": 1
-      },
-      "top": {
-        "id": "44ba0161-d9e4-4bd1-aae7-eb3bc46319dd",
-        "symbol": "HDFCBANK",
-        "company_name": "HDFC Bank Ltd",
-        "filed_at": "2026-11-13T16:30:11.850000+05:30",
-        "headline": "Re-appointment of Mr. V. Srinivasa Rangan as the Whole-time Director(designated as Executive Director) of HDFC Bank Limited.",
-        "so_what": null,
-        "category": "management_change",
-        "category_source": "rule",
-        "priority": "medium",
-        "score": 6.802,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
-        "price_reaction": null,
-        "enrichment": {
-          "type": "management",
-          "person": "Mr. V. Srinivasa Rangan",
-          "role": "Whole-time Director (designated as Executive Director)",
-          "change": "appointed",
-          "background": [],
-          "links": [],
-          "effective": "2026-11-23",
-          "background_source": "none"
-        }
-      },
-      "price": {
-        "pct_1d": 0.71,
-        "vol_ratio": 1.0
-      }
-    },
-    {
-      "symbol": "HINDUNILVR",
-      "name": "Hindustan Unilever",
-      "sector": "FMCG",
-      "in_portfolio": false,
-      "total": 1,
-      "material": 0,
-      "categories": {},
-      "top": null,
-      "price": {
-        "pct_1d": 0.96,
-        "vol_ratio": 0.74
-      }
-    },
-    {
-      "symbol": "RELIANCE",
-      "name": "Reliance Industries",
-      "sector": "Energy and diversified businesses",
-      "in_portfolio": true,
-      "total": 1,
-      "material": 0,
-      "categories": {},
-      "top": null,
-      "price": {
-        "pct_1d": 0.32,
-        "vol_ratio": 0.64
-      }
-    },
-    {
-      "symbol": "ULTRACEMCO",
-      "name": "UltraTech Cement",
-      "sector": "Cement",
-      "in_portfolio": true,
-      "total": 1,
-      "material": 0,
-      "categories": {},
-      "top": null,
-      "price": {
-        "pct_1d": -0.2,
-        "vol_ratio": 0.52
-      }
-    },
     {
       "symbol": "ASIANPAINT",
       "name": "Asian Paints",
@@ -197,6 +116,34 @@
       "price": {
         "pct_1d": -1.77,
         "vol_ratio": 0.43
+      }
+    },
+    {
+      "symbol": "HDFCBANK",
+      "name": "HDFC Bank",
+      "sector": "Private-sector banking",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.71,
+        "vol_ratio": 1.0
+      }
+    },
+    {
+      "symbol": "HINDUNILVR",
+      "name": "Hindustan Unilever",
+      "sector": "FMCG",
+      "in_portfolio": false,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.96,
+        "vol_ratio": 0.74
       }
     },
     {
@@ -340,6 +287,20 @@
       }
     },
     {
+      "symbol": "RELIANCE",
+      "name": "Reliance Industries",
+      "sector": "Energy and diversified businesses",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": 0.32,
+        "vol_ratio": 0.64
+      }
+    },
+    {
       "symbol": "SBIN",
       "name": "State Bank of India",
       "sector": "Public-sector banking",
@@ -407,6 +368,20 @@
       "price": {
         "pct_1d": -0.97,
         "vol_ratio": 0.78
+      }
+    },
+    {
+      "symbol": "ULTRACEMCO",
+      "name": "UltraTech Cement",
+      "sector": "Cement",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.2,
+        "vol_ratio": 0.52
       }
     }
   ]

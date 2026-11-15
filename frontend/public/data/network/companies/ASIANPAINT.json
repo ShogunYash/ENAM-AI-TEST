@@ -1,0 +1,34 @@
+{
+  "key": "ASIANPAINT",
+  "kind": "company",
+  "symbol": "ASIANPAINT",
+  "headline": "2 contacts worked at Asian Paints",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p09",
+      "name": "Anand Gupta",
+      "headline": "Consumer and paints industry veteran",
+      "strength": 4,
+      "link": "worked_at_company",
+      "why": "Worked at Asian Paints 2005-2016 as Regional Sales Director",
+      "evidence": [
+        "Asian Paints 2005-2016, Regional Sales Director"
+      ],
+      "score": 5.4
+    },
+    {
+      "person_id": "p25",
+      "name": "Mohit Bansal",
+      "headline": "Paints supply chain and raw materials",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Worked at Asian Paints 2007-2018 as Head, Supply Chain",
+      "evidence": [
+        "Asian Paints 2007-2018, Head, Supply Chain"
+      ],
+      "score": 5.3
+    }
+  ],
+  "note": null
+}

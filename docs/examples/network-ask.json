@@ -1,0 +1,42 @@
+{
+  "answer": "Start with Meera Iyer (Worked at Bajaj Finance 2014-2020 as Head of Credit Risk).",
+  "matches": [
+    {
+      "person_id": "p01",
+      "name": "Meera Iyer",
+      "headline": "Ex-credit risk head, consumer lending",
+      "strength": 5,
+      "link": "worked_at_company",
+      "why": "Worked at Bajaj Finance 2014-2020 as Head of Credit Risk",
+      "evidence": [
+        "Bajaj Finance 2014-2020, Head of Credit Risk"
+      ],
+      "score": 6.5
+    },
+    {
+      "person_id": "p15",
+      "name": "Deepika Menon",
+      "headline": "Collections and rural consumer finance",
+      "strength": 4,
+      "link": "worked_at_company",
+      "why": "Worked at Bajaj Finance 2010-2023 as Head, Collections",
+      "evidence": [
+        "Bajaj Finance 2010-2023, Head, Collections"
+      ],
+      "score": 5.9
+    }
+  ],
+  "steps": [
+    {
+      "tool": "plan",
+      "input": "Who knows Bajaj Finance?",
+      "summary": "use company_contacts(BAJFINANCE)"
+    },
+    {
+      "tool": "company_contacts",
+      "input": "BAJFINANCE",
+      "summary": "2 contacts worked at Bajaj Finance"
+    }
+  ],
+  "answerable": true
+}

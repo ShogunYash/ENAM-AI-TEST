@@ -3,13 +3,13 @@
   "name": "Reliance Industries",
   "window": {
     "label": "30d",
-    "start": "2026-10-15T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-10-16T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
   "counts": {
-    "total": 20,
-    "rule_classified": 15,
+    "total": 19,
+    "rule_classified": 14,
     "llm_classified": 5
   },
   "important": [
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.497,
+      "score": 0.36,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/880087f6-7ecc-40a9-8cac-de48d4616b25.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -86,7 +86,7 @@
       "category": "m_and_a",
       "category_source": "llm",
       "priority": "high",
-      "score": 0.316,
+      "score": 0.229,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bc9fc5d1-9c04-4a88-b807-79d27dd63697.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -104,7 +104,7 @@
       "category": "fund_raise",
       "category_source": "llm",
       "priority": "high",
-      "score": 0.198,
+      "score": 0.143,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/70bfc361-3c9a-45d0-8240-e1b544debd01.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -122,7 +122,7 @@
       "category": "fund_raise",
       "category_source": "llm",
       "priority": "high",
-      "score": 0.099,
+      "score": 0.071,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0056a3dc-6357-48ff-a037-f1b206624331.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -132,13 +132,13 @@
     }
   ],
   "routine": {
-    "count": 16,
+    "count": 15,
     "by_category": {
       "investor_meetings": 3,
       "credit_rating": 2,
       "earnings_call": 2,
       "results": 4,
-      "unclassified": 4,
+      "unclassified": 3,
       "press_release": 1
     },
     "items": [
@@ -152,7 +152,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.923,
+        "score": 0.669,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3f614a9e-94b0-42ef-8145-ba0055ba7be5.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -167,8 +167,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.747,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/55f9d4f5-8638-4669-abdb-7cc4127221fc.pdf",
+        "score": 0.541,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/55f9d4f5-8638-4669-abdb-7cc4127221fc.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -182,7 +182,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.185,
+        "score": 0.134,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bab324f6-6fab-42fc-8b79-a3881f4fb7c7.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -197,7 +197,7 @@
         "category": "credit_rating",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.354,
+        "score": 0.257,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9a4b00d7-4978-4c75-beb2-78403163cb8e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -212,7 +212,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.121,
+        "score": 0.087,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8e997741-4d35-4188-933a-cf020fb9c816.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -227,7 +227,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.092,
+        "score": 0.066,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0f665e67-b13f-4624-9278-3f4183d817eb.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -242,7 +242,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.111,
+        "score": 0.08,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0dc8ebe7-5e2d-4946-85ee-1e536c461a71.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -257,7 +257,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.111,
+        "score": 0.08,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/aacc5fc7-25e5-4901-b682-d9911fe1d21b.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -272,7 +272,7 @@
         "category": "results",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.11,
+        "score": 0.08,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9d4cb3ed-a184-4662-91fc-f4112ce354b7.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -287,7 +287,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.055,
+        "score": 0.04,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/abf880ad-357c-4ff9-b6d7-83c1dcf59cba.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -317,7 +317,7 @@
         "category": "press_release",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.014,
+        "score": 0.01,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3667a6e5-6d63-45c2-b94e-d09043e401b4.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -332,7 +332,7 @@
         "category": "credit_rating",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.014,
+        "score": 0.01,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/77e3ec52-056d-4103-8388-14b48756f70d.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -364,21 +364,6 @@
         "priority": "hidden",
         "score": 0.0,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/36a51bd7-b43c-414a-8984-3139d2d4723e.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "73ed1635-1d86-46cd-8cf6-3bcc6ad2caf0",
-        "symbol": "RELIANCE",
-        "company_name": "Reliance Industries Ltd",
-        "filed_at": "2026-10-15T18:06:34.657000+05:30",
-        "headline": "The newspaper clippings of the advertisement on the captioned subject published today i.e., October 15, 2026 in the newspapers viz. The Indian Express (English), Financial Express (English), ....",
-        "so_what": null,
-        "category": "unclassified",
-        "category_source": "rule",
-        "priority": "hidden",
-        "score": 0.0,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/77033afd-c77b-43c9-9593-18094bbd1322.pdf",
         "price_reaction": null,
         "enrichment": null
       }

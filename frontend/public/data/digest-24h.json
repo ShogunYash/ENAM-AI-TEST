@@ -1,79 +1,21 @@
 {
   "window": {
     "label": "24h",
-    "start": "2026-11-13T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-11-14T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
   "needs_you": [],
-  "also_material": [
-    {
-      "id": "44ba0161-d9e4-4bd1-aae7-eb3bc46319dd",
-      "symbol": "HDFCBANK",
-      "company_name": "HDFC Bank Ltd",
-      "filed_at": "2026-11-13T16:30:11.850000+05:30",
-      "headline": "Re-appointment of Mr. V. Srinivasa Rangan as the Whole-time Director(designated as Executive Director) of HDFC Bank Limited.",
-      "so_what": null,
-      "category": "management_change",
-      "category_source": "rule",
-      "priority": "medium",
-      "score": 6.802,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
-      "price_reaction": null,
-      "enrichment": {
-        "type": "management",
-        "person": "Mr. V. Srinivasa Rangan",
-        "role": "Whole-time Director (designated as Executive Director)",
-        "change": "appointed",
-        "background": [],
-        "links": [],
-        "effective": "2026-11-23",
-        "background_source": "none"
-      }
-    }
-  ],
+  "also_material": [],
   "routine": {
-    "count": 2,
-    "by_category": {
-      "investor_meetings": 2
-    },
-    "items": [
-      {
-        "id": "5fd0fe11-f12c-44ab-8be0-16d1748e154e",
-        "symbol": "RELIANCE",
-        "company_name": "Reliance Industries Ltd",
-        "filed_at": "2026-11-13T18:23:17.417000+05:30",
-        "headline": "Please note that the Company executives will be participating in the Institutional Investors'' Meeting - Morgan Stanley 25th Annual Asia-Pacific Summit, scheduled to be held on November ....",
-        "so_what": null,
-        "category": "investor_meetings",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.923,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3f614a9e-94b0-42ef-8145-ba0055ba7be5.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "8213af8b-74ba-4762-a8d6-8447a2efb9c7",
-        "symbol": "ULTRACEMCO",
-        "company_name": "UltraTech Cement Ltd",
-        "filed_at": "2026-11-13T15:14:47.833000+05:30",
-        "headline": "Intimation regarding Investor meet of UltraTech Cement Limited",
-        "so_what": null,
-        "category": "investor_meetings",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.896,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d7982c18-e8b9-485f-8165-a8333b0d421e.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      }
-    ]
+    "count": 0,
+    "by_category": {},
+    "items": []
   },
   "alerts": [],
   "counts": {
-    "total": 3,
-    "rule_classified": 3,
+    "total": 0,
+    "rule_classified": 0,
     "llm_classified": 0
   }
 }

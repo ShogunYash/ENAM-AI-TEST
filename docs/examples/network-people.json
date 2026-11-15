@@ -1,0 +1,1440 @@
+[
+  {
+    "id": "p01",
+    "name": "Meera Iyer",
+    "headline": "Ex-credit risk head, consumer lending",
+    "city": "Mumbai",
+    "jobs": [
+      {
+        "org": "Bajaj Finance",
+        "nse_symbol": "BAJFINANCE",
+        "role": "Head of Credit Risk",
+        "start_year": 2014,
+        "end_year": 2020
+      },
+      {
+        "org": "Axis Bank",
+        "nse_symbol": null,
+        "role": "Chief Risk Officer, Retail",
+        "start_year": 2020,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "IIM Ahmedabad",
+        "degree": "PGDM",
+        "year": 2006
+      }
+    ],
+    "expertise": [
+      "consumer lending",
+      "credit risk",
+      "NBFC"
+    ],
+    "relationship": {
+      "strength": 5,
+      "how_met": "Co-invested in a fintech round, 2022",
+      "last_contact": "2026-10-28"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p02",
+    "name": "Arjun Rao",
+    "headline": "Former CISO and technology risk lead",
+    "city": "Bengaluru",
+    "jobs": [
+      {
+        "org": "Bajaj Finance",
+        "nse_symbol": "BAJFINANCE",
+        "role": "Deputy CISO",
+        "start_year": 2016,
+        "end_year": 2021
+      },
+      {
+        "org": "Infosys",
+        "nse_symbol": "INFY",
+        "role": "Head of Cyber Risk",
+        "start_year": 2021,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "IIT Delhi",
+        "degree": "B.Tech",
+        "year": 2005
+      }
+    ],
+    "expertise": [
+      "cybersecurity",
+      "technology risk",
+      "NBFC"
+    ],
+    "relationship": {
+      "strength": 3,
+      "how_met": "IIT Delhi alumni dinner, 2024",
+      "last_contact": "2026-05-02"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p03",
+    "name": "Kabir Malhotra",
+    "headline": "Retired private-banking executive",
+    "city": "Mumbai",
+    "jobs": [
+      {
+        "org": "HDFC Bank",
+        "nse_symbol": "HDFCBANK",
+        "role": "Group Head, Business Banking",
+        "start_year": 2003,
+        "end_year": 2022
+      }
+    ],
+    "education": [
+      {
+        "school": "SRCC",
+        "degree": "B.Com",
+        "year": 1998
+      }
+    ],
+    "expertise": [
+      "private banking",
+      "SME lending",
+      "bank governance"
+    ],
+    "relationship": {
+      "strength": 4,
+      "how_met": "Former client relationship, 2019",
+      "last_contact": "2026-08-14"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p04",
+    "name": "Nandini Shah",
+    "headline": "Ex-ICICI treasury and capital markets",
+    "city": "Mumbai",
+    "jobs": [
+      {
+        "org": "ICICI Bank",
+        "nse_symbol": "ICICIBANK",
+        "role": "Head, Capital Markets",
+        "start_year": 2009,
+        "end_year": 2018
+      },
+      {
+        "org": "Kotak Investment Banking",
+        "nse_symbol": null,
+        "role": "Managing Director",
+        "start_year": 2018,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "ISB",
+        "degree": "PGP",
+        "year": 2008
+      }
+    ],
+    "expertise": [
+      "capital markets",
+      "QIP and fund raising",
+      "bank treasury"
+    ],
+    "relationship": {
+      "strength": 4,
+      "how_met": "Worked on a QIP together, 2023",
+      "last_contact": "2026-07-19"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p05",
+    "name": "Vikram Desai",
+    "headline": "Electronics manufacturing operator",
+    "city": "Noida",
+    "jobs": [
+      {
+        "org": "Dixon Technologies",
+        "nse_symbol": "DIXON",
+        "role": "VP Operations",
+        "start_year": 2012,
+        "end_year": 2019
+      },
+      {
+        "org": "Foxconn India",
+        "nse_symbol": null,
+        "role": "Plant Head",
+        "start_year": 2019,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "BITS Pilani",
+        "degree": "B.E.",
+        "year": 2004
+      }
+    ],
+    "expertise": [
+      "electronics manufacturing",
+      "semiconductors",
+      "capex and plant ramp-up"
+    ],
+    "relationship": {
+      "strength": 3,
+      "how_met": "Plant visit during a diligence, 2025",
+      "last_contact": "2026-03-11"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p06",
+    "name": "Sunita Reddy",
+    "headline": "Cables and wires channel and exports specialist",
+    "city": "Hyderabad",
+    "jobs": [
+      {
+        "org": "Polycab India",
+        "nse_symbol": "POLYCAB",
+        "role": "Head, Export Markets",
+        "start_year": 2011,
+        "end_year": 2018
+      },
+      {
+        "org": "KEI Industries",
+        "nse_symbol": "KEI",
+        "role": "VP Sales",
+        "start_year": 2018,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "NIT Warangal",
+        "degree": "B.Tech",
+        "year": 2003
+      }
+    ],
+    "expertise": [
+      "wires and cables",
+      "exports",
+      "channel distribution"
+    ],
+    "relationship": {
+      "strength": 2,
+      "how_met": "Industry conference, 2023",
+      "last_contact": "2026-01-20"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p07",
+    "name": "Rohan Kapoor",
+    "headline": "Ex-Tata group strategy and M&A",
+    "city": "Mumbai",
+    "jobs": [
+      {
+        "org": "Tata Steel",
+        "nse_symbol": "TATASTEEL",
+        "role": "GM, Corporate Strategy and M&A",
+        "start_year": 2010,
+        "end_year": 2017
+      },
+      {
+        "org": "Titan Company",
+        "nse_symbol": "TITAN",
+        "role": "Head of Corporate Development",
+        "start_year": 2017,
+        "end_year": 2023
+      }
+    ],
+    "education": [
+      {
+        "school": "IIM Ahmedabad",
+        "degree": "PGDM",
+        "year": 2009
+      },
+      {
+        "school": "IIT Bombay",
+        "degree": "B.Tech",
+        "year": 2007
+      }
+    ],
+    "expertise": [
+      "M&A and integration",
+      "corporate strategy",
+      "steel and metals"
+    ],
+    "relationship": {
+      "strength": 5,
+      "how_met": "Batchmate, IIM Ahmedabad",
+      "last_contact": "2026-09-30"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p08",
+    "name": "Pooja Nair",
+    "headline": "Infrastructure projects and EPC finance",
+    "city": "Pune",
+    "jobs": [
+      {
+        "org": "Kalpataru Projects International",
+        "nse_symbol": "KPIL",
+        "role": "Head, Project Finance",
+        "start_year": 2013,
+        "end_year": 2021
+      },
+      {
+        "org": "L&T",
+        "nse_symbol": "LT",
+        "role": "VP, Project Controls",
+        "start_year": 2021,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "ICAI",
+        "degree": "Chartered Accountant",
+        "year": 2007
+      }
+    ],
+    "expertise": [
+      "EPC and infrastructure",
+      "project finance",
+      "transmission and power"
+    ],
+    "relationship": {
+      "strength": 3,
+      "how_met": "Co-lender on a project, 2022",
+      "last_contact": "2026-04-05"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p09",
+    "name": "Anand Gupta",
+    "headline": "Consumer and paints industry veteran",
+    "city": "Delhi",
+    "jobs": [
+      {
+        "org": "Asian Paints",
+        "nse_symbol": "ASIANPAINT",
+        "role": "Regional Sales Director",
+        "start_year": 2005,
+        "end_year": 2016
+      },
+      {
+        "org": "Hindustan Unilever",
+        "nse_symbol": "HINDUNILVR",
+        "role": "Category Head",
+        "start_year": 2016,
+        "end_year": 2024
+      }
+    ],
+    "education": [
+      {
+        "school": "IIT Delhi",
+        "degree": "B.Tech",
+        "year": 2001
+      }
+    ],
+    "expertise": [
+      "paints and coatings",
+      "FMCG distribution",
+      "consumer demand"
+    ],
+    "relationship": {
+      "strength": 4,
+      "how_met": "IIT Delhi batchmate",
+      "last_contact": "2026-06-22"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p10",
+    "name": "Farah Khan",
+    "headline": "Auto industry supply chain and policy",
+    "city": "Gurugram",
+    "jobs": [
+      {
+        "org": "Maruti Suzuki",
+        "nse_symbol": "MARUTI",
+        "role": "GM, Supplier Development",
+        "start_year": 2008,
+        "end_year": 2019
+      },
+      {
+        "org": "Mahindra Auto",
+        "nse_symbol": null,
+        "role": "VP Supply Chain",
+        "start_year": 2019,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "SRCC",
+        "degree": "B.Com",
+        "year": 2000
+      }
+    ],
+    "expertise": [
+      "auto components",
+      "supply chain",
+      "supplier governance"
+    ],
+    "relationship": {
+      "strength": 2,
+      "how_met": "Referred by a portfolio manager, 2024",
+      "last_contact": "2025-12-09"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p11",
+    "name": "Lakshmi Venkatesh",
+    "headline": "Ex-retail liabilities head, private-sector bank",
+    "city": "Chennai",
+    "jobs": [
+      {
+        "org": "HDFC Bank",
+        "nse_symbol": "HDFCBANK",
+        "role": "Head, Retail Liabilities",
+        "start_year": 2004,
+        "end_year": 2019
+      },
+      {
+        "org": "Finwise Labs",
+        "nse_symbol": null,
+        "role": "Chief Business Officer",
+        "start_year": 2019,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "SRCC",
+        "degree": "B.Com",
+        "year": 1999
+      }
+    ],
+    "expertise": [
+      "private banking",
+      "retail deposits",
+      "bank governance"
+    ],
+    "relationship": {
+      "strength": 3,
+      "how_met": "Advisory board of a fintech, 2021",
+      "last_contact": "2026-02-10"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p12",
+    "name": "Imran Siddiqui",
+    "headline": "SME and rural lending operator",
+    "city": "Pune",
+    "jobs": [
+      {
+        "org": "HDFC Bank",
+        "nse_symbol": "HDFCBANK",
+        "role": "Zonal Head, SME Lending",
+        "start_year": 2006,
+        "end_year": 2021
+      },
+      {
+        "org": "Mudra Capital",
+        "nse_symbol": null,
+        "role": "Chief Executive",
+        "start_year": 2021,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "IIM Bangalore",
+        "degree": "PGP",
+        "year": 2005
+      }
+    ],
+    "expertise": [
+      "SME lending",
+      "rural lending",
+      "NBFC"
+    ],
+    "relationship": {
+      "strength": 4,
+      "how_met": "Co-invested in a small-business lender, 2023",
+      "last_contact": "2026-06-01"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p13",
+    "name": "Tara Bhatt",
+    "headline": "Retail credit policy specialist",
+    "city": "Mumbai",
+    "jobs": [
+      {
+        "org": "ICICI Bank",
+        "nse_symbol": "ICICIBANK",
+        "role": "Head, Retail Credit Policy",
+        "start_year": 2005,
+        "end_year": 2020
+      },
+      {
+        "org": "Verity Analytics",
+        "nse_symbol": null,
+        "role": "Partner",
+        "start_year": 2020,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "ISB",
+        "degree": "PGP",
+        "year": 2004
+      }
+    ],
+    "expertise": [
+      "credit risk",
+      "consumer lending",
+      "bank governance"
+    ],
+    "relationship": {
+      "strength": 2,
+      "how_met": "Panel at an industry summit, 2024",
+      "last_contact": "2025-12-18"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p14",
+    "name": "Sameer Joshi",
+    "headline": "Wealth and private banking leader",
+    "city": "Mumbai",
+    "jobs": [
+      {
+        "org": "ICICI Bank",
+        "nse_symbol": "ICICIBANK",
+        "role": "Head, Wealth Management",
+        "start_year": 2008,
+        "end_year": 2022
+      },
+      {
+        "org": "Alder Family Office",
+        "nse_symbol": null,
+        "role": "CIO",
+        "start_year": 2022,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "BITS Pilani",
+        "degree": "B.E.",
+        "year": 2002
+      }
+    ],
+    "expertise": [
+      "private banking",
+      "wealth management",
+      "capital markets"
+    ],
+    "relationship": {
+      "strength": 3,
+      "how_met": "Co-investor in a family office deal, 2023",
+      "last_contact": "2026-08-02"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p15",
+    "name": "Deepika Menon",
+    "headline": "Collections and rural consumer finance",
+    "city": "Pune",
+    "jobs": [
+      {
+        "org": "Bajaj Finance",
+        "nse_symbol": "BAJFINANCE",
+        "role": "Head, Collections",
+        "start_year": 2010,
+        "end_year": 2023
+      },
+      {
+        "org": "Ankur Microfinance",
+        "nse_symbol": null,
+        "role": "COO",
+        "start_year": 2023,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "NIT Warangal",
+        "degree": "B.Tech",
+        "year": 2006
+      }
+    ],
+    "expertise": [
+      "consumer lending",
+      "rural lending",
+      "credit risk"
+    ],
+    "relationship": {
+      "strength": 4,
+      "how_met": "Referred by a lender friend, 2022",
+      "last_contact": "2026-09-10"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p16",
+    "name": "Harsh Vardhan",
+    "headline": "Former CTO of a consumer lender",
+    "city": "Pune",
+    "jobs": [
+      {
+        "org": "Bajaj Finance",
+        "nse_symbol": "BAJFINANCE",
+        "role": "Chief Technology Officer",
+        "start_year": 2008,
+        "end_year": 2019
+      },
+      {
+        "org": "Nimbus Systems",
+        "nse_symbol": null,
+        "role": "Founder",
+        "start_year": 2019,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "IIT Delhi",
+        "degree": "B.Tech",
+        "year": 2000
+      }
+    ],
+    "expertise": [
+      "technology risk",
+      "cybersecurity",
+      "NBFC"
+    ],
+    "relationship": {
+      "strength": 3,
+      "how_met": "IIT Delhi alumni dinner, 2024",
+      "last_contact": "2026-04-14"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p17",
+    "name": "Gaurav Sethi",
+    "headline": "Large-deal delivery head, IT services",
+    "city": "Gurugram",
+    "jobs": [
+      {
+        "org": "Tata Consultancy Services",
+        "nse_symbol": "TCS",
+        "role": "Head, Global Delivery",
+        "start_year": 2002,
+        "end_year": 2020
+      },
+      {
+        "org": "Cobalt Digital",
+        "nse_symbol": null,
+        "role": "President",
+        "start_year": 2020,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "IIT Delhi",
+        "degree": "B.Tech",
+        "year": 1999
+      }
+    ],
+    "expertise": [
+      "IT services",
+      "large-deal delivery",
+      "bank technology"
+    ],
+    "relationship": {
+      "strength": 5,
+      "how_met": "IIT Delhi batchmate",
+      "last_contact": "2026-10-20"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p18",
+    "name": "Revathi Krishnan",
+    "headline": "Ex-BFSI vertical head, IT services",
+    "city": "Bengaluru",
+    "jobs": [
+      {
+        "org": "Tata Consultancy Services",
+        "nse_symbol": "TCS",
+        "role": "Vertical Head, Banking",
+        "start_year": 2007,
+        "end_year": 2018
+      },
+      {
+        "org": "Lattice Consulting",
+        "nse_symbol": null,
+        "role": "Managing Partner",
+        "start_year": 2018,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "IIM Bangalore",
+        "degree": "PGP",
+        "year": 2006
+      }
+    ],
+    "expertise": [
+      "IT services",
+      "bank technology",
+      "consumer demand"
+    ],
+    "relationship": {
+      "strength": 2,
+      "how_met": "Conference panel, 2023",
+      "last_contact": "2026-01-30"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p19",
+    "name": "Aditya Bose",
+    "headline": "Enterprise AI and IT consulting",
+    "city": "Pune",
+    "jobs": [
+      {
+        "org": "Infosys",
+        "nse_symbol": "INFY",
+        "role": "Principal Consultant",
+        "start_year": 2005,
+        "end_year": 2018
+      },
+      {
+        "org": "Persistent Systems",
+        "nse_symbol": "PERSISTENT",
+        "role": "Vice President, Digital",
+        "start_year": 2018,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "IIT Bombay",
+        "degree": "B.Tech",
+        "year": 2004
+      }
+    ],
+    "expertise": [
+      "IT services",
+      "enterprise AI",
+      "technology risk"
+    ],
+    "relationship": {
+      "strength": 3,
+      "how_met": "Diligence call for a software investment, 2024",
+      "last_contact": "2026-05-22"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p20",
+    "name": "Neha Agarwal",
+    "headline": "Retail strategy, jewellery and lifestyle",
+    "city": "Bengaluru",
+    "jobs": [
+      {
+        "org": "Titan Company",
+        "nse_symbol": "TITAN",
+        "role": "Head, Retail Strategy",
+        "start_year": 2012,
+        "end_year": 2022
+      },
+      {
+        "org": "Lumen Retail",
+        "nse_symbol": null,
+        "role": "Chief Strategy Officer",
+        "start_year": 2022,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "IIM Ahmedabad",
+        "degree": "PGDM",
+        "year": 2011
+      }
+    ],
+    "expertise": [
+      "retail and jewellery",
+      "consumer demand",
+      "corporate strategy"
+    ],
+    "relationship": {
+      "strength": 4,
+      "how_met": "IIM Ahmedabad junior, mentored since 2020",
+      "last_contact": "2026-07-08"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p21",
+    "name": "Siddharth Rane",
+    "headline": "Steel and cement plant operations",
+    "city": "Jamshedpur",
+    "jobs": [
+      {
+        "org": "Tata Steel",
+        "nse_symbol": "TATASTEEL",
+        "role": "Plant Head, Flat Products",
+        "start_year": 2006,
+        "end_year": 2019
+      },
+      {
+        "org": "UltraTech Cement",
+        "nse_symbol": "ULTRACEMCO",
+        "role": "VP, Operations",
+        "start_year": 2019,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "NIT Jamshedpur",
+        "degree": "B.Tech",
+        "year": 2002
+      }
+    ],
+    "expertise": [
+      "steel and metals",
+      "cement",
+      "capex and plant ramp-up"
+    ],
+    "relationship": {
+      "strength": 3,
+      "how_met": "Plant visit during a steel diligence, 2023",
+      "last_contact": "2026-03-27"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p22",
+    "name": "Kavita Pillai",
+    "headline": "Treasury and cost of capital, cables sector",
+    "city": "Mumbai",
+    "jobs": [
+      {
+        "org": "Polycab India",
+        "nse_symbol": "POLYCAB",
+        "role": "Head, Treasury",
+        "start_year": 2009,
+        "end_year": 2020
+      },
+      {
+        "org": "Ecoplast Cables",
+        "nse_symbol": null,
+        "role": "CFO",
+        "start_year": 2020,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "ICAI",
+        "degree": "Chartered Accountant",
+        "year": 2005
+      }
+    ],
+    "expertise": [
+      "wires and cables",
+      "treasury",
+      "working capital"
+    ],
+    "relationship": {
+      "strength": 4,
+      "how_met": "Co-lender on a working-capital line, 2022",
+      "last_contact": "2026-08-30"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p23",
+    "name": "Tushar Kulkarni",
+    "headline": "Transmission EPC executive",
+    "city": "Gandhinagar",
+    "jobs": [
+      {
+        "org": "Kalpataru Projects International",
+        "nse_symbol": "KPIL",
+        "role": "Head, Transmission",
+        "start_year": 2007,
+        "end_year": 2019
+      },
+      {
+        "org": "Powerline Infra",
+        "nse_symbol": null,
+        "role": "Managing Director",
+        "start_year": 2019,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "BITS Pilani",
+        "degree": "B.E.",
+        "year": 2001
+      }
+    ],
+    "expertise": [
+      "transmission and power",
+      "EPC and infrastructure",
+      "order book"
+    ],
+    "relationship": {
+      "strength": 2,
+      "how_met": "Met at an infrastructure roadshow, 2023",
+      "last_contact": "2026-02-14"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p24",
+    "name": "Anjali Chawla",
+    "headline": "Ex-strategy lead, electronics manufacturing",
+    "city": "Noida",
+    "jobs": [
+      {
+        "org": "Dixon Technologies",
+        "nse_symbol": "DIXON",
+        "role": "Head, Strategy and Investor Relations",
+        "start_year": 2014,
+        "end_year": 2024
+      },
+      {
+        "org": "Orbit Semicon",
+        "nse_symbol": null,
+        "role": "VP, Business Development",
+        "start_year": 2024,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "IIM Bangalore",
+        "degree": "PGP",
+        "year": 2013
+      }
+    ],
+    "expertise": [
+      "electronics manufacturing",
+      "semiconductors",
+      "corporate strategy"
+    ],
+    "relationship": {
+      "strength": 5,
+      "how_met": "Worked together on an investor presentation, 2022",
+      "last_contact": "2026-10-30"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p25",
+    "name": "Mohit Bansal",
+    "headline": "Paints supply chain and raw materials",
+    "city": "Delhi",
+    "jobs": [
+      {
+        "org": "Asian Paints",
+        "nse_symbol": "ASIANPAINT",
+        "role": "Head, Supply Chain",
+        "start_year": 2007,
+        "end_year": 2018
+      },
+      {
+        "org": "Hue Coatings",
+        "nse_symbol": null,
+        "role": "COO",
+        "start_year": 2018,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "IIT Delhi",
+        "degree": "B.Tech",
+        "year": 2003
+      }
+    ],
+    "expertise": [
+      "paints and coatings",
+      "supply chain",
+      "specialty chemicals"
+    ],
+    "relationship": {
+      "strength": 3,
+      "how_met": "IIT Delhi alumni dinner, 2024",
+      "last_contact": "2026-06-18"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p26",
+    "name": "Ritu Saxena",
+    "headline": "Auto industry policy and corporate affairs",
+    "city": "Gurugram",
+    "jobs": [
+      {
+        "org": "Maruti Suzuki India",
+        "nse_symbol": "MARUTI",
+        "role": "Head, Corporate Affairs",
+        "start_year": 2010,
+        "end_year": 2023
+      },
+      {
+        "org": "Meridian Policy Group",
+        "nse_symbol": null,
+        "role": "Director",
+        "start_year": 2023,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "SRCC",
+        "degree": "B.A. (Hons)",
+        "year": 2004
+      }
+    ],
+    "expertise": [
+      "auto components",
+      "policy and regulation",
+      "supplier governance"
+    ],
+    "relationship": {
+      "strength": 3,
+      "how_met": "Panel on auto policy, 2024",
+      "last_contact": "2026-09-02"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p27",
+    "name": "Prakash Nambiar",
+    "headline": "Pharma regulatory affairs veteran",
+    "city": "Ahmedabad",
+    "jobs": [
+      {
+        "org": "Sun Pharmaceutical Industries",
+        "nse_symbol": "SUNPHARMA",
+        "role": "Head, Regulatory Affairs",
+        "start_year": 2006,
+        "end_year": 2019
+      },
+      {
+        "org": "Veda Biologics",
+        "nse_symbol": null,
+        "role": "Chief Scientific Officer",
+        "start_year": 2019,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "BITS Pilani",
+        "degree": "B.Pharm",
+        "year": 2000
+      }
+    ],
+    "expertise": [
+      "pharmaceuticals",
+      "regulatory and compliance",
+      "exports"
+    ],
+    "relationship": {
+      "strength": 3,
+      "how_met": "Expert call on a generics thesis, 2024",
+      "last_contact": "2026-04-30"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p28",
+    "name": "Yamini Das",
+    "headline": "Specialty chemicals exports",
+    "city": "Mumbai",
+    "jobs": [
+      {
+        "org": "Fine Organic Industries",
+        "nse_symbol": "FINEORG",
+        "role": "Head, Exports",
+        "start_year": 2011,
+        "end_year": 2021
+      },
+      {
+        "org": "Deccan Chemicals",
+        "nse_symbol": null,
+        "role": "Director, International",
+        "start_year": 2021,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "IIT Bombay",
+        "degree": "B.Tech (Chemical)",
+        "year": 2004
+      }
+    ],
+    "expertise": [
+      "specialty chemicals",
+      "exports",
+      "channel distribution"
+    ],
+    "relationship": {
+      "strength": 4,
+      "how_met": "Chemicals conference, 2022",
+      "last_contact": "2026-05-09"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p29",
+    "name": "Ravi Teja",
+    "headline": "Public-sector bank rural and agri lending",
+    "city": "Hyderabad",
+    "jobs": [
+      {
+        "org": "State Bank of India",
+        "nse_symbol": "SBIN",
+        "role": "General Manager, Rural Banking",
+        "start_year": 2003,
+        "end_year": 2021
+      },
+      {
+        "org": "Kisan Credit Partners",
+        "nse_symbol": null,
+        "role": "Advisor",
+        "start_year": 2021,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "NIT Warangal",
+        "degree": "B.Tech",
+        "year": 1998
+      }
+    ],
+    "expertise": [
+      "rural lending",
+      "public-sector banking",
+      "bank governance"
+    ],
+    "relationship": {
+      "strength": 3,
+      "how_met": "Referred by an NBFC founder, 2023",
+      "last_contact": "2026-01-16"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p30",
+    "name": "Shalini Oberoi",
+    "headline": "Enterprise telecom and connectivity",
+    "city": "Delhi",
+    "jobs": [
+      {
+        "org": "Bharti Airtel",
+        "nse_symbol": "BHARTIARTL",
+        "role": "Head, Enterprise Business",
+        "start_year": 2008,
+        "end_year": 2020
+      },
+      {
+        "org": "Skyline Networks",
+        "nse_symbol": null,
+        "role": "CEO",
+        "start_year": 2020,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "ISB",
+        "degree": "PGP",
+        "year": 2007
+      }
+    ],
+    "expertise": [
+      "telecom",
+      "enterprise connectivity",
+      "capex and plant ramp-up"
+    ],
+    "relationship": {
+      "strength": 2,
+      "how_met": "Meeting at a telecom investor day, 2023",
+      "last_contact": "2026-03-03"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p31",
+    "name": "Ashwin Nair",
+    "headline": "Petrochemicals planning and energy capex",
+    "city": "Mumbai",
+    "jobs": [
+      {
+        "org": "Reliance Industries",
+        "nse_symbol": "RELIANCE",
+        "role": "Head, Petrochemical Planning",
+        "start_year": 2004,
+        "end_year": 2016
+      },
+      {
+        "org": "Coastal Energy",
+        "nse_symbol": null,
+        "role": "VP, Strategy",
+        "start_year": 2016,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "IIT Delhi",
+        "degree": "B.Tech",
+        "year": 1999
+      }
+    ],
+    "expertise": [
+      "energy",
+      "petrochemicals",
+      "capex and plant ramp-up"
+    ],
+    "relationship": {
+      "strength": 3,
+      "how_met": "Introduced by an IIT Delhi batchmate, 2023",
+      "last_contact": "2026-09-12"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p32",
+    "name": "Pallavi Joshi",
+    "headline": "Construction risk and project finance",
+    "city": "Mumbai",
+    "jobs": [
+      {
+        "org": "L&T",
+        "nse_symbol": "LT",
+        "role": "Head, Construction Risk",
+        "start_year": 2005,
+        "end_year": 2017
+      },
+      {
+        "org": "Kalpataru Projects International",
+        "nse_symbol": "KPIL",
+        "role": "Head, Risk and Contracts",
+        "start_year": 2017,
+        "end_year": 2024
+      }
+    ],
+    "education": [
+      {
+        "school": "IIT Bombay",
+        "degree": "B.Tech",
+        "year": 2003
+      }
+    ],
+    "expertise": [
+      "EPC and infrastructure",
+      "project finance",
+      "legal and contracts"
+    ],
+    "relationship": {
+      "strength": 4,
+      "how_met": "Co-lender on a road project, 2021",
+      "last_contact": "2026-07-25"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p33",
+    "name": "Jayant Rao",
+    "headline": "Mining operations and zinc supply",
+    "city": "Udaipur",
+    "jobs": [
+      {
+        "org": "Hindustan Zinc",
+        "nse_symbol": "HINDZINC",
+        "role": "Head, Mining Operations",
+        "start_year": 2007,
+        "end_year": 2020
+      },
+      {
+        "org": "Rajputana Minerals",
+        "nse_symbol": null,
+        "role": "Chief Operating Officer",
+        "start_year": 2020,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "IIT Kharagpur",
+        "degree": "B.Tech (Mining)",
+        "year": 2001
+      }
+    ],
+    "expertise": [
+      "mining",
+      "non-ferrous metals",
+      "capex and plant ramp-up"
+    ],
+    "relationship": {
+      "strength": 2,
+      "how_met": "Site visit, 2024",
+      "last_contact": "2025-11-21"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p34",
+    "name": "Nisha Kapadia",
+    "headline": "Building products marketing and channels",
+    "city": "Ahmedabad",
+    "jobs": [
+      {
+        "org": "Astral",
+        "nse_symbol": "ASTRAL",
+        "role": "Head, Marketing",
+        "start_year": 2013,
+        "end_year": 2023
+      },
+      {
+        "org": "Cera Sanitaryware",
+        "nse_symbol": "CERA",
+        "role": "Head, Brand and Channels",
+        "start_year": 2023,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "SRCC",
+        "degree": "B.Com",
+        "year": 2008
+      }
+    ],
+    "expertise": [
+      "building products",
+      "channel distribution",
+      "consumer demand"
+    ],
+    "relationship": {
+      "strength": 2,
+      "how_met": "Dealer meet, 2024",
+      "last_contact": "2026-02-27"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p35",
+    "name": "Rajeev Menon",
+    "headline": "Technical textiles R&D and exports",
+    "city": "Pune",
+    "jobs": [
+      {
+        "org": "Garware Technical Fibres",
+        "nse_symbol": "GARFIBRES",
+        "role": "Head, R&D",
+        "start_year": 2009,
+        "end_year": 2022
+      },
+      {
+        "org": "Tensile Fibres",
+        "nse_symbol": null,
+        "role": "Chief Technology Officer",
+        "start_year": 2022,
+        "end_year": null
+      }
+    ],
+    "education": [
+      {
+        "school": "IIT Bombay",
+        "degree": "B.Tech (Textile)",
+        "year": 2005
+      }
+    ],
+    "expertise": [
+      "technical textiles",
+      "exports",
+      "specialty chemicals"
+    ],
+    "relationship": {
+      "strength": 3,
+      "how_met": "Expert call on aquaculture nets, 2024",
+      "last_contact": "2026-04-08"
+    },
+    "synthetic": true
+  },
+  {
+    "id": "p36",
+    "name": "Smita Patwardhan",
+    "headline": "FMCG rural distribution",
+    "city": "Mumbai",
+    "jobs": [
+      {
+        "org": "Hindustan Unilever",
+        "nse_symbol": "HINDUNILVR",
+        "role": "Head, Rural Distribution",
+        "start_year": 2006,
+        "end_year": 2018
+      },
+      {
+        "org": "Nestle India",
+        "nse_symbol": "NESTLEIND",
+        "role": "Director, Sales",
+        "start_year": 2018,
+        "end_year": 2025
+      }
+    ],
+    "education": [
+      {
+        "school": "IIM Ahmedabad",
+        "degree": "PGDM",
+        "year": 2005
+      }
+    ],
+    "expertise": [
+      "FMCG distribution",
+      "consumer demand",
+      "rural lending"
+    ],
+    "relationship": {
+      "strength": 4,
+      "how_met": "IIM Ahmedabad batchmate, 2005",
+      "last_contact": "2026-10-02"
+    },
+    "synthetic": true
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "key": "PERSISTENT",
+  "kind": "company",
+  "symbol": "PERSISTENT",
+  "headline": "1 contact worked at Persistent Systems",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p19",
+      "name": "Aditya Bose",
+      "headline": "Enterprise AI and IT consulting",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Works at Persistent Systems 2018-now as Vice President, Digital",
+      "evidence": [
+        "Persistent Systems 2018-now, Vice President, Digital"
+      ],
+      "score": 5.8
+    }
+  ],
+  "note": null
+}

@@ -15,6 +15,7 @@ from datetime import datetime
 from pathlib import Path
 
 from app import models as m
+from app import network as network_mod
 from app import universe
 from app.ingest import prices as prices_mod
 from app.llm import store as llm_store
@@ -71,6 +72,18 @@ def main() -> int:
         for sym, name, _, _ in rows:
             dump(cdir / f"{sym}-{label}.json", digest_mod.build_company_filings(sym, name, label, snaps=all_snaps, now=now))
 
+    # the Network (SYNTHETIC contacts): people, per-filing matches, reconnect nudges, expertise map, per-company contacts
+    ndir = out / "network"
+    if ndir.exists():
+        shutil.rmtree(ndir)
+    net_insights = network_mod.insights()
+    dump(ndir / "people.json", network_mod.people())
+    dump(ndir / "insights.json", net_insights)
+    dump(ndir / "warm.json", network_mod.warm_nudges())
+    dump(ndir / "expertise.json", network_mod.expertise_map())
+    for sym in sorted(universe.all_symbols()):
+        dump(ndir / "companies" / f"{sym}.json", network_mod.company_insight(sym))
+
     # enriched filings (results cards etc.) get their own file for the detail view
     fdir = out / "filings"
     if fdir.exists():
@@ -97,7 +110,7 @@ def main() -> int:
     dump(out / "health.json", m.Health(ok=True, version="0.1.0", mode="live", snapshot_as_of=as_of))
     print(f"snapshot -> {out}: {len(symbols)} companies, {len(snaps)} prices, "
           + ", ".join(f"{k}: {d.counts.total} filings/{len(d.needs_you)} needs-you" for k, d in digests.items())
-          + f", {len(enriched)} enriched filings, {len(d30.alerts)} alerts(30d), research: {built}")
+          + f", {len(net_insights)} network insights, {len(enriched)} enriched filings, {len(d30.alerts)} alerts(30d), research: {built}")
     return 0
 
 

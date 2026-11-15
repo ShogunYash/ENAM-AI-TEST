@@ -3,14 +3,14 @@
   "name": "Polycab India",
   "window": {
     "label": "30d",
-    "start": "2026-10-15T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-10-16T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
   "counts": {
-    "total": 16,
-    "rule_classified": 7,
-    "llm_classified": 9
+    "total": 9,
+    "rule_classified": 2,
+    "llm_classified": 7
   },
   "important": [
     {
@@ -23,7 +23,7 @@
       "category": "litigation",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.309,
+      "score": 0.223,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c3d1ba29-6132-47b7-9f3b-79a294e53189.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -41,103 +41,21 @@
       "category": "litigation",
       "category_source": "llm",
       "priority": "medium",
-      "score": 0.191,
+      "score": 0.138,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ead5c0dc-e464-4e53-8006-b861205174a9.pdf",
       "price_reaction": null,
       "enrichment": {
         "type": "oneliner",
         "text": "NCLAT directed MSCI not to delist Polycab till order pronouncement."
       }
-    },
-    {
-      "id": "880e99bc-b13a-435b-901c-3b2bee137437",
-      "symbol": "POLYCAB",
-      "company_name": "Polycab India Ltd",
-      "filed_at": "2026-10-15T13:05:55.340000+05:30",
-      "headline": "Unaudited Financial Results for the quarter and half year ended 30th September 2026",
-      "so_what": "Q2 FY27: PAT +43%, Rev +53% YoY · EBITDA margin 14.4%",
-      "category": "results",
-      "category_source": "rule",
-      "priority": "high",
-      "score": 0.015,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4ac93ea0-d4d1-4b85-8849-14a19e0dcceb.pdf",
-      "price_reaction": null,
-      "enrichment": {
-        "type": "results",
-        "period": "Q2 FY27",
-        "basis": "consolidated",
-        "unit": "INR_CR",
-        "metrics": [
-          {
-            "name": "revenue",
-            "value": 9898.9,
-            "prev_q": 8209.73,
-            "prev_y": 6477.21,
-            "qoq_pct": 20.6,
-            "yoy_pct": 52.8
-          },
-          {
-            "name": "ebitda",
-            "value": 1422.5,
-            "prev_q": 1136.2,
-            "prev_y": 1020.75,
-            "qoq_pct": 25.2,
-            "yoy_pct": 39.4
-          },
-          {
-            "name": "pbt",
-            "value": 1306.22,
-            "prev_q": 1058.22,
-            "prev_y": 921.0,
-            "qoq_pct": 23.4,
-            "yoy_pct": 41.8
-          },
-          {
-            "name": "pat",
-            "value": 990.0,
-            "prev_q": 796.65,
-            "prev_y": 692.96,
-            "qoq_pct": 24.3,
-            "yoy_pct": 42.9
-          }
-        ],
-        "margin_ebitda_pct": 14.4,
-        "cross_check": {
-          "status": "match",
-          "note": null
-        },
-        "source": {
-          "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4ac93ea0-d4d1-4b85-8849-14a19e0dcceb.pdf",
-          "page": 4
-        }
-      }
-    },
-    {
-      "id": "4f686399-b641-4495-a5dd-e5124e088cf0",
-      "symbol": "POLYCAB",
-      "company_name": "Polycab India Ltd",
-      "filed_at": "2026-10-16T09:34:04.393000+05:30",
-      "headline": "Update on the appeal listed on October 15, 2026 before Hon''ble NCLAT, Principal Bench, New Delhi",
-      "so_what": "NCLAT heard and reserved order on Asier Metals appeal on Oct 15, 2026.",
-      "category": "litigation",
-      "category_source": "llm",
-      "priority": "medium",
-      "score": 0.012,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a0fba81c-bd84-40eb-8435-9643b019e9fc.pdf",
-      "price_reaction": null,
-      "enrichment": {
-        "type": "oneliner",
-        "text": "NCLAT heard and reserved order on Asier Metals appeal on Oct 15, 2026."
-      }
     }
   ],
   "routine": {
-    "count": 12,
+    "count": 7,
     "by_category": {
       "investor_meetings": 5,
-      "unclassified": 2,
-      "earnings_call": 2,
-      "results": 3
+      "unclassified": 1,
+      "earnings_call": 1
     },
     "items": [
       {
@@ -150,7 +68,7 @@
         "category": "investor_meetings",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.19,
+        "score": 0.137,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/72c96165-b9ed-4b62-ac86-80cc440b32ff.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -180,7 +98,7 @@
         "category": "investor_meetings",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.023,
+        "score": 0.016,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26cdd582-7e95-4019-88b5-fdff3d5e60e1.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -195,7 +113,7 @@
         "category": "investor_meetings",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.018,
+        "score": 0.013,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cafe2036-e51b-413a-80cd-65e331d170be.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -210,7 +128,7 @@
         "category": "investor_meetings",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.007,
+        "score": 0.005,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a9743040-8809-46d3-85ca-c6ca01bc322a.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -225,7 +143,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.006,
+        "score": 0.004,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/77b6d277-0ffc-440d-ba8a-2bd9bc3dc43e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -240,83 +158,8 @@
         "category": "investor_meetings",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.003,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9cf5ed4b-10af-4d0f-aa1f-75f22f8e5a75.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "0e8598ab-7df7-4804-bb66-037c9b719541",
-        "symbol": "POLYCAB",
-        "company_name": "Polycab India Ltd",
-        "filed_at": "2026-10-15T20:48:30.610000+05:30",
-        "headline": "Submission of Audio recording of earnings conference call",
-        "so_what": null,
-        "category": "earnings_call",
-        "category_source": "rule",
-        "priority": "low",
         "score": 0.002,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3264baf9-979a-4835-85b1-c5a9838c57d6.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "e015caf8-728c-49ad-86d6-5008e2714ee0",
-        "symbol": "POLYCAB",
-        "company_name": "Polycab India Ltd",
-        "filed_at": "2026-10-15T15:32:17.350000+05:30",
-        "headline": "Unaudited Interim Condensed (Standalone and Consolidated Financial Statement for the quarter and half year ended September 30, 2026",
-        "so_what": null,
-        "category": "results",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.003,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d809fc71-20ab-4486-999a-953e40641efd.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "71e9eb0f-581f-462a-b7e6-8b3c2f5556e7",
-        "symbol": "POLYCAB",
-        "company_name": "Polycab India Ltd",
-        "filed_at": "2026-10-15T13:58:12.843000+05:30",
-        "headline": "Earnings Presentation on the Unaudited Financial Results for the quarter and half year ended September 30, 2026",
-        "so_what": null,
-        "category": "results",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.003,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a940f987-41db-4848-8f35-4b6c8a8f5b47.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "86eb8d0a-7bb5-424c-9bd3-dd66a20ac450",
-        "symbol": "POLYCAB",
-        "company_name": "Polycab India Ltd",
-        "filed_at": "2026-10-15T13:13:36.973000+05:30",
-        "headline": "Press Release for the Unaudited (Standalone and Consolidated) Financial Results of the Company",
-        "so_what": null,
-        "category": "results",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.003,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b345a7a1-bdff-4a45-800c-889ce7a659a4.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "98f8755d-b964-4fd1-8ded-163dca00bdcd",
-        "symbol": "POLYCAB",
-        "company_name": "Polycab India Ltd",
-        "filed_at": "2026-10-15T12:58:41.500000+05:30",
-        "headline": "With reference to the captioned subject, please be informed that the Board of Directors of the Company at its meeting held today i.e. Thursday, October 15, 2026, inter alia considered and ....",
-        "so_what": null,
-        "category": "unclassified",
-        "category_source": "llm",
-        "priority": "hidden",
-        "score": 0.0,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d05b4d50-f4ad-4c2f-8e4f-61c0a7bb6e8e.pdf",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9cf5ed4b-10af-4d0f-aa1f-75f22f8e5a75.pdf",
         "price_reaction": null,
         "enrichment": null
       }

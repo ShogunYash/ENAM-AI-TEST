@@ -3,40 +3,19 @@
   "name": "Infosys",
   "window": {
     "label": "3d",
-    "start": "2026-11-11T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-11-12T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
   "counts": {
-    "total": 1,
-    "rule_classified": 1,
+    "total": 0,
+    "rule_classified": 0,
     "llm_classified": 0
   },
   "important": [],
   "routine": {
-    "count": 1,
-    "by_category": {
-      "unclassified": 1
-    },
-    "items": [
-      {
-        "id": "4a2555f1-fd67-4fb4-bed9-b565b67dced5",
-        "symbol": "INFY",
-        "company_name": "Infosys Ltd",
-        "filed_at": "2026-11-12T11:21:41.480000+05:30",
-        "headline": "Enclosed",
-        "so_what": null,
-        "category": "unclassified",
-        "category_source": "rule",
-        "priority": "hidden",
-        "score": 0.0,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/2d26cac8-d5b5-4be4-ba93-d18f80ee8c0c.pdf",
-        "price_reaction": {
-          "pct_1d": -0.33,
-          "vol_ratio": 0.45
-        },
-        "enrichment": null
-      }
-    ]
+    "count": 0,
+    "by_category": {},
+    "items": []
   }
 }

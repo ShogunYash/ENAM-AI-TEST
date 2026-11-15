@@ -1,0 +1,1078 @@
+[
+  {
+    "key": "44ba0161-d9e4-4bd1-aae7-eb3bc46319dd",
+    "kind": "management_change",
+    "symbol": "HDFCBANK",
+    "headline": "3 contacts know HDFC Bank",
+    "subject": "Mr. V. Srinivasa Rangan",
+    "matches": [
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "headline": "Retired private-banking executive",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at HDFC Bank 2003-2022 as Group Head, Business Banking; bank governance expertise",
+        "evidence": [
+          "HDFC Bank 2003-2022, Group Head, Business Banking",
+          "expertise: bank governance"
+        ],
+        "score": 7.4
+      },
+      {
+        "person_id": "p11",
+        "name": "Lakshmi Venkatesh",
+        "headline": "Ex-retail liabilities head, private-sector bank",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at HDFC Bank 2004-2019 as Head, Retail Liabilities; bank governance expertise",
+        "evidence": [
+          "HDFC Bank 2004-2019, Head, Retail Liabilities",
+          "expertise: bank governance"
+        ],
+        "score": 6.8
+      },
+      {
+        "person_id": "p12",
+        "name": "Imran Siddiqui",
+        "headline": "SME and rural lending operator",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at HDFC Bank 2006-2021 as Zonal Head, SME Lending",
+        "evidence": [
+          "HDFC Bank 2006-2021, Zonal Head, SME Lending"
+        ],
+        "score": 5.9
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "16286674-572c-48bc-a47c-b8a9d5c07363",
+    "kind": "management_change",
+    "symbol": "HDFCBANK",
+    "headline": "3 contacts know HDFC Bank",
+    "subject": "Mr. V. Srinivasa Rangan",
+    "matches": [
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "headline": "Retired private-banking executive",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at HDFC Bank 2003-2022 as Group Head, Business Banking; bank governance expertise",
+        "evidence": [
+          "HDFC Bank 2003-2022, Group Head, Business Banking",
+          "expertise: bank governance"
+        ],
+        "score": 7.4
+      },
+      {
+        "person_id": "p11",
+        "name": "Lakshmi Venkatesh",
+        "headline": "Ex-retail liabilities head, private-sector bank",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at HDFC Bank 2004-2019 as Head, Retail Liabilities; bank governance expertise",
+        "evidence": [
+          "HDFC Bank 2004-2019, Head, Retail Liabilities",
+          "expertise: bank governance"
+        ],
+        "score": 6.8
+      },
+      {
+        "person_id": "p12",
+        "name": "Imran Siddiqui",
+        "headline": "SME and rural lending operator",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at HDFC Bank 2006-2021 as Zonal Head, SME Lending",
+        "evidence": [
+          "HDFC Bank 2006-2021, Zonal Head, SME Lending"
+        ],
+        "score": 5.9
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
+    "kind": "material_event",
+    "symbol": "BAJFINANCE",
+    "headline": "Best person to call on this fund raise: Meera Iyer",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p01",
+        "name": "Meera Iyer",
+        "headline": "Ex-credit risk head, consumer lending",
+        "strength": 5,
+        "link": "worked_at_company",
+        "why": "Worked at Bajaj Finance 2014-2020 as Head of Credit Risk",
+        "evidence": [
+          "Bajaj Finance 2014-2020, Head of Credit Risk"
+        ],
+        "score": 6.5
+      },
+      {
+        "person_id": "p15",
+        "name": "Deepika Menon",
+        "headline": "Collections and rural consumer finance",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at Bajaj Finance 2010-2023 as Head, Collections",
+        "evidence": [
+          "Bajaj Finance 2010-2023, Head, Collections"
+        ],
+        "score": 5.9
+      },
+      {
+        "person_id": "p02",
+        "name": "Arjun Rao",
+        "headline": "Former CISO and technology risk lead",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at Bajaj Finance 2016-2021 as Deputy CISO",
+        "evidence": [
+          "Bajaj Finance 2016-2021, Deputy CISO"
+        ],
+        "score": 5.3
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "f9a4f2e2-4e74-49fd-a6bd-9df8d6045e71",
+    "kind": "material_event",
+    "symbol": "BAJFINANCE",
+    "headline": "Best person to call on this fund raise: Meera Iyer",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p01",
+        "name": "Meera Iyer",
+        "headline": "Ex-credit risk head, consumer lending",
+        "strength": 5,
+        "link": "worked_at_company",
+        "why": "Worked at Bajaj Finance 2014-2020 as Head of Credit Risk",
+        "evidence": [
+          "Bajaj Finance 2014-2020, Head of Credit Risk"
+        ],
+        "score": 6.5
+      },
+      {
+        "person_id": "p15",
+        "name": "Deepika Menon",
+        "headline": "Collections and rural consumer finance",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at Bajaj Finance 2010-2023 as Head, Collections",
+        "evidence": [
+          "Bajaj Finance 2010-2023, Head, Collections"
+        ],
+        "score": 5.9
+      },
+      {
+        "person_id": "p02",
+        "name": "Arjun Rao",
+        "headline": "Former CISO and technology risk lead",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at Bajaj Finance 2016-2021 as Deputy CISO",
+        "evidence": [
+          "Bajaj Finance 2016-2021, Deputy CISO"
+        ],
+        "score": 5.3
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "c49c17d4-2697-46d5-96f2-6e9b77f10b8e",
+    "kind": "material_event",
+    "symbol": "TATASTEEL",
+    "headline": "Best person to call on this M&A: Rohan Kapoor",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "headline": "Ex-Tata group strategy and M&A",
+        "strength": 5,
+        "link": "worked_at_company",
+        "why": "Worked at Tata Steel 2010-2017 as GM, Corporate Strategy and M&A; M&A and integration expertise",
+        "evidence": [
+          "Tata Steel 2010-2017, GM, Corporate Strategy and M&A",
+          "expertise: M&A and integration"
+        ],
+        "score": 7.5
+      },
+      {
+        "person_id": "p21",
+        "name": "Siddharth Rane",
+        "headline": "Steel and cement plant operations",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at Tata Steel 2006-2019 as Plant Head, Flat Products",
+        "evidence": [
+          "Tata Steel 2006-2019, Plant Head, Flat Products"
+        ],
+        "score": 5.3
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "4de0b0df-dd85-401a-9d6b-dd85fc660c4f",
+    "kind": "management_change",
+    "symbol": "TATASTEEL",
+    "headline": "2 contacts know Tata Steel",
+    "subject": "Noel Naval Tata",
+    "matches": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "headline": "Ex-Tata group strategy and M&A",
+        "strength": 5,
+        "link": "worked_at_company",
+        "why": "Worked at Tata Steel 2010-2017 as GM, Corporate Strategy and M&A",
+        "evidence": [
+          "Tata Steel 2010-2017, GM, Corporate Strategy and M&A"
+        ],
+        "score": 6.0
+      },
+      {
+        "person_id": "p21",
+        "name": "Siddharth Rane",
+        "headline": "Steel and cement plant operations",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at Tata Steel 2006-2019 as Plant Head, Flat Products",
+        "evidence": [
+          "Tata Steel 2006-2019, Plant Head, Flat Products"
+        ],
+        "score": 5.3
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "d1aaeb85-6ca1-4b7d-9c05-4eb4916c7455",
+    "kind": "management_change",
+    "symbol": "ASIANPAINT",
+    "headline": "2 contacts know Asian Paints",
+    "subject": "Leo Puri",
+    "matches": [
+      {
+        "person_id": "p09",
+        "name": "Anand Gupta",
+        "headline": "Consumer and paints industry veteran",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at Asian Paints 2005-2016 as Regional Sales Director",
+        "evidence": [
+          "Asian Paints 2005-2016, Regional Sales Director"
+        ],
+        "score": 5.4
+      },
+      {
+        "person_id": "p25",
+        "name": "Mohit Bansal",
+        "headline": "Paints supply chain and raw materials",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at Asian Paints 2007-2018 as Head, Supply Chain",
+        "evidence": [
+          "Asian Paints 2007-2018, Head, Supply Chain"
+        ],
+        "score": 5.3
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "98d6a02a-dd08-44ac-9686-48d4b9a70b6d",
+    "kind": "material_event",
+    "symbol": "FINEORG",
+    "headline": "Best person to call on this litigation: Yamini Das",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p28",
+        "name": "Yamini Das",
+        "headline": "Specialty chemicals exports",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at Fine Organic Industries 2011-2021 as Head, Exports",
+        "evidence": [
+          "Fine Organic Industries 2011-2021, Head, Exports"
+        ],
+        "score": 5.9
+      },
+      {
+        "person_id": "p25",
+        "name": "Mohit Bansal",
+        "headline": "Paints supply chain and raw materials",
+        "strength": 3,
+        "link": "sector_expert",
+        "why": "specialty chemicals expert (paints supply chain and raw materials); no direct tie to Fine Organic",
+        "evidence": [
+          "expertise: specialty chemicals"
+        ],
+        "score": 3.0
+      },
+      {
+        "person_id": "p35",
+        "name": "Rajeev Menon",
+        "headline": "Technical textiles R&D and exports",
+        "strength": 3,
+        "link": "sector_expert",
+        "why": "specialty chemicals expert (technical textiles r&d and exports); no direct tie to Fine Organic",
+        "evidence": [
+          "expertise: specialty chemicals"
+        ],
+        "score": 3.0
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "9fe24176-bed0-4206-9717-23b4afe63ad4",
+    "kind": "management_change",
+    "symbol": "TITAN",
+    "headline": "2 contacts know Titan",
+    "subject": "Noel N. Tata",
+    "matches": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "headline": "Ex-Tata group strategy and M&A",
+        "strength": 5,
+        "link": "worked_at_company",
+        "why": "Worked at Titan Company 2017-2023 as Head of Corporate Development",
+        "evidence": [
+          "Titan Company 2017-2023, Head of Corporate Development"
+        ],
+        "score": 6.5
+      },
+      {
+        "person_id": "p20",
+        "name": "Neha Agarwal",
+        "headline": "Retail strategy, jewellery and lifestyle",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at Titan Company 2012-2022 as Head, Retail Strategy",
+        "evidence": [
+          "Titan Company 2012-2022, Head, Retail Strategy"
+        ],
+        "score": 5.9
+      },
+      {
+        "person_id": "p11",
+        "name": "Lakshmi Venkatesh",
+        "headline": "Ex-retail liabilities head, private-sector bank",
+        "strength": 3,
+        "link": "sector_expert",
+        "why": "retail deposits expert (ex-retail liabilities head, private-sector bank); no direct tie to Titan",
+        "evidence": [
+          "expertise: retail deposits"
+        ],
+        "score": 4.0
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "ea8b95cc-012c-4460-aa3d-43c2b800858c",
+    "kind": "management_change",
+    "symbol": "KPIL",
+    "headline": "3 contacts know Kalpataru Projects International",
+    "subject": "Amit Uplenchwar",
+    "matches": [
+      {
+        "person_id": "p32",
+        "name": "Pallavi Joshi",
+        "headline": "Construction risk and project finance",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at Kalpataru Projects International 2017-2024 as Head, Risk and Contracts",
+        "evidence": [
+          "Kalpataru Projects International 2017-2024, Head, Risk and Contracts"
+        ],
+        "score": 5.9
+      },
+      {
+        "person_id": "p08",
+        "name": "Pooja Nair",
+        "headline": "Infrastructure projects and EPC finance",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at Kalpataru Projects International 2013-2021 as Head, Project Finance",
+        "evidence": [
+          "Kalpataru Projects International 2013-2021, Head, Project Finance"
+        ],
+        "score": 5.3
+      },
+      {
+        "person_id": "p23",
+        "name": "Tushar Kulkarni",
+        "headline": "Transmission EPC executive",
+        "strength": 2,
+        "link": "worked_at_company",
+        "why": "Worked at Kalpataru Projects International 2007-2019 as Head, Transmission",
+        "evidence": [
+          "Kalpataru Projects International 2007-2019, Head, Transmission"
+        ],
+        "score": 4.7
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "e0881287-e544-4572-97ba-48ab5998966d",
+    "kind": "management_change",
+    "symbol": "ASTRAL",
+    "headline": "1 contact overlapped with Mr. Ritesh Patel",
+    "subject": "Mr. Ritesh Patel",
+    "matches": [
+      {
+        "person_id": "p34",
+        "name": "Nisha Kapadia",
+        "headline": "Building products marketing and channels",
+        "strength": 2,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~11 yrs at Astral with Mr. Ritesh Patel (Head, Marketing, 2013-2023)",
+        "evidence": [
+          "Astral 2013-2023",
+          "filing: Mr. Ritesh Patel tenure since ~2002"
+        ],
+        "score": 10.5
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "90d3e283-73e5-4158-9705-30fc5e42d072",
+    "kind": "management_change",
+    "symbol": "CERA",
+    "headline": "1 contact overlapped with Vikram Somany",
+    "subject": "Vikram Somany",
+    "matches": [
+      {
+        "person_id": "p34",
+        "name": "Nisha Kapadia",
+        "headline": "Building products marketing and channels",
+        "strength": 2,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~4 yrs at Cera Sanitaryware with Vikram Somany (Head, Brand and Channels, 2023-now)",
+        "evidence": [
+          "Cera Sanitaryware 2023-now",
+          "filing: Vikram Somany tenure since ~2002"
+        ],
+        "score": 8.4
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "911dd43a-263e-4e01-92fc-00a76c7ce269",
+    "kind": "material_event",
+    "symbol": "ASTRAL",
+    "headline": "Best person to call on this litigation: Nisha Kapadia",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p34",
+        "name": "Nisha Kapadia",
+        "headline": "Building products marketing and channels",
+        "strength": 2,
+        "link": "worked_at_company",
+        "why": "Worked at Astral 2013-2023 as Head, Marketing",
+        "evidence": [
+          "Astral 2013-2023, Head, Marketing"
+        ],
+        "score": 4.7
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "af2b83ef-b621-415d-9fac-416f75bf694f",
+    "kind": "material_event",
+    "symbol": "TATASTEEL",
+    "headline": "Best person to call on this M&A: Rohan Kapoor",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "headline": "Ex-Tata group strategy and M&A",
+        "strength": 5,
+        "link": "worked_at_company",
+        "why": "Worked at Tata Steel 2010-2017 as GM, Corporate Strategy and M&A; M&A and integration expertise",
+        "evidence": [
+          "Tata Steel 2010-2017, GM, Corporate Strategy and M&A",
+          "expertise: M&A and integration"
+        ],
+        "score": 7.5
+      },
+      {
+        "person_id": "p21",
+        "name": "Siddharth Rane",
+        "headline": "Steel and cement plant operations",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at Tata Steel 2006-2019 as Plant Head, Flat Products",
+        "evidence": [
+          "Tata Steel 2006-2019, Plant Head, Flat Products"
+        ],
+        "score": 5.3
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "30c3da71-6fc5-4995-97ea-27380694b7a6",
+    "kind": "material_event",
+    "symbol": "FINEORG",
+    "headline": "Best person to call on this M&A: Yamini Das",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p28",
+        "name": "Yamini Das",
+        "headline": "Specialty chemicals exports",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at Fine Organic Industries 2011-2021 as Head, Exports",
+        "evidence": [
+          "Fine Organic Industries 2011-2021, Head, Exports"
+        ],
+        "score": 5.9
+      },
+      {
+        "person_id": "p25",
+        "name": "Mohit Bansal",
+        "headline": "Paints supply chain and raw materials",
+        "strength": 3,
+        "link": "sector_expert",
+        "why": "specialty chemicals expert (paints supply chain and raw materials); no direct tie to Fine Organic",
+        "evidence": [
+          "expertise: specialty chemicals"
+        ],
+        "score": 3.0
+      },
+      {
+        "person_id": "p35",
+        "name": "Rajeev Menon",
+        "headline": "Technical textiles R&D and exports",
+        "strength": 3,
+        "link": "sector_expert",
+        "why": "specialty chemicals expert (technical textiles r&d and exports); no direct tie to Fine Organic",
+        "evidence": [
+          "expertise: specialty chemicals"
+        ],
+        "score": 3.0
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "be305212-ae95-4757-93fe-23429494a3c8",
+    "kind": "management_change",
+    "symbol": "HDFCBANK",
+    "headline": "3 contacts overlapped with Sanjay D’Souza",
+    "subject": "Sanjay D’Souza",
+    "matches": [
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "headline": "Retired private-banking executive",
+        "strength": 4,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~20 yrs at HDFC Bank with Sanjay D’Souza (Group Head, Business Banking, 2003-2022)",
+        "evidence": [
+          "HDFC Bank 2003-2022",
+          "filing: Sanjay D’Souza tenure since ~1999"
+        ],
+        "score": 14.4
+      },
+      {
+        "person_id": "p12",
+        "name": "Imran Siddiqui",
+        "headline": "SME and rural lending operator",
+        "strength": 4,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~16 yrs at HDFC Bank with Sanjay D’Souza (Zonal Head, SME Lending, 2006-2021)",
+        "evidence": [
+          "HDFC Bank 2006-2021",
+          "filing: Sanjay D’Souza tenure since ~1999"
+        ],
+        "score": 13.2
+      },
+      {
+        "person_id": "p11",
+        "name": "Lakshmi Venkatesh",
+        "headline": "Ex-retail liabilities head, private-sector bank",
+        "strength": 3,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~16 yrs at HDFC Bank with Sanjay D’Souza (Head, Retail Liabilities, 2004-2019)",
+        "evidence": [
+          "HDFC Bank 2004-2019",
+          "filing: Sanjay D’Souza tenure since ~1999"
+        ],
+        "score": 12.6
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "e37c5322-e4c3-4831-b3c6-48d5930f6d19",
+    "kind": "material_event",
+    "symbol": "LT",
+    "headline": "Best person to call on this M&A: Pooja Nair",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p08",
+        "name": "Pooja Nair",
+        "headline": "Infrastructure projects and EPC finance",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Works at L&T 2021-now as VP, Project Controls",
+        "evidence": [
+          "L&T 2021-now, VP, Project Controls"
+        ],
+        "score": 5.8
+      },
+      {
+        "person_id": "p32",
+        "name": "Pallavi Joshi",
+        "headline": "Construction risk and project finance",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at L&T 2005-2017 as Head, Construction Risk",
+        "evidence": [
+          "L&T 2005-2017, Head, Construction Risk"
+        ],
+        "score": 5.4
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "573832b2-d25c-4a3e-a3b4-46c15e9b0178",
+    "kind": "management_change",
+    "symbol": "DIXON",
+    "headline": "2 contacts know Dixon Technologies",
+    "subject": "Prithvi Vachani",
+    "matches": [
+      {
+        "person_id": "p24",
+        "name": "Anjali Chawla",
+        "headline": "Ex-strategy lead, electronics manufacturing",
+        "strength": 5,
+        "link": "worked_at_company",
+        "why": "Worked at Dixon Technologies 2014-2024 as Head, Strategy and Investor Relations",
+        "evidence": [
+          "Dixon Technologies 2014-2024, Head, Strategy and Investor Relations"
+        ],
+        "score": 6.5
+      },
+      {
+        "person_id": "p05",
+        "name": "Vikram Desai",
+        "headline": "Electronics manufacturing operator",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at Dixon Technologies 2012-2019 as VP Operations",
+        "evidence": [
+          "Dixon Technologies 2012-2019, VP Operations"
+        ],
+        "score": 5.3
+      },
+      {
+        "person_id": "p17",
+        "name": "Gaurav Sethi",
+        "headline": "Large-deal delivery head, IT services",
+        "strength": 5,
+        "link": "sector_expert",
+        "why": "bank technology expert (large-deal delivery head, it services); no direct tie to Dixon Technologies",
+        "evidence": [
+          "expertise: bank technology"
+        ],
+        "score": 4.0
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "0df598a9-08f7-48f3-b53d-f69d332706e2",
+    "kind": "material_event",
+    "symbol": "POLYCAB",
+    "headline": "Best person to call on this litigation: Kavita Pillai",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p22",
+        "name": "Kavita Pillai",
+        "headline": "Treasury and cost of capital, cables sector",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at Polycab India 2009-2020 as Head, Treasury",
+        "evidence": [
+          "Polycab India 2009-2020, Head, Treasury"
+        ],
+        "score": 5.9
+      },
+      {
+        "person_id": "p06",
+        "name": "Sunita Reddy",
+        "headline": "Cables and wires channel and exports specialist",
+        "strength": 2,
+        "link": "worked_at_company",
+        "why": "Worked at Polycab India 2011-2018 as Head, Export Markets",
+        "evidence": [
+          "Polycab India 2011-2018, Head, Export Markets"
+        ],
+        "score": 4.7
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "313ccc61-deae-4673-a050-3a78c4290c8f",
+    "kind": "material_event",
+    "symbol": "RELIANCE",
+    "headline": "Best person to call on this M&A: Ashwin Nair",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p31",
+        "name": "Ashwin Nair",
+        "headline": "Petrochemicals planning and energy capex",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at Reliance Industries 2004-2016 as Head, Petrochemical Planning",
+        "evidence": [
+          "Reliance Industries 2004-2016, Head, Petrochemical Planning"
+        ],
+        "score": 4.8
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "b0a80b4b-b280-45ea-a1d5-6f18a24b3ce6",
+    "kind": "material_event",
+    "symbol": "TITAN",
+    "headline": "Best person to call on this M&A: Rohan Kapoor",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p07",
+        "name": "Rohan Kapoor",
+        "headline": "Ex-Tata group strategy and M&A",
+        "strength": 5,
+        "link": "worked_at_company",
+        "why": "Worked at Titan Company 2017-2023 as Head of Corporate Development; M&A and integration expertise",
+        "evidence": [
+          "Titan Company 2017-2023, Head of Corporate Development",
+          "expertise: M&A and integration"
+        ],
+        "score": 8.0
+      },
+      {
+        "person_id": "p20",
+        "name": "Neha Agarwal",
+        "headline": "Retail strategy, jewellery and lifestyle",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at Titan Company 2012-2022 as Head, Retail Strategy; corporate strategy expertise",
+        "evidence": [
+          "Titan Company 2012-2022, Head, Retail Strategy",
+          "expertise: corporate strategy"
+        ],
+        "score": 7.4
+      },
+      {
+        "person_id": "p11",
+        "name": "Lakshmi Venkatesh",
+        "headline": "Ex-retail liabilities head, private-sector bank",
+        "strength": 3,
+        "link": "sector_expert",
+        "why": "retail deposits expert (ex-retail liabilities head, private-sector bank); no direct tie to Titan",
+        "evidence": [
+          "expertise: retail deposits"
+        ],
+        "score": 3.0
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "ec5b190e-b037-4cb0-91a8-d037cfad8574",
+    "kind": "material_event",
+    "symbol": "POLYCAB",
+    "headline": "Best person to call on this litigation: Kavita Pillai",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p22",
+        "name": "Kavita Pillai",
+        "headline": "Treasury and cost of capital, cables sector",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at Polycab India 2009-2020 as Head, Treasury",
+        "evidence": [
+          "Polycab India 2009-2020, Head, Treasury"
+        ],
+        "score": 5.9
+      },
+      {
+        "person_id": "p06",
+        "name": "Sunita Reddy",
+        "headline": "Cables and wires channel and exports specialist",
+        "strength": 2,
+        "link": "worked_at_company",
+        "why": "Worked at Polycab India 2011-2018 as Head, Export Markets",
+        "evidence": [
+          "Polycab India 2011-2018, Head, Export Markets"
+        ],
+        "score": 4.7
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "94026a0a-352e-4135-aee7-a8b1a54a4349",
+    "kind": "material_event",
+    "symbol": "MARUTI",
+    "headline": "Best person to call on this M&A: Ritu Saxena",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p26",
+        "name": "Ritu Saxena",
+        "headline": "Auto industry policy and corporate affairs",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at Maruti Suzuki India 2010-2023 as Head, Corporate Affairs",
+        "evidence": [
+          "Maruti Suzuki India 2010-2023, Head, Corporate Affairs"
+        ],
+        "score": 5.3
+      },
+      {
+        "person_id": "p10",
+        "name": "Farah Khan",
+        "headline": "Auto industry supply chain and policy",
+        "strength": 2,
+        "link": "worked_at_company",
+        "why": "Worked at Maruti Suzuki 2008-2019 as GM, Supplier Development",
+        "evidence": [
+          "Maruti Suzuki 2008-2019, GM, Supplier Development"
+        ],
+        "score": 4.7
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "eee0209e-2a9c-4d1c-91a1-8b1dbc6868a2",
+    "kind": "management_change",
+    "symbol": "HDFCBANK",
+    "headline": "3 contacts know HDFC Bank",
+    "subject": "Anup Bagchi",
+    "matches": [
+      {
+        "person_id": "p03",
+        "name": "Kabir Malhotra",
+        "headline": "Retired private-banking executive",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at HDFC Bank 2003-2022 as Group Head, Business Banking; bank governance expertise",
+        "evidence": [
+          "HDFC Bank 2003-2022, Group Head, Business Banking",
+          "expertise: bank governance"
+        ],
+        "score": 7.4
+      },
+      {
+        "person_id": "p11",
+        "name": "Lakshmi Venkatesh",
+        "headline": "Ex-retail liabilities head, private-sector bank",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Worked at HDFC Bank 2004-2019 as Head, Retail Liabilities; bank governance expertise",
+        "evidence": [
+          "HDFC Bank 2004-2019, Head, Retail Liabilities",
+          "expertise: bank governance"
+        ],
+        "score": 6.8
+      },
+      {
+        "person_id": "p12",
+        "name": "Imran Siddiqui",
+        "headline": "SME and rural lending operator",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at HDFC Bank 2006-2021 as Zonal Head, SME Lending",
+        "evidence": [
+          "HDFC Bank 2006-2021, Zonal Head, SME Lending"
+        ],
+        "score": 5.9
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "04793fd5-64b8-4987-8380-dfc8638caa8e",
+    "kind": "management_change",
+    "symbol": "NESTLEIND",
+    "headline": "1 contact know Nestle",
+    "subject": "Gopichandar Jagatheesan",
+    "matches": [
+      {
+        "person_id": "p36",
+        "name": "Smita Patwardhan",
+        "headline": "FMCG rural distribution",
+        "strength": 4,
+        "link": "worked_at_company",
+        "why": "Worked at Nestle India 2018-2025 as Director, Sales",
+        "evidence": [
+          "Nestle India 2018-2025, Director, Sales"
+        ],
+        "score": 5.9
+      },
+      {
+        "person_id": "p09",
+        "name": "Anand Gupta",
+        "headline": "Consumer and paints industry veteran",
+        "strength": 4,
+        "link": "sector_expert",
+        "why": "FMCG distribution expert (consumer and paints industry veteran); no direct tie to Nestle",
+        "evidence": [
+          "expertise: FMCG distribution"
+        ],
+        "score": 3.5
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "5f00980e-357d-40e2-a34d-2e8f104df277",
+    "kind": "material_event",
+    "symbol": "PERSISTENT",
+    "headline": "Best person to call on this fund raise: Aditya Bose",
+    "subject": null,
+    "matches": [
+      {
+        "person_id": "p19",
+        "name": "Aditya Bose",
+        "headline": "Enterprise AI and IT consulting",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Works at Persistent Systems 2018-now as Vice President, Digital",
+        "evidence": [
+          "Persistent Systems 2018-now, Vice President, Digital"
+        ],
+        "score": 5.8
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "9817a9b7-6de3-4bfa-8e80-ac4cf87d1d6a",
+    "kind": "management_change",
+    "symbol": "BAJFINANCE",
+    "headline": "3 contacts overlapped with Prashant Verma",
+    "subject": "Prashant Verma",
+    "matches": [
+      {
+        "person_id": "p15",
+        "name": "Deepika Menon",
+        "headline": "Collections and rural consumer finance",
+        "strength": 4,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~14 yrs at Bajaj Finance with Prashant Verma (Head, Collections, 2010-2023)",
+        "evidence": [
+          "Bajaj Finance 2010-2023",
+          "filing: Prashant Verma tenure since ~2006"
+        ],
+        "score": 12.6
+      },
+      {
+        "person_id": "p16",
+        "name": "Harsh Vardhan",
+        "headline": "Former CTO of a consumer lender",
+        "strength": 3,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~12 yrs at Bajaj Finance with Prashant Verma (Chief Technology Officer, 2008-2019)",
+        "evidence": [
+          "Bajaj Finance 2008-2019",
+          "filing: Prashant Verma tenure since ~2006"
+        ],
+        "score": 11.4
+      },
+      {
+        "person_id": "p01",
+        "name": "Meera Iyer",
+        "headline": "Ex-credit risk head, consumer lending",
+        "strength": 5,
+        "link": "overlapped_with_person",
+        "why": "Overlapped ~7 yrs at Bajaj Finance with Prashant Verma (Head of Credit Risk, 2014-2020)",
+        "evidence": [
+          "Bajaj Finance 2014-2020",
+          "filing: Prashant Verma tenure since ~2006"
+        ],
+        "score": 11.1
+      }
+    ],
+    "note": null
+  },
+  {
+    "key": "f993b851-e8a4-42c2-b791-341bb576eebc",
+    "kind": "management_change",
+    "symbol": "ULTRACEMCO",
+    "headline": "1 contact know UltraTech Cement",
+    "subject": "K. K. Maheshwari",
+    "matches": [
+      {
+        "person_id": "p21",
+        "name": "Siddharth Rane",
+        "headline": "Steel and cement plant operations",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Works at UltraTech Cement 2019-now as VP, Operations",
+        "evidence": [
+          "UltraTech Cement 2019-now, VP, Operations"
+        ],
+        "score": 5.8
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  },
+  {
+    "key": "f9af6120-5da7-497d-82da-4444b74ef32a",
+    "kind": "management_change",
+    "symbol": "ULTRACEMCO",
+    "headline": "1 contact know UltraTech Cement",
+    "subject": "K. K. Maheshwari",
+    "matches": [
+      {
+        "person_id": "p21",
+        "name": "Siddharth Rane",
+        "headline": "Steel and cement plant operations",
+        "strength": 3,
+        "link": "worked_at_company",
+        "why": "Works at UltraTech Cement 2019-now as VP, Operations",
+        "evidence": [
+          "UltraTech Cement 2019-now, VP, Operations"
+        ],
+        "score": 5.8
+      }
+    ],
+    "note": "The filing gives no career history for this person, so FINN matches on the employer only. A licensed profile source would add the full path."
+  }
+]

@@ -1,12 +1,12 @@
 # Submission draft (DRAFT ONLY: the user sends it; nothing here has been sent)
 
-**To:** assessment@enam.com  **Subject:** IIT Delhi – AI Engineer - 2027  **Deadline:** 15 Nov 2026
+**To:** assessment@enam.com  **Subject:** IIT Delhi – Founding AI Engineer - 2027  **Deadline:** 15 Nov 2026
 
 ## Deliverables checklist (status on 13 Nov)
 - [x] **Deployed mobile link (14 Nov):** PWA https://enam-ai-test.pages.dev/ , API https://finn-api-7n6q.onrender.com (`/health` ok, mode live). **Phone check still to be done by the owner** (Today 30d, a results card, INFY research, LIVE/SNAPSHOT chip). Render auto-deploys on commit (`autoDeployTrigger: commit`), so wait for the deploy after the last push and re-check `/health`.
-- [ ] **GitHub repo reachable by the reviewers**: the repo is **private**; make it public or add the ENAM reviewers. Check `git log -p | grep -E "AIza|gsk_|sk-or"` shows nothing (last checked: clean).
-- [ ] **AI build history**: `docs/ai-history/README.md` has the index; replace the `<...>` links (ChatGPT and Antigravity share links; scrubbed Claude Code transcripts).
-- [x] **Demo check (13 Nov):** 300 backend tests, lint clean, BSE / screener.in / Yahoo reachable, frontend builds, no mock data in the snapshot.
+- [ ] **GitHub repo reachable by the reviewers**: the brief asks for a **public** repository and it is currently private: make it public (check the secrets scan first). Check `git log -p | grep -E "AIza|gsk_|sk-or"` shows nothing (last checked: clean).
+- [ ] **AI build history**: `docs/ai-history/README.md` has the index; replace the `<...>` links (ChatGPT, Antigravity and Codex share links; scrubbed Claude Code transcripts).
+- [x] **Demo check (13 Nov):** 321 backend tests, lint clean, BSE / screener.in / Yahoo reachable, frontend builds, no mock data in the snapshot.
 - [x] Titan results card fixed (13 Nov): all 17 results cards match screener.in.
 - [x] `GET /debug/sources` on Render (14 Nov): BSE announcement API 403, screener.in OK, yfinance OK. BSE's announcement API answers 403 to the Render host (so Push ingest stays on the laptop and ships in the snapshot/seed), but the earnings-call PDFs download fine: a live research build for an unseen ticker (GODREJCP, 14 Nov) finished on Render in about a minute with 4 transcripts read and 8 promises judged. If a transcript host ever blocks, the report degrades to the financials plus an explicit gap.
 - [ ] **Re-run before sending:** after the last push, wait for the Render auto-deploy and confirm `/health` and the Pages site.
@@ -24,6 +24,8 @@ today, and lets you research any NSE company from its earnings calls. Push has a
 The part I'm proudest of: every claim carries a quote the server has checked against the page, and where the numbers can settle a promise, code
 settles it. KPIL guided at least 25% FY26 revenue growth; its filed consolidated growth was 21.6%, and FINN says missed.
 
+**The Network.** The brief's third layer is built into Push and Pull, not beside them. A synthetic network of 36 contacts (clearly labelled; a real product would use consented or licensed profile data) overlaps the portfolio. A management-change card shows which contacts overlapped with the new executive, using only the tenure the filing itself states and saying so when it gives none; M&A, capex and litigation filings name the best contact to call and why; each Research page has "Who to call about"; and the Network tab has an ask box, reconnect nudges tied to real recent filings, and an expertise map. Matches are rules over listed facts and never a model's guess. The only model call is a small planner that picks a tool for a question, so the agent cannot name anyone outside the network. Architecture diagram, pipelines, privacy and consent, models and agents, and cloud: `docs/ARCHITECTURE.md`.
+
 **Decisions and trade-offs.**
 - *Rules first, models second.* In one run FINN classified 468 filings: rules handled 84.6 %, the other 72 took three batched model calls.
 - *Models copy, code computes.* Results tables don't survive PDF text extraction, so the PDF goes to Gemini natively; the model copies printed figures and code does
@@ -34,7 +36,7 @@ settles it. KPIL guided at least 25% FY26 revenue growth; its filed consolidated
 - *Free-tier reality.* Gemini's free tier has daily per-model quotas, so the router reads the retry time and skips exhausted models, and a local open model on a GPU does
   the heavy build-time work. Total spend ₹0.00 over 195 measured calls (54.4 % cache hits; the live Cost screen keeps counting after deploy, 216 calls / 51.2 % when checked on 14 Nov, still ₹0). The demo serves a committed seed and snapshot, so it never depends on a live model.
 
-**What I deliberately left out.** Voice, auth and real push notifications; web enrichment for bios (they come from the filing text only); bull/bear and the other research modules. (A grounded `/ask` exists in the API; see the README for whether the UI sheet is wired to it.) That time went into verification, because a wrong number is worse than a missing one.
+**What I deliberately left out.** Voice, real push notifications and accounts (so the demo network is shared, public and fictional, and the privacy design is described, not implemented); real profile data (synthetic by choice, with the real route documented); web enrichment for bios (they come from the filing text only); bull/bear and the other research modules. (A grounded `/ask` exists in the API; see the README for whether the UI sheet is wired to it.) That time went into verification, because a wrong number is worse than a missing one.
 
 **Where I'd take it next.** Evaluate verdicts against analyst-labelled examples; narrative-vs-numbers (drafted); intraday filings over a websocket;
 portfolio-level drift in management tone.

@@ -1,0 +1,58 @@
+{
+  "key": "DIXON",
+  "kind": "company",
+  "symbol": "DIXON",
+  "headline": "2 contacts worked at Dixon Technologies",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p24",
+      "name": "Anjali Chawla",
+      "headline": "Ex-strategy lead, electronics manufacturing",
+      "strength": 5,
+      "link": "worked_at_company",
+      "why": "Worked at Dixon Technologies 2014-2024 as Head, Strategy and Investor Relations",
+      "evidence": [
+        "Dixon Technologies 2014-2024, Head, Strategy and Investor Relations"
+      ],
+      "score": 6.5
+    },
+    {
+      "person_id": "p05",
+      "name": "Vikram Desai",
+      "headline": "Electronics manufacturing operator",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Worked at Dixon Technologies 2012-2019 as VP Operations",
+      "evidence": [
+        "Dixon Technologies 2012-2019, VP Operations"
+      ],
+      "score": 5.3
+    },
+    {
+      "person_id": "p17",
+      "name": "Gaurav Sethi",
+      "headline": "Large-deal delivery head, IT services",
+      "strength": 5,
+      "link": "sector_expert",
+      "why": "bank technology expert (large-deal delivery head, it services); no direct tie to Dixon Technologies",
+      "evidence": [
+        "expertise: bank technology"
+      ],
+      "score": 4.0
+    },
+    {
+      "person_id": "p02",
+      "name": "Arjun Rao",
+      "headline": "Former CISO and technology risk lead",
+      "strength": 3,
+      "link": "sector_expert",
+      "why": "technology risk expert (former ciso and technology risk lead); no direct tie to Dixon Technologies",
+      "evidence": [
+        "expertise: technology risk"
+      ],
+      "score": 3.0
+    }
+  ],
+  "note": null
+}

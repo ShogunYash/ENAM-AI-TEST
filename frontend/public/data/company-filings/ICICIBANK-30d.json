@@ -3,13 +3,13 @@
   "name": "ICICI Bank",
   "window": {
     "label": "30d",
-    "start": "2026-10-15T02:39:28.726052+05:30",
-    "end": "2026-11-14T02:39:28.726052+05:30"
+    "start": "2026-10-16T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-14T02:39:28.726052+05:30",
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
   "counts": {
-    "total": 15,
-    "rule_classified": 13,
+    "total": 14,
+    "rule_classified": 12,
     "llm_classified": 2
   },
   "important": [
@@ -23,7 +23,7 @@
       "category": "credit_rating",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.043,
+      "score": 0.031,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/94d9e62f-952d-4046-8379-bbdd1761f3ab.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -41,7 +41,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.024,
+      "score": 0.017,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cbd56dbf-e0e2-444e-9793-b261a8e0e05e.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -96,10 +96,10 @@
     }
   ],
   "routine": {
-    "count": 13,
+    "count": 12,
     "by_category": {
       "investor_meetings": 2,
-      "unclassified": 7,
+      "unclassified": 6,
       "earnings_call": 3,
       "results": 1
     },
@@ -114,8 +114,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.76,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/fc247b09-13fa-455a-90ab-e43e40f21412.pdf",
+        "score": 0.55,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fc247b09-13fa-455a-90ab-e43e40f21412.pdf",
         "price_reaction": {
           "pct_1d": -0.4,
           "vol_ratio": 0.64
@@ -132,7 +132,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.35,
+        "score": 0.253,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5d528b54-cd3f-477f-9539-fff4ab659b43.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -222,7 +222,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.014,
+        "score": 0.01,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b0db888f-4420-4c21-9c36-9a91bdf5865e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -252,7 +252,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.004,
+        "score": 0.003,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/265811af-e787-4d51-8313-c62c515ae838.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -267,7 +267,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.004,
+        "score": 0.003,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b831cebf-9ddc-48a6-861f-1879e07a86fc.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -282,23 +282,8 @@
         "category": "results",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.005,
+        "score": 0.004,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ce99bcac-180c-4c6b-9eb7-89690a4bb498.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "47096e96-af36-4ba8-b2bf-f752f5835b2b",
-        "symbol": "ICICIBANK",
-        "company_name": "ICICI Bank Ltd",
-        "filed_at": "2026-10-15T14:18:26.240000+05:30",
-        "headline": "Allotment of 113,464 equity shares at FV Rs. 2 each under ICICI Bank Employees Stock Option Scheme 2000.",
-        "so_what": null,
-        "category": "unclassified",
-        "category_source": "rule",
-        "priority": "hidden",
-        "score": 0.0,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a45e4737-ef8d-4eab-b353-0a40628db311.pdf",
         "price_reaction": null,
         "enrichment": null
       }

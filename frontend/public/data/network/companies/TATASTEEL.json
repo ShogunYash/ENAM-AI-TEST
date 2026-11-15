@@ -1,0 +1,34 @@
+{
+  "key": "TATASTEEL",
+  "kind": "company",
+  "symbol": "TATASTEEL",
+  "headline": "2 contacts worked at Tata Steel",
+  "subject": null,
+  "matches": [
+    {
+      "person_id": "p07",
+      "name": "Rohan Kapoor",
+      "headline": "Ex-Tata group strategy and M&A",
+      "strength": 5,
+      "link": "worked_at_company",
+      "why": "Worked at Tata Steel 2010-2017 as GM, Corporate Strategy and M&A",
+      "evidence": [
+        "Tata Steel 2010-2017, GM, Corporate Strategy and M&A"
+      ],
+      "score": 6.0
+    },
+    {
+      "person_id": "p21",
+      "name": "Siddharth Rane",
+      "headline": "Steel and cement plant operations",
+      "strength": 3,
+      "link": "worked_at_company",
+      "why": "Worked at Tata Steel 2006-2019 as Plant Head, Flat Products",
+      "evidence": [
+        "Tata Steel 2006-2019, Plant Head, Flat Products"
+      ],
+      "score": 5.3
+    }
+  ],
+  "note": null
+}
