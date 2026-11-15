@@ -8,6 +8,7 @@ try {
   await send('Page.navigate', { url: dev })
   await until(`!!${chooser}`, 'fresh profile chooser after opening animation')
   check('Fresh device shows Choose your look', await ev(`!!${chooser} && document.body.innerText.includes('Choose your look')`))
+  check('Chooser chrome is not selectable', await ev(`getComputedStyle(${chooser}).userSelect==='none'`))
   check('Focus starts in selected radio', await ev(`document.activeElement.getAttribute('role')==='radio' && document.activeElement.getAttribute('aria-checked')==='true'`))
   await send('Input.dispatchKeyEvent', { type: 'keyDown', key: 'ArrowRight', code: 'ArrowRight' })
   check('Arrow selects Dark and previews immediately', await ev(`document.activeElement.innerText.includes('Dark') && document.activeElement.getAttribute('aria-checked')==='true' && document.documentElement.classList.contains('dark')`))

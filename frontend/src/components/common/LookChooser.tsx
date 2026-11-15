@@ -49,7 +49,7 @@ export function LookChooser({ onContinue }: { onContinue: () => void }) {
   }
   return (
     <div ref={dialog} role="dialog" aria-modal="true" aria-labelledby="look-title" aria-describedby="look-help" onKeyDown={trapFocus}
-      className="fixed inset-0 z-[90] overflow-y-auto bg-zinc-950 px-4 py-8 text-zinc-100">
+      className="finn-app-shell fixed inset-0 z-[90] overflow-y-auto bg-zinc-950 px-4 py-8 text-zinc-100">
       <div className="mx-auto flex min-h-full w-full max-w-[398px] flex-col justify-center gap-6">
         <header><p className="mb-2 font-mono text-[11px] uppercase tracking-wider text-zinc-400">FINN · Triage desk</p>
           <h1 id="look-title" className="text-xl font-semibold">Choose your look</h1>

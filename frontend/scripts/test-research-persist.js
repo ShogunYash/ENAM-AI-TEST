@@ -35,7 +35,7 @@ try {
   await send('Page.reload')
   await until(`document.body.innerText.includes('Saved on this device') && document.body.innerText.includes('Persistence test report')`, 'offline saved detail', 1500)
   check('Saved detail opens immediately without waiting for the API', await ev(`!!document.querySelector('h1') && document.querySelector('h1').innerText==='ZZTEST' && !document.body.innerText.includes('Resolving symbol')`))
-  // A saved initial result is rendered while a live retry is deliberately held open.
+  // Refresh must bypass the device copy and attempt the live endpoint again.
   await send('Network.setBlockedURLs', { urls: [] })
   const beforeRefresh = requests
   await ev(`Array.from(document.querySelectorAll('button')).find(b=>b.innerText==='Refresh').click()`)
