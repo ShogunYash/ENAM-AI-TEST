@@ -77,7 +77,7 @@ export const CitationDrawer: React.FC<CitationDrawerProps> = ({
                 {claim.kind}
               </span>
             </div>
-            <div className="p-2.5 rounded-lg bg-zinc-950/80 border border-zinc-800/80 text-zinc-200 text-[13px] font-medium leading-snug">
+            <div className="selectable p-2.5 rounded-lg bg-zinc-950/80 border border-zinc-800/80 text-zinc-200 text-[13px] font-medium leading-snug">
               {claim.text}
             </div>
           </div>
@@ -127,7 +127,7 @@ export const CitationDrawer: React.FC<CitationDrawerProps> = ({
                   </div>
 
                   {/* Verbatim Quote */}
-                  <div className="relative pl-3 border-l-2 border-emerald-500/80 py-0.5 text-zinc-300 italic text-[12px] leading-relaxed">
+                  <div className="selectable relative pl-3 border-l-2 border-emerald-500/80 py-0.5 text-zinc-300 italic text-[12px] leading-relaxed">
                     <Quote className="w-3 h-3 text-emerald-500/50 absolute -top-1 -left-1 opacity-40 inline" />
                     "{src.quote}"
                   </div>

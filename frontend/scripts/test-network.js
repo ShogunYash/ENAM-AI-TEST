@@ -350,7 +350,10 @@ async function runNetworkTests() {
       await new Promise((r) => setTimeout(r, 2500))
 
       // Navigate Chrome to offline server
-      await send('Page.navigate', { url: `${OFFLINE_URL}?tab=network` })
+      const offlineUrl = new URL(OFFLINE_URL)
+      offlineUrl.searchParams.set('nosplash', '')
+      offlineUrl.searchParams.set('tab', 'network')
+      await send('Page.navigate', { url: offlineUrl.toString() })
       await new Promise((r) => setTimeout(r, 2000))
 
       // Tap Network tab if not already on it
@@ -569,10 +572,17 @@ async function runNetworkTests() {
       })()`)
       await new Promise((r) => setTimeout(r, 1000))
 
-      // Drill into INFY article directly
+      // A saved pre-built report appears once, in Saved. Reveal its row before selecting.
+      await evaluate(`(() => {
+        const savedSection = document.querySelector('section[aria-label="Saved research"]');
+        const showAll = savedSection && Array.from(savedSection.querySelectorAll('button')).find(b => (b.innerText || '').startsWith('Show all'));
+        if (showAll) showAll.click();
+      })()`)
+      await new Promise((r) => setTimeout(r, 200))
       const clickedInfy = await evaluate(`(() => {
+        const saved = document.querySelector('button[aria-label="Open saved INFY"]');
         const articles = Array.from(document.querySelectorAll('article'));
-        const infy = articles.find(a => (a.innerText || '').includes('INFY'));
+        const infy = saved || articles.find(a => (a.innerText || '').includes('INFY'));
         if (infy) {
           infy.scrollIntoView({ behavior: 'instant', block: 'center' });
           infy.click();
@@ -582,7 +592,7 @@ async function runNetworkTests() {
       })()`)
 
       if (!clickedInfy) {
-        throw new Error('Could not find or click INFY article under Ready reports on Research screen')
+        throw new Error('Could not find or click INFY in Saved or Ready reports on Research screen')
       }
 
       let hasWhoToCall = false

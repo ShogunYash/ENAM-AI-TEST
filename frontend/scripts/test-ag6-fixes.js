@@ -26,7 +26,7 @@ async function runTest() {
     '--remote-debugging-port=9229',
     '--window-size=390,844',
     '--user-data-dir=' + tmpUserData,
-    'http://localhost:5199/',
+    'http://localhost:5199/?nosplash',
   ])
 
   await new Promise((r) => setTimeout(r, 2000))

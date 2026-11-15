@@ -44,7 +44,7 @@ export function PersonMatchRow({ match, onOpenPerson }: {
         </button>
       </div>
       <p title={match.why} className="truncate leading-5 text-xs text-zinc-400">{match.why}</p>
-      {expanded && <div id={evidenceId} className="desk-inset my-2 space-y-2 text-xs text-zinc-400">
+      {expanded && <div id={evidenceId} className="selectable desk-inset my-2 space-y-2 text-xs text-zinc-400">
         <p>{match.headline}</p>
         <span className="inline-flex items-center gap-1 text-[11px]"><Icon aria-hidden="true" className="h-3.5 w-3.5" />{label}</span>
         <p className="leading-relaxed">{match.why}</p>

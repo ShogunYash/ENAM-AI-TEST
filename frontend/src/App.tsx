@@ -9,6 +9,7 @@ import { ProfileScreen } from '@/components/screens/ProfileScreen'
 import { NetworkScreen } from '@/components/network/NetworkScreen'
 import { PersonProvider } from '@/components/network/PersonProvider'
 import { Splash } from '@/components/common/Splash'
+import { LookChooser, needsLookChoice } from '@/components/common/LookChooser'
 import { AskFinnSheet, AskFinnTarget } from '@/components/common/AskFinnSheet'
 import { getDigestData } from '@/api/client'
 import { useSettings } from '@/lib/settings'
@@ -149,12 +150,14 @@ function FinnApp() {
 }
 
 export default function App() {
+  const [chooseLook, setChooseLook] = useState(needsLookChoice)
+  const [openingDone, setOpeningDone] = useState(() => new URLSearchParams(window.location.search).has('nosplash'))
   return (
     <QueryClientProvider client={queryClient}>
-      <Splash />
-      <PersonProvider>
+      <Splash onComplete={() => setOpeningDone(true)} />
+      {chooseLook ? (openingDone && <LookChooser onContinue={() => setChooseLook(false)} />) : <PersonProvider>
         <FinnApp />
-      </PersonProvider>
+      </PersonProvider>}
     </QueryClientProvider>
   )
 }

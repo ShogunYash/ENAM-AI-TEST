@@ -1,3 +1,4 @@
+import { readSavedResearch, saveResearchReport } from '@/lib/researchStorage'
 import {
   Digest,
   DigestWindow,
@@ -27,7 +28,8 @@ export interface DigestResult {
 
 export interface ResearchResult {
   data: Research
-  source: 'live' | 'snapshot'
+  source: 'live' | 'snapshot' | 'device'
+  savedAt?: string
 }
 
 export interface StatsResult {
@@ -124,8 +126,11 @@ export async function fetchResearchData(symbol: string): Promise<ResearchResult>
   try {
     const liveRes = await fetchWithTimeout(`${API_BASE}/research/${sym}`, {}, 2000)
     if (liveRes.ok) {
-      const data = await liveRes.json()
-      return { data, source: 'live' }
+      const data: Research = await liveRes.json()
+      if (['ready', 'partial', 'building'].includes(data.status)) {
+        saveResearchReport(data)
+        return { data, source: 'live' }
+      }
     }
   } catch (err) {
     // Live API unreachable, fall back to snapshot
@@ -135,12 +140,17 @@ export async function fetchResearchData(symbol: string): Promise<ResearchResult>
   try {
     const snapRes = await fetch(`/data/research/${sym}.json`)
     if (snapRes.ok) {
-      const data = await snapRes.json()
+      const data: Research = await snapRes.json()
+      saveResearchReport(data)
       return { data, source: 'snapshot' }
     }
   } catch {}
 
-  // 3. Fallback building state
+  // 3. A genuine completed report kept on this device
+  const saved = readSavedResearch(sym)
+  if (saved) return { data: saved.data, source: 'device', savedAt: saved.savedAt }
+
+  // 4. Fallback building state
   try {
     const buildRes = await fetch('/data/research/building.json')
     if (buildRes.ok) {

@@ -332,3 +332,16 @@
 .terminal time { font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; }
 .terminal .desk-panel-helper { order: 1; }
 .terminal .desk-count { order: 2; margin-left: auto; }
+
+/* App chrome does not select words; source material deliberately does. */
+.finn-app-shell {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.selectable, .selectable *, input, textarea, [contenteditable]:not([contenteditable="false"]) {
+  user-select: text;
+  -webkit-user-select: text;
+  -webkit-touch-callout: default;
+}

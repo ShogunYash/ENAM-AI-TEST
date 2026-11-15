@@ -214,7 +214,7 @@ export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({
                 <div className="bg-zinc-950/70 border border-zinc-800 p-3 rounded-lg text-xs space-y-1.5">
                   <div className="flex items-start gap-2 text-zinc-300">
                     <HelpCircle className="w-4 h-4 text-zinc-400 mt-0.5 flex-shrink-0" />
-                    <p className="leading-relaxed">{h.answer}</p>
+                    <p className="selectable leading-relaxed">{h.answer}</p>
                   </div>
                   <div className="text-[10px] font-mono text-zinc-500">
                     Grounded policy: FINN refuses to speculate when facts are absent from the document.
@@ -223,7 +223,7 @@ export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({
               ) : (
                 /* Grounded answer with verified evidence */
                 <div className="bg-zinc-950/70 border border-zinc-800/80 p-3.5 rounded-lg text-zinc-200 space-y-3">
-                  <p className="leading-relaxed text-zinc-200 font-normal">{h.answer}</p>
+                  <p className="selectable leading-relaxed text-zinc-200 font-normal">{h.answer}</p>
 
                   {/* Tappable primary source line directly below answer */}
                   {(() => {
@@ -324,7 +324,7 @@ export const AskFinnSheet: React.FC<AskFinnSheetProps> = ({
                                   )}
                                 </div>
                                 {/* Verbatim quote in quotation marks */}
-                                <div className="relative pl-2.5 border-l-2 border-emerald-500/80 text-zinc-300 italic text-[11px] leading-relaxed">
+                                <div className="selectable relative pl-2.5 border-l-2 border-emerald-500/80 text-zinc-300 italic text-[11px] leading-relaxed">
                                   "{src.quote}"
                                 </div>
                               </div>

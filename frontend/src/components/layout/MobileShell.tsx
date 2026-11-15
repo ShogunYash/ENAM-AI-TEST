@@ -73,7 +73,7 @@ export const MobileShell: React.FC<MobileShellProps> = ({
   ]
 
   return (
-    <div className="min-h-screen bg-zinc-950 flex justify-center selection:bg-zinc-800 lg:bg-[radial-gradient(70%_55%_at_50%_0%,rgb(var(--brand-primary)/0.16),transparent),radial-gradient(50%_40%_at_100%_100%,rgb(var(--brand-primary)/0.10),transparent)]">
+    <div className="finn-app-shell min-h-screen bg-zinc-950 flex justify-center selection:bg-zinc-800 lg:bg-[radial-gradient(70%_55%_at_50%_0%,rgb(var(--brand-primary)/0.16),transparent),radial-gradient(50%_40%_at_100%_100%,rgb(var(--brand-primary)/0.10),transparent)]">
       {/* Mobile-constrained viewport container: 390px base, up to 430px */}
       <div className="w-full max-w-[430px] min-h-screen bg-zinc-950 border-x border-zinc-900/80 flex flex-col relative shadow-2xl lg:shadow-[0_0_80px_rgba(30,41,90,0.28)] lg:border-zinc-800">
         {/* Desktop only: the app is a phone layout, say so beside it */}

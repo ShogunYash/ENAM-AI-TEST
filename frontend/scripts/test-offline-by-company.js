@@ -33,7 +33,7 @@ async function runOfflineTest() {
     '--remote-debugging-port=9227',
     '--window-size=390,844',
     '--user-data-dir=' + tmpUserData,
-    'http://localhost:5198/',
+    'http://localhost:5198/?nosplash',
   ])
 
   await new Promise((r) => setTimeout(r, 2000))
