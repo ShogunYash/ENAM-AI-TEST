@@ -78,6 +78,11 @@ def main() -> int:
         n = prices_mod.store_bars(bars)
         print(f"prices: {len(bars)}/{len(syms)} symbols, {n} bars stored" + (f"; MISSING {missing}" if missing else ""))
         failures += len(missing)
+        try:
+            n_in = prices_mod.store_intraday(prices_mod.fetch_intraday(syms))
+            print(f"intraday: {n_in} 15-minute bars stored (price charts)")
+        except Exception as e:  # noqa: BLE001 - charts fall back to daily bars; never fail the ingest for them
+            print(f"intraday: skipped ({type(e).__name__})")
         snaps = prices_mod.snapshots(syms)
         for sn in sorted(snaps, key=lambda x: -abs(x.pct_1d))[:5]:
             print(f"   top mover {sn.symbol:<11} {sn.pct_1d:+6.2f}%  vol x{sn.vol_ratio:.2f}  close {sn.close}")

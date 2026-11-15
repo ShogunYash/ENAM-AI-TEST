@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "7d",
-    "start": "2026-11-08T12:11:18.915575+05:30",
-    "end": "2026-11-15T12:11:18.915575+05:30"
+    "start": "2026-11-08T14:36:46.500569+05:30",
+    "end": "2026-11-15T14:36:46.500569+05:30"
   },
-  "generated_at": "2026-11-15T12:11:18.915575+05:30",
+  "generated_at": "2026-11-15T14:36:46.500569+05:30",
   "needs_you": [
     {
       "id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
@@ -16,11 +16,11 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 5.952,
+      "score": 4.441,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
       "price_reaction": {
-        "pct_1d": 3.36,
-        "vol_ratio": 1.21
+        "pct_1d": 0.18,
+        "vol_ratio": 1.18
       },
       "enrichment": {
         "type": "oneliner",
@@ -39,7 +39,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 4.925,
+      "score": 4.811,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -63,9 +63,12 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 3.945,
+      "score": 4.247,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6df1f05c-9926-47ce-9896-94c41bdb71ab.pdf",
-      "price_reaction": null,
+      "price_reaction": {
+        "pct_1d": -1.02,
+        "vol_ratio": 0.59
+      },
       "enrichment": {
         "type": "management",
         "person": "Mr. V. Srinivasa Rangan",
@@ -87,7 +90,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 3.314,
+      "score": 3.237,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/84c0dbf5-4b55-41b9-ab7b-e20d9fe359a9.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -105,7 +108,7 @@
       "category": "fund_raise",
       "category_source": "rule",
       "priority": "high",
-      "score": 3.308,
+      "score": 3.232,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/41e7bb57-172f-4858-a5ac-8c15fe653e81.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -118,8 +121,8 @@
     "count": 18,
     "by_category": {
       "earnings_call": 4,
-      "press_release": 1,
       "investor_meetings": 9,
+      "press_release": 1,
       "unclassified": 4
     },
     "items": [
@@ -133,9 +136,12 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.101,
+        "score": 1.151,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/eeedbcb3-2b63-4718-b5b7-b498eedf2b4e.pdf",
-        "price_reaction": null,
+        "price_reaction": {
+          "pct_1d": -0.7,
+          "vol_ratio": 0.53
+        },
         "enrichment": null
       },
       {
@@ -148,9 +154,12 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.04,
+        "score": 1.069,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/769be2ca-bd51-4ac3-8e63-ce44e430d026.pdf",
-        "price_reaction": null,
+        "price_reaction": {
+          "pct_1d": 0.52,
+          "vol_ratio": 0.63
+        },
         "enrichment": null
       },
       {
@@ -163,12 +172,9 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.891,
+        "score": 0.794,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/daa6c172-771a-4af5-b4b3-9813fdf7536a.pdf",
-        "price_reaction": {
-          "pct_1d": -0.97,
-          "vol_ratio": 0.78
-        },
+        "price_reaction": null,
         "enrichment": null
       },
       {
@@ -181,11 +187,26 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.82,
+        "score": 0.793,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a9cb0ab8-930f-4400-b70b-fbd01640f54d.pdf",
+        "price_reaction": null,
+        "enrichment": null
+      },
+      {
+        "id": "8213af8b-74ba-4762-a8d6-8447a2efb9c7",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-11-13T15:14:47.833000+05:30",
+        "headline": "Intimation regarding Investor meet of UltraTech Cement Limited",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.756,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d7982c18-e8b9-485f-8165-a8333b0d421e.pdf",
         "price_reaction": {
-          "pct_1d": -0.08,
-          "vol_ratio": 1.01
+          "pct_1d": -1.92,
+          "vol_ratio": 0.57
         },
         "enrichment": null
       },
@@ -199,7 +220,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.739,
+        "score": 0.722,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/8269aea9-54c0-4a24-a615-6dda0ab8f054.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -214,23 +235,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.669,
+        "score": 0.653,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3f614a9e-94b0-42ef-8145-ba0055ba7be5.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "8213af8b-74ba-4762-a8d6-8447a2efb9c7",
-        "symbol": "ULTRACEMCO",
-        "company_name": "UltraTech Cement Ltd",
-        "filed_at": "2026-11-13T15:14:47.833000+05:30",
-        "headline": "Intimation regarding Investor meet of UltraTech Cement Limited",
-        "so_what": null,
-        "category": "investor_meetings",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.649,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d7982c18-e8b9-485f-8165-a8333b0d421e.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -244,11 +250,11 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.566,
+        "score": 0.582,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/71268b4d-2f12-447d-bf1e-28310f485d17.pdf",
         "price_reaction": {
-          "pct_1d": -0.97,
-          "vol_ratio": 0.78
+          "pct_1d": -1.56,
+          "vol_ratio": 0.66
         },
         "enrichment": null
       },
@@ -262,11 +268,29 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.547,
+        "score": 0.55,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d01ef203-cd61-4f19-b88b-7a373979e5b5.pdf",
         "price_reaction": {
-          "pct_1d": 0.71,
-          "vol_ratio": 1.0
+          "pct_1d": -1.02,
+          "vol_ratio": 0.59
+        },
+        "enrichment": null
+      },
+      {
+        "id": "782e8cb6-906c-4a17-a08e-2ac89389e272",
+        "symbol": "TATASTEEL",
+        "company_name": "Tata Steel Ltd",
+        "filed_at": "2026-11-12T16:48:53.923000+05:30",
+        "headline": "Intimation of Schedule of Analyst/ Institutional Investor Meeting under the SEBI Listing Regulations",
+        "so_what": null,
+        "category": "investor_meetings",
+        "category_source": "rule",
+        "priority": "low",
+        "score": 0.546,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fcd5e6ba-794e-420b-ae7a-17a4c8df68e3.pdf",
+        "price_reaction": {
+          "pct_1d": -0.7,
+          "vol_ratio": 0.53
         },
         "enrichment": null
       },
@@ -280,24 +304,12 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.541,
+        "score": 0.528,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/55f9d4f5-8638-4669-abdb-7cc4127221fc.pdf",
-        "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "782e8cb6-906c-4a17-a08e-2ac89389e272",
-        "symbol": "TATASTEEL",
-        "company_name": "Tata Steel Ltd",
-        "filed_at": "2026-11-12T16:48:53.923000+05:30",
-        "headline": "Intimation of Schedule of Analyst/ Institutional Investor Meeting under the SEBI Listing Regulations",
-        "so_what": null,
-        "category": "investor_meetings",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.523,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fcd5e6ba-794e-420b-ae7a-17a4c8df68e3.pdf",
-        "price_reaction": null,
+        "price_reaction": {
+          "pct_1d": 0.0,
+          "vol_ratio": 0.63
+        },
         "enrichment": null
       },
       {
@@ -310,11 +322,11 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.424,
+        "score": 0.484,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2b934e4e-121f-42d7-a2d0-d3eb4364b9a7.pdf",
         "price_reaction": {
-          "pct_1d": -0.2,
-          "vol_ratio": 0.52
+          "pct_1d": -1.92,
+          "vol_ratio": 0.57
         },
         "enrichment": null
       },
@@ -328,7 +340,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.262,
+        "score": 0.256,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c0a1bde0-4d57-46c0-ac73-940d5ff093d7.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -343,7 +355,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.257,
+        "score": 0.251,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ced01c36-48bf-4c4c-a74b-d17875a41c27.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -360,7 +372,10 @@
         "priority": "hidden",
         "score": 0.0,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/77999e05-06f6-4ed6-9998-f9a775dc5c4f.pdf",
-        "price_reaction": null,
+        "price_reaction": {
+          "pct_1d": -1.56,
+          "vol_ratio": 0.66
+        },
         "enrichment": null
       },
       {
@@ -376,8 +391,8 @@
         "score": 0.0,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2d26cac8-d5b5-4be4-ba93-d18f80ee8c0c.pdf",
         "price_reaction": {
-          "pct_1d": -0.33,
-          "vol_ratio": 0.45
+          "pct_1d": -0.84,
+          "vol_ratio": 0.37
         },
         "enrichment": null
       },
@@ -419,7 +434,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-11T17:06:59.713000+05:30",
-      "value": 5.952,
+      "value": 4.441,
       "threshold": 7.0,
       "message": "Bajaj Finance approved opening QIP at ₹992.25 per share floor price.",
       "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7"
@@ -429,7 +444,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-10T12:23:10.163000+05:30",
-      "value": 3.314,
+      "value": 3.237,
       "threshold": 7.0,
       "message": "Approved allotment of 5,74,25,740 warrants at Rs. 1,010 each.",
       "filing_id": "dff7d1e2-500b-498c-9b9a-52b2cb4641a8"
@@ -439,7 +454,7 @@
       "symbol": "BAJFINANCE",
       "kind": "material_filing",
       "triggered_at": "2026-11-10T12:12:31.463000+05:30",
-      "value": 3.308,
+      "value": 3.232,
       "threshold": 7.0,
       "message": "Approved issuing 5,74,25,740 warrants for ₹57,99,99,97,400.",
       "filing_id": "f9a4f2e2-4e74-49fd-a6bd-9df8d6045e71"

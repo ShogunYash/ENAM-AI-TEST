@@ -146,6 +146,16 @@ export const ThresholdsScreen: React.FC = () => {
         </div>
       </div>
 
+      {theme === 'terminal' && (
+        <p className="px-1 text-[11px] leading-relaxed text-zinc-400" aria-label="What the section codes mean">
+          Codes: <b className="text-zinc-200">TOD</b> Today · <b className="text-zinc-200">ALT</b> Alerts ·{' '}
+          <b className="text-zinc-200">RSH</b> Research · <b className="text-zinc-200">NET</b> Network ·{' '}
+          <b className="text-zinc-200">EXP</b> Expertise · <b className="text-zinc-200">ASK</b> Ask ·{' '}
+          <b className="text-zinc-200">SET</b> Settings · <b className="text-zinc-200">CST</b> Cost ·{' '}
+          <b className="text-zinc-200">PRF</b> Profile · <b className="text-zinc-200">SRC</b> Sources
+        </p>
+      )}
+
       {/* Accordion Container */}
       <div className="desk-panel divide-y divide-zinc-700">
         <PanelHeader title="Alert thresholds and filing types" code="SET" count={3} />

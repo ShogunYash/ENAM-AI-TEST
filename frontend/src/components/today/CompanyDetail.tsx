@@ -6,6 +6,7 @@ import { useSettings } from '@/lib/settings'
 import { FilingCard } from '@/components/cards/FilingCard'
 import { RoutineGroup } from '@/components/today/RoutineGroup'
 import { ArrowLeft, CheckCircle } from 'lucide-react'
+import { PriceChart } from '@/components/charts/PriceChart'
 
 interface CompanyDetailProps {
   symbol: string
@@ -78,6 +79,8 @@ export const CompanyDetail: React.FC<CompanyDetailProps> = ({ symbol, windowOpti
           {c.routine.count > 0 ? ` · ${c.routine.count} routine` : ''}
         </p>
       </div>
+
+      <PriceChart symbol={c.symbol} />
 
       <section className="space-y-2.5">
         <h2 className="px-1 text-xs font-semibold uppercase tracking-wider text-zinc-300">

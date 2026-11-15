@@ -35,6 +35,40 @@ def fetch_bars(symbols: list[str], period: str = "3mo") -> dict[str, list[Bar]]:
     return out
 
 
+def fetch_intraday(symbols: list[str], period: str = "1mo", interval: str = "15m") -> dict[str, list[tuple[str, float]]]:
+    """15-minute closes (IST ISO timestamps) for the price charts. One batched call; Yahoo allows ~60 days of 15m bars."""
+    import pandas as pd
+    import yfinance as yf
+
+    tickers = [f"{s}.NS" for s in symbols]
+    df = yf.download(tickers=tickers, period=period, interval=interval, group_by="ticker",
+                     auto_adjust=False, threads=False, progress=False)
+    out: dict[str, list[tuple[str, float]]] = {}
+    if df is None or df.empty:
+        return out
+    for sym, tkr in zip(symbols, tickers):
+        sub = df[tkr] if isinstance(df.columns, pd.MultiIndex) and tkr in df.columns.get_level_values(0) else None
+        if sub is None:
+            continue
+        pts = [(ts.tz_convert("Asia/Kolkata").strftime("%Y-%m-%dT%H:%M:%S+05:30") if ts.tzinfo else ts.strftime("%Y-%m-%dT%H:%M:%S+05:30"),
+                float(row["Close"])) for ts, row in sub.dropna(subset=["Close"]).iterrows()]
+        if pts:
+            out[sym] = pts
+    return out
+
+
+def store_intraday(bars: dict[str, list[tuple[str, float]]]) -> int:
+    rows = [(sym, ts, c) for sym, pts in bars.items() for ts, c in pts]
+    with db.connect() as con:
+        con.executemany("INSERT OR REPLACE INTO intraday (symbol,ts,close) VALUES (?,?,?)", rows)
+    return len(rows)
+
+
+def load_intraday(symbol: str) -> list[tuple[str, float]]:
+    with db.connect() as con:
+        return [(r["ts"], r["close"]) for r in con.execute("SELECT ts,close FROM intraday WHERE symbol=? ORDER BY ts", (symbol,))]
+
+
 def store_bars(bars: dict[str, list[Bar]]) -> int:
     rows = [(sym, b.day, b.close, b.volume) for sym, bs in bars.items() for b in bs]
     with db.connect() as con:

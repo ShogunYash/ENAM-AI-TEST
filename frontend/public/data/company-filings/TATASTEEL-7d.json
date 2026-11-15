@@ -3,10 +3,10 @@
   "name": "Tata Steel",
   "window": {
     "label": "7d",
-    "start": "2026-11-08T12:11:18.915575+05:30",
-    "end": "2026-11-15T12:11:18.915575+05:30"
+    "start": "2026-11-08T14:36:46.500569+05:30",
+    "end": "2026-11-15T14:36:46.500569+05:30"
   },
-  "generated_at": "2026-11-15T12:11:18.915575+05:30",
+  "generated_at": "2026-11-15T14:36:46.500569+05:30",
   "counts": {
     "total": 3,
     "rule_classified": 3,
@@ -31,9 +31,12 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.101,
+        "score": 1.151,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/eeedbcb3-2b63-4718-b5b7-b498eedf2b4e.pdf",
-        "price_reaction": null,
+        "price_reaction": {
+          "pct_1d": -0.7,
+          "vol_ratio": 0.53
+        },
         "enrichment": null
       },
       {
@@ -46,9 +49,12 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.523,
+        "score": 0.546,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fcd5e6ba-794e-420b-ae7a-17a4c8df68e3.pdf",
-        "price_reaction": null,
+        "price_reaction": {
+          "pct_1d": -0.7,
+          "vol_ratio": 0.53
+        },
         "enrichment": null
       },
       {

@@ -16,6 +16,7 @@ from typing import Any
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
+from app import charts as charts_mod
 from app import db, ops, universe
 from app import models as m
 from app import network as network_mod
@@ -130,6 +131,15 @@ def companies() -> Any:
 def prices() -> Any:
     snaps = prices_mod.snapshots(_symbols()) if _has_real_data() else []
     return snaps or example("prices")
+
+
+@app.get("/prices/{symbol}/chart", response_model=m.PriceChart)
+def price_chart(symbol: str, range: m.ChartRange = Query("1d", description="1d | 3d | 7d | 30d")) -> Any:
+    """Price chart for a tracked symbol: 15-minute closes for 1d/3d/7d, daily closes for 30d. No model involved."""
+    sym = symbol.strip().upper()
+    if sym not in universe.all_symbols():
+        raise HTTPException(404, f"{sym} is not tracked")
+    return charts_mod.chart(sym, range)
 
 
 @app.get("/digest", response_model=m.Digest)

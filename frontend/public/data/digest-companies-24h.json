@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "24h",
-    "start": "2026-11-14T12:11:18.915575+05:30",
-    "end": "2026-11-15T12:11:18.915575+05:30"
+    "start": "2026-11-14T14:36:46.500569+05:30",
+    "end": "2026-11-15T14:36:46.500569+05:30"
   },
-  "generated_at": "2026-11-15T12:11:18.915575+05:30",
+  "generated_at": "2026-11-15T14:36:46.500569+05:30",
   "companies": [
     {
       "symbol": "ASIANPAINT",
@@ -30,8 +30,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -0.08,
-        "vol_ratio": 1.01
+        "pct_1d": -1.65,
+        "vol_ratio": 0.7
       }
     },
     {
@@ -44,8 +44,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": 3.36,
-        "vol_ratio": 1.21
+        "pct_1d": 0.18,
+        "vol_ratio": 1.18
       }
     },
     {
@@ -72,8 +72,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": 1.69,
-        "vol_ratio": 1.14
+        "pct_1d": 0.52,
+        "vol_ratio": 0.63
       }
     },
     {
@@ -100,8 +100,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -0.04,
-        "vol_ratio": 0.37
+        "pct_1d": -0.62,
+        "vol_ratio": 0.35
       }
     },
     {
@@ -114,8 +114,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -1.77,
-        "vol_ratio": 0.43
+        "pct_1d": 0.28,
+        "vol_ratio": 0.29
       }
     },
     {
@@ -128,8 +128,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": 0.71,
-        "vol_ratio": 1.0
+        "pct_1d": -1.02,
+        "vol_ratio": 0.59
       }
     },
     {
@@ -156,8 +156,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -2.01,
-        "vol_ratio": 0.56
+        "pct_1d": -2.2,
+        "vol_ratio": 0.39
       }
     },
     {
@@ -184,8 +184,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -0.33,
-        "vol_ratio": 0.45
+        "pct_1d": -0.84,
+        "vol_ratio": 0.37
       }
     },
     {
@@ -198,8 +198,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": 3.23,
-        "vol_ratio": 1.06
+        "pct_1d": -2.31,
+        "vol_ratio": 0.5
       }
     },
     {
@@ -226,8 +226,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -1.25,
-        "vol_ratio": 0.99
+        "pct_1d": -0.37,
+        "vol_ratio": 0.64
       }
     },
     {
@@ -268,8 +268,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": 0.95,
-        "vol_ratio": 0.48
+        "pct_1d": -0.45,
+        "vol_ratio": 0.44
       }
     },
     {
@@ -296,8 +296,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": 0.32,
-        "vol_ratio": 0.64
+        "pct_1d": 0.0,
+        "vol_ratio": 0.63
       }
     },
     {
@@ -311,7 +311,7 @@
       "top": null,
       "price": {
         "pct_1d": -0.6,
-        "vol_ratio": 1.12
+        "vol_ratio": 1.13
       }
     },
     {
@@ -324,8 +324,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -0.91,
-        "vol_ratio": 1.09
+        "pct_1d": -0.27,
+        "vol_ratio": 0.88
       }
     },
     {
@@ -338,8 +338,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -0.68,
-        "vol_ratio": 0.86
+        "pct_1d": -0.7,
+        "vol_ratio": 0.53
       }
     },
     {
@@ -352,8 +352,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -1.2,
-        "vol_ratio": 0.37
+        "pct_1d": -1.43,
+        "vol_ratio": 0.63
       }
     },
     {
@@ -366,8 +366,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -0.97,
-        "vol_ratio": 0.78
+        "pct_1d": -1.56,
+        "vol_ratio": 0.66
       }
     },
     {
@@ -380,8 +380,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -0.2,
-        "vol_ratio": 0.52
+        "pct_1d": -1.92,
+        "vol_ratio": 0.57
       }
     }
   ]

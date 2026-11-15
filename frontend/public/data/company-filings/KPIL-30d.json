@@ -3,10 +3,10 @@
   "name": "Kalpataru Projects International",
   "window": {
     "label": "30d",
-    "start": "2026-10-16T12:11:18.915575+05:30",
-    "end": "2026-11-15T12:11:18.915575+05:30"
+    "start": "2026-10-16T14:36:46.500569+05:30",
+    "end": "2026-11-15T14:36:46.500569+05:30"
   },
-  "generated_at": "2026-11-15T12:11:18.915575+05:30",
+  "generated_at": "2026-11-15T14:36:46.500569+05:30",
   "counts": {
     "total": 17,
     "rule_classified": 12,
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 1.424,
+      "score": 1.391,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e4d02b37-bd6b-4b11-ac89-98eaa14a7290.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -86,7 +86,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "high",
-      "score": 1.267,
+      "score": 1.238,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7a810e77-43cf-4b45-87a0-a9c277e3bc62.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -110,7 +110,7 @@
       "category": "fund_raise",
       "category_source": "llm",
       "priority": "high",
-      "score": 0.066,
+      "score": 0.065,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a729d6eb-2161-4cd0-8f91-1a0c642b713e.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -139,7 +139,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.009,
+        "score": 0.986,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/04c4e907-80d8-4918-ba5c-9049ad346c86.pdf",
         "price_reaction": {
           "pct_1d": -0.05,
@@ -157,7 +157,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.397,
+        "score": 0.388,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a1fea61a-15d5-45a4-b77e-3a77e8402ed6.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -187,7 +187,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.26,
+        "score": 0.254,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2b73a253-4e82-4736-97fb-eee6352de664.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -202,7 +202,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.317,
+        "score": 0.31,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cd65a01f-5bd6-4321-98ca-0f5449efb01e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -217,7 +217,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.317,
+        "score": 0.31,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/aa471fd5-764a-4c79-9732-96785b3ad1cc.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -247,7 +247,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.317,
+        "score": 0.309,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/b28b54a7-bb10-4874-a7ee-74c4f0d7b010.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -262,7 +262,7 @@
         "category": "results",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.316,
+        "score": 0.308,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/be2deca8-9466-44d4-bc39-6c27eb0c3f0b.pdf",
         "price_reaction": null,
         "enrichment": null

@@ -237,6 +237,64 @@
         }
       }
     },
+    "/prices/{symbol}/chart": {
+      "get": {
+        "summary": "Price Chart",
+        "description": "Price chart for a tracked symbol: 15-minute closes for 1d/3d/7d, daily closes for 30d. No model involved.",
+        "operationId": "price_chart_prices__symbol__chart_get",
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Symbol"
+            }
+          },
+          {
+            "name": "range",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "1d",
+                "3d",
+                "7d",
+                "30d"
+              ],
+              "type": "string",
+              "description": "1d | 3d | 7d | 30d",
+              "default": "1d",
+              "title": "Range"
+            },
+            "description": "1d | 3d | 7d | 30d"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PriceChart"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/digest": {
       "get": {
         "summary": "Digest",
@@ -1223,6 +1281,27 @@
           "unclassified"
         ],
         "title": "Category"
+      },
+      "ChartPoint": {
+        "properties": {
+          "t": {
+            "type": "string",
+            "title": "T",
+            "description": "ISO-8601 IST timestamp (15-minute bars) or YYYY-MM-DD (daily bars)"
+          },
+          "c": {
+            "type": "number",
+            "title": "C",
+            "description": "close, in rupees"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "t",
+          "c"
+        ],
+        "title": "ChartPoint"
       },
       "Claim": {
         "properties": {
@@ -2466,6 +2545,111 @@
           "score"
         ],
         "title": "PersonMatch"
+      },
+      "PriceChart": {
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "title": "Symbol"
+          },
+          "range": {
+            "type": "string",
+            "enum": [
+              "1d",
+              "3d",
+              "7d",
+              "30d"
+            ],
+            "title": "Range"
+          },
+          "points": {
+            "items": {
+              "$ref": "#/components/schemas/ChartPoint"
+            },
+            "type": "array",
+            "title": "Points"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "intraday",
+              "eod"
+            ],
+            "title": "Source",
+            "description": "intraday = 15-minute bars from Yahoo (delayed); eod = daily closes"
+          },
+          "change_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Change Pct",
+            "description": "first to last point in the range"
+          },
+          "high": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "High"
+          },
+          "low": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Low"
+          },
+          "as_of": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "As Of",
+            "description": "timestamp of the last point"
+          },
+          "note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Note",
+            "description": "Honest limit, e.g. 'Daily closes: no intraday data for this range'"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "symbol",
+          "range",
+          "points",
+          "source",
+          "change_pct",
+          "high",
+          "low",
+          "as_of"
+        ],
+        "title": "PriceChart"
       },
       "PriceReaction": {
         "properties": {

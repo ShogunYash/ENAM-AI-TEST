@@ -3,10 +3,10 @@
   "name": "Reliance Industries",
   "window": {
     "label": "7d",
-    "start": "2026-11-08T12:11:18.915575+05:30",
-    "end": "2026-11-15T12:11:18.915575+05:30"
+    "start": "2026-11-08T14:36:46.500569+05:30",
+    "end": "2026-11-15T14:36:46.500569+05:30"
   },
-  "generated_at": "2026-11-15T12:11:18.915575+05:30",
+  "generated_at": "2026-11-15T14:36:46.500569+05:30",
   "counts": {
     "total": 2,
     "rule_classified": 2,
@@ -29,7 +29,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.669,
+        "score": 0.653,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3f614a9e-94b0-42ef-8145-ba0055ba7be5.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -44,9 +44,12 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.541,
+        "score": 0.528,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/55f9d4f5-8638-4669-abdb-7cc4127221fc.pdf",
-        "price_reaction": null,
+        "price_reaction": {
+          "pct_1d": 0.0,
+          "vol_ratio": 0.63
+        },
         "enrichment": null
       }
     ]

@@ -418,6 +418,27 @@ class AskResponse(Model):
                                                        "or no model could be reached; `answer` then says so plainly.")
 
 
+# ───────────────────────────── Price charts ─────────────────────────────
+ChartRange = Literal["1d", "3d", "7d", "30d"]
+
+
+class ChartPoint(Model):
+    t: str = Field(description="ISO-8601 IST timestamp (15-minute bars) or YYYY-MM-DD (daily bars)")
+    c: float = Field(description="close, in rupees")
+
+
+class PriceChart(Model):
+    symbol: str
+    range: ChartRange
+    points: list[ChartPoint]
+    source: Literal["intraday", "eod"] = Field(description="intraday = 15-minute bars from Yahoo (delayed); eod = daily closes")
+    change_pct: float | None = Field(description="first to last point in the range")
+    high: float | None
+    low: float | None
+    as_of: str | None = Field(description="timestamp of the last point")
+    note: str | None = Field(default=None, description="Honest limit, e.g. 'Daily closes: no intraday data for this range'")
+
+
 # ───────────────────────────── Network (the investor's own contacts) ─────────────────────────────
 # Everything below describes PEOPLE. The demo network is SYNTHETIC (`synthetic: true`); see docs/ARCHITECTURE.md for
 # how real profile data and consent would be handled. Matches are derived by rules from the facts listed in `evidence`.

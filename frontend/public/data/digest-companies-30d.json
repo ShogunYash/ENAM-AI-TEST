@@ -1,11 +1,50 @@
 {
   "window": {
     "label": "30d",
-    "start": "2026-10-16T12:11:18.915575+05:30",
-    "end": "2026-11-15T12:11:18.915575+05:30"
+    "start": "2026-10-16T14:36:46.500569+05:30",
+    "end": "2026-11-15T14:36:46.500569+05:30"
   },
-  "generated_at": "2026-11-15T12:11:18.915575+05:30",
+  "generated_at": "2026-11-15T14:36:46.500569+05:30",
   "companies": [
+    {
+      "symbol": "HDFCBANK",
+      "name": "HDFC Bank",
+      "sector": "Private-sector banking",
+      "in_portfolio": true,
+      "total": 17,
+      "material": 4,
+      "categories": {
+        "management_change": 4
+      },
+      "top": {
+        "id": "44ba0161-d9e4-4bd1-aae7-eb3bc46319dd",
+        "symbol": "HDFCBANK",
+        "company_name": "HDFC Bank Ltd",
+        "filed_at": "2026-11-13T16:30:11.850000+05:30",
+        "headline": "Re-appointment of Mr. V. Srinivasa Rangan as the Whole-time Director(designated as Executive Director) of HDFC Bank Limited.",
+        "so_what": null,
+        "category": "management_change",
+        "category_source": "rule",
+        "priority": "medium",
+        "score": 4.811,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "management",
+          "person": "Mr. V. Srinivasa Rangan",
+          "role": "Whole-time Director (designated as Executive Director)",
+          "change": "appointed",
+          "background": [],
+          "links": [],
+          "effective": "2026-11-23",
+          "background_source": "none"
+        }
+      },
+      "price": {
+        "pct_1d": -1.02,
+        "vol_ratio": 0.59
+      }
+    },
     {
       "symbol": "BAJFINANCE",
       "name": "Bajaj Finance",
@@ -28,11 +67,11 @@
         "category": "fund_raise",
         "category_source": "rule",
         "priority": "high",
-        "score": 5.952,
+        "score": 4.441,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4dc63132-8d0c-4836-b74b-f289525d6384.pdf",
         "price_reaction": {
-          "pct_1d": 3.36,
-          "vol_ratio": 1.21
+          "pct_1d": 0.18,
+          "vol_ratio": 1.18
         },
         "enrichment": {
           "type": "oneliner",
@@ -40,47 +79,8 @@
         }
       },
       "price": {
-        "pct_1d": 3.36,
-        "vol_ratio": 1.21
-      }
-    },
-    {
-      "symbol": "HDFCBANK",
-      "name": "HDFC Bank",
-      "sector": "Private-sector banking",
-      "in_portfolio": true,
-      "total": 17,
-      "material": 4,
-      "categories": {
-        "management_change": 4
-      },
-      "top": {
-        "id": "44ba0161-d9e4-4bd1-aae7-eb3bc46319dd",
-        "symbol": "HDFCBANK",
-        "company_name": "HDFC Bank Ltd",
-        "filed_at": "2026-11-13T16:30:11.850000+05:30",
-        "headline": "Re-appointment of Mr. V. Srinivasa Rangan as the Whole-time Director(designated as Executive Director) of HDFC Bank Limited.",
-        "so_what": null,
-        "category": "management_change",
-        "category_source": "rule",
-        "priority": "medium",
-        "score": 4.925,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
-        "price_reaction": null,
-        "enrichment": {
-          "type": "management",
-          "person": "Mr. V. Srinivasa Rangan",
-          "role": "Whole-time Director (designated as Executive Director)",
-          "change": "appointed",
-          "background": [],
-          "links": [],
-          "effective": "2026-11-23",
-          "background_source": "none"
-        }
-      },
-      "price": {
-        "pct_1d": 0.71,
-        "vol_ratio": 1.0
+        "pct_1d": 0.18,
+        "vol_ratio": 1.18
       }
     },
     {
@@ -105,7 +105,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 2.149,
+        "score": 2.1,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2e7c8bf8-d794-4a55-b670-97951b28e0e8.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -159,8 +159,8 @@
         }
       },
       "price": {
-        "pct_1d": -0.68,
-        "vol_ratio": 0.86
+        "pct_1d": -0.7,
+        "vol_ratio": 0.53
       }
     },
     {
@@ -185,7 +185,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.424,
+        "score": 1.391,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e4d02b37-bd6b-4b11-ac89-98eaa14a7290.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -265,7 +265,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.403,
+        "score": 1.371,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/86009cba-ca03-4d35-bad8-b1988cfcff13.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -319,8 +319,8 @@
         }
       },
       "price": {
-        "pct_1d": -0.97,
-        "vol_ratio": 0.78
+        "pct_1d": -1.56,
+        "vol_ratio": 0.66
       }
     },
     {
@@ -344,7 +344,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.396,
+        "score": 1.364,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7e17b4ed-a5e2-4625-9e2b-2af590350caa.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -424,7 +424,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.395,
+        "score": 1.362,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a39f8b72-303f-42a4-8750-f413346bd742.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -478,8 +478,8 @@
         }
       },
       "price": {
-        "pct_1d": -0.08,
-        "vol_ratio": 1.01
+        "pct_1d": -1.65,
+        "vol_ratio": 0.7
       }
     },
     {
@@ -504,7 +504,7 @@
         "category": "litigation",
         "category_source": "llm",
         "priority": "medium",
-        "score": 1.168,
+        "score": 1.141,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/53496491-fd25-4172-9f9f-79bf088ea9c5.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -513,8 +513,8 @@
         }
       },
       "price": {
-        "pct_1d": -0.04,
-        "vol_ratio": 0.37
+        "pct_1d": -0.62,
+        "vol_ratio": 0.35
       }
     },
     {
@@ -538,7 +538,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 1.066,
+        "score": 1.041,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/96d3143f-2c3f-4cdb-a811-869e422ac1ab.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -592,8 +592,8 @@
         }
       },
       "price": {
-        "pct_1d": 1.69,
-        "vol_ratio": 1.14
+        "pct_1d": 0.52,
+        "vol_ratio": 0.63
       }
     },
     {
@@ -617,7 +617,7 @@
         "category": "management_change",
         "category_source": "rule",
         "priority": "medium",
-        "score": 1.03,
+        "score": 1.006,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c6c189db-e010-4c6e-a997-b50d6d33767a.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -656,7 +656,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.86,
+        "score": 0.84,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1eaa8912-06ca-45d4-8a04-03df01b47497.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -711,7 +711,7 @@
       },
       "price": {
         "pct_1d": -0.6,
-        "vol_ratio": 1.12
+        "vol_ratio": 1.13
       }
     },
     {
@@ -735,7 +735,7 @@
         "category": "fund_raise",
         "category_source": "rule",
         "priority": "medium",
-        "score": 0.663,
+        "score": 0.648,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/73a8c540-4229-4137-8e2b-5aae04fa0a35.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -744,8 +744,8 @@
         }
       },
       "price": {
-        "pct_1d": 0.95,
-        "vol_ratio": 0.48
+        "pct_1d": -0.45,
+        "vol_ratio": 0.44
       }
     },
     {
@@ -770,7 +770,7 @@
         "category": "m_and_a",
         "category_source": "llm",
         "priority": "high",
-        "score": 0.377,
+        "score": 0.369,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/13e50739-50e7-4b5a-8dba-ac92ece6d35f.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -779,8 +779,8 @@
         }
       },
       "price": {
-        "pct_1d": -1.25,
-        "vol_ratio": 0.99
+        "pct_1d": -0.37,
+        "vol_ratio": 0.64
       }
     },
     {
@@ -805,7 +805,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.36,
+        "score": 0.352,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/880087f6-7ecc-40a9-8cac-de48d4616b25.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -859,8 +859,8 @@
         }
       },
       "price": {
-        "pct_1d": 0.32,
-        "vol_ratio": 0.64
+        "pct_1d": 0.0,
+        "vol_ratio": 0.63
       }
     },
     {
@@ -884,7 +884,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.348,
+        "score": 0.34,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d7b8fffb-7a5f-4efa-9241-482c5d765f1d.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -963,7 +963,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.342,
+        "score": 0.334,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/658231ad-7203-4355-be99-2a162b722c0c.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1017,8 +1017,8 @@
         }
       },
       "price": {
-        "pct_1d": -0.91,
-        "vol_ratio": 1.09
+        "pct_1d": -0.27,
+        "vol_ratio": 0.88
       }
     },
     {
@@ -1041,7 +1041,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.276,
+        "score": 0.27,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/12ace952-a89b-4098-8bd0-e247f6e2a776.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1095,8 +1095,8 @@
         }
       },
       "price": {
-        "pct_1d": -1.77,
-        "vol_ratio": 0.43
+        "pct_1d": 0.28,
+        "vol_ratio": 0.29
       }
     },
     {
@@ -1119,7 +1119,7 @@
         "category": "litigation",
         "category_source": "rule",
         "priority": "medium",
-        "score": 0.223,
+        "score": 0.218,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c3d1ba29-6132-47b7-9f3b-79a294e53189.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1152,7 +1152,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.206,
+        "score": 0.202,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f0d1483f-551a-46d8-ade7-7a390baacc1c.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1231,7 +1231,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.173,
+        "score": 0.169,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fca20bad-7bfe-438f-a526-d9f42ccf0346.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1309,7 +1309,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.069,
+        "score": 0.068,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26c12463-d44e-4050-bd47-b53cc294b4e0.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1363,8 +1363,8 @@
         }
       },
       "price": {
-        "pct_1d": -0.33,
-        "vol_ratio": 0.45
+        "pct_1d": -0.84,
+        "vol_ratio": 0.37
       }
     },
     {
@@ -1388,7 +1388,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "high",
-        "score": 0.044,
+        "score": 0.043,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4567cd4f-9037-41ac-9e8d-fd10ff9e2f51.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1442,8 +1442,8 @@
         }
       },
       "price": {
-        "pct_1d": 3.23,
-        "vol_ratio": 1.06
+        "pct_1d": -2.31,
+        "vol_ratio": 0.5
       }
     },
     {
@@ -1481,90 +1481,11 @@
       }
     },
     {
-      "symbol": "ULTRACEMCO",
-      "name": "UltraTech Cement",
-      "sector": "Cement",
-      "in_portfolio": true,
-      "total": 17,
-      "material": 3,
-      "categories": {
-        "management_change": 2,
-        "results": 1
-      },
-      "top": {
-        "id": "ec29d900-b6b1-4b6f-8f25-91b061275d31",
-        "symbol": "ULTRACEMCO",
-        "company_name": "UltraTech Cement Ltd",
-        "filed_at": "2026-10-19T13:47:54.767000+05:30",
-        "headline": "Unaudited Financial Results for the quarter and half year ended 30th September, 2026",
-        "so_what": "Q2 FY27: PAT +21%, Rev +19% YoY",
-        "category": "results",
-        "category_source": "rule",
-        "priority": "high",
-        "score": 0.027,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59654d86-af0c-4fe5-bfb9-1a148f65fd6c.pdf",
-        "price_reaction": null,
-        "enrichment": {
-          "type": "results",
-          "period": "Q2 FY27",
-          "basis": "consolidated",
-          "unit": "INR_CR",
-          "metrics": [
-            {
-              "name": "revenue",
-              "value": 23295.07,
-              "prev_q": 24648.2,
-              "prev_y": 19606.93,
-              "qoq_pct": -5.5,
-              "yoy_pct": 18.8
-            },
-            {
-              "name": "ebitda",
-              "value": null,
-              "prev_q": null,
-              "prev_y": null,
-              "qoq_pct": null,
-              "yoy_pct": null
-            },
-            {
-              "name": "pbt",
-              "value": 2058.58,
-              "prev_q": 3480.43,
-              "prev_y": 1655.83,
-              "qoq_pct": -40.9,
-              "yoy_pct": 24.3
-            },
-            {
-              "name": "pat",
-              "value": 1501.38,
-              "prev_q": 2603.72,
-              "prev_y": 1237.98,
-              "qoq_pct": -42.3,
-              "yoy_pct": 21.3
-            }
-          ],
-          "margin_ebitda_pct": null,
-          "cross_check": {
-            "status": "match",
-            "note": null
-          },
-          "source": {
-            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59654d86-af0c-4fe5-bfb9-1a148f65fd6c.pdf",
-            "page": 7
-          }
-        }
-      },
-      "price": {
-        "pct_1d": -0.2,
-        "vol_ratio": 0.52
-      }
-    },
-    {
       "symbol": "HINDZINC",
       "name": "Hindustan Zinc",
       "sector": "Non-ferrous metals and mining",
       "in_portfolio": true,
-      "total": 14,
+      "total": 13,
       "material": 1,
       "categories": {
         "results": 1
@@ -1633,8 +1554,87 @@
         }
       },
       "price": {
-        "pct_1d": -2.01,
-        "vol_ratio": 0.56
+        "pct_1d": -2.2,
+        "vol_ratio": 0.39
+      }
+    },
+    {
+      "symbol": "ULTRACEMCO",
+      "name": "UltraTech Cement",
+      "sector": "Cement",
+      "in_portfolio": true,
+      "total": 17,
+      "material": 3,
+      "categories": {
+        "management_change": 2,
+        "results": 1
+      },
+      "top": {
+        "id": "ec29d900-b6b1-4b6f-8f25-91b061275d31",
+        "symbol": "ULTRACEMCO",
+        "company_name": "UltraTech Cement Ltd",
+        "filed_at": "2026-10-19T13:47:54.767000+05:30",
+        "headline": "Unaudited Financial Results for the quarter and half year ended 30th September, 2026",
+        "so_what": "Q2 FY27: PAT +21%, Rev +19% YoY",
+        "category": "results",
+        "category_source": "rule",
+        "priority": "high",
+        "score": 0.026,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59654d86-af0c-4fe5-bfb9-1a148f65fd6c.pdf",
+        "price_reaction": null,
+        "enrichment": {
+          "type": "results",
+          "period": "Q2 FY27",
+          "basis": "consolidated",
+          "unit": "INR_CR",
+          "metrics": [
+            {
+              "name": "revenue",
+              "value": 23295.07,
+              "prev_q": 24648.2,
+              "prev_y": 19606.93,
+              "qoq_pct": -5.5,
+              "yoy_pct": 18.8
+            },
+            {
+              "name": "ebitda",
+              "value": null,
+              "prev_q": null,
+              "prev_y": null,
+              "qoq_pct": null,
+              "yoy_pct": null
+            },
+            {
+              "name": "pbt",
+              "value": 2058.58,
+              "prev_q": 3480.43,
+              "prev_y": 1655.83,
+              "qoq_pct": -40.9,
+              "yoy_pct": 24.3
+            },
+            {
+              "name": "pat",
+              "value": 1501.38,
+              "prev_q": 2603.72,
+              "prev_y": 1237.98,
+              "qoq_pct": -42.3,
+              "yoy_pct": 21.3
+            }
+          ],
+          "margin_ebitda_pct": null,
+          "cross_check": {
+            "status": "match",
+            "note": null
+          },
+          "source": {
+            "doc_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59654d86-af0c-4fe5-bfb9-1a148f65fd6c.pdf",
+            "page": 7
+          }
+        }
+      },
+      "price": {
+        "pct_1d": -1.92,
+        "vol_ratio": 0.57
       }
     },
     {
@@ -1657,7 +1657,7 @@
         "category": "management_change",
         "category_source": "rule",
         "priority": "medium",
-        "score": 0.025,
+        "score": 0.024,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/0d21e169-46c3-4d2d-aa05-0b3c9c1086bf.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -1686,8 +1686,8 @@
       "categories": {},
       "top": null,
       "price": {
-        "pct_1d": -1.2,
-        "vol_ratio": 0.37
+        "pct_1d": -1.43,
+        "vol_ratio": 0.63
       }
     }
   ]

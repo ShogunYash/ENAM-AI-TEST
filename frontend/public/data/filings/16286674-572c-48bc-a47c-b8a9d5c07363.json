@@ -8,9 +8,12 @@
   "category": "management_change",
   "category_source": "rule",
   "priority": "medium",
-  "score": 3.945,
+  "score": 4.247,
   "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6df1f05c-9926-47ce-9896-94c41bdb71ab.pdf",
-  "price_reaction": null,
+  "price_reaction": {
+    "pct_1d": -1.02,
+    "vol_ratio": 0.59
+  },
   "enrichment": {
     "type": "management",
     "person": "Mr. V. Srinivasa Rangan",

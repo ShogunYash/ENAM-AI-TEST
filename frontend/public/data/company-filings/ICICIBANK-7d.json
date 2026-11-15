@@ -3,10 +3,10 @@
   "name": "ICICI Bank",
   "window": {
     "label": "7d",
-    "start": "2026-11-08T12:11:18.915575+05:30",
-    "end": "2026-11-15T12:11:18.915575+05:30"
+    "start": "2026-11-08T14:36:46.500569+05:30",
+    "end": "2026-11-15T14:36:46.500569+05:30"
   },
-  "generated_at": "2026-11-15T12:11:18.915575+05:30",
+  "generated_at": "2026-11-15T14:36:46.500569+05:30",
   "counts": {
     "total": 2,
     "rule_classified": 2,
@@ -29,7 +29,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.55,
+        "score": 0.538,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fc247b09-13fa-455a-90ab-e43e40f21412.pdf",
         "price_reaction": {
           "pct_1d": -0.4,
@@ -47,7 +47,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.253,
+        "score": 0.247,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/5d528b54-cd3f-477f-9539-fff4ab659b43.pdf",
         "price_reaction": null,
         "enrichment": null

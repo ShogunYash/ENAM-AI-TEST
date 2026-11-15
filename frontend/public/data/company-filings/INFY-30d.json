@@ -3,10 +3,10 @@
   "name": "Infosys",
   "window": {
     "label": "30d",
-    "start": "2026-10-16T12:11:18.915575+05:30",
-    "end": "2026-11-15T12:11:18.915575+05:30"
+    "start": "2026-10-16T14:36:46.500569+05:30",
+    "end": "2026-11-15T14:36:46.500569+05:30"
   },
-  "generated_at": "2026-11-15T12:11:18.915575+05:30",
+  "generated_at": "2026-11-15T14:36:46.500569+05:30",
   "counts": {
     "total": 16,
     "rule_classified": 16,
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.069,
+      "score": 0.068,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26c12463-d44e-4050-bd47-b53cc294b4e0.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -99,8 +99,8 @@
         "score": 0.0,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2d26cac8-d5b5-4be4-ba93-d18f80ee8c0c.pdf",
         "price_reaction": {
-          "pct_1d": -0.33,
-          "vol_ratio": 0.45
+          "pct_1d": -0.84,
+          "vol_ratio": 0.37
         },
         "enrichment": null
       },
@@ -174,7 +174,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.033,
+        "score": 0.032,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7982fc61-7765-4981-ab3d-6aec36ba2137.pdf",
         "price_reaction": null,
         "enrichment": null

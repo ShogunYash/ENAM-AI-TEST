@@ -36,6 +36,9 @@ CREATE TABLE IF NOT EXISTS doc_pages (
 CREATE TABLE IF NOT EXISTS bars (
   symbol TEXT NOT NULL, day TEXT NOT NULL, close REAL NOT NULL, volume INTEGER NOT NULL,
   PRIMARY KEY (symbol, day));
+CREATE TABLE IF NOT EXISTS intraday (   -- 15-minute bars for the price charts (1D / 3D / 7D)
+  symbol TEXT NOT NULL, ts TEXT NOT NULL, close REAL NOT NULL,
+  PRIMARY KEY (symbol, ts));
 """
 
 

@@ -14,6 +14,7 @@ import shutil
 from datetime import datetime
 from pathlib import Path
 
+from app import charts as charts_mod
 from app import models as m
 from app import network as network_mod
 from app import universe
@@ -71,6 +72,14 @@ def main() -> int:
         dump(out / f"digest-companies-{label}.json", digest_mod.build_company_list(rows, label, snaps=all_snaps, now=now))
         for sym, name, _, _ in rows:
             dump(cdir / f"{sym}-{label}.json", digest_mod.build_company_filings(sym, name, label, snaps=all_snaps, now=now))
+
+    # price charts: one small file per tracked symbol and range (works with the API asleep)
+    cdir2 = out / "charts"
+    if cdir2.exists():
+        shutil.rmtree(cdir2)
+    for sym in sorted(universe.all_symbols()):
+        for rng in ("1d", "3d", "7d", "30d"):
+            dump(cdir2 / f"{sym}-{rng}.json", charts_mod.chart(sym, rng))
 
     # the Network (SYNTHETIC contacts): people, per-filing matches, reconnect nudges, expertise map, per-company contacts
     ndir = out / "network"

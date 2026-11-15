@@ -3,13 +3,13 @@
   "name": "HDFC Bank",
   "window": {
     "label": "3d",
-    "start": "2026-11-12T12:11:18.915575+05:30",
-    "end": "2026-11-15T12:11:18.915575+05:30"
+    "start": "2026-11-12T14:36:46.500569+05:30",
+    "end": "2026-11-15T14:36:46.500569+05:30"
   },
-  "generated_at": "2026-11-15T12:11:18.915575+05:30",
+  "generated_at": "2026-11-15T14:36:46.500569+05:30",
   "counts": {
-    "total": 3,
-    "rule_classified": 3,
+    "total": 2,
+    "rule_classified": 2,
     "llm_classified": 0
   },
   "important": [
@@ -23,7 +23,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 4.925,
+      "score": 4.811,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -47,9 +47,12 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 3.945,
+      "score": 4.247,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6df1f05c-9926-47ce-9896-94c41bdb71ab.pdf",
-      "price_reaction": null,
+      "price_reaction": {
+        "pct_1d": -1.02,
+        "vol_ratio": 0.59
+      },
       "enrichment": {
         "type": "management",
         "person": "Mr. V. Srinivasa Rangan",
@@ -63,29 +66,8 @@
     }
   ],
   "routine": {
-    "count": 1,
-    "by_category": {
-      "investor_meetings": 1
-    },
-    "items": [
-      {
-        "id": "79f22cb2-fee0-4d03-a8c0-1fe31e06e341",
-        "symbol": "HDFCBANK",
-        "company_name": "HDFC Bank Ltd",
-        "filed_at": "2026-11-12T14:21:58.547000+05:30",
-        "headline": "Intimation of Schedule of Analyst/Institutional Investor Meetings under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-        "so_what": null,
-        "category": "investor_meetings",
-        "category_source": "rule",
-        "priority": "low",
-        "score": 0.547,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d01ef203-cd61-4f19-b88b-7a373979e5b5.pdf",
-        "price_reaction": {
-          "pct_1d": 0.71,
-          "vol_ratio": 1.0
-        },
-        "enrichment": null
-      }
-    ]
+    "count": 0,
+    "by_category": {},
+    "items": []
   }
 }

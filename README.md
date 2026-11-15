@@ -21,7 +21,8 @@ that the server has checked**; a claim without a verified quote is dropped.
    names the contact best placed to give context and why; a Research page has "Who to call about {company}"; the Network tab has an ask box (a small
    agent: a model picks one tool, code runs it, and the answer can only name people in the network), reconnect nudges when a contact's former employer
    files something, and an expertise map. Matching is rules over listed facts, no model. Architecture, privacy and consent: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
-7. **Look and feel:** a light default, a dark skin and an opt-in **Terminal** skin (Settings > Appearance): near-black field, amber panel title bars, function-key navigation (F1-F5), tabular monospace figures. A command bar (type `INFY` or `NETWORK`) and a ticker tape of the portfolio work in every skin. Sections, items and people each have their own shape so nothing blends together.
+7. **Price charts** (Research report and each company page): 1D, 3D, 7D and 30D. 15-minute closes from Yahoo for the first three, daily closes for 30D; a dashed line marks the previous close, session boundaries are marked, and you can touch or drag to read any point. The change is measured against the previous close, and a chart says so when it has to fall back to daily closes.
+8. **Look and feel:** a light default, a dark skin and an opt-in **Terminal** skin (Settings > Appearance): near-black field, amber panel title bars, function-key navigation (F1-F5), tabular monospace figures. A command bar (type `INFY` or `NETWORK`) and a ticker tape of the portfolio work in every skin. Sections, items and people each have their own shape so nothing blends together.
 
 ## Architecture
 ```

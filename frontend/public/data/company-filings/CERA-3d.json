@@ -3,10 +3,10 @@
   "name": "Cera Sanitaryware",
   "window": {
     "label": "3d",
-    "start": "2026-11-12T12:11:18.915575+05:30",
-    "end": "2026-11-15T12:11:18.915575+05:30"
+    "start": "2026-11-12T14:36:46.500569+05:30",
+    "end": "2026-11-15T14:36:46.500569+05:30"
   },
-  "generated_at": "2026-11-15T12:11:18.915575+05:30",
+  "generated_at": "2026-11-15T14:36:46.500569+05:30",
   "counts": {
     "total": 1,
     "rule_classified": 1,
@@ -29,9 +29,12 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.04,
+        "score": 1.069,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/769be2ca-bd51-4ac3-8e63-ce44e430d026.pdf",
-        "price_reaction": null,
+        "price_reaction": {
+          "pct_1d": 0.52,
+          "vol_ratio": 0.63
+        },
         "enrichment": null
       }
     ]

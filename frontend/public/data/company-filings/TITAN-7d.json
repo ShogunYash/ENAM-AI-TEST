@@ -3,10 +3,10 @@
   "name": "Titan Company",
   "window": {
     "label": "7d",
-    "start": "2026-11-08T12:11:18.915575+05:30",
-    "end": "2026-11-15T12:11:18.915575+05:30"
+    "start": "2026-11-08T14:36:46.500569+05:30",
+    "end": "2026-11-15T14:36:46.500569+05:30"
   },
-  "generated_at": "2026-11-15T12:11:18.915575+05:30",
+  "generated_at": "2026-11-15T14:36:46.500569+05:30",
   "counts": {
     "total": 5,
     "rule_classified": 5,
@@ -33,7 +33,10 @@
         "priority": "hidden",
         "score": 0.0,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/77999e05-06f6-4ed6-9998-f9a775dc5c4f.pdf",
-        "price_reaction": null,
+        "price_reaction": {
+          "pct_1d": -1.56,
+          "vol_ratio": 0.66
+        },
         "enrichment": null
       },
       {
@@ -46,11 +49,11 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.566,
+        "score": 0.582,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/71268b4d-2f12-447d-bf1e-28310f485d17.pdf",
         "price_reaction": {
-          "pct_1d": -0.97,
-          "vol_ratio": 0.78
+          "pct_1d": -1.56,
+          "vol_ratio": 0.66
         },
         "enrichment": null
       },
@@ -64,12 +67,9 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.891,
+        "score": 0.794,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/daa6c172-771a-4af5-b4b3-9813fdf7536a.pdf",
-        "price_reaction": {
-          "pct_1d": -0.97,
-          "vol_ratio": 0.78
-        },
+        "price_reaction": null,
         "enrichment": null
       },
       {
@@ -97,7 +97,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.257,
+        "score": 0.251,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ced01c36-48bf-4c4c-a74b-d17875a41c27.pdf",
         "price_reaction": null,
         "enrichment": null

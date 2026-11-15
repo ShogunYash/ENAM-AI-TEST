@@ -171,6 +171,26 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/prices/{symbol}/chart": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Price Chart
+         * @description Price chart for a tracked symbol: 15-minute closes for 1d/3d/7d, daily closes for 30d. No model involved.
+         */
+        get: operations["price_chart_prices__symbol__chart_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/digest": {
         parameters: {
             query?: never;
@@ -484,6 +504,19 @@ export interface components {
          * @enum {string}
          */
         Category: "results" | "m_and_a" | "fund_raise" | "management_change" | "litigation" | "insider_trading" | "earnings_call" | "investor_meetings" | "credit_rating" | "dividend" | "bonus_split" | "capex" | "press_release" | "postal_ballot" | "agm_egm" | "pledging" | "unclassified";
+        /** ChartPoint */
+        ChartPoint: {
+            /**
+             * T
+             * @description ISO-8601 IST timestamp (15-minute bars) or YYYY-MM-DD (daily bars)
+             */
+            t: string;
+            /**
+             * C
+             * @description close, in rupees
+             */
+            c: number;
+        };
         /** Claim */
         Claim: {
             /** Text */
@@ -970,6 +1003,43 @@ export interface components {
             evidence: string[];
             /** Score */
             score: number;
+        };
+        /** PriceChart */
+        PriceChart: {
+            /** Symbol */
+            symbol: string;
+            /**
+             * Range
+             * @enum {string}
+             */
+            range: "1d" | "3d" | "7d" | "30d";
+            /** Points */
+            points: components["schemas"]["ChartPoint"][];
+            /**
+             * Source
+             * @description intraday = 15-minute bars from Yahoo (delayed); eod = daily closes
+             * @enum {string}
+             */
+            source: "intraday" | "eod";
+            /**
+             * Change Pct
+             * @description first to last point in the range
+             */
+            change_pct: number | null;
+            /** High */
+            high: number | null;
+            /** Low */
+            low: number | null;
+            /**
+             * As Of
+             * @description timestamp of the last point
+             */
+            as_of: string | null;
+            /**
+             * Note
+             * @description Honest limit, e.g. 'Daily closes: no intraday data for this range'
+             */
+            note?: string | null;
         };
         /** PriceReaction */
         PriceReaction: {
@@ -1495,6 +1565,40 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["PriceSnapshot"][];
+                };
+            };
+        };
+    };
+    price_chart_prices__symbol__chart_get: {
+        parameters: {
+            query?: {
+                /** @description 1d | 3d | 7d | 30d */
+                range?: "1d" | "3d" | "7d" | "30d";
+            };
+            header?: never;
+            path: {
+                symbol: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PriceChart"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
                 };
             };
         };

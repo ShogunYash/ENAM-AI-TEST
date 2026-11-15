@@ -30,7 +30,7 @@ def main() -> int:
     con.commit()
     con.execute("VACUUM")
     n = {t: con.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0]
-         for t in ("filings", "classifications", "enrichments", "bars", "research_cache", "documents")
+         for t in ("filings", "classifications", "enrichments", "bars", "intraday", "research_cache", "documents")
          if con.execute("SELECT 1 FROM sqlite_master WHERE name=?", (t,)).fetchone()}
     con.close()
     msg = f"seed/finn.sqlite {out.stat().st_size / 1e6:.1f} MB {n}"

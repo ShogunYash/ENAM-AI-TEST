@@ -126,7 +126,7 @@ export const MobileShell: React.FC<MobileShellProps> = ({
         </main>
 
         {/* Bottom Navigation Bar */}
-        <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-40 bg-zinc-950/95 backdrop-blur-md border-t border-zinc-900 px-2 py-1.5">
+        <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-40 bg-zinc-950/95 backdrop-blur-md border-t border-zinc-900 px-2 pt-1.5 pb-[max(env(safe-area-inset-bottom),16px)]">
           <div className="flex items-center justify-around">
             {tabs.map((tab, index) => {
               const isActive = activeTab === tab.id

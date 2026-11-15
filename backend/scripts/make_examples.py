@@ -324,6 +324,14 @@ EXAMPLES.update({
 })
 
 
+_pts = [("2026-11-12T09:15:00+05:30", 1141.0), ("2026-11-12T10:15:00+05:30", 1146.5), ("2026-11-12T11:15:00+05:30", 1139.0),
+        ("2026-11-12T12:15:00+05:30", 1148.0), ("2026-11-12T13:15:00+05:30", 1152.5), ("2026-11-12T14:15:00+05:30", 1149.5),
+        ("2026-11-12T15:15:00+05:30", 1151.2)]
+EXAMPLES["price-chart"] = m.PriceChart(
+    symbol="INFY", range="1d", points=[m.ChartPoint(t=t, c=c) for t, c in _pts], source="intraday", change_pct=0.62,
+    high=1152.5, low=1139.0, as_of=_pts[-1][0], note="15-minute closes from Yahoo Finance (delayed), as of the last session")
+
+
 def dump(obj: object) -> object:
     if isinstance(obj, list):
         return [o.model_dump(mode="json") for o in obj]

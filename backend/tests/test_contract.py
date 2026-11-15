@@ -37,6 +37,7 @@ SCHEMAS = {
     "network-warm": list[m.WarmNudge],
     "network-expertise": list[m.ExpertiseTheme],
     "network-ask": m.NetworkAskResponse,
+    "price-chart": m.PriceChart,
 }
 
 

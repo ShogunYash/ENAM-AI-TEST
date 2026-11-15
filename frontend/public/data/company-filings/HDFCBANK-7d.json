@@ -3,10 +3,10 @@
   "name": "HDFC Bank",
   "window": {
     "label": "7d",
-    "start": "2026-11-08T12:11:18.915575+05:30",
-    "end": "2026-11-15T12:11:18.915575+05:30"
+    "start": "2026-11-08T14:36:46.500569+05:30",
+    "end": "2026-11-15T14:36:46.500569+05:30"
   },
-  "generated_at": "2026-11-15T12:11:18.915575+05:30",
+  "generated_at": "2026-11-15T14:36:46.500569+05:30",
   "counts": {
     "total": 3,
     "rule_classified": 3,
@@ -23,7 +23,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 4.925,
+      "score": 4.811,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -47,9 +47,12 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 3.945,
+      "score": 4.247,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6df1f05c-9926-47ce-9896-94c41bdb71ab.pdf",
-      "price_reaction": null,
+      "price_reaction": {
+        "pct_1d": -1.02,
+        "vol_ratio": 0.59
+      },
       "enrichment": {
         "type": "management",
         "person": "Mr. V. Srinivasa Rangan",
@@ -78,11 +81,11 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.547,
+        "score": 0.55,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d01ef203-cd61-4f19-b88b-7a373979e5b5.pdf",
         "price_reaction": {
-          "pct_1d": 0.71,
-          "vol_ratio": 1.0
+          "pct_1d": -1.02,
+          "vol_ratio": 0.59
         },
         "enrichment": null
       }

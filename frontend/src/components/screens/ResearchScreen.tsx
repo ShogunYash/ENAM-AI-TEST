@@ -1,5 +1,6 @@
 import { PanelHeader, IdentityMark } from '@/components/ui/Desk'
 import { WhoToCall } from '@/components/network/WhoToCall'
+import { PriceChart } from '@/components/charts/PriceChart'
 import React, { useState, useEffect, useMemo } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import {
@@ -554,6 +555,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
             )}
           </div>
 
+          <PriceChart symbol={research.symbol} />
           <WhoToCall symbol={research.symbol} name={research.name} />
 
           {/* Gaps List at TOP for partial reports */}

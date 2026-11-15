@@ -39,6 +39,7 @@ Base URL: `VITE_API_BASE` (the Render URL in production, `http://localhost:8000`
 | `GET /health` | `Health` | — | `health.json` |
 | `GET /companies` | `Company[]` | — | `companies.json` |
 | `GET /prices` | `PriceSnapshot[]` | — | `prices.json` |
+| `GET /prices/{symbol}/chart` | `PriceChart` | `range` = `1d` | `3d` | `7d` | `30d` (default `1d`); tracked symbols only (404 otherwise). 15-minute closes for 1d/3d/7d, daily closes for 30d; `change_pct` is against the close before the window; `source` and `note` say when it fell back to daily closes | `price-chart.json` |
 | `GET /digest` | `Digest` | `window` (default `24h`); `start`, `end` (required if `custom`); `volume_multiple`, `price_move_pct`; `interests`, `muted` (comma-separated `Category`) | `digest-24h.json`, `digest-3d.json` |
 | `GET /filings/{id}` | `Filing` | — (the enrichment is computed lazily and cached) | `filing-results.json`, `filing-management.json`, `filing-oneliner.json` |
 | `GET /digest/companies` | `CompanyList` | `window` (default `30d`) + the same threshold/interest params as `/digest` | `company-list.json` |
@@ -88,6 +89,7 @@ company-filings/{SYM}-{24h|3d|7d|30d}.json  CompanyFilings  (one per tracked com
 filings/{id}.json    Filing      (enriched filings only)
 research/{SYM}.json  Research    (pre-seeded research names)
 stats.json           LlmStats
+charts/{SYM}-{1d|3d|7d|30d}.json  PriceChart   (one per tracked company and range)
 network/people.json       NetworkPerson[]
 network/insights.json     NetworkInsight[]   (look up by filing id = NetworkInsight.key)
 network/warm.json         WarmNudge[]
@@ -98,6 +100,7 @@ network/companies/{SYM}.json  NetworkInsight   (kind company)
 Until B6 exists, seed the folder by copying `docs/examples/`.
 
 ## Changelog
+- 2026-11-15: **price charts** (additive). `GET /prices/{symbol}/chart?range=1d|3d|7d|30d` -> `PriceChart {symbol, range, points[{t,c}], source, change_pct, high, low, as_of, note}`; snapshot folder `charts/`. New table `intraday` (15-minute closes from Yahoo, filled by `scripts/ingest`).
 - 2026-11-15: **Network layer** (additive, no existing shape changed). New models `NetworkPerson`, `PersonMatch`, `NetworkInsight`, `WarmNudge`, `ExpertiseTheme`, `NetworkAskRequest/Response`, `AgentStep`; endpoints `/network/{people,insights,company/{symbol},warm,expertise}` and `POST /network/ask`; snapshot folder `network/`. The demo network is synthetic. Matches are rules over listed facts (`PersonMatch.evidence`); the only model call is the planner of `/network/ask`.
 - 2026-11-13: **portfolio vs watchlist** (additive). `data/portfolio.json` gains `watchlist` (tracked, not held). `CompanySummary.in_portfolio` (default true). Rules: the ranked `GET /digest` (24h/3d/7d/30d), `GET /alerts`, `prices.json` and `Needs you` cover the PORTFOLIO only; `GET /companies`, `GET /digest/companies` and `GET /digest/company/{symbol}` cover portfolio + watchlist, each row flagged `in_portfolio`. The watchlist never raises alerts. UI: a `My portfolio | Watchlist` toggle on Today filters the company list on `in_portfolio` (no new API parameter, so it works offline). Snapshot company files now also exist for `24h` (all windows `24h|3d|7d|30d`), for every tracked company.
 - 2026-11-13: by-company view for the 30-day window (additive). `GET /digest/companies?window=` -> `CompanyList` (one `CompanySummary` per portfolio company: total, material, categories, best headline `top`, latest `price`), and `GET /digest/company/{symbol}?window=` -> `CompanyFilings` (that company's filings, UNCAPPED: `important` best-first + collapsed `routine`). The flat `/digest` caps its lists (5 / 80), so it cannot show a full 30 days per stock. Snapshot gains `digest-companies-{3d,7d,30d}.json` and `company-filings/{SYM}-{3d,7d,30d}.json` (24h has none: the ranked list is enough there). UI: 24h / 3d / 7d keep the ranked list; 30d shows the company list, tap -> that company's headlines.
