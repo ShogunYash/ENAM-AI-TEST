@@ -55,3 +55,17 @@ Payload by type:
 ## Copy voice
 Terse, specific, analyst-like. For example: "PAT +18% YoY, beat on margins; revenue flat QoQ".
 Not: "The company reported strong results this quarter."
+
+## Measurable rules (added 15 Nov: a tool can follow numbers, not "make it elegant")
+- **Type scale (px):** 11 (meta, chips) · 12 (secondary) · 14 (body, rows) · 16 (card headline, section title) · 20 (screen title). No other sizes.
+  At most two weights per card (regular, semibold). Mono only for numbers, tickers, dates and evidence.
+- **Spacing grid:** 4 · 8 · 12 · 16. Screen side padding 14. Gap between cards 8. Padding inside a card 12 (never 16+ on a list card).
+- **Density budget:** a list row is <= 72px, a card <= 140px collapsed. A list shows at most **3** items before a single "Show all (n)" row;
+  a chip group shows at most 8 chips before "More". Never more than one screen of scrolling before the user hits something actionable.
+- **Hierarchy:** each card has ONE primary line (what happened / who), ONE secondary line (why it matters), and meta. Anything else is on tap.
+- **Colour roles:** `text-stock` = a ticker or company name only; `brand` = the one selected/primary thing on a screen; amber = caution/limits;
+  green/red = gain/loss with arrows; everything else is the neutral zinc scale. One accent per screen region.
+- **Targets and contrast:** tap target >= 44px; text >= 4.5:1; icons and control borders >= 3:1; colour never the only cue.
+- **Motion:** 150-250ms ease-out, opacity and transform only, honour `prefers-reduced-motion`. No looping animation after the opening screen.
+- **States:** every list has loading (skeleton), empty (one line + what to do), and unavailable (one calm line) states, none of them a red error.
+- **Review loop:** screenshot at 390x844 and 360x844 in light AND dark; list at most 5 problems against these rules; fix only those; re-screenshot.

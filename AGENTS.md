@@ -23,7 +23,8 @@ AI Engineer Build Challenge (deadline **15 Nov 2026**).
 |---|---|---|
 | `backend/`, `.github/`, `docs/`, root files | **Claude Code** | read-only |
 | `frontend/` | **Antigravity**, working on `frontend/*` branches that Claude Code merges | read-only |
-| `frontend/src/components/network/` and the Network wiring listed in `handoff/CODEX-NETWORK-UI.md` (15 Nov round only) | **Codex**, in its own worktree on branch `codex/network-ui`, never on `main` or `network`; Claude Code merges | read-only |
+| `frontend/src/components/network/` and the Network wiring listed in `handoff/CODEX-NETWORK-UI.md` (15 Nov round only) | **Codex**, in its own worktree on branch `codex/network-ui`, never on `main` or `network`; Claude Code merges |
+| the UI polish listed in `handoff/CODEX-UI-POLISH.md` (15 Nov, after the Network round) | **Codex**, same worktree, branch `codex/ui-polish`; never on `main`; Claude Code merges | read-only | read-only |
 | — | **ChatGPT** | never commits. It produces prompts, reviews and copy, which get pasted into the repo by the owner |
 
 ## Hard rules
