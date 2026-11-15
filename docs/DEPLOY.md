@@ -52,5 +52,6 @@ Today (24h/3d/7d/30d), a results card with the "Revenue, PBT, PAT checked" badge
 ## Known limits (say them in the writeup)
 - Free-tier Gemini has **daily per-model request quotas**; live research on an unseen ticker costs about 6 calls and may be queued
   or degraded once the day's quota is gone. Pre-built names are unaffected.
+- **Live research is cached only on the ephemeral disk**: a report built for an unseen ticker is lost on restart or sleep; the PWA keeps a copy on the device (see README, Limits). A persistent disk or database is the upgrade path.
 - Render free sleeps after 15 min idle (hence the keep-warm ping) and has an ephemeral disk (hence the boot-time seed).
 - screener.in terms are "personal, non-commercial": low volume, cached, robots.txt respected.

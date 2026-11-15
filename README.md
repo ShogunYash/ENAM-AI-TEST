@@ -22,7 +22,8 @@ that the server has checked**; a claim without a verified quote is dropped.
    agent: a model picks one tool, code runs it, and the answer can only name people in the network), reconnect nudges when a contact's former employer
    files something, and an expertise map. Matching is rules over listed facts, no model. Architecture, privacy and consent: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 7. **Price charts** (Research report and each company page): 1D, 3D, 7D and 30D. 15-minute closes from Yahoo for the first three, daily closes for 30D; a dashed line marks the previous close, session boundaries are marked, and you can touch or drag to read any point. The change is measured against the previous close, and a chart says so when it has to fall back to daily closes.
-8. **Look and feel:** a light default, a dark skin and an opt-in **Terminal** skin (Settings > Appearance): near-black field, amber panel title bars, function-key navigation (F1-F5), tabular monospace figures. A command bar (type `INFY` or `NETWORK`) and a ticker tape of the portfolio work in every skin. Sections, items and people each have their own shape so nothing blends together.
+8. **First run and your device:** the first time the app opens it asks you to choose Light, Dark or Terminal (previewed; remembered on the device, changeable in Settings). Every finished research report is also **kept in your browser** (the last 12, under "Saved" on the Research home), because the free server forgets reports it built whenever it restarts or sleeps. The interface is not text-selectable and opts out of browser translation, except for quotes, evidence and inputs, so a stray tap never opens a search or translate popup.
+9. **Look and feel:** a light default, a dark skin and an opt-in **Terminal** skin (Settings > Appearance): near-black field, amber panel title bars, function-key navigation (F1-F5), tabular monospace figures. A command bar (type `INFY` or `NETWORK`) and a ticker tape of the portfolio work in every skin. Sections, items and people each have their own shape so nothing blends together.
 
 ## Architecture
 ```
@@ -93,6 +94,7 @@ earnings-call transcripts, annual reports and filed numbers. No news, no broker 
   skips an exhausted model; the demo serves a committed seed and snapshot, so it never depends on a live model. A live build for an unseen ticker is
   quota-bound and may return a partial report with an explicit gap (e.g. "Judgment batch 2 failed").
 - A results card that fails the screener cross-check is shown with an amber `Screener mismatch` badge, never hidden. (Titan's was one until its PDF was re-read by a stronger model once the daily quota returned: all 17 now match.)
+- **Research storage:** a report built live is cached on Render's ephemeral disk and is lost when the server restarts or sleeps (only the four pre-built reports are restored from the seed). The browser therefore keeps a copy of every finished report on the device; clearing browser storage removes them. Durable server-side storage would need a paid persistent disk or a database.
 - Render's free tier sleeps (a keep-warm ping is documented) and has an ephemeral disk (the API restores a committed seed at boot).
 - **Not built:** voice, auth, real push notifications, web enrichment for bios (filing text only), bull/bear and the other research modules, intraday data.
   `POST /ask` (grounded Q&A on the filing or report on screen) is built and tested; check whether the Ask sheet in the deployed UI is wired to it.
