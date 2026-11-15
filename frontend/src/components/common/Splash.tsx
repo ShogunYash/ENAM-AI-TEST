@@ -8,7 +8,7 @@ const FADE_MS = 450
  * rising price line draws itself. Visual only (pointer-events: none), so it can never block a tap or a test, and it
  * is skipped with ?nosplash and shortened for people who prefer reduced motion.
  */
-export const Splash: React.FC = () => {
+export const Splash: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
   const skip =
     typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('nosplash')
   const reduced =
@@ -24,6 +24,8 @@ export const Splash: React.FC = () => {
       window.clearTimeout(t2)
     }
   }, [skip, reduced])
+
+  useEffect(() => { if (phase === 'gone') onComplete?.() }, [phase, onComplete])
 
   if (phase === 'gone') return null
 
