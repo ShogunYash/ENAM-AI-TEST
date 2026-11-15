@@ -28,12 +28,14 @@ import {
 export type ResearchScope = 'prebuilt' | 'portfolio' | 'watchlist'
 
 interface ResearchScreenProps {
+  initialSymbol?: string
   onAskFinn?: (symbol: string, sourceDocs: SourceDoc[]) => void
 }
 
-export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => {
+export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initialSymbol }) => {
   // Navigation: selectedCompany null = Research Home list; string = Company Detail
   const [selectedCompany, setSelectedCompany] = useState<string | null>(() => {
+    if (initialSymbol) return initialSymbol
     try {
       const params = new URLSearchParams(window.location.search)
       return params.get('company') || localStorage.getItem('finn.research.company') || null

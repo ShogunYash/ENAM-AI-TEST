@@ -1,4 +1,5 @@
 import React from 'react'
+import { CommandBar } from './CommandBar'
 import { Flame, Search, Sliders, Activity, User, Users } from 'lucide-react'
 import { initialsOf, useProfileName } from '@/lib/profile'
 
@@ -8,6 +9,7 @@ interface MobileShellProps {
   children: React.ReactNode
   activeTab: NavTab
   onTabChange: (tab: NavTab) => void
+  onOpenCompany: (symbol: string) => void
   needsYouCount?: number
   alertCount?: number
 }
@@ -16,6 +18,7 @@ export const MobileShell: React.FC<MobileShellProps> = ({
   children,
   activeTab,
   onTabChange,
+  onOpenCompany,
   needsYouCount = 0,
   alertCount = 0,
 }) => {
@@ -68,7 +71,8 @@ export const MobileShell: React.FC<MobileShellProps> = ({
           <p className="mt-3 text-[11px] font-mono uppercase tracking-wider text-zinc-500">A triage desk, not a news feed</p>
         </aside>
         {/* Brand App Bar */}
-        <header className="sticky top-0 z-40 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-900 px-4 py-2.5 flex items-center justify-between">
+        <div className="sticky top-0 z-40">
+        <header className="bg-zinc-950/90 backdrop-blur-md border-b border-zinc-900 px-4 py-2.5 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="font-mono font-black text-base tracking-wider bg-gradient-to-r from-[#3558E6] to-[#5B7CFF] dark:from-[#8EA4FF] dark:to-[#C7D2FE] bg-clip-text text-transparent">
               FINN
@@ -96,6 +100,8 @@ export const MobileShell: React.FC<MobileShellProps> = ({
             </span>
           </button>
         </header>
+        <CommandBar onTabChange={onTabChange} onOpenCompany={onOpenCompany} />
+        </div>
         {/* Slim brand top bar */}
         <div className="h-[2px] w-full bg-gradient-to-r from-[#3558E6] via-[#5B7CFF] to-[#3558E6] dark:from-[#4A69F0] dark:via-[#7C93FF] dark:to-[#4A69F0] flex-shrink-0" />
 
