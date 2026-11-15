@@ -3,10 +3,10 @@
   "name": "Dixon Technologies",
   "window": {
     "label": "30d",
-    "start": "2026-10-16T05:19:46.040314+05:30",
-    "end": "2026-11-15T05:19:46.040314+05:30"
+    "start": "2026-10-16T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-15T05:19:46.040314+05:30",
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
   "counts": {
     "total": 12,
     "rule_classified": 9,
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.372,
+      "score": 0.348,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d7b8fffb-7a5f-4efa-9241-482c5d765f1d.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -86,7 +86,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.206,
+      "score": 0.193,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/53529778-f611-4f21-b789-0bc1bf52e7e5.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -136,7 +136,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.221,
+        "score": 0.207,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/995a3a71-4a1e-4c1f-a29a-6c6747e4ca10.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -166,7 +166,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.066,
+        "score": 0.062,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/12486329-18b7-4e94-a0e6-4b851e757235.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -181,7 +181,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.108,
+        "score": 0.101,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2336e442-6dfb-4af9-81c4-09a8770d2c94.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -196,7 +196,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.057,
+        "score": 0.054,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/082ec2fb-f975-4058-aadb-d27d3e69a02d.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -211,7 +211,7 @@
         "category": "results",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.083,
+        "score": 0.077,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f4cee6de-593c-4f4c-a0b0-368c8d0aa43e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -226,7 +226,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.011,
+        "score": 0.01,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4260af0d-9e97-44f0-a19a-04b0b0ddb4e5.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -256,7 +256,7 @@
         "category": "press_release",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.011,
+        "score": 0.01,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/243de729-cff5-4203-a58d-cb59adb578b5.pdf",
         "price_reaction": null,
         "enrichment": null

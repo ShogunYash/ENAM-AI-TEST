@@ -3,10 +3,10 @@
   "name": "Hindustan Unilever",
   "window": {
     "label": "30d",
-    "start": "2026-10-16T05:19:46.040314+05:30",
-    "end": "2026-11-15T05:19:46.040314+05:30"
+    "start": "2026-10-16T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-15T05:19:46.040314+05:30",
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
   "counts": {
     "total": 17,
     "rule_classified": 15,
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.22,
+      "score": 0.206,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/f0d1483f-551a-46d8-ade7-7a390baacc1c.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -98,7 +98,7 @@
         "category": "postal_ballot",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.729,
+        "score": 0.683,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3317b3c1-9d82-4bdb-9a77-80f005c92da7.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -113,7 +113,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.284,
+        "score": 0.265,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fe403f6c-2e8b-4ed9-8f6c-8ab6fbcfed46.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -128,7 +128,7 @@
         "category": "postal_ballot",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.091,
+        "score": 0.085,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/37b8e146-51f7-4f5f-a4fa-c3b5162172b1.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -143,7 +143,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.181,
+        "score": 0.169,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6d90194e-b9dc-48b0-b48e-3de0d0ef5f6d.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -158,7 +158,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.271,
+        "score": 0.253,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c54cbd79-ba64-4bcc-b114-b5ad02c75ade.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -173,7 +173,7 @@
         "category": "dividend",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.084,
+        "score": 0.079,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c27c0214-10cc-4880-bbb5-b0df9f4dd201.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -188,7 +188,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.084,
+        "score": 0.079,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/880c267a-fcc5-410d-b2d6-c010ea640eb2.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -203,7 +203,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.028,
+        "score": 0.026,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/82777ffc-27be-481a-9b29-0f28964b3112.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -218,7 +218,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.036,
+        "score": 0.034,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/742ae115-b903-40c6-b144-fe024d3208fc.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -248,7 +248,7 @@
         "category": "dividend",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.049,
+        "score": 0.046,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/71a8a780-7e2e-4c6a-90fd-a387ae1fe0da.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -263,7 +263,7 @@
         "category": "dividend",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.049,
+        "score": 0.046,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/180a72df-654a-47c0-a34b-4acf9a7ce2b8.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -278,7 +278,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.049,
+        "score": 0.046,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/aecfd799-4d6c-49d4-9d7b-221d87d1352d.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -293,7 +293,7 @@
         "category": "results",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.049,
+        "score": 0.046,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/e773ea8a-a7a5-41a0-bb2c-bfb8ed46c12c.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -323,7 +323,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.007,
+        "score": 0.006,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/bff766e5-708c-4040-b2a9-da0ced14931a.pdf",
         "price_reaction": null,
         "enrichment": null

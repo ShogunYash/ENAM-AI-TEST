@@ -3,14 +3,14 @@
   "name": "Polycab India",
   "window": {
     "label": "30d",
-    "start": "2026-10-16T05:19:46.040314+05:30",
-    "end": "2026-11-15T05:19:46.040314+05:30"
+    "start": "2026-10-16T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-15T05:19:46.040314+05:30",
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
   "counts": {
-    "total": 10,
+    "total": 9,
     "rule_classified": 2,
-    "llm_classified": 8
+    "llm_classified": 7
   },
   "important": [
     {
@@ -23,7 +23,7 @@
       "category": "litigation",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.239,
+      "score": 0.223,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c3d1ba29-6132-47b7-9f3b-79a294e53189.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -41,30 +41,12 @@
       "category": "litigation",
       "category_source": "llm",
       "priority": "medium",
-      "score": 0.148,
+      "score": 0.138,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/ead5c0dc-e464-4e53-8006-b861205174a9.pdf",
       "price_reaction": null,
       "enrichment": {
         "type": "oneliner",
         "text": "NCLAT directed MSCI not to delist Polycab till order pronouncement."
-      }
-    },
-    {
-      "id": "4f686399-b641-4495-a5dd-e5124e088cf0",
-      "symbol": "POLYCAB",
-      "company_name": "Polycab India Ltd",
-      "filed_at": "2026-10-16T09:34:04.393000+05:30",
-      "headline": "Update on the appeal listed on October 15, 2026 before Hon''ble NCLAT, Principal Bench, New Delhi",
-      "so_what": "NCLAT heard and reserved order on Asier Metals appeal on Oct 15, 2026.",
-      "category": "litigation",
-      "category_source": "llm",
-      "priority": "medium",
-      "score": 0.009,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a0fba81c-bd84-40eb-8435-9643b019e9fc.pdf",
-      "price_reaction": null,
-      "enrichment": {
-        "type": "oneliner",
-        "text": "NCLAT heard and reserved order on Asier Metals appeal on Oct 15, 2026."
       }
     }
   ],
@@ -86,7 +68,7 @@
         "category": "investor_meetings",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.147,
+        "score": 0.137,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/72c96165-b9ed-4b62-ac86-80cc440b32ff.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -116,7 +98,7 @@
         "category": "investor_meetings",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.018,
+        "score": 0.016,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/26cdd582-7e95-4019-88b5-fdff3d5e60e1.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -131,7 +113,7 @@
         "category": "investor_meetings",
         "category_source": "llm",
         "priority": "low",
-        "score": 0.014,
+        "score": 0.013,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/cafe2036-e51b-413a-80cd-65e331d170be.pdf",
         "price_reaction": null,
         "enrichment": null

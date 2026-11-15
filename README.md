@@ -16,6 +16,11 @@ that the server has checked**; a claim without a verified quote is dropped.
 5. **Research** (INFY, BAJFINANCE, POLYCAB, KPIL pre-built; any other NSE ticker builds live with visible progress):
    financial snapshot + **Promised vs Delivered** timeline from the last 5 earnings calls, each verdict with its quote and page.
    Example: KPIL guided *"25%+"* FY26 revenue growth and management said it *"fully delivered"*; its filed numbers show **21.6%**, so FINN says **missed**.
+6. **Network** (the third layer): a **synthetic** 36-person investor network that overlaps the portfolio. It shows up inside Push and Pull and can be asked directly.
+   A management-change card says which contacts overlapped with the new person, using only the tenure the filing states; an M&A, capex or litigation filing
+   names the contact best placed to give context and why; a Research page has "Who to call about {company}"; the Network tab has an ask box (a small
+   agent: a model picks one tool, code runs it, and the answer can only name people in the network), reconnect nudges when a contact's former employer
+   files something, and an expertise map. Matching is rules over listed facts, no model. Architecture, privacy and consent: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Architecture
 ```

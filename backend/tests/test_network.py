@@ -15,6 +15,13 @@ def _no_model(monkeypatch):
     monkeypatch.setattr(network, "run_task", boom)
 
 
+def test_display_names_keep_of_india_but_drop_suffixes():
+    assert network._short("State Bank of India") == "State Bank of India"
+    assert network._short("Maruti Suzuki India") == "Maruti Suzuki"
+    assert network._short("Polycab India") == "Polycab"
+    assert network._short("Kalpataru Projects International") == "Kalpataru Projects International"
+
+
 def test_demo_network_is_marked_synthetic_and_valid():
     ps = network.people()
     assert len(ps) >= 10 and all(p.synthetic for p in ps)

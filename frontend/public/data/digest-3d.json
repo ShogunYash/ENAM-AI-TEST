@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "3d",
-    "start": "2026-11-12T05:19:46.040314+05:30",
-    "end": "2026-11-15T05:19:46.040314+05:30"
+    "start": "2026-11-12T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-15T05:19:46.040314+05:30",
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
   "needs_you": [],
   "also_material": [
     {
@@ -17,7 +17,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 5.261,
+      "score": 4.925,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -41,8 +41,8 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 4.214,
-      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/6df1f05c-9926-47ce-9896-94c41bdb71ab.pdf",
+      "score": 3.945,
+      "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/6df1f05c-9926-47ce-9896-94c41bdb71ab.pdf",
       "price_reaction": null,
       "enrichment": {
         "type": "management",
@@ -57,11 +57,11 @@
     }
   ],
   "routine": {
-    "count": 10,
+    "count": 9,
     "by_category": {
       "earnings_call": 2,
       "investor_meetings": 6,
-      "unclassified": 2
+      "unclassified": 1
     },
     "items": [
       {
@@ -74,8 +74,8 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.176,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/eeedbcb3-2b63-4718-b5b7-b498eedf2b4e.pdf",
+        "score": 1.101,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/eeedbcb3-2b63-4718-b5b7-b498eedf2b4e.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -89,7 +89,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 1.111,
+        "score": 1.04,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/769be2ca-bd51-4ac3-8e63-ce44e430d026.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -104,7 +104,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.714,
+        "score": 0.669,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/3f614a9e-94b0-42ef-8145-ba0055ba7be5.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -119,7 +119,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.693,
+        "score": 0.649,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d7982c18-e8b9-485f-8165-a8333b0d421e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -134,7 +134,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.604,
+        "score": 0.566,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/71268b4d-2f12-447d-bf1e-28310f485d17.pdf",
         "price_reaction": {
           "pct_1d": -0.97,
@@ -152,7 +152,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.584,
+        "score": 0.547,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/d01ef203-cd61-4f19-b88b-7a373979e5b5.pdf",
         "price_reaction": {
           "pct_1d": 0.71,
@@ -170,8 +170,8 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.578,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/55f9d4f5-8638-4669-abdb-7cc4127221fc.pdf",
+        "score": 0.541,
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/55f9d4f5-8638-4669-abdb-7cc4127221fc.pdf",
         "price_reaction": null,
         "enrichment": null
       },
@@ -185,7 +185,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.558,
+        "score": 0.523,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/fcd5e6ba-794e-420b-ae7a-17a4c8df68e3.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -201,34 +201,16 @@
         "category_source": "rule",
         "priority": "hidden",
         "score": 0.0,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/77999e05-06f6-4ed6-9998-f9a775dc5c4f.pdf",
+        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/77999e05-06f6-4ed6-9998-f9a775dc5c4f.pdf",
         "price_reaction": null,
-        "enrichment": null
-      },
-      {
-        "id": "4a2555f1-fd67-4fb4-bed9-b565b67dced5",
-        "symbol": "INFY",
-        "company_name": "Infosys Ltd",
-        "filed_at": "2026-11-12T11:21:41.480000+05:30",
-        "headline": "Enclosed",
-        "so_what": null,
-        "category": "unclassified",
-        "category_source": "rule",
-        "priority": "hidden",
-        "score": 0.0,
-        "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2d26cac8-d5b5-4be4-ba93-d18f80ee8c0c.pdf",
-        "price_reaction": {
-          "pct_1d": -0.33,
-          "vol_ratio": 0.45
-        },
         "enrichment": null
       }
     ]
   },
   "alerts": [],
   "counts": {
-    "total": 12,
-    "rule_classified": 12,
+    "total": 11,
+    "rule_classified": 11,
     "llm_classified": 0
   }
 }

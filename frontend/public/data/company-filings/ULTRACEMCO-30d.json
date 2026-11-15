@@ -3,10 +3,10 @@
   "name": "UltraTech Cement",
   "window": {
     "label": "30d",
-    "start": "2026-10-16T05:19:46.040314+05:30",
-    "end": "2026-11-15T05:19:46.040314+05:30"
+    "start": "2026-10-16T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-15T05:19:46.040314+05:30",
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
   "counts": {
     "total": 17,
     "rule_classified": 13,
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.029,
+      "score": 0.027,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/59654d86-af0c-4fe5-bfb9-1a148f65fd6c.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -86,7 +86,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "high",
-      "score": 0.025,
+      "score": 0.024,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a564754c-992e-4cb5-9e28-a5ae413e5654.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -110,7 +110,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.016,
+      "score": 0.015,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/9e27e1c6-ecc1-4d9b-9c89-a91c58b61c03.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -144,7 +144,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.693,
+        "score": 0.649,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d7982c18-e8b9-485f-8165-a8333b0d421e.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -159,7 +159,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.453,
+        "score": 0.424,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2b934e4e-121f-42d7-a2d0-d3eb4364b9a7.pdf",
         "price_reaction": {
           "pct_1d": -0.2,
@@ -207,7 +207,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.027,
+        "score": 0.025,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/3892cb51-dbcd-43ad-955f-fe9fafe54003.pdf",
         "price_reaction": null,
         "enrichment": null

@@ -3,10 +3,10 @@
   "name": "Astral",
   "window": {
     "label": "30d",
-    "start": "2026-10-16T05:19:46.040314+05:30",
-    "end": "2026-11-15T05:19:46.040314+05:30"
+    "start": "2026-10-16T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-15T05:19:46.040314+05:30",
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
   "counts": {
     "total": 13,
     "rule_classified": 12,
@@ -23,7 +23,7 @@
       "category": "results",
       "category_source": "rule",
       "priority": "high",
-      "score": 1.49,
+      "score": 1.395,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a39f8b72-303f-42a4-8750-f413346bd742.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -86,7 +86,7 @@
       "category": "management_change",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.832,
+      "score": 0.778,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/4017e932-6841-4b4b-8669-50a79f27feb2.pdf",
       "price_reaction": null,
       "enrichment": {
@@ -113,7 +113,7 @@
       "category": "litigation",
       "category_source": "rule",
       "priority": "medium",
-      "score": 0.634,
+      "score": 0.594,
       "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/84dc2a7d-1be3-4576-a370-a944f4b2d7bc.pdf",
       "price_reaction": null,
       "enrichment": null
@@ -140,7 +140,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.876,
+        "score": 0.82,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/a9cb0ab8-930f-4400-b70b-fbd01640f54d.pdf",
         "price_reaction": {
           "pct_1d": -0.08,
@@ -158,7 +158,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.398,
+        "score": 0.372,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c09898ed-8b2d-47cc-9b13-a049755597f5.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -173,7 +173,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.232,
+        "score": 0.218,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/795ae202-30f1-4db0-9791-17ef2f57a9ea.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -188,7 +188,7 @@
         "category": "dividend",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.346,
+        "score": 0.324,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/c6836e5b-deb6-4c0c-9f93-24f735412d9c.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -203,7 +203,7 @@
         "category": "press_release",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.332,
+        "score": 0.311,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/95ba2ee6-f092-4f27-906f-bb30db524807.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -218,7 +218,7 @@
         "category": "dividend",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.332,
+        "score": 0.311,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/7e5ca8e8-4fd9-49cc-ae26-fa1379c898a0.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -248,7 +248,7 @@
         "category": "investor_meetings",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.088,
+        "score": 0.083,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/63d85004-a83c-407e-a649-5d71cfce075f.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -263,7 +263,7 @@
         "category": "earnings_call",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.069,
+        "score": 0.065,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/2684ff83-e0e0-41ce-bcd0-935a714cf850.pdf",
         "price_reaction": null,
         "enrichment": null
@@ -278,7 +278,7 @@
         "category": "results",
         "category_source": "rule",
         "priority": "low",
-        "score": 0.067,
+        "score": 0.063,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachHis/1f1205bc-a6f9-4dc6-85af-eed6f74e9dc5.pdf",
         "price_reaction": null,
         "enrichment": null

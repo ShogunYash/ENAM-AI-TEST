@@ -1,10 +1,10 @@
 {
   "window": {
     "label": "3d",
-    "start": "2026-11-12T05:19:46.040314+05:30",
-    "end": "2026-11-15T05:19:46.040314+05:30"
+    "start": "2026-11-12T12:11:18.915575+05:30",
+    "end": "2026-11-15T12:11:18.915575+05:30"
   },
-  "generated_at": "2026-11-15T05:19:46.040314+05:30",
+  "generated_at": "2026-11-15T12:11:18.915575+05:30",
   "companies": [
     {
       "symbol": "HDFCBANK",
@@ -26,7 +26,7 @@
         "category": "management_change",
         "category_source": "rule",
         "priority": "medium",
-        "score": 5.261,
+        "score": 4.925,
         "pdf_url": "https://www.bseindia.com/xml-data/corpfiling/AttachLive/7b9eb8a8-fa88-453b-810f-b55034589aac.pdf",
         "price_reaction": null,
         "enrichment": {
@@ -144,20 +144,6 @@
       }
     },
     {
-      "symbol": "INFY",
-      "name": "Infosys",
-      "sector": "IT services",
-      "in_portfolio": true,
-      "total": 1,
-      "material": 0,
-      "categories": {},
-      "top": null,
-      "price": {
-        "pct_1d": -0.33,
-        "vol_ratio": 0.45
-      }
-    },
-    {
       "symbol": "KPIL",
       "name": "Kalpataru Projects International",
       "sector": "Engineering and construction",
@@ -169,20 +155,6 @@
       "price": {
         "pct_1d": -0.05,
         "vol_ratio": 0.48
-      }
-    },
-    {
-      "symbol": "MARUTI",
-      "name": "Maruti Suzuki India",
-      "sector": "Automobiles",
-      "in_portfolio": false,
-      "total": 1,
-      "material": 0,
-      "categories": {},
-      "top": null,
-      "price": {
-        "pct_1d": -1.31,
-        "vol_ratio": 0.88
       }
     },
     {
@@ -298,6 +270,20 @@
       }
     },
     {
+      "symbol": "INFY",
+      "name": "Infosys",
+      "sector": "IT services",
+      "in_portfolio": true,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -0.33,
+        "vol_ratio": 0.45
+      }
+    },
+    {
       "symbol": "KEI",
       "name": "KEI Industries",
       "sector": "Wires and cables",
@@ -323,6 +309,20 @@
       "price": {
         "pct_1d": -1.25,
         "vol_ratio": 0.99
+      }
+    },
+    {
+      "symbol": "MARUTI",
+      "name": "Maruti Suzuki India",
+      "sector": "Automobiles",
+      "in_portfolio": false,
+      "total": 0,
+      "material": 0,
+      "categories": {},
+      "top": null,
+      "price": {
+        "pct_1d": -1.31,
+        "vol_ratio": 0.88
       }
     },
     {

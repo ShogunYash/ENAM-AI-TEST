@@ -6,9 +6,9 @@
     "last_contact": "2026-01-16",
     "days_since": 303,
     "symbol": "SBIN",
-    "trigger": "State Bank of: Newspaper publication of Financial Results for Q2FY27",
+    "trigger": "State Bank of India: Newspaper publication of Financial Results for Q2FY27",
     "filing_id": "65932b21-751d-49d0-a754-e739bcec24dd",
-    "opener": "Saw State Bank of's results. Thought of your time there. How does it look from the outside?"
+    "opener": "Saw State Bank of India's results. Thought of your time there. How does it look from the outside?"
   },
   {
     "person_id": "p11",
@@ -31,17 +31,6 @@
     "trigger": "Fine Organic: Conclusion of Search proceedings initiated by Maharashtra Goods and Se",
     "filing_id": "98d6a02a-dd08-44ac-9686-48d4b9a70b6d",
     "opener": "Noticed the Fine Organic legal update. Is this as significant as it reads?"
-  },
-  {
-    "person_id": "p05",
-    "name": "Vikram Desai",
-    "headline": "Electronics manufacturing operator",
-    "last_contact": "2026-03-11",
-    "days_since": 249,
-    "symbol": "DIXON",
-    "trigger": "Dixon Technologies: Announcement under Regulation 30 of SEBI LODR- Copy of Newspaper publi",
-    "filing_id": "7bdce317-b2e3-4c9b-86de-a59235d0e9f1",
-    "opener": "Saw Dixon Technologies's results. Thought of your time there. How does it look from the outside?"
   },
   {
     "person_id": "p21",
@@ -97,17 +86,6 @@
     "trigger": "Bajaj Finance: Outcome of QIP 2026 - Special Committee Meeting",
     "filing_id": "9865b7f5-5041-41a3-980c-5aa5206c9fb7",
     "opener": "Bajaj Finance is raising capital. You'd know how the market will take it."
-  },
-  {
-    "person_id": "p27",
-    "name": "Prakash Nambiar",
-    "headline": "Pharma regulatory affairs veteran",
-    "last_contact": "2026-04-30",
-    "days_since": 199,
-    "symbol": "SUNPHARMA",
-    "trigger": "Sun Pharmaceutical: Newspaper publication for unaudited financial results for the quarter ",
-    "filing_id": "e35ea451-a1f8-4dc0-9cba-c10cd3a02125",
-    "opener": "Saw Sun Pharmaceutical's results. Thought of your time there. How does it look from the outside?"
   },
   {
     "person_id": "p02",

@@ -2,7 +2,7 @@
   "key": "SBIN",
   "kind": "company",
   "symbol": "SBIN",
-  "headline": "1 contact worked at State Bank of",
+  "headline": "1 contact worked at State Bank of India",
   "subject": null,
   "matches": [
     {
@@ -23,7 +23,7 @@
       "headline": "Large-deal delivery head, IT services",
       "strength": 5,
       "link": "sector_expert",
-      "why": "bank technology expert (large-deal delivery head, it services); no direct tie to State Bank of",
+      "why": "bank technology expert (large-deal delivery head, it services); no direct tie to State Bank of India",
       "evidence": [
         "expertise: bank technology"
       ],
@@ -35,7 +35,7 @@
       "headline": "Retired private-banking executive",
       "strength": 4,
       "link": "sector_expert",
-      "why": "private banking expert (retired private-banking executive); no direct tie to State Bank of",
+      "why": "private banking expert (retired private-banking executive); no direct tie to State Bank of India",
       "evidence": [
         "expertise: private banking"
       ],
@@ -47,7 +47,7 @@
       "headline": "Ex-ICICI treasury and capital markets",
       "strength": 4,
       "link": "sector_expert",
-      "why": "bank treasury expert (ex-icici treasury and capital markets); no direct tie to State Bank of",
+      "why": "bank treasury expert (ex-icici treasury and capital markets); no direct tie to State Bank of India",
       "evidence": [
         "expertise: bank treasury"
       ],

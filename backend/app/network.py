@@ -69,7 +69,10 @@ def _company(symbol: str) -> universe.Company | None:
 
 
 def _short(name: str) -> str:
-    return re.sub(r"\b(Ltd|Limited|India|Company|Industries)\b\.?", "", name).strip(" ,")
+    """Drop corporate suffixes for display. 'of India' is part of a name (State Bank of India), not a suffix."""
+    out = re.sub(r"\b(Ltd|Limited|Company|Industries)\b\.?", "", name)
+    out = re.sub(r"(?<!of )\bIndia\b", "", out)
+    return re.sub(r"\s+", " ", out).strip(" ,")
 
 
 def _trim(s: str, n: int) -> str:
