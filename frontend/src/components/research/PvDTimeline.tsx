@@ -108,12 +108,13 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({
         return (
           <div
             key={idx}
-            className="rounded-xl border border-zinc-800/90 bg-zinc-900/60 p-3.5 space-y-2.5 transition-all hover:border-zinc-700/80"
+            data-verdict={item.verdict}
+            className="desk-claim p-3 space-y-3"
           >
             {/* Top row: Metric name, period, and Verdict chip */}
-            <div className="flex items-start justify-between gap-2">
+            <div className="flex flex-wrap items-start justify-between gap-2">
               <div>
-                <h3 className="text-sm font-bold text-zinc-100 leading-snug">
+                <h3 className="text-sm font-semibold text-zinc-100 leading-snug">
                   {item.metric}
                 </h3>
                 <div className="flex items-center gap-1.5 text-[11px] text-zinc-400 font-mono mt-0.5">
@@ -131,14 +132,14 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({
               <div className="flex items-center gap-1.5 flex-shrink-0">
                 {rangeShift && (
                   <span
-                    className="font-mono text-[11px] text-zinc-300 bg-zinc-800/80 px-1.5 py-0.5 rounded border border-zinc-700/60 font-medium"
+                    className="font-mono text-[11px] text-zinc-300 bg-zinc-800/80 px-1.5 py-0.5 rounded border border-zinc-700/60 font-semibold"
                     title={`Guidance revised: ${rangeShift}`}
                   >
                     {rangeShift}
                   </span>
                 )}
                 <span
-                  className={`inline-flex items-center gap-1 text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded border flex-shrink-0 ${chip.className}`}
+                  className={`inline-flex items-center gap-1 text-[11px] font-mono font-semibold uppercase tracking-wider px-2 py-0.5 rounded border flex-shrink-0 ${chip.className}`}
                 >
                   {chip.icon}
                   <span>{chip.label}</span>
@@ -147,10 +148,10 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({
             </div>
 
             {/* One-line reason (<=120 chars) and table actual if available */}
-            <div className="p-2.5 rounded-lg bg-zinc-950/60 border border-zinc-800/60 text-xs text-zinc-300 font-medium leading-relaxed space-y-1.5">
+            <div className="border-y border-zinc-700 py-3 text-sm text-zinc-300 leading-relaxed space-y-2">
               <div className="flex items-start justify-between gap-2 flex-wrap">
                 <div>
-                  <span className="text-zinc-500 font-semibold mr-1.5 uppercase text-[10px] tracking-wider">
+                  <span className="text-zinc-500 font-semibold mr-1.5 uppercase text-[11px] tracking-wider">
                     Reason:
                   </span>
                   <span>{item.reason}</span>
@@ -167,16 +168,18 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({
             <div className="space-y-2 pt-0.5 text-xs">
               {/* Promised Claim */}
               <div
+                role="button" tabIndex={0}
+                onKeyDown={event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onSelectClaim(item.promised, item.metric) } }}
                 onClick={() => onSelectClaim(item.promised, item.metric)}
-                className="group p-2.5 rounded-lg border border-zinc-800/80 bg-zinc-950/40 hover:bg-zinc-800/30 hover:border-zinc-700 cursor-pointer transition-all space-y-1.5"
+                className="desk-inset group min-h-[44px] cursor-pointer space-y-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand"
                 title="Tap to view verified verbatim quote"
               >
                 <div className="flex items-center justify-between text-[11px]">
-                  <span className="text-sky-400 font-semibold uppercase tracking-wider text-[10px]">
+                  <span className="text-sky-400 font-semibold uppercase tracking-wider text-[11px]">
                     Guidance Promised
                   </span>
                   {primaryPromisedSource && (
-                    <span className="text-[10px] font-mono text-zinc-400 group-hover:text-zinc-200 underline decoration-zinc-700 flex items-center gap-1">
+                    <span className="text-[11px] font-mono text-zinc-400 group-hover:text-zinc-200 underline decoration-zinc-700 flex items-center gap-1">
                       <FileText className="w-2.5 h-2.5 text-sky-400" />
                       <span>
                         {formatDocSourceLabel(
@@ -189,7 +192,7 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({
                   )}
                 </div>
                 {/* Paraphrase headline shown without quotes */}
-                <div className="text-zinc-200 text-[12px] leading-snug font-medium">
+                <div className="text-zinc-200 text-[12px] leading-snug font-semibold">
                   {item.promised.text}
                 </div>
               </div>
@@ -197,16 +200,18 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({
               {/* Outcome Claim (if any) */}
               {item.outcome ? (
                 <div
+                  role="button" tabIndex={0}
+                  onKeyDown={event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onSelectClaim(item.outcome!, item.metric) } }}
                   onClick={() => onSelectClaim(item.outcome!, item.metric)}
-                  className="group p-2.5 rounded-lg border border-zinc-800/80 bg-zinc-950/40 hover:bg-zinc-800/30 hover:border-zinc-700 cursor-pointer transition-all space-y-1.5"
+                  className="desk-inset group min-h-[44px] cursor-pointer space-y-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand"
                   title="Tap to view verified verbatim quote"
                 >
                   <div className="flex items-center justify-between text-[11px]">
-                    <span className="text-[#37465C] dark:text-[#B6C0D6] font-semibold uppercase tracking-wider text-[10px]">
+                    <span className="text-zinc-300 font-semibold uppercase tracking-wider text-[11px]">
                       Delivered Outcome
                     </span>
                     {primaryOutcomeSource && (
-                      <span className="text-[10px] font-mono text-zinc-400 group-hover:text-zinc-200 underline decoration-zinc-700 flex items-center gap-1">
+                      <span className="text-[11px] font-mono text-zinc-400 group-hover:text-zinc-200 underline decoration-zinc-700 flex items-center gap-1">
                         <FileText className="w-2.5 h-2.5 text-zinc-400" />
                         <span>
                           {formatDocSourceLabel(
@@ -219,7 +224,7 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({
                     )}
                   </div>
                   {/* Paraphrase headline shown without quotes */}
-                  <div className="text-zinc-200 text-[12px] leading-snug font-medium">
+                  <div className="text-zinc-200 text-[12px] leading-snug font-semibold">
                     {item.outcome.text}
                   </div>
                 </div>

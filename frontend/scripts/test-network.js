@@ -590,7 +590,7 @@ async function runNetworkTests() {
         await new Promise((r) => setTimeout(r, 200))
         hasWhoToCall = await evaluate(`(() => {
           const text = document.body.innerText || '';
-          const hasTitle = text.includes('Who to call about');
+          const hasTitle = text.toLowerCase().includes('who to call about');
           const hasMatches = text.includes('Arjun Rao') || text.includes('Aditya Bose');
           return hasTitle && hasMatches;
         })()`)
