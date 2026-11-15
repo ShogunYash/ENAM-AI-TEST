@@ -1,6 +1,6 @@
 # AGENTS.md: rules for every AI agent working on FINN
 
-These are tool-neutral rules for Claude Code, Antigravity, ChatGPT/Codex and any other agent. Read them before any change.
+These are tool-neutral rules for Claude Code, Antigravity, Codex and any other agent. Read them before any change.
 
 ## Project
 **FINN** is a mobile-first financial investment agent for an Indian public-markets investor, built for the ENAM
@@ -23,12 +23,7 @@ AI Engineer Build Challenge (deadline **15 Nov 2026**).
 |---|---|---|
 | `backend/`, `.github/`, `docs/`, root files | **Claude Code** | read-only |
 | `frontend/` | **Antigravity**, working on `frontend/*` branches that Claude Code merges | read-only |
-| `frontend/src/components/network/` and the Network wiring in `handoff/CODEX-NETWORK-UI.md` (15 Nov round) | **Codex**, own worktree, branch `codex/network-ui`, never on `main`; Claude Code merges | read-only |
-| the UI polish in `handoff/CODEX-UI-POLISH.md` (15 Nov, after the Network round) | **Codex**, same worktree, branch `codex/ui-polish`, never on `main`; Claude Code merges | read-only |
-| the visual-distinction pass in `handoff/CODEX-UI-DISTINCT.md` (15 Nov) | **Codex**, same worktree, branch `codex/ui-distinct`, never on `main`; Claude Code merges | read-only |
-| the three UX fixes in `handoff/CODEX-UX-FIXES.md` (15 Nov) | **Codex**, same worktree, branch `codex/ux-fixes`, never on `main`; Claude Code merges | read-only |
-| the company logos in `handoff/CODEX-LOGOS.md` (15 Nov) | **Codex**, same worktree, branch `codex/logos`, never on `main`; Claude Code merges | read-only |
-| — | **ChatGPT** | never commits. It produces prompts, reviews and copy, which get pasted into the repo by the owner |
+| bounded UI passes (Network UI, polish, distinction, Terminal skin, UX fixes, logos; 15 Nov) | **Codex**, in its own worktree on a `codex/*` branch, never on `main`; Claude Code merges | read-only |
 
 ## Hard rules
 1. **In-app AI uses free models only:** the Gemini API free tier, Groq free, and OpenRouter `:free`. Never use paid APIs.

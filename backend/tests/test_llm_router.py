@@ -199,7 +199,7 @@ def test_extract_json(text):
     assert router.extract_json(text) == {"a": 1}
 
 
-# ───────── Push prompts from ChatGPT (G3): classify_batch, so_what, results_extract ─────────
+# ───────── Push prompts from Codex (G3): classify_batch, so_what, results_extract ─────────
 def test_classify_prompt_labels_match_category_enum():
     """Drift guard: the labels listed in the prompt must be exactly the contract's Category enum."""
     import re

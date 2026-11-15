@@ -12,7 +12,7 @@ Draft only. **Never send email or publish anything yourself.** The user sends it
 ## 1. Deliverables checklist (report the status of each)
 - [ ] Deployed mobile-first link opens on a phone (the frontend URL, plus whether the backend is warm)
 - [ ] GitHub repo is public (or access is shared), the README is complete, and no secrets are in history (`git log -p | grep -E "AIza|gsk_|sk-"`)
-- [ ] AI build history: `docs/ai-history/README.md` is filled in, Claude Code transcripts are scrubbed, ChatGPT/Antigravity share links are present
+- [ ] AI build history: `docs/ai-history/README.md` is filled in, Claude Code transcripts are scrubbed, Codex/Antigravity share links are present
 - [ ] `finn-demo-check` passed in the last 24h
 - [ ] Covering email drafted
 

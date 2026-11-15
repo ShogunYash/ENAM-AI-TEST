@@ -48,7 +48,7 @@ If there is no explicit guidance, return an empty list.
 {transcript_pages}
 </user>
 ```
-Prompts can be drafted and iterated in ChatGPT, but the version that ships is the file in the repo.
+Prompts can be drafted and iterated in Codex, but the version that ships is the file in the repo.
 Bump `version` on any change; the version is part of the cache key.
 
 ## Step 3: call it through the router

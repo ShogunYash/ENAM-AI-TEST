@@ -38,7 +38,7 @@ Rules for every agent: `AGENTS.md`. API contract: `docs/CONTRACT.md`.
 - **BSE reality (from A0):** most filings come in as `Company Update / General`, so the headline-regex and T1 batch steps carry more of the classification than first estimated.
 
 **Locked decisions:** Python (FastAPI) backend · TypeScript/React PWA frontend (UI only) · no hand-written Rust/C++ ·
-all in-app AI on **free** models · dev tools = Claude Code, ChatGPT (paid), Antigravity Pro.
+all in-app AI on **free** models · dev tools = Claude Code, Codex (paid), Antigravity Pro.
 
 **Product thesis (pitch this):** *"FINN is a triage desk, not a news feed."* Each screen answers "what needs me, and
 why" in ≤ 3 s; everything else is collapsed one tap away. Every AI claim carries a verbatim, server-verified quote from a
@@ -121,7 +121,7 @@ Every task follows `docs/CONTRACT.md` (schemas + endpoints + example JSON) and r
 | ID | Task | Owner / Model | Done when |
 |---|---|---|---|
 | A0 | **Feasibility hour:** scripts hitting BSE announcements, screener page, yfinance batch for 2 tickers — run on laptop **and** in a GitHub Actions run | Claude Code / Sonnet 5.5 | know which sources work from cloud IPs; decide cron vs laptop ingest |
-| A1 | Choose portfolio (15–20, mixed sectors/caps incl. 1–2 with recent results / mgmt change) + 3–5 research names (must have ≥ 5 concall transcripts on screener); record NSE symbol + BSE scrip code | ChatGPT / top Thinking model | `data/portfolio.json` |
+| A1 | Choose portfolio (15–20, mixed sectors/caps incl. 1–2 with recent results / mgmt change) + 3–5 research names (must have ≥ 5 concall transcripts on screener); record NSE symbol + BSE scrip code | Codex / top Thinking model | `data/portfolio.json` |
 | A2 | `docs/CONTRACT.md` + pydantic models stubs | Claude Code / **Opus 5.5, plan mode** | frontend can build fully on mocks |
 | A3 | `CLAUDE.md` + `AGENTS.md` (primary-only, router-only LLM calls, cache-first, folder ownership, never break demo path) | Claude Code / Opus 5.5 | — |
 | A4 | Backend scaffold (uv, FastAPI `/health`, settings, pytest, Dockerfile) + `llm/` router/cache/ledger with free keys | Claude Code / Sonnet 5.5 | unit tests green; live ping of each provider |
@@ -142,7 +142,7 @@ Every task follows `docs/CONTRACT.md` (schemas + endpoints + example JSON) and r
 | ID | Task | Owner / Model | Done when |
 |---|---|---|---|
 | C1 | `research/loader.py`: any NSE symbol → screener tables + AR + last 5 concall PDFs → page text cache | Claude Code / Sonnet | unseen ticker loads < 2 min |
-| C2 | Draft & iterate the guidance-map and P-v-D-reduce prompts on 2 real transcripts | ChatGPT / top Thinking model → saved to `backend/app/prompts/*.md` | outputs look like an analyst wrote them |
+| C2 | Draft & iterate the guidance-map and P-v-D-reduce prompts on 2 real transcripts | Codex / top Thinking model → saved to `backend/app/prompts/*.md` | outputs look like an analyst wrote them |
 | C3 | `guidance.py` map/reduce + `verify.py` quote check; verdicts met / missed / slipped / quietly dropped | Claude Code / **Opus 5.5** | hand-check 2 companies; zero unverified quotes shown |
 | C4 | `snapshot.py` financial snapshot + trajectory from tables (no LLM); bull/bear (T3, cited) if time | Claude Code / Sonnet | JSON per contract |
 | C5 | Research screen: snapshot header + P-v-D timeline, verdict chips, tap-quote → page citation drawer | Antigravity / Gemini Pro | renders cached + live tickers |
@@ -154,9 +154,9 @@ Every task follows `docs/CONTRACT.md` (schemas + endpoints + example JSON) and r
 | D1 | Pre-seed portfolio + research names into committed SQLite snapshot; demo-mode serves cache if live source fails | Claude Code / Sonnet | app works with internet sources blocked |
 | D2 | Deploy: Render (Docker) + Cloudflare Pages/Vercel + keep-warm ping; secrets in env. **Run `GET /debug/sources` on Render (the cloud-IP test)** | Claude Code / Sonnet | public URLs work on phone; sources report known |
 | D3 | Cost panel (`/stats/llm`: calls, tokens, cache-hit %, calls per new ticker) | Claude Code (API) + Antigravity (UI) | numbers visible in app |
-| D4 | Polish: empty/loading/error states, density, dark mode; screenshot critique | Antigravity / Gemini Pro + ChatGPT critique | — |
-| D5 | AI-output QA: spot-check 10 results cards + 2 P-v-D reports | ChatGPT / top Thinking model as judge | issues fixed |
-| D6 | README (architecture, routing table, measured cost) + covering email (built / decisions & trade-offs / left out / next) + AI-history export | ChatGPT (writing) + Claude Code / Haiku 5.5 (facts from repo) | email ready |
+| D4 | Polish: empty/loading/error states, density, dark mode; screenshot critique | Antigravity / Gemini Pro + Codex critique | — |
+| D5 | AI-output QA: spot-check 10 results cards + 2 P-v-D reports | Codex / top Thinking model as judge | issues fixed |
+| D6 | README (architecture, routing table, measured cost) + covering email (built / decisions & trade-offs / left out / next) + AI-history export | Codex (writing) + Claude Code / Haiku 5.5 (facts from repo) | email ready |
 
 ---
 
@@ -165,7 +165,7 @@ Every task follows `docs/CONTRACT.md` (schemas + endpoints + example JSON) and r
 |---|---|---|---|---|
 | **Claude Code** | Backend owner, integrator, deployer; only tool that merges to `main` | **Opus 5.5** (or Fable 5.2) in plan mode for A2, A3, C3 and hard bugs · **Sonnet 5.5** default for implementation · **Haiku 5.5** for searches, tests, README facts | `backend/`, `.github/`, root docs | redesign UI |
 | **Antigravity Pro** | Frontend owner | Latest **Gemini Pro**, high reasoning, for screens/architecture · Gemini Flash for small tweaks · built-in browser at 390×844 to check mobile | `frontend/` | touch `backend/` |
-| **ChatGPT (paid)** | Product brain, prompt engineer, reviewer, writer | Strongest **Thinking/reasoning** model on your plan · image gen for mockups/icons | portfolio choice, in-app prompts, finance sanity checks, design critique, writeup | commit code directly |
+| **Codex (paid)** | Product brain, prompt engineer, reviewer, writer | Strongest **Thinking/reasoning** model on your plan · image gen for mockups/icons | portfolio choice, in-app prompts, finance sanity checks, design critique, writeup | commit code directly |
 | **In-app agents** | Runtime AI | **Free only** — Gemini API free tier, Groq free, OpenRouter `:free` (see §2.1) | — | paid APIs |
 
 **Coordination rules**
@@ -193,7 +193,7 @@ Every task follows `docs/CONTRACT.md` (schemas + endpoints + example JSON) and r
 ## 6. Verification (end-to-end)
 1. `uv run pytest` in `backend/` (router fallback, cache hit, T0 classifier on fixture filings, QoQ/YoY math, quote verifier).
 2. `uv run python -m scripts.smoke` — live: 1 BSE fetch, 1 yfinance batch, 1 screener load, 1 call per LLM tier.
-3. Golden checks: 3 results filings vs. numbers typed by hand from the PDF; 2 P-v-D reports reviewed by ChatGPT judge (D5).
+3. Golden checks: 3 results filings vs. numbers typed by hand from the PDF; 2 P-v-D reports reviewed by Codex judge (D5).
 4. Kill backend → open PWA on phone → Today/Alerts still render from snapshot.
 5. Unseen-ticker test on deployed URL (random NSE name) → research completes or degrades gracefully; check ledger
    shows ≈ 6 calls, second open = 0 calls (cache).

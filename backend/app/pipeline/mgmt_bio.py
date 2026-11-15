@@ -24,7 +24,7 @@ from app.research.verify import norm, numbers
 
 PAGES = 2
 # A background line must describe the PERSON's career. These are the model's usual lapses: restating the event, giving the
-# departure reason, process words. (ChatGPT's prompt forbids all of them; the local model still does it ~1 in 3.)
+# departure reason, process words. (Codex's prompt forbids all of them; the local model still does it ~1 in 3.)
 _NOT_BACKGROUND = re.compile(
     r"\b(retir\w*|resign\w*|relinquish\w*|appointed|re-?appointment|assumed charge|assumes charge|takes? over|"
     r"effective|annexure|attached|enclosed|commitments?|engagements?|personal reasons?|reason|cease[ds]?|"

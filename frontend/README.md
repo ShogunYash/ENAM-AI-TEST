@@ -1,32 +1,28 @@
-# React + TypeScript + Vite
+# FINN frontend (React + TypeScript + Vite + Tailwind PWA)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Mobile-first investor app. It loads the committed snapshot in `public/data/` first (so it works with the API asleep or offline) and refreshes from the API when it answers.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev         # http://localhost:5173 (set VITE_API_BASE to point at an API; default http://localhost:8000)
+npm run build       # production bundle + service worker
+npm run lint        # tsc --noEmit
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Browser checks (headless Chrome over CDP; start the dev server first on port 5199: `npx vite --port 5199`):
+
+```bash
+node scripts/test-portfolio-watchlist.js
+node scripts/test-offline-by-company.js
+node scripts/test-ag6-fixes.js
+node scripts/test-charts.js
+node scripts/test-firstrun.js
+node scripts/test-research-persist.js
+node scripts/test-logos.js
+FINN_DEV_URL='http://localhost:5199/?nosplash' node scripts/test-network.js
+```
+
+Structure: `src/api` (data layer with snapshot fallback; `schema.d.ts` is generated from `docs/openapi.json` by `npm run generate-types`),
+`src/components` (screens, cards, network, charts, research, layout, ui), `src/lib` (formatters, settings, theme, profile, storage),
+`public/data` (snapshot written by `backend/scripts/refresh_snapshot.py`), `public/logos` (see its README), `scripts` (browser checks and the logo fetcher).
+Design rules: `.claude/skills/finn-ui-principles/SKILL.md`.

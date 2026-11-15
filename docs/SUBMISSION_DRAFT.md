@@ -1,47 +1,71 @@
-# Submission draft (DRAFT ONLY: the user sends it; nothing here has been sent)
+# Submission drafts (DRAFTS ONLY: the owner sends them; nothing here has been sent)
 
-**To:** assessment@enam.com  **Subject:** IIT Delhi – Founding AI Engineer - 2027  **Deadline:** 15 Nov 2026
+**To:** assessment@enam.com · **Deadline:** 15 Nov 2026 · **Send two emails** (same links, different subject and body):
 
-## Deliverables checklist (status on 13 Nov)
-- [x] **Deployed mobile link (14 Nov):** PWA https://enam-ai-test.pages.dev/ , API https://finn-api-7n6q.onrender.com (`/health` ok, mode live). **Phone check still to be done by the owner** (Today 30d, a results card, INFY research, LIVE/SNAPSHOT chip). Render auto-deploys on commit (`autoDeployTrigger: commit`), so wait for the deploy after the last push and re-check `/health`.
-- [ ] **GitHub repo reachable by the reviewers**: the brief asks for a **public** repository and it is currently private: make it public (check the secrets scan first). Check `git log -p | grep -E "AIza|gsk_|sk-or"` shows nothing (last checked: clean).
-- [x] **AI build history (15 Nov):** `docs/ai-history/README.md` links the Codex share link and scrubbed exports of the Claude Code and Antigravity sessions (`docs/ai-history/transcripts/`). Skim them once before making the repo public. ChatGPT has no share link: its prompt drafts are in `docs/ai-history/chatgpt-prompts/`.
-- [x] **Demo check (15 Nov):** 328 backend tests, 4 browser suites + 8 Network checks + 9 chart checks, lint clean, BSE / screener.in / Yahoo reachable, frontend builds, no mock data in the snapshot.
-- [x] Titan results card fixed (13 Nov): all 17 results cards match screener.in.
-- [x] `GET /debug/sources` on Render (14 Nov): BSE announcement API 403, screener.in OK, yfinance OK. BSE's announcement API answers 403 to the Render host (so Push ingest stays on the laptop and ships in the snapshot/seed), but the earnings-call PDFs download fine: a live research build for an unseen ticker (GODREJCP, 14 Nov) finished on Render in about a minute with 4 transcripts read and 8 promises judged. If a transcript host ever blocks, the report degrades to the financials plus an explicit gap.
-- [ ] **Re-run before sending:** after the last push, wait for the Render auto-deploy and confirm `/health` and the Pages site.
-- [ ] **Email** (below): fill the URLs and your name.
+| Email | Subject | Body |
+|---|---|---|
+| A | `IIT Delhi – AI Engineer - 2027` | Email A below (the role applied for) |
+| B | `IIT Delhi – Founding AI Engineer - 2027` | Email B below (adds the Network and the architecture and privacy writeup that brief requires) |
 
-## Email
+Links used in both: demo https://enam-ai-test.pages.dev/ · repo https://github.com/ShogunYash/ENAM-AI-TEST (must be **public**) · AI build history `docs/ai-history/README.md`.
+
+## Before sending
+- [ ] Repo is **public** (the brief requires it). Skim `docs/ai-history/transcripts/` first: they are the owner's own prompts, scrubbed of keys, emails, IPs and the local user name.
+- [ ] Phone check of https://enam-ai-test.pages.dev/ (close and reopen the tab so the PWA drops its cache): Today, a results card, a price chart, Research INFY, Network tab, Settings > Appearance.
+- [ ] Render API healthy: https://finn-api-7n6q.onrender.com/health (free tier sleeps: the first request can take about a minute).
+- [ ] Replace `<your name>` below. Attach nothing: the links carry everything.
+
+Facts behind the emails (all verifiable in the repo): 328 backend tests and 9 browser suites pass; 195 recorded model calls, 54.4 % cache hits, ₹0.00 spend (the live Cost screen keeps counting after deploy);
+rules classify 84.6 % of 468 filings; 17 of 17 results cards match screener.in; BSE's announcement API answers 403 to the Render host, but transcripts download fine, so an unseen ticker builds live in about a minute or two.
+
+---
+
+## Email A: AI Engineer
+
+**Subject:** IIT Delhi – AI Engineer - 2027
 
 Hi ENAM team,
 
-**Try FINN on your phone:** `<DEMO URL>` · **GitHub:** `<REPO URL>` · **AI build history:** `<repo>/docs/ai-history`
+**Try FINN on your phone:** https://enam-ai-test.pages.dev/ · **GitHub:** https://github.com/ShogunYash/ENAM-AI-TEST · **AI build history:** `docs/ai-history/README.md` in the repo (Claude Code, Antigravity and Codex sessions).
 
-**What I built.** FINN is a triage desk for a public-markets investor: it shows which BSE filings across a 17-stock portfolio deserve attention
-today, and lets you research any NSE company from its earnings calls. Push has a windowed digest, configurable alerts, a results card
-(Revenue, EBITDA, PBT, PAT with QoQ/YoY) and a management-change card. Pull has a financial snapshot, 1D/3D/7D/30D price charts and a promised-vs-delivered timeline. The interface has light, dark and an opt-in Terminal skin, with a command bar and a ticker tape.
-The part I'm proudest of: every claim carries a quote the server has checked against the page, and where the numbers can settle a promise, code
-settles it. KPIL guided at least 25% FY26 revenue growth; its filed consolidated growth was 21.6%, and FINN says missed.
-
-**The Network.** The brief's third layer is built into Push and Pull, not beside them. A synthetic network of 36 contacts (clearly labelled; a real product would use consented or licensed profile data) overlaps the portfolio. A management-change card shows which contacts overlapped with the new executive, using only the tenure the filing itself states and saying so when it gives none; M&A, capex and litigation filings name the best contact to call and why; each Research page has "Who to call about"; and the Network tab has an ask box, reconnect nudges tied to real recent filings, and an expertise map. Matches are rules over listed facts and never a model's guess. The only model call is a small planner that picks a tool for a question, so the agent cannot name anyone outside the network. Architecture diagram, pipelines, privacy and consent, models and agents, and cloud: `docs/ARCHITECTURE.md`.
+**What I built.** FINN is a triage desk for a public-markets investor, not a news feed. **Push:** a windowed digest of BSE filings across a 17-stock portfolio (24h to 30d) with routine paperwork collapsed, configurable price, volume and filing alerts, a results card (Revenue, EBITDA, PBT, PAT with QoQ and YoY, read from the filing and cross-checked against screener.in) and a management-change card. **Pull:** research on any NSE ticker from earnings calls only: financial snapshot, 1D/3D/7D/30D price charts, and a promised-vs-delivered timeline in which every verdict carries a quote the server has checked against the page. KPIL guided at least 25% FY26 revenue growth; its filed consolidated growth was 21.6%, and FINN says missed.
 
 **Decisions and trade-offs.**
-- *Rules first, models second.* In one run FINN classified 468 filings: rules handled 84.6 %, the other 72 took three batched model calls.
-- *Models copy, code computes.* Results tables don't survive PDF text extraction, so the PDF goes to Gemini natively; the model copies printed figures and code does
-  units, EBITDA, QoQ/YoY, then cross-checks all three quarters against screener.in (all 17 results cards match; a card that fails the check is flagged, never hidden).
-- *Checked, not trusted.* Reading my own output found real holes: a quote with changed figures still scored 97 to 98.5 on fuzzy matching (now every number must appear on the page);
-  the first Infosys draft called two promises "met" using figures that weren't comparable (constant-currency vs reported INR; EBIT vs EBITDA margin).
-- *Second reader.* After building, an independent reviewer re-checked every promised-vs-delivered quote against its page. 11 of 36 items had a quote that did not support the stated metric or a "quietly dropped" verdict that the checked calls could not establish; FINN withholds them and says so in the report's gaps, rather than showing a confident wrong card.
-- *Free-tier reality.* Gemini's free tier has daily per-model quotas, so the router reads the retry time and skips exhausted models, and a local open model on a GPU does
-  the heavy build-time work. Total spend ₹0.00 over 195 measured calls (54.4 % cache hits; the live Cost screen keeps counting after deploy, 216 calls / 51.2 % when checked on 14 Nov, still ₹0). The demo serves a committed seed and snapshot, so it never depends on a live model.
+- *Rules first, models second:* rules classified 84.6 % of 468 filings; the rest took three batched cheap-model calls.
+- *Models copy, code computes:* the model copies printed figures from the results PDF, code does units, EBITDA, QoQ and YoY.
+- *Checked, not trusted:* an independent reviewer re-checked every promised-vs-delivered quote; 11 of 36 items did not hold up and FINN withholds them and says so, instead of showing a confident wrong card.
+- *Cost:* ₹0.00 over 195 recorded calls and 54.4 % cache hits, using a free-tier model router with fallbacks, a local open model for build-time work and a committed snapshot, so the demo never depends on a live model.
 
-**What I deliberately left out.** Voice, real push notifications and accounts (so the demo network is shared, public and fictional, and the privacy design is described, not implemented); real profile data (synthetic by choice, with the real route documented); web enrichment for bios (they come from the filing text only); bull/bear and the other research modules. (A grounded `/ask` exists in the API; see the README for whether the UI sheet is wired to it.) That time went into verification, because a wrong number is worse than a missing one.
+**Left out on purpose:** voice, real push notifications, accounts, bull/bear and the other research modules, web enrichment for bios (they come from the filing text only). **Next:** evaluate verdicts against analyst-labelled examples, add narrative-vs-numbers, stream filings intraday.
 
-**Where I'd take it next.** Evaluate verdicts against analyst-labelled examples; narrative-vs-numbers (drafted); intraday filings over a websocket;
-portfolio-level drift in management tone.
-
-Known limits are in the README: free-tier daily quotas can make a live build slower or partial (the report says what it could not finish), and BSE's announcement API blocks the cloud host, so Push data is refreshed on a laptop and shipped in the snapshot.
+The repository also contains a **Network layer** (the investor's contacts as an intelligence layer inside Push and Pull) that I built for ENAM's related Founding AI Engineer brief; see `docs/ARCHITECTURE.md` if it is of interest. Limits are in the README (free-tier daily quotas can make a live build slower or partial; the report says what it could not finish).
 
 Thanks,
-`<your name>`
+<your name>
+
+---
+
+## Email B: Founding AI Engineer
+
+**Subject:** IIT Delhi – Founding AI Engineer - 2027
+
+Hi ENAM team,
+
+**Try FINN on your phone:** https://enam-ai-test.pages.dev/ · **GitHub:** https://github.com/ShogunYash/ENAM-AI-TEST · **AI build history:** `docs/ai-history/README.md` in the repo (Claude Code, Antigravity and Codex sessions).
+
+**What I built.** FINN is a triage desk for a public-markets investor with all three layers. **Push:** a windowed BSE digest across a 17-stock portfolio, configurable alerts, a results card (Revenue, EBITDA, PBT, PAT with QoQ and YoY, cross-checked against screener.in) and a management-change card. **Pull:** research on any NSE ticker from earnings calls only, with price charts and a promised-vs-delivered timeline in which every verdict carries a server-checked quote (KPIL guided at least 25% FY26 revenue growth, filed 21.6%, FINN says missed). **Network:** a synthetic 36-contact network woven into both. A management-change card shows which contacts overlapped with the new executive, using only the tenure the filing itself states (and saying so when it gives none); M&A, capex and litigation filings name the best contact to call and why; each Research page has "Who to call about"; the Network tab has an ask box, reconnect nudges tied to real recent filings and an expertise map. Matches are rules over listed facts, never a model's guess.
+
+**Architecture and privacy** (diagram and detail in `docs/ARCHITECTURE.md`):
+- *Data pipelines:* BSE filings and yfinance prices are ingested on a laptop (BSE blocks cloud IPs) into SQLite, classified by rules then a cheap model, enriched, and exported as a committed snapshot and seed; screener.in tables and transcripts are fetched live for any ticker. A person named in a filing is matched to a contact by employer and by the tenure the filing states.
+- *Security and privacy:* the demo network is synthetic and deliberately public (shared fictional data in a public repo and static files), which I call out; a real deployment would keep one network per investor behind row-level access control, store only roles, employers, tenure and relationship metadata, keep third-party profile data only with consent or a licence, expire it, and never put contacts in a prompt.
+- *LLMs and agents:* rules before models. Gemini reads the results PDF natively; stronger models only for promised-vs-delivered; a local open model does build-time work; one router handles tiers, fallbacks, circuit-breaking, caching and the cost ledger (₹0.00 over 195 calls, 54.4 % cache hits). The only agent is the Network question box: a model picks one tool, code runs it, and the answer is built from the tool's matches, so it cannot name anyone outside the network.
+- *Cloud:* laptop (ingest, local GPU), GitHub, Render (FastAPI, live research), Cloudflare Pages (PWA and snapshot, works with the API asleep), free-tier model APIs.
+
+**Key decisions.** Rules first (84.6 % of 468 filings classified without a model); models copy and code computes; every claim needs a verified quote; an independent reviewer re-checked all 36 promised-vs-delivered items and FINN withholds the 11 that did not hold up, saying so.
+
+**Left out on purpose:** voice, real push notifications and accounts (so the privacy design is described, not implemented), real profile data (synthetic by choice; the real route is documented), bull/bear and the other research modules. **Next:** consented profile import with per-investor access control, evaluate verdicts against analyst-labelled examples, narrative-vs-numbers, intraday filings.
+
+Limits are in the README (free-tier daily quotas can make a live build slower or partial; the report says what it could not finish).
+
+Thanks,
+<your name>

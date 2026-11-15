@@ -1,15 +1,15 @@
 # AI build history
 
 How FINN was built with AI tools. Roles: **Claude Code** = backend, pipelines, integration, deploy prep; **Antigravity** = `frontend/`;
-**ChatGPT** = product thinking, prompt drafting, review; **Codex** = the Network UI (15 Nov). Plan and task IDs: [../PLAN.md](../PLAN.md). Rules every agent followed: [../../AGENTS.md](../../AGENTS.md).
+**Codex** = product thinking, prompt drafting, review, and the UI passes (11-15 Nov). Plan and task IDs: [../PLAN.md](../PLAN.md). Rules every agent followed: [../../AGENTS.md](../../AGENTS.md).
 
-ChatGPT-written prompt drafts (classification, results extraction, one-liners, guidance, promised-vs-delivered, management bio) are kept verbatim in [`chatgpt-prompts/`](chatgpt-prompts/); the production versions are in `backend/app/prompts/`. ChatGPT also audited every research item, management card and results card (its findings are applied in `backend/config/research_review.json` and `bio_review.json`) and wrote the Cost/Research/Thresholds screen copy.
+Codex-written prompt drafts (classification, results extraction, one-liners, guidance, promised-vs-delivered, management bio) are kept verbatim in [`codex-prompts/`](codex-prompts/); the production versions are in `backend/app/prompts/`. Codex also audited every research item, management card and results card (its findings are applied in `backend/config/research_review.json` and `bio_review.json`) and wrote the Cost/Research/Thresholds screen copy.
 The prompts that run in the app are in [`../../backend/app/prompts/`](../../backend/app/prompts/) (versioned).
 
 | Date (IST) | Tool / model | Task IDs | What happened (decisions, not activity) | Link |
 |---|---|---|---|---|
 | 11 Nov | Claude Code / Sonnet 5.5 + Opus 5.5 | plan, A0-A4 | Read the brief; chose BSE over NSE (cloud-IP blocking), rules-first classification, native PDF over text extraction, no vector DB; wrote the API contract first so frontend and backend could work in parallel | [11 Nov log](transcripts/claude-code-2026-11-11.md) |
-| 11-12 Nov | ChatGPT | A1, G1-G3 | Chose the portfolio and research names; drafted guidance_map, pvd_reduce, classify_batch, so_what, results_extract prompts and tested them on real filings | [prompt drafts it wrote](chatgpt-prompts/) |
+| 11-12 Nov | Codex | A1, G1-G3 | Chose the portfolio and research names; drafted guidance_map, pvd_reduce, classify_batch, so_what, results_extract prompts and tested them on real filings | [Codex share link](https://chatgpt.com/s/cx_6af9afda47848191abb473bc9292a394), [prompt drafts it wrote](codex-prompts/) |
 | 12 Nov | Antigravity / Gemini 3.8 Flash | A5, C5, B7 | Built the PWA scaffold, Today / Research / Thresholds / Cost screens; later fixed LIVE-vs-mock labelling after a review found it showed fixtures as live | [request log](transcripts/antigravity.md), [verification reports](transcripts/antigravity-network-qa-verification.md) |
 | 12-13 Nov | Claude Code | B1-B3, C1-C3 | Found by measurement: changed-figure quotes passed fuzzy verification (fixed); first Infosys verdicts wrongly "met" (guards added); KPIL guided 25%+ but filed 21.6% (now computed from numbers) | [12 Nov](transcripts/claude-code-2026-11-12.md), [13 Nov](transcripts/claude-code-2026-11-13.md) |
 | 13 Nov | Claude Code + local gpt-oss-20b | B4, one-liners, unseen-ticker test | Used the station GPU to escape the Gemini daily quota; `reasoning_effort=low` cut a transcript from 136 s (failing) to 9 s | [13 Nov log](transcripts/claude-code-2026-11-13.md) |
@@ -22,4 +22,4 @@ The prompts that run in the app are in [`../../backend/app/prompts/`](../../back
 **How these logs were made.** There are no public share links for Claude Code or the Antigravity IDE, so the sessions were exported from their local transcripts with
 [`backend/scripts/export_ai_history.py`](../../backend/scripts/export_ai_history.py): the human prompts and the assistant's written replies (Claude Code, by day), the requests plus a digest of the agent's activity
 (Antigravity), and Antigravity's own verification reports. Images, hidden reasoning and raw tool output are left out, and API keys, e-mail addresses, IP addresses and the local user name are scrubbed
-(`scrub()` in the script; the output was re-scanned for them). The Codex session has a share link; ChatGPT's earlier work is represented by the prompt drafts it wrote.
+(`scrub()` in the script; the output was re-scanned for them). Codex is linked by share link, and the prompt drafts it wrote are kept verbatim in `codex-prompts/`.

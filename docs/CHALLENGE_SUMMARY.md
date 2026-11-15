@@ -50,7 +50,7 @@ Open-ended; experiment (chat, voice, copilot, dashboard, something new). Mobile-
 ## Deliverables (email)
 1. Mobile-first prototype – deployed link / Expo / TestFlight / responsive web; easy to open on a phone.
 2. GitHub repo.
-3. **AI build history** – Claude Code / Cursor / ChatGPT exports or share links.
+3. **AI build history** – Claude Code / Cursor / Codex exports or share links.
 4. Short writeup in email: what built, key decisions & trade-offs, what deliberately left out, next steps.
 
 ## Reference doc essentials

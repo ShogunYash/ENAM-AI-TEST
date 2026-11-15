@@ -128,7 +128,7 @@ def test_cross_check_match_mismatch_unavailable():
 
 
 def test_cross_check_catches_swapped_previous_and_year_ago_columns():
-    """The failure ChatGPT saw on an Infosys fact sheet: prior-year quarter printed BEFORE the previous quarter."""
+    """The failure Codex saw on an Infosys fact sheet: prior-year quarter printed BEFORE the previous quarter."""
     swapped = {"current": CUR, "previous": {"revenue": 65799.0, "pbt": 16068.0, "pat": 12131.0}}   # year-ago values
     bad = R.cross_check(swapped, PER, "TCS", "consolidated", Q)
     assert bad.status == "mismatch" and "Q1 FY27" in bad.note and "Revenue" in bad.note

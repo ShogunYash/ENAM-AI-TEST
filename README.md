@@ -105,4 +105,4 @@ earnings-call transcripts, annual reports and filed numbers. No news, no broker 
 Evaluate verdicts against analyst-labelled examples; add narrative-vs-numbers; websocket intraday filings; portfolio-level drift.
 
 ## AI build history
-How this was built (Claude Code for backend and integration, Antigravity for the frontend, ChatGPT for product, prompts and review): [docs/ai-history/README.md](docs/ai-history/README.md).
+How this was built (Claude Code for backend and integration, Antigravity for the frontend, Codex for product, prompts and review): [docs/ai-history/README.md](docs/ai-history/README.md).

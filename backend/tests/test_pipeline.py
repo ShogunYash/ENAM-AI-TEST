@@ -234,7 +234,7 @@ def test_digest_validates_against_contract():
 
 
 def test_commercial_paper_repayment_is_routine_and_never_a_funding_alert():
-    """ChatGPT review (G3/C5 #3): repaying CP is not raising money -> unclassified, hidden, no alert. Even if some path
+    """Codex review (G3/C5 #3): repaying CP is not raising money -> unclassified, hidden, no alert. Even if some path
     still labelled it fund_raise, its weight is low enough to stay out of Needs-you and alerts."""
     sub, head = "Intimation of Repayment of Commercial Paper (CP)", "Redemption of Commercial Paper"
     assert classify.classify_rule(sub, head) == C.unclassified
