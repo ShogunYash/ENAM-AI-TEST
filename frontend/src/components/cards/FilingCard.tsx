@@ -82,7 +82,7 @@ export const FilingCard: React.FC<FilingCardProps> = ({
       {/* Top row: [Company · Category chip · Time ago]   [Priority dot · Score] */}
       <div className="flex items-center justify-between gap-2 text-xs mb-2">
         <div className="flex min-w-0 items-center gap-2 flex-wrap">
-          <IdentityMark name={symbol} kind="company" />
+          <IdentityMark name={symbol} kind="company" symbol={symbol} />
           <span className="inline-flex max-w-full flex-wrap items-baseline gap-x-1.5 text-stock">
             <span className="font-mono font-semibold tracking-tight">{symbol}</span>
             {company_name && company_name.trim().toUpperCase() !== symbol.toUpperCase() && (

@@ -343,7 +343,8 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div className="min-w-0">
-                      <div className="flex items-baseline gap-2">
+                      <div className="flex items-center gap-2">
+                        <IdentityMark name={c.symbol} kind="company" symbol={c.symbol} />
                         <span className="font-mono font-semibold text-stock text-sm tracking-tight">
                           {c.symbol}
                         </span>
@@ -441,7 +442,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
             <div className="flex flex-wrap items-start justify-between gap-x-2 gap-y-2">
               <div>
                 <div className="flex items-center gap-2 flex-wrap">
-                  <IdentityMark name={research.symbol} kind="company" />
+                  <IdentityMark name={research.symbol} kind="company" symbol={research.symbol} />
                   <h1 className="text-base font-semibold text-stock font-mono tracking-tight">
                     {research.symbol}
                   </h1>

@@ -345,3 +345,17 @@
   -webkit-user-select: text;
   -webkit-touch-callout: default;
 }
+
+/* Company art always sits on a light, bounded tile, including Dark and Terminal. */
+:root {
+  --company-mark-background: 255 255 255;
+  --company-mark-text: 55 70 92;
+  --company-mark-border: 154 166 188;
+}
+.desk-identity-company {
+  background-color: rgb(var(--company-mark-background));
+  color: rgb(var(--company-mark-text));
+  border-color: rgb(var(--company-mark-border));
+  overflow: hidden;
+}
+.terminal .desk-identity-company { border-radius: 3px; }

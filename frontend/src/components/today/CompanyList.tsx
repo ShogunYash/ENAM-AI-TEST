@@ -49,7 +49,7 @@ const Row: React.FC<{
     >
       <div className="flex items-center justify-between gap-2">
         <div className="min-w-0 flex items-center gap-2">
-          <IdentityMark name={c.symbol} kind="company" />
+          <IdentityMark name={c.symbol} kind="company" symbol={c.symbol} />
           <span className="font-mono font-bold text-stock tracking-tight">{c.symbol}</span>
           <span className="text-[12px] text-stock truncate">{c.name.replace(/ (Ltd|Limited)\.?$/i, '')}</span>
         </div>

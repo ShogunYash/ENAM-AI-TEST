@@ -31,7 +31,8 @@ function WarmCard({ nudge }: { nudge: WarmNudge }) {
           <span aria-live="polite">{copied ? 'Copied' : 'Copy'}</span>
         </button>
       </div>
-      <div className="flex min-w-0 items-baseline gap-2">
+      <div className="flex min-w-0 items-center gap-2">
+        <IdentityMark name={nudge.symbol} kind="company" symbol={nudge.symbol} />
         <span className="shrink-0 font-mono text-[11px] text-stock">{nudge.symbol}</span>
         <p title={nudge.trigger} className="truncate text-sm leading-5 text-zinc-200">{nudge.trigger}</p>
       </div>
