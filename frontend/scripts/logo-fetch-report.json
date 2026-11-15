@@ -1,0 +1,398 @@
+[
+  {
+    "symbol": "TCS",
+    "domain": "tcs.com",
+    "page": null,
+    "pageTitle": null,
+    "source": "https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://www.tcs.com&size=128",
+    "via": "google-fallback",
+    "original": "48x48",
+    "size": "128x128",
+    "bytes": 4907,
+    "sha256": "cf987de3a333544800ba44c75127ddcde2bc275494ba55b80e170c1e8960fb5d",
+    "fetchedAt": "2026-11-15T12:12:21.616Z",
+    "errors": [
+      "https://tcs.com/: HTTP 403",
+      "https://www.tcs.com/: HTTP 403",
+      "https://tcs.com/apple-touch-icon.png: HTTP 403",
+      "https://tcs.com/favicon.ico: HTTP 403",
+      "Google tcs.com: HTTP 404"
+    ]
+  },
+  {
+    "symbol": "INFY",
+    "domain": "infosys.com",
+    "page": null,
+    "pageTitle": null,
+    "source": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://infosys.com&size=128",
+    "via": "google-fallback",
+    "original": "128x128",
+    "size": "128x128",
+    "bytes": 2846,
+    "sha256": "e54641c46c3bf5a4a84de8819b3bbcfd423b1242036b355d600d3e0052cb78dc",
+    "fetchedAt": "2026-11-15T12:07:44.127Z",
+    "errors": [
+      "https://infosys.com/: HTTP 403",
+      "https://www.infosys.com/: HTTP 403",
+      "https://infosys.com/apple-touch-icon.png: HTTP 403",
+      "https://infosys.com/favicon.ico: HTTP 403"
+    ]
+  },
+  {
+    "symbol": "BAJFINANCE",
+    "domain": "bajajfinserv.in",
+    "source": "MISSING",
+    "bytes": 0,
+    "errors": [
+      "https://bajajfinserv.in/: HTTP 403",
+      "https://www.bajajfinserv.in/: HTTP 403",
+      "https://bajajfinserv.in/apple-touch-icon.png: HTTP 403",
+      "https://bajajfinserv.in/favicon.ico: HTTP 403",
+      "Google bajajfinserv.in: Too small (32x32)",
+      "Google www.bajajfinserv.in: Too small (32x32)"
+    ]
+  },
+  {
+    "symbol": "RELIANCE",
+    "domain": "ril.com",
+    "source": "MISSING",
+    "bytes": 0,
+    "errors": [
+      "https://www.ril.com/sites/default/files/favicon_0.ico: No ICO frame >=48px",
+      "https://rilstaticasset.akamaized.net/sites/default/files/images/favicon.ico: No ICO frame >=48px",
+      "https://www.ril.com/apple-touch-icon.png: HTTP 404",
+      "https://www.ril.com/favicon.ico: Input buffer contains unsupported image format",
+      "Google ril.com: Too small (16x16)",
+      "Google www.ril.com: Too small (16x16)"
+    ]
+  },
+  {
+    "symbol": "LT",
+    "domain": "larsentoubro.com",
+    "source": "MISSING",
+    "bytes": 0,
+    "errors": [
+      "https://www.larsentoubro.com/favicon.ico?favicon.034c59d2.ico: No ICO frame >=48px",
+      "https://www.larsentoubro.com/apple-touch-icon.png: HTTP 404",
+      "https://www.larsentoubro.com/favicon.ico: No ICO frame >=48px",
+      "Google larsentoubro.com: Too small (16x16)",
+      "Google www.larsentoubro.com: Too small (16x16)"
+    ]
+  },
+  {
+    "symbol": "SUNPHARMA",
+    "domain": "sunpharma.com",
+    "page": null,
+    "pageTitle": null,
+    "source": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://sunpharma.com&size=128",
+    "via": "google-fallback",
+    "original": "128x128",
+    "size": "128x128",
+    "bytes": 8669,
+    "sha256": "1b76c98de8abcd4d4e925a9fd0b1967e2ece2d5e65dad612bda1b1e858f8efc4",
+    "fetchedAt": "2026-11-15T12:08:13.334Z",
+    "errors": [
+      "https://sunpharma.com/: HTTP 403",
+      "https://www.sunpharma.com/: HTTP 403",
+      "https://sunpharma.com/apple-touch-icon.png: HTTP 404",
+      "https://sunpharma.com/favicon.ico: Too small (32x32)"
+    ]
+  },
+  {
+    "symbol": "TITAN",
+    "domain": "titancompany.in",
+    "page": "https://www.titancompany.in/",
+    "pageTitle": "Titan Company Ltd.",
+    "source": "https://www.titancompany.in/sites/default/files/brand-logo_0.png",
+    "via": "company-site",
+    "original": "169x172",
+    "size": "128x128",
+    "bytes": 4214,
+    "sha256": "423122eef68bf3022e225623553eb6dcecfa2108c4d4da82e8c8782f8bc6485f",
+    "fetchedAt": "2026-11-15T12:08:16.197Z",
+    "errors": []
+  },
+  {
+    "symbol": "ULTRACEMCO",
+    "domain": "ultratechcement.com",
+    "source": "MISSING",
+    "bytes": 0,
+    "errors": [
+      "https://www.ultratechcement.com/content/dam/ultratechcement/site-identity/Favicon32.ico: No ICO frame >=48px",
+      "https://www.ultratechcement.com/apple-touch-icon.png: HTTP 404",
+      "https://www.ultratechcement.com/favicon.ico: HTTP 404",
+      "Google ultratechcement.com: Too small (24x24)",
+      "Google www.ultratechcement.com: Too small (24x24)"
+    ]
+  },
+  {
+    "symbol": "TATASTEEL",
+    "domain": "tatasteel.com",
+    "source": "MISSING",
+    "bytes": 0,
+    "errors": [
+      "https://www.tatasteel.com/images/favicon.ico: Too small (21x20)",
+      "https://www.tatasteel.com/apple-touch-icon.png: Input buffer contains unsupported image format",
+      "https://www.tatasteel.com/favicon.ico: Input buffer contains unsupported image format",
+      "Google tatasteel.com: Too small (21x20)",
+      "Google www.tatasteel.com: Too small (21x20)"
+    ]
+  },
+  {
+    "symbol": "PERSISTENT",
+    "domain": "persistent.com",
+    "source": "MISSING",
+    "bytes": 0,
+    "errors": [
+      "https://validate.perfdrive.com/apple-touch-icon.png: Input buffer contains unsupported image format",
+      "https://validate.perfdrive.com/favicon.ico: Input buffer contains unsupported image format",
+      "Google persistent.com: Too small (16x16)",
+      "Google validate.perfdrive.com: HTTP 404",
+      "Google www.persistent.com: Too small (16x16)"
+    ]
+  },
+  {
+    "symbol": "ASTRAL",
+    "domain": "astralltd.com",
+    "source": "MISSING",
+    "bytes": 0,
+    "errors": [
+      "https://www.astralltd.com/wp-content/uploads/2023/01/favicon-2.png: Too small (16x16)",
+      "https://www.astralltd.com/wp-content/themes/astral-theme/images/favicon.ico: No ICO frame >=48px",
+      "https://www.astralltd.com/apple-touch-icon.png: HTTP 404",
+      "https://www.astralltd.com/favicon.ico: HTTP 404",
+      "Google astralltd.com: Too small (16x16)",
+      "Google www.astralltd.com: Too small (16x16)"
+    ]
+  },
+  {
+    "symbol": "KEI",
+    "domain": "kei-ind.com",
+    "page": "https://www.kei-ind.com/",
+    "pageTitle": "Electrical Wires &amp; Cables Manufacturer Supplier in India - KEI IND",
+    "source": "https://www.kei-ind.com/wp-content/uploads/2023/09/favicon-1.ico",
+    "via": "company-site",
+    "original": "100x100",
+    "size": "128x128",
+    "bytes": 3405,
+    "sha256": "9c573f4ce82c6e66637cc20ac9215cb3285f118b352f1a82d2e87ea9875cc30f",
+    "fetchedAt": "2026-11-15T12:08:53.448Z",
+    "errors": []
+  },
+  {
+    "symbol": "CERA",
+    "domain": "cera-india.com",
+    "source": "MISSING",
+    "bytes": 0,
+    "errors": [
+      "https://cera-india.com/: fetch failed",
+      "https://www.cera-india.com/: fetch failed",
+      "https://cera-india.com/apple-touch-icon.png: fetch failed",
+      "https://cera-india.com/favicon.ico: fetch failed",
+      "Google cera-india.com: Too small (32x32)",
+      "Google www.cera-india.com: Too small (32x32)"
+    ]
+  },
+  {
+    "symbol": "GARFIBRES",
+    "domain": "garwarefibres.com",
+    "source": "MISSING",
+    "bytes": 0,
+    "errors": [
+      "https://garwarefibres.com/: HTTP 403",
+      "https://www.garwarefibres.com/: HTTP 403",
+      "https://garwarefibres.com/apple-touch-icon.png: HTTP 404",
+      "https://garwarefibres.com/favicon.ico: HTTP 404",
+      "Google garwarefibres.com: Too small (16x16)",
+      "Google www.garwarefibres.com: Too small (16x16)"
+    ]
+  },
+  {
+    "symbol": "FINEORG",
+    "domain": "fineorganics.com",
+    "page": "https://www.fineorganics.com/",
+    "pageTitle": "Fine Organics | Fine Organics &#8211; Specialty Additives for Food, Plastics, Rubber, Cosmetics, Textile, Paper and other specialty applications. Green Additives made from all-natural sources.",
+    "source": "https://www.fineorganics.com/wp-content/uploads/2023/05/cropped-Leafmark-180x180.jpg",
+    "via": "company-site",
+    "original": "180x180",
+    "size": "128x128",
+    "bytes": 5484,
+    "sha256": "4343704fa69360cb0aec091f2b4283598e8b6b1dc55d23876e7fa9347dbfba1d",
+    "fetchedAt": "2026-11-15T12:09:11.555Z",
+    "errors": []
+  },
+  {
+    "symbol": "HDFCBANK",
+    "domain": "hdfc.bank.in",
+    "source": "MISSING",
+    "bytes": 0,
+    "errors": [
+      "https://www.hdfc.bank.in/favicon.ico: No ICO frame >=48px",
+      "https://www.hdfc.bank.in/apple-touch-icon.png: HTTP 404",
+      "Google hdfc.bank.in: Too small (16x16)",
+      "Google www.hdfc.bank.in: Too small (16x16)"
+    ]
+  },
+  {
+    "symbol": "HINDZINC",
+    "domain": "hzlindia.com",
+    "page": "https://www.hzlindia.com/",
+    "pageTitle": "HZL Hindustan Zinc: India’s Leading Zinc &amp; Silver Producer",
+    "source": "https://www.hzlindia.com/_next/static/media/favicon.a81afb10.svg",
+    "via": "company-site",
+    "original": "64x64",
+    "size": "128x128",
+    "bytes": 6546,
+    "sha256": "936aa57d74f7b4b1d899e225b83a6335e6a8a78e45c57325ed718d062713c6da",
+    "fetchedAt": "2026-11-15T12:09:21.802Z",
+    "errors": []
+  },
+  {
+    "symbol": "POLYCAB",
+    "domain": "polycab.com",
+    "page": "https://polycab.com/",
+    "pageTitle": "Polycab - India&#x27;s No.1 Wires and Cables Company",
+    "source": "https://polycab.com/apple-touch-icon.png",
+    "via": "company-site",
+    "original": "180x180",
+    "size": "128x128",
+    "bytes": 3966,
+    "sha256": "923241807203c57fe8fa5fc9286cda02198e81094dc683e3d7a862d3653828a4",
+    "fetchedAt": "2026-11-15T12:09:25.535Z",
+    "errors": []
+  },
+  {
+    "symbol": "KPIL",
+    "domain": "kalpataruprojects.com",
+    "page": "https://kalpataruprojects.com/",
+    "pageTitle": "Kalpataru Projects International Limited - Top EPC Company | EPC Contractor in India",
+    "source": "https://kalpataruprojects.com/favicon.ico",
+    "via": "company-site",
+    "original": "256x256",
+    "size": "128x128",
+    "bytes": 8325,
+    "sha256": "7d8c8afdc679f9becda9fb61e9c63772af3788262818e6cf7cbb1c4dbb230058",
+    "fetchedAt": "2026-11-15T12:09:27.610Z",
+    "errors": []
+  },
+  {
+    "symbol": "ICICIBANK",
+    "domain": "icici.bank.in",
+    "page": "https://www.icici.bank.in/",
+    "pageTitle": "ICICI Bank - Personal, Business, Corporate and NRI Banking Online",
+    "source": "https://www.icici.bank.in/favicon.ico",
+    "via": "company-site",
+    "original": "48x48",
+    "size": "128x128",
+    "bytes": 6110,
+    "sha256": "f592ee5207ab22344ada30a260df6c0cda1343cbbfbb94c5a04aecab5daf90fb",
+    "fetchedAt": "2026-11-15T12:13:57.340Z",
+    "errors": []
+  },
+  {
+    "symbol": "SBIN",
+    "domain": "sbi.bank.in",
+    "source": "MISSING",
+    "bytes": 0,
+    "errors": [
+      "https://sbi.bank.in/o/SBI-Theme/images/favicon.ico: No ICO frame >=48px",
+      "https://sbi.bank.in/apple-touch-icon.png: HTTP 404",
+      "https://sbi.bank.in/favicon.ico: The operation was aborted due to timeout",
+      "Google sbi.bank.in: HTTP 404",
+      "Google www.sbi.bank.in: HTTP 404"
+    ]
+  },
+  {
+    "symbol": "BHARTIARTL",
+    "domain": "airtel.in",
+    "source": "MISSING",
+    "bytes": 0,
+    "errors": [
+      "https://assets.airtel.in/static-assets/new-home/img/favicon.ico: Too small (31x30)",
+      "https://assets.airtel.in/static-assets/new-home/img/favicon-32x32.png: Too small (31x30)",
+      "https://assets.airtel.in/static-assets/new-home/img/favicon-16x16.png: Too small (31x30)",
+      "https://www.airtel.in/apple-touch-icon.png: Input buffer contains unsupported image format",
+      "https://www.airtel.in/favicon.ico: Too small (31x30)",
+      "Google airtel.in: Too small (31x30)",
+      "Google www.airtel.in: Too small (31x30)"
+    ]
+  },
+  {
+    "symbol": "MARUTI",
+    "domain": "marutisuzuki.com",
+    "source": "MISSING",
+    "bytes": 0,
+    "errors": [
+      "https://www.marutisuzuki.com/apple-touch-icon.png: HTTP 404",
+      "https://www.marutisuzuki.com/favicon.ico: No ICO frame >=48px",
+      "Google marutisuzuki.com: Too small (16x16)",
+      "Google www.marutisuzuki.com: Too small (16x16)"
+    ]
+  },
+  {
+    "symbol": "ASIANPAINT",
+    "domain": "asianpaints.com",
+    "source": "MISSING",
+    "bytes": 0,
+    "errors": [
+      "https://asianpaints.com/: fetch failed",
+      "https://www.asianpaints.com/: fetch failed",
+      "https://asianpaints.com/apple-touch-icon.png: fetch failed",
+      "https://asianpaints.com/favicon.ico: fetch failed",
+      "Google asianpaints.com: Too small (16x16)",
+      "Google www.asianpaints.com: Too small (16x16)"
+    ]
+  },
+  {
+    "symbol": "HINDUNILVR",
+    "domain": "hul.co.in",
+    "page": null,
+    "pageTitle": null,
+    "source": "https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://hul.co.in&size=128",
+    "via": "google-fallback",
+    "original": "128x128",
+    "size": "128x128",
+    "bytes": 4233,
+    "sha256": "5115bd5f37d2ae6244712ebcf827d1fa1adbe30a8a987a30b571a175c5e87863",
+    "fetchedAt": "2026-11-15T12:10:19.050Z",
+    "errors": [
+      "https://hul.co.in/: HTTP 403",
+      "https://www.hul.co.in/: HTTP 403",
+      "https://hul.co.in/apple-touch-icon.png: HTTP 403",
+      "https://hul.co.in/favicon.ico: HTTP 403"
+    ]
+  },
+  {
+    "symbol": "DIXON",
+    "domain": "dixoninfo.com",
+    "page": "https://dixoninfo.com/",
+    "pageTitle": "Electronics Manufacturing Services | Dixon Technologies",
+    "source": "https://dixoninfo.com/favicon.ico",
+    "via": "company-site",
+    "original": "256x256",
+    "size": "128x128",
+    "bytes": 3350,
+    "sha256": "efec3b0b0ace139a730a19303e492a1868396fe193a9a3a2750ecced8764d91d",
+    "fetchedAt": "2026-11-15T12:10:20.824Z",
+    "errors": []
+  },
+  {
+    "symbol": "NESTLEIND",
+    "domain": "nestle.in",
+    "page": null,
+    "pageTitle": null,
+    "source": "https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://nestle.in&size=128",
+    "via": "google-fallback",
+    "original": "128x128",
+    "size": "128x128",
+    "bytes": 8394,
+    "sha256": "30e0e244c78d5216be5abc3beb3c6cb130351b28dc55649363050208eb33967b",
+    "fetchedAt": "2026-11-15T12:10:29.970Z",
+    "errors": [
+      "https://nestle.in/: HTTP 403",
+      "https://www.nestle.in/: HTTP 403",
+      "https://nestle.in/apple-touch-icon.png: HTTP 403",
+      "https://nestle.in/favicon.ico: HTTP 403"
+    ]
+  }
+]
