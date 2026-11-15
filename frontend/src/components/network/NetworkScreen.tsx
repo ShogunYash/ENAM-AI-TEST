@@ -57,6 +57,8 @@ export function NetworkScreen() {
   const [busy, setBusy] = useState(false)
   const [offline, setOffline] = useState(false)
   const [showSteps, setShowSteps] = useState(false)
+  const [showAllThemes, setShowAllThemes] = useState(false)
+  const [themeSearch, setThemeSearch] = useState('')
   const [theme, setTheme] = useState<string | null>(null)
   const stepsId = useId()
   const memberId = useId()
@@ -83,6 +85,9 @@ export function NetworkScreen() {
     void submit(question)
   }
   const themes = [...(expertise.data ?? [])].sort((a, b) => b.members.length - a.members.length || a.theme.localeCompare(b.theme))
+  const visibleThemes = themeSearch.trim()
+    ? themes.filter(item => item.theme.toLowerCase().includes(themeSearch.trim().toLowerCase()))
+    : showAllThemes ? themes : themes.slice(0, 8)
   return (
     <div className="space-y-5 pb-24 pt-1">
       <header><h1 className="text-base font-semibold text-zinc-100">Network</h1>
@@ -139,13 +144,24 @@ export function NetworkScreen() {
         {expertise.isLoading && <p className="py-3 text-xs text-zinc-400 motion-safe:animate-pulse">Loading expertise…</p>}
         {expertise.isError && <p className="py-3 text-xs text-zinc-400">Expertise is unavailable.</p>}
         {themes.length === 0 && !expertise.isLoading && !expertise.isError && <p className="py-3 text-xs text-zinc-400">No expertise themes supplied.</p>}
-        <div className="flex flex-wrap gap-1.5">
-          {themes.map(item => <button key={item.theme} type="button" aria-expanded={theme === item.theme} aria-controls={memberId}
+        <label htmlFor="theme-search" className="sr-only">Search expertise themes</label>
+        <input id="theme-search" type="search" value={themeSearch} onChange={event => setThemeSearch(event.target.value)}
+          placeholder="Search all themes"
+          className="mb-2 min-h-[44px] w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 text-xs text-zinc-100 placeholder:text-zinc-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand" />
+        {themes.length > 0 && visibleThemes.length === 0 && <p className="py-2 text-xs text-zinc-400">No themes match. Try another search.</p>}
+        <div id="expertise-themes" className="flex flex-wrap gap-1.5">
+          {visibleThemes.map(item => <button key={item.theme} type="button" aria-expanded={theme === item.theme} aria-controls={memberId}
             onClick={() => setTheme(theme === item.theme ? null : item.theme)}
             className={`min-h-[44px] rounded-lg border px-2 text-left text-[11px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand ${theme === item.theme ? 'border-brand bg-brand-tint font-semibold text-brand-text' : 'border-zinc-700 bg-zinc-900 text-zinc-300'}`}>
             {item.theme} <span className="font-mono">({item.members.length})</span>
           </button>)}
         </div>
+        {!themeSearch.trim() && themes.length > 8 && (
+          <button type="button" aria-expanded={showAllThemes} aria-controls="expertise-themes" onClick={() => setShowAllThemes(!showAllThemes)}
+            className="min-h-[44px] w-full rounded text-left text-xs text-zinc-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">
+            {showAllThemes ? 'Fewer themes' : 'More themes'}
+          </button>
+        )}
         {selected && <div id={memberId} className="mt-3 border-t border-zinc-700 pt-2">
           <h3 className="py-2 text-xs font-semibold text-zinc-200">{selected.theme}</h3>
           <ul className="divide-y divide-zinc-700">{selected.members.map(member => <li key={member.person_id} className="flex items-center justify-between gap-2">
