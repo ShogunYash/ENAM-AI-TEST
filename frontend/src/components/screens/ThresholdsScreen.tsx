@@ -1,3 +1,4 @@
+import { PanelHeader } from '@/components/ui/Desk'
 import React, { useState } from 'react'
 import { useSettings, getCategoryTriState } from '@/lib/settings'
 import { Category } from '@/api/types'
@@ -80,7 +81,7 @@ export const ThresholdsScreen: React.FC = () => {
       : settings.price_move_pct.toFixed(1)
 
   return (
-    <div className="space-y-2 pb-24 pt-1">
+    <div className="desk-screen">
       {/* Header */}
       <div className="flex items-center justify-between gap-2 pb-2 border-b border-zinc-800">
         <div className="min-w-0 flex-1">
@@ -102,19 +103,20 @@ export const ThresholdsScreen: React.FC = () => {
       </div>
 
       {/* Top One-Sentence Summary Line (GPT-9 template) */}
-      <div className="p-3 rounded-xl bg-zinc-900/40 border border-zinc-800/80 text-xs text-zinc-300 leading-relaxed">
+      <div className="desk-inset text-xs text-zinc-300 leading-relaxed">
         Alerts start at {volStr}× average volume or a {priceStr}% move either way; filing types: {boostedCount} boosted, {hiddenCount} hidden.
       </div>
 
-      {/* Appearance Control (Light | Dark | Auto) */}
-      <div className="p-3 rounded-xl border border-zinc-800 bg-zinc-900/60 flex items-center justify-between gap-2">
+      <PanelHeader title="Display" code="SET" />
+      {/* Appearance Control (Light | Dark | Terminal) */}
+      <div className="desk-panel p-3 flex items-center justify-between gap-2">
         <div className="min-w-0 flex-1">
           <div className="text-sm font-semibold text-zinc-200 flex items-center gap-2">
             <SunMoon className="w-3.5 h-3.5 text-zinc-400" />
             <span>Appearance</span>
           </div>
-          <div className="text-xs text-zinc-500 mt-1 truncate" title="Light paper default or black dark mode">
-            Light paper default or black dark mode
+          <div className="text-xs text-zinc-500 mt-1 truncate" title="Light, dark or terminal">
+            Light, dark or terminal
           </div>
         </div>
 
@@ -123,15 +125,15 @@ export const ThresholdsScreen: React.FC = () => {
           aria-label="Appearance theme"
           className="inline-flex items-center p-1 rounded-lg bg-zinc-900 border border-zinc-500 flex-shrink-0"
         >
-          {(['light', 'dark', 'auto'] as const).map((mode) => {
+          {(['light', 'dark', 'terminal'] as const).map((mode) => {
             const isSelected = theme === mode
-            const label = mode === 'light' ? 'Light' : mode === 'dark' ? 'Dark' : 'Auto'
+            const label = mode === 'light' ? 'Light' : mode === 'dark' ? 'Dark' : 'Terminal'
             return (
               <button
                 key={mode}
                 type="button"
                 onClick={() => setTheme(mode)}
-                className={`px-3 py-2 min-h-[44px] min-w-[44px] text-xs rounded-md touch-manipulation transition-colors duration-200 ease-out motion-reduce:transition-none font-semibold ${
+                className={`px-2 py-2 min-h-[44px] min-w-[44px] text-xs rounded-md touch-manipulation transition-colors duration-200 ease-out motion-reduce:transition-none font-semibold ${
                   isSelected
                     ? 'bg-brand-tint text-brand-text font-semibold shadow-sm border border-brand'
                     : 'text-zinc-400 hover:text-zinc-200'
@@ -145,9 +147,10 @@ export const ThresholdsScreen: React.FC = () => {
       </div>
 
       {/* Accordion Container */}
-      <div className="space-y-2">
+      <div className="desk-panel divide-y divide-zinc-700">
+        <PanelHeader title="Alert thresholds and filing types" code="SET" count={3} />
         {/* Accordion Row 1: Volume Spike */}
-        <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 overflow-hidden transition-colors duration-200 ease-out motion-reduce:transition-none">
+        <div className="overflow-hidden">
           <button
             type="button"
             onClick={() => toggleSection('volume')}
@@ -214,7 +217,7 @@ export const ThresholdsScreen: React.FC = () => {
         </div>
 
         {/* Accordion Row 2: Price Move */}
-        <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 overflow-hidden transition-colors duration-200 ease-out motion-reduce:transition-none">
+        <div className="overflow-hidden">
           <button
             type="button"
             onClick={() => toggleSection('price')}
@@ -281,7 +284,7 @@ export const ThresholdsScreen: React.FC = () => {
         </div>
 
         {/* Accordion Row 3: Filing Types Editor */}
-        <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 overflow-hidden transition-colors duration-200 ease-out motion-reduce:transition-none">
+        <div className="overflow-hidden">
           <button
             type="button"
             onClick={() => toggleSection('categories')}

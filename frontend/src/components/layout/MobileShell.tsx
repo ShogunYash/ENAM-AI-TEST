@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useTheme } from '@/lib/theme'
+import { CommandBar } from './CommandBar'
+import { TickerTape } from './TickerTape'
 import { Flame, Search, Sliders, Activity, User, Users } from 'lucide-react'
 import { initialsOf, useProfileName } from '@/lib/profile'
 
@@ -8,6 +11,7 @@ interface MobileShellProps {
   children: React.ReactNode
   activeTab: NavTab
   onTabChange: (tab: NavTab) => void
+  onOpenCompany: (symbol: string) => void
   needsYouCount?: number
   alertCount?: number
 }
@@ -16,10 +20,23 @@ export const MobileShell: React.FC<MobileShellProps> = ({
   children,
   activeTab,
   onTabChange,
+  onOpenCompany,
   needsYouCount = 0,
   alertCount = 0,
 }) => {
   const profileName = useProfileName()
+  const { theme } = useTheme()
+  useEffect(() => {
+    if (theme !== 'terminal') return
+    const keys: NavTab[] = ['today', 'research', 'network', 'thresholds', 'stats']
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.target instanceof Element && event.target.closest('input, textarea, select, [contenteditable=true], [role=dialog]')) return
+      const index = ['F1', 'F2', 'F3', 'F4', 'F5'].indexOf(event.key)
+      if (index >= 0) { event.preventDefault(); onTabChange(keys[index]) }
+    }
+    window.addEventListener('keydown', handleKey)
+    return () => window.removeEventListener('keydown', handleKey)
+  }, [theme, onTabChange])
   const tabs: Array<{
     id: NavTab
     label: string
@@ -68,9 +85,10 @@ export const MobileShell: React.FC<MobileShellProps> = ({
           <p className="mt-3 text-[11px] font-mono uppercase tracking-wider text-zinc-500">A triage desk, not a news feed</p>
         </aside>
         {/* Brand App Bar */}
-        <header className="sticky top-0 z-40 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-900 px-4 py-2.5 flex items-center justify-between">
+        <div className="sticky top-0 z-40">
+        <header className=" bg-zinc-950/90 backdrop-blur-md border-b border-zinc-900 px-4 py-2.5 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="font-mono font-black text-base tracking-wider bg-gradient-to-r from-[#3558E6] to-[#5B7CFF] dark:from-[#8EA4FF] dark:to-[#C7D2FE] bg-clip-text text-transparent">
+            <span className="desk-wordmark font-mono font-black text-base tracking-wider bg-gradient-to-r from-[#3558E6] to-[#5B7CFF] dark:from-[#8EA4FF] dark:to-[#C7D2FE] bg-clip-text text-transparent">
               FINN
             </span>
             <span className="text-[10px] uppercase font-semibold text-zinc-400 tracking-wider px-1.5 py-0.5 rounded bg-zinc-900 border border-zinc-800">
@@ -96,8 +114,11 @@ export const MobileShell: React.FC<MobileShellProps> = ({
             </span>
           </button>
         </header>
+        <CommandBar onTabChange={onTabChange} onOpenCompany={onOpenCompany} />
+        <TickerTape />
+        </div>
         {/* Slim brand top bar */}
-        <div className="h-[2px] w-full bg-gradient-to-r from-[#3558E6] via-[#5B7CFF] to-[#3558E6] dark:from-[#4A69F0] dark:via-[#7C93FF] dark:to-[#4A69F0] flex-shrink-0" />
+        <div className="desk-brand-rule h-[2px] w-full bg-gradient-to-r from-[#3558E6] via-[#5B7CFF] to-[#3558E6] dark:from-[#4A69F0] dark:via-[#7C93FF] dark:to-[#4A69F0] flex-shrink-0" />
 
         {/* Scrollable Content Area */}
         <main className="flex-1 px-3.5 pt-2 overflow-y-auto">
@@ -107,11 +128,15 @@ export const MobileShell: React.FC<MobileShellProps> = ({
         {/* Bottom Navigation Bar */}
         <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-40 bg-zinc-950/95 backdrop-blur-md border-t border-zinc-900 px-2 py-1.5">
           <div className="flex items-center justify-around">
-            {tabs.map((tab) => {
+            {tabs.map((tab, index) => {
               const isActive = activeTab === tab.id
               return (
                 <button
                   key={tab.id}
+                  data-nav-tab={tab.id}
+                  data-active={isActive}
+                  aria-current={isActive ? 'page' : undefined}
+                  aria-label={theme === 'terminal' ? `F${index + 1} ${tab.label.toUpperCase()}` : tab.label}
                   onClick={() => onTabChange(tab.id)}
                   className={`flex flex-col items-center justify-center flex-1 py-1 px-1 rounded-xl min-h-[48px] touch-manipulation transition-colors relative ${
                     isActive
@@ -119,7 +144,7 @@ export const MobileShell: React.FC<MobileShellProps> = ({
                       : 'text-zinc-500 hover:text-zinc-300'
                   }`}
                 >
-                  <div className="relative">
+                  <div className="desk-normal-nav relative">
                     {tab.icon}
                     {tab.badge !== undefined && tab.badge > 0 && (
                       <span className="absolute -top-1 -right-2 px-1 min-w-[14px] h-[14px] text-[9px] font-mono font-bold rounded-full bg-rose-500 text-white flex items-center justify-center">
@@ -127,7 +152,8 @@ export const MobileShell: React.FC<MobileShellProps> = ({
                       </span>
                     )}
                   </div>
-                  <span className="text-[11px] mt-0.5 tracking-tight">{tab.label}</span>
+                  {theme === 'terminal' ? <span className="flex flex-col items-center font-mono text-[11px]"><span>F{index + 1}</span><span>{tab.label.toUpperCase()}</span></span>
+                    : <span className="text-[11px] mt-0.5 tracking-tight">{tab.label}</span>}
                 </button>
               )
             })}

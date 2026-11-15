@@ -1,3 +1,4 @@
+import { PanelHeader, IdentityMark } from '@/components/ui/Desk'
 import { NetworkState } from './NetworkState'
 import { useId, useState, type FormEvent } from 'react'
 import { Check, Copy, Send } from 'lucide-react'
@@ -20,10 +21,11 @@ function WarmCard({ nudge }: { nudge: WarmNudge }) {
     }
   }
   return (
-    <article className="border-t border-zinc-700 p-3 text-xs">
+    <article className="desk-warm-card text-xs">
       <div className="flex items-center justify-between gap-2">
+        <IdentityMark name={nudge.name} />
         <button type="button" onClick={() => openPerson(nudge.person_id)}
-          className="min-h-[44px] text-left text-sm font-semibold text-zinc-100 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">{nudge.name}</button>
+          className="min-h-[44px] min-w-0 flex-1 truncate text-left text-sm font-semibold text-zinc-100 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">{nudge.name}</button>
         <button type="button" onClick={copy} className="inline-flex min-h-[44px] shrink-0 items-center gap-2 rounded px-2 text-zinc-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">
           {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
           <span aria-live="polite">{copied ? 'Copied' : 'Copy'}</span>
@@ -40,7 +42,7 @@ function WarmCard({ nudge }: { nudge: WarmNudge }) {
         </summary>
         <p className="text-zinc-400">{nudge.headline}</p>
         <p className="mt-2 leading-relaxed text-zinc-200">{nudge.trigger}</p>
-        <blockquote className="mt-2 border-l-2 border-zinc-700 pl-3 leading-relaxed text-zinc-300">{nudge.opener}</blockquote>
+        <blockquote className="desk-inset mt-2 text-zinc-300 leading-relaxed">{nudge.opener}</blockquote>
       </details>
       {copyError && <p role="status" className="text-[11px] text-zinc-400">Open the opener above to select and copy it.</p>}
     </article>
@@ -91,12 +93,13 @@ export function NetworkScreen() {
     ? themes.filter(item => item.theme.toLowerCase().includes(themeSearch.trim().toLowerCase()))
     : showAllThemes ? themes : themes.slice(0, 8)
   return (
-    <div className="space-y-2 pb-24 pt-1">
+    <div className="desk-screen">
       <header><h1 className="text-xl font-semibold text-zinc-100">Network</h1>
         <p className="mt-1 text-[11px] text-zinc-400">{SYNTHETIC_NOTE}{people.data && ` · ${people.data.length} people`}</p>
       </header>
-      <section aria-labelledby="ask-network-title">
-        <h2 id="ask-network-title" className="mb-2 text-base font-semibold text-zinc-100">Ask your network</h2>
+      <section className="desk-panel" aria-labelledby="ask-network-title">
+        <PanelHeader id="ask-network-title" title="Ask your network" code="ASK" />
+        <div className="p-3">
         <form onSubmit={handleSubmit} className="flex items-center gap-2">
           <label htmlFor="network-question" className="sr-only">Ask your network</label>
           <input id="network-question" value={question} onChange={event => setQuestion(event.target.value)}
@@ -112,7 +115,7 @@ export function NetworkScreen() {
             onClick={() => void submit(chip)} className="min-h-[44px] rounded-lg border border-zinc-500 px-2 text-[11px] text-zinc-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand disabled:opacity-50">{chip}</button>)}
         </div>
         <div role="status" aria-live="polite">
-          {busy && <p className="mt-3 text-xs text-zinc-400 motion-safe:animate-pulse">Looking through your network…</p>}
+          {busy && <p className="mt-3 text-xs text-zinc-400 ">Looking through your network…</p>}
           {offline && <p className="mt-3 text-xs leading-relaxed text-zinc-300">Asking needs the live API. Browse the expertise map below.</p>}
         </div>
         {answer && <div className="mt-3 border-t border-zinc-700 pt-3">
@@ -125,25 +128,27 @@ export function NetworkScreen() {
             {answer.steps.length ? answer.steps.map((step, i) => <li key={i}><span className="font-mono text-zinc-200">{step.tool}</span><p className="mt-1 leading-relaxed">{step.summary}</p></li>) : <li>No tool steps returned.</li>}
           </ol>}
         </div>}
+        </div>
       </section>
       <section aria-labelledby="warm-title">
-        <h2 id="warm-title" className="text-base font-semibold text-zinc-100">Keep warm</h2>
-        {warm.isLoading && <p className="py-3 text-xs text-zinc-400 motion-safe:animate-pulse">Loading reconnect suggestions…</p>}
+        <PanelHeader id="warm-title" title="Keep warm" code="NET" count={warm.data?.length} helper="A reason to reconnect" />
+        {warm.isLoading && <p className="py-3 text-xs text-zinc-400 ">Loading reconnect suggestions…</p>}
         {warm.isError && <NetworkState>Reconnect suggestions are unavailable.</NetworkState>}
         {warm.data?.length === 0 && <NetworkState>No reconnect suggestions. Browse expertise below.</NetworkState>}
-        <div id="warm-items">
+        <div id="warm-items" className="mt-2 space-y-2">
           {(showAllWarm ? warm.data : warm.data?.slice(0, 3))?.map(nudge => <WarmCard key={nudge.person_id} nudge={nudge} />)}
         </div>
         {warm.data && warm.data.length > 3 && (
           <button type="button" aria-expanded={showAllWarm} aria-controls="warm-items" onClick={() => setShowAllWarm(!showAllWarm)}
-            className="min-h-[44px] w-full rounded border-t border-zinc-700 text-left text-xs text-zinc-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">
+            className="min-h-[44px] w-full rounded border-t border-zinc-500 text-left text-xs text-zinc-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">
             {showAllWarm ? 'Show fewer' : `Show all (${warm.data.length})`}
           </button>
         )}
       </section>
-      <section aria-labelledby="expertise-title">
-        <h2 id="expertise-title" className="mb-2 text-base font-semibold text-zinc-100">Expertise map</h2>
-        {expertise.isLoading && <p className="py-3 text-xs text-zinc-400 motion-safe:animate-pulse">Loading expertise…</p>}
+      <section className="desk-panel" aria-labelledby="expertise-title">
+        <PanelHeader id="expertise-title" title="Expertise map" code="EXP" count={themes.length} helper="People by theme" />
+        <div className="p-3">
+        {expertise.isLoading && <p className="py-3 text-xs text-zinc-400 ">Loading expertise…</p>}
         {expertise.isError && <NetworkState>Expertise is unavailable.</NetworkState>}
         {themes.length === 0 && !expertise.isLoading && !expertise.isError && <NetworkState>No expertise themes supplied. Try again later.</NetworkState>}
         <label htmlFor="theme-search" className="sr-only">Search expertise themes</label>
@@ -177,6 +182,7 @@ export function NetworkScreen() {
           <p className="mt-2 text-[11px] text-zinc-400">Tracked companies</p>
           <p className="mt-1 font-mono text-[11px] leading-relaxed text-stock">{selected.companies.length ? selected.companies.join(' · ') : 'No tracked companies in this theme.'}</p>
         </div>}
+        </div>
       </section>
     </div>
   )

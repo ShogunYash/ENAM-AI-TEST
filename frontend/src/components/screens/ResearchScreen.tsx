@@ -1,3 +1,4 @@
+import { PanelHeader, IdentityMark } from '@/components/ui/Desk'
 import { WhoToCall } from '@/components/network/WhoToCall'
 import React, { useState, useEffect, useMemo } from 'react'
 import { useQuery } from '@tanstack/react-query'
@@ -27,12 +28,14 @@ import {
 export type ResearchScope = 'prebuilt' | 'portfolio' | 'watchlist'
 
 interface ResearchScreenProps {
+  initialSymbol?: string
   onAskFinn?: (symbol: string, sourceDocs: SourceDoc[]) => void
 }
 
-export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => {
+export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initialSymbol }) => {
   // Navigation: selectedCompany null = Research Home list; string = Company Detail
   const [selectedCompany, setSelectedCompany] = useState<string | null>(() => {
+    if (initialSymbol) return initialSymbol
     try {
       const params = new URLSearchParams(window.location.search)
       return params.get('company') || localStorage.getItem('finn.research.company') || null
@@ -245,7 +248,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search any NSE ticker"
             inputMode="search"
-            className="w-full bg-zinc-900 border border-zinc-800 rounded-xl pl-9 pr-16 py-2.5 text-xs text-zinc-100 placeholder:text-zinc-500 font-mono font-semibold focus:outline-none focus:border-zinc-600 transition-colors"
+            className="w-full min-h-[44px] bg-zinc-900 border border-zinc-500 rounded-xl pl-9 pr-16 py-2.5 text-xs text-zinc-100 placeholder:text-zinc-500 font-mono font-semibold focus:outline-none focus:border-zinc-600 transition-colors"
           />
           <Search className="w-4 h-4 text-zinc-500 absolute left-3" />
           {searchQuery && (
@@ -324,7 +327,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
               <button
                 type="button"
                 onClick={() => openDetail(searchQuery.trim().toUpperCase())}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-xs font-mono font-medium text-zinc-200 border border-zinc-700"
+                className="inline-flex min-h-[44px] items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-xs font-mono font-semibold text-zinc-200 border border-zinc-700"
               >
                 <span>Build live research for {searchQuery.trim().toUpperCase()}</span>
               </button>
@@ -343,7 +346,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
                   <div className="flex items-start justify-between gap-2">
                     <div className="min-w-0">
                       <div className="flex items-baseline gap-2">
-                        <span className="font-mono font-bold text-stock text-sm tracking-tight">
+                        <span className="font-mono font-semibold text-stock text-sm tracking-tight">
                           {c.symbol}
                         </span>
                         <span className="text-[12px] text-stock truncate">
@@ -358,17 +361,17 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
                     <div className="flex flex-col items-end gap-1 flex-shrink-0">
                       {isPrebuilt ? (
                         <>
-                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold font-mono bg-emerald-950/40 text-emerald-400 border border-emerald-800/60">
+                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold font-mono bg-emerald-950/40 text-emerald-400 border border-emerald-800/60">
                             Guidance reviewed
                           </span>
                           {summary && (
-                            <span className="text-[10px] text-zinc-400 font-mono text-right max-w-[210px]">
+                            <span className="text-[11px] text-zinc-400 font-mono text-right max-w-[210px]">
                               {summary}
                             </span>
                           )}
                         </>
                       ) : (
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-medium font-mono bg-zinc-900 text-zinc-400 border border-zinc-800">
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold font-mono bg-zinc-900 text-zinc-400 border border-zinc-800">
                           Financials only
                         </span>
                       )}
@@ -393,13 +396,13 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
   const isSampleData = research?.is_sample ?? true
 
   return (
-    <div className="space-y-4 pb-24 pt-1">
+    <div className="desk-screen">
       {/* Back button to return to company list (preserves scope & search) */}
       <div className="flex items-center justify-between pb-1">
         <button
           type="button"
           onClick={handleBack}
-          className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-zinc-200 py-1 px-2 -ml-2 rounded-lg touch-manipulation transition-colors font-medium"
+          className="inline-flex min-h-[44px] items-center gap-1.5 text-xs text-zinc-400 hover:text-zinc-200 py-1 px-2 -ml-2 rounded-lg touch-manipulation transition-colors font-semibold"
         >
           <ArrowLeft className="w-4 h-4 text-zinc-400" />
           <span>All companies</span>
@@ -429,22 +432,23 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
 
       {/* Report body: shown as soon as anything is ready, and fills in below while the build continues */}
       {(isReady || isBuilding) && research && (
-        <div className="space-y-4">
+        <div className="space-y-6">
           {/* Company & Financial Snapshot Header */}
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-3.5 space-y-3">
+          <div className="desk-panel space-y-3 p-3">
             <div className="flex flex-wrap items-start justify-between gap-x-2 gap-y-2">
               <div>
                 <div className="flex items-center gap-2 flex-wrap">
-                  <h1 className="text-base font-bold text-stock font-mono tracking-tight">
+                  <IdentityMark name={research.symbol} kind="company" />
+                  <h1 className="text-base font-semibold text-stock font-mono tracking-tight">
                     {research.symbol}
                   </h1>
                   {research.name && (
-                    <span className="text-xs text-stock font-medium">
+                    <span className="text-xs text-stock font-semibold">
                       {research.name}
                     </span>
                   )}
                   {isSampleData && (
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px] font-mono font-bold tracking-wider uppercase">
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[11px] font-mono font-semibold tracking-wider uppercase">
                       SAMPLE DATA
                     </span>
                   )}
@@ -460,14 +464,14 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
                 <button
                   type="button"
                   onClick={() => onAskFinn && onAskFinn(research.symbol, sourceDocs)}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand hover:bg-brand-hover text-white text-xs font-semibold shadow-sm transition-colors touch-manipulation"
+                  className="inline-flex min-h-[44px] items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand hover:bg-brand-hover text-white text-xs font-semibold shadow-sm transition-colors touch-manipulation"
                   title={`Ask FINN about ${research.symbol}`}
                 >
                   <Bot className="w-3.5 h-3.5 text-white/90" />
                   <span>Ask FINN</span>
                 </button>
                 <span
-                  className={`text-[10px] font-mono font-semibold uppercase tracking-wider px-2 py-0.5 rounded border ${
+                  className={`text-[11px] font-mono font-semibold uppercase tracking-wider px-2 py-0.5 rounded border ${
                     isBuilding
                       ? 'text-amber-400 bg-amber-950/40 border-amber-800/60'
                       : 'text-emerald-400 bg-emerald-950/40 border-emerald-800/60'
@@ -478,7 +482,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
                 <button
                   onClick={() => refetch()}
                   disabled={isFetching}
-                  className="p-1 hover:text-zinc-200 text-zinc-500 transition-colors"
+                  className="min-h-[44px] min-w-[44px] p-1 hover:text-zinc-200 text-zinc-500 transition-colors"
                   title="Refresh research"
                 >
                   <RefreshCw className={`w-3.5 h-3.5 ${isFetching ? 'animate-spin text-zinc-300' : ''}`} />
@@ -488,29 +492,29 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
 
             {/* Headline TTM Metrics */}
             {research.snapshot?.headline && (
-              <div className="grid grid-cols-3 gap-2 pt-2 border-t border-zinc-800/60">
+              <div className="grid grid-cols-2 desk-data-grid">
                 {research.snapshot.headline.map((h, i) => {
                   const yoy = formatPercentDelta(h.yoy_pct)
                   const isCr = h.unit === 'INR_CR'
                   return (
                     <div
                       key={i}
-                      className="bg-zinc-950/60 p-2 rounded-lg border border-zinc-800/60"
+                      className="desk-metric"
                     >
-                      <div className="text-[10px] uppercase font-semibold text-zinc-400 truncate">
+                      <div className="text-[11px] uppercase font-semibold text-zinc-400 truncate">
                         {h.name}
                       </div>
-                      <div className="text-xs font-mono font-bold text-zinc-100 tabular-nums mt-0.5">
+                      <div className="text-base font-mono font-semibold text-zinc-100 tabular-nums mt-1">
                         {h.value !== null ? (isCr ? formatInrCr(h.value, 0) : `${h.value.toFixed(1)}%`) : '—'}
                       </div>
                       <div className="mt-0.5">
                         {h.yoy_pct !== null ? (
-                          <span className={`text-[10px] font-mono tabular-nums font-medium ${yoy.colorClass}`}>
+                          <span className={`text-[11px] font-mono tabular-nums font-semibold ${yoy.colorClass}`}>
                             <span className="mr-0.5">{yoy.arrow}</span>
                             {yoy.text}
                           </span>
                         ) : (
-                          <span className="text-[10px] font-mono text-zinc-500">—</span>
+                          <span className="text-[11px] font-mono text-zinc-500">—</span>
                         )}
                       </div>
                     </div>
@@ -561,23 +565,8 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
 
           {/* Flagship: Promised vs Delivered Timeline */}
           <section className="space-y-2.5">
-            <div className="flex items-center justify-between px-1">
-              <div className="flex items-center gap-1.5 flex-wrap">
-                <Layers className="w-3.5 h-3.5 text-zinc-400" />
-                <h2 className="text-xs font-semibold uppercase tracking-wider text-zinc-300">
-                  Promised vs Delivered
-                </h2>
-                <span className="text-[11px] font-mono text-zinc-400 bg-zinc-900 border border-zinc-800 px-1.5 py-0.2 rounded-full">
-                  {research.pvd.length}
-                </span>
-                {isSampleData && (
-                  <span className="text-[9px] font-mono font-bold uppercase tracking-wider px-1.5 py-0.2 rounded bg-amber-950/40 text-amber-400 border border-amber-800/60">
-                    SAMPLE DATA
-                  </span>
-                )}
-              </div>
-              <span className="text-[11px] text-zinc-500">Tap claim for verified quote</span>
-            </div>
+            <PanelHeader title="Promised vs Delivered" count={research.pvd.length} code="RSH" helper="Tap claim for verified quote" />
+            {isSampleData && <span className="text-[11px] text-amber-400">SAMPLE DATA</span>}
 
             {(research.pvd.length > 0 || !isBuilding) && (
               <PvDTimeline
@@ -620,7 +609,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
                         <TrendingUp className="w-3 h-3" />
                         <span>Supporting Fact</span>
                       </span>
-                      <span className="text-[10px] text-zinc-400 font-mono underline decoration-zinc-700">
+                      <span className="text-[11px] text-zinc-400 font-mono underline decoration-zinc-700">
                         {formatDocSourceLabel(
                           claim.sources[0]?.doc_id,
                           claim.sources[0]?.page,
@@ -628,7 +617,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
                         )}
                       </span>
                     </div>
-                    <div className="text-zinc-200 text-[12px] leading-snug font-medium">
+                    <div className="text-zinc-200 text-[12px] leading-snug font-semibold">
                       {claim.text}
                     </div>
                   </div>
@@ -645,7 +634,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
                         <TrendingDown className="w-3 h-3" />
                         <span>Risk Observation</span>
                       </span>
-                      <span className="text-[10px] text-zinc-400 font-mono underline decoration-zinc-700">
+                      <span className="text-[11px] text-zinc-400 font-mono underline decoration-zinc-700">
                         {formatDocSourceLabel(
                           claim.sources[0]?.doc_id,
                           claim.sources[0]?.page,
@@ -653,7 +642,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
                         )}
                       </span>
                     </div>
-                    <div className="text-zinc-200 text-[12px] leading-snug font-medium">
+                    <div className="text-zinc-200 text-[12px] leading-snug font-semibold">
                       {claim.text}
                     </div>
                   </div>

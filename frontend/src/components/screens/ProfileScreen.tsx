@@ -1,3 +1,4 @@
+import { PanelHeader } from '@/components/ui/Desk'
 import { PrivacyCard } from '@/components/network/PrivacyCard'
 import React, { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
@@ -41,7 +42,7 @@ export const ProfileScreen: React.FC = () => {
   }
 
   const renderList = (rows: CatalogCompany[], key: Exclude<OpenList, null>, title: string) => (
-    <div className="rounded-xl border border-zinc-800 bg-zinc-900/60">
+    <div className="border-b border-zinc-700 last:border-b-0">
       <button
         type="button"
         onClick={() => setOpen(open === key ? null : key)}
@@ -71,7 +72,7 @@ export const ProfileScreen: React.FC = () => {
   )
 
   return (
-    <div className="space-y-2 pb-24 pt-1">
+    <div className="desk-screen">
       <div className="pb-2 border-b border-zinc-800">
         <h1 className="text-xl font-semibold text-zinc-100 flex items-center gap-2">
           <User className="w-4 h-4 text-zinc-300" />
@@ -80,7 +81,9 @@ export const ProfileScreen: React.FC = () => {
         <p className="text-xs text-zinc-400 mt-1">Stored on this device only · no account needed</p>
       </div>
 
-      <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-3 flex items-center gap-3">
+      <div>
+        <PanelHeader title="Your identity" code="PRF" />
+        <div className="desk-panel mt-2 p-3 flex items-center gap-3">
         <div className="w-12 h-12 rounded-full bg-zinc-800 text-zinc-300 flex items-center justify-center font-semibold text-base flex-shrink-0">
           {initials || <User className="w-5 h-5" />}
         </div>
@@ -109,19 +112,21 @@ export const ProfileScreen: React.FC = () => {
         </form>
       </div>
 
-      {renderList(holdings, 'portfolio', 'My portfolio')}
-      {renderList(watch, 'watchlist', 'Watchlist')}
+      </div>
+      <section className="desk-panel">
+        <PanelHeader title="Your companies" count={catalog.length} code="PRF" />
+        {renderList(holdings, 'portfolio', 'My portfolio')}
+        {renderList(watch, 'watchlist', 'Watchlist')}
+      </section>
 
       <PrivacyCard />
 
-      <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-3 space-y-2">
-        <h2 className="text-base font-semibold text-zinc-100 flex items-center gap-2">
-          <ShieldCheck className="w-4 h-4 text-zinc-400" />
-          Where the data comes from
-        </h2>
-        <dl className="text-xs space-y-2">
+      <section className="desk-panel">
+        <PanelHeader title="Where the data comes from" code="SRC" />
+        <div className="p-3 space-y-3">
+        <dl className="text-xs divide-y divide-zinc-700">
           {SOURCES.map(([k, v]) => (
-            <div key={k} className="flex justify-between gap-3">
+            <div key={k} className="flex justify-between gap-3 py-2">
               <dt className="text-zinc-400">{k}</dt>
               <dd className="text-zinc-200 text-right">{v}</dd>
             </div>
@@ -134,9 +139,10 @@ export const ProfileScreen: React.FC = () => {
           {health?.mode === 'live' ? 'Live API' : 'Offline snapshot'}
           {health?.as_of ? ` · prices as of ${formatExactIst(health.as_of)}` : ''}
         </p>
-      </div>
+        </div>
+      </section>
 
-      <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-3">
+      <div className="desk-inset">
         {confirmReset ? (
           <div className="space-y-2">
             <p className="text-xs text-zinc-300">Clear your name, thresholds and view choices on this device?</p>

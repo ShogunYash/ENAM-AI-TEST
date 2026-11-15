@@ -196,3 +196,139 @@
   .finn-letter, .finn-tagline, .finn-tagline-2, .finn-dot, .finn-splash-glow { animation: none; opacity: 1; }
   .finn-line { animation: none; stroke-dashoffset: 0; }
 }
+
+/* Shared desk grammar: sections, records, evidence and identities. */
+@layer components {
+  .desk-screen { @apply space-y-6 pb-24 pt-2; }
+  .desk-panel { @apply overflow-hidden rounded-xl border border-zinc-700 bg-zinc-900; box-shadow: var(--card-shadow); }
+  .desk-panel-header { @apply flex min-h-10 flex-wrap items-center gap-2 border-b border-zinc-700 bg-zinc-800/50 px-3 py-2; }
+  .desk-panel-label { @apply flex min-w-0 items-center gap-2 text-[11px] font-semibold uppercase tracking-wider text-zinc-300; }
+  .desk-panel-code { @apply hidden; }
+  .desk-panel-helper { @apply ml-auto text-[11px] text-zinc-400; }
+  .desk-count { @apply rounded border border-zinc-700 bg-zinc-900 px-1.5 text-[11px] font-mono tabular-nums text-zinc-300; }
+  .desk-inset { @apply rounded-lg border border-zinc-700 bg-zinc-800/50 p-3; }
+  .desk-identity { @apply inline-flex h-8 w-8 shrink-0 items-center justify-center border border-zinc-700 bg-zinc-800 text-[11px] font-semibold text-zinc-300; }
+  .desk-identity-person { @apply rounded-full; }
+  .desk-identity-company { @apply rounded; }
+  .desk-warm-card { @apply overflow-hidden rounded-lg border border-zinc-700 border-l-[3px] bg-zinc-900 px-3 py-1; box-shadow: var(--card-shadow); }
+  .desk-person-row { @apply border-l-2 border-transparent px-1 py-1; }
+  .desk-record { @apply rounded-xl border border-zinc-700 border-l-[3px] bg-zinc-900 p-3; box-shadow: var(--card-shadow); }
+  .desk-alert { @apply rounded-md border border-zinc-700 border-l-[3px] border-l-amber-400 bg-zinc-900; }
+  .desk-claim { @apply rounded-lg border border-zinc-700 border-l-[3px] bg-zinc-900; box-shadow: var(--card-shadow); }
+  .desk-metric { @apply min-w-0 border-b border-zinc-700 p-3; }
+  .desk-metric-label { @apply text-[11px] uppercase tracking-wide text-zinc-400; }
+  .desk-data-grid { @apply overflow-hidden rounded-lg border border-zinc-700 bg-zinc-900; font-variant-numeric: tabular-nums; }
+  .desk-disclosure { @apply min-h-[44px] text-xs text-zinc-300; }
+  .desk-record[data-category="results"] { border-left-color: rgb(var(--brand-primary)); }
+  .desk-record[data-category="fund_raise"], .desk-record[data-category="credit_rating"] { border-left-color: rgb(var(--sky-400)); }
+  .desk-record[data-category="management_change"] { border-left-color: rgb(var(--amber-400)); }
+  .desk-record[data-category="litigation"] { border-left-color: rgb(var(--rose-400)); }
+  .desk-claim[data-verdict="missed"], .desk-claim[data-verdict="cut"] { border-left-color: rgb(var(--rose-400)); }
+  .desk-claim[data-verdict="met"], .desk-claim[data-verdict="raised"] { border-left-color: rgb(var(--emerald-400)); }
+  .desk-claim[data-verdict="pending"], .desk-claim[data-verdict="slipped"] { border-left-color: rgb(var(--amber-400)); }
+}
+@layer components {
+  .desk-ledger { border-collapse: collapse; }
+  .desk-ledger th, .desk-ledger td { @apply border-b border-zinc-700 px-3 text-zinc-300; height: 28px; padding-top: 4px; padding-bottom: 4px; line-height: 18px; }
+  .desk-ledger thead th { @apply bg-zinc-800/50 text-[11px] font-semibold uppercase tracking-wide text-zinc-400; }
+  .desk-ledger th:first-child { text-align: left; }
+  .desk-ledger th:not(:first-child), .desk-ledger td { @apply font-mono tabular-nums; text-align: right; }
+  .desk-ledger tr:last-child th, .desk-ledger tr:last-child td { border-bottom: 0; }
+}
+
+/* Terminal is an opt-in skin over the shared desk components. */
+.terminal {
+  color-scheme: dark;
+  --background: 0 0% 2%;
+  --foreground: 0 0% 95%;
+  --border: 0 0% 26%;
+  --z-950: 5 5 5;
+  --z-900: 16 16 16;
+  --z-800: 28 28 28;
+  --z-700: 66 66 66;
+  --z-600: 115 115 115;
+  --z-500: 168 168 168;
+  --z-400: 192 192 192;
+  --z-300: 228 228 228;
+  --z-200: 238 238 238;
+  --z-100: 245 245 245;
+  --z-50: 255 255 255;
+  --stock-text: 112 215 255;
+  --brand-primary: 0 81 107;
+  --brand-hover: 0 100 130;
+  --brand-tint: 10 42 52;
+  --brand-text: 112 215 255;
+  --terminal-label: 255 199 104;
+  --emerald-300: 0 210 106;
+  --emerald-400: 0 210 106;
+  --emerald-500: 0 210 106;
+  --emerald-950: 0 35 18;
+  --rose-300: 255 101 92;
+  --rose-400: 255 101 92;
+  --rose-500: 255 101 92;
+  --rose-950: 45 13 11;
+  --amber-300: 255 199 104;
+  --amber-400: 255 199 104;
+  --amber-500: 255 199 104;
+  --amber-950: 41 29 10;
+  --sky-300: 112 215 255;
+  --sky-400: 112 215 255;
+  --sky-500: 112 215 255;
+  --sky-950: 10 42 52;
+  --radius: 4px;
+  --card-shadow: none;
+  --backdrop-overlay: rgba(0, 0, 0, .8);
+  --scrollbar-thumb: #737373;
+  --scrollbar-thumb-hover: #a8a8a8;
+}
+.terminal .desk-panel-header {
+  min-height: 28px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background: rgb(var(--z-800));
+}
+.terminal .desk-panel-label, .terminal .desk-ledger thead th, .terminal table thead th {
+  color: rgb(var(--terminal-label));
+}
+.terminal .desk-panel-code { display: inline; font-family: ui-monospace, monospace; }
+.terminal .desk-panel, .terminal .desk-record, .terminal .desk-claim, .terminal .desk-inset,
+.terminal .desk-warm-card, .terminal button, .terminal input, .terminal summary, .terminal .desk-count {
+  border-radius: 3px;
+  box-shadow: none;
+}
+.terminal .desk-identity-person { border-radius: 50%; }
+.terminal .desk-metric, .terminal .desk-ledger, .terminal .font-mono { font-variant-numeric: tabular-nums; }
+.terminal .desk-ledger tbody tr:nth-child(even) { background: rgb(var(--z-800) / .45); }
+.terminal .desk-wordmark { background: none; color: rgb(var(--terminal-label)); }
+.terminal .desk-brand-rule { background: rgb(var(--z-700)); }
+
+.desk-tape { height: 26px; overflow-x: hidden; touch-action: pan-x; }
+.desk-tape-track { display: flex; width: max-content; animation: desk-tape-drift 100s linear infinite; }
+.desk-tape-group { display: flex; flex: none; }
+.desk-tape[data-paused="true"] .desk-tape-track { animation-play-state: paused; }
+@keyframes desk-tape-drift { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .desk-tape { overflow-x: auto; scroll-snap-type: x proximity; }
+  .desk-tape-track { animation: none; }
+  .desk-tape-duplicate { display: none; }
+  .desk-tape-item { scroll-snap-align: start; }
+}
+.terminal .desk-normal-nav { display: none; }
+.terminal nav button[data-nav-tab] { border: 1px solid rgb(var(--z-500)); margin: 0 2px; padding: 4px 2px; color: rgb(var(--terminal-label)); }
+.terminal nav button[data-active="true"] { color: rgb(var(--z-950)); background: rgb(var(--terminal-label)); border-color: rgb(var(--terminal-label)); }
+.terminal .desk-command { font-variant-numeric: tabular-nums; }
+
+.terminal .border-brand { border-color: rgb(var(--brand-text)); }
+
+/* Interactive boundaries are stronger than structural hairlines. */
+.desk-inset[role="button"] { border-color: rgb(var(--z-500)); }
+.desk-alert[role="button"] {
+  border-top-color: rgb(var(--z-500));
+  border-right-color: rgb(var(--z-500));
+  border-bottom-color: rgb(var(--z-500));
+}
+.desk-screen .text-zinc-600 { color: rgb(var(--z-500)); }
+
+.terminal time { font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+.terminal .desk-panel-helper { order: 1; }
+.terminal .desk-count { order: 2; margin-left: auto; }

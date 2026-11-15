@@ -67,6 +67,7 @@ function FinnApp() {
     } catch {}
     return (settings.default_window as WindowOption) || '24h'
   })
+  const [commandCompany, setCommandCompany] = useState<{ symbol: string; version: number } | null>(null)
   const [askTarget, setAskTarget] = useState<AskFinnTarget | null>(null)
 
   useEffect(() => {
@@ -100,6 +101,10 @@ function FinnApp() {
     <MobileShell
       activeTab={activeTab}
       onTabChange={setActiveTab}
+      onOpenCompany={symbol => {
+        setCommandCompany(previous => ({ symbol, version: (previous?.version ?? 0) + 1 }))
+        setActiveTab('research')
+      }}
       needsYouCount={needsYouCount}
       alertCount={alertCount}
     >
@@ -117,6 +122,8 @@ function FinnApp() {
 
       {activeTab === 'research' && (
         <ResearchScreen
+          key={commandCompany?.version ?? 0}
+          initialSymbol={commandCompany?.symbol}
           onAskFinn={(symbol, sourceDocs) =>
             setAskTarget({ screen: 'research', symbol, sourceDocs })
           }

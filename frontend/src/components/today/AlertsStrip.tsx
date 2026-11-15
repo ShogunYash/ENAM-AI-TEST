@@ -1,3 +1,4 @@
+import { PanelHeader } from '@/components/ui/Desk'
 import React from 'react'
 import { Alert } from '@/api/types'
 import { formatPercentDelta, formatVolumeMultiple } from '@/lib/formatters'
@@ -13,15 +14,7 @@ export const AlertsStrip: React.FC<AlertsStripProps> = ({ alerts, onSelectFiling
 
   return (
     <div className="w-full">
-      <div className="flex items-center justify-between px-1 mb-1.5">
-        <div className="flex items-center gap-1.5 text-xs font-semibold text-zinc-300">
-          <Bell className="w-3.5 h-3.5 text-amber-400" />
-          <span>Active Alerts</span>
-          <span className="text-[11px] font-mono px-1.5 py-0.2 bg-zinc-800 text-zinc-400 rounded-full">
-            {alerts.length}
-          </span>
-        </div>
-      </div>
+      <PanelHeader title="Active Alerts" count={alerts.length} code="ALT" />
 
       <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1 pt-0.5">
         {alerts.map((al) => {
@@ -41,31 +34,37 @@ export const AlertsStrip: React.FC<AlertsStripProps> = ({ alerts, onSelectFiling
             )
             borderClass = al.value > 0 ? 'border-emerald-950/60 bg-emerald-950/20' : 'border-rose-950/60 bg-rose-950/20'
           } else if (al.kind === 'material_filing') {
-            badgeIcon = <FileText className="w-3 h-3 text-blue-400" />
+            badgeIcon = <FileText className="w-3 h-3 text-zinc-300" />
             borderClass = 'border-blue-950/60 bg-blue-950/20'
           }
 
           return (
             <div
               key={al.id}
+              role={isClickable ? 'button' : undefined}
+              tabIndex={isClickable ? 0 : undefined}
+              onKeyDown={event => {
+                if (isClickable && (event.key === 'Enter' || event.key === ' ')) {
+                  event.preventDefault()
+                  onSelectFiling?.(al.filing_id!)
+                }
+              }}
               onClick={() => {
                 if (al.filing_id && onSelectFiling) {
                   onSelectFiling(al.filing_id)
                 }
               }}
-              className={`flex-shrink-0 flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs transition-colors ${borderClass} ${
-                isClickable ? 'cursor-pointer hover:border-zinc-700' : ''
-              }`}
+              className={`desk-alert min-h-[44px] max-w-[calc(100vw-40px)] flex-shrink-0 flex items-center gap-2 px-3 py-2 text-xs ${isClickable ? 'cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand' : ''}`}
             >
               <div className="flex items-center gap-1.5">
                 {badgeIcon}
-                <span className="font-mono font-bold text-stock">{al.symbol}</span>
+                <span className="font-mono font-semibold text-stock">{al.symbol}</span>
               </div>
-              <span className="text-zinc-300 font-medium">
+              <span className="min-w-0 truncate text-zinc-300">
                 {al.message}
               </span>
               {isClickable && (
-                <span className="text-[10px] text-zinc-400 underline decoration-zinc-600">
+                <span className="text-[11px] text-zinc-400 underline decoration-zinc-600">
                   view
                 </span>
               )}

@@ -1,3 +1,4 @@
+import { PanelHeader } from '@/components/ui/Desk'
 import React, { useEffect, useState, useMemo } from 'react'
 import { DigestResult, getDigestData } from '@/api/client'
 import { useQuery } from '@tanstack/react-query'
@@ -224,7 +225,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
   // 1. Company Detail View (drilled into a stock)
   if (selectedSymbol) {
     return (
-      <div className="space-y-3 pb-20">
+      <div className="desk-screen">
         {toolbar}
         <CompanyDetail
           symbol={selectedSymbol}
@@ -244,7 +245,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
   // 2. Watchlist View (Always by-company)
   if (scope === 'watchlist') {
     return (
-      <div className="space-y-3 pb-20">
+      <div className="desk-screen">
         {toolbar}
 
         {/* Clear banner distinguishing watchlist from portfolio holdings */}
@@ -275,7 +276,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
   // 3. Portfolio By-Company View
   if (effectiveView === 'company_important' || effectiveView === 'company_az') {
     return (
-      <div className="space-y-3 pb-20">
+      <div className="desk-screen">
         {toolbar}
 
         <CompanyList
@@ -300,7 +301,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
   // 4. Portfolio Priority Feed (Ranked View)
   if (isLoading && !digestResult) {
     return (
-      <div className="space-y-3 pb-20">
+      <div className="desk-screen">
         {toolbar}
         <div className="space-y-3 animate-pulse p-4">
           <div className="h-8 bg-zinc-900 rounded-lg w-48"></div>
@@ -313,7 +314,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
   }
 
   return (
-    <div className="space-y-3 pb-20">
+    <div className="desk-screen">
       {toolbar}
 
       {/* Alerts Strip (Ranked view only, hidden when search is active) */}
@@ -330,23 +331,10 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
 
       {/* "Needs you" Stack */}
       <section className="space-y-2.5">
-        <div className="flex items-center justify-between px-1">
-          <div className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-300">
-            <span>Needs you</span>
-            <span className="text-[11px] font-mono text-zinc-400 bg-zinc-900 border border-zinc-800 px-1.5 py-0.2 rounded-full">
-              {filteredNeedsYou.length} / 5
-            </span>
-            <button
-              type="button"
-              onClick={() => openHelp('needs_you')}
-              className="w-4 h-4 rounded-full border border-zinc-700/80 text-zinc-400 hover:text-zinc-200 text-[10px] font-bold inline-flex items-center justify-center transition-colors touch-manipulation ml-0.5"
-              title="What is Needs you?"
-              aria-label="What is Needs you?"
-            >
-              ?
-            </button>
-          </div>
-          <span className="text-[11px] text-zinc-400">ranked by priority score</span>
+        <div className="flex items-center gap-2">
+          <div className="min-w-0 flex-1"><PanelHeader title="Needs you" count={`${filteredNeedsYou.length} / 5`} code="TOD" helper="Ranked by priority" /></div>
+          <button type="button" onClick={() => openHelp('needs_you')} aria-label="What is Needs you?" title="What is Needs you?"
+            className="min-h-[44px] min-w-[44px] rounded border border-zinc-500 text-sm text-zinc-300">?</button>
         </div>
 
         {filteredNeedsYou.length === 0 ? (
@@ -386,11 +374,7 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
       {/* Also Material (if any additional high/medium filings) */}
       {filteredAlsoMaterial.length > 0 && (
         <section className="space-y-2.5 pt-1">
-          <div className="flex items-center justify-between px-1">
-            <h2 className="text-xs font-semibold uppercase tracking-wider text-zinc-300">
-              Also Material ({filteredAlsoMaterial.length})
-            </h2>
-          </div>
+          <PanelHeader title="Also Material" count={filteredAlsoMaterial.length} code="TOD" />
           <div className="space-y-3">
             {filteredAlsoMaterial.map((filing) => (
               <FilingCard

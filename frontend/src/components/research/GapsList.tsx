@@ -22,7 +22,7 @@ export const GapsList: React.FC<GapsListProps> = ({ gaps = [] }) => {
         ) : (
           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
         )}
-        <span className={hasGaps ? 'text-amber-300' : 'text-zinc-300'}>
+        <span className="text-zinc-300">
           Document Gaps ({gaps.length})
         </span>
       </div>

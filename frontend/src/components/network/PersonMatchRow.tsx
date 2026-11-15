@@ -1,3 +1,4 @@
+import { IdentityMark } from '@/components/ui/Desk'
 import { Briefcase, ChevronDown, GraduationCap, Lightbulb, Users } from 'lucide-react'
 import { useId, useState } from 'react'
 import type { PersonMatch } from '@/api/types'
@@ -29,11 +30,9 @@ export function PersonMatchRow({ match, onOpenPerson }: {
   const evidenceId = useId()
   const { Icon, label } = links[match.link]
   return (
-    <div className="py-1 text-sm">
+    <div className="desk-person-row text-sm">
       <div className="flex min-h-[44px] items-center gap-2">
-        <span aria-hidden="true" className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zinc-800 text-xs text-zinc-300">
-          {match.name.split(' ').map(word => word[0]).slice(0, 2).join('')}
-        </span>
+        <IdentityMark name={match.name} />
         <button type="button" onClick={() => (onOpenPerson ?? openPerson)(match.person_id)}
           className="min-h-[44px] min-w-0 flex-1 truncate text-left font-semibold text-zinc-100 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">
           {match.name}
@@ -45,7 +44,7 @@ export function PersonMatchRow({ match, onOpenPerson }: {
         </button>
       </div>
       <p title={match.why} className="truncate leading-5 text-xs text-zinc-400">{match.why}</p>
-      {expanded && <div id={evidenceId} className="space-y-2 py-2 text-xs text-zinc-400">
+      {expanded && <div id={evidenceId} className="desk-inset my-2 space-y-2 text-xs text-zinc-400">
         <p>{match.headline}</p>
         <span className="inline-flex items-center gap-1 text-[11px]"><Icon aria-hidden="true" className="h-3.5 w-3.5" />{label}</span>
         <p className="leading-relaxed">{match.why}</p>
