@@ -7,6 +7,7 @@ import {
   formatCategory,
   getCategoryBadgeClasses,
 } from '@/lib/formatters'
+import { NetworkStrip } from '@/components/network/NetworkStrip'
 import { ResultsCardPayload } from './ResultsCardPayload'
 import { BioCardPayload } from './BioCardPayload'
 import { OneLinerPayload } from './OneLinerPayload'
@@ -173,6 +174,8 @@ export const FilingCard: React.FC<FilingCardProps> = ({
       {enrichment && enrichment.type === 'oneliner' && enrichment.text !== so_what && (
         <OneLinerPayload enrichment={enrichment} />
       )}
+
+      <NetworkStrip filingId={id} />
 
       {/* Card Action Bar: [Source PDF ↗]  [Ask FINN] */}
       {(() => {
