@@ -6,6 +6,8 @@ import { ThresholdsScreen } from '@/components/screens/ThresholdsScreen'
 import { ResearchScreen } from '@/components/screens/ResearchScreen'
 import { StatsScreen } from '@/components/screens/StatsScreen'
 import { ProfileScreen } from '@/components/screens/ProfileScreen'
+import { NetworkScreen } from '@/components/network/NetworkScreen'
+import { PersonProvider } from '@/components/network/PersonProvider'
 import { Splash } from '@/components/common/Splash'
 import { AskFinnSheet, AskFinnTarget } from '@/components/common/AskFinnSheet'
 import { getDigestData } from '@/api/client'
@@ -24,7 +26,7 @@ const queryClient = new QueryClient({
 })
 
 const TAB_KEY = 'finn.tab'
-const TABS = ['today', 'research', 'thresholds', 'stats', 'profile']
+const TABS = ['today', 'research', 'network', 'thresholds', 'stats', 'profile']
 const isTab = (v: string | null): v is NavTab => !!v && TABS.includes(v)
 
 function FinnApp() {
@@ -121,6 +123,8 @@ function FinnApp() {
         />
       )}
 
+      {activeTab === 'network' && <NetworkScreen />}
+
       {activeTab === 'thresholds' && <ThresholdsScreen />}
 
       {activeTab === 'stats' && <StatsScreen />}
@@ -141,7 +145,9 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Splash />
-      <FinnApp />
+      <PersonProvider>
+        <FinnApp />
+      </PersonProvider>
     </QueryClientProvider>
   )
 }

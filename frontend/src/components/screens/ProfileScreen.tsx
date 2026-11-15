@@ -1,3 +1,4 @@
+import { PrivacyCard } from '@/components/network/PrivacyCard'
 import React, { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { ChevronDown, ShieldCheck, Trash2, User } from 'lucide-react'
@@ -110,6 +111,8 @@ export const ProfileScreen: React.FC = () => {
 
       {renderList(holdings, 'portfolio', 'My portfolio')}
       {renderList(watch, 'watchlist', 'Watchlist')}
+
+      <PrivacyCard />
 
       <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-3 space-y-2">
         <h2 className="text-sm font-semibold text-zinc-100 flex items-center gap-2">

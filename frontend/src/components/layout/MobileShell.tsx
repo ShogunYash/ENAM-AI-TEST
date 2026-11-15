@@ -1,8 +1,8 @@
 import React from 'react'
-import { Flame, Search, Sliders, Activity, User } from 'lucide-react'
+import { Flame, Search, Sliders, Activity, User, Users } from 'lucide-react'
 import { initialsOf, useProfileName } from '@/lib/profile'
 
-export type NavTab = 'today' | 'research' | 'thresholds' | 'stats' | 'profile'
+export type NavTab = 'today' | 'research' | 'network' | 'thresholds' | 'stats' | 'profile'
 
 interface MobileShellProps {
   children: React.ReactNode
@@ -36,6 +36,11 @@ export const MobileShell: React.FC<MobileShellProps> = ({
       id: 'research',
       label: 'Research',
       icon: <Search className="w-5 h-5" />,
+    },
+    {
+      id: 'network',
+      label: 'Network',
+      icon: <Users className="w-5 h-5" />,
     },
     {
       id: 'thresholds',
@@ -122,7 +127,7 @@ export const MobileShell: React.FC<MobileShellProps> = ({
                       </span>
                     )}
                   </div>
-                  <span className="text-[10px] mt-0.5 tracking-tight">{tab.label}</span>
+                  <span className="text-[11px] mt-0.5 tracking-tight">{tab.label}</span>
                 </button>
               )
             })}

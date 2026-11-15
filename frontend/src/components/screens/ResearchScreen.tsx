@@ -1,3 +1,4 @@
+import { WhoToCall } from '@/components/network/WhoToCall'
 import React, { useState, useEffect, useMemo } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import {
@@ -405,6 +406,8 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
         </button>
       </div>
 
+      {(!research || research.status === 'failed') && <WhoToCall symbol={selectedCompany ?? ''} />}
+
       {/* Loading Skeleton */}
       {isLoading && !research && (
         <div className="p-4 space-y-3 animate-pulse">
@@ -546,6 +549,8 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn }) => 
               </div>
             )}
           </div>
+
+          <WhoToCall symbol={research.symbol} name={research.name} />
 
           {/* Gaps List at TOP for partial reports */}
           {(research.status === 'partial' || (isBuilding && research.gaps.length > 0)) && (
