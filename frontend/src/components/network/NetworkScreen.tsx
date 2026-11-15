@@ -140,7 +140,7 @@ export function NetworkScreen() {
         </div>
         {warm.data && warm.data.length > 3 && (
           <button type="button" aria-expanded={showAllWarm} aria-controls="warm-items" onClick={() => setShowAllWarm(!showAllWarm)}
-            className="min-h-[44px] w-full rounded border-t border-zinc-700 text-left text-xs text-zinc-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">
+            className="min-h-[44px] w-full rounded border-t border-zinc-500 text-left text-xs text-zinc-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">
             {showAllWarm ? 'Show fewer' : `Show all (${warm.data.length})`}
           </button>
         )}

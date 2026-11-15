@@ -38,7 +38,7 @@ export function CommandBar({ onTabChange, onOpenCompany }: {
     if (options[active]) select(options[active])
   }
   const keyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'ArrowDown') { event.preventDefault(); setActive(index => Math.min(index + 1, options.length - 1)) }
+    if (event.key === 'ArrowDown') { event.preventDefault(); setActive(index => Math.max(0, Math.min(index + 1, options.length - 1))) }
     if (event.key === 'ArrowUp') { event.preventDefault(); setActive(index => Math.max(0, index - 1)) }
     if (event.key === 'Escape') { event.preventDefault(); setQuery(''); setActive(0) }
   }

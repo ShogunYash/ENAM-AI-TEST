@@ -317,3 +317,14 @@
 .terminal nav button[data-nav-tab] { border: 1px solid rgb(var(--z-500)); margin: 0 2px; padding: 4px 2px; color: rgb(var(--terminal-label)); }
 .terminal nav button[data-active="true"] { color: rgb(var(--z-950)); background: rgb(var(--terminal-label)); border-color: rgb(var(--terminal-label)); }
 .terminal .desk-command { font-variant-numeric: tabular-nums; }
+
+.terminal .border-brand { border-color: rgb(var(--brand-text)); }
+
+/* Interactive boundaries are stronger than structural hairlines. */
+.desk-inset[role="button"] { border-color: rgb(var(--z-500)); }
+.desk-alert[role="button"] {
+  border-top-color: rgb(var(--z-500));
+  border-right-color: rgb(var(--z-500));
+  border-bottom-color: rgb(var(--z-500));
+}
+.desk-screen .text-zinc-600 { color: rgb(var(--z-500)); }

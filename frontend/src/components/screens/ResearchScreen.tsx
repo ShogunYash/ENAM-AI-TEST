@@ -248,7 +248,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search any NSE ticker"
             inputMode="search"
-            className="w-full bg-zinc-900 border border-zinc-800 rounded-xl pl-9 pr-16 py-2.5 text-xs text-zinc-100 placeholder:text-zinc-500 font-mono font-semibold focus:outline-none focus:border-zinc-600 transition-colors"
+            className="w-full min-h-[44px] bg-zinc-900 border border-zinc-500 rounded-xl pl-9 pr-16 py-2.5 text-xs text-zinc-100 placeholder:text-zinc-500 font-mono font-semibold focus:outline-none focus:border-zinc-600 transition-colors"
           />
           <Search className="w-4 h-4 text-zinc-500 absolute left-3" />
           {searchQuery && (
@@ -327,7 +327,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
               <button
                 type="button"
                 onClick={() => openDetail(searchQuery.trim().toUpperCase())}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-xs font-mono font-semibold text-zinc-200 border border-zinc-700"
+                className="inline-flex min-h-[44px] items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-xs font-mono font-semibold text-zinc-200 border border-zinc-700"
               >
                 <span>Build live research for {searchQuery.trim().toUpperCase()}</span>
               </button>
@@ -402,7 +402,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
         <button
           type="button"
           onClick={handleBack}
-          className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-zinc-200 py-1 px-2 -ml-2 rounded-lg touch-manipulation transition-colors font-semibold"
+          className="inline-flex min-h-[44px] items-center gap-1.5 text-xs text-zinc-400 hover:text-zinc-200 py-1 px-2 -ml-2 rounded-lg touch-manipulation transition-colors font-semibold"
         >
           <ArrowLeft className="w-4 h-4 text-zinc-400" />
           <span>All companies</span>

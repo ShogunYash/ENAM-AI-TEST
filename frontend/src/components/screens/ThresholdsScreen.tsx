@@ -108,7 +108,7 @@ export const ThresholdsScreen: React.FC = () => {
       </div>
 
       <PanelHeader title="Display" code="SET" />
-      {/* Appearance Control (Light | Dark | Auto) */}
+      {/* Appearance Control (Light | Dark | Terminal) */}
       <div className="desk-panel p-3 flex items-center justify-between gap-2">
         <div className="min-w-0 flex-1">
           <div className="text-sm font-semibold text-zinc-200 flex items-center gap-2">

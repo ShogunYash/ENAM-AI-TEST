@@ -36,7 +36,7 @@ export const AsOfChip: React.FC<AsOfChipProps> = ({
     : 'text-amber-400'
 
   return (
-    <div className="inline-flex items-center gap-1.5 text-[10px] text-zinc-400 bg-zinc-900/90 border border-zinc-800/80 rounded-full px-2.5 py-0.5 backdrop-blur-sm whitespace-nowrap flex-shrink-0">
+    <div className="inline-flex items-center gap-1.5 text-[11px] text-zinc-400 bg-zinc-900/90 border border-zinc-800/80 rounded-full px-2.5 py-0.5 backdrop-blur-sm whitespace-nowrap flex-shrink-0">
       <span
         className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${dotColor}`}
         title={
@@ -58,11 +58,11 @@ export const AsOfChip: React.FC<AsOfChipProps> = ({
         <button
           onClick={onRefresh}
           disabled={isRefreshing}
-          className="ml-0.5 p-0.5 hover:text-zinc-200 transition-colors disabled:opacity-40"
+          className="ml-0.5 -my-3 min-h-[44px] min-w-[44px] inline-flex items-center justify-center hover:text-zinc-200 transition-colors disabled:opacity-40"
           title="Refresh from API"
           aria-label="Refresh data"
         >
-          <RefreshCw className={`w-2.5 h-2.5 ${isRefreshing ? 'animate-spin text-zinc-300' : ''}`} />
+          <RefreshCw className={`w-3 h-3 ${isRefreshing ? 'animate-spin text-zinc-300' : ''}`} />
         </button>
       )}
     </div>

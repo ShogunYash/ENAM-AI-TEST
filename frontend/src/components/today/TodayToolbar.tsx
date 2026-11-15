@@ -92,14 +92,14 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
         <div
           role="group"
           aria-label="Universe scope"
-          className="inline-flex items-center p-0.5 rounded-lg bg-zinc-900 border border-zinc-800"
+          className="inline-flex items-center p-0.5 rounded-lg bg-zinc-900 border border-zinc-500"
         >
           <button
             type="button"
             onClick={() => onScopeChange('portfolio')}
             className={`px-2.5 py-1.5 min-h-[44px] text-xs whitespace-nowrap rounded-md touch-manipulation transition-all flex items-center justify-center ${
               scope === 'portfolio'
-                ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/60 font-semibold'
+                ? 'bg-brand-tint text-brand-text shadow-sm border border-brand-text font-semibold'
                 : 'text-zinc-400 hover:text-zinc-200'
             }`}
           >
@@ -110,7 +110,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
             onClick={() => onScopeChange('watchlist')}
             className={`px-2.5 py-1.5 min-h-[44px] text-xs whitespace-nowrap rounded-md touch-manipulation transition-all flex items-center justify-center ${
               scope === 'watchlist'
-                ? 'bg-brand-tint text-brand-text shadow-sm border border-brand/60 font-semibold'
+                ? 'bg-brand-tint text-brand-text shadow-sm border border-brand-text font-semibold'
                 : 'text-zinc-400 hover:text-zinc-200'
             }`}
           >
@@ -139,7 +139,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
                 setPeriodOpen((prev) => !prev)
                 setViewOpen(false)
               }}
-              className="inline-flex items-center gap-1 px-2.5 py-1.5 min-h-[44px] rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-200 hover:border-zinc-700 font-mono text-[11px] font-medium touch-manipulation transition-colors"
+              className="inline-flex items-center gap-1 px-2.5 py-1.5 min-h-[44px] rounded-lg bg-zinc-900 border border-zinc-500 text-zinc-200 hover:border-zinc-500 font-mono text-[11px] font-medium touch-manipulation transition-colors"
               aria-expanded={periodOpen}
               aria-haspopup="true"
             >
@@ -163,7 +163,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
                         onWindowChange(opt.id)
                         setPeriodOpen(false)
                       }}
-                      className={`w-full px-3 py-2 text-left text-xs flex items-center justify-between hover:bg-zinc-800/80 transition-colors ${
+                      className={`w-full min-h-[44px] px-3 py-2 text-left text-xs flex items-center justify-between hover:bg-zinc-800/80 transition-colors ${
                         isSelected ? 'text-emerald-400 font-semibold' : 'text-zinc-300'
                       }`}
                     >
@@ -184,7 +184,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
                 setViewOpen((prev) => !prev)
                 setPeriodOpen(false)
               }}
-              className="inline-flex items-center gap-1 px-2.5 py-1.5 min-h-[44px] rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-200 hover:border-zinc-700 text-[11px] font-medium touch-manipulation transition-colors"
+              className="inline-flex items-center gap-1 px-2.5 py-1.5 min-h-[44px] rounded-lg bg-zinc-900 border border-zinc-500 text-zinc-200 hover:border-zinc-500 text-[11px] font-medium touch-manipulation transition-colors"
               aria-expanded={viewOpen}
               aria-haspopup="true"
             >
@@ -208,7 +208,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
                       setViewOpen(false)
                     }
                   }}
-                  className={`w-full px-3 py-2 text-left text-xs flex items-center justify-between transition-colors ${
+                  className={`w-full min-h-[44px] px-3 py-2 text-left text-xs flex items-center justify-between transition-colors ${
                     scope === 'watchlist'
                       ? 'opacity-40 cursor-not-allowed text-zinc-500'
                       : viewOption === 'priority'
@@ -239,7 +239,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
                     onViewChange('company_important')
                     setViewOpen(false)
                   }}
-                  className={`w-full px-3 py-2 text-left text-xs flex items-center justify-between hover:bg-zinc-800/80 transition-colors ${
+                  className={`w-full min-h-[44px] px-3 py-2 text-left text-xs flex items-center justify-between hover:bg-zinc-800/80 transition-colors ${
                     viewOption === 'company_important'
                       ? 'text-emerald-400 font-semibold'
                       : 'text-zinc-300'
@@ -258,7 +258,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
                     onViewChange('company_az')
                     setViewOpen(false)
                   }}
-                  className={`w-full px-3 py-2 text-left text-xs flex items-center justify-between hover:bg-zinc-800/80 transition-colors ${
+                  className={`w-full min-h-[44px] px-3 py-2 text-left text-xs flex items-center justify-between hover:bg-zinc-800/80 transition-colors ${
                     viewOption === 'company_az'
                       ? 'text-emerald-400 font-semibold'
                       : 'text-zinc-300'
@@ -281,8 +281,8 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
             onClick={() => setSearchOpen((prev) => !prev)}
             className={`min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg border transition-all touch-manipulation ${
               searchOpen || searchQuery
-                ? 'bg-brand-tint text-brand-text border-brand/40'
-                : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:text-zinc-200'
+                ? 'bg-brand-tint text-brand-text border-brand-text'
+                : 'bg-zinc-900 text-zinc-400 border-zinc-500 hover:text-zinc-200'
             }`}
             aria-label="Toggle search"
             title="Search filings"
@@ -293,7 +293,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
           <button
             type="button"
             onClick={() => onOpenHelp()}
-            className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-zinc-200 transition-colors touch-manipulation"
+            className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg bg-zinc-900 border border-zinc-500 text-zinc-400 hover:text-zinc-200 transition-colors touch-manipulation"
             aria-label="Help: How to read this"
             title="How to read Today"
           >
@@ -314,7 +314,7 @@ export const TodayToolbar: React.FC<TodayToolbarProps> = ({
             onFocus={() => setSearchOpen(true)}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search stock, sector or headline..."
-            className="w-full bg-zinc-900 border border-zinc-800 rounded-xl pl-9 pr-10 py-2.5 min-h-[44px] text-xs text-zinc-100 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-700 transition-colors font-mono"
+            className="w-full bg-zinc-900 border border-zinc-500 rounded-xl pl-9 pr-10 py-2.5 min-h-[44px] text-xs text-zinc-100 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-700 transition-colors font-mono"
           />
           {searchQuery && (
             <button
