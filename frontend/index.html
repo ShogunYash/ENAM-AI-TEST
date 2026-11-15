@@ -10,11 +10,13 @@
       (function() {
         try {
           var saved = localStorage.getItem('finn.theme') || 'light';
-          var isDark = saved === 'dark' || (saved === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var isTerminal = saved === 'terminal';
+          document.documentElement.classList.toggle('terminal', isTerminal);
+          var isDark = isTerminal || saved === 'dark' || (saved === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
           if (isDark) {
             document.documentElement.classList.add('dark');
             var m = document.querySelector('meta[name="theme-color"]');
-            if (m) m.setAttribute('content', '#09090B');
+            if (m) m.setAttribute('content', isTerminal ? '#050505' : '#09090B');
           } else {
             document.documentElement.classList.remove('dark');
             var m = document.querySelector('meta[name="theme-color"]');

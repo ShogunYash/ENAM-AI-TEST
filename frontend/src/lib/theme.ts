@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 
-export type ThemeMode = 'light' | 'dark' | 'auto'
+export type ThemeMode = 'light' | 'dark' | 'terminal' | 'auto'
 
 const THEME_KEY = 'finn.theme'
 
 export function getStoredTheme(): ThemeMode {
   try {
     const val = localStorage.getItem(THEME_KEY)
-    if (val === 'light' || val === 'dark' || val === 'auto') {
+    if (val === 'light' || val === 'dark' || val === 'terminal' || val === 'auto') {
       return val
     }
   } catch {}
@@ -17,8 +17,10 @@ export function getStoredTheme(): ThemeMode {
 export function applyTheme(mode: ThemeMode) {
   try {
     const isDark =
-      mode === 'dark' ||
+      mode === 'terminal' || mode === 'dark' ||
       (mode === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+
+    document.documentElement.classList.toggle('terminal', mode === 'terminal')
 
     if (isDark) {
       document.documentElement.classList.add('dark')
@@ -28,7 +30,7 @@ export function applyTheme(mode: ThemeMode) {
 
     const metaTheme = document.querySelector('meta[name="theme-color"]')
     if (metaTheme) {
-      metaTheme.setAttribute('content', isDark ? '#09090B' : '#F4F6FB')
+      metaTheme.setAttribute('content', mode === 'terminal' ? '#050505' : isDark ? '#09090B' : '#F4F6FB')
     }
   } catch {}
 }
@@ -42,7 +44,18 @@ export function useTheme() {
     } catch {}
     setThemeState(mode)
     applyTheme(mode)
+    window.dispatchEvent(new Event('finn-theme-change'))
   }
+
+  useEffect(() => {
+    const sync = () => setThemeState(getStoredTheme())
+    window.addEventListener('finn-theme-change', sync)
+    window.addEventListener('storage', sync)
+    return () => {
+      window.removeEventListener('finn-theme-change', sync)
+      window.removeEventListener('storage', sync)
+    }
+  }, [])
 
   useEffect(() => {
     applyTheme(theme)
@@ -56,7 +69,7 @@ export function useTheme() {
   }, [theme])
 
   const isDark =
-    theme === 'dark' ||
+    theme === 'terminal' || theme === 'dark' ||
     (theme === 'auto' &&
       typeof window !== 'undefined' &&
       window.matchMedia('(prefers-color-scheme: dark)').matches)

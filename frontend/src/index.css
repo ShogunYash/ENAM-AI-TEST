@@ -235,3 +235,85 @@
   .desk-ledger th:not(:first-child), .desk-ledger td { @apply font-mono tabular-nums; text-align: right; }
   .desk-ledger tr:last-child th, .desk-ledger tr:last-child td { border-bottom: 0; }
 }
+
+/* Terminal is an opt-in skin over the shared desk components. */
+.terminal {
+  color-scheme: dark;
+  --background: 0 0% 2%;
+  --foreground: 0 0% 95%;
+  --border: 0 0% 26%;
+  --z-950: 5 5 5;
+  --z-900: 16 16 16;
+  --z-800: 28 28 28;
+  --z-700: 66 66 66;
+  --z-600: 115 115 115;
+  --z-500: 168 168 168;
+  --z-400: 192 192 192;
+  --z-300: 228 228 228;
+  --z-200: 238 238 238;
+  --z-100: 245 245 245;
+  --z-50: 255 255 255;
+  --stock-text: 112 215 255;
+  --brand-primary: 0 81 107;
+  --brand-hover: 0 100 130;
+  --brand-tint: 10 42 52;
+  --brand-text: 112 215 255;
+  --terminal-label: 255 199 104;
+  --emerald-300: 0 210 106;
+  --emerald-400: 0 210 106;
+  --emerald-500: 0 210 106;
+  --emerald-950: 0 35 18;
+  --rose-300: 255 101 92;
+  --rose-400: 255 101 92;
+  --rose-500: 255 101 92;
+  --rose-950: 45 13 11;
+  --amber-300: 255 199 104;
+  --amber-400: 255 199 104;
+  --amber-500: 255 199 104;
+  --amber-950: 41 29 10;
+  --sky-300: 112 215 255;
+  --sky-400: 112 215 255;
+  --sky-500: 112 215 255;
+  --sky-950: 10 42 52;
+  --radius: 4px;
+  --card-shadow: none;
+  --backdrop-overlay: rgba(0, 0, 0, .8);
+  --scrollbar-thumb: #737373;
+  --scrollbar-thumb-hover: #a8a8a8;
+}
+.terminal .desk-panel-header {
+  min-height: 28px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background: rgb(var(--z-800));
+}
+.terminal .desk-panel-label, .terminal .desk-ledger thead th, .terminal table thead th {
+  color: rgb(var(--terminal-label));
+}
+.terminal .desk-panel-code { display: inline; font-family: ui-monospace, monospace; }
+.terminal .desk-panel, .terminal .desk-record, .terminal .desk-claim, .terminal .desk-inset,
+.terminal .desk-warm-card, .terminal button, .terminal input, .terminal summary, .terminal .desk-count {
+  border-radius: 3px;
+  box-shadow: none;
+}
+.terminal .desk-identity-person { border-radius: 50%; }
+.terminal .desk-metric, .terminal .desk-ledger, .terminal .font-mono { font-variant-numeric: tabular-nums; }
+.terminal .desk-ledger tbody tr:nth-child(even) { background: rgb(var(--z-800) / .45); }
+.terminal .desk-wordmark { background: none; color: rgb(var(--terminal-label)); }
+.terminal .desk-brand-rule { background: rgb(var(--z-700)); }
+
+.desk-tape { height: 26px; overflow-x: hidden; touch-action: pan-x; }
+.desk-tape-track { display: flex; width: max-content; animation: desk-tape-drift 100s linear infinite; }
+.desk-tape-group { display: flex; flex: none; }
+.desk-tape[data-paused="true"] .desk-tape-track { animation-play-state: paused; }
+@keyframes desk-tape-drift { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .desk-tape { overflow-x: auto; scroll-snap-type: x proximity; }
+  .desk-tape-track { animation: none; }
+  .desk-tape-duplicate { display: none; }
+  .desk-tape-item { scroll-snap-align: start; }
+}
+.terminal .desk-normal-nav { display: none; }
+.terminal nav button[data-nav-tab] { border: 1px solid rgb(var(--z-500)); margin: 0 2px; padding: 4px 2px; color: rgb(var(--terminal-label)); }
+.terminal nav button[data-active="true"] { color: rgb(var(--z-950)); background: rgb(var(--terminal-label)); border-color: rgb(var(--terminal-label)); }
+.terminal .desk-command { font-variant-numeric: tabular-nums; }
