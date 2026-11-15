@@ -244,14 +244,14 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search any NSE ticker"
             inputMode="search"
-            className="w-full min-h-[44px] bg-zinc-900 border border-zinc-500 rounded-xl pl-9 pr-16 py-2.5 text-xs text-zinc-100 placeholder:text-zinc-500 font-mono font-semibold focus:outline-none focus:border-zinc-600 transition-colors"
+            className="w-full min-h-[44px] bg-zinc-900 border border-zinc-500 rounded-xl pl-9 pr-24 py-2.5 text-xs text-zinc-100 placeholder:text-zinc-500 font-mono font-semibold focus:outline-none focus:border-zinc-600 transition-colors"
           />
           <Search className="w-4 h-4 text-zinc-500 absolute left-3" />
           {searchQuery && (
             <button
               type="button"
               onClick={() => setSearchQuery('')}
-              className="absolute right-12 p-1 text-zinc-500 hover:text-zinc-300"
+              className="absolute right-12 min-h-[44px] min-w-[44px] flex items-center justify-center p-1 text-zinc-500 hover:text-zinc-300"
               aria-label="Clear search"
             >
               <X className="w-3.5 h-3.5" />
@@ -259,7 +259,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
           )}
           <button
             type="submit"
-            className="absolute right-2 px-2.5 py-1 text-[11px] font-mono font-semibold rounded-lg bg-brand hover:bg-brand-hover text-white shadow-sm transition-colors"
+            className="absolute right-1 min-h-[44px] min-w-[44px] px-2.5 py-1 text-[11px] font-mono font-semibold rounded-lg bg-brand hover:bg-brand-hover text-white shadow-sm transition-colors"
           >
             GO
           </button>
@@ -312,7 +312,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
 
         {/* Count Line */}
         <div className="text-[11px] text-zinc-500 font-mono px-1">
-          {fullReportCount} of {displayedList.length} with guidance reviewed
+          {matchingSaved.length > 0 ? `${matchingSaved.length} saved on this device · ${displayedList.length} other companies` : `${fullReportCount} of ${displayedList.length} with guidance reviewed`}
         </div>
 
         {/* Company List */}
