@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react'
-import { DigestResult } from '@/api/client'
+import { DigestResult, getDigestData } from '@/api/client'
+import { useQuery } from '@tanstack/react-query'
+import { useSettings } from '@/lib/settings'
 import { Filing } from '@/api/types'
 import { WindowOption } from '@/components/today/WindowPicker'
 import { TodayToolbar, TodayViewOption } from '@/components/today/TodayToolbar'
@@ -9,7 +11,7 @@ import { FilingCard } from '@/components/cards/FilingCard'
 import { RoutineGroup } from '@/components/today/RoutineGroup'
 import { CompanyList } from '@/components/today/CompanyList'
 import { CompanyDetail } from '@/components/today/CompanyDetail'
-import { CheckCircle, Info } from 'lucide-react'
+import { Info } from 'lucide-react'
 
 export type TodayScope = 'portfolio' | 'watchlist'
 
@@ -192,6 +194,13 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
     }
   }, [needsYou, alsoMaterial, searchQuery])
 
+  const { settings } = useSettings()
+  const { data: monthContext } = useQuery({
+    queryKey: ['digest-context', '30d', settings],
+    queryFn: () => getDigestData('30d', settings),
+    enabled: Boolean(digest && needsYou.length === 0 && !searchQuery && scope === 'portfolio' && effectiveView === 'priority'),
+  })
+
   // Shared Toolbar component
   const toolbar = (
     <TodayToolbar
@@ -341,14 +350,15 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
         </div>
 
         {filteredNeedsYou.length === 0 ? (
-          <div className="rounded-xl border border-dashed border-zinc-800 p-6 text-center space-y-2 bg-zinc-900/30">
-            <CheckCircle className="w-6 h-6 text-emerald-500 mx-auto" />
-            <div className="text-sm font-medium text-zinc-300">
+          <div className="px-1 py-2">
+            <p className="text-sm text-zinc-300">
               {searchQuery ? `No key filings match "${searchQuery}"` : `Nothing material in the last ${windowOption}`}
-            </div>
-            <p className="text-xs text-zinc-400">
-              {routine?.count ? `${routine.count} routine filings collapsed below.` : 'Your portfolio is clear.'}
             </p>
+            {!searchQuery && monthContext && (
+              <p className="mt-1 text-xs text-zinc-400">
+                30 days: {monthContext.digest.counts.total} filings · {monthContext.digest.needs_you.length} need you
+              </p>
+            )}
           </div>
         ) : (
           <div className="space-y-3">
