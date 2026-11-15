@@ -19,23 +19,29 @@ function WarmCard({ nudge }: { nudge: WarmNudge }) {
     }
   }
   return (
-    <article className="border-t border-zinc-700 py-3 text-xs">
+    <article className="border-t border-zinc-700 p-3 text-xs">
       <div className="flex items-center justify-between gap-2">
         <button type="button" onClick={() => openPerson(nudge.person_id)}
           className="min-h-[44px] text-left font-semibold text-stock rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">{nudge.name}</button>
-        <span className="text-right text-[11px] text-zinc-400">last spoke {nudge.days_since} days ago</span>
-      </div>
-      <p className="text-zinc-400">{nudge.headline}</p>
-      <p className="mt-2 leading-relaxed text-zinc-200">{nudge.trigger}</p>
-      <blockquote className="mt-2 border-l-2 border-zinc-700 pl-3 leading-relaxed text-zinc-300">{nudge.opener}</blockquote>
-      <div className="flex items-center justify-between gap-2">
-        <span className="font-mono text-[11px] text-stock">{nudge.symbol}</span>
-        <button type="button" onClick={copy} className="inline-flex min-h-[44px] items-center gap-1.5 rounded px-2 text-brand-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">
+        <button type="button" onClick={copy} className="inline-flex min-h-[44px] shrink-0 items-center gap-1.5 rounded px-2 text-brand-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">
           {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
           <span aria-live="polite">{copied ? 'Copied' : 'Copy'}</span>
         </button>
       </div>
-      {copyError && <p role="status" className="text-[11px] text-zinc-400">Select the opener above to copy it.</p>}
+      <div className="flex min-w-0 items-baseline gap-2">
+        <span className="shrink-0 font-mono text-[11px] text-stock">{nudge.symbol}</span>
+        <p title={nudge.trigger} className="truncate leading-5 text-zinc-200">{nudge.trigger}</p>
+      </div>
+      <details>
+        <summary className="flex min-h-[44px] cursor-pointer items-center justify-between gap-2 rounded text-zinc-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">
+          <span>Opener</span>
+          <span className="text-right text-[11px] text-zinc-400">last spoke {nudge.days_since} days ago</span>
+        </summary>
+        <p className="text-zinc-400">{nudge.headline}</p>
+        <p className="mt-2 leading-relaxed text-zinc-200">{nudge.trigger}</p>
+        <blockquote className="mt-2 border-l-2 border-zinc-700 pl-3 leading-relaxed text-zinc-300">{nudge.opener}</blockquote>
+      </details>
+      {copyError && <p role="status" className="text-[11px] text-zinc-400">Open the opener above to select and copy it.</p>}
     </article>
   )
 }
@@ -45,6 +51,7 @@ export function NetworkScreen() {
   const warm = useWarmNudges()
   const expertise = useExpertise()
   const openPerson = useOpenPerson()
+  const [showAllWarm, setShowAllWarm] = useState(false)
   const [question, setQuestion] = useState('')
   const [answer, setAnswer] = useState<NetworkAskResponse | null>(null)
   const [busy, setBusy] = useState(false)
@@ -117,7 +124,15 @@ export function NetworkScreen() {
         {warm.isLoading && <p className="py-3 text-xs text-zinc-400 motion-safe:animate-pulse">Loading reconnect suggestions…</p>}
         {warm.isError && <p className="py-3 text-xs text-zinc-400">Reconnect suggestions are unavailable.</p>}
         {warm.data?.length === 0 && <p className="py-3 text-xs text-zinc-400">No reconnect suggestions right now.</p>}
-        {warm.data?.map(nudge => <WarmCard key={nudge.person_id} nudge={nudge} />)}
+        <div id="warm-items">
+          {(showAllWarm ? warm.data : warm.data?.slice(0, 3))?.map(nudge => <WarmCard key={nudge.person_id} nudge={nudge} />)}
+        </div>
+        {warm.data && warm.data.length > 3 && (
+          <button type="button" aria-expanded={showAllWarm} aria-controls="warm-items" onClick={() => setShowAllWarm(!showAllWarm)}
+            className="min-h-[44px] w-full rounded border-t border-zinc-700 text-left text-xs text-zinc-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">
+            {showAllWarm ? 'Show fewer' : `Show all (${warm.data.length})`}
+          </button>
+        )}
       </section>
       <section aria-labelledby="expertise-title">
         <h2 id="expertise-title" className="mb-2 text-sm font-semibold text-zinc-100">Expertise map</h2>
