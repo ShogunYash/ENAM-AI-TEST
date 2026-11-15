@@ -359,6 +359,15 @@ export const TodayScreen: React.FC<TodayScreenProps> = ({
                 30 days: {monthContext.digest.counts.total} filings · {monthContext.digest.needs_you.length} need you
               </p>
             )}
+            {!searchQuery && windowOption !== '30d' && (
+              <button
+                type="button"
+                onClick={() => onWindowChange(windowOption === '7d' ? '30d' : '7d')}
+                className="mt-2 min-h-[44px] -ml-1 px-1 text-xs font-semibold text-brand-text underline decoration-brand/40 underline-offset-4 touch-manipulation"
+              >
+                {windowOption === '7d' ? 'Show the last 30 days' : 'Show the last 7 days'}
+              </button>
+            )}
           </div>
         ) : (
           <div className="space-y-3">
