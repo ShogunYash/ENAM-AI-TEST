@@ -571,8 +571,12 @@ async function runNetworkTests() {
 
       // Drill into INFY article directly
       const clickedInfy = await evaluate(`(() => {
+        const savedSection = document.querySelector('section[aria-label="Saved research"]');
+        const showAll = savedSection && Array.from(savedSection.querySelectorAll('button')).find(b => (b.innerText || '').startsWith('Show all'));
+        if (showAll) showAll.click();
+        const saved = document.querySelector('button[aria-label="Open saved INFY"]');
         const articles = Array.from(document.querySelectorAll('article'));
-        const infy = articles.find(a => (a.innerText || '').includes('INFY'));
+        const infy = saved || articles.find(a => (a.innerText || '').includes('INFY'));
         if (infy) {
           infy.scrollIntoView({ behavior: 'instant', block: 'center' });
           infy.click();

@@ -1,3 +1,6 @@
+import { readSavedResearch, useSavedResearch } from '@/lib/researchStorage'
+import { verdictSummary } from '@/lib/researchSummary'
+import { SavedResearch } from '@/components/research/SavedResearch'
 import { PanelHeader, IdentityMark } from '@/components/ui/Desk'
 import { WhoToCall } from '@/components/network/WhoToCall'
 import { PriceChart } from '@/components/charts/PriceChart'
@@ -8,9 +11,10 @@ import {
   fetchSnapshotMeta,
   fetchCompaniesCatalog,
   CatalogCompany,
+  ResearchResult,
 } from '@/api/client'
 import { Claim, SourceDoc } from '@/api/types'
-import { formatInrCr, formatPercentDelta, formatDocSourceLabel } from '@/lib/formatters'
+import { formatInrCr, formatPercentDelta, formatDocSourceLabel, formatExactIst } from '@/lib/formatters'
 import { PvDTimeline } from '@/components/research/PvDTimeline'
 import { BuildProgress } from '@/components/research/BuildProgress'
 import { CitationDrawer } from '@/components/research/CitationDrawer'
@@ -67,6 +71,8 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
     metricTitle: string
   } | null>(null)
   const [pollCount, setPollCount] = useState(0)
+  const savedReports = useSavedResearch()
+  const matchingSaved = savedReports.filter(({ data }) => `${data.symbol} ${data.name || ''}`.toLowerCase().includes(searchQuery.trim().toLowerCase()))
 
   // Fetch meta for pre-built research symbols
   const { data: meta } = useQuery({
@@ -96,24 +102,8 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
         prebuiltSymbols.map(async (sym) => {
           try {
             const res = await fetchResearchData(sym)
-            if (res.data?.pvd && res.data.pvd.length > 0) {
-              const counts: Record<string, number> = {}
-              res.data.pvd.forEach((item) => {
-                const v = item.verdict || 'pending'
-                counts[v] = (counts[v] || 0) + 1
-              })
-              const priority = ['missed', 'cut', 'raised', 'pending', 'met']
-              const parts: string[] = []
-              for (const k of priority) {
-                if (counts[k]) parts.push(`${counts[k]} ${k}`)
-              }
-              for (const [k, cnt] of Object.entries(counts)) {
-                if (!priority.includes(k)) parts.push(`${cnt} ${k}`)
-              }
-              if (parts.length > 0) {
-                map[sym] = parts.join(' · ')
-              }
-            }
+            const summary = verdictSummary(res.data.pvd)
+            if (summary) map[sym] = summary
           } catch {}
         })
       )
@@ -130,6 +120,11 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
     refetch,
   } = useQuery({
     queryKey: ['research', selectedCompany],
+    initialData: (): ResearchResult | undefined => {
+      const saved = selectedCompany ? readSavedResearch(selectedCompany) : undefined
+      return saved ? { data: saved.data, source: 'device', savedAt: saved.savedAt } : undefined
+    },
+    initialDataUpdatedAt: 0,
     queryFn: async () => {
       if (!selectedCompany) return null
       return await fetchResearchData(selectedCompany)
@@ -211,7 +206,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
     }
 
     // Sort inside tab: pre-built first, then A-Z
-    const sorted = [...list].sort((a, b) => {
+    const sorted = list.filter(company => !savedReports.some(report => report.data.symbol === company.symbol)).sort((a, b) => {
       const aPre = prebuiltSymbols.includes(a.symbol)
       const bPre = prebuiltSymbols.includes(b.symbol)
       if (aPre && !bPre) return -1
@@ -233,7 +228,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
       : sorted
 
     return { displayedList: filtered, fullReportCount: fullCount }
-  }, [catalog, scope, prebuiltSymbols, searchQuery])
+  }, [catalog, scope, prebuiltSymbols, searchQuery, savedReports])
 
   // ==========================================
   // VIEW 1: RESEARCH HOME (Company Picker)
@@ -269,6 +264,8 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
             GO
           </button>
         </form>
+
+        <SavedResearch reports={matchingSaved} onOpen={openDetail} />
 
         {/* Segmented Control: "My portfolio" | "Watchlist" | "Ready reports" */}
         <div className="flex items-center justify-between gap-2 pt-0.5">
@@ -320,7 +317,7 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
 
         {/* Company List */}
         <div className="space-y-2">
-          {displayedList.length === 0 ? (
+          {displayedList.length === 0 && matchingSaved.length > 0 ? <p className="py-3 text-xs text-zinc-400">Saved reports are listed above.</p> : displayedList.length === 0 ? (
             <div className="py-8 text-center space-y-2">
               <p className="text-xs text-zinc-400">
                 No stock matches &ldquo;{searchQuery}&rdquo;
@@ -409,6 +406,11 @@ export const ResearchScreen: React.FC<ResearchScreenProps> = ({ onAskFinn, initi
           <span>All companies</span>
         </button>
       </div>
+
+      {researchResult?.source === 'device' && researchResult.savedAt && <div className="desk-inset flex flex-wrap items-center justify-between gap-2 text-xs text-zinc-300" role="status">
+        <span>Saved on this device · {formatExactIst(researchResult.savedAt)}</span>
+        <button type="button" onClick={() => refetch()} disabled={isFetching} className="min-h-[44px] rounded border border-zinc-500 px-3 font-semibold disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">Refresh</button>
+      </div>}
 
       {(!research || research.status === 'failed') && <WhoToCall symbol={selectedCompany ?? ''} />}
 
