@@ -6,6 +6,25 @@ How FINN was built with AI tools. Roles: **Claude Code** = backend, pipelines, i
 Codex-written prompt drafts (classification, results extraction, one-liners, guidance, promised-vs-delivered, management bio) are kept verbatim in [`codex-prompts/`](codex-prompts/); the production versions are in `backend/app/prompts/`. Codex also audited every research item, management card and results card (its findings are applied in `backend/config/research_review.json` and `bio_review.json`) and wrote the Cost/Research/Thresholds screen copy.
 The prompts that run in the app are in [`../../backend/app/prompts/`](../../backend/app/prompts/) (versioned).
 
+## How to read these logs
+
+The logs are long. These moments (times are IST) show how problems were broken down, how output was checked, and what happened when something went wrong. Each is in the log for that day under `transcripts/`. Where a log says "ChatGPT" or "GPT", it means **Codex**.
+
+| When | What happened | Log |
+|---|---|---|
+| 11 Nov 21:47 to 23:05 | Planning before coding: free models only, so a fallback chain for rate limits; rules before models; the cloud-IP question moved to deploy time instead of being guessed. | [11 Nov](transcripts/claude-code-2026-11-11.md) |
+| 11 Nov 23:34 | A mistake owned: earlier "pushed" commits had pushed nothing, because another tool had switched the shared working tree to a different branch. Fixed, and a rule added to check the branch before every push. | [11 Nov](transcripts/claude-code-2026-11-11.md) |
+| 12 Nov 01:14 | Secret hygiene: API keys had been pasted into a git-tracked file. Checked that nothing had leaked, then moved them to the ignored `.env` without printing them. | [12 Nov](transcripts/claude-code-2026-11-12.md) |
+| 12 Nov 01:26 | Measure before building on it: the classification rules were run over all 468 real filings with the model switched off, to see what they cover and what they get wrong (84.6 % covered). | [12 Nov](transcripts/claude-code-2026-11-12.md) |
+| 12 Nov 13:17 to 15:06 | Reading its own output critically: wrong "suggested" companies, a SAMPLE badge check that tested a field that did not exist, and two results cards that were wrong after a weaker fallback model answered when the stronger models' daily quota ran out. Those cards were shown with a mismatch badge, not hidden, and rebuilt the next day. | [12 Nov](transcripts/claude-code-2026-11-12.md) |
+| 13 Nov 16:59 | A second reader audited all 36 promised-vs-delivered items against their quotes. 11 did not hold up, so FINN withholds them and says so, rather than showing a confident wrong card. | [13 Nov](transcripts/claude-code-2026-11-13.md) |
+| 13 Nov 17:38 | A test that passed falsely: a QA check on the Ask screen never opened the sheet. The screenshots were inspected instead of trusting the PASS line. | [13 Nov](transcripts/claude-code-2026-11-13.md) |
+| 14 Nov 01:35 | Owner steering, verbatim: "dont do all by yourself give to antigravity and chatgpt to also work" (the logs' "chatgpt" is Codex). From here, UI work was delegated in bounded, written tasks on separate branches and checked before merging. | [14 Nov](transcripts/claude-code-2026-11-14.md) |
+| 14 Nov 15:24 | Using the cost ledger to find where research time went: a model timing out at 90 s and a free model returning invalid output. Fix: reorder the models, skip a model that just failed, measure again. | [14 Nov](transcripts/claude-code-2026-11-14.md) |
+| 14 Nov 15:24 | A correction of its own claim: it had said live research on an unseen ticker would be partial on Render because BSE blocks the server. A real build showed that was wrong (BSE's API is blocked, transcripts are not), and the documents were fixed. | [14 Nov](transcripts/claude-code-2026-11-14.md) |
+| 15 Nov 00:03 | Its own new test leaked rows into the shared test database and broke another test; fixed so it cleans up after itself. | [15 Nov](transcripts/claude-code-2026-11-15.md) |
+| 15 Nov 12:33 | A delegated QA script failed every check. Before blaming either side, the app was checked by hand (it was fine), and the real cause turned out to be a stray file left by the author's own earlier probe. | [15 Nov](transcripts/claude-code-2026-11-15.md) |
+
 | Date (IST) | Tool / model | Area | What happened (decisions, not activity) | Link |
 |---|---|---|---|---|
 | 11 Nov | Claude Code / Sonnet 5.5 + Opus 5.5 | Plan, feasibility, contract, LLM router | Read the brief; chose BSE over NSE (cloud-IP blocking), rules-first classification, native PDF over text extraction, no vector DB; wrote the API contract first so frontend and backend could work in parallel | [11 Nov log](transcripts/claude-code-2026-11-11.md) |
