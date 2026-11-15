@@ -328,3 +328,7 @@
   border-bottom-color: rgb(var(--z-500));
 }
 .desk-screen .text-zinc-600 { color: rgb(var(--z-500)); }
+
+.terminal time { font-family: ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+.terminal .desk-panel-helper { order: 1; }
+.terminal .desk-count { order: 2; margin-left: auto; }
