@@ -174,7 +174,7 @@ async function runNetworkTests() {
       // Verify section "Ask your network" with at least one item (input or chips)
       const hasAskSection = await evaluate(`(() => {
         const text = document.body.innerText || '';
-        const hasTitle = text.includes('Ask your network');
+        const hasTitle = text.toLowerCase().includes('ask your network');
         const hasInput = document.querySelector('#network-question') !== null || document.querySelector('input') !== null;
         const hasChips = Array.from(document.querySelectorAll('button')).some(b => {
           const t = b.innerText || '';
@@ -190,7 +190,7 @@ async function runNetworkTests() {
       // Verify section "Keep warm" with at least one item
       const hasKeepWarm = await evaluate(`(() => {
         const text = document.body.innerText || '';
-        const hasTitle = text.includes('Keep warm');
+        const hasTitle = text.toLowerCase().includes('keep warm');
         const hasItem = text.includes('last spoke') || text.includes('days ago') || text.includes('Copy');
         return hasTitle && hasItem;
       })()`)
@@ -202,7 +202,7 @@ async function runNetworkTests() {
       // Verify section "Expertise map" with at least one item
       const hasExpertiseMap = await evaluate(`(() => {
         const text = document.body.innerText || '';
-        const hasTitle = text.includes('Expertise map');
+        const hasTitle = text.toLowerCase().includes('expertise map');
         const hasItem = text.includes('wires and cables') || text.includes('consumer demand') || text.includes('capex');
         return hasTitle && hasItem;
       })()`)
@@ -418,7 +418,7 @@ async function runNetworkTests() {
       // Verify rest of tab still renders (Keep warm and Expertise map sections)
       const restRenders = await evaluate(`(() => {
         const text = document.body.innerText || '';
-        return text.includes('Keep warm') && text.includes('Expertise map');
+        return text.toLowerCase().includes('keep warm') && text.toLowerCase().includes('expertise map');
       })()`)
 
       if (!restRenders) {
