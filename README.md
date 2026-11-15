@@ -21,6 +21,7 @@ that the server has checked**; a claim without a verified quote is dropped.
    names the contact best placed to give context and why; a Research page has "Who to call about {company}"; the Network tab has an ask box (a small
    agent: a model picks one tool, code runs it, and the answer can only name people in the network), reconnect nudges when a contact's former employer
    files something, and an expertise map. Matching is rules over listed facts, no model. Architecture, privacy and consent: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+7. **Look and feel:** a light default, a dark skin and an opt-in **Terminal** skin (Settings > Appearance): near-black field, amber panel title bars, function-key navigation (F1-F5), tabular monospace figures. A command bar (type `INFY` or `NETWORK`) and a ticker tape of the portfolio work in every skin. Sections, items and people each have their own shape so nothing blends together.
 
 ## Architecture
 ```
