@@ -42,7 +42,7 @@ function WarmCard({ nudge }: { nudge: WarmNudge }) {
         </summary>
         <p className="text-zinc-400">{nudge.headline}</p>
         <p className="mt-2 leading-relaxed text-zinc-200">{nudge.trigger}</p>
-        <blockquote className="desk-inset mt-2 text-zinc-300 leading-relaxed">{nudge.opener}</blockquote>
+        <blockquote className="selectable desk-inset mt-2 text-zinc-300 leading-relaxed">{nudge.opener}</blockquote>
       </details>
       {copyError && <p role="status" className="text-[11px] text-zinc-400">Open the opener above to select and copy it.</p>}
     </article>
@@ -119,7 +119,7 @@ export function NetworkScreen() {
           {offline && <p className="mt-3 text-xs leading-relaxed text-zinc-300">Asking needs the live API. Browse the expertise map below.</p>}
         </div>
         {answer && <div className="mt-3 border-t border-zinc-700 pt-3">
-          <p className="text-sm leading-relaxed text-zinc-200" role="status">{answer.answer}</p>
+          <p className="selectable text-sm leading-relaxed text-zinc-200" role="status">{answer.answer}</p>
           <div className="divide-y divide-zinc-700">{answer.matches.map(match => <PersonMatchRow key={match.person_id} match={match} />)}</div>
           {!answer.matches.length && <p className="mt-2 text-xs text-zinc-400">No matching contacts returned.</p>}
           <button type="button" onClick={() => setShowSteps(!showSteps)} aria-expanded={showSteps} aria-controls={stepsId}

@@ -192,7 +192,7 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({
                   )}
                 </div>
                 {/* Paraphrase headline shown without quotes */}
-                <div className="text-zinc-200 text-[12px] leading-snug font-semibold">
+                <div className="selectable text-zinc-200 text-[12px] leading-snug font-semibold">
                   {item.promised.text}
                 </div>
               </div>
@@ -224,7 +224,7 @@ export const PvDTimeline: React.FC<PvDTimelineProps> = ({
                     )}
                   </div>
                   {/* Paraphrase headline shown without quotes */}
-                  <div className="text-zinc-200 text-[12px] leading-snug font-semibold">
+                  <div className="selectable text-zinc-200 text-[12px] leading-snug font-semibold">
                     {item.outcome.text}
                   </div>
                 </div>
