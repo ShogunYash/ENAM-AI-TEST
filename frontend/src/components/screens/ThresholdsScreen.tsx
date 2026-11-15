@@ -1,3 +1,4 @@
+import { PanelHeader } from '@/components/ui/Desk'
 import React, { useState } from 'react'
 import { useSettings, getCategoryTriState } from '@/lib/settings'
 import { Category } from '@/api/types'
@@ -80,7 +81,7 @@ export const ThresholdsScreen: React.FC = () => {
       : settings.price_move_pct.toFixed(1)
 
   return (
-    <div className="space-y-2 pb-24 pt-1">
+    <div className="desk-screen">
       {/* Header */}
       <div className="flex items-center justify-between gap-2 pb-2 border-b border-zinc-800">
         <div className="min-w-0 flex-1">
@@ -102,12 +103,13 @@ export const ThresholdsScreen: React.FC = () => {
       </div>
 
       {/* Top One-Sentence Summary Line (GPT-9 template) */}
-      <div className="p-3 rounded-xl bg-zinc-900/40 border border-zinc-800/80 text-xs text-zinc-300 leading-relaxed">
+      <div className="desk-inset text-xs text-zinc-300 leading-relaxed">
         Alerts start at {volStr}× average volume or a {priceStr}% move either way; filing types: {boostedCount} boosted, {hiddenCount} hidden.
       </div>
 
+      <PanelHeader title="Display" code="SET" />
       {/* Appearance Control (Light | Dark | Auto) */}
-      <div className="p-3 rounded-xl border border-zinc-800 bg-zinc-900/60 flex items-center justify-between gap-2">
+      <div className="desk-panel p-3 flex items-center justify-between gap-2">
         <div className="min-w-0 flex-1">
           <div className="text-sm font-semibold text-zinc-200 flex items-center gap-2">
             <SunMoon className="w-3.5 h-3.5 text-zinc-400" />
@@ -145,9 +147,10 @@ export const ThresholdsScreen: React.FC = () => {
       </div>
 
       {/* Accordion Container */}
-      <div className="space-y-2">
+      <div className="desk-panel divide-y divide-zinc-700">
+        <PanelHeader title="Alert thresholds and filing types" code="SET" count={3} />
         {/* Accordion Row 1: Volume Spike */}
-        <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 overflow-hidden transition-colors duration-200 ease-out motion-reduce:transition-none">
+        <div className="overflow-hidden">
           <button
             type="button"
             onClick={() => toggleSection('volume')}
@@ -214,7 +217,7 @@ export const ThresholdsScreen: React.FC = () => {
         </div>
 
         {/* Accordion Row 2: Price Move */}
-        <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 overflow-hidden transition-colors duration-200 ease-out motion-reduce:transition-none">
+        <div className="overflow-hidden">
           <button
             type="button"
             onClick={() => toggleSection('price')}
@@ -281,7 +284,7 @@ export const ThresholdsScreen: React.FC = () => {
         </div>
 
         {/* Accordion Row 3: Filing Types Editor */}
-        <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 overflow-hidden transition-colors duration-200 ease-out motion-reduce:transition-none">
+        <div className="overflow-hidden">
           <button
             type="button"
             onClick={() => toggleSection('categories')}
