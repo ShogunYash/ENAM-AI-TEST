@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { PanelHeader } from '@/components/ui/Desk'
+import { PanelHeader, IdentityMark } from '@/components/ui/Desk'
 import { formatExactIst } from '@/lib/formatters'
 import { removeSavedResearch, type SavedResearch as SavedReport } from '@/lib/researchStorage'
 import { verdictSummary } from '@/lib/researchSummary'
@@ -15,7 +15,7 @@ export function SavedResearch({ reports, onOpen }: { reports: SavedReport[]; onO
         <div className="flex items-start gap-2">
           <button type="button" onClick={() => onOpen(data.symbol)} aria-label={`Open saved ${data.symbol}`}
             className="min-h-[44px] min-w-0 flex-1 rounded text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">
-            <span className="flex flex-wrap items-baseline gap-x-2"><span className="font-mono text-sm font-semibold text-stock">{data.symbol}</span><span className="text-xs text-stock">{data.name}</span></span>
+            <span className="flex flex-wrap items-center gap-2"><IdentityMark name={data.symbol} kind="company" symbol={data.symbol} /><span className="font-mono text-sm font-semibold text-stock">{data.symbol}</span><span className="text-xs text-stock">{data.name}</span></span>
             <span className="mt-1 block text-[11px] text-zinc-400">{verdictSummary(data.pvd) || 'No guidance comparisons'}</span>
           </button>
           <button type="button" onClick={() => setConfirm(data.symbol)} aria-label={`Remove saved ${data.symbol}`}

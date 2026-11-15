@@ -1,4 +1,4 @@
-import { PanelHeader } from '@/components/ui/Desk'
+import { PanelHeader, IdentityMark } from '@/components/ui/Desk'
 import React from 'react'
 import { Alert } from '@/api/types'
 import { formatPercentDelta, formatVolumeMultiple } from '@/lib/formatters'
@@ -57,6 +57,7 @@ export const AlertsStrip: React.FC<AlertsStripProps> = ({ alerts, onSelectFiling
               className={`desk-alert min-h-[44px] max-w-[calc(100vw-40px)] flex-shrink-0 flex items-center gap-2 px-3 py-2 text-xs ${isClickable ? 'cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand' : ''}`}
             >
               <div className="flex items-center gap-1.5">
+                <IdentityMark name={al.symbol} kind="company" symbol={al.symbol} />
                 {badgeIcon}
                 <span className="font-mono font-semibold text-stock">{al.symbol}</span>
               </div>

@@ -1,3 +1,4 @@
+import { IdentityMark } from '@/components/ui/Desk'
 import React, { useEffect } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { getCompanyFilings } from '@/api/client'
@@ -70,7 +71,8 @@ export const CompanyDetail: React.FC<CompanyDetailProps> = ({ symbol, windowOpti
     <div className="space-y-4 pb-20">
       {header}
       <div className="px-1 space-y-0.5">
-        <h1 className="text-lg font-bold text-zinc-100 tracking-tight">
+        <h1 className="flex flex-wrap items-center gap-2 text-lg font-bold text-zinc-100 tracking-tight">
+          <IdentityMark name={c.symbol} kind="company" symbol={c.symbol} />
           <span className="font-mono text-stock">{c.symbol}</span>
           <span className="text-stock font-normal text-sm ml-2">{c.name.replace(/ (Ltd|Limited)\.?$/i, '')}</span>
         </h1>
