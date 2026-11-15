@@ -108,7 +108,9 @@ for (const [symbol, domain] of Object.entries(mapping)) {
   const file = path.join(output, symbol + '.png')
   if (!process.argv.includes('--refresh')) {
     const existing = await fs.readFile(file).catch(() => null)
-    if (existing && (await sharp(existing).metadata().catch(() => ({}))).width === 128) {
+    const metadata = existing ? await sharp(existing).metadata().catch(() => ({})) : {}
+    const cached = reports.get(symbol)
+    if (existing && metadata.format === 'png' && metadata.width === 128 && metadata.height === 128 && cached?.domain === domain && cached.source !== 'MISSING' && cached.sha256 === sha(existing)) {
       console.log(`${symbol}\t${domain}\tCACHED\t${existing.length} bytes`); continue
     }
   }
@@ -137,7 +139,7 @@ for (const [symbol, domain] of Object.entries(mapping)) {
       break
     } catch (error) { errors.push(`${candidate.google ? 'Google ' + candidate.googleDomain : candidate.url}: ${error.message}`) }
   }
-  if (!saved) { await fs.rm(file, { force: true }); saved = { symbol, domain, source: 'MISSING', bytes: 0, errors } }
+  if (!saved) { await fs.rm(file, { force: true }); saved = { symbol, domain, page: page?.url || null, pageTitle: page?.buffer.toString('utf8').match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1].trim() || null, source: 'MISSING', bytes: 0, errors } }
   reports.set(symbol, saved)
   await fs.writeFile(reportPath, JSON.stringify([...reports.values()], null, 2) + '\n')
   console.log(`${symbol}\t${domain}\t${saved.source}\t${saved.original || 'MISSING'} -> ${saved.size || '-'}\t${saved.bytes} bytes`)
