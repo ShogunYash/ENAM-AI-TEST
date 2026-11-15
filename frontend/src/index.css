@@ -227,3 +227,11 @@
   .desk-claim[data-verdict="met"], .desk-claim[data-verdict="raised"] { border-left-color: rgb(var(--emerald-400)); }
   .desk-claim[data-verdict="pending"], .desk-claim[data-verdict="slipped"] { border-left-color: rgb(var(--amber-400)); }
 }
+@layer components {
+  .desk-ledger { border-collapse: collapse; }
+  .desk-ledger th, .desk-ledger td { @apply border-b border-zinc-700 px-3 text-zinc-300; height: 28px; padding-top: 4px; padding-bottom: 4px; line-height: 18px; }
+  .desk-ledger thead th { @apply bg-zinc-800/50 text-[11px] font-semibold uppercase tracking-wide text-zinc-400; }
+  .desk-ledger th:first-child { text-align: left; }
+  .desk-ledger th:not(:first-child), .desk-ledger td { @apply font-mono tabular-nums; text-align: right; }
+  .desk-ledger tr:last-child th, .desk-ledger tr:last-child td { border-bottom: 0; }
+}
